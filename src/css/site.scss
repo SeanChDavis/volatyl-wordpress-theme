@@ -1,0 +1,13 @@
+html {
+	background: $HTMLBackground;
+
+	& * {
+		box-sizing: border-box;
+	}
+}
+
+body {
+	background: $bodyBackground;
+	color: $primaryColor;
+	@include bodyFont;
+}

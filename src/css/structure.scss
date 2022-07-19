@@ -1,0 +1,83 @@
+#page {
+
+	/* Prepare to create sticky footer */
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.logged-in {
+
+	/* Adjust sticky footer prep when WP admin bar is present */
+	#page {
+		height: calc( 100vh - 46px );
+
+		@media all and (min-width: 783px) {
+			height: calc( 100vh - 32px );
+		}
+	}
+}
+
+main {
+
+	/* Create sticky footer */
+	flex: 1 0 auto;
+
+	.inner {
+
+		@media all and (min-width: $mdMinWidth) {
+			padding-bottom: 4rem;
+			padding-top: 4rem;
+		}
+	}
+}
+
+/* Separated from parent elements for easy override */
+.inner {
+	margin: 0 auto;
+	max-width: calc( 1200px + 1.25rem );
+	padding: 2rem 1.25rem;
+
+	@media all and (min-width: $xsMinWidth) {
+		max-width: calc( 1200px + 2rem );
+		padding: 3rem 2rem;
+	}
+
+	@media all and (min-width: $mdMinWidth) {
+		padding-bottom: 6rem;
+		padding-top: 6rem;
+	}
+
+	@media all and (min-width: $lgMinWidth) {
+		padding-bottom: 8rem;
+		padding-top: 8rem;
+	}
+}
+
+/* Separated from parent elements for easy override */
+.main-content-wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+
+	@media all and (min-width: $mdMinWidth) {
+		flex-direction: row;
+		gap: unset;
+		justify-content: space-between;
+
+		#primary-content {
+			width: 65.5%;
+		}
+
+		.sidebar {
+			width: 28.5%;
+		}
+	}
+}
+
+.no-sidebar {
+
+	.main-content-wrap {
+		justify-content: space-around;
+	}
+}

@@ -1,0 +1,14 @@
+@mixin headingFont {
+	font-family: 'Red Hat Display', sans-serif;
+}
+
+@mixin bodyFont {
+	font-family: 'Red Hat Text', sans-serif;
+	font-size: 17px;
+	line-height: 1.5;
+
+	@media all and (min-width: $xsMinWidth) {
+		font-size: 18px;
+		line-height: 1.6;
+	}
+}

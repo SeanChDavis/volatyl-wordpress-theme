@@ -1,0 +1,21 @@
+{
+  "name": "volatyl",
+  "version": "1.0.0",
+  "description": "An intelligently designed WordPress theme that changes based on your needs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sean Davis",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.5.3"
+  },
+  "dependencies": {
+    "grunt-contrib-concat": "^2.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-sass": "^2.0.0",
+    "grunt-contrib-uglify": "^5.2.2",
+    "grunt-contrib-watch": "^1.1.0"
+  }
+}

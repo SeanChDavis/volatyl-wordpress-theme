@@ -1,0 +1,13 @@
+$HTMLBackground: #fff;
+$bodyBackground: #fff;
+
+$primaryColor: #313940;
+$lightBackground: lighten( $primaryColor, 75% );
+$linkColor: lighten( $primaryColor, 15% );
+
+/* Min-width Breakpoints */
+$xsMinWidth: 560px;
+$smMinWidth: 768px;
+$mdMinWidth: 992px;
+$lgMinWidth: 1200px;
+$xlMinWidth: 1540px;
