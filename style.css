@@ -425,11 +425,17 @@ body {
 #page .site-header .inner {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   padding-bottom: 1.5rem;
   padding-top: 1.5rem;
 }
 #page .site-header .inner > * {
   align-self: center;
+}
+@media all and (min-width: 768px) {
+  #page .site-header .inner {
+    flex-direction: row;
+  }
 }
 #page .site-header .site-title {
   font-weight: 900;
@@ -447,9 +453,24 @@ body {
   color: #52606b;
 }
 
+#site-navigation .menu-toggle,
+#site-navigation .menu-item {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
 #site-navigation .menu-toggle {
+  background: transparent;
+  border: none;
   display: inline-block;
-  font-size: 15px;
+  line-height: 1.6;
+  padding: 0;
+}
+#site-navigation .menu-toggle:hover {
+  cursor: pointer;
+}
+#site-navigation .menu-toggle:active, #site-navigation .menu-toggle:focus, #site-navigation .menu-toggle:hover {
+  text-decoration: underline;
 }
 @media all and (min-width: 992px) {
   #site-navigation .menu-toggle {
@@ -467,18 +488,13 @@ body {
     display: flex;
   }
 }
-#site-navigation #primary-menu .menu-item {
-  font-size: 14px;
-  font-weight: 700;
-}
 #site-navigation #primary-menu > .menu-item {
   list-style-type: none;
 }
 #site-navigation #primary-menu > .menu-item a {
   color: #313940;
-  display: inline-block;
+  display: block;
   text-decoration: none;
-  text-transform: uppercase;
 }
 #site-navigation #primary-menu > .menu-item a:active, #site-navigation #primary-menu > .menu-item a:focus, #site-navigation #primary-menu > .menu-item a:hover {
   color: #313940;
@@ -505,6 +521,10 @@ body {
 }
 #site-navigation #primary-menu > .menu-item.menu-item-has-children .sub-menu a:active, #site-navigation #primary-menu > .menu-item.menu-item-has-children .sub-menu a:focus, #site-navigation #primary-menu > .menu-item.menu-item-has-children .sub-menu a:hover {
   text-decoration: underline;
+}
+#site-navigation #primary-menu > .menu-item.menu-item-has-children .sub-menu .menu-item-has-children a {
+  font-size: 90%;
+  font-weight: 600;
 }
 #site-navigation #primary-menu > .menu-item.menu-item-has-children > .sub-menu {
   background: #f7f8f9;

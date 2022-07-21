@@ -1,8 +1,28 @@
 #site-navigation {
 
+	.menu-toggle,
+	.menu-item {
+		font-size: 14px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
 	.menu-toggle {
+		background: transparent;
+		border: none;
 		display: inline-block;
-		font-size: 15px;
+		line-height: 1.6;
+		padding: 0;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&:active,
+		&:focus,
+		&:hover {
+			text-decoration: underline;
+		}
 
 		@media all and (min-width: $mdMinWidth) {
 			display: none;
@@ -19,19 +39,13 @@
 			display: flex;
 		}
 
-		& .menu-item {
-			font-size: 14px;
-			font-weight: 700;
-		}
-
 		& > .menu-item {
 			list-style-type: none;
 
 			a {
 				color: $contentColor;
-				display: inline-block;
+				display: block;
 				text-decoration: none;
-				text-transform: uppercase;
 
 				&:active,
 				&:focus,
@@ -69,6 +83,14 @@
 						&:focus,
 						&:hover {
 							text-decoration: underline;
+						}
+					}
+
+					& .menu-item-has-children {
+
+						a {
+							font-size: 90%;
+							font-weight: 600;
 						}
 					}
 				}
