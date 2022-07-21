@@ -8,6 +8,6 @@ html {
 
 body {
 	background: $bodyBackground;
-	color: $primaryColor;
+	color: $contentColor;
 	@include bodyFont;
 }

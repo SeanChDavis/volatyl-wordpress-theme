@@ -6,10 +6,11 @@
 define ('THEME_NAME', 'Volatyl');
 define ('THEME_VERSION', '1.0.0');
 define ('THEME_URI', 'https://getvolatyl.com');
-define ('THEME_PATH', get_template_directory());
-define ('THEME_PATH_URI', get_template_directory_uri());
+define ('THEME_TEMPLATE_DIR', get_template_directory());
+define ('THEME_TEMPLATE_DIR_URI', get_template_directory_uri());
 define ('THEME_STYLESHEET', get_stylesheet_uri());
-define ('THEME_INCLUDES', THEME_PATH . '/includes');
+define ('THEME_STYLESHEET_DIR', get_stylesheet_directory_uri());
+define ('THEME_INCLUDES', THEME_TEMPLATE_DIR . '/includes');
 
 // Various functions used around Volatyl
 require_once (THEME_INCLUDES . '/helper-functions.php');
@@ -70,8 +71,11 @@ add_action( 'after_setup_theme', 'volatyl_setup' );
  */
 function volatyl_scripts_styles() {
 
-	// Main styles
-	wp_enqueue_style( 'volatyl-style', get_stylesheet_uri(), array() );
+	// Theme JS
+	wp_enqueue_script('volatyl-scripts', THEME_STYLESHEET_DIR . '/dist/scripts.min.js', array(), THEME_VERSION, true);
+
+	// Theme styles
+	wp_enqueue_style( 'volatyl-style', THEME_STYLESHEET, array() );
 
 	// Google fonts
 	wp_enqueue_style( 'google-fonts-red-hat-display', '//fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700;1,900&family=Red+Hat+Text:ital,wght@0,400;0,600;0,700;1,400;1,700' );

@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		// Add Sass pre-processor features to 'src' CSS, then compile to 'dist' file.
+		// Add Sass pre-processor features to 'src' CSS, then compile to theme root.
 		sass: {
 			dist: {
 				files: {
@@ -12,28 +12,28 @@ module.exports = function(grunt) {
 		},
 
 		// Concatenate all JS files in 'src'.
-		// concat: {
-		// 	js: {
-		// 		options: {
-		// 			separator: ';'
-		// 		},
-		// 		src: ['src/js/**/*.js', 'src/js/**/*.min.js', '!src/js/scripts.min.js'],
-		// 		dest: 'src/js/scripts.min.js'
-		// 	}
-		// },
-		//
-		// // Uglify the concatenated JS file in 'src' and move it to 'dist'.
-		// uglify: {
-		// 	options: {
-		// 		banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd")' +
-		// 			' %> */\n',
-		// 		mangle: false
-		// 	},
-		// 	build: {
-		// 		src: 'src/js/scripts.min.js',
-		// 		dest: 'dist/scripts.min.js'
-		// 	}
-		// },
+		concat: {
+			js: {
+				options: {
+					separator: ';'
+				},
+				src: ['src/js/**/*.js', 'src/js/**/*.min.js'],
+				dest: 'dist/scripts.js'
+			}
+		},
+
+		// Uglify the concatenated JS file in 'src'.
+		uglify: {
+			options: {
+				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd")' +
+					' %> */\n',
+				mangle: false
+			},
+			build: {
+				src: 'dist/scripts.js',
+				dest: 'dist/scripts.min.js'
+			}
+		},
 
 		// Watch 'src/css/**/*.scss' & 'src/js/**/*.js' files and run all tasks after changes.
 		watch: {
@@ -41,10 +41,10 @@ module.exports = function(grunt) {
 				files: ['src/css/**/*.scss'],
 				tasks: ['sass'] // , 'cssmin'
 			},
-			// js: {
-			// 	files: ['src/js/**/*.js'],
-			// 	tasks: ['concat:js', 'uglify:build']
-			// }
+			js: {
+				files: ['src/js/**/*.js'],
+				tasks: ['concat:js', 'uglify:build']
+			}
 		},
 
 	});

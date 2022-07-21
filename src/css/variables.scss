@@ -1,9 +1,10 @@
 $HTMLBackground: #fff;
 $bodyBackground: #fff;
 
-$primaryColor: #313940;
-$lightBackground: lighten( $primaryColor, 75% );
-$linkColor: lighten( $primaryColor, 15% );
+$contentColor: #313940;
+$linkColor: lighten( $contentColor, 15% );
+
+$lightBackground: lighten( $contentColor, 75% );
 
 /* Min-width Breakpoints */
 $xsMinWidth: 560px;

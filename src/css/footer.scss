@@ -2,6 +2,7 @@
 
 	.site-footer {
 		background: $lightBackground;
+		@include bodyFontSmall;
 
 		.inner {
 			padding-bottom: 1.5rem;

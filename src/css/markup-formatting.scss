@@ -54,7 +54,7 @@ h3, .h3 {
 }
 
 h4, .h4 {
-	color: lighten( $primaryColor, 10% );
+	color: lighten( $contentColor, 10% );
 	font-size: 1.125rem;
 	line-height: 1.4;
 	text-transform: uppercase;
@@ -85,7 +85,7 @@ h5, .h5 {
 }
 
 h6, .h6 {
-	color: lighten( $primaryColor, 10% );
+	color: lighten( $contentColor, 10% );
 	font-size: 1rem;
 	font-style: italic;
 }
@@ -130,7 +130,7 @@ p {
 }
 
 a {
-	color: lighten( $primaryColor, 15% );
+	color: lighten( $contentColor, 15% );
 	text-decoration: underline;
 
 	&:active,
@@ -142,14 +142,14 @@ a {
 
 blockquote,
 address {
-	color: lighten( $primaryColor, 15% );
+	color: lighten( $contentColor, 15% );
 	font-style: italic;
 	margin: 1.125rem;
 }
 
 cite,
 q {
-	color: lighten( $primaryColor, 15% );
+	color: lighten( $contentColor, 15% );
 	font-style: italic;
 }
 
@@ -277,7 +277,7 @@ kbd,
 tt,
 var {
 	background: $lightBackground;
-	color: lighten( $primaryColor, 15% );
+	color: lighten( $contentColor, 15% );
 	display: inline-block;
 	padding-left: 3px;
 	padding-right: 3px;
@@ -286,7 +286,7 @@ var {
 
 strike,
 del {
-	color: lighten( $primaryColor, 15% );
+	color: lighten( $contentColor, 15% );
 }
 
 iframe,
