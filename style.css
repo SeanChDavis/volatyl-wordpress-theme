@@ -514,13 +514,13 @@ body {
   position: absolute;
   width: 200px;
 }
-#site-navigation #primary-menu > .menu-item.menu-item-has-children.submenu-active > a {
+#site-navigation #primary-menu > .menu-item.menu-item-has-children.sub-menu-active > a {
   text-decoration: underline;
 }
-#site-navigation #primary-menu > .menu-item.menu-item-has-children.submenu-active > a:after {
+#site-navigation #primary-menu > .menu-item.menu-item-has-children.sub-menu-active > a:after {
   top: 1px;
 }
-#site-navigation #primary-menu > .menu-item.menu-item-has-children.submenu-active .sub-menu {
+#site-navigation #primary-menu > .menu-item.menu-item-has-children.sub-menu-active .sub-menu {
   display: block;
   list-style-type: none;
 }
