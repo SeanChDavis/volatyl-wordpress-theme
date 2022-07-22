@@ -1,18 +1,143 @@
 #site-navigation {
 
-	.menu-toggle,
+	/* Persistent menu rules */
 	.menu-item {
-		font-size: 14px;
+		@include bodyFontSmaller;
 		font-weight: 700;
+		list-style-type: none;
 		text-transform: uppercase;
+
+		a {
+			color: $contentColor;
+			display: block;
+			text-decoration: none;
+		}
 	}
 
+	/* Desktop menu display */
+	&:not(.toggled) {
+
+		#primary-menu {
+			display: none;
+			flex-direction: row;
+			margin: 0;
+			padding: 0;
+
+			@media all and (min-width: $mdMinWidth) {
+				display: flex;
+			}
+
+			& > .menu-item {
+
+				&.menu-item-has-children {
+					position: relative;
+
+					& > a {
+						padding-right: calc( .75rem + 15px);
+
+						&:after {
+							content: url('images/icons/caret-down-solid.svg');
+							display: inline-block;
+							height: 7px;
+							margin-left: 7px;
+							position: absolute;
+							top: -3px;
+							//transform: rotate(90deg);
+							transition: all .2s;
+							width: 7px;
+						}
+					}
+
+					.sub-menu {
+
+						a {
+							display: block;
+							padding: 5px 0;
+
+							&:active,
+							&:focus,
+							&:hover {
+								text-decoration: underline;
+							}
+						}
+
+						& .menu-item-has-children {
+
+							a {
+								font-size: 90%;
+								font-weight: 600;
+							}
+						}
+					}
+
+					& > .sub-menu {
+						background: $lightBackground;
+						border-radius: 0 0 5px 5px;
+						display: none;
+						padding: 1rem;
+						position: absolute;
+						width: 200px;
+					}
+
+					&.sub-menu-active {
+
+						& > a {
+							text-decoration: underline;
+
+							&:after {
+								top: 1px;
+							}
+						}
+
+						.sub-menu {
+							display: block;
+							list-style-type: none;
+						}
+					}
+
+					&:last-child > a {
+						padding-right: calc(0.75rem + 3px);
+					}
+				}
+
+				&:active,
+				&:focus,
+				&:hover {
+
+					& > a {
+						text-decoration: underline;
+					}
+				}
+
+				& > a {
+					display: inline-block;
+					padding: 0 .75rem;
+				}
+
+				&:last-child > a {
+					padding-right: 0;
+				}
+
+				&:last-child,
+				&:nth-last-child(2) {
+
+					& > .sub-menu {
+						right: 0;
+					}
+				}
+			}
+		}
+	}
+
+	/* Mobile menu button toggle (only opens, JS closes it) */
 	.menu-toggle {
+		@include bodyFontSmaller;
 		background: transparent;
 		border: none;
 		display: inline-block;
-		line-height: 1.6;
+		font-weight: 700;
 		padding: 0;
+		text-transform: uppercase;
 
 		&:hover {
 			cursor: pointer;
@@ -29,134 +154,33 @@
 		}
 	}
 
-	#primary-menu {
-		display: none;
-		flex-direction: row;
-		margin: 0;
-		padding: 0;
-
-		@media all and (min-width: $mdMinWidth) {
-			display: flex;
-		}
-
-		& > .menu-item {
-			list-style-type: none;
-
-			a {
-				color: $contentColor;
-				display: block;
-				text-decoration: none;
-
-				&:active,
-				&:focus,
-				&:hover {
-					color: $contentColor;
-				}
-			}
-
-			&.menu-item-has-children {
-				position: relative;
-
-				& > a {
-					padding-right: calc( .75rem + 15px);
-
-					&:after {
-						content: url('images/icons/caret-down-solid.svg');
-						display: inline-block;
-						height: 7px;
-						margin-left: 7px;
-						position: absolute;
-						top: -3px;
-						//transform: rotate(90deg);
-						transition: all .2s;
-						width: 7px;
-					}
-				}
-
-				.sub-menu {
-
-					a {
-						display: block;
-						padding: 5px 0;
-
-						&:active,
-						&:focus,
-						&:hover {
-							text-decoration: underline;
-						}
-					}
-
-					& .menu-item-has-children {
-
-						a {
-							font-size: 90%;
-							font-weight: 600;
-						}
-					}
-				}
-
-				& > .sub-menu {
-					background: $lightBackground;
-					border-radius: 0 0 5px 5px;
-					display: none;
-					padding: 1rem;
-					position: absolute;
-					width: 200px;
-				}
-
-				&.sub-menu-active {
-
-					& > a {
-						text-decoration: underline;
-
-						&:after {
-							top: 1px;
-						}
-					}
-
-					.sub-menu {
-						display: block;
-						list-style-type: none;
-					}
-				}
-
-				&:last-child > a {
-					padding-right: calc(0.75rem + 3px);
-				}
-			}
-
-			&:active,
-			&:focus,
-			&:hover {
-
-				& > a {
-					text-decoration: underline;
-				}
-			}
-
-			& > a {
-				display: inline-block;
-				padding: 0 .75rem;
-			}
-
-			&:last-child > a {
-				padding-right: 0;
-			}
-
-			&:last-child,
-			&:nth-last-child(2) {
-
-				& > .sub-menu {
-					right: 0;
-				}
-			}
-		}
-	}
-
+	/* Mobile menu display */
 	&.toggled {
 
-		#primary-menu {
-			display: flex;
+		& > [class*="-container"] {
+			align-items: center;
+			background: rgba(0, 0, 0, 0.3);
+			display: grid;
+			height: 100vh;
+			justify-content: center;
+			left: 0;
+			opacity: 0;
+			pointer-events: none;
+			position: fixed;
+			top: 0;
+			transition: opacity 0.2s;
+			width: 100vw;
+
+			&.overlay-menu-active {
+				opacity: 1;
+				pointer-events: all;
+
+				#primary-menu {
+					background: $lightBackground;
+					border-radius: 8px;
+					width: calc(100vw - 4rem);
+				}
+			}
 		}
 	}
 }

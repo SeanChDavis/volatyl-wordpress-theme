@@ -16,3 +16,8 @@
 	font-size: 17px;
 	line-height: 1.5;
 }
+
+@mixin bodyFontSmaller {
+	font-size: 14px;
+	line-height: 1.6;
+}
