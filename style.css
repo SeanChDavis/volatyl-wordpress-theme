@@ -425,17 +425,11 @@ body {
 #page .site-header .inner {
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
   padding-bottom: 1.5rem;
   padding-top: 1.5rem;
 }
 #page .site-header .inner > * {
   align-self: center;
-}
-@media all and (min-width: 768px) {
-  #page .site-header .inner {
-    flex-direction: row;
-  }
 }
 #page .site-header .site-title {
   font-weight: 900;
