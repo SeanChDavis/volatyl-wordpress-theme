@@ -308,6 +308,7 @@ template {
 }
 
 /* Min-width Breakpoints */
+/* Navigation */
 #page {
   /* Prepare to create sticky footer */
   display: flex;
@@ -448,22 +449,60 @@ body {
 }
 
 #site-navigation {
-  /* Persistent menu rules */
-  /* Desktop menu display */
-  /* Mobile menu button toggle (only opens, JS closes it) */
-  /* Mobile menu display */
+  /* Persistent navigation rules */
+  /**
+   * Full desktop navigation
+   * That means the menu display never had to be toggled
+   */
+  /**
+   * Mobile navigation opener
+   * The menu is closed by JavaScript click events on other elements
+   */
+  /**
+   * Mobile navigation
+   * Only reachable when the menu is opened by the toggle button
+   */
 }
-#site-navigation .menu-item {
-  font-size: 14px;
+#site-navigation #primary-menu .menu-item {
+  font-size: 13px;
   line-height: 1.6;
   font-weight: 700;
   list-style-type: none;
   text-transform: uppercase;
 }
-#site-navigation .menu-item a {
+#site-navigation #primary-menu .menu-item a {
   color: #313940;
   display: block;
   text-decoration: none;
+}
+#site-navigation #primary-menu > .menu-item.menu-item-has-children {
+  position: relative;
+}
+#site-navigation #primary-menu > .menu-item.menu-item-has-children > a:after {
+  content: "";
+  border-bottom: 6px solid #313940;
+  border-right: 6px solid transparent;
+  display: inline-block;
+  height: 0;
+  margin-left: 5px;
+  position: absolute;
+  top: 3px;
+  transform: rotate(-45deg);
+  transition: all 0.2s;
+  width: 0;
+}
+#site-navigation #primary-menu > .menu-item.menu-item-has-children .sub-menu a {
+  display: block;
+  font-weight: 600;
+  padding: 7px 0;
+}
+#site-navigation #primary-menu > .menu-item.menu-item-has-children .sub-menu a:active, #site-navigation #primary-menu > .menu-item.menu-item-has-children .sub-menu a:focus, #site-navigation #primary-menu > .menu-item.menu-item-has-children .sub-menu a:hover {
+  text-decoration: underline;
+}
+#site-navigation #primary-menu > .menu-item.menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu a {
+  font-size: 90%;
+  opacity: 0.7;
+  padding: 5px 0 5px 6px;
 }
 #site-navigation:not(.toggled) #primary-menu {
   display: none;
@@ -471,55 +510,40 @@ body {
   margin: 0;
   padding: 0;
 }
-@media all and (min-width: 992px) {
+@media all and (min-width: 900px) {
   #site-navigation:not(.toggled) #primary-menu {
     display: flex;
   }
 }
-#site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children {
-  position: relative;
-}
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > a {
-  padding-right: calc(0.75rem + 15px);
-}
-#site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > a:after {
-  content: url("images/icons/caret-down-solid.svg");
-  display: inline-block;
-  height: 7px;
-  margin-left: 7px;
-  position: absolute;
-  top: -3px;
-  transition: all 0.2s;
-  width: 7px;
-}
-#site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children .sub-menu a {
-  display: block;
-  padding: 5px 0;
-}
-#site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children .sub-menu a:active, #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children .sub-menu a:focus, #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children .sub-menu a:hover {
-  text-decoration: underline;
-}
-#site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children .sub-menu .menu-item-has-children a {
-  font-size: 90%;
-  font-weight: 600;
+  padding-right: calc(0.75rem + 11px);
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > .sub-menu {
-  background: #f7f8f9;
-  border-radius: 0 0 5px 5px;
+  background: #313940;
+  border-radius: 5px;
   display: none;
-  padding: 1rem;
+  padding: 7px 1rem;
   position: absolute;
-  width: 200px;
+  top: 2rem;
+  width: 240px;
+}
+#site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > .sub-menu a {
+  color: #fff;
+}
+#site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > .sub-menu > .menu-item:not(:last-child) {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+}
+#site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > .sub-menu > .menu-item.menu-item-has-children:not(:last-child) {
+  padding-bottom: 4px;
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children.sub-menu-active > a {
   text-decoration: underline;
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children.sub-menu-active > a:after {
-  top: 1px;
+  top: 6px;
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children.sub-menu-active .sub-menu {
   display: block;
-  list-style-type: none;
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children:last-child > a {
   padding-right: calc(0.75rem + 3px);
@@ -538,7 +562,7 @@ body {
   right: 0;
 }
 #site-navigation .menu-toggle {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.6;
   background: transparent;
   border: none;
@@ -553,33 +577,105 @@ body {
 #site-navigation .menu-toggle:active, #site-navigation .menu-toggle:focus, #site-navigation .menu-toggle:hover {
   text-decoration: underline;
 }
-@media all and (min-width: 992px) {
+@media all and (min-width: 900px) {
   #site-navigation .menu-toggle {
     display: none;
   }
 }
 #site-navigation.toggled > [class*=-container] {
-  align-items: center;
-  background: rgba(0, 0, 0, 0.3);
   display: grid;
   height: 100vh;
   justify-content: center;
   left: 0;
   opacity: 0;
   pointer-events: none;
-  position: fixed;
+  position: absolute;
   top: 0;
   transition: opacity 0.2s;
   width: 100vw;
 }
-#site-navigation.toggled > [class*=-container].overlay-menu-active {
+@media all and (min-width: 560px) {
+  #site-navigation.toggled > [class*=-container] {
+    justify-content: flex-end;
+  }
+}
+#site-navigation.toggled > [class*=-container].menu-modal-active {
   opacity: 1;
+  padding: 1rem;
   pointer-events: all;
 }
-#site-navigation.toggled > [class*=-container].overlay-menu-active #primary-menu {
-  background: #f7f8f9;
-  border-radius: 8px;
-  width: calc(100vw - 4rem);
+@media all and (min-width: 560px) {
+  #site-navigation.toggled > [class*=-container].menu-modal-active {
+    padding: 1.25rem;
+  }
+}
+#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu {
+  background: #313940;
+  border-radius: 5px;
+  box-shadow: 0 0 75px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0.5rem 1.25rem;
+  width: calc(100vw - 2rem);
+}
+@media all and (min-width: 560px) {
+  #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu {
+    min-width: 300px;
+    width: 35vw;
+  }
+}
+#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu .menu-item a {
+  color: #fff;
+}
+#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu .menu-item .sub-menu {
+  display: none;
+}
+#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item:not(:last-child) {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+}
+#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item.menu-item-has-children > a:after {
+  border-bottom-color: #fff;
+  position: absolute;
+  right: 0;
+  top: 14px;
+}
+#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item.menu-item-has-children > .sub-menu {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  padding: 7px 1rem;
+  width: 100%;
+}
+#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item.menu-item-has-children > .sub-menu > .menu-item-has-children:not(:last-child) {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+}
+#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item.menu-item-has-children > .sub-menu > .menu-item:not(:last-child) {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+  padding-bottom: 4px;
+}
+#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item.menu-item-has-children.sub-menu-active > a {
+  text-decoration: underline;
+}
+#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item.menu-item-has-children.sub-menu-active .sub-menu {
+  display: block;
+}
+#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item > a {
+  padding: 8px 0;
+}
+
+/**
+ * When logged in and the admin bar is present, spacing needs adjustment
+ */
+.logged-in #site-navigation.toggled > [class*=-container].menu-modal-active {
+  padding-top: calc(46px + 1.25rem);
+  /* WP admin bar breakpoint */
+}
+@media all and (min-width: 783px) {
+  .logged-in #site-navigation.toggled > [class*=-container].menu-modal-active {
+    padding-top: calc(32px + 1.25rem);
+  }
 }
 
 h1, .h1,

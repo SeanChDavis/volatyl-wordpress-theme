@@ -31,16 +31,16 @@
 		})
 	});
 
-	// Close the active sub-menu if there's a click anywhere outside itself
+	// Close the active sub-menu if there's a click anywhere outside itself.
 	window.document.addEventListener("click", function(event) {
 
-		// Get the current active sub-menu
+		// Get the current active sub-menu.
 		const activeMenu = document.querySelector(".sub-menu-active");
 
-		// Get the active sub-menu when a click is registered inside that sub-menu
+		// Get the active sub-menu when a click is registered inside that sub-menu.
 		const clickedInsideMenu = event.target.closest(".sub-menu-active");
 
-		// If the "outside" sub-menu click is just its toggle link, let the toggle do its job
+		// If the "outside" sub-menu click is just its toggle link, let the toggle do its job.
 		if (event.target.parentNode === activeMenu) {
 			event.stopPropagation();
 		}
@@ -52,7 +52,10 @@
 	});
 
 	/**
-	 * Mobile navigation
+	 * Mobile navigation toggler
+	 *
+	 * Credit _s by Automattic for the toggle behavior
+	 * https://github.com/automattic/_s
 	 */
 	const siteNavigation = document.getElementById('site-navigation');
 
@@ -80,15 +83,18 @@
 		menu.classList.add('nav-menu');
 	}
 
-	const menuContainer = document.querySelector("#site-navigation > [class*='-container']");
 
-	// Toggle the .toggled class and the aria-expanded value each time the button is clicked.
+	/**
+	 * Menu modal behavior
+	 */
+	// Get the element that wraps menu list, a direct child of the main navigation element.
+	// This element will behave as the visible area behind the actual menu modal.
+	const menuModalOuter = document.querySelector("#site-navigation > [class*='-container']");
+
+	// Conduct all the tasks required for opening the menu modal.
 	button.addEventListener('click', function() {
-
 		siteNavigation.classList.toggle('toggled');
-
-		menuContainer.classList.add("overlay-menu-active");
-
+		menuModalOuter.classList.add("menu-modal-active");
 		if (button.getAttribute('aria-expanded') === 'true') {
 			button.setAttribute('aria-expanded', 'false');
 		} else {
@@ -96,25 +102,26 @@
 		}
 	});
 
-	function closeMenuContainer() {
-		menuContainer.classList.remove("overlay-menu-active");
+	// Conduct all the tasks required for closing the menu modal.
+	function closeMenuModal() {
+		menuModalOuter.classList.remove("menu-modal-active");
 		siteNavigation.classList.remove("toggled");
 		button.setAttribute("aria-expanded", "false");
 	}
 
-	menuContainer.addEventListener("click", function(event) {
-
+	// Close the menu modal if the user clicks outside the menu area.
+	menuModalOuter.addEventListener("click", function(event) {
 		const isClickOutside = !event.target.closest(".nav-menu");
-
 		if (isClickOutside) {
-			closeMenuContainer();
+			closeMenuModal();
 		}
 	});
 
+	// Close the menu modal if the user presses the ESC key.
 	window.addEventListener("keydown", (event) => {
-		console.log(event);
 		if (event.key === "Escape") {
-			closeMenuContainer();
+			closeMenuModal();
 		}
 	});
+
 }());

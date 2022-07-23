@@ -1,20 +1,82 @@
 #site-navigation {
 
-	/* Persistent menu rules */
-	.menu-item {
-		@include bodyFontSmaller;
-		font-weight: 700;
-		list-style-type: none;
-		text-transform: uppercase;
+	/* Persistent navigation rules */
+	#primary-menu {
 
-		a {
-			color: $contentColor;
-			display: block;
-			text-decoration: none;
+		// All menu items
+		.menu-item {
+			@include bodyFontSmaller;
+			font-weight: 700;
+			list-style-type: none;
+			text-transform: uppercase;
+
+			a {
+				color: $contentColor;
+				display: block;
+				text-decoration: none;
+			}
+		}
+
+		// Top level menu item
+		& > .menu-item {
+
+			&.menu-item-has-children {
+				position: relative;
+
+				& > a {
+
+					&:after {
+						content: '';
+						border-bottom: 6px solid $contentColor;
+						border-right: 6px solid transparent;
+						display: inline-block;
+						height: 0;
+						margin-left: 5px;
+						position: absolute;
+						top: 3px;
+						transform: rotate(-45deg);
+						transition: all .2s;
+						width: 0;
+					}
+				}
+
+				.sub-menu {
+
+					a {
+						display: block;
+						font-weight: 600;
+						padding: 7px 0;
+
+						&:active,
+						&:focus,
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+
+				& > .sub-menu {
+
+					& > .menu-item-has-children {
+
+						.sub-menu {
+
+							a {
+								font-size: 90%;
+								opacity: .7;
+								padding: 5px 0 5px 6px;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 
-	/* Desktop menu display */
+	/**
+	 * Full desktop navigation
+	 * That means the menu display never had to be toggled
+	 */
 	&:not(.toggled) {
 
 		#primary-menu {
@@ -23,60 +85,45 @@
 			margin: 0;
 			padding: 0;
 
-			@media all and (min-width: $mdMinWidth) {
+			@media all and (min-width: $menuModal) {
 				display: flex;
 			}
 
+			// Top level menu item
 			& > .menu-item {
 
 				&.menu-item-has-children {
-					position: relative;
 
 					& > a {
-						padding-right: calc( .75rem + 15px);
-
-						&:after {
-							content: url('images/icons/caret-down-solid.svg');
-							display: inline-block;
-							height: 7px;
-							margin-left: 7px;
-							position: absolute;
-							top: -3px;
-							//transform: rotate(90deg);
-							transition: all .2s;
-							width: 7px;
-						}
-					}
-
-					.sub-menu {
-
-						a {
-							display: block;
-							padding: 5px 0;
-
-							&:active,
-							&:focus,
-							&:hover {
-								text-decoration: underline;
-							}
-						}
-
-						& .menu-item-has-children {
-
-							a {
-								font-size: 90%;
-								font-weight: 600;
-							}
-						}
+						padding-right: calc(.75rem + 11px);
 					}
 
 					& > .sub-menu {
-						background: $lightBackground;
-						border-radius: 0 0 5px 5px;
+						background: $menuModalBackground;
+						border-radius: 5px;
 						display: none;
-						padding: 1rem;
+						padding: 7px 1rem;
 						position: absolute;
-						width: 200px;
+						top: 2rem;
+						width: 240px;
+
+						a {
+							color: #fff;
+						}
+
+						& > .menu-item {
+
+							&:not(:last-child) {
+								border-bottom: 1px dashed rgba(255, 255, 255, .2);
+							}
+
+							&.menu-item-has-children {
+
+								&:not(:last-child) {
+									padding-bottom: 4px;
+								}
+							}
+						}
 					}
 
 					&.sub-menu-active {
@@ -85,13 +132,12 @@
 							text-decoration: underline;
 
 							&:after {
-								top: 1px;
+								top: 6px;
 							}
 						}
 
 						.sub-menu {
 							display: block;
-							list-style-type: none;
 						}
 					}
 
@@ -129,7 +175,10 @@
 		}
 	}
 
-	/* Mobile menu button toggle (only opens, JS closes it) */
+	/**
+	 * Mobile navigation opener
+	 * The menu is closed by JavaScript click events on other elements
+	 */
 	.menu-toggle {
 		@include bodyFontSmaller;
 		background: transparent;
@@ -149,36 +198,150 @@
 			text-decoration: underline;
 		}
 
-		@media all and (min-width: $mdMinWidth) {
+		@media all and (min-width: $menuModal) {
 			display: none;
 		}
 	}
 
-	/* Mobile menu display */
+	/**
+	 * Mobile navigation
+	 * Only reachable when the menu is opened by the toggle button
+	 */
 	&.toggled {
 
 		& > [class*="-container"] {
-			align-items: center;
-			background: rgba(0, 0, 0, 0.3);
 			display: grid;
 			height: 100vh;
 			justify-content: center;
 			left: 0;
 			opacity: 0;
 			pointer-events: none;
-			position: fixed;
+			position: absolute;
 			top: 0;
 			transition: opacity 0.2s;
 			width: 100vw;
 
-			&.overlay-menu-active {
+			@media all and (min-width: $xsMinWidth) {
+				justify-content: flex-end;
+			}
+
+			&.menu-modal-active {
 				opacity: 1;
+				padding: 1rem;
 				pointer-events: all;
 
+				@media all and (min-width: $xsMinWidth) {
+					padding: 1.25rem;
+				}
+
 				#primary-menu {
-					background: $lightBackground;
-					border-radius: 8px;
-					width: calc(100vw - 4rem);
+					background: $menuModalBackground;
+					border-radius: 5px;
+					box-shadow: 0 0 75px 20px rgba(0, 0, 0, 0.3);display: flex;
+					display: flex;
+					flex-direction: column;
+					height: 100%;
+					padding: .5rem 1.25rem;
+					width: calc(100vw - 2rem);
+
+					@media all and (min-width: $xsMinWidth) {
+						min-width: 300px;
+						width: calc(35vw);
+					}
+
+					.menu-item {
+
+						a {
+							color: #fff;
+						}
+
+						.sub-menu {
+							display: none;
+						}
+					}
+
+					// Top level menu item
+					& > .menu-item {
+
+						&:not(:last-child) {
+							border-bottom: 1px dashed rgba(255, 255, 255, .2);
+						}
+
+						&.menu-item-has-children {
+
+							& > a {
+
+								&:after {
+									border-bottom-color: #fff;
+									position: absolute;
+									right: 0;
+									top: 14px;
+								}
+							}
+
+							& > .sub-menu {
+								background: rgba(255, 255, 255, .05);
+								border-radius: 6px;
+								margin-bottom: 1rem;
+								padding: 7px 1rem;
+								width: 100%;
+
+								& > .menu-item-has-children {
+
+									&:not(:last-child) {
+										border-bottom: 1px dashed rgba(255, 255, 255, .2);
+									}
+								}
+
+								& > .menu-item {
+
+									&:not(:last-child) {
+										border-bottom: 1px dashed rgba(255, 255, 255, .2);
+										padding-bottom: 4px;
+									}
+								}
+							}
+
+							&.sub-menu-active {
+
+								& > a {
+									text-decoration: underline;
+								}
+
+								.sub-menu {
+									display: block;
+								}
+							}
+						}
+
+						& > a {
+							padding: 8px 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/**
+ * When logged in and the admin bar is present, spacing needs adjustment
+ */
+.logged-in {
+
+	#site-navigation {
+
+		&.toggled {
+
+			& > [class*="-container"] {
+
+				&.menu-modal-active {
+					padding-top: calc(46px + 1.25rem);
+
+					/* WP admin bar breakpoint */
+					@media all and (min-width: 783px) {
+						padding-top: calc(32px + 1.25rem);
+					}
 				}
 			}
 		}
