@@ -1,16 +1,16 @@
 <?php
 /**
- * Closing body tag and full site footer
+ * Closing body tag and full site footers
  */
-?>
 
-	<footer class="site-footer">
-		<div class="inner">
-			<div class="site-info">
-				<?php echo bloginfo( 'name' ) . ' &copy; ' . date('Y'); ?>
-			</div>
-		</div>
-	</footer>
+// Only display if there is at least one fat footer widget in use
+if ( volatyl_has_fat_footer_content() ) {
+	get_template_part( 'template-parts/fat', 'footer' );
+}
+
+// Always display the basic site information
+get_template_part( 'template-parts/site', 'footer' );
+?>
 
 </div><!--#page-->
 

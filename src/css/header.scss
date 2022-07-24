@@ -1,36 +1,33 @@
-#page {
+.site-header {
+	background: $lightBackground;
 
-	.site-header {
-		background: $lightBackground;
+	.inner {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 1.5rem;
+		padding-top: 1.5rem;
 
-		.inner {
-			display: flex;
-			justify-content: space-between;
-			padding-bottom: 1.5rem;
-			padding-top: 1.5rem;
-
-			& > * {
-				align-self: center;
-			}
+		& > * {
+			align-self: center;
 		}
+	}
 
-		.site-title {
-			font-weight: 900;
-			font-size: 1.25rem;
+	.site-title {
+		font-weight: 900;
+		font-size: 1.25rem;
+		line-height: 1;
+		margin: 0;
+
+		a {
+			color: $contentColor;
 			line-height: 1;
-			margin: 0;
+			text-decoration: none;
+			transition: color .2s;
 
-			a {
-				color: $contentColor;
-				line-height: 1;
-				text-decoration: none;
-				transition: color .2s;
-
-				&:active,
-				&:focus,
-				&:hover {
-					color: $linkColor;
-				}
+			&:active,
+			&:focus,
+			&:hover {
+				color: $linkColor;
 			}
 		}
 	}

@@ -1,12 +1,29 @@
-#page {
+.fat-footer {
+	@include bodyFontSmaller;
+}
 
-	.site-footer {
-		background: $lightBackground;
-		@include bodyFontSmall;
+.site-footer {
+	background: $lightBackground;
+	@include bodyFontSmaller;
 
-		.inner {
-			padding-bottom: 1.5rem;
-			padding-top: 1.5rem;
+	.inner {
+		padding-bottom: 1.5rem;
+		padding-top: 1.5rem;
+
+		@media all and (min-width: $mdMinWidth) {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.site-name {
+
+			.blog-name {
+				font-weight: 700;
+			}
+
+			.site-copyright {
+				font-weight: 400;
+			}
 		}
 	}
 }

@@ -19,23 +19,4 @@
 
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
-		<header class="site-header">
-			<div class="inner">
-				<div class="site-branding">
-					<?php the_custom_logo(); ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo get_bloginfo( 'description', 'display' ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				</div>
-				<nav id="site-navigation" class="main-navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'volatyl' ); ?></button>
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'primary-menu',
-							'menu_id'        => 'primary-menu',
-                            'fallback_cb'    => false
-						)
-					);
-					?>
-				</nav>
-			</div>
-		</header>
+		<?php get_template_part( 'template-parts/site', 'header' ); ?>

@@ -1,0 +1,51 @@
+<?php
+/**
+ * Displays above the main site footer
+ *
+ * This file is only reached if at least one of the fat footer areas is in use.
+ * See volatyl_has_fat_footer_content().
+ *
+ * The ".fat-footer-areas.volatyl-grid" element is display: grid, thanks to the
+ * .volatyl-grid class. The child elements will adjust to fill the space based
+ * on the number of fat footer areas in use. This is done through JavaScript,
+ * adding another class of volatyl-grid-columns_# to the element, where # is
+ * equal to the number of areas in use.
+ *
+ * Example:
+ *
+ * <div class="fat-footer-areas volatyl-grid volatyl-grid-columns_4">
+ * ... fat footer areas ...
+ * </div>
+ */
+?>
+
+<div class="fat-footer">
+	<div class="inner">
+		<div class="fat-footer-areas volatyl-grid">
+
+			<?php
+			$fat_footer_areas = array(
+				'ff_a1' => array(
+					'name' => 'fat-footer-area-one'
+				),
+				'ff_a2' => array(
+					'name' => 'fat-footer-area-two'
+				),
+				'ff_a3' => array(
+					'name' => 'fat-footer-area-three'
+				),
+				'ff_a4' => array(
+					'name' => 'fat-footer-area-four'
+				),
+			);
+
+			foreach( $fat_footer_areas as $area ) {
+				if ( is_active_sidebar( $area['name'] ) ) {
+					dynamic_sidebar( $area['name'] );
+				}
+			}
+			?>
+
+		</div>
+	</div>
+</div>

@@ -352,13 +352,19 @@ main {
   }
 }
 @media all and (min-width: 992px) {
-  .inner {
+  .inner.medium {
+    padding-bottom: 6rem;
+    padding-top: 6rem;
+  }
+}
+@media all and (min-width: 992px) {
+  .inner.large {
     padding-bottom: 6rem;
     padding-top: 6rem;
   }
 }
 @media all and (min-width: 1200px) {
-  .inner {
+  .inner.large {
     padding-bottom: 8rem;
     padding-top: 8rem;
   }
@@ -409,42 +415,59 @@ body {
   }
 }
 
-.post-type-list {
+.volatyl-grid {
   display: grid;
+  gap: 2.5rem;
 }
-.post-type-list .content-title {
-  font-size: 1.5rem;
+.volatyl-grid.volatyl-grid-columns_1 {
+  /* Well, this is awkward. */
 }
-.post-type-list .posts-navigation {
-  grid-column-start: 1;
-  grid-column-end: 3;
+@media all and (min-width: 768px) {
+  .volatyl-grid.volatyl-grid-columns_2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (min-width: 768px) {
+  .volatyl-grid.volatyl-grid-columns_3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media all and (min-width: 768px) {
+  .volatyl-grid.volatyl-grid-columns_4 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (min-width: 992px) {
+  .volatyl-grid.volatyl-grid-columns_4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-#page .site-header {
+.site-header {
   background: #f7f8f9;
 }
-#page .site-header .inner {
+.site-header .inner {
   display: flex;
   justify-content: space-between;
   padding-bottom: 1.5rem;
   padding-top: 1.5rem;
 }
-#page .site-header .inner > * {
+.site-header .inner > * {
   align-self: center;
 }
-#page .site-header .site-title {
+.site-header .site-title {
   font-weight: 900;
   font-size: 1.25rem;
   line-height: 1;
   margin: 0;
 }
-#page .site-header .site-title a {
+.site-header .site-title a {
   color: #313940;
   line-height: 1;
   text-decoration: none;
   transition: color 0.2s;
 }
-#page .site-header .site-title a:active, #page .site-header .site-title a:focus, #page .site-header .site-title a:hover {
+.site-header .site-title a:active, .site-header .site-title a:focus, .site-header .site-title a:hover {
   color: #52606b;
 }
 
@@ -514,6 +537,7 @@ body {
 @media all and (min-width: 900px) {
   #site-navigation:not(.toggled) #primary-menu {
     display: flex;
+    flex-wrap: wrap;
   }
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > a {
@@ -991,14 +1015,42 @@ img {
   line-height: 1.5;
 }
 
-#page .site-footer {
-  background: #f7f8f9;
-  font-size: 17px;
-  line-height: 1.5;
+.fat-footer {
+  font-size: 15px;
+  line-height: 1.6;
 }
-#page .site-footer .inner {
+
+.site-footer {
+  background: #f7f8f9;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.site-footer .inner {
   padding-bottom: 1.5rem;
   padding-top: 1.5rem;
+}
+@media all and (min-width: 992px) {
+  .site-footer .inner {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.site-footer .inner .site-name .blog-name {
+  font-weight: 700;
+}
+.site-footer .inner .site-name .site-copyright {
+  font-weight: 400;
+}
+
+.post-type-list {
+  display: grid;
+}
+.post-type-list .content-title {
+  font-size: 1.5rem;
+}
+.post-type-list .posts-navigation {
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -43,14 +43,25 @@ main {
 		padding: 3rem 2rem;
 	}
 
-	@media all and (min-width: $mdMinWidth) {
-		padding-bottom: 6rem;
-		padding-top: 6rem;
+	&.medium {
+
+		@media all and (min-width: $mdMinWidth) {
+			padding-bottom: 6rem;
+			padding-top: 6rem;
+		}
 	}
 
-	@media all and (min-width: $lgMinWidth) {
-		padding-bottom: 8rem;
-		padding-top: 8rem;
+	&.large {
+
+		@media all and (min-width: $mdMinWidth) {
+			padding-bottom: 6rem;
+			padding-top: 6rem;
+		}
+
+		@media all and (min-width: $lgMinWidth) {
+			padding-bottom: 8rem;
+			padding-top: 8rem;
+		}
 	}
 }
 

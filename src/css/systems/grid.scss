@@ -1,0 +1,33 @@
+.volatyl-grid {
+	display: grid;
+	gap: 2.5rem;
+
+	&.volatyl-grid-columns_1 {
+		/* Well, this is awkward. */
+	}
+
+	&.volatyl-grid-columns_2 {
+
+		@media all and (min-width: $smMinWidth) {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	&.volatyl-grid-columns_3 {
+
+		@media all and (min-width: $smMinWidth) {
+			grid-template-columns: repeat( 3, 1fr );
+		}
+	}
+
+	&.volatyl-grid-columns_4 {
+
+		@media all and (min-width: $smMinWidth) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media all and (min-width: $mdMinWidth) {
+			grid-template-columns: repeat( 4, 1fr );
+		}
+	}
+}

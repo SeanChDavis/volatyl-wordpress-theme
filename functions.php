@@ -16,7 +16,7 @@ define ('THEME_INCLUDES', THEME_TEMPLATE_DIR . '/includes');
 require_once (THEME_INCLUDES . '/helper-functions.php');
 require_once (THEME_INCLUDES . '/body-class.php');
 
-require_once (THEME_INCLUDES . '/sidebars.php');
+require_once (THEME_INCLUDES . '/widgets.php');
 
 /**
  * Set up theme
@@ -35,7 +35,7 @@ function volatyl_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'primary-menu' => esc_html__( 'Primary', 'volatyl' ),
+			'primary-menu' => esc_html__( 'Primary Menu', 'volatyl' ),
 		)
 	);
 

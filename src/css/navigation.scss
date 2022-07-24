@@ -5,7 +5,7 @@
 
 		// All menu items
 		.menu-item {
-			@include bodyFontSmaller;
+			@include bodyFontSmallest;
 			font-weight: 700;
 			list-style-type: none;
 			text-transform: uppercase;
@@ -88,6 +88,7 @@
 
 			@media all and (min-width: $menuModal) {
 				display: flex;
+				flex-wrap: wrap;
 			}
 
 			// Top level menu item
@@ -181,7 +182,7 @@
 	 * The menu is closed by JavaScript click events on other elements
 	 */
 	.menu-toggle {
-		@include bodyFontSmaller;
+		@include bodyFontSmallest;
 		background: transparent;
 		border: none;
 		display: inline-block;
