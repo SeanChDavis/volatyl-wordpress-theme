@@ -494,6 +494,7 @@ body {
 #site-navigation #primary-menu > .menu-item.menu-item-has-children .sub-menu a {
   display: block;
   font-weight: 600;
+  letter-spacing: 1px;
   padding: 7px 0;
 }
 #site-navigation #primary-menu > .menu-item.menu-item-has-children .sub-menu a:active, #site-navigation #primary-menu > .menu-item.menu-item-has-children .sub-menu a:focus, #site-navigation #primary-menu > .menu-item.menu-item-has-children .sub-menu a:hover {
