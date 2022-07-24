@@ -1,37 +1,36 @@
 <?php
 /**
- * Standard singular content structure
+ * Template part for displaying posts
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-	<header class="content-header">
-
+	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="content-title">', '</h1>' );
+			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
-			the_title( '<h2 class="content-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 
 		if ( 'post' === get_post_type() ) :
 			?>
-			<div class="content-meta">
+			<div class="entry-meta">
 				<?php
-				// volatyl_posted_on();
-				// volatyl_posted_by();
+				volatyl_posted_on();
+				volatyl_posted_by();
 				?>
-			</div><!-- .content-meta -->
+			</div><!-- .entry-meta -->
 		<?php endif; ?>
-
-	</header><!-- .content-header -->
+	</header><!-- .entry-header -->
 
 	<?php // volatyl_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
-		if ( ! is_archive() && ! is_search() && ! is_home() ) {
+		if ( volatyl_is_lite_archive() ) {
+			the_excerpt();
+		} else {
 			the_content(
 				sprintf(
 					wp_kses(
@@ -57,4 +56,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-</article>
+	<footer class="entry-footer">
+		<?php volatyl_entry_footer(); ?>
+	</footer><!-- .entry-footer -->
+</article><!-- #post-<?php the_ID(); ?> -->

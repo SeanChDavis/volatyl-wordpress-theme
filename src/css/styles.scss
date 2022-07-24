@@ -1,3 +1,14 @@
+/*!
+ * Theme Name: Volatyl
+ * Theme URI: https://getvolatyl.com/
+ * Author: Sean Davis
+ * Author URI: https://toscd.com/
+ * Description: An intelligently designed WordPress theme that changes based on your needs.
+ * Version: 1.0.0
+ * License: GNU General Public License Version 2
+ * License URI: license.txt
+ */
+
 @import "normalize";
 
 @import "variables";
@@ -11,7 +22,7 @@
 @import "header";
 @import "navigation";
 @import "markup-formatting";
+@import "archives";
+@import "singulars";
 @import "sidebar";
 @import "footer";
-
-@import "post-type-list";

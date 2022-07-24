@@ -16,6 +16,7 @@ define ('THEME_INCLUDES', THEME_TEMPLATE_DIR . '/includes');
 require_once (THEME_INCLUDES . '/helper-functions.php');
 require_once (THEME_INCLUDES . '/body-class.php');
 
+require_once (THEME_INCLUDES . '/template-tags.php');
 require_once (THEME_INCLUDES . '/widgets.php');
 
 /**

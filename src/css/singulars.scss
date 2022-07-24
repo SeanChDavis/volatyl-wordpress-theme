@@ -1,0 +1,65 @@
+/* Catch all styles for general singulars */
+article {
+
+	.entry-header {
+		margin-bottom: 2.5rem;
+
+		.entry-title {
+			margin-bottom: .25rem;
+
+			a {
+				color: $contentColor;
+			}
+		}
+
+		.entry-meta {
+			@include bodyFontSmaller;
+		}
+	}
+
+	.entry-content {
+		margin-bottom: 1.5rem;
+
+		ul {
+			margin: 0 0 0 1.125rem;
+		}
+
+		ol {
+			margin: 0 0 0 1.3rem;
+		}
+
+		ul,
+		ol {
+			padding: 0;
+
+			li {
+
+				& ul,
+				& ol {
+					margin-top: .75rem;
+				}
+
+				& + li {
+					margin-top: .75rem;
+				}
+			}
+		}
+
+		& > ul,
+		& > ol {
+			margin-bottom: 1.25rem;
+			margin-top: 1.25rem;
+
+			@media all and (min-width: $smMinWidth) {
+				margin-bottom: 1.75rem;
+			}
+		}
+	}
+
+	.entry-footer {
+		@include bodyFontSmaller;
+		display: flex;
+		flex-direction: column;
+		gap: .5rem;
+	}
+}

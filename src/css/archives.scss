@@ -1,0 +1,23 @@
+#primary-content {
+
+	// Typically an archive of posts
+	& > article {
+
+		& + article {
+			margin-top: 3.5rem;
+		}
+
+		& + .posts-navigation {
+			margin-top: 3rem;
+		}
+	}
+
+	.posts-navigation {
+
+		.nav-links {
+			display: flex;
+			gap: 1rem;
+			justify-content: space-between;
+		}
+	}
+}
