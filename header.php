@@ -32,6 +32,7 @@
 						array(
 							'theme_location' => 'primary-menu',
 							'menu_id'        => 'primary-menu',
+                            'fallback_cb'    => false
 						)
 					);
 					?>
