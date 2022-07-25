@@ -3,6 +3,23 @@ get_header();
 ?>
 
 	<main>
+
+		<header class="entry-header-singular">
+
+			<div class="inner">
+
+				<h1 class="singular-title"><?php echo get_the_title(); ?></h1>
+				<div class="entry-meta">
+					<?php
+					volatyl_posted_on();
+					volatyl_posted_by();
+					?>
+				</div>
+
+			</div>
+
+		</header>
+
 		<div class="inner">
 
 			<div class="main-content-wrap">
@@ -15,11 +32,16 @@ get_header();
 						while ( have_posts() ) :
 
 							the_post();
-							get_template_part( 'template-parts/content' );
+							get_template_part( 'template-parts/content', 'single' );
 
 						endwhile;
 
 						the_posts_navigation();
+
+						// If comments are open or we have at least one comment, load up the comment template.
+						if ( comments_open() || get_comments_number() ) :
+							comments_template();
+						endif;
 
 					else :
 

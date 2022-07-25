@@ -6,10 +6,6 @@ article {
 
 		.entry-title {
 			margin-bottom: .25rem;
-
-			a {
-				color: $contentColor;
-			}
 		}
 
 		.entry-meta {
@@ -19,41 +15,6 @@ article {
 
 	.entry-content {
 		margin-bottom: 1.5rem;
-
-		ul {
-			margin: 0 0 0 1.125rem;
-		}
-
-		ol {
-			margin: 0 0 0 1.3rem;
-		}
-
-		ul,
-		ol {
-			padding: 0;
-
-			li {
-
-				& ul,
-				& ol {
-					margin-top: .75rem;
-				}
-
-				& + li {
-					margin-top: .75rem;
-				}
-			}
-		}
-
-		& > ul,
-		& > ol {
-			margin-bottom: 1.25rem;
-			margin-top: 1.25rem;
-
-			@media all and (min-width: $smMinWidth) {
-				margin-bottom: 1.75rem;
-			}
-		}
 	}
 
 	.entry-footer {
@@ -61,5 +22,134 @@ article {
 		display: flex;
 		flex-direction: column;
 		gap: .5rem;
+		margin-bottom: 2.5rem;
+	}
+}
+
+.entry-header-singular {
+	background: $lightBackground;
+
+	.singular-title {
+		margin-bottom: .75rem;
+	}
+
+	.entry-meta {
+		@include bodyFontSmaller;
+
+		@media all and (min-width: $mdMinWidth) {
+			@include bodyFont;
+		}
+	}
+}
+
+.no-sidebar {
+
+	.entry-header-singular {
+		text-align: center;
+	}
+}
+
+#comments {
+	border-top: 3px solid $lightBackground;
+	padding-top: 2.5rem;
+
+	.comments-title {
+		border-bottom: 3px solid $lightBackground;
+		padding-bottom: 2.5rem;
+		margin-bottom: 2.5rem;
+	}
+
+	.comment-list {
+		margin-bottom: 2.5rem;
+
+		.comment {
+			@include bodyFontSmall;
+
+			&:not(:last-child) {
+				border-bottom: 3px solid $lightBackground;
+				padding-bottom: 2.5rem;
+				margin-bottom: 2.5rem;
+			}
+
+			.comment-body {
+
+				& > *:not(:last-child) {
+					margin-bottom: 2rem;
+				}
+
+				.comment-meta {
+
+					.comment-author {
+						display: flex;
+						flex-direction: column;
+						gap: 1rem;
+						margin-bottom: .25rem;
+
+						.avatar {
+							border-radius: 50%;
+						}
+
+						.says {
+							display: none;
+						}
+					}
+
+					.comment-metadata {
+						@include bodyFontSmallest;
+					}
+				}
+
+				.comment-content {
+
+				}
+
+				.reply {
+					@include bodyFontSmallest;
+				}
+			}
+		}
+	}
+
+	#respond {
+
+	}
+}
+
+.entry-content,
+#comments {
+
+	ul {
+		margin: 0 0 0 1.125rem;
+	}
+
+	ol {
+		margin: 0 0 0 1.3rem;
+	}
+
+	ul,
+	ol {
+		padding: 0;
+
+		li {
+
+			& ul,
+			& ol {
+				margin-top: .75rem;
+			}
+
+			& + li {
+				margin-top: .75rem;
+			}
+		}
+	}
+
+	& > ul,
+	& > ol {
+		margin-bottom: 1.25rem;
+		margin-top: 1.25rem;
+
+		@media all and (min-width: $smMinWidth) {
+			margin-bottom: 1.75rem;
+		}
 	}
 }

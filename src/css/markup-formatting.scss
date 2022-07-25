@@ -5,9 +5,15 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
 	@include headingFont;
+	display: block;
+	font-weight: 700;
 	margin: 0 0 1.25rem;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
+
+	a {
+		color: $contentColor;
+	}
 }
 
 h1, .h1 {

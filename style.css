@@ -720,9 +720,19 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
   font-family: "Red Hat Display", sans-serif;
+  display: block;
+  font-weight: 700;
   margin: 0 0 1.25rem;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
+}
+h1 a, .h1 a,
+h2 a, .h2 a,
+h3 a, .h3 a,
+h4 a, .h4 a,
+h5 a, .h5 a,
+h6 a, .h6 a {
+  color: #313940;
 }
 
 h1, .h1 {
@@ -1010,9 +1020,6 @@ article .entry-header {
 article .entry-header .entry-title {
   margin-bottom: 0.25rem;
 }
-article .entry-header .entry-title a {
-  color: #313940;
-}
 article .entry-header .entry-meta {
   font-size: 15px;
   line-height: 1.6;
@@ -1020,40 +1027,128 @@ article .entry-header .entry-meta {
 article .entry-content {
   margin-bottom: 1.5rem;
 }
-article .entry-content ul {
-  margin: 0 0 0 1.125rem;
-}
-article .entry-content ol {
-  margin: 0 0 0 1.3rem;
-}
-article .entry-content ul,
-article .entry-content ol {
-  padding: 0;
-}
-article .entry-content ul li ul, article .entry-content ul li ol,
-article .entry-content ol li ul,
-article .entry-content ol li ol {
-  margin-top: 0.75rem;
-}
-article .entry-content ul li + li,
-article .entry-content ol li + li {
-  margin-top: 0.75rem;
-}
-article .entry-content > ul, article .entry-content > ol {
-  margin-bottom: 1.25rem;
-  margin-top: 1.25rem;
-}
-@media all and (min-width: 768px) {
-  article .entry-content > ul, article .entry-content > ol {
-    margin-bottom: 1.75rem;
-  }
-}
 article .entry-footer {
   font-size: 15px;
   line-height: 1.6;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.entry-header-singular {
+  background: #f7f8f9;
+}
+.entry-header-singular .singular-title {
+  margin-bottom: 0.75rem;
+}
+.entry-header-singular .entry-meta {
+  font-size: 15px;
+  line-height: 1.6;
+}
+@media all and (min-width: 992px) {
+  .entry-header-singular .entry-meta {
+    font-family: "Red Hat Text", sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+}
+@media all and (min-width: 992px) and (min-width: 560px) {
+  .entry-header-singular .entry-meta {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+}
+
+.no-sidebar .entry-header-singular {
+  text-align: center;
+}
+
+#comments {
+  border-top: 3px solid #f7f8f9;
+  padding-top: 2.5rem;
+}
+#comments .comments-title {
+  border-bottom: 3px solid #f7f8f9;
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+#comments .comment-list {
+  margin-bottom: 2.5rem;
+}
+#comments .comment-list .comment {
+  font-size: 17px;
+  line-height: 1.5;
+}
+#comments .comment-list .comment:not(:last-child) {
+  border-bottom: 3px solid #f7f8f9;
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+#comments .comment-list .comment .comment-body > *:not(:last-child) {
+  margin-bottom: 2rem;
+}
+#comments .comment-list .comment .comment-body .comment-meta .comment-author {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 0.25rem;
+}
+#comments .comment-list .comment .comment-body .comment-meta .comment-author .avatar {
+  border-radius: 50%;
+}
+#comments .comment-list .comment .comment-body .comment-meta .comment-author .says {
+  display: none;
+}
+#comments .comment-list .comment .comment-body .comment-meta .comment-metadata {
+  font-size: 13px;
+  line-height: 1.6;
+}
+#comments .comment-list .comment .comment-body .reply {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.entry-content ul,
+#comments ul {
+  margin: 0 0 0 1.125rem;
+}
+.entry-content ol,
+#comments ol {
+  margin: 0 0 0 1.3rem;
+}
+.entry-content ul,
+.entry-content ol,
+#comments ul,
+#comments ol {
+  padding: 0;
+}
+.entry-content ul li ul, .entry-content ul li ol,
+.entry-content ol li ul,
+.entry-content ol li ol,
+#comments ul li ul,
+#comments ul li ol,
+#comments ol li ul,
+#comments ol li ol {
+  margin-top: 0.75rem;
+}
+.entry-content ul li + li,
+.entry-content ol li + li,
+#comments ul li + li,
+#comments ol li + li {
+  margin-top: 0.75rem;
+}
+.entry-content > ul, .entry-content > ol,
+#comments > ul,
+#comments > ol {
+  margin-bottom: 1.25rem;
+  margin-top: 1.25rem;
+}
+@media all and (min-width: 768px) {
+  .entry-content > ul, .entry-content > ol,
+#comments > ul,
+#comments > ol {
+    margin-bottom: 1.75rem;
+  }
 }
 
 .sidebar {
