@@ -23,7 +23,7 @@ $sidebars = array(
 	),
 	'default' => array(
 		'name'        => esc_html__( 'Default Sidebar', 'volatyl' ),
-		'id'          => 'sidebar',
+		'id'          => 'default-sidebar',
 		'location'    => 'sidebar',
 		'description' => esc_html__( 'Fallback for templates that do not have their own specific sidebar.', 'volatyl' ),
 	),

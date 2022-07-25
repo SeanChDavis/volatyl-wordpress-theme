@@ -1,3 +1,20 @@
+/* Jumbo singular header */
+.entry-header-singular {
+	background: $lightBackground;
+
+	.singular-title {
+		margin-bottom: .75rem;
+	}
+
+	.entry-meta {
+		@include bodyFontSmaller;
+
+		@media all and (min-width: $mdMinWidth) {
+			@include bodyFont;
+		}
+	}
+}
+
 /* Catch all styles for general singulars */
 article {
 
@@ -13,6 +30,10 @@ article {
 		}
 	}
 
+	.post-thumbnail {
+		margin-bottom: 1.5rem;
+	}
+
 	.entry-content {
 		margin-bottom: 1.5rem;
 	}
@@ -23,22 +44,6 @@ article {
 		flex-direction: column;
 		gap: .5rem;
 		margin-bottom: 2.5rem;
-	}
-}
-
-.entry-header-singular {
-	background: $lightBackground;
-
-	.singular-title {
-		margin-bottom: .75rem;
-	}
-
-	.entry-meta {
-		@include bodyFontSmaller;
-
-		@media all and (min-width: $mdMinWidth) {
-			@include bodyFont;
-		}
 	}
 }
 
@@ -62,7 +67,8 @@ article {
 	.comment-list {
 		margin-bottom: 2.5rem;
 
-		.comment {
+		.comment,
+		.pingback {
 			@include bodyFontSmall;
 
 			&:not(:last-child) {
@@ -89,6 +95,20 @@ article {
 							border-radius: 50%;
 						}
 
+						.fn {
+
+							a {
+								color: $contentColor;
+								text-decoration: none;
+
+								&:active,
+								&:focus,
+								&:hover {
+									color: $linkColor;
+								}
+							}
+						}
+
 						.says {
 							display: none;
 						}
@@ -112,11 +132,75 @@ article {
 
 	#respond {
 
+		#reply-title {
+
+			small {
+				display: block;
+				line-height: 1;
+
+				#cancel-comment-reply-link {
+					@include bodyFontSmallest;
+					color: $linkColor;
+					font-weight: 400;
+					line-height: 1;
+				}
+			}
+		}
+
+		#commentform {
+
+			.logged-in-as,
+			.comment-notes {
+				@include bodyFontSmallest;
+
+				.required-field-message {
+					display: block;
+				}
+			}
+
+			.comment-form-comment,
+			.comment-form-author,
+			.comment-form-email,
+			.comment-form-url {
+
+				& > label {
+					@include bodyFontSmaller;
+					@include headingFont;
+					display: block;
+					font-weight: 600;
+				}
+			}
+
+			.comment-form-comment {
+
+				textarea#comment {
+					max-width: 560px;
+					width: 100%;
+				}
+			}
+
+			.comment-form-author,
+			.comment-form-email,
+			.comment-form-url {
+				max-width: 400px;
+			}
+
+			.comment-form-cookies-consent {
+
+				label {
+					@include bodyFontSmallest;
+				}
+			}
+
+			.required {
+				color: red;
+			}
+		}
 	}
 }
 
 .entry-content,
-#comments {
+.comment-content {
 
 	ul {
 		margin: 0 0 0 1.125rem;

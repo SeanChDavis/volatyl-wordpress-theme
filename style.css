@@ -898,7 +898,7 @@ dl {
 }
 
 table {
-  border: 2px solid;
+  border: 2px solid #313940;
   border-collapse: collapse;
 }
 table th, table td {
@@ -1001,6 +1001,67 @@ img {
   width: 100% !important;
 }
 
+.wp-block-image img + figcaption {
+  margin-top: 1.5rem;
+}
+
+/* Try to prevent horizontal scroll caused my long, non-breaking text */
+.main-content-wrap {
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+.button,
+button,
+input[type=submit],
+.volatyl-button {
+  font-size: 13px;
+  line-height: 1.6;
+  background: #313940;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  height: 45px;
+  letter-spacing: 1px;
+  line-height: 1;
+  padding: 1rem;
+  text-transform: uppercase;
+  vertical-align: bottom;
+}
+.button:active, .button:focus, .button:hover,
+button:active,
+button:focus,
+button:hover,
+input[type=submit]:active,
+input[type=submit]:focus,
+input[type=submit]:hover,
+.volatyl-button:active,
+.volatyl-button:focus,
+.volatyl-button:hover {
+  background: #52606b;
+}
+
+input:not([type=submit]):not([type=radio]):not([type=checkbox]) {
+  height: 45px;
+}
+
+input:not([type=submit]):not([type=radio]):not([type=checkbox]),
+textarea {
+  font-size: 15px;
+  line-height: 1.6;
+  border: 2px solid #313940;
+  border-radius: 3px;
+  padding: 7px 9px;
+  vertical-align: bottom;
+}
+input:not([type=submit]):not([type=radio]):not([type=checkbox]):active, input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus,
+textarea:active,
+textarea:focus {
+  border-color: #52606b;
+}
+
 #primary-content > article + article {
   margin-top: 3.5rem;
 }
@@ -1013,29 +1074,7 @@ img {
   justify-content: space-between;
 }
 
-/* Catch all styles for general singulars */
-article .entry-header {
-  margin-bottom: 2.5rem;
-}
-article .entry-header .entry-title {
-  margin-bottom: 0.25rem;
-}
-article .entry-header .entry-meta {
-  font-size: 15px;
-  line-height: 1.6;
-}
-article .entry-content {
-  margin-bottom: 1.5rem;
-}
-article .entry-footer {
-  font-size: 15px;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 2.5rem;
-}
-
+/* Jumbo singular header */
 .entry-header-singular {
   background: #f7f8f9;
 }
@@ -1060,6 +1099,32 @@ article .entry-footer {
   }
 }
 
+/* Catch all styles for general singulars */
+article .entry-header {
+  margin-bottom: 2.5rem;
+}
+article .entry-header .entry-title {
+  margin-bottom: 0.25rem;
+}
+article .entry-header .entry-meta {
+  font-size: 15px;
+  line-height: 1.6;
+}
+article .post-thumbnail {
+  margin-bottom: 1.5rem;
+}
+article .entry-content {
+  margin-bottom: 1.5rem;
+}
+article .entry-footer {
+  font-size: 15px;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .no-sidebar .entry-header-singular {
   text-align: center;
 }
@@ -1076,77 +1141,143 @@ article .entry-footer {
 #comments .comment-list {
   margin-bottom: 2.5rem;
 }
-#comments .comment-list .comment {
+#comments .comment-list .comment,
+#comments .comment-list .pingback {
   font-size: 17px;
   line-height: 1.5;
 }
-#comments .comment-list .comment:not(:last-child) {
+#comments .comment-list .comment:not(:last-child),
+#comments .comment-list .pingback:not(:last-child) {
   border-bottom: 3px solid #f7f8f9;
   padding-bottom: 2.5rem;
   margin-bottom: 2.5rem;
 }
-#comments .comment-list .comment .comment-body > *:not(:last-child) {
+#comments .comment-list .comment .comment-body > *:not(:last-child),
+#comments .comment-list .pingback .comment-body > *:not(:last-child) {
   margin-bottom: 2rem;
 }
-#comments .comment-list .comment .comment-body .comment-meta .comment-author {
+#comments .comment-list .comment .comment-body .comment-meta .comment-author,
+#comments .comment-list .pingback .comment-body .comment-meta .comment-author {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-bottom: 0.25rem;
 }
-#comments .comment-list .comment .comment-body .comment-meta .comment-author .avatar {
+#comments .comment-list .comment .comment-body .comment-meta .comment-author .avatar,
+#comments .comment-list .pingback .comment-body .comment-meta .comment-author .avatar {
   border-radius: 50%;
 }
-#comments .comment-list .comment .comment-body .comment-meta .comment-author .says {
+#comments .comment-list .comment .comment-body .comment-meta .comment-author .fn a,
+#comments .comment-list .pingback .comment-body .comment-meta .comment-author .fn a {
+  color: #313940;
+  text-decoration: none;
+}
+#comments .comment-list .comment .comment-body .comment-meta .comment-author .fn a:active, #comments .comment-list .comment .comment-body .comment-meta .comment-author .fn a:focus, #comments .comment-list .comment .comment-body .comment-meta .comment-author .fn a:hover,
+#comments .comment-list .pingback .comment-body .comment-meta .comment-author .fn a:active,
+#comments .comment-list .pingback .comment-body .comment-meta .comment-author .fn a:focus,
+#comments .comment-list .pingback .comment-body .comment-meta .comment-author .fn a:hover {
+  color: #52606b;
+}
+#comments .comment-list .comment .comment-body .comment-meta .comment-author .says,
+#comments .comment-list .pingback .comment-body .comment-meta .comment-author .says {
   display: none;
 }
-#comments .comment-list .comment .comment-body .comment-meta .comment-metadata {
+#comments .comment-list .comment .comment-body .comment-meta .comment-metadata,
+#comments .comment-list .pingback .comment-body .comment-meta .comment-metadata {
   font-size: 13px;
   line-height: 1.6;
 }
-#comments .comment-list .comment .comment-body .reply {
+#comments .comment-list .comment .comment-body .reply,
+#comments .comment-list .pingback .comment-body .reply {
   font-size: 13px;
   line-height: 1.6;
 }
+#comments #respond #reply-title small {
+  display: block;
+  line-height: 1;
+}
+#comments #respond #reply-title small #cancel-comment-reply-link {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #52606b;
+  font-weight: 400;
+  line-height: 1;
+}
+#comments #respond #commentform .logged-in-as,
+#comments #respond #commentform .comment-notes {
+  font-size: 13px;
+  line-height: 1.6;
+}
+#comments #respond #commentform .logged-in-as .required-field-message,
+#comments #respond #commentform .comment-notes .required-field-message {
+  display: block;
+}
+#comments #respond #commentform .comment-form-comment > label,
+#comments #respond #commentform .comment-form-author > label,
+#comments #respond #commentform .comment-form-email > label,
+#comments #respond #commentform .comment-form-url > label {
+  font-size: 15px;
+  line-height: 1.6;
+  font-family: "Red Hat Display", sans-serif;
+  display: block;
+  font-weight: 600;
+}
+#comments #respond #commentform .comment-form-comment textarea#comment {
+  max-width: 560px;
+  width: 100%;
+}
+#comments #respond #commentform .comment-form-author,
+#comments #respond #commentform .comment-form-email,
+#comments #respond #commentform .comment-form-url {
+  max-width: 400px;
+}
+#comments #respond #commentform .comment-form-cookies-consent label {
+  font-size: 13px;
+  line-height: 1.6;
+}
+#comments #respond #commentform .required {
+  color: red;
+}
+
 .entry-content ul,
-#comments ul {
+.comment-content ul {
   margin: 0 0 0 1.125rem;
 }
 .entry-content ol,
-#comments ol {
+.comment-content ol {
   margin: 0 0 0 1.3rem;
 }
 .entry-content ul,
 .entry-content ol,
-#comments ul,
-#comments ol {
+.comment-content ul,
+.comment-content ol {
   padding: 0;
 }
 .entry-content ul li ul, .entry-content ul li ol,
 .entry-content ol li ul,
 .entry-content ol li ol,
-#comments ul li ul,
-#comments ul li ol,
-#comments ol li ul,
-#comments ol li ol {
+.comment-content ul li ul,
+.comment-content ul li ol,
+.comment-content ol li ul,
+.comment-content ol li ol {
   margin-top: 0.75rem;
 }
 .entry-content ul li + li,
 .entry-content ol li + li,
-#comments ul li + li,
-#comments ol li + li {
+.comment-content ul li + li,
+.comment-content ol li + li {
   margin-top: 0.75rem;
 }
 .entry-content > ul, .entry-content > ol,
-#comments > ul,
-#comments > ol {
+.comment-content > ul,
+.comment-content > ol {
   margin-bottom: 1.25rem;
   margin-top: 1.25rem;
 }
 @media all and (min-width: 768px) {
   .entry-content > ul, .entry-content > ol,
-#comments > ul,
-#comments > ol {
+.comment-content > ul,
+.comment-content > ol {
     margin-bottom: 1.75rem;
   }
 }

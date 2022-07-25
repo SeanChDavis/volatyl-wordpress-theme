@@ -8,11 +8,13 @@ get_header();
 
 			<div class="inner">
 
-				<h1 class="singular-title"><?php echo get_the_title(); ?></h1>
+				<?php if ( ! empty( get_the_title() ) ) { ?>
+					<h1 class="singular-title"><?php echo get_the_title(); ?></h1>
+				<?php } ?>
 				<div class="entry-meta">
 					<?php
 					volatyl_posted_on();
-					volatyl_posted_by();
+					volatyl_posted_by( $post->ID );
 					?>
 				</div>
 

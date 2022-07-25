@@ -170,7 +170,7 @@ dl {
 }
 
 table {
-	border: 2px solid;
+	border: 2px solid $contentColor;
 	border-collapse: collapse;
 
 	th, td {
@@ -276,4 +276,20 @@ img {
 .wp-block-image {
 	max-width: 100%;
 	width: 100% !important;
+}
+
+.wp-block-image {
+
+	img {
+
+		& + figcaption {
+			margin-top: 1.5rem;
+		}
+	}
+}
+
+/* Try to prevent horizontal scroll caused my long, non-breaking text */
+.main-content-wrap {
+	word-break: normal;
+	overflow-wrap: anywhere;
 }

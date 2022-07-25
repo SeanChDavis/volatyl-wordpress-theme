@@ -3,6 +3,19 @@ get_header();
 ?>
 
 	<main>
+
+		<header class="entry-header-singular">
+
+			<div class="inner">
+
+				<?php if ( ! empty( get_the_title() ) ) { ?>
+					<h1 class="singular-title"><?php echo get_the_title(); ?></h1>
+				<?php } ?>
+
+			</div>
+
+		</header>
+
 		<div class="inner">
 
 			<div class="main-content-wrap">
@@ -15,7 +28,7 @@ get_header();
 						while ( have_posts() ) :
 
 							the_post();
-							get_template_part( 'template-parts/content' );
+							get_template_part( 'template-parts/content', 'page' );
 
 						endwhile;
 
@@ -40,6 +53,7 @@ get_header();
 			</div>
 
 		</div>
+
 	</main>
 
 <?php

@@ -1,0 +1,42 @@
+.button,
+button,
+input[type="submit"],
+.volatyl-button {
+	@include bodyFontSmallest;
+	background: $contentColor;
+	border: none;
+	border-radius: 3px;
+	color: #fff;
+	cursor: pointer;
+	font-weight: 600;
+	height: 45px;
+	letter-spacing: 1px;
+	line-height: 1;
+	padding: 1rem;
+	text-transform: uppercase;
+	vertical-align: bottom;
+
+	&:active,
+	&:focus,
+	&:hover {
+		background: $linkColor;
+	}
+}
+
+input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]) {
+	height: 45px;
+}
+
+input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]),
+textarea {
+	@include bodyFontSmaller;
+	border: 2px solid $contentColor;
+	border-radius: 3px;
+	padding: 7px 9px;
+	vertical-align: bottom;
+
+	&:active,
+	&:focus {
+		border-color: $linkColor;
+	}
+}

@@ -18,13 +18,13 @@
 			<div class="entry-meta">
 				<?php
 				volatyl_posted_on();
-				volatyl_posted_by();
+				volatyl_posted_by( $post->ID );
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php // volatyl_post_thumbnail(); ?>
+	<?php volatyl_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
