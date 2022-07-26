@@ -1,0 +1,21 @@
+.dark-background {
+	background: $baseColor;
+	color: #fff;
+
+	.button,
+	button,
+	input[type="submit"],
+	.v-button {
+		background: $linkColor;
+
+		&:active,
+		&:focus,
+		&:hover {
+			background: darken( $linkColor, 10% );
+		}
+	}
+}
+
+.gray-background {
+	background: $lightBackground;
+}

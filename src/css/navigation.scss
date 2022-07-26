@@ -11,7 +11,7 @@
 			text-transform: uppercase;
 
 			a {
-				color: $contentColor;
+				color: $baseColor;
 				display: block;
 				text-decoration: none;
 			}
@@ -27,7 +27,7 @@
 
 					&:after {
 						content: '';
-						border-bottom: 6px solid $contentColor;
+						border-bottom: 6px solid $baseColor;
 						border-right: 6px solid transparent;
 						display: inline-block;
 						height: 0;
@@ -86,7 +86,7 @@
 			margin: 0;
 			padding: 0;
 
-			@media all and (min-width: $menuModal) {
+			@media all and (min-width: $menuModalMinWidth) {
 				display: flex;
 				flex-wrap: wrap;
 			}
@@ -101,7 +101,7 @@
 					}
 
 					& > .sub-menu {
-						background: $menuModalBackground;
+						background: $menuModalMinWidthBackground;
 						border-radius: 5px;
 						display: none;
 						padding: 7px 1rem;
@@ -185,7 +185,7 @@
 		@include bodyFontSmallest;
 		background: transparent;
 		border: none;
-		color: $contentColor;
+		color: $baseColor;
 		display: inline-block;
 		font-weight: 700;
 		height: unset;
@@ -203,7 +203,7 @@
 			text-decoration: underline;
 		}
 
-		@media all and (min-width: $menuModal) {
+		@media all and (min-width: $menuModalMinWidth) {
 			display: none;
 		}
 	}
@@ -240,7 +240,7 @@
 				}
 
 				#primary-menu {
-					background: $menuModalBackground;
+					background: $menuModalMinWidthBackground;
 					border-radius: 5px;
 					box-shadow: 0 0 75px 20px rgba(0, 0, 0, 0.3);display: flex;
 					display: flex;

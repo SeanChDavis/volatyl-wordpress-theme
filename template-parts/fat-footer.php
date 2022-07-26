@@ -5,15 +5,15 @@
  * This file is only reached if at least one of the fat footer areas is in use.
  * See volatyl_has_fat_footer_content().
  *
- * The ".fat-footer-areas.volatyl-grid" element is display: grid, thanks to the
- * .volatyl-grid class. The child elements will adjust to fill the space based
+ * The ".fat-footer-areas.v-grid" element is display: grid, thanks to the
+ * .v-grid class. The child elements will adjust to fill the space based
  * on the number of fat footer areas in use. This is done through JavaScript,
- * adding another class of volatyl-grid-columns_# to the element, where # is
+ * adding another class of v-grid-columns_# to the element, where # is
  * equal to the number of areas in use.
  *
  * Example:
  *
- * <div class="fat-footer-areas volatyl-grid volatyl-grid-columns_4">
+ * <div class="fat-footer-areas v-grid v-grid-columns_4">
  * ... fat footer areas ...
  * </div>
  */
@@ -21,7 +21,7 @@
 
 <div class="fat-footer">
 	<div class="inner">
-		<div class="fat-footer-areas volatyl-grid">
+		<div class="fat-footer-areas v-grid">
 
 			<?php
 			$fat_footer_areas = array(

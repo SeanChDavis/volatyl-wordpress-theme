@@ -1,9 +1,9 @@
 #comments {
-	border-top: 2px solid darken($lightBackground, 5%);
+	border-top: 2px solid $lightBorder;
 	padding-top: 2.5rem;
 
 	.comments-title {
-		border-bottom: 2px solid darken($lightBackground, 5%);
+		border-bottom: 2px solid $lightBorder;
 		padding-bottom: 2.5rem;
 		margin-bottom: 2.5rem;
 	}
@@ -16,7 +16,7 @@
 			@include bodyFontSmall;
 
 			&:not(:last-child) {
-				border-bottom: 2px solid darken($lightBackground, 5%);
+				border-bottom: 2px solid $lightBorder;
 				padding-bottom: 2.5rem;
 				margin-bottom: 2.5rem;
 			}
@@ -65,7 +65,7 @@
 						.fn {
 
 							a {
-								color: $contentColor;
+								color: $baseColor;
 								text-decoration: none;
 
 								&:active,
@@ -147,7 +147,7 @@
 					}
 
 					h4, .h4 {
-						color: lighten( $contentColor, 10% );
+						color: lighten( $baseColor, 10% );
 						font-size: 1.125rem;
 						line-height: 1.4;
 						text-transform: uppercase;
@@ -208,7 +208,7 @@
 
 			.comment {
 				padding-left: 1rem;
-				border-left: 2px solid darken($lightBackground, 5%);
+				border-left: 2px solid $lightBorder;
 				margin-top: 3rem;
 
 				@media all and (min-width: $smMinWidth) {
@@ -216,7 +216,7 @@
 				}
 
 				&:not(:last-child) {
-					border-bottom: 2px solid darken($lightBackground, 5%);
+					border-bottom: 2px solid $lightBorder;
 				}
 
 				.avatar {

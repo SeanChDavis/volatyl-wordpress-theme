@@ -1,25 +1,27 @@
-.hero {
-	background: $lightBackground;
+.site-hero {
 
 	.inner {
 
-		& > [class*="-title"] {
+		.hero {
 
-			@media all and (min-width: $mdMinWidth) {
-				font-size: 5rem;
+			& > [class*="-title"] {
+
+				@media all and (min-width: $mdMinWidth) {
+					font-size: 5rem;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
 			}
 
-			&:last-child {
-				margin-bottom: 0;
-			}
-		}
+			& > [class*="-description"] {
+				@include bodyFontSmaller;
+				max-width: 765px;
 
-		& > [class*="-description"] {
-			@include bodyFontSmaller;
-			max-width: 765px;
-
-			@media all and (min-width: $smMinWidth) {
-				@include bodyFontSmall;
+				@media all and (min-width: $smMinWidth) {
+					@include bodyFontSmall;
+				}
 			}
 		}
 	}

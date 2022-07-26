@@ -1,0 +1,20 @@
+.front-page {
+
+	.recent-posts {
+
+		.recent-posts-title {
+			@include bodyFontSmaller;
+			color: $lightText;
+			margin-bottom: 1.5rem;
+			text-transform: uppercase;
+		}
+
+		.v-grid-items {
+			margin-bottom: 2.5rem;
+		}
+	}
+
+	.get-in-touch {
+		text-align: center;
+	}
+}

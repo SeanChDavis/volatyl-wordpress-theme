@@ -1,18 +1,20 @@
 .button,
 button,
 input[type="submit"],
-.volatyl-button {
+.v-button {
 	@include bodyFontSmallest;
-	background: $contentColor;
+	background: $baseColor;
 	border: none;
 	border-radius: 3px;
 	color: #fff;
 	cursor: pointer;
+	display: inline-block;
 	font-weight: 600;
-	height: 45px;
+	height: 3em;
 	letter-spacing: 1px;
 	line-height: 1;
-	padding: 1rem;
+	padding: 1em;
+	text-decoration: none;
 	text-transform: uppercase;
 	vertical-align: bottom;
 
@@ -20,6 +22,11 @@ input[type="submit"],
 	&:focus,
 	&:hover {
 		background: $linkColor;
+		text-decoration: none;
+	}
+
+	&.large {
+		font-size: 1.15rem;
 	}
 }
 
@@ -30,7 +37,7 @@ input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]) {
 input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]),
 textarea {
 	@include bodyFontSmaller;
-	border: 2px solid $contentColor;
+	border: 2px solid $baseColor;
 	border-radius: 3px;
 	padding: 7px 9px;
 	vertical-align: bottom;

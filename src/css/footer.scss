@@ -4,13 +4,14 @@
 
 	& > .inner {
 		padding-bottom: 0;
+		padding-top: 0;
 
 		.fat-footer-areas {
-			border-bottom: 2px solid darken( $lightBackground, 5% );
+			border-bottom: 2px solid $lightBorder;
 			padding-bottom: 2rem;
 
 			@media all and (min-width: $xsMinWidth) {
-				padding-bottom: 3rem;
+				padding: 4.5rem 0;
 			}
 
 			.widget {

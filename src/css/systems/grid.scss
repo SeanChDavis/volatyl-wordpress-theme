@@ -1,30 +1,20 @@
-.volatyl-grid {
+/**
+ * Basic grid system based on 4, 3, 2, and 1-column grid layouts
+ */
+.v-grid {
 	display: grid;
-	gap: 2.5rem;
+	gap: 3rem;
 
-	&.volatyl-grid-columns_1 {
-		/* Well, this is awkward. */
-	}
+	&.v-grid-columns_1 {}
 
-	&.volatyl-grid-columns_2 {
+	&.v-grid-columns_2 {
 
 		@media all and (min-width: $smMinWidth) {
 			grid-template-columns: 1fr 1fr;
 		}
 	}
 
-	&.volatyl-grid-columns_3 {
-
-		@media all and (min-width: $smMinWidth) {
-			grid-template-columns: 1fr 1fr;
-		}
-
-		@media all and (min-width: $mdMinWidth) {
-			grid-template-columns: repeat( 3, 1fr );
-		}
-	}
-
-	&.volatyl-grid-columns_4 {
+	&.v-grid-columns_3 {
 
 		@media all and (min-width: $smMinWidth) {
 			grid-template-columns: 1fr 1fr;
@@ -33,26 +23,123 @@
 		@media all and (min-width: $mdMinWidth) {
 			grid-template-columns: repeat( 3, 1fr );
 		}
+	}
 
-		@media all and (min-width: $lgMinWidth) {
+	&.v-grid-columns_4 {
+
+		@media all and (min-width: $smMinWidth) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media all and (min-width: $mdMinWidth) {
 			grid-template-columns: repeat( 4, 1fr );
 		}
 	}
-}
 
-.volatyl-grid-items {
-
-	.volatyl-grid-item-wrapper {
-		background: $lightBackground;
-		border-radius: 8px;
-		padding: 1.25rem;
+	/**
+	 * Center column content that has width limits on wider screens
+	 */
+	&.v-grid-centered-column {
+		grid-template-columns: 1fr;
 
 		@media all and (min-width: $mdMinWidth) {
-			padding: 2rem;
+			grid-template-columns: 1fr 5fr 1fr;
 		}
 
-		.volatyl-grid-item {
+		@media all and (min-width: $lgMinWidth) {
+			grid-template-columns: 1fr 3fr 1fr;
+		}
 
+		.v-grid-centered-column-content {
+
+			@media all and (min-width: $mdMinWidth) {
+				grid-column-start: 2;
+				grid-column-end: 3;
+			}
+		}
+	}
+
+	/**
+	 * Generic card styles to be used alongside the above grid system
+	 */
+	[class*="-item-wrapper"] {
+		background: $lightBackground;
+		border-radius: 8px;
+
+		[class*="-item-container"] {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+
+			[class*="-item-media"] {
+				padding: 0;
+				margin: 0;
+
+				img {
+					border-radius: 8px 8px 0 0;
+					vertical-align: top;
+				}
+			}
+
+			[class*="-item-header"] {
+				padding: 1.25rem 1.25rem .75rem;
+
+				@media all and (min-width: $mdMinWidth) {
+					padding: 2rem 2rem 1rem;
+				}
+
+				[class*="-item-title"] {
+					margin-bottom: 4px;
+
+					a {
+						text-decoration: none;
+
+						&:active,
+						&:focus,
+						&:hover {
+							color: $linkColor;
+						}
+					}
+				}
+
+				[class*="-item-meta"] {
+					@include bodyFontSmallest;
+					display: block;
+					line-height: 1;
+
+					a {
+						text-decoration: none;
+
+						&:active,
+						&:focus,
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+
+			[class*="-item-body"] {
+				flex: 1 0 auto;
+				padding: .5rem 1.25rem 1rem;
+
+				@media all and (min-width: $mdMinWidth) {
+					padding: .5rem 2rem 1.25rem;
+				}
+
+				[class*="-item-description"] {
+					@include bodyFontSmall;
+				}
+			}
+
+			[class*="-item-footer"] {
+				@include bodyFontSmaller;
+				padding: .5rem 1.25rem 1.75rem;
+
+				@media all and (min-width: $mdMinWidth) {
+					padding: .5rem 2rem 2.25rem;
+				}
+			}
 		}
 	}
 }

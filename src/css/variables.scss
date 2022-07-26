@@ -1,10 +1,14 @@
 $HTMLBackground: #fff;
 $bodyBackground: #fff;
 
-$contentColor: #313940;
-$linkColor: lighten( $contentColor, 15% );
+$baseColor: #313940;
 
-$lightBackground: lighten( $contentColor, 75% );
+$linkColor: lighten( $baseColor, 15% );
+
+$lightBackground: lighten( $baseColor, 75% );
+
+$lightText: lighten( $baseColor, 25% );
+$lightBorder: darken( $lightBackground, 5% );
 
 /* Min-width Breakpoints */
 $xsMinWidth: 560px;
@@ -14,5 +18,5 @@ $lgMinWidth: 1200px;
 $xlMinWidth: 1540px;
 
 /* Navigation */
-$menuModalBackground: $contentColor;
-$menuModal: $mdMinWidth;
+$menuModalMinWidthBackground: lighten( $baseColor, 5% );
+$menuModalMinWidth: $mdMinWidth;
