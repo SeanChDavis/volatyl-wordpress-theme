@@ -3,6 +3,23 @@ get_header();
 ?>
 
 	<main>
+
+		<header class="jumbo-header">
+
+			<div class="inner">
+
+				<?php if ( ! empty( get_the_title() ) ) { ?>
+					<h1 class="archive-title"><?php echo the_archive_title(); ?></h1>
+				<?php } ?>
+
+				<div class="archive-description">
+					<?php ! empty( the_archive_description() ) ? the_archive_description() : ''; ?>
+				</div>
+
+			</div>
+
+		</header>
+
 		<div class="inner">
 
 			<div class="main-content-wrap">
@@ -35,6 +52,7 @@ get_header();
 			</div>
 
 		</div>
+
 	</main>
 
 <?php

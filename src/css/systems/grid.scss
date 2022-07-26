@@ -16,6 +16,10 @@
 	&.volatyl-grid-columns_3 {
 
 		@media all and (min-width: $smMinWidth) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media all and (min-width: $mdMinWidth) {
 			grid-template-columns: repeat( 3, 1fr );
 		}
 	}
@@ -27,7 +31,28 @@
 		}
 
 		@media all and (min-width: $mdMinWidth) {
+			grid-template-columns: repeat( 3, 1fr );
+		}
+
+		@media all and (min-width: $lgMinWidth) {
 			grid-template-columns: repeat( 4, 1fr );
+		}
+	}
+}
+
+.volatyl-grid-items {
+
+	.volatyl-grid-item-wrapper {
+		background: $lightBackground;
+		border-radius: 8px;
+		padding: 1.25rem;
+
+		@media all and (min-width: $mdMinWidth) {
+			padding: 2rem;
+		}
+
+		.volatyl-grid-item {
+
 		}
 	}
 }

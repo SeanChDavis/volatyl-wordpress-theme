@@ -185,8 +185,11 @@
 		@include bodyFontSmallest;
 		background: transparent;
 		border: none;
+		color: $contentColor;
 		display: inline-block;
 		font-weight: 700;
+		height: unset;
+		letter-spacing: 0;
 		padding: 0;
 		text-transform: uppercase;
 

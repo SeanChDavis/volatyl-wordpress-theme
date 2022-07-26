@@ -1,0 +1,11 @@
+.widget {
+	@include bodyFontSmaller;
+
+	ul {
+		margin: 0 0 0 1.125rem;
+	}
+
+	ol {
+		margin: 0 0 0 1.3rem;
+	}
+}

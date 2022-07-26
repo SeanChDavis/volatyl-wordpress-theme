@@ -1,0 +1,49 @@
+.jumbo-header {
+	background: $lightBackground;
+
+	.inner {
+
+		& > [class*="-title"] {
+			margin-bottom: .75rem;
+			max-width: 770px;
+
+			@media all and (min-width: $lgMinWidth) {
+				max-width: 940px;
+			}
+		}
+
+		& > [class*="-meta"],
+		& > [class*="-description"] {
+			@include bodyFontSmallest;
+			max-width: 765px;
+
+			@media all and (min-width: $smMinWidth) {
+				@include bodyFontSmaller;
+			}
+		}
+	}
+}
+
+.no-sidebar {
+
+	.jumbo-header {
+		text-align: center;
+
+		.inner {
+
+			& > [class*="-title"] {
+				margin: 0 auto .75rem;
+			}
+
+			& > [class*="-meta"],
+			& > [class*="-description"] {
+				@include bodyFontSmallest;
+				margin: 1rem auto 0;
+
+				@media all and (min-width: $smMinWidth) {
+					@include bodyFontSmaller;
+				}
+			}
+		}
+	}
+}

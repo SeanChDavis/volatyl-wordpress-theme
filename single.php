@@ -4,7 +4,7 @@ get_header();
 
 	<main>
 
-		<header class="entry-header-singular">
+		<header class="jumbo-header">
 
 			<div class="inner">
 

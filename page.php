@@ -4,7 +4,7 @@ get_header();
 
 	<main>
 
-		<header class="entry-header-singular">
+		<header class="jumbo-header">
 
 			<div class="inner">
 
@@ -35,9 +35,9 @@ get_header();
 						the_posts_navigation();
 
 						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
-						endif;
+//						if ( comments_open() || get_comments_number() ) :
+//							comments_template();
+//						endif;
 
 					else :
 

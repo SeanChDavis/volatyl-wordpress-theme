@@ -14,16 +14,22 @@
 @import "variables";
 @import "mixins";
 
+@import "markup-formatting";
+
+@import "systems/grid";
+@import "systems/hero";
+@import "systems/jumbo-header";
+
 @import "structure";
 @import "site";
 
-@import "systems/grid";
-
 @import "header";
 @import "navigation";
-@import "markup-formatting";
+@import "widget-areas";
+@import "comments";
 @import "forms";
+@import "footer";
+
 @import "archives";
 @import "singulars";
-@import "sidebar";
-@import "footer";
+@import "front-page";

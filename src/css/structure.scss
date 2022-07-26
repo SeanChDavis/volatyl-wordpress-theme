@@ -43,6 +43,22 @@ main {
 		padding: 3rem 2rem;
 	}
 
+	// Keep content width in check on tablets
+		@media all and (min-width: $smMinWidth) {
+			padding-left: 4rem;
+			padding-right: 4rem;
+		}
+
+		@media all and (min-width: 860px) {
+			padding-left: 6rem;
+			padding-right: 6rem;
+		}
+
+	@media all and (min-width: $mdMinWidth) {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
 	&.medium {
 
 		@media all and (min-width: $mdMinWidth) {

@@ -1,5 +1,26 @@
 .fat-footer {
 	@include bodyFontSmaller;
+	background: $lightBackground;
+
+	& > .inner {
+		padding-bottom: 0;
+
+		.fat-footer-areas {
+			border-bottom: 2px solid darken( $lightBackground, 5% );
+			padding-bottom: 2rem;
+
+			@media all and (min-width: $xsMinWidth) {
+				padding-bottom: 3rem;
+			}
+
+			.widget {
+
+				&:not(:last-child) {
+					margin-bottom: 1.25rem;
+				}
+			}
+		}
+	}
 }
 
 .site-footer {
