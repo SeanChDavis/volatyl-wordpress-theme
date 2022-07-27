@@ -20,9 +20,10 @@
 ?>
 
 <div class="fat-footer">
-	<div class="inner">
-		<div class="fat-footer-areas v-grid">
 
+	<div class="inner">
+
+		<div class="fat-footer-areas v-grid">
 			<?php
 			$fat_footer_areas = array(
 				'ff_a1' => array(
@@ -45,7 +46,8 @@
 				}
 			}
 			?>
-
 		</div>
+
 	</div>
+
 </div>

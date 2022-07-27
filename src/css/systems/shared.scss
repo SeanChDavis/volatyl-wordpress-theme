@@ -1,0 +1,10 @@
+/**
+ * Common element styles used across the theme
+ */
+
+.subdued-section-title {
+	@include bodyFontSmaller;
+	color: $lightText;
+	margin-bottom: 1.5rem;
+	text-transform: uppercase;
+}

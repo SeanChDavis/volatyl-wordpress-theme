@@ -1,8 +1,9 @@
 .button,
 button,
-input[type="submit"],
+[type="button"],
+[type="submit"],
+[type="reset"],
 .v-button {
-	@include bodyFontSmallest;
 	background: $baseColor;
 	border: none;
 	border-radius: 3px;
@@ -16,7 +17,6 @@ input[type="submit"],
 	padding: 1em;
 	text-decoration: none;
 	text-transform: uppercase;
-	vertical-align: bottom;
 
 	&:active,
 	&:focus,
@@ -30,13 +30,12 @@ input[type="submit"],
 	}
 }
 
-input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]) {
-	height: 45px;
+input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]) {
+	height: 3em;
 }
 
-input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]),
+input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
 textarea {
-	@include bodyFontSmaller;
 	border: 2px solid $baseColor;
 	border-radius: 3px;
 	padding: 7px 9px;

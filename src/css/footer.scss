@@ -8,9 +8,13 @@
 
 		.fat-footer-areas {
 			border-bottom: 2px solid $lightBorder;
-			padding-bottom: 2rem;
+			padding: 2rem 0;
 
 			@media all and (min-width: $xsMinWidth) {
+				padding: 3rem 0;
+			}
+
+			@media all and (min-width: $smMinWidth) {
 				padding: 4.5rem 0;
 			}
 

@@ -62,82 +62,111 @@
 	/**
 	 * Generic card styles to be used alongside the above grid system
 	 */
-	[class*="-item-wrapper"] {
-		background: $lightBackground;
-		border-radius: 8px;
+	[class*="-item-container"] {
 
-		[class*="-item-container"] {
-			display: flex;
-			flex-direction: column;
-			height: 100%;
+		// Full styles
+		&:not(.subdued) {
+			background: $lightBackground;
+			border-radius: 8px;
 
-			[class*="-item-media"] {
-				padding: 0;
-				margin: 0;
+			[class*="-item-content-wrap"] {
+				display: flex;
+				flex-direction: column;
+				height: 100%;
 
-				img {
-					border-radius: 8px 8px 0 0;
-					vertical-align: top;
-				}
-			}
+				[class*="-item-media"] {
+					padding: 0;
+					margin: 0;
 
-			[class*="-item-header"] {
-				padding: 1.25rem 1.25rem .75rem;
-
-				@media all and (min-width: $mdMinWidth) {
-					padding: 2rem 2rem 1rem;
+					img {
+						border-radius: 8px 8px 0 0;
+						vertical-align: top;
+					}
 				}
 
-				[class*="-item-title"] {
-					margin-bottom: 4px;
+				[class*="-item-header"] {
+					padding: 1.25rem 1.25rem .75rem;
 
-					a {
-						text-decoration: none;
+					@media all and (min-width: $mdMinWidth) {
+						padding: 2rem 2rem 1rem;
+					}
 
-						&:active,
-						&:focus,
-						&:hover {
-							color: $linkColor;
+					[class*="-item-title"] {
+						margin-bottom: 4px;
+
+						a {
+							text-decoration: none;
+
+							&:active,
+							&:focus,
+							&:hover {
+								color: $linkColor;
+							}
+						}
+					}
+
+					[class*="-item-meta"] {
+						@include bodyFontSmallest;
+						display: block;
+						line-height: 1;
+
+						a {
+							text-decoration: none;
+
+							&:active,
+							&:focus,
+							&:hover {
+								text-decoration: underline;
+							}
 						}
 					}
 				}
 
-				[class*="-item-meta"] {
-					@include bodyFontSmallest;
-					display: block;
-					line-height: 1;
+				[class*="-item-body"] {
+					flex: 1 0 auto;
+					padding: .5rem 1.25rem 1rem;
 
-					a {
-						text-decoration: none;
+					@media all and (min-width: $mdMinWidth) {
+						padding: .5rem 2rem 1.25rem;
+					}
 
-						&:active,
-						&:focus,
-						&:hover {
-							text-decoration: underline;
-						}
+					[class*="-item-description"] {
+						@include bodyFontSmall;
+					}
+				}
+
+				[class*="-item-footer"] {
+					@include bodyFontSmaller;
+					padding: .5rem 1.25rem 1.75rem;
+
+					@media all and (min-width: $mdMinWidth) {
+						padding: .5rem 2rem 2.25rem;
 					}
 				}
 			}
+		}
 
-			[class*="-item-body"] {
-				flex: 1 0 auto;
-				padding: .5rem 1.25rem 1rem;
+		// Condensed styles
+		&.subdued {
 
-				@media all and (min-width: $mdMinWidth) {
-					padding: .5rem 2rem 1.25rem;
+			[class*="-item-content-wrap"] {
+
+				[class*="-item-media"] {
 				}
 
-				[class*="-item-description"] {
-					@include bodyFontSmall;
+				[class*="-item-header"] {
+
+					[class*="-item-title"] {
+					}
+
+					[class*="-item-meta"] {
+					}
 				}
-			}
 
-			[class*="-item-footer"] {
-				@include bodyFontSmaller;
-				padding: .5rem 1.25rem 1.75rem;
+				[class*="-item-body"] {
+				}
 
-				@media all and (min-width: $mdMinWidth) {
-					padding: .5rem 2rem 2.25rem;
+				[class*="-item-footer"] {
 				}
 			}
 		}

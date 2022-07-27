@@ -352,3 +352,21 @@
 		}
 	}
 }
+
+.posts-navigation {
+
+	.nav-links {
+		@include bodyFontSmaller;
+		display: flex;
+		gap: 1rem;
+		justify-content: space-between;
+
+		.nav-previous {
+
+		}
+
+		.nav-next {
+			text-align: right;
+		}
+	}
+}

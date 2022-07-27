@@ -12,7 +12,7 @@ if ( post_password_required() ) {
 	<?php
 	if ( have_comments() ) :
 		?>
-		<span class="h5 comments-title">
+		<span class="h3 comments-title">
 			<?php
 			$volatyl_comment_count = get_comments_number();
 			if ( '1' === $volatyl_comment_count ) {

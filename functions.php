@@ -15,6 +15,7 @@ define ('THEME_INCLUDES', THEME_TEMPLATE_DIR . '/includes');
 // Various functions used around Volatyl
 require_once (THEME_INCLUDES . '/helper-functions.php');
 require_once (THEME_INCLUDES . '/body-class.php');
+require_once (THEME_INCLUDES . '/queries.php');
 
 require_once (THEME_INCLUDES . '/core-modifications.php');
 require_once (THEME_INCLUDES . '/template-tags.php');
@@ -38,7 +39,8 @@ function volatyl_setup() {
 	add_image_size( 'v-grid-item-media_small', 350, 175, true );
 	add_image_size( 'v-grid-item-media_medium', 600, 300, true );
 	add_image_size( 'v-grid-item-media', 600, 300, true ); // Default size
-	add_image_size( 'v-grid-item-media_large', 1168, 584, true );
+	add_image_size( 'v-grid-item-media_large', 800, 400, true );
+	add_image_size( 'v-grid-item-media_full', 1168, 584, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(

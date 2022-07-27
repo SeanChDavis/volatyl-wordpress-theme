@@ -45,10 +45,6 @@ get_header();
 							comments_template();
 						endif;
 
-					else :
-
-						get_template_part( 'template-parts/content', 'none' );
-
 					endif;
 					?>
 

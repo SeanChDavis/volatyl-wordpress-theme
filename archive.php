@@ -8,7 +8,7 @@ get_header();
 
 			<div class="inner">
 
-				<?php if ( ! empty( get_the_title() ) ) { ?>
+				<?php if ( ! empty( get_the_archive_title() ) ) { ?>
 					<h1 class="archive-title"><?php echo the_archive_title(); ?></h1>
 				<?php } ?>
 
