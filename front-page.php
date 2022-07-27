@@ -14,7 +14,7 @@ get_header();
 
 					<?php
 					$args = array(
-						'numberposts' => 6,
+						'numberposts' => 9,
 						'post_status' => 'publish'
 					);
 					$recent_posts = wp_get_recent_posts( $args );
@@ -36,7 +36,7 @@ get_header();
 									<p class="v-grid-item-description"><?php echo get_the_excerpt( $post['ID'] ); ?></p>
 								</section>
 								<footer class="v-grid-item-footer">
-									<p class="read-more"><a class="button" href="<?php echo get_permalink( $post['ID'] ); ?>">Continue reading</a></p>
+									<p class="read-more"><a class="button" href="<?php echo get_permalink( $post['ID'] ); ?>"><?php _e( 'Keep reading', 'volatyl'); ?></a></p>
 								</footer>
 							</article>
 						</div>
@@ -57,9 +57,9 @@ get_header();
 
 				<div class="v-grid v-grid-centered-column">
 					<div class="v-grid-centered-column-content">
-						<p class="h2 section-title"><?php echo sprintf( __( 'Send an email', 'volatyl' ), get_bloginfo( 'name' ) ); ?></p>
-						<p>This is your prompt to send an email to the owner of the site.</p>
-						<p class="cta-wrap"><a href="#" class="button large">Reach out</a></p>
+						<p class="h2 section-title"><?php echo sprintf( __( 'Let\'s Connect', 'volatyl' ), get_bloginfo( 'name' ) ); ?></p>
+						<p>This is a prompt to send an email to the owner of the site.</p>
+						<p class="cta-wrap"><a href="#" class="button">Reach out</a></p>
 					</div>
 				</div>
 
