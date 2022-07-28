@@ -611,6 +611,11 @@ img {
   margin-top: 1.5rem;
 }
 
+.post-password-form {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
 /* Try to prevent horizontal scroll caused my long, non-breaking text */
 .main-content-wrap {
   word-break: normal;
@@ -662,13 +667,31 @@ img {
  */
 .v-grid {
   display: grid;
-  gap: 3rem;
+  gap: 1.5rem;
   /**
    * Center column content that has width limits on wider screens
    */
   /**
-   * Generic card styles to be used alongside the above grid system
+   * Card styles to be used alongside the above grid system
    */
+}
+@media all and (min-width: 768px) {
+  .v-grid {
+    gap: 2rem;
+  }
+}
+@media all and (min-width: 992px) {
+  .v-grid {
+    gap: 3rem;
+  }
+}
+@media all and (min-width: 768px) {
+  .v-grid.v-gap-2 {
+    gap: 2rem;
+  }
+}
+.v-grid.v-gap-1 {
+  gap: 1.5rem;
 }
 @media all and (min-width: 768px) {
   .v-grid.v-grid-columns_2 {
@@ -714,6 +737,32 @@ img {
     grid-column-end: 3;
   }
 }
+.v-grid [class*=-item-container] {
+  /**
+   * Shared styles across all cards
+   */
+  /**
+   * Fully styled cards
+   */
+  /**
+   * Lightly design cards
+   */
+}
+.v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] {
+  margin-bottom: 4px;
+}
+.v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] {
+  font-size: 13px;
+  line-height: 1.6;
+  display: block;
+  line-height: 1;
+}
+.v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] a {
+  text-decoration: none;
+}
+.v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] a:active, .v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] a:focus, .v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] a:hover {
+  text-decoration: underline;
+}
 .v-grid [class*=-item-container]:not(.subdued) {
   background: #f7f7f9;
   border-radius: 8px;
@@ -739,26 +788,11 @@ img {
     padding: 2rem 2rem 1rem;
   }
 }
-.v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] {
-  margin-bottom: 4px;
-}
 .v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a {
   text-decoration: none;
 }
 .v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a:active, .v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a:focus, .v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a:hover {
   color: #52546b;
-}
-.v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] {
-  font-size: 13px;
-  line-height: 1.6;
-  display: block;
-  line-height: 1;
-}
-.v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] a {
-  text-decoration: none;
-}
-.v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] a:active, .v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] a:focus, .v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] a:hover {
-  text-decoration: underline;
 }
 .v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-body] {
   flex: 1 0 auto;
@@ -826,7 +860,19 @@ img {
     line-height: 1.6;
   }
 }
-
+.jumbo-header .inner > [class*=-content-container] {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+@media all and (min-width: 992px) {
+  .jumbo-header .inner > [class*=-content-container] {
+    align-items: center;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: space-between;
+  }
+}
 .no-sidebar .jumbo-header {
   text-align: center;
 }
@@ -848,12 +894,37 @@ img {
 /**
  * Common element styles used across the theme
  */
-.subdued-section-title {
+.subdued-title {
   font-size: 15px;
   line-height: 1.6;
+  font-family: "Red Hat Display", sans-serif;
   color: #686a88;
+  display: block;
+  font-weight: 700;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-spacing {
+  margin: 0;
+  padding: 0;
+}
+
+.post-type-grid {
+  margin-bottom: 1.5rem;
+}
+@media all and (min-width: 768px) {
+  .post-type-grid {
+    margin-bottom: 3rem;
+  }
 }
 
 #page {
@@ -974,6 +1045,12 @@ body {
   line-height: 1.5;
 }
 @media all and (min-width: 560px) {
+  body {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+}
+@media all and (min-width: 768px) {
   body {
     font-size: 18px;
     line-height: 1.6;
@@ -1538,7 +1615,7 @@ body {
   max-width: 400px;
 }
 #comments #respond #commentform .comment-form-cookies-consent label {
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.6;
 }
 #comments #respond #commentform .required {
@@ -1551,6 +1628,7 @@ button,
 [type=submit],
 [type=reset],
 .v-button {
+  font-family: "Red Hat Display", sans-serif;
   background: #313240;
   border: none;
   border-radius: 3px;
@@ -1610,6 +1688,19 @@ textarea:focus {
   border-color: #52546b;
 }
 
+.search-form {
+  font-size: 15px;
+  line-height: 1.6;
+}
+.search-form .search-submit {
+  margin-top: 3px;
+}
+@media all and (min-width: 560px) {
+  .search-form .search-submit {
+    margin-top: 0;
+  }
+}
+
 .fat-footer {
   font-size: 15px;
   line-height: 1.6;
@@ -1667,12 +1758,8 @@ textarea:focus {
 }
 #primary-content .posts-navigation .nav-links {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: space-between;
-}
-
-.blog:not(.front-page) .post-type-grid {
-  margin-bottom: 3rem;
 }
 
 /* Catch all styles for general singulars */

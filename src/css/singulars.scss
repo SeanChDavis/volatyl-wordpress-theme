@@ -9,7 +9,7 @@ article {
 		}
 
 		.entry-meta {
-			@include bodyFontSmaller;
+			@include fontSmaller;
 		}
 	}
 
@@ -62,7 +62,7 @@ article {
 	}
 
 	.entry-footer {
-		@include bodyFontSmaller;
+		@include fontSmaller;
 		display: flex;
 		flex-direction: column;
 		gap: .5rem;

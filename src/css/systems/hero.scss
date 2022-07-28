@@ -16,11 +16,11 @@
 			}
 
 			& > [class*="-description"] {
-				@include bodyFontSmaller;
+				@include fontSmaller;
 				max-width: 765px;
 
 				@media all and (min-width: $smMinWidth) {
-					@include bodyFontSmall;
+					@include fontSmall;
 				}
 			}
 		}

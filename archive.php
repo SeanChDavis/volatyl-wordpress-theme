@@ -20,36 +20,38 @@ get_header();
 
 		</header>
 
-		<div class="inner">
+		<div class="inner medium">
 
-			<div class="main-content-wrap">
+			<?php
+			if ( have_posts() ) :
+				?>
 
-				<div id="primary-content">
+				<div class="post-type-grid">
 
-					<?php
-					if ( have_posts() ) :
+					<div class="v-grid v-grid-columns_3">
 
+						<?php
 						while ( have_posts() ) :
 
 							the_post();
-							get_template_part( 'template-parts/content' );
+							get_template_part( 'content/content', 'grid-items' );
 
-						endwhile;
+						endwhile
+						?>
 
-						the_posts_navigation();
-
-					else :
-
-						get_template_part( 'template-parts/content', 'none' );
-
-					endif;
-					?>
+					</div>
 
 				</div>
 
-				<?php dynamic_sidebar( 'Post Archive Sidebar' ); ?>
+				<?php
+				the_posts_navigation();
 
-			</div>
+			else :
+
+				get_template_part( 'content/content', 'none' );
+
+			endif;
+			?>
 
 		</div>
 

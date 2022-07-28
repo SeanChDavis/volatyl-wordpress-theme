@@ -1,28 +1,40 @@
+// Heading font
 @mixin headingFont {
 	font-family: 'Red Hat Display', sans-serif;
 }
 
+// Body font
 @mixin bodyFont {
 	font-family: 'Red Hat Text', sans-serif;
-	@include bodyFontSmall;
+	@include fontSmall;
 
 	@media all and (min-width: $xsMinWidth) {
+		@include fontSmall;
+	}
+
+	@media all and (min-width: $smMinWidth) {
 		font-size: 18px;
-		line-height: 1.6;
+		@include lineHeightBase;
 	}
 }
 
-@mixin bodyFontSmall {
+// Font size modifiers
+@mixin fontSmall {
 	font-size: 17px;
 	line-height: 1.5;
 }
 
-@mixin bodyFontSmaller {
+@mixin fontSmaller {
 	font-size: 15px;
-	line-height: 1.6;
+	@include lineHeightBase;
 }
 
-@mixin bodyFontSmallest {
+@mixin fontSmallest {
 	font-size: 13px;
+	@include lineHeightBase;
+}
+
+// Line height standard
+@mixin lineHeightBase {
 	line-height: 1.6;
 }

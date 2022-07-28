@@ -14,11 +14,32 @@
 
 		& > [class*="-meta"],
 		& > [class*="-description"] {
-			@include bodyFontSmallest;
+			@include fontSmallest;
 			max-width: 765px;
 
 			@media all and (min-width: $smMinWidth) {
-				@include bodyFontSmaller;
+				@include fontSmaller;
+			}
+		}
+
+		& > [class*="-content-container"] {
+			display: flex;
+			flex-direction: column;
+			gap: .5rem;
+
+			@media all and (min-width: $mdMinWidth) {
+				align-items: center;
+				flex-direction: row;
+				gap: 1.5rem;
+				justify-content: space-between;
+			}
+
+			& > [class*="-content-left"] {
+
+			}
+
+			& > [class*="-content-right"] {
+
 			}
 		}
 	}
@@ -37,11 +58,11 @@
 
 			& > [class*="-meta"],
 			& > [class*="-description"] {
-				@include bodyFontSmallest;
+				@include fontSmallest;
 				margin: 1rem auto 0;
 
 				@media all and (min-width: $smMinWidth) {
-					@include bodyFontSmaller;
+					@include fontSmaller;
 				}
 			}
 		}

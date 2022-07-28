@@ -2,9 +2,33 @@
  * Common element styles used across the theme
  */
 
-.subdued-section-title {
-	@include bodyFontSmaller;
+.subdued-title {
+	@include fontSmaller;
+	@include headingFont;
 	color: $lightText;
+	display: block;
+	font-weight: 700;
 	margin-bottom: 1.5rem;
 	text-transform: uppercase;
+}
+
+.no-margin {
+	margin: 0;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.no-spacing {
+	margin: 0;
+	padding: 0;
+}
+
+.post-type-grid {
+	margin-bottom: 1.5rem;
+
+	@media all and (min-width: $smMinWidth) {
+		margin-bottom: 3rem;
+	}
 }

@@ -14,7 +14,7 @@
 		<div class="site-description">
 			<span class="blog-description"><?php echo bloginfo( 'description' ); ?></span>
 		</div>
-
+		
 	</div>
 
 </footer>

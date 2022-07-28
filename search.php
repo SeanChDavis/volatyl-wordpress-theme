@@ -8,12 +8,17 @@ get_header();
 
 			<div class="inner">
 
-				<h1 class="archive-title">
-				<?php
-				/* translators: %s: search query. */
-				printf( esc_html__( 'Search: %s', 'volatyl' ), '<span>' . get_search_query() . '</span>' );
-				?>
-				</h1>
+				<div class="search-content-container">
+
+					<div class="search-content-left">
+						<h1 class="archive-title"><span class="subdued-title no-spacing"><?php printf( esc_html__( 'Search results for:', 'volatyl' ) ); ?></span><?php echo esc_html( get_search_query() ); ?></h1>
+					</div>
+
+					<div class="search-content-right">
+						<?php get_search_form(); ?>
+					</div>
+
+				</div>
 
 			</div>
 
@@ -23,7 +28,7 @@ get_header();
 
 			<div class="post-type-grid">
 
-				<div class="v-grid v-grid-columns_3">
+				<div class="v-grid v-grid-columns_3 v-gap-2">
 
 					<?php
 					if ( have_posts() ) :
@@ -31,7 +36,7 @@ get_header();
 						while ( have_posts() ) :
 
 							the_post();
-							get_template_part( 'template-parts/content', 'grid-items' );
+							get_template_part( 'content/content', 'grid-items' );
 
 						endwhile;
 
@@ -39,7 +44,7 @@ get_header();
 
 					else :
 
-						get_template_part( 'template-parts/content', 'none' );
+						get_template_part( 'content/content', 'none' );
 
 					endif;
 					?>

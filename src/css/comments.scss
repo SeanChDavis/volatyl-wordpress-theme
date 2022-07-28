@@ -11,7 +11,7 @@
 
 		.comment,
 		.pingback {
-			@include bodyFontSmall;
+			@include fontSmall;
 
 			&:not(:last-child) {
 				border-bottom: 2px solid $lightBorder;
@@ -80,7 +80,7 @@
 					}
 
 					.comment-metadata {
-						@include bodyFontSmallest;
+						@include fontSmallest;
 					}
 				}
 
@@ -200,7 +200,7 @@
 				}
 
 				.reply {
-					@include bodyFontSmallest;
+					@include fontSmallest;
 				}
 			}
 
@@ -234,7 +234,7 @@
 				line-height: 1;
 
 				#cancel-comment-reply-link {
-					@include bodyFontSmallest;
+					@include fontSmallest;
 					color: $linkColor;
 					font-weight: 400;
 					line-height: 1;
@@ -246,7 +246,7 @@
 
 			.logged-in-as,
 			.comment-notes {
-				@include bodyFontSmallest;
+				@include fontSmallest;
 
 				.required-field-message {
 					display: block;
@@ -259,7 +259,7 @@
 			.comment-form-url {
 
 				& > label {
-					@include bodyFontSmaller;
+					@include fontSmaller;
 					@include headingFont;
 					display: block;
 					font-weight: 600;
@@ -283,7 +283,7 @@
 			.comment-form-cookies-consent {
 
 				label {
-					@include bodyFontSmallest;
+					@include fontSmaller;
 				}
 			}
 

@@ -8,7 +8,7 @@ get_header();
 
 			<div class="inner large">
 
-				<h2 class="subdued-section-title"><?php echo sprintf( __( 'From the blog', 'volatyl' ), get_bloginfo( 'name' ) ); ?></h2>
+				<span class="subdued-title"><?php echo sprintf( __( 'From the blog', 'volatyl' ), get_bloginfo( 'name' ) ); ?></span>
 
 				<div class="post-type-grid">
 
@@ -22,7 +22,7 @@ get_header();
 						$recent_posts = wp_get_recent_posts( $args );
 
 						foreach ( $recent_posts as $post ) {
-							get_template_part( 'template-parts/content', 'grid-items', $post );
+							get_template_part( 'content/content', 'grid-items', $post );
 						}
 						wp_reset_query();
 						?>

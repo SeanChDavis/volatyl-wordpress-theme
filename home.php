@@ -5,17 +5,9 @@ $blog_page_object = get_queried_object();
 
 	<main>
 
-		<header class="jumbo-header">
-
-			<div class="inner">
-
-				<h1 class="singular-title"><?php printf( __( 'The latest from %s', 'volatyl' ), get_bloginfo( 'name' ) ); ?></h1>
-
-			</div>
-
-		</header>
-
 		<div class="inner medium">
+
+			<h1 class="subdued-title"><?php printf( __( 'Most recently published on %s', 'volatyl' ), get_bloginfo( 'name' ) ); ?></h1>
 
 				<?php
 				if ( have_posts() ) :
@@ -29,7 +21,7 @@ $blog_page_object = get_queried_object();
 							while ( have_posts() ) :
 
 								the_post();
-								get_template_part( 'template-parts/content', 'grid-items' );
+								get_template_part( 'content/content', 'grid-items' );
 
 							endwhile
 							?>
@@ -43,7 +35,7 @@ $blog_page_object = get_queried_object();
 
 				else :
 
-					get_template_part( 'template-parts/content', 'none' );
+					get_template_part( 'content/content', 'none' );
 
 				endif;
 				?>

@@ -1,0 +1,11 @@
+.search-form {
+	@include fontSmaller;
+
+	.search-submit {
+		margin-top: 3px;
+
+		@media all and (min-width: $xsMinWidth) {
+			margin-top: 0;
+		}
+	}
+}

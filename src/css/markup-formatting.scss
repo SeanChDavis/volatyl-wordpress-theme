@@ -288,6 +288,10 @@ img {
 	}
 }
 
+.post-password-form {
+	@include fontSmaller;
+}
+
 /* Try to prevent horizontal scroll caused my long, non-breaking text */
 .main-content-wrap {
 	word-break: normal;

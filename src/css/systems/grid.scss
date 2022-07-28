@@ -3,7 +3,26 @@
  */
 .v-grid {
 	display: grid;
-	gap: 3rem;
+	gap: 1.5rem;
+
+	@media all and (min-width: $smMinWidth) {
+		gap: 2rem;
+	}
+
+	@media all and (min-width: $mdMinWidth) {
+		gap: 3rem;
+	}
+
+	&.v-gap-2 {
+
+		@media all and (min-width: $smMinWidth) {
+			gap: 2rem;
+		}
+	}
+
+	&.v-gap-1 {
+		gap: 1.5rem;
+	}
 
 	&.v-grid-columns_1 {}
 
@@ -60,11 +79,44 @@
 	}
 
 	/**
-	 * Generic card styles to be used alongside the above grid system
+	 * Card styles to be used alongside the above grid system
 	 */
 	[class*="-item-container"] {
 
-		// Full styles
+
+		/**
+		 * Shared styles across all cards
+		 */
+		[class*="-item-content-wrap"] {
+
+			[class*="-item-header"] {
+
+				[class*="-item-title"] {
+					margin-bottom: 4px;
+				}
+
+				[class*="-item-meta"] {
+					@include fontSmallest;
+					display: block;
+					line-height: 1;
+
+					a {
+						text-decoration: none;
+
+						&:active,
+						&:focus,
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+
+
+		/**
+		 * Fully styled cards
+		 */
 		&:not(.subdued) {
 			background: $lightBackground;
 			border-radius: 8px;
@@ -92,7 +144,6 @@
 					}
 
 					[class*="-item-title"] {
-						margin-bottom: 4px;
 
 						a {
 							text-decoration: none;
@@ -106,19 +157,6 @@
 					}
 
 					[class*="-item-meta"] {
-						@include bodyFontSmallest;
-						display: block;
-						line-height: 1;
-
-						a {
-							text-decoration: none;
-
-							&:active,
-							&:focus,
-							&:hover {
-								text-decoration: underline;
-							}
-						}
 					}
 				}
 
@@ -131,12 +169,12 @@
 					}
 
 					[class*="-item-description"] {
-						@include bodyFontSmall;
+						@include fontSmall;
 					}
 				}
 
 				[class*="-item-footer"] {
-					@include bodyFontSmaller;
+					@include fontSmaller;
 					padding: .5rem 1.25rem 1.75rem;
 
 					@media all and (min-width: $mdMinWidth) {
@@ -146,28 +184,26 @@
 			}
 		}
 
-		// Condensed styles
+
+		/**
+		 * Lightly design cards
+		 */
 		&.subdued {
 
 			[class*="-item-content-wrap"] {
 
-				[class*="-item-media"] {
-				}
+				[class*="-item-media"] {}
 
 				[class*="-item-header"] {
 
-					[class*="-item-title"] {
-					}
+					[class*="-item-title"] {}
 
-					[class*="-item-meta"] {
-					}
+					[class*="-item-meta"] {}
 				}
 
-				[class*="-item-body"] {
-				}
+				[class*="-item-body"] {}
 
-				[class*="-item-footer"] {
-				}
+				[class*="-item-footer"] {}
 			}
 		}
 	}

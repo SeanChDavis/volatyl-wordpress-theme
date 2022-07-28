@@ -4,6 +4,7 @@ button,
 [type="submit"],
 [type="reset"],
 .v-button {
+	@include headingFont;
 	background: $baseColor;
 	border: none;
 	border-radius: 3px;
