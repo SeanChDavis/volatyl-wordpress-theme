@@ -503,6 +503,19 @@ dl {
   }
 }
 
+hr,
+.wp-block-separator {
+  border-bottom: 1px solid #8385a0;
+  border-top: 1px solid #8385a0;
+  margin: 2rem 0;
+}
+@media all and (min-width: 992px) {
+  hr,
+.wp-block-separator {
+    margin: 3rem 0;
+  }
+}
+
 table {
   border: 2px solid #313240;
   border-collapse: collapse;
@@ -837,9 +850,6 @@ img {
   }
 }
 
-.jumbo-header {
-  background: #f7f7f9;
-}
 .jumbo-header .inner > [class*=-title] {
   margin-bottom: 0.75rem;
   max-width: 770px;
@@ -880,15 +890,7 @@ img {
   margin: 0 auto 0.75rem;
 }
 .no-sidebar .jumbo-header .inner > [class*=-meta], .no-sidebar .jumbo-header .inner > [class*=-description] {
-  font-size: 13px;
-  line-height: 1.6;
   margin: 1rem auto 0;
-}
-@media all and (min-width: 768px) {
-  .no-sidebar .jumbo-header .inner > [class*=-meta], .no-sidebar .jumbo-header .inner > [class*=-description] {
-    font-size: 15px;
-    line-height: 1.6;
-  }
 }
 
 /**
@@ -903,6 +905,10 @@ img {
   font-weight: 700;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
+}
+
+.text-align-center {
+  text-align: center;
 }
 
 .no-margin {
@@ -1069,18 +1075,23 @@ body {
 #masthead .inner:not(.medium) > * {
   align-self: center;
 }
-#masthead .site-title {
-  font-weight: 900;
+#masthead .inner:not(.medium) .site-branding .custom-logo-link .custom-logo {
+  max-width: 180px;
+  vertical-align: bottom;
+}
+#masthead .inner:not(.medium) .site-branding .site-title {
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 700;
   font-size: 1.25rem;
   line-height: 1;
   margin: 0;
 }
-#masthead .site-title a {
+#masthead .inner:not(.medium) .site-branding .site-title a {
   color: #313240;
   line-height: 1;
   text-decoration: none;
 }
-#masthead .site-title a:active, #masthead .site-title a:focus, #masthead .site-title a:hover {
+#masthead .inner:not(.medium) .site-branding .site-title a:active, #masthead .inner:not(.medium) .site-branding .site-title a:focus, #masthead .inner:not(.medium) .site-branding .site-title a:hover {
   color: #52546b;
 }
 
@@ -1367,7 +1378,7 @@ body {
 #comments .comment-list .comment.byuser .comment-body .comment-meta .comment-author:after,
 #comments .comment-list .pingback.byuser .comment-body .comment-meta .comment-author:after {
   border-radius: 50%;
-  content: url("images/icons/byuser-indicator.svg");
+  content: url("../../images/icons/byuser-indicator.svg");
   height: 19px;
   left: -2px;
   position: absolute;
@@ -1606,7 +1617,7 @@ body {
   font-weight: 600;
 }
 #comments #respond #commentform .comment-form-comment textarea#comment {
-  max-width: 560px;
+  max-width: 650px;
   width: 100%;
 }
 #comments #respond #commentform .comment-form-author,
@@ -1688,15 +1699,15 @@ textarea:focus {
   border-color: #52546b;
 }
 
-.search-form {
+.searchform {
   font-size: 15px;
   line-height: 1.6;
 }
-.search-form .search-submit {
+.searchform .search-submit {
   margin-top: 3px;
 }
 @media all and (min-width: 560px) {
-  .search-form .search-submit {
+  .searchform .search-submit {
     margin-top: 0;
   }
 }

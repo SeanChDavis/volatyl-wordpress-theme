@@ -1,5 +1,4 @@
 .jumbo-header {
-	background: $lightBackground;
 
 	.inner {
 
@@ -34,13 +33,9 @@
 				justify-content: space-between;
 			}
 
-			& > [class*="-content-left"] {
+			& > [class*="-content-left"] {}
 
-			}
-
-			& > [class*="-content-right"] {
-
-			}
+			& > [class*="-content-right"] {}
 		}
 	}
 }
@@ -58,12 +53,7 @@
 
 			& > [class*="-meta"],
 			& > [class*="-description"] {
-				@include fontSmallest;
 				margin: 1rem auto 0;
-
-				@media all and (min-width: $smMinWidth) {
-					@include fontSmaller;
-				}
 			}
 		}
 	}

@@ -2,9 +2,9 @@
 get_header();
 ?>
 
-	<main>
+	<main id="main">
 
-		<header class="jumbo-header">
+		<header class="jumbo-header gray-background">
 
 			<div class="inner">
 
@@ -32,10 +32,8 @@ get_header();
 
 						<?php
 						while ( have_posts() ) :
-
 							the_post();
 							get_template_part( 'content/content', 'grid-items' );
-
 						endwhile
 						?>
 

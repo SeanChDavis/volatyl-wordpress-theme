@@ -169,6 +169,17 @@ dl {
 	}
 }
 
+hr,
+.wp-block-separator {
+	border-bottom: 1px solid lighten( $baseColor, 35% );
+	border-top: 1px solid lighten( $baseColor, 35% );
+	margin: 2rem 0;
+
+	@media all and (min-width: $mdMinWidth) {
+		margin: 3rem 0;
+	}
+}
+
 table {
 	border: 2px solid $baseColor;
 	border-collapse: collapse;

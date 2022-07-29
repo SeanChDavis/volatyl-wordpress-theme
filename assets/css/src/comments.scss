@@ -30,7 +30,7 @@
 
 							&:after {
 								border-radius: 50%;
-								content: url("images/icons/byuser-indicator.svg");
+								content: url("../../images/icons/byuser-indicator.svg");
 								height: 19px;
 								left: -2px;
 								position: absolute;
@@ -269,7 +269,7 @@
 			.comment-form-comment {
 
 				textarea#comment {
-					max-width: 560px;
+					max-width: 650px;
 					width: 100%;
 				}
 			}

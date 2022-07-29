@@ -2,9 +2,9 @@
 get_header();
 ?>
 
-	<main>
+	<main id="main">
 
-		<header class="jumbo-header">
+		<header class="jumbo-header gray-background">
 
 			<div class="inner">
 
@@ -30,27 +30,20 @@ get_header();
 
 					<?php
 					if ( have_posts() ) :
-
 						while ( have_posts() ) :
-
 							the_post();
 							get_template_part( 'content/content', 'single' );
-
+							the_posts_navigation();
+							if ( comments_open() || get_comments_number() ) :
+								comments_template();
+							endif;
 						endwhile;
-
-						the_posts_navigation();
-
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
-						endif;
-
 					endif;
 					?>
 
 				</div>
 
-				<?php dynamic_sidebar( 'Single Post Sidebar' ); ?>
+				<?php get_sidebar(); ?>
 
 			</div>
 

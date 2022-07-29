@@ -2,9 +2,9 @@
 get_header();
 ?>
 
-	<main>
+	<main id="main">
 
-		<header class="jumbo-header">
+		<header class="jumbo-header gray-background">
 
 			<div class="inner">
 
@@ -26,32 +26,33 @@ get_header();
 
 		<div class="inner">
 
-			<div class="post-type-grid">
+			<?php
+			if ( have_posts() ) :
+				?>
 
-				<div class="v-grid v-grid-columns_3 v-gap-2">
+				<div class="post-type-grid">
 
-					<?php
-					if ( have_posts() ) :
+					<div class="v-grid v-grid-columns_3 v-gap-2">
 
+						<?php
 						while ( have_posts() ) :
-
 							the_post();
 							get_template_part( 'content/content', 'grid-items' );
-
 						endwhile;
+						?>
 
-						the_posts_navigation();
-
-					else :
-
-						get_template_part( 'content/content', 'none' );
-
-					endif;
-					?>
+					</div>
 
 				</div>
 
-			</div>
+				<?php
+
+			else :
+
+				get_template_part( 'content/content', 'none' );
+
+			endif;
+			?>
 
 		</div>
 

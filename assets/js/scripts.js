@@ -87,8 +87,8 @@
 	/**
 	 * Menu modal behavior
 	 */
-	// Get the element that wraps menu list, a direct child of the main navigation element.
-	// This element will behave as the visible area behind the actual menu modal.
+		// Get the element that wraps menu list, a direct child of the main navigation element.
+		// This element will behave as the visible area behind the actual menu modal.
 	const menuModalOuter = document.querySelector("#site-navigation > [class*='-container']");
 
 	// Conduct all the tasks required for opening the menu modal.
@@ -125,3 +125,17 @@
 	});
 
 }());
+;/**
+ * Add a class to the  site header (#masthead) if it contains a hero (.site-hero) element
+ */
+const siteHeader = document.querySelector("#masthead .site-hero");
+if (siteHeader) {
+	siteHeader.closest('#masthead').classList.add('has-hero');
+}
+
+/**
+ * Count the number of fat footer areas in use and add an appropriate class to the parent element
+ */
+const fatFooterAreas = document.querySelector(".fat-footer-areas");
+const fatFooterAreasCount = fatFooterAreas.childElementCount;
+fatFooterAreas.classList.add(`v-grid-columns_${fatFooterAreasCount}`);

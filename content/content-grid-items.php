@@ -41,7 +41,7 @@ if ( is_search() ) {
 
 			<h3 class="h5 v-grid-item-title"><a href="<?php echo get_permalink( $the_post_id ); ?>"><?php echo get_the_title( $the_post_id ); ?></a></h3>
 
-			<span class="v-grid-item-meta"><?php volatyl_posted_by( $the_post_id ); ?></span>
+			<span class="v-grid-item-meta"><?php is_search() ? volatyl_posted_on() : ''; volatyl_posted_by( $the_post_id ); ?></span>
 
 		</header>
 

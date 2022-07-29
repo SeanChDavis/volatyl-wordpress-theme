@@ -6,23 +6,23 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				files: {
-					'style.css': 'src/css/styles.scss'
+					'style.css': 'assets/css/src/styles.scss'
 				}
 			}
 		},
 
-		// Concatenate all JS files in 'src'.
+		// Concatenate all JS files in 'assets/js/src'.
 		concat: {
 			js: {
 				options: {
 					separator: ';'
 				},
-				src: ['src/js/**/*.js', 'src/js/**/*.min.js'],
-				dest: 'dist/scripts.js'
+				src: ['assets/js/src/**/*.js', 'assets/js/src//**/*.min.js'],
+				dest: 'assets/js/scripts.js'
 			}
 		},
 
-		// Uglify the concatenated JS file in 'src'.
+		// Uglify the concatenated JS file in 'assets/js'.
 		uglify: {
 			options: {
 				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd")' +
@@ -30,19 +30,19 @@ module.exports = function(grunt) {
 				mangle: false
 			},
 			build: {
-				src: 'dist/scripts.js',
-				dest: 'dist/scripts.min.js'
+				src: 'assets/js/scripts.js',
+				dest: 'assets/js/scripts.min.js'
 			}
 		},
 
-		// Watch 'src/css/**/*.scss' & 'src/js/**/*.js' files and run all tasks after changes.
+		// Watch 'assets/css/src/**/*.scss' & 'assets/js/src/**/*.js' files and run all tasks after changes.
 		watch: {
 			styles: {
-				files: ['src/css/**/*.scss'],
+				files: ['assets/css/src/**/*.scss'],
 				tasks: ['sass'] // , 'cssmin'
 			},
 			js: {
-				files: ['src/js/**/*.js'],
+				files: ['assets/js/src/**/*.js'],
 				tasks: ['concat:js', 'uglify:build']
 			}
 		},

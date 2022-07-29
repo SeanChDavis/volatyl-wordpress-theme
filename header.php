@@ -7,7 +7,7 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-	<meta charset="UTF-8">
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<?php wp_head(); ?>
 </head>
@@ -17,6 +17,6 @@
 
 	<div id="page">
 
-		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
+		<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'volatyl' ); ?></a>
 
 		<?php get_template_part( 'template-parts/site', 'header' ); ?>

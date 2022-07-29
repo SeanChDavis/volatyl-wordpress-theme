@@ -1,10 +1,11 @@
 <?php
 /**
- * Various query adjustments and related logic
+ * Modify the query in various ways
+ *
+ * @param $query
+ *
+ * @return void
  */
-
-
-
 function volatyl_pre_get_posts( $query ) {
 
 	/**
@@ -38,10 +39,15 @@ add_action( 'pre_get_posts', 'volatyl_pre_get_posts' );
 
 /**
  * Count the number of found posts, including stickies
+ *
+ * @param $found_posts
+ * @param $query
+ *
+ * @return int|mixed|void
  */
 function volatyl_found_posts( $found_posts, $query  ) {
 
-	if( $query->is_main_query() && $query->is_home() ) {
+	if ( $query->is_main_query() && $query->is_home() ) {
 
 		$sticky_count = count( get_option( 'sticky_posts' ) );
 		$post_count = get_option( 'posts_per_page' );

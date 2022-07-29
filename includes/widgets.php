@@ -15,12 +15,6 @@ $sidebars = array(
 		'location'    => 'sidebar',
 		'description' => esc_html__( 'This sidebar only displays while viewing a single page using the default template.', 'volatyl' ),
 	),
-	'archive' => array(
-		'name'        => esc_html__( 'Post Archive Sidebar Sidebar', 'volatyl' ),
-		'id'          => 'post-archive-sidebar',
-		'location'    => 'sidebar',
-		'description' => esc_html__( 'Used on archives such as the blog, search results, and taxonomy terms.', 'volatyl' ),
-	),
 	'default' => array(
 		'name'        => esc_html__( 'Default Sidebar', 'volatyl' ),
 		'id'          => 'default-sidebar',
@@ -29,7 +23,7 @@ $sidebars = array(
 	),
 );
 
-// Register all standard sidebars
+// Register all unique sidebars
 function volatyl_sidebars() {
 	global $sidebars;
 
@@ -39,7 +33,7 @@ function volatyl_sidebars() {
 			'id'             => $value['id'],
 			'description'    => $value['description'],
 			'class'          => $value['location'],
-			'before_sidebar' => '<div class="%2$s %1$s">',
+			'before_sidebar' => '<div class="%1$s">',
 			'after_sidebar'  => '</div>',
 			'before_widget'  => '<section class="widget %2$s">',
 			'after_widget'   => '</section>',

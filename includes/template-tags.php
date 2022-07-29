@@ -125,7 +125,7 @@ if ( ! function_exists( 'volatyl_entry_footer' ) ) :
 		edit_post_link(
 			sprintf(
 				wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
+					/* translators: %s: Name of current post. Only visible to screen readers */
 					__( 'Edit <span class="screen-reader-text">%s</span>', 'volatyl' ),
 					array(
 						'span' => array(

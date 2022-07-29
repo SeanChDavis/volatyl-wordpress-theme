@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-	<main>
+	<main id="main">
 		<div class="inner">
 
 			<div class="main-content-wrap">
@@ -11,26 +11,19 @@ get_header();
 
 					<?php
 					if ( have_posts() ) :
-
 						while ( have_posts() ) :
-
 							the_post();
 							get_template_part( 'content/content' );
-
 						endwhile;
-
 						the_posts_navigation();
-
 					else :
-
 						get_template_part( 'content/content', 'none' );
-
 					endif;
 					?>
 
 				</div>
 
-				<?php dynamic_sidebar( 'Default Sidebar' ); ?>
+				<?php get_sidebar(); ?>
 
 			</div>
 

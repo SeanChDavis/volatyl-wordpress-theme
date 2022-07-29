@@ -28,7 +28,7 @@
 
 	<div class="entry-content">
 		<?php
-		if ( volatyl_is_lite_archive() ) {
+		if ( is_home() || is_search() || is_archive() ) {
 			the_excerpt();
 		} else {
 			the_content(
