@@ -1,6 +1,3 @@
-$HTMLBackground: #fff;
-$bodyBackground: #fff;
-
 $baseColor: #313240;
 
 $linkColor: lighten( $baseColor, 15% );
@@ -9,6 +6,9 @@ $lightBackground: lighten( $baseColor, 75% );
 
 $lightText: lighten( $baseColor, 25% );
 $lightBorder: darken( $lightBackground, 5% );
+
+$HTMLBackground: lighten( $baseColor, 74% );
+$bodyBackground: darken( $baseColor, 3% );
 
 /* Min-width Breakpoints */
 $xsMinWidth: 560px;

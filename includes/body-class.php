@@ -8,6 +8,11 @@
  */
 function volatyl_body_class( $classes ) {
 
+	// Adds class based on HTML structure
+	if ( 1 == get_theme_mod( 'volatyl_full_width_structure', 0 ) ) {
+		$classes[] = 'full-width-structure';
+	}
+
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}

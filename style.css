@@ -934,15 +934,22 @@ img {
 }
 
 #page {
+  background: #fff;
+  box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.03);
+  margin: 0 auto;
+  max-width: 1364px;
   /* Prepare to create sticky footer */
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
 
-.logged-in {
-  /* Adjust sticky footer prep when WP admin bar is present */
+/* Added to the body when site HTML structure is set to full width */
+.full-width-structure #page {
+  max-width: 100%;
 }
+
+/* Adjust sticky footer prep when WP admin bar is present */
 .logged-in #page {
   height: calc(100vh - 46px);
 }
@@ -1037,14 +1044,14 @@ main {
 }
 
 html {
-  background: #fff;
+  background: #f4f4f7;
 }
 html * {
   box-sizing: border-box;
 }
 
 body {
-  background: #fff;
+  background: #2a2b37;
   color: #313240;
   font-family: "Red Hat Text", sans-serif;
   font-size: 17px;

@@ -1,4 +1,8 @@
 #page {
+	background: #fff;
+	box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.03);
+	margin: 0 auto;
+	max-width: 1364px;
 
 	/* Prepare to create sticky footer */
 	display: flex;
@@ -6,9 +10,17 @@
 	height: 100vh;
 }
 
+/* Added to the body when site HTML structure is set to full width */
+.full-width-structure {
+
+	#page {
+		max-width: 100%;
+	}
+}
+
+/* Adjust sticky footer prep when WP admin bar is present */
 .logged-in {
 
-	/* Adjust sticky footer prep when WP admin bar is present */
 	#page {
 		height: calc( 100vh - 46px );
 
