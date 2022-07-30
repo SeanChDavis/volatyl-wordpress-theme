@@ -751,6 +751,7 @@ img {
   }
 }
 .v-grid [class*=-item-container] {
+  word-break: break-all;
   /**
    * Shared styles across all cards
    */
@@ -933,40 +934,64 @@ img {
   }
 }
 
-#page {
+html {
+  background: #f4f4f7;
+}
+html * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Red Hat Text", sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  background: #2a2b37;
+  color: #313240;
+  /* Added to the body when site HTML structure is set to full width */
+  /* Adjust sticky footer prep when WP admin bar is present */
+}
+@media all and (min-width: 560px) {
+  body {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+}
+@media all and (min-width: 768px) {
+  body {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+}
+body #page {
   background: #fff;
   box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.03);
   margin: 0 auto;
   max-width: 1364px;
+  overflow: scroll;
   /* Prepare to create sticky footer */
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
-
-/* Added to the body when site HTML structure is set to full width */
-.full-width-structure #page {
-  max-width: 100%;
-}
-
-/* Adjust sticky footer prep when WP admin bar is present */
-.logged-in #page {
-  height: calc(100vh - 46px);
-}
-@media all and (min-width: 783px) {
-  .logged-in #page {
-    height: calc(100vh - 32px);
-  }
-}
-
-main {
+body #page main {
   /* Create sticky footer */
   flex: 1 0 auto;
 }
 @media all and (min-width: 992px) {
-  main .inner {
+  body #page main .inner {
     padding-bottom: 4rem;
     padding-top: 4rem;
+  }
+}
+body.full-width-structure #page {
+  max-width: 100%;
+}
+body.logged-in #page {
+  height: calc(100vh - 46px);
+}
+@media all and (min-width: 783px) {
+  body.logged-in #page {
+    height: calc(100vh - 32px);
   }
 }
 
@@ -1041,33 +1066,6 @@ main {
 
 .no-sidebar .main-content-wrap {
   justify-content: space-around;
-}
-
-html {
-  background: #f4f4f7;
-}
-html * {
-  box-sizing: border-box;
-}
-
-body {
-  background: #2a2b37;
-  color: #313240;
-  font-family: "Red Hat Text", sans-serif;
-  font-size: 17px;
-  line-height: 1.5;
-}
-@media all and (min-width: 560px) {
-  body {
-    font-size: 17px;
-    line-height: 1.5;
-  }
-}
-@media all and (min-width: 768px) {
-  body {
-    font-size: 18px;
-    line-height: 1.6;
-  }
 }
 
 #masthead {

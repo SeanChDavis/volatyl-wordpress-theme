@@ -33,7 +33,7 @@ function volatyl_sidebars() {
 			'id'             => $value['id'],
 			'description'    => $value['description'],
 			'class'          => $value['location'],
-			'before_sidebar' => '<div class="%1$s">',
+			'before_sidebar' => '<div class="%2$s %1$s">',
 			'after_sidebar'  => '</div>',
 			'before_widget'  => '<section class="widget %2$s">',
 			'after_widget'   => '</section>',

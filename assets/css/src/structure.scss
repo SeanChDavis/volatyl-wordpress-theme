@@ -1,45 +1,60 @@
-#page {
-	background: #fff;
-	box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.03);
-	margin: 0 auto;
-	max-width: 1364px;
+html {
+	background: $HTMLBackground;
 
-	/* Prepare to create sticky footer */
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-}
-
-/* Added to the body when site HTML structure is set to full width */
-.full-width-structure {
-
-	#page {
-		max-width: 100%;
+	& * {
+		box-sizing: border-box;
 	}
 }
 
-/* Adjust sticky footer prep when WP admin bar is present */
-.logged-in {
+body {
+	@include bodyFont;
+	background: $bodyBackground;
+	color: $baseColor;
 
 	#page {
-		height: calc( 100vh - 46px );
+		background: #fff;
+		box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.03);
+		margin: 0 auto;
+		max-width: 1364px;
+		overflow: scroll;
 
-		@media all and (min-width: 783px) {
-			height: calc( 100vh - 32px );
+		/* Prepare to create sticky footer */
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+
+		main {
+
+			/* Create sticky footer */
+			flex: 1 0 auto;
+
+			.inner {
+
+				@media all and (min-width: $mdMinWidth) {
+					padding-bottom: 4rem;
+					padding-top: 4rem;
+				}
+			}
 		}
 	}
-}
 
-main {
+	/* Added to the body when site HTML structure is set to full width */
+	&.full-width-structure {
 
-	/* Create sticky footer */
-	flex: 1 0 auto;
+		#page {
+			max-width: 100%;
+		}
+	}
 
-	.inner {
+	/* Adjust sticky footer prep when WP admin bar is present */
+	&.logged-in {
 
-		@media all and (min-width: $mdMinWidth) {
-			padding-bottom: 4rem;
-			padding-top: 4rem;
+		#page {
+			height: calc( 100vh - 46px );
+
+			@media all and (min-width: 783px) {
+				height: calc( 100vh - 32px );
+			}
 		}
 	}
 }
