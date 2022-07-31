@@ -44,11 +44,11 @@ function volatyl_customize_register( $wp_customize ) {
 
 
 	/** ===============
-	 * Design Options
+	 * Structure Options
 	 */
-	$wp_customize->add_section( 'volatyl_design', array(
+	$wp_customize->add_section( 'volatyl_structure', array(
 		'title'         => __( 'Volatyl - Structure', 'volatyl' ),
-		'description'   => __( 'Site HTML structure', 'volatyl' ),
+		'description'   => __( 'Control your site HTML structure. When enabled, the HTML element that wraps all major site sections will span the full width of the viewport. This means section background colors will display across the screen while the content itself is contained. When disabled, commonly referred to as page-width display, the content itself is still contained but the wrapping element also has horizontal limits. This layout exposes the HTML body element as the wrapper of all content, which allows the body to have a separate background color, creating distinction between the page structure and the site background.', 'volatyl' ),
 		'priority'      => 20,
 	) );
 
@@ -59,7 +59,7 @@ function volatyl_customize_register( $wp_customize ) {
 	) );
 	$wp_customize->add_control( 'volatyl_full_width_structure', array(
 		'label'     => __( 'Enable full-width HTML structure', 'volatyl' ),
-		'section'   => 'volatyl_design',
+		'section'   => 'volatyl_structure',
 		'priority'  => 10,
 		'type'      => 'checkbox',
 	) );
@@ -86,18 +86,29 @@ function volatyl_customize_register( $wp_customize ) {
 		'type'      => 'checkbox',
 	) );
 
-//	// design color
-//	$wp_customize->add_setting( 'volatyl_design_color', array(
-//		'default'           => '#313240',
-//		'type'              => 'option',
-//		'capability'        => 'edit_theme_options',
-//		'sanitize_callback'	=> 'volatyl_sanitize_hex_color',
-//	) );
-//	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'volatyl_design_color', array(
-//		'label'     => __( 'Primary Design Color', 'volatyl' ),
-//		'section'   => 'volatyl_design',
-//		'priority'  => 20
-//	) ) );
+
+
+	/** ===============
+	 * Footer Options
+	 */
+	$wp_customize->add_section( 'volatyl_footer_section', array(
+		'title'         => __( 'Volatyl - Footer', 'volatyl' ),
+		'description'   => __( 'Control various footer elements, including the fat footer.', 'volatyl' ),
+		'priority'      => 30,
+	) );
+
+	// Display alternate fat footer layout
+	$wp_customize->add_setting( 'volatyl_fat_footer_layout', array(
+		'default'           => 0,
+		'sanitize_callback' => 'volatyl_sanitize_checkbox'
+	) );
+	$wp_customize->add_control( 'volatyl_fat_footer_layout', array(
+		'label'     => __( 'Display alternate fate footer layout', 'volatyl' ),
+		'description'   => __( 'Only when three fat footer areas are in use, make the first fat footer area twice as wide as the remaining fat footer areas. 2 : 1 : 1', 'volatyl' ),
+		'section'   => 'volatyl_footer_section',
+		'priority'  => 10,
+		'type'      => 'checkbox',
+	) );
 }
 add_action( 'customize_register', 'volatyl_customize_register' );
 
@@ -165,7 +176,7 @@ function volatyl_customizer_styles() { ?>
 		textarea, input, select,
 		.customize-description { font-size: 12px !important; }
 		.customize-control-title { font-size: 13px !important; margin: 5px 0 3px !important; }
-		.customize-control label { font-size: 12px !important; }
+		.customize-control label { font-size: 12px !important; font-weight: 600; }
 		.customize-control { margin-bottom: 10px; }
 		.volatyl-toggle-wrap { display: inline-block; line-height: 1; margin-left: 2px; }
 		.volatyl-toggle-wrap a { display: block; background: rgba(0, 0, 0, .2); color: #fff; padding: 2px 6px; border-radius: 3px; margin-left: 6px; }

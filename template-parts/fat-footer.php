@@ -40,7 +40,7 @@
 				),
 			);
 
-			foreach( $fat_footer_areas as $area ) {
+			foreach ( $fat_footer_areas as $area ) {
 				if ( is_active_sidebar( $area['name'] ) ) {
 					dynamic_sidebar( $area['name'] );
 				}

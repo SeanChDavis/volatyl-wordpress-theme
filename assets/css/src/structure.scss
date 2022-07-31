@@ -10,51 +10,51 @@ body {
 	@include bodyFont;
 	background: $bodyBackground;
 	color: $baseColor;
+}
+
+#page {
+	background: #fff;
+	box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.03);
+	margin: 0 auto;
+	max-width: 1364px;
+	overflow: scroll;
+
+	/* Prepare to create sticky footer */
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+/* Added to the body when site HTML structure is set to full width */
+.full-width-structure {
 
 	#page {
-		background: #fff;
-		box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.03);
-		margin: 0 auto;
-		max-width: 1364px;
-		overflow: scroll;
+		max-width: 100%;
+	}
+}
 
-		/* Prepare to create sticky footer */
-		display: flex;
-		flex-direction: column;
-		height: 100vh;
+/* Adjust sticky footer prep when WP admin bar is present */
+.logged-in {
 
-		main {
+	#page {
+		height: calc( 100vh - 46px );
 
-			/* Create sticky footer */
-			flex: 1 0 auto;
-
-			.inner {
-
-				@media all and (min-width: $mdMinWidth) {
-					padding-bottom: 4rem;
-					padding-top: 4rem;
-				}
-			}
+		@media all and (min-width: 783px) {
+			height: calc( 100vh - 32px );
 		}
 	}
+}
 
-	/* Added to the body when site HTML structure is set to full width */
-	&.full-width-structure {
+main {
 
-		#page {
-			max-width: 100%;
-		}
-	}
+	/* Create sticky footer */
+	flex: 1 0 auto;
 
-	/* Adjust sticky footer prep when WP admin bar is present */
-	&.logged-in {
+	.inner {
 
-		#page {
-			height: calc( 100vh - 46px );
-
-			@media all and (min-width: 783px) {
-				height: calc( 100vh - 32px );
-			}
+		@media all and (min-width: $mdMinWidth) {
+			padding-bottom: 4rem;
+			padding-top: 4rem;
 		}
 	}
 }

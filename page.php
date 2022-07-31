@@ -29,10 +29,8 @@ get_header();
 							get_template_part( 'content/content', 'page' );
 							the_posts_navigation();
 							// only allow comments if chosen in theme customizer
-							if ( 1 == get_theme_mod( 'volatyl_page_comments' ) ) :
-								if ( comments_open() || get_comments_number() ) :
-									comments_template();
-								endif;
+							if ( 1 == get_theme_mod( 'volatyl_page_comments' ) && ( comments_open() || get_comments_number() ) ) :
+								comments_template();
 							endif;
 						endwhile;
 					else :
