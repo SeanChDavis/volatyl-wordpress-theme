@@ -5,6 +5,7 @@
 		.hero {
 
 			& > [class*="-title"] {
+				margin-bottom: .4em;
 
 				@media all and (min-width: $mdMinWidth) {
 					font-size: 5rem;
@@ -15,12 +16,43 @@
 				}
 			}
 
+			& > [class*="-subtitle"],
 			& > [class*="-description"] {
 				@include fontSmaller;
-				max-width: 765px;
+				max-width: 665px;
+
+				@media all and (min-width: $xsMinWidth) {
+					@include fontSmall;
+				}
 
 				@media all and (min-width: $smMinWidth) {
-					@include fontSmall;
+					@include bodyFont;
+				}
+
+				@media all and (min-width: $mdMinWidth) {
+					@include fontBig;
+				}
+
+				&:not(:last-child) {
+
+					@media all and (min-width: $xsMinWidth) {
+						margin-bottom: 3rem;
+					}
+
+					@media all and (min-width: $mdMinWidth) {
+						margin-bottom: 6rem;
+					}
+				}
+			}
+
+			& .primary-cta-container {
+				margin-bottom: 12px;
+			}
+
+			& .secondary-cta-container {
+
+				.secondary-cta {
+					@include fontSmaller;
 				}
 			}
 		}

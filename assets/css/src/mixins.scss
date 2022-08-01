@@ -19,9 +19,24 @@
 }
 
 // Font size modifiers
+@mixin fontBiggest {
+	font-size: 22px;
+	@include lineHeightBase;
+}
+
+@mixin fontBigger {
+	font-size: 20px;
+	@include lineHeightBase;
+}
+
+@mixin fontBig {
+	font-size: 19px;
+	@include lineHeightBase;
+}
+
 @mixin fontSmall {
 	font-size: 17px;
-	line-height: 1.5;
+	@include lineHeightBase;
 }
 
 @mixin fontSmaller {

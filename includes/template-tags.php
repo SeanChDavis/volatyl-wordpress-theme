@@ -3,6 +3,63 @@
  * Bits of intelligent markup used throughout the theme
  */
 
+// Site hero markup template
+if ( ! function_exists( 'volatyl_hero' ) ) :
+
+	function volatyl_hero( $args = array() ) {
+
+		$default_args = array(
+			'title'         => ! empty( $args['title'] ) ? $args['title'] : get_the_title(),
+			'subtitle'      => ! empty( $args['subtitle'] ) ? $args['subtitle'] : '',
+			'primary_cta'   => array(
+				'text'    => '',
+				'url'     => '',
+			),
+			'secondary_cta' => array(
+				'text'    => '',
+				'url'     => '',
+			),
+		);
+
+		$new_args = array_merge( $default_args, $args );
+
+		$title                 = $new_args['title'];
+		$subtitle              = $new_args['subtitle'];
+		$primary_cta_text      = $new_args['primary_cta']['text'];
+		$primary_cta_url       = $new_args['primary_cta']['url'];
+		$secondary_cta_text    = $new_args['secondary_cta']['text'];
+		$secondary_cta_url     = $new_args['secondary_cta']['url'];
+		?>
+
+		<div class="site-hero">
+
+			<div class="inner medium">
+
+				<div class="hero">
+					<h1 class="hero-title"><?php echo $title; ?></h1>
+					<?php if ( ! empty( $subtitle ) ) { ?>
+						<p class="hero-subtitle"><?php echo $subtitle; ?></p>
+					<?php } ?>
+					<?php if ( ! empty( $primary_cta_url ) && ! empty( $primary_cta_text ) ) { ?>
+						<p class="primary-cta-container">
+							<a href="<?php echo $primary_cta_url; ?>" class="button"><?php echo $primary_cta_text; ?></a>
+						</p>
+					<?php } ?>
+					<?php if ( ! empty( $secondary_cta_url ) && ! empty( $secondary_cta_text ) ) { ?>
+						<p class="secondary-cta-container">
+							<a href="<?php echo $secondary_cta_url; ?>" class="secondary-cta"><?php echo $secondary_cta_text; ?></a>
+						</p>
+					<?php } ?>
+				</div>
+
+			</div>
+
+		</div>
+
+		<?php
+	}
+endif;
+
 // The current post date and time
 if ( ! function_exists( 'volatyl_posted_on' ) ) :
 
@@ -10,17 +67,9 @@ if ( ! function_exists( 'volatyl_posted_on' ) ) :
 
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
-		$time_string = sprintf(
-			$time_string,
-			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date() )
-		);
+		$time_string = sprintf( $time_string, esc_attr( get_the_date( DATE_W3C ) ), esc_html( get_the_date() ) );
 
-		$posted_on = sprintf(
-			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'volatyl' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
+		$posted_on = sprintf( /* translators: %s: post date. */ esc_html_x( 'Posted on %s', 'post date', 'volatyl' ), '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>' );
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
@@ -33,11 +82,7 @@ if ( ! function_exists( 'volatyl_posted_by' ) ) :
 
 		$post_author_id = get_post_field( 'post_author', $id );
 
-		$byline = sprintf(
-			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'volatyl' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author_meta( 'display_name', $post_author_id ) ) . '</a></span>'
-		);
+		$byline = sprintf( /* translators: %s: post author. */ esc_html_x( 'by %s', 'post author', 'volatyl' ), '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author_meta( 'display_name', $post_author_id ) ) . '</a></span>' );
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
@@ -63,16 +108,11 @@ if ( ! function_exists( 'volatyl_post_thumbnail' ) ) :
 
 			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 				<?php
-				the_post_thumbnail(
-					'post-thumbnail',
-					array(
-						'alt' => the_title_attribute(
-							array(
-								'echo' => false,
-							)
-						),
-					)
-				);
+				the_post_thumbnail( 'post-thumbnail', array(
+					'alt' => the_title_attribute( array(
+						'echo' => false,
+					) ),
+				) );
 				?>
 			</a>
 
@@ -103,41 +143,11 @@ if ( ! function_exists( 'volatyl_entry_footer' ) ) :
 			}
 		}
 
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			comments_popup_link(
-				sprintf(
-					wp_kses(
-					/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'volatyl' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					wp_kses_post( get_the_title() )
-				)
-			);
-			echo '</span>';
-		}
-
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'volatyl' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
+		edit_post_link( sprintf( wp_kses( /* translators: %s: Name of current post. Only visible to screen readers */ __( 'Edit <span class="screen-reader-text">%s</span>', 'volatyl' ), array(
+			'span' => array(
+				'class' => array(),
 			),
-			'<span class="edit-link">',
-			'</span>'
-		);
+		) ), wp_kses_post( get_the_title() ) ), '<span class="edit-link">', '</span>' );
 	}
 endif;
 

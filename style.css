@@ -819,7 +819,7 @@ img {
 }
 .v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-body] [class*=-item-description] {
   font-size: 17px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 .v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-footer] {
   font-size: 15px;
@@ -831,6 +831,9 @@ img {
     padding: 0.5rem 2rem 2.25rem;
   }
 }
+.site-hero .inner .hero > [class*=-title] {
+  margin-bottom: 0.4em;
+}
 @media all and (min-width: 992px) {
   .site-hero .inner .hero > [class*=-title] {
     font-size: 5rem;
@@ -839,16 +842,58 @@ img {
 .site-hero .inner .hero > [class*=-title]:last-child {
   margin-bottom: 0;
 }
-.site-hero .inner .hero > [class*=-description] {
+.site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
   font-size: 15px;
   line-height: 1.6;
-  max-width: 765px;
+  max-width: 665px;
+}
+@media all and (min-width: 560px) {
+  .site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
+    font-size: 17px;
+    line-height: 1.6;
+  }
 }
 @media all and (min-width: 768px) {
-  .site-hero .inner .hero > [class*=-description] {
+  .site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
+    font-family: "Red Hat Text", sans-serif;
     font-size: 17px;
-    line-height: 1.5;
+    line-height: 1.6;
   }
+}
+@media all and (min-width: 768px) and (min-width: 560px) {
+  .site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+}
+@media all and (min-width: 768px) and (min-width: 768px) {
+  .site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+}
+@media all and (min-width: 992px) {
+  .site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
+    font-size: 19px;
+    line-height: 1.6;
+  }
+}
+@media all and (min-width: 560px) {
+  .site-hero .inner .hero > [class*=-subtitle]:not(:last-child), .site-hero .inner .hero > [class*=-description]:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+@media all and (min-width: 992px) {
+  .site-hero .inner .hero > [class*=-subtitle]:not(:last-child), .site-hero .inner .hero > [class*=-description]:not(:last-child) {
+    margin-bottom: 6rem;
+  }
+}
+.site-hero .inner .hero .primary-cta-container {
+  margin-bottom: 12px;
+}
+.site-hero .inner .hero .secondary-cta-container .secondary-cta {
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 .jumbo-header .inner > [class*=-title] {
@@ -944,14 +989,14 @@ html * {
 body {
   font-family: "Red Hat Text", sans-serif;
   font-size: 17px;
-  line-height: 1.5;
+  line-height: 1.6;
   background: #2a2b37;
   color: #313240;
 }
 @media all and (min-width: 560px) {
   body {
     font-size: 17px;
-    line-height: 1.5;
+    line-height: 1.6;
   }
 }
 @media all and (min-width: 768px) {
@@ -979,11 +1024,11 @@ body {
 }
 
 /* Adjust sticky footer prep when WP admin bar is present */
-.logged-in #page {
+.logged-in:not([class*=customize-]) #page {
   height: calc(100vh - 46px);
 }
 @media all and (min-width: 783px) {
-  .logged-in #page {
+  .logged-in:not([class*=customize-]) #page {
     height: calc(100vh - 32px);
   }
 }
@@ -1372,7 +1417,7 @@ main {
 #comments .comment-list .comment,
 #comments .comment-list .pingback {
   font-size: 17px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 #comments .comment-list .comment:not(:last-child),
 #comments .comment-list .pingback:not(:last-child) {

@@ -11,7 +11,7 @@ $blog_page_object = get_queried_object();
 				if ( have_posts() ) :
 					?>
 
-					<h1 class="subdued-title"><?php printf( __( 'Most recently published on %s', 'volatyl' ), get_bloginfo( 'name' ) ); ?></h1>
+					<h1 class="subdued-title"><?php _e( 'Most recently published', 'volatyl' ); ?></h1>
 
 					<div class="post-type-grid">
 

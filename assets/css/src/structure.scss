@@ -34,7 +34,7 @@ body {
 }
 
 /* Adjust sticky footer prep when WP admin bar is present */
-.logged-in {
+.logged-in:not([class*="customize-"]) {
 
 	#page {
 		height: calc( 100vh - 46px );
