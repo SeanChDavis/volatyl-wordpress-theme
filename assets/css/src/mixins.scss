@@ -6,6 +6,10 @@
 // Body font
 @mixin bodyFont {
 	font-family: 'Red Hat Text', sans-serif;
+}
+
+// Standard font size
+@mixin fontBase {
 	@include fontSmall;
 
 	@media all and (min-width: $xsMinWidth) {
@@ -19,8 +23,8 @@
 }
 
 // Font size modifiers
-@mixin fontBiggest {
-	font-size: 22px;
+@mixin fontBig {
+	font-size: 19px;
 	@include lineHeightBase;
 }
 
@@ -28,9 +32,8 @@
 	font-size: 20px;
 	@include lineHeightBase;
 }
-
-@mixin fontBig {
-	font-size: 19px;
+@mixin fontBiggest {
+	font-size: 22px;
 	@include lineHeightBase;
 }
 

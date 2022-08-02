@@ -11,7 +11,7 @@
 			text-transform: uppercase;
 
 			a {
-				color: $baseColor;
+				color: $linkColor;
 				display: block;
 				text-decoration: none;
 			}
@@ -27,7 +27,7 @@
 
 					&:after {
 						content: '';
-						border-bottom: 6px solid $baseColor;
+						border-bottom: 6px solid $linkColor;
 						border-right: 6px solid transparent;
 						display: inline-block;
 						height: 0;
@@ -89,6 +89,10 @@
 			@media all and (min-width: $menuModalMinWidth) {
 				display: flex;
 				flex-wrap: wrap;
+			}
+
+			.close-menu-modal {
+				display: none;
 			}
 
 			// Top level menu item
@@ -182,10 +186,11 @@
 	 * The menu is closed by JavaScript click events on other elements
 	 */
 	.menu-toggle {
+		@include bodyFont;
 		@include fontSmallest;
 		background: transparent;
 		border: none;
-		color: $baseColor;
+		color: $linkColor;
 		display: inline-block;
 		font-weight: 700;
 		height: unset;
@@ -246,12 +251,21 @@
 					display: flex;
 					flex-direction: column;
 					height: 100%;
-					padding: .5rem 1.25rem;
+					padding: .5rem 1.25rem 1.25rem;
+					position: relative;
 					width: calc(100vw - 2rem);
 
 					@media all and (min-width: $xsMinWidth) {
 						min-width: 300px;
 						width: calc(35vw);
+					}
+
+					.close-menu-modal {
+						@include headingFont;
+						@include fontSmallest;
+						display: block;
+						line-height: 1;
+						margin-top: 2rem;
 					}
 
 					.menu-item {

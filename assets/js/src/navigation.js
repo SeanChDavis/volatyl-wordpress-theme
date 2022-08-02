@@ -87,14 +87,23 @@
 	/**
 	 * Menu modal behavior
 	 */
-		// Get the element that wraps menu list, a direct child of the main navigation element.
-		// This element will behave as the visible area behind the actual menu modal.
+
+	// Get the element that wraps menu list, a direct child of the main navigation element.
+	// This element will behave as the visible area behind the actual menu modal.
 	const menuModalOuter = document.querySelector("#site-navigation > [class*='-container']");
+
+	const menuModalInner = menuModalOuter.querySelector("#primary-menu");
+	const closeButton = document.createElement("button");
 
 	// Conduct all the tasks required for opening the menu modal.
 	button.addEventListener('click', function() {
-		siteNavigation.classList.toggle('toggled');
+		siteNavigation.classList.toggle("toggled");
 		menuModalOuter.classList.add("menu-modal-active");
+
+		closeButton.classList.add('close-menu-modal');
+		closeButton.textContent = "close menu";
+		menuModalInner.appendChild(closeButton);
+
 		if (button.getAttribute('aria-expanded') === 'true') {
 			button.setAttribute('aria-expanded', 'false');
 		} else {
@@ -108,6 +117,11 @@
 		siteNavigation.classList.remove("toggled");
 		button.setAttribute("aria-expanded", "false");
 	}
+
+	// Close the menu modal if the user clicks the close button.
+	closeButton.addEventListener("click", function(event) {
+		closeMenuModal();
+	});
 
 	// Close the menu modal if the user clicks outside the menu area.
 	menuModalOuter.addEventListener("click", function(event) {

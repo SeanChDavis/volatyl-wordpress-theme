@@ -34,14 +34,14 @@
 				margin: 0;
 
 				a {
-					color: $baseColor;
+					color: $linkColor;
 					line-height: 1;
 					text-decoration: none;
 
 					&:active,
 					&:focus,
 					&:hover {
-						color: $linkColor;
+						color: $baseColor;
 					}
 				}
 			}

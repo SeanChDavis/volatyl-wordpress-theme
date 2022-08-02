@@ -39,7 +39,7 @@
 				}
 
 				@media all and (min-width: $smMinWidth) {
-					@include bodyFont;
+					@include fontBase;
 				}
 
 				@media all and (min-width: $mdMinWidth) {
@@ -65,7 +65,7 @@
 				max-width: 665px;
 
 				@media all and (min-width: $xsMinWidth) {
-					@include bodyFont;
+					@include fontBase;
 					margin-bottom: 12px;
 				}
 			}
