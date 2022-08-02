@@ -12,6 +12,13 @@
 	text-transform: uppercase;
 }
 
+.subdued-link-container {
+
+	a {
+		@include fontSmaller;
+	}
+}
+
 .text-align-center {
 	text-align: center;
 }

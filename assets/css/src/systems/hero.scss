@@ -14,6 +14,19 @@
 				&:last-child {
 					margin-bottom: 0;
 				}
+
+				& + .primary-cta-container,
+				& + .secondary-cta-container {
+					margin-top: 2rem;
+
+					@media all and (min-width: $xsMinWidth) {
+						margin-top: 3rem;
+					}
+
+					@media all and (min-width: $mdMinWidth) {
+						margin-top: 6rem;
+					}
+				}
 			}
 
 			& > [class*="-subtitle"],

@@ -1,5 +1,35 @@
 .front-page {
 
+	.recent-posts {
+
+		.post-type-grid {
+			margin-bottom: 3rem;
+
+			@media all and (min-width: $smMinWidth) {
+				margin-bottom: 4rem;
+			}
+
+			@media all and (min-width: $mdMinWidth) {
+				margin-bottom: 6rem;
+			}
+
+			@media all and (min-width: $lgMinWidth) {
+				margin-bottom: 8rem;
+			}
+		}
+
+		.v-grid-centered-column-content {
+
+			@media all and (min-width: $smMinWidth) {
+				text-align: center;
+			}
+
+			.subdued-title {
+				margin-bottom: 0;
+			}
+		}
+	}
+
 	.get-in-touch {
 		text-align: center;
 	}
