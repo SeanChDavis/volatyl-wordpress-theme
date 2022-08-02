@@ -4,8 +4,13 @@
 	.inner:not(.medium) {
 		display: flex;
 		justify-content: space-between;
-		padding-bottom: 2rem;
-		padding-top: 2rem;
+		padding-bottom: 1rem;
+		padding-top: 1rem;
+
+		@media all and (min-width: $xsMinWidth) {
+			padding-bottom: 2rem;
+			padding-top: 2rem;
+		}
 
 		& > * {
 			align-self: center;

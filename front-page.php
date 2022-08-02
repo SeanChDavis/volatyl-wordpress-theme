@@ -8,15 +8,16 @@ get_header();
 
 			<div class="inner large">
 
-				<span class="subdued-title"><?php echo sprintf( __( 'From the blog', 'volatyl' ), get_bloginfo( 'name' ) ); ?></span>
+				<span class="subdued-title"><?php echo __( 'From the blog', 'volatyl' ); ?></span>
 
 				<div class="post-type-grid">
 
 					<div class="v-grid v-grid-columns_3">
 
 						<?php
+						$blog_post_count = get_theme_mod( 'volatyl_front_page_blog_post_count', 9 );
 						$args = array(
-							'numberposts' => 9,
+							'numberposts' => (int) $blog_post_count,
 							'post_status' => 'publish'
 						);
 						$recent_posts = wp_get_recent_posts( $args );
@@ -35,21 +36,21 @@ get_header();
 
 		</section>
 
-<!--		<section class="get-in-touch dark-background">-->
-<!---->
-<!--			<div class="inner large">-->
-<!---->
-<!--				<div class="v-grid v-grid-centered-column">-->
-<!--					<div class="v-grid-centered-column-content">-->
-<!--						<p class="h2 section-title">--><?php //echo sprintf( __( 'Let\'s Connect', 'volatyl' ), get_bloginfo( 'name' ) ); ?><!--</p>-->
-<!--						<p>This is a prompt to send an email to the owner of the site.</p>-->
-<!--						<p class="cta-wrap"><a href="#" class="button">Reach out</a></p>-->
-<!--					</div>-->
-<!--				</div>-->
-<!---->
-<!--			</div>-->
-<!---->
-<!--		</section>-->
+		<section class="get-in-touch dark-background">
+
+			<div class="inner large">
+
+				<div class="v-grid v-grid-centered-column">
+					<div class="v-grid-centered-column-content">
+						<p class="h2 section-title"><?php echo sprintf( __( 'Let\'s Connect', 'volatyl' ), get_bloginfo( 'name' ) ); ?></p>
+						<p>This is a prompt to send an email to the owner of the site.</p>
+						<p class="cta-wrap"><a href="#" class="button">Reach out</a></p>
+					</div>
+				</div>
+
+			</div>
+
+		</section>
 
 	</main>
 

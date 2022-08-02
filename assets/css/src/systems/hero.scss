@@ -34,6 +34,7 @@
 				}
 
 				&:not(:last-child) {
+					margin-bottom: 2rem;
 
 					@media all and (min-width: $xsMinWidth) {
 						margin-bottom: 3rem;
@@ -46,7 +47,14 @@
 			}
 
 			& .primary-cta-container {
-				margin-bottom: 12px;
+				@include fontSmaller;
+				margin-bottom: 8px;
+				max-width: 665px;
+
+				@media all and (min-width: $xsMinWidth) {
+					@include bodyFont;
+					margin-bottom: 12px;
+				}
 			}
 
 			& .secondary-cta-container {

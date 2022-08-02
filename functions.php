@@ -10,7 +10,6 @@ define( 'THEME_TEMPLATE_DIR_URI', get_template_directory_uri() );
 define( 'THEME_STYLESHEET', get_stylesheet_uri() );
 define( 'THEME_STYLESHEET_DIR', get_stylesheet_directory_uri() );
 define( 'THEME_INCLUDES', THEME_TEMPLATE_DIR . '/includes' );
-define( 'THEME_ADMIN', THEME_TEMPLATE_DIR . '/includes/admin' );
 
 // Various functions used around Volatyl
 require_once( THEME_INCLUDES . '/helper-functions.php' );
@@ -21,7 +20,7 @@ require_once( THEME_INCLUDES . '/core-modifications.php' );
 require_once( THEME_INCLUDES . '/template-tags.php' );
 require_once( THEME_INCLUDES . '/widgets.php' );
 
-require_once( THEME_ADMIN . '/customizer.php' );
+require_once( THEME_INCLUDES . '/customizer/customizer.php' );
 
 /**
  * Theme setup

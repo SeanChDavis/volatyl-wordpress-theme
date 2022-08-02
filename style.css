@@ -629,7 +629,7 @@ img {
   line-height: 1.6;
 }
 
-/* Try to prevent horizontal scroll caused my long, non-breaking text */
+/* Try to prevent horizontal scroll caused by long, non-breaking text */
 .main-content-wrap {
   word-break: normal;
   overflow-wrap: anywhere;
@@ -751,7 +751,6 @@ img {
   }
 }
 .v-grid [class*=-item-container] {
-  word-break: break-all;
   /**
    * Shared styles across all cards
    */
@@ -878,6 +877,9 @@ img {
     line-height: 1.6;
   }
 }
+.site-hero .inner .hero > [class*=-subtitle]:not(:last-child), .site-hero .inner .hero > [class*=-description]:not(:last-child) {
+  margin-bottom: 2rem;
+}
 @media all and (min-width: 560px) {
   .site-hero .inner .hero > [class*=-subtitle]:not(:last-child), .site-hero .inner .hero > [class*=-description]:not(:last-child) {
     margin-bottom: 3rem;
@@ -889,7 +891,30 @@ img {
   }
 }
 .site-hero .inner .hero .primary-cta-container {
-  margin-bottom: 12px;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  max-width: 665px;
+}
+@media all and (min-width: 560px) {
+  .site-hero .inner .hero .primary-cta-container {
+    font-family: "Red Hat Text", sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+}
+@media all and (min-width: 560px) and (min-width: 560px) {
+  .site-hero .inner .hero .primary-cta-container {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+}
+@media all and (min-width: 560px) and (min-width: 768px) {
+  .site-hero .inner .hero .primary-cta-container {
+    font-size: 18px;
+    line-height: 1.6;
+  }
 }
 .site-hero .inner .hero .secondary-cta-container .secondary-cta {
   font-size: 15px;
@@ -1123,8 +1148,14 @@ main {
 #masthead .inner:not(.medium) {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 2rem;
-  padding-top: 2rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+@media all and (min-width: 560px) {
+  #masthead .inner:not(.medium) {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
 }
 #masthead .inner:not(.medium) > * {
   align-self: center;
@@ -1778,6 +1809,11 @@ textarea:focus {
 .fat-footer > .inner .fat-footer-areas {
   border-bottom: 2px solid #e8e9ee;
   padding: 2rem 0;
+  /**
+   * When there are three fat footer areas, make the first area twice
+   * the width of the other two. This is desirable for footers with
+   * one section of full content, and two smaller sections of links.
+   */
 }
 @media all and (min-width: 560px) {
   .fat-footer > .inner .fat-footer-areas {
@@ -1791,6 +1827,24 @@ textarea:focus {
 }
 .fat-footer > .inner .fat-footer-areas .widget:not(:last-child) {
   margin-bottom: 1.25rem;
+}
+@media all and (min-width: 768px) {
+  .fat-footer > .inner .fat-footer-areas.v-grid-columns_3 .fat-footer-area:first-child {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    margin-bottom: 2rem;
+  }
+}
+@media all and (min-width: 992px) {
+  .fat-footer > .inner .fat-footer-areas.v-grid-columns_3 {
+    grid-template-columns: 2fr 1fr 1fr;
+    margin-bottom: unset;
+  }
+  .fat-footer > .inner .fat-footer-areas.v-grid-columns_3 .fat-footer-area:first-child {
+    grid-column-start: unset;
+    grid-column-end: unset;
+    margin-bottom: unset;
+  }
 }
 
 .site-footer {
@@ -1883,6 +1937,9 @@ article .entry-footer {
   flex-direction: column;
   gap: 0.5rem;
   margin-bottom: 2.5rem;
+}
+article:last-child .entry-footer {
+  margin-bottom: 0;
 }
 
 .front-page .get-in-touch {

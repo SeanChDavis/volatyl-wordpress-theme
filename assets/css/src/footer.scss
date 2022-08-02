@@ -24,6 +24,34 @@
 					margin-bottom: 1.25rem;
 				}
 			}
+
+			/**
+			 * When there are three fat footer areas, make the first area twice
+			 * the width of the other two. This is desirable for footers with
+			 * one section of full content, and two smaller sections of links.
+			 */
+			&.v-grid-columns_3 {
+
+				@media all and (min-width: $smMinWidth) {
+
+					.fat-footer-area:first-child {
+						grid-column-start: 1;
+						grid-column-end: 4;
+						margin-bottom: 2rem;
+					}
+				}
+
+				@media all and (min-width: $mdMinWidth) {
+					grid-template-columns: 2fr 1fr 1fr;
+					margin-bottom: unset;
+
+					.fat-footer-area:first-child {
+						grid-column-start: unset;
+						grid-column-end: unset;
+						margin-bottom: unset;
+					}
+				}
+			}
 		}
 	}
 }

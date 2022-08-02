@@ -303,7 +303,7 @@ img {
 	@include fontSmaller;
 }
 
-/* Try to prevent horizontal scroll caused my long, non-breaking text */
+/* Try to prevent horizontal scroll caused by long, non-breaking text */
 .main-content-wrap {
 	word-break: normal;
 	overflow-wrap: anywhere;
