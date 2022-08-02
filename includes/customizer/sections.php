@@ -29,3 +29,13 @@ $wp_customize->add_section( 'volatyl_front_page_template', array(
 	'panel'       => 'volatyl_settings',
 	'priority'    => 30,
 ) );
+
+/**
+ * Template - Blog
+ */
+$wp_customize->add_section( 'volatyl_blog_template', array(
+	'title'       => __( 'Template - Blog', 'volatyl' ),
+	'description' => __( 'Configure the Blog settings.', 'volatyl' ),
+	'panel'       => 'volatyl_settings',
+	'priority'    => 40,
+) );

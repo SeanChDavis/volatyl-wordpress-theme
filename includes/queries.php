@@ -11,10 +11,10 @@ function volatyl_pre_get_posts( $query ) {
 	/**
 	 * Control the number of posts per page based on the presence of sticky posts
 	 */
-	if ( $query->is_main_query() && $query->is_home() ) {
+	if ( $query->is_main_query() && $query->is_home() && ! is_admin() ) {
 
 		$sticky_count = count( get_option( 'sticky_posts' ) );
-		$post_count = get_option( 'posts_per_page' );
+		$post_count = volatyl_get_posts_per_page( 'volatyl_blog_posts_grid_columns_rows' );
 
 		$offset = ( $sticky_count <= $post_count ) ? ( $post_count - ( $post_count - $sticky_count ) ) : $post_count;
 
@@ -22,8 +22,8 @@ function volatyl_pre_get_posts( $query ) {
 			$query->set('posts_per_page', ( $post_count - $offset ) );
 		} else {
 			$offset = ( ( $query->query_vars['paged']-1 ) * $post_count ) - $offset;
-			$query->set( 'posts_per_page',$post_count );
-			$query->set( 'offset',$offset );
+			$query->set( 'posts_per_page', $post_count );
+			$query->set( 'offset', $offset );
 		}
 	}
 
@@ -47,10 +47,10 @@ add_action( 'pre_get_posts', 'volatyl_pre_get_posts' );
  */
 function volatyl_found_posts( $found_posts, $query  ) {
 
-	if ( $query->is_main_query() && $query->is_home() ) {
+	if ( $query->is_main_query() && $query->is_home() && ! is_admin() ) {
 
 		$sticky_count = count( get_option( 'sticky_posts' ) );
-		$post_count = get_option( 'posts_per_page' );
+		$post_count = volatyl_get_posts_per_page( 'volatyl_blog_posts_grid_columns_rows' );
 		$offset = ( $sticky_count <= $post_count ) ? ( $post_count - ( $post_count - $sticky_count ) ) : $post_count;
 
 		$found_posts = $found_posts + $offset;

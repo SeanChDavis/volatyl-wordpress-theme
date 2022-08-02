@@ -764,6 +764,9 @@ img {
 .v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] {
   margin-bottom: 4px;
 }
+.v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a {
+  word-break: break-word;
+}
 .v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] {
   font-size: 13px;
   line-height: 1.6;
@@ -1065,11 +1068,11 @@ body {
 }
 
 /* Adjust sticky footer prep when WP admin bar is present */
-.logged-in:not([class*=customize-]) #page {
+.logged-in #page {
   height: calc(100vh - 46px);
 }
 @media all and (min-width: 783px) {
-  .logged-in:not([class*=customize-]) #page {
+  .logged-in #page {
     height: calc(100vh - 32px);
   }
 }
@@ -1188,12 +1191,12 @@ main {
   margin: 0;
 }
 #masthead .inner:not(.medium) .site-branding .site-title a {
-  color: #52546b;
+  color: #313240;
   line-height: 1;
   text-decoration: none;
 }
 #masthead .inner:not(.medium) .site-branding .site-title a:active, #masthead .inner:not(.medium) .site-branding .site-title a:focus, #masthead .inner:not(.medium) .site-branding .site-title a:hover {
-  color: #313240;
+  color: #52546b;
 }
 
 #site-navigation {
@@ -1971,21 +1974,21 @@ article:last-child .entry-footer {
   margin-bottom: 0;
 }
 
-.front-page .recent-posts .post-type-grid {
+.front-page .recent-posts .post-type-grid:not(:last-child) {
   margin-bottom: 3rem;
 }
 @media all and (min-width: 768px) {
-  .front-page .recent-posts .post-type-grid {
+  .front-page .recent-posts .post-type-grid:not(:last-child) {
     margin-bottom: 4rem;
   }
 }
 @media all and (min-width: 992px) {
-  .front-page .recent-posts .post-type-grid {
+  .front-page .recent-posts .post-type-grid:not(:last-child) {
     margin-bottom: 6rem;
   }
 }
 @media all and (min-width: 1200px) {
-  .front-page .recent-posts .post-type-grid {
+  .front-page .recent-posts .post-type-grid:not(:last-child) {
     margin-bottom: 8rem;
   }
 }

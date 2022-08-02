@@ -92,6 +92,10 @@
 
 				[class*="-item-title"] {
 					margin-bottom: 4px;
+
+					a {
+						word-break: break-word;
+					}
 				}
 
 				[class*="-item-meta"] {

@@ -3,18 +3,21 @@
 	.recent-posts {
 
 		.post-type-grid {
-			margin-bottom: 3rem;
 
-			@media all and (min-width: $smMinWidth) {
-				margin-bottom: 4rem;
-			}
+			&:not(:last-child) {
+				margin-bottom: 3rem;
 
-			@media all and (min-width: $mdMinWidth) {
-				margin-bottom: 6rem;
-			}
+				@media all and (min-width: $smMinWidth) {
+					margin-bottom: 4rem;
+				}
 
-			@media all and (min-width: $lgMinWidth) {
-				margin-bottom: 8rem;
+				@media all and (min-width: $mdMinWidth) {
+					margin-bottom: 6rem;
+				}
+
+				@media all and (min-width: $lgMinWidth) {
+					margin-bottom: 8rem;
+				}
 			}
 		}
 

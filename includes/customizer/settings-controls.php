@@ -16,7 +16,6 @@ $wp_customize->add_control( 'volatyl_full_width_structure', array(
 	'type'     => 'checkbox',
 ) );
 
-
 /**
  * Content Configuration
  */
@@ -44,14 +43,13 @@ $wp_customize->add_control( 'volatyl_page_comments', array(
 	'type'     => 'checkbox',
 ) );
 
-
 /**
  * Template - Front Page
  */
 
 // Hero settings
 $wp_customize->add_setting( 'volatyl_front_page_hero_settings', array(
-	'sanitize_callback'	=> 'volatyl_sanitize_arbitrary_html',
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
 ) );
 $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_front_page_hero_settings', array(
 	'label'       => __( 'Hero Area', 'volatyl' ),
@@ -74,14 +72,14 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_custo
 
 // Hero Subtitle
 $wp_customize->add_setting( 'volatyl_front_page_hero_subtitle', array(
-	'default'           => null,
+	'default'           => NULL,
 	'sanitize_callback' => 'volatyl_sanitize_textarea_lite',
 ) );
 $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_customize, 'volatyl_front_page_hero_subtitle', array(
-	'label'         => __( 'Subtitle', 'volatyl' ),
-	'section'       => 'volatyl_front_page_template',
-	'description'   => sprintf( __( 'This content displays below the hero title in a paragraph format. 2-3 sentences looks best. Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>, <i>' ),
-	'priority'      => 30,
+	'label'       => __( 'Subtitle', 'volatyl' ),
+	'section'     => 'volatyl_front_page_template',
+	'description' => sprintf( __( 'This content displays below the hero title in a paragraph format. 2-3 sentences looks best. Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>, <i>' ),
+	'priority'    => 30,
 ) ) );
 
 // Hero primary CTA button URL
@@ -134,7 +132,7 @@ $wp_customize->add_control( 'volatyl_front_page_hero_secondary_cta_button_text',
 
 // Blog settings area
 $wp_customize->add_setting( 'volatyl_front_page_blog_settings', array(
-	'sanitize_callback'	=> 'volatyl_sanitize_arbitrary_html',
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
 ) );
 $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_front_page_blog_settings', array(
 	'label'       => __( 'Blog Posts Area', 'volatyl' ),
@@ -144,21 +142,50 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 ) ) );
 
 // Blog posts grid display
-$wp_customize->add_setting( 'volatyl_front_page_blog_posts_configuration', array(
+$wp_customize->add_setting( 'volatyl_front_page_blog_posts_grid_columns_rows', array(
 	'default'           => '2_2',
 	'sanitize_callback' => 'volatyl_sanitize_select',
 ) );
-$wp_customize->add_control( 'volatyl_front_page_blog_posts_configuration', array(
+$wp_customize->add_control( 'volatyl_front_page_blog_posts_grid_columns_rows', array(
 	'label'    => __( 'How should blog posts display?', 'volatyl' ),
 	'section'  => 'volatyl_front_page_template',
 	'priority' => 110,
 	'type'     => 'select',
 	'choices'  => array(
-		'2_1'  => __( '2 columns - 1 row', 'volatyl' ),
-		'2_2'  => __( '2 columns - 2 rows', 'volatyl' ),
-		'2_3'  => __( '2 columns - 3 rows', 'volatyl' ),
-		'3_1'  => __( '3 columns - 1 row', 'volatyl' ),
-		'3_2'  => __( '3 columns - 2 rows', 'volatyl' ),
-		'3_3'  => __( '3 columns - 3 rows', 'volatyl' ),
+		'2_1' => __( '2 columns / 1 row -- ( 2 total )', 'volatyl' ),
+		'2_2' => __( '2 columns / 2 rows -- ( 4 total )', 'volatyl' ),
+		'2_3' => __( '2 columns / 3 rows -- ( 6 total )', 'volatyl' ),
+		'3_1' => __( '3 columns / 1 row -- ( 3 total )', 'volatyl' ),
+		'3_2' => __( '3 columns / 2 rows -- ( 6 total )', 'volatyl' ),
+		'3_3' => __( '3 columns / 3 rows -- ( 9 total )', 'volatyl' ),
+	),
+) );
+
+/**
+ * Template - Blog
+ */
+
+// Posts per page (linked to core setting)
+$wp_customize->add_setting( 'volatyl_blog_posts_grid_columns_rows', array(
+	'default'           => 'default',
+	'sanitize_callback' => 'volatyl_sanitize_text',
+) );
+$wp_customize->add_control( 'volatyl_blog_posts_grid_columns_rows', array(
+	'label'    => __( 'How should blog posts display?', 'volatyl' ),
+	'section'  => 'volatyl_blog_template',
+	'priority' => 10,
+	'type'     => 'select',
+	'choices'  => array(
+		'default' => __( 'Default (Settings -> Reading)', 'volatyl' ),
+		'2_1'     => __( '2 columns / 1 row -- ( 2 total )', 'volatyl' ),
+		'2_2'     => __( '2 columns / 2 rows -- ( 4 total )', 'volatyl' ),
+		'2_3'     => __( '2 columns / 3 rows -- ( 6 total )', 'volatyl' ),
+		'2_4'     => __( '2 columns / 4 rows -- ( 8 total )', 'volatyl' ),
+		'2_5'     => __( '2 columns / 5 rows -- ( 10 total )', 'volatyl' ),
+		'3_1'     => __( '3 columns / 1 row -- ( 3 total )', 'volatyl' ),
+		'3_2'     => __( '3 columns / 2 rows -- ( 6 total )', 'volatyl' ),
+		'3_3'     => __( '3 columns / 3 rows -- ( 9 total )', 'volatyl' ),
+		'3_4'     => __( '3 columns / 4 rows -- ( 12 total )', 'volatyl' ),
+		'3_5'     => __( '3 columns / 5 rows -- ( 15 total )', 'volatyl' ),
 	),
 ) );
