@@ -325,7 +325,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   display: block;
   font-weight: 700;
   margin: 0 0 1.25rem;
@@ -984,7 +984,7 @@ img {
 .subdued-title {
   font-size: 15px;
   line-height: 1.6;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   color: #686a88;
   display: block;
   font-weight: 700;
@@ -1184,7 +1184,7 @@ main {
   vertical-align: bottom;
 }
 #masthead .inner:not(.medium) .site-branding .site-title {
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1;
@@ -1388,7 +1388,7 @@ main {
   }
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu .close-menu-modal {
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   font-size: 13px;
   line-height: 1.6;
   display: block;
@@ -1729,7 +1729,7 @@ main {
 #comments #respond #commentform .comment-form-url > label {
   font-size: 15px;
   line-height: 1.6;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   display: block;
   font-weight: 600;
 }
@@ -1756,7 +1756,7 @@ button,
 [type=submit],
 [type=reset],
 .v-button {
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   background: #313240;
   border: none;
   border-radius: 3px;
