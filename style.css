@@ -897,12 +897,12 @@ img {
 }
 @media all and (min-width: 560px) {
   .site-hero .inner .hero > [class*=-subtitle]:not(:last-child), .site-hero .inner .hero > [class*=-description]:not(:last-child) {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 }
 @media all and (min-width: 992px) {
   .site-hero .inner .hero > [class*=-subtitle]:not(:last-child), .site-hero .inner .hero > [class*=-description]:not(:last-child) {
-    margin-bottom: 6rem;
+    margin-bottom: 5rem;
   }
 }
 .site-hero .inner .hero .primary-cta-container {
@@ -933,6 +933,13 @@ img {
 .site-hero .inner .hero .secondary-cta-container .secondary-cta {
   font-size: 15px;
   line-height: 1.6;
+}
+.site-hero .inner .hero.content-centered {
+  text-align: center;
+}
+.site-hero .inner .hero.content-centered > * {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .jumbo-header .inner > [class*=-title] {
@@ -1164,41 +1171,40 @@ main {
 #masthead {
   background: #f7f7f9;
 }
-#masthead .inner:not(.medium) {
+#masthead .site-header .inner {
   display: flex;
   justify-content: space-between;
   padding-bottom: 1rem;
   padding-top: 1rem;
 }
 @media all and (min-width: 560px) {
-  #masthead .inner:not(.medium) {
+  #masthead .site-header .inner {
     padding-bottom: 2rem;
     padding-top: 2rem;
   }
 }
-#masthead .inner:not(.medium) > * {
+#masthead .site-header .inner > * {
   align-self: center;
 }
-#masthead .inner:not(.medium) .site-branding .custom-logo-link .custom-logo {
+#masthead .site-header .inner .site-branding .custom-logo-link .custom-logo {
   max-width: 180px;
   vertical-align: bottom;
 }
-#masthead .inner:not(.medium) .site-branding .site-title {
+#masthead .site-header .inner .site-branding .site-title {
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1;
   margin: 0;
 }
-#masthead .inner:not(.medium) .site-branding .site-title a {
+#masthead .site-header .inner .site-branding .site-title a {
   color: #313240;
   line-height: 1;
   text-decoration: none;
 }
-#masthead .inner:not(.medium) .site-branding .site-title a:active, #masthead .inner:not(.medium) .site-branding .site-title a:focus, #masthead .inner:not(.medium) .site-branding .site-title a:hover {
+#masthead .site-header .inner .site-branding .site-title a:active, #masthead .site-header .inner .site-branding .site-title a:focus, #masthead .site-header .inner .site-branding .site-title a:hover {
   color: #52546b;
 }
-
 #site-navigation {
   /* Persistent navigation rules */
   /**
@@ -1829,6 +1835,35 @@ textarea:focus {
   }
 }
 
+.footer-lead .footer-lead-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: space-between;
+  text-align: center;
+}
+@media all and (min-width: 768px) {
+  .footer-lead .footer-lead-cta {
+    flex-direction: row;
+    text-align: unset;
+  }
+}
+.footer-lead .footer-lead-cta > * {
+  align-self: center;
+}
+@media all and (min-width: 768px) {
+  .footer-lead .footer-lead-cta .cta-content {
+    max-width: 60%;
+  }
+}
+@media all and (min-width: 992px) {
+  .footer-lead .footer-lead-cta .cta-content {
+    max-width: 50%;
+  }
+}
+.footer-lead .footer-lead-cta .cta-content [class*=-title] {
+  margin-bottom: 12px;
+}
 .fat-footer {
   font-size: 15px;
   line-height: 1.6;

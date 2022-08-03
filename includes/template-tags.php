@@ -11,31 +11,33 @@ if ( ! function_exists( 'volatyl_hero' ) ) :
 		$default_args = array(
 			'title'         => ! empty( $args['title'] ) ? $args['title'] : get_the_title(),
 			'subtitle'      => ! empty( $args['subtitle'] ) ? $args['subtitle'] : '',
+			'alignment'     => 1 === $args['alignment'] ? 1 : 0,
 			'primary_cta'   => array(
-				'text'    => '',
-				'url'     => '',
+				'text' => '',
+				'url'  => '',
 			),
 			'secondary_cta' => array(
-				'text'    => '',
-				'url'     => '',
+				'text' => '',
+				'url'  => '',
 			),
 		);
 
 		$new_args = array_merge( $default_args, $args );
 
-		$title                 = $new_args['title'];
-		$subtitle              = $new_args['subtitle'];
-		$primary_cta_text      = $new_args['primary_cta']['text'];
-		$primary_cta_url       = $new_args['primary_cta']['url'];
-		$secondary_cta_text    = $new_args['secondary_cta']['text'];
-		$secondary_cta_url     = $new_args['secondary_cta']['url'];
+		$title              = $new_args['title'];
+		$subtitle           = $new_args['subtitle'];
+		$alignment          = $new_args['alignment'];
+		$primary_cta_text   = $new_args['primary_cta']['text'];
+		$primary_cta_url    = $new_args['primary_cta']['url'];
+		$secondary_cta_text = $new_args['secondary_cta']['text'];
+		$secondary_cta_url  = $new_args['secondary_cta']['url'];
 		?>
 
 		<div class="site-hero">
 
-			<div class="inner medium">
+			<div class="inner large">
 
-				<div class="hero">
+				<div class="hero<?php echo $alignment ? ' content-centered' : ''; ?>">
 					<h1 class="hero-title"><?php echo $title; ?></h1>
 					<?php if ( ! empty( $subtitle ) ) { ?>
 						<p class="hero-subtitle"><?php echo $subtitle; ?></p>

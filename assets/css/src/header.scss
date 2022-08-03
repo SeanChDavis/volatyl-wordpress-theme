@@ -1,50 +1,57 @@
 #masthead {
 	background: $lightBackground;
 
-	.inner:not(.medium) {
-		display: flex;
-		justify-content: space-between;
-		padding-bottom: 1rem;
-		padding-top: 1rem;
+	.site-header {
 
-		@media all and (min-width: $xsMinWidth) {
-			padding-bottom: 2rem;
-			padding-top: 2rem;
-		}
+		.inner {
+			display: flex;
+			justify-content: space-between;
+			padding-bottom: 1rem;
+			padding-top: 1rem;
 
-		& > * {
-			align-self: center;
-		}
-
-		.site-branding {
-
-			.custom-logo-link {
-
-				.custom-logo {
-					max-width: 180px;
-					vertical-align: bottom;
-				}
+			@media all and (min-width: $xsMinWidth) {
+				padding-bottom: 2rem;
+				padding-top: 2rem;
 			}
 
-			.site-title {
-				@include headingFont;
-				font-weight: 700;
-				font-size: 1.25rem;
-				line-height: 1;
-				margin: 0;
+			& > * {
+				align-self: center;
+			}
 
-				a {
-					color: $baseColor;
+			.site-branding {
+
+				.custom-logo-link {
+
+					.custom-logo {
+						max-width: 180px;
+						vertical-align: bottom;
+					}
+				}
+
+				.site-title {
+					@include headingFont;
+					font-weight: 700;
+					font-size: 1.25rem;
 					line-height: 1;
-					text-decoration: none;
+					margin: 0;
 
-					&:active,
-					&:focus,
-					&:hover {
-						color: $linkColor;
+					a {
+						color: $baseColor;
+						line-height: 1;
+						text-decoration: none;
+
+						&:active,
+						&:focus,
+						&:hover {
+							color: $linkColor;
+						}
 					}
 				}
 			}
 		}
+	}
+
+	.site-hero {
+
 	}
 }

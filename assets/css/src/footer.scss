@@ -1,3 +1,42 @@
+.footer-lead {
+
+	.footer-lead-cta {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		justify-content: space-between;
+		text-align: center;
+
+		@media all and (min-width: $smMinWidth) {
+			flex-direction: row;
+			text-align: unset;
+		}
+
+		& > * {
+			align-self: center;
+		}
+
+		.cta-content {
+
+			@media all and (min-width: $smMinWidth) {
+				max-width: 60%;
+			}
+
+			@media all and (min-width: $mdMinWidth) {
+				max-width: 50%;
+			}
+
+			[class*="-title"] {
+				margin-bottom: 12px;
+			}
+		}
+
+		.cta-action {
+
+		}
+	}
+}
+
 .fat-footer {
 	@include fontSmaller;
 	background: $lightBackground;

@@ -1,4 +1,20 @@
 <?php
+
+/**
+ * Does the Footer Lead have a title, description, or button with a target?
+ *
+ * @return bool
+ */
+function volatyl_has_footer_lead_content() {
+
+	return get_theme_mod( 'volatyl_footer_lead_title' )
+	       || get_theme_mod( 'volatyl_footer_lead_description' )
+	       || (
+		       get_theme_mod( 'volatyl_footer_lead_cta_button_url' )
+		       && get_theme_mod( 'volatyl_footer_lead_cta_button_text' )
+	       );
+}
+
 /**
  * Are any of the fat footer areas in use? If at least one, then yes.
  *

@@ -28,7 +28,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'label'       => __( 'Pages', 'volatyl' ),
 	'description' => __( 'The following settings are specific to standard WordPress Pages.', 'volatyl' ),
 	'section'     => 'volatyl_content_section',
-	'priority'    => 10,
+	'priority'    => 1,
 ) ) );
 
 // Comments on pages?
@@ -54,9 +54,21 @@ $wp_customize->add_setting( 'volatyl_front_page_hero_settings', array(
 $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_front_page_hero_settings', array(
 	'label'       => __( 'Hero Area', 'volatyl' ),
 	'section'     => 'volatyl_front_page_template',
-	'priority'    => 10,
+	'priority'    => 1,
 	'description' => __( 'The following settings apply to the hero area on the front page.', 'vendd' ),
 ) ) );
+
+// Hero alignment
+$wp_customize->add_setting( 'volatyl_front_page_hero_centered', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox'
+) );
+$wp_customize->add_control( 'volatyl_front_page_hero_centered', array(
+	'label'    => __( 'Center the hero content', 'volatyl' ),
+	'section'  => 'volatyl_front_page_template',
+	'priority' => 10,
+	'type'     => 'checkbox',
+) );
 
 // Hero Title
 $wp_customize->add_setting( 'volatyl_front_page_hero_title', array(
@@ -137,7 +149,7 @@ $wp_customize->add_setting( 'volatyl_front_page_blog_settings', array(
 $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_front_page_blog_settings', array(
 	'label'       => __( 'Blog Posts Area', 'volatyl' ),
 	'section'     => 'volatyl_front_page_template',
-	'priority'    => 100,
+	'priority'    => 101,
 	'description' => __( 'The following settings apply to the blog posts area on the front page.', 'vendd' ),
 ) ) );
 
@@ -188,4 +200,104 @@ $wp_customize->add_control( 'volatyl_blog_posts_grid_columns_rows', array(
 		'3_4'     => __( '3 columns / 4 rows -- ( 12 total )', 'volatyl' ),
 		'3_5'     => __( '3 columns / 5 rows -- ( 15 total )', 'volatyl' ),
 	),
+) );
+
+/**
+ * Footer Areas
+ */
+
+// Footer Lead area
+$wp_customize->add_setting( 'volatyl_footer_lead_area', array(
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
+) );
+$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_footer_lead_area', array(
+	'label'       => __( 'Footer Lead Area', 'volatyl' ),
+	'description' => __( 'This area displays above the Fat Footer (if present) and the Site Footer. It is used as a site-wide call-to-action, displaying on all pages by default.', 'volatyl' ),
+	'section'     => 'volatyl_footer_areas',
+	'priority'    => 1,
+) ) );
+
+// Footer Lead
+$wp_customize->add_setting( 'volatyl_footer_lead', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox'
+) );
+$wp_customize->add_control( 'volatyl_footer_lead', array(
+	'label'    => __( 'Enable Footer Lead area', 'volatyl' ),
+	'section'  => 'volatyl_footer_areas',
+	'priority' => 10,
+	'description' => __( 'There must also be a title, description, or button in Footer Lead area for it to display.', 'volatyl' ),
+	'type'     => 'checkbox',
+) );
+
+// Footer Lead title
+$wp_customize->add_setting( 'volatyl_footer_lead_title', array(
+	'default'           => NULL,
+	'sanitize_callback' => 'volatyl_sanitize_text',
+) );
+$wp_customize->add_control( 'volatyl_footer_lead_title', array(
+	'label'       => __( 'Title', 'volatyl' ),
+	'section'     => 'volatyl_footer_areas',
+	'description' => __( 'The large title text for the area.', 'volatyl' ),
+	'priority'    => 20,
+) );
+
+// Footer Lead description
+$wp_customize->add_setting( 'volatyl_footer_lead_description', array(
+	'default'           => NULL,
+	'sanitize_callback' => 'volatyl_sanitize_textarea_lite',
+) );
+$wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_customize, 'volatyl_footer_lead_description', array(
+	'label'       => __( 'Description', 'volatyl' ),
+	'section'     => 'volatyl_footer_areas',
+	'description' => sprintf( __( 'Describe to our visitor the reason for taking this particular action on your site. Consider 1-2 sentences Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>, <i>' ),
+	'priority'    => 30,
+) ) );
+
+// Footer Lead CTA button URL
+$wp_customize->add_setting( 'volatyl_footer_lead_cta_button_url', array(
+	'default'           => NULL,
+	'sanitize_callback' => 'volatyl_sanitize_text',
+) );
+$wp_customize->add_control( 'volatyl_footer_lead_cta_button_url', array(
+	'label'       => __( 'Call-to-action button URL', 'volatyl' ),
+	'section'     => 'volatyl_footer_areas',
+	'description' => __( 'Set the URL of the call-to-action button.', 'volatyl' ),
+	'priority'    => 40,
+) );
+
+// Footer Lead CTA button text
+$wp_customize->add_setting( 'volatyl_footer_lead_cta_button_text', array(
+	'default'           => NULL,
+	'sanitize_callback' => 'volatyl_sanitize_text',
+) );
+$wp_customize->add_control( 'volatyl_footer_lead_cta_button_text', array(
+	'label'       => __( 'Call-to-action button text', 'volatyl' ),
+	'section'     => 'volatyl_footer_areas',
+	'description' => __( 'Set the text of the call-to-action button.', 'volatyl' ),
+	'priority'    => 50,
+) );
+
+// Fat Footer area
+$wp_customize->add_setting( 'volatyl_fat_footer_area', array(
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
+) );
+$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_fat_footer_area', array(
+	'label'       => __( 'Fat Footer Area', 'volatyl' ),
+	'description' => __( 'This area displays below the Footer Lead (if present) and above the Site Footer. Its content is populated by any one of four widgetized areas.', 'volatyl' ),
+	'section'     => 'volatyl_footer_areas',
+	'priority'    => 101,
+) ) );
+
+// Fat Footer
+$wp_customize->add_setting( 'volatyl_fat_footer', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox'
+) );
+$wp_customize->add_control( 'volatyl_fat_footer', array(
+	'label'    => __( 'Enable Fat Footer area', 'volatyl' ),
+	'section'  => 'volatyl_footer_areas',
+	'priority' => 110,
+	'description' => __( 'There must also be content in at least one Fat Footer widget area.', 'vendd' ),
+	'type'     => 'checkbox',
 ) );

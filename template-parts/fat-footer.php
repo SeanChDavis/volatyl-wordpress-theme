@@ -20,9 +20,7 @@
 ?>
 
 <div class="fat-footer">
-
 	<div class="inner">
-
 		<div class="fat-footer-areas v-grid">
 			<?php
 			$fat_footer_areas = array(
@@ -39,7 +37,6 @@
 					'name' => 'fat-footer-area-four'
 				),
 			);
-
 			foreach ( $fat_footer_areas as $area ) {
 				if ( is_active_sidebar( $area['name'] ) ) {
 					dynamic_sidebar( $area['name'] );
@@ -47,7 +44,5 @@
 			}
 			?>
 		</div>
-
 	</div>
-
 </div>

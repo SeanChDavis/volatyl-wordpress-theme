@@ -39,3 +39,13 @@ $wp_customize->add_section( 'volatyl_blog_template', array(
 	'panel'       => 'volatyl_settings',
 	'priority'    => 40,
 ) );
+
+/**
+ * Footer Areas
+ */
+$wp_customize->add_section( 'volatyl_footer_areas', array(
+	'title'       => __( 'Footer Areas', 'volatyl' ),
+	'description' => __( 'Configure the Footer Lead, Fat Footer, and Site Footer areas.', 'volatyl' ),
+	'panel'       => 'volatyl_settings',
+	'priority'    => 50,
+) );

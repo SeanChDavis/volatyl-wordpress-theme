@@ -55,19 +55,6 @@ get_header();
 		}
 		?>
 
-		<section class="get-in-touch dark-background">
-			<div class="inner large">
-				<div class="v-grid v-grid-centered-column">
-					<div class="v-grid-centered-column-content">
-						<p class="h2 section-title"><?php echo sprintf( __( 'Let\'s Connect', 'volatyl' ), get_bloginfo( 'name' ) ); ?></p>
-						<p>This is a prompt to send an email to the owner of the site.</p>
-						<p class="cta-wrap">
-							<a href="#" class="button">Reach out</a></p>
-					</div>
-				</div>
-			</div>
-		</section>
-
 	</main>
 
 <?php
