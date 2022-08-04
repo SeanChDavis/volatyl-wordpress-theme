@@ -23,7 +23,6 @@
 				?>
 			</div>
 			<?php
-			// Only display if a menu is assigned to this location
 			if ( has_nav_menu( 'primary-menu' ) ) {
 				get_template_part( 'template-parts/site', 'navigation' );
 			}

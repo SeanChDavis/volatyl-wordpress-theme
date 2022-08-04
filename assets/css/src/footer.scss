@@ -46,7 +46,6 @@
 		padding-top: 0;
 
 		.fat-footer-areas {
-			border-bottom: 2px solid $lightBorder;
 			padding: 2rem 0;
 
 			@media all and (min-width: $xsMinWidth) {
@@ -64,30 +63,56 @@
 				}
 			}
 
-			/**
-			 * When there are three fat footer areas, make the first area twice
-			 * the width of the other two. This is desirable for footers with
-			 * one section of full content, and two smaller sections of links.
-			 */
-			&.v-grid-columns_3 {
+			&.alternate-layout {
 
-				@media all and (min-width: $smMinWidth) {
+				&.v-grid-columns_3 {
 
-					.fat-footer-area:first-child {
-						grid-column-start: 1;
-						grid-column-end: 4;
-						margin-bottom: 2rem;
+					@media all and (min-width: $smMinWidth) {
+
+						.fat-footer-area:first-child {
+							grid-column-start: 1;
+							grid-column-end: 4;
+							margin-bottom: 2rem;
+						}
+					}
+
+					@media all and (min-width: $mdMinWidth) {
+						grid-template-columns: 2fr 1fr 1fr;
+						margin-bottom: unset;
+
+						.fat-footer-area:first-child {
+							grid-column-start: unset;
+							grid-column-end: unset;
+							margin-bottom: unset;
+						}
 					}
 				}
 
-				@media all and (min-width: $mdMinWidth) {
-					grid-template-columns: 2fr 1fr 1fr;
-					margin-bottom: unset;
+				&.v-grid-columns_4 {
 
-					.fat-footer-area:first-child {
-						grid-column-start: unset;
-						grid-column-end: unset;
+					@media all and (min-width: $smMinWidth) {
+						grid-template-columns: 1fr 1fr 1fr;
+
+						.fat-footer-area:first-child {
+							grid-column-start: 1;
+							grid-column-end: 4;
+							margin-bottom: 2rem;
+						}
+
+						.fat-footer-area:not(:first-child) {
+
+						}
+					}
+
+					@media all and (min-width: $mdMinWidth) {
+						grid-template-columns: 3fr 1fr 1fr 1fr;
 						margin-bottom: unset;
+
+						.fat-footer-area:first-child {
+							grid-column-start: unset;
+							grid-column-end: unset;
+							margin-bottom: unset;
+						}
 					}
 				}
 			}
@@ -101,21 +126,26 @@
 
 	.inner {
 		padding-bottom: 1.5rem;
-		padding-top: 1.5rem;
+		padding-top: 0;
 
-		@media all and (min-width: $mdMinWidth) {
-			display: flex;
-			justify-content: space-between;
-		}
+		.site-footer-content {
+			border-top: 2px solid $lightBorder;
+			padding-top: 1.5rem;
 
-		.site-name {
-
-			.blog-name {
-				font-weight: 700;
+			@media all and (min-width: $mdMinWidth) {
+				display: flex;
+				justify-content: space-between;
 			}
 
-			.site-copyright {
-				font-weight: 400;
+			.site-name {
+
+				.blog-name {
+					font-weight: 700;
+				}
+
+				.site-copyright {
+					font-weight: 400;
+				}
 			}
 		}
 	}

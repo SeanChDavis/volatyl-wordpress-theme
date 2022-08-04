@@ -13,6 +13,11 @@ if ( 1 === get_theme_mod( 'volatyl_fat_footer', 0 ) && volatyl_has_fat_footer_co
 	get_template_part( 'template-parts/fat', 'footer' );
 }
 
+// Social menu
+if ( has_nav_menu( 'social-menu' ) ) {
+	get_template_part( 'template-parts/social', 'navigation' );
+}
+
 // Always display the basic site information
 get_template_part( 'template-parts/site', 'footer' );
 ?>

@@ -46,29 +46,30 @@ function volatyl_setup() {
 	add_image_size( 'v-grid-item-media_large', 800, 400, true );
 	add_image_size( 'v-grid-item-media_full', 1168, 584, true );
 
-	// This theme uses wp_nav_menu() in one location.
+	// This theme uses wp_nav_menu() in multiple locations.
 	register_nav_menus( array(
-			'primary-menu' => esc_html__( 'Primary Menu', 'volatyl' ),
-		) );
+		'primary-menu' => esc_html__( 'Primary Menu', 'volatyl' ),
+		'social-menu'  => esc_html__( 'Social Menu', 'volatyl' ),
+	) );
 
 	// Switch default core markup for search form, comment form, and comments to output valid HTML5.
 	add_theme_support( 'html5', array(
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-			'style',
-			'script',
-			'navigation-widgets',
-		) );
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
+		'style',
+		'script',
+		'navigation-widgets',
+	) );
 
 	// Add support for core custom logo.
 	add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
-		) );
+		'height'      => 250,
+		'width'       => 250,
+		'flex-width'  => true,
+		'flex-height' => true,
+	) );
 }
 
 add_action( 'after_setup_theme', 'volatyl_setup' );
@@ -86,6 +87,9 @@ function volatyl_scripts_styles() {
 
 	// Google fonts
 	wp_enqueue_style( 'google-fonts-red-hat-display', '//fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700;1,900&family=Red+Hat+Text:ital,wght@0,400;0,600;0,700;1,400;1,700' );
+
+	// Add Dashicons in WordPress Front-end
+	wp_enqueue_style( 'dashicons' );
 }
 
 add_action( 'wp_enqueue_scripts', 'volatyl_scripts_styles' );

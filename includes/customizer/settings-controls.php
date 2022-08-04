@@ -55,7 +55,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'label'       => __( 'Hero Area', 'volatyl' ),
 	'section'     => 'volatyl_front_page_template',
 	'priority'    => 1,
-	'description' => __( 'The following settings apply to the hero area on the front page.', 'vendd' ),
+	'description' => __( 'The following settings apply to the hero area on the front page.', 'volatyl' ),
 ) ) );
 
 // Hero alignment
@@ -150,7 +150,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'label'       => __( 'Blog Posts Area', 'volatyl' ),
 	'section'     => 'volatyl_front_page_template',
 	'priority'    => 101,
-	'description' => __( 'The following settings apply to the blog posts area on the front page.', 'vendd' ),
+	'description' => __( 'The following settings apply to the blog posts area on the front page.', 'volatyl' ),
 ) ) );
 
 // Blog posts grid display
@@ -223,11 +223,11 @@ $wp_customize->add_setting( 'volatyl_footer_lead', array(
 	'sanitize_callback' => 'volatyl_sanitize_checkbox'
 ) );
 $wp_customize->add_control( 'volatyl_footer_lead', array(
-	'label'    => __( 'Enable Footer Lead area', 'volatyl' ),
-	'section'  => 'volatyl_footer_areas',
-	'priority' => 10,
+	'label'       => __( 'Enable Footer Lead area', 'volatyl' ),
+	'section'     => 'volatyl_footer_areas',
+	'priority'    => 10,
 	'description' => __( 'There must also be a title, description, or button in Footer Lead area for it to display.', 'volatyl' ),
-	'type'     => 'checkbox',
+	'type'        => 'checkbox',
 ) );
 
 // Footer Lead title
@@ -295,9 +295,22 @@ $wp_customize->add_setting( 'volatyl_fat_footer', array(
 	'sanitize_callback' => 'volatyl_sanitize_checkbox'
 ) );
 $wp_customize->add_control( 'volatyl_fat_footer', array(
-	'label'    => __( 'Enable Fat Footer area', 'volatyl' ),
-	'section'  => 'volatyl_footer_areas',
-	'priority' => 110,
-	'description' => __( 'There must also be content in at least one Fat Footer widget area.', 'vendd' ),
-	'type'     => 'checkbox',
+	'label'       => __( 'Enable Fat Footer area', 'volatyl' ),
+	'section'     => 'volatyl_footer_areas',
+	'priority'    => 110,
+	'description' => __( 'There must also be content in at least one Fat Footer widget area.', 'volatyl' ),
+	'type'        => 'checkbox',
+) );
+
+// Fat Footer alternate layout
+$wp_customize->add_setting( 'volatyl_fat_footer_alternate_layout', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox'
+) );
+$wp_customize->add_control( 'volatyl_fat_footer_alternate_layout', array(
+	'label'       => __( 'Enable alternate layout', 'volatyl' ),
+	'section'     => 'volatyl_footer_areas',
+	'priority'    => 110,
+	'description' => __( 'When either three or four Fat Footer widget areas are in use, the alternate layout makes the left-most area larger than the others.', 'volatyl' ),
+	'type'        => 'checkbox',
 ) );

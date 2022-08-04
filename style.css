@@ -1464,6 +1464,80 @@ main {
   text-align: right;
 }
 
+.social-navigation {
+  background: #f7f7f9;
+}
+.social-navigation .inner {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+.social-navigation #social-menu {
+  column-gap: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  row-gap: 0.5rem;
+}
+.social-navigation #social-menu .menu-item {
+  font-size: 14px;
+  font-weight: 500;
+  list-style-type: none;
+}
+.social-navigation #social-menu .menu-item a {
+  color: #52546b;
+  display: inline-block;
+  text-decoration: none;
+}
+.social-navigation #social-menu .menu-item a:active, .social-navigation #social-menu .menu-item a:focus, .social-navigation #social-menu .menu-item a:hover {
+  color: #313240;
+  text-decoration: none;
+}
+.social-navigation #social-menu .menu-item a:before {
+  font-family: "Dashicons";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  margin-right: 3px;
+  position: relative;
+  top: 2px;
+}
+.social-navigation #social-menu .menu-item a[href*=instagram]:before {
+  color: #fe0075;
+  content: "\f12d";
+}
+.social-navigation #social-menu .menu-item a[href*=facebook]:before {
+  color: #1877f2;
+  content: "\f304";
+}
+.social-navigation #social-menu .menu-item a[href*=youtube]:before {
+  color: #ff0000;
+  content: "\f19b";
+  font-size: 17px;
+  top: 3px;
+}
+.social-navigation #social-menu .menu-item a[href*=twitter]:before {
+  color: #1d9bf0;
+  content: "\f301";
+}
+.social-navigation #social-menu .menu-item a[href*=linkedin]:before {
+  color: #0077b5;
+  content: "\f18d";
+}
+.social-navigation #social-menu .menu-item a[href*=wordpress]:before {
+  color: #0073aa;
+  content: "\f120";
+}
+.social-navigation #social-menu .menu-item a[href*=mailto]:before {
+  color: #52546b;
+  content: "\f465";
+  top: 3px;
+}
+.social-navigation #social-menu .menu-item:first-child > a {
+  padding-left: 0;
+}
+
 .widget {
   font-size: 15px;
   line-height: 1.6;
@@ -1874,13 +1948,7 @@ textarea:focus {
   padding-top: 0;
 }
 .fat-footer > .inner .fat-footer-areas {
-  border-bottom: 2px solid #e8e9ee;
   padding: 2rem 0;
-  /**
-   * When there are three fat footer areas, make the first area twice
-   * the width of the other two. This is desirable for footers with
-   * one section of full content, and two smaller sections of links.
-   */
 }
 @media all and (min-width: 560px) {
   .fat-footer > .inner .fat-footer-areas {
@@ -1896,18 +1964,39 @@ textarea:focus {
   margin-bottom: 1.25rem;
 }
 @media all and (min-width: 768px) {
-  .fat-footer > .inner .fat-footer-areas.v-grid-columns_3 .fat-footer-area:first-child {
+  .fat-footer > .inner .fat-footer-areas.alternate-layout.v-grid-columns_3 .fat-footer-area:first-child {
     grid-column-start: 1;
     grid-column-end: 4;
     margin-bottom: 2rem;
   }
 }
 @media all and (min-width: 992px) {
-  .fat-footer > .inner .fat-footer-areas.v-grid-columns_3 {
+  .fat-footer > .inner .fat-footer-areas.alternate-layout.v-grid-columns_3 {
     grid-template-columns: 2fr 1fr 1fr;
     margin-bottom: unset;
   }
-  .fat-footer > .inner .fat-footer-areas.v-grid-columns_3 .fat-footer-area:first-child {
+  .fat-footer > .inner .fat-footer-areas.alternate-layout.v-grid-columns_3 .fat-footer-area:first-child {
+    grid-column-start: unset;
+    grid-column-end: unset;
+    margin-bottom: unset;
+  }
+}
+@media all and (min-width: 768px) {
+  .fat-footer > .inner .fat-footer-areas.alternate-layout.v-grid-columns_4 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .fat-footer > .inner .fat-footer-areas.alternate-layout.v-grid-columns_4 .fat-footer-area:first-child {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    margin-bottom: 2rem;
+  }
+}
+@media all and (min-width: 992px) {
+  .fat-footer > .inner .fat-footer-areas.alternate-layout.v-grid-columns_4 {
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    margin-bottom: unset;
+  }
+  .fat-footer > .inner .fat-footer-areas.alternate-layout.v-grid-columns_4 .fat-footer-area:first-child {
     grid-column-start: unset;
     grid-column-end: unset;
     margin-bottom: unset;
@@ -1921,18 +2010,22 @@ textarea:focus {
 }
 .site-footer .inner {
   padding-bottom: 1.5rem;
+  padding-top: 0;
+}
+.site-footer .inner .site-footer-content {
+  border-top: 2px solid #e8e9ee;
   padding-top: 1.5rem;
 }
 @media all and (min-width: 992px) {
-  .site-footer .inner {
+  .site-footer .inner .site-footer-content {
     display: flex;
     justify-content: space-between;
   }
 }
-.site-footer .inner .site-name .blog-name {
+.site-footer .inner .site-footer-content .site-name .blog-name {
   font-weight: 700;
 }
-.site-footer .inner .site-name .site-copyright {
+.site-footer .inner .site-footer-content .site-name .site-copyright {
   font-weight: 400;
 }
 
