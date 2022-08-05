@@ -1,8 +1,4 @@
-<?php
-/**
- * The social navigation used in the footer
- */
-?>
+<?php // The social navigation used in the footer ?>
 
 <div class="social-navigation">
 	<div class="inner">

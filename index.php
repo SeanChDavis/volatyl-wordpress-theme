@@ -3,12 +3,9 @@ get_header();
 ?>
 
 	<main id="main">
-		<div class="inner">
-
+		<div class="inner medium">
 			<div class="main-content-wrap">
-
 				<div id="primary-content">
-
 					<?php
 					if ( have_posts() ) :
 						while ( have_posts() ) :
@@ -20,13 +17,9 @@ get_header();
 						get_template_part( 'content/content', 'none' );
 					endif;
 					?>
-
 				</div>
-
 				<?php get_sidebar(); ?>
-
 			</div>
-
 		</div>
 	</main>
 

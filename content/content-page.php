@@ -1,13 +1,7 @@
-<?php
-/**
- * Template part for displaying single pages
- */
-?>
+<?php // Template part for displaying single pages ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
 	<?php volatyl_post_thumbnail(); ?>
-
 	<div class="entry-content">
 		<?php
 		the_content(
@@ -24,7 +18,6 @@
 				wp_kses_post( get_the_title() )
 			)
 		);
-
 		wp_link_pages(
 			array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'volatyl' ),
@@ -33,9 +26,7 @@
 		);
 		?>
 	</div>
-
 	<footer class="entry-footer">
 		<?php volatyl_entry_footer(); ?>
 	</footer>
-
 </article>

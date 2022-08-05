@@ -3,10 +3,8 @@ get_header();
 ?>
 
 	<main id="main">
-		<div class="inner">
-
+		<div class="inner medium">
 			<?php get_template_part( 'content/content', 'none' ); ?>
-
 		</div>
 	</main>
 

@@ -481,7 +481,13 @@ blockquote,
 address {
   color: #52546b;
   font-style: italic;
-  margin: 1.125rem;
+  margin: 1.125rem 1.125rem 2rem;
+}
+@media all and (min-width: 768px) {
+  blockquote,
+address {
+    margin-bottom: 2.5rem;
+  }
 }
 
 cite,
@@ -517,6 +523,7 @@ hr,
 }
 
 table {
+  background: #fff;
   border: 2px solid #313240;
   border-collapse: collapse;
 }
@@ -1088,12 +1095,6 @@ main {
   /* Create sticky footer */
   flex: 1 0 auto;
 }
-@media all and (min-width: 992px) {
-  main .inner {
-    padding-bottom: 4rem;
-    padding-top: 4rem;
-  }
-}
 
 /* Separated from parent elements for easy override */
 .inner {
@@ -1123,6 +1124,12 @@ main {
   .inner {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+}
+@media all and (min-width: 992px) {
+  .inner.small {
+    padding-bottom: 4rem;
+    padding-top: 4rem;
   }
 }
 @media all and (min-width: 992px) {
@@ -1541,12 +1548,117 @@ main {
 .widget {
   font-size: 15px;
   line-height: 1.6;
+  margin-bottom: 1.25rem;
 }
 .widget ul {
-  margin: 0 0 0 1.125rem;
+  margin: 0 0 0 1em;
 }
 .widget ol {
-  margin: 0 0 0 1.3rem;
+  margin: 0 0 0 1.1em;
+}
+.widget h1, .widget .h1,
+.widget h2, .widget .h2,
+.widget h3, .widget .h3,
+.widget h4, .widget .h4,
+.widget h5, .widget .h5,
+.widget h6, .widget .h6 {
+  margin-bottom: 1rem;
+}
+.widget h1, .widget .h1,
+.widget h2, .widget .h2,
+.widget h3, .widget .h3 {
+  font-size: 1.35rem;
+  line-height: 1.35;
+}
+@media all and (min-width: 560px) {
+  .widget h1, .widget .h1,
+.widget h2, .widget .h2,
+.widget h3, .widget .h3 {
+    font-size: 1.65rem;
+  }
+}
+.widget h4, .widget .h4 {
+  color: #47495d;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+@media all and (min-width: 560px) {
+  .widget h4, .widget .h4 {
+    font-size: 1.25rem;
+  }
+}
+@media all and (min-width: 768px) {
+  .widget h4, .widget .h4 {
+    line-height: 1.45;
+  }
+}
+.widget h5, .widget .h5 {
+  font-size: 1rem;
+}
+@media all and (min-width: 560px) {
+  .widget h5, .widget .h5 {
+    font-size: 1.125rem;
+  }
+}
+.widget p {
+  margin-bottom: 1.25rem;
+}
+.widget p:last-child {
+  margin-bottom: 1.25rem;
+}
+@media all and (min-width: 768px) {
+  .widget p + h1, .widget p + .h1 {
+    margin-top: 1.75rem;
+  }
+}
+@media all and (min-width: 768px) {
+  .widget p + h2, .widget p + .h2 {
+    margin-top: 1.5rem;
+  }
+}
+@media all and (min-width: 768px) {
+  .widget p + h3, .widget p + .h3, .widget p + h4, .widget p + .h4, .widget p + h5, .widget p + .h5, .widget p + h6, .widget p + .h6 {
+    margin-top: 1.35rem;
+  }
+}
+.widget ul,
+.widget ol {
+  padding: 0;
+}
+.widget ul li ul, .widget ul li ol,
+.widget ol li ul,
+.widget ol li ol {
+  margin-top: 0.75rem;
+}
+.widget ul li + li,
+.widget ol li + li {
+  margin-top: 0.75rem;
+}
+.widget > ul, .widget > ol {
+  margin-bottom: 1.25rem;
+  margin-top: 1.25rem;
+}
+@media all and (min-width: 992px) {
+  .widget hr,
+.widget .wp-block-separator {
+    margin: 2rem 0;
+  }
+}
+@media all and (min-width: 768px) {
+  .widget pre,
+.widget dl {
+    padding: 1.625rem;
+  }
+}
+
+.fat-footer .widget pre,
+.fat-footer .widget dl,
+.fat-footer .widget code,
+.fat-footer .widget kbd,
+.fat-footer .widget tt,
+.fat-footer .widget var {
+  background: #fff;
 }
 
 #comments .comments-title {
@@ -1963,7 +2075,13 @@ textarea:focus {
 .fat-footer > .inner .fat-footer-areas .widget:not(:last-child) {
   margin-bottom: 1.25rem;
 }
+.fat-footer > .inner .fat-footer-areas.alternate-layout.v-grid-columns_3 {
+  column-gap: 1.5rem;
+}
 @media all and (min-width: 768px) {
+  .fat-footer > .inner .fat-footer-areas.alternate-layout.v-grid-columns_3 {
+    column-gap: 4rem;
+  }
   .fat-footer > .inner .fat-footer-areas.alternate-layout.v-grid-columns_3 .fat-footer-area:first-child {
     grid-column-start: 1;
     grid-column-end: 4;
@@ -1972,7 +2090,7 @@ textarea:focus {
 }
 @media all and (min-width: 992px) {
   .fat-footer > .inner .fat-footer-areas.alternate-layout.v-grid-columns_3 {
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr 1fr;
     margin-bottom: unset;
   }
   .fat-footer > .inner .fat-footer-areas.alternate-layout.v-grid-columns_3 .fat-footer-area:first-child {
@@ -1981,8 +2099,12 @@ textarea:focus {
     margin-bottom: unset;
   }
 }
+.fat-footer > .inner .fat-footer-areas.alternate-layout.v-grid-columns_4 {
+  column-gap: 1.5rem;
+}
 @media all and (min-width: 768px) {
   .fat-footer > .inner .fat-footer-areas.alternate-layout.v-grid-columns_4 {
+    column-gap: 2rem;
     grid-template-columns: 1fr 1fr 1fr;
   }
   .fat-footer > .inner .fat-footer-areas.alternate-layout.v-grid-columns_4 .fat-footer-area:first-child {
@@ -1993,7 +2115,8 @@ textarea:focus {
 }
 @media all and (min-width: 992px) {
   .fat-footer > .inner .fat-footer-areas.alternate-layout.v-grid-columns_4 {
-    grid-template-columns: 3fr 1fr 1fr 1fr;
+    column-gap: 4rem;
+    grid-template-columns: 5fr 2fr 2fr 2fr;
     margin-bottom: unset;
   }
   .fat-footer > .inner .fat-footer-areas.alternate-layout.v-grid-columns_4 .fat-footer-area:first-child {
@@ -2004,9 +2127,9 @@ textarea:focus {
 }
 
 .site-footer {
-  background: #f7f7f9;
   font-size: 15px;
   line-height: 1.6;
+  background: #f7f7f9;
 }
 .site-footer .inner {
   padding-bottom: 1.5rem;
@@ -2029,13 +2152,50 @@ textarea:focus {
   font-weight: 400;
 }
 
-#primary-content > article + article {
+.archive .jumbo-header .archive-title {
+  font-size: 15px;
+  line-height: 1.6;
+  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
+  color: #686a88;
+  display: block;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+.archive .jumbo-header .archive-title span {
+  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
+  color: #313240;
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 0.75rem;
+  max-width: 770px;
+  text-transform: none;
+}
+@media all and (min-width: 560px) {
+  .archive .jumbo-header .archive-title span {
+    font-size: 2.66666rem;
+  }
+}
+@media all and (min-width: 768px) {
+  .archive .jumbo-header .archive-title span {
+    font-size: 3.33333rem;
+  }
+}
+@media all and (min-width: 1200px) {
+  .archive .jumbo-header .archive-title span {
+    font-size: 4rem;
+    max-width: 940px;
+  }
+}
+.archive #primary-content > article + article {
   margin-top: 3.5rem;
 }
-#primary-content > article + .posts-navigation {
+.archive #primary-content > article + .posts-navigation {
   margin-top: 3rem;
 }
-#primary-content .posts-navigation .nav-links {
+.archive #primary-content .posts-navigation .nav-links {
   display: flex;
   gap: 1.5rem;
   justify-content: space-between;

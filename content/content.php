@@ -1,8 +1,4 @@
-<?php
-/**
- * Template part for displaying posts
- */
-?>
+<?php // Template part for displaying posts ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
@@ -12,7 +8,6 @@
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
-
 		if ( 'post' === get_post_type() ) :
 			?>
 			<div class="entry-meta">
@@ -20,12 +15,10 @@
 				volatyl_posted_on();
 				volatyl_posted_by( $post->ID );
 				?>
-			</div><!-- .entry-meta -->
+			</div>
 		<?php endif; ?>
-	</header><!-- .entry-header -->
-
+	</header>
 	<?php volatyl_post_thumbnail(); ?>
-
 	<div class="entry-content">
 		<?php
 		if ( is_home() || is_search() || is_archive() ) {
@@ -45,7 +38,6 @@
 					wp_kses_post( get_the_title() )
 				)
 			);
-
 			wp_link_pages(
 				array(
 					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'volatyl' ),
@@ -54,9 +46,8 @@
 			);
 		}
 		?>
-	</div><!-- .entry-content -->
-
+	</div>
 	<footer class="entry-footer">
 		<?php volatyl_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+	</footer>
+</article>

@@ -1,23 +1,64 @@
-#primary-content {
+.archive {
 
-	// Typically an archive of posts
-	& > article {
+	.jumbo-header {
 
-		& + article {
-			margin-top: 3.5rem;
-		}
+		.archive-title {
+			@include fontSmaller;
+			@include headingFont;
+			color: $lightText;
+			display: block;
+			font-weight: 700;
+			margin-bottom: 1.5rem;
+			text-transform: uppercase;
 
-		& + .posts-navigation {
-			margin-top: 3rem;
+			span {
+				@include headingFont;
+				color: $baseColor;
+				display: block;
+				font-size: 2rem;
+				font-weight: 700;
+				line-height: 1.25;
+				margin: 0 0 .75rem;
+				max-width: 770px;
+				text-transform: none;
+
+				@media all and (min-width: $xsMinWidth) {
+					font-size: 2.66666rem;
+				}
+
+				@media all and (min-width: $smMinWidth) {
+					font-size: 3.33333rem;
+				}
+
+				@media all and (min-width: $lgMinWidth) {
+					font-size: 4rem;
+					max-width: 940px;
+				}
+			}
 		}
 	}
 
-	.posts-navigation {
+	#primary-content {
 
-		.nav-links {
-			display: flex;
-			gap: 1.5rem;
-			justify-content: space-between;
+		// Typically an archive of posts
+		& > article {
+
+			& + article {
+				margin-top: 3.5rem;
+			}
+
+			& + .posts-navigation {
+				margin-top: 3rem;
+			}
+		}
+
+		.posts-navigation {
+
+			.nav-links {
+				display: flex;
+				gap: 1.5rem;
+				justify-content: space-between;
+			}
 		}
 	}
 }

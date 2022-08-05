@@ -84,7 +84,7 @@ if ( ! function_exists( 'volatyl_posted_by' ) ) :
 
 		$post_author_id = get_post_field( 'post_author', $id );
 
-		$byline = sprintf( /* translators: %s: post author. */ esc_html_x( 'by %s', 'post author', 'volatyl' ), '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author_meta( 'display_name', $post_author_id ) ) . '</a></span>' );
+		$byline = sprintf( /* translators: %s: post author. */ esc_html_x( 'by %s', 'post author', 'volatyl' ), '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( $post_author_id ) ) . '">' . esc_html( get_the_author_meta( 'display_name', $post_author_id ) ) . '</a></span>' );
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}

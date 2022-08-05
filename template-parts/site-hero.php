@@ -8,13 +8,10 @@
 
 // Front page template
 if ( ( is_front_page() && ! is_home() ) ) {
-
-	// Make sure the title is always set.
 	$front_page_hero_title = get_bloginfo( 'description' );
 	if ( ! empty( get_theme_mod( 'volatyl_front_page_hero_title' ) ) ) {
 		$front_page_hero_title = get_theme_mod( 'volatyl_front_page_hero_title' );
 	}
-
 	volatyl_hero( array(
 		'title'         => $front_page_hero_title,
 		'subtitle'      => get_theme_mod( 'volatyl_front_page_hero_subtitle', '' ),

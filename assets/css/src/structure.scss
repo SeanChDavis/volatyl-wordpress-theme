@@ -50,14 +50,6 @@ main {
 
 	/* Create sticky footer */
 	flex: 1 0 auto;
-
-	.inner {
-
-		@media all and (min-width: $mdMinWidth) {
-			padding-bottom: 4rem;
-			padding-top: 4rem;
-		}
-	}
 }
 
 /* Separated from parent elements for easy override */
@@ -85,6 +77,14 @@ main {
 	@media all and (min-width: $mdMinWidth) {
 		padding-left: 2rem;
 		padding-right: 2rem;
+	}
+
+	&.small {
+
+		@media all and (min-width: $mdMinWidth) {
+			padding-bottom: 4rem;
+			padding-top: 4rem;
+		}
 	}
 
 	&.medium {

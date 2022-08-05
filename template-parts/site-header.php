@@ -1,15 +1,8 @@
-<?php
-/**
- * The main site header
- */
-?>
+<?php // The main site header ?>
 
 <header id="masthead">
-
 	<div class="site-header">
-
 		<div class="inner">
-
 			<div class="site-branding">
 				<?php
 				if ( has_custom_logo() ) {
@@ -27,11 +20,7 @@
 				get_template_part( 'template-parts/site', 'navigation' );
 			}
 			?>
-
 		</div>
-
 	</div>
-
 	<?php get_template_part( 'template-parts/site', 'hero' ); ?>
-
 </header>

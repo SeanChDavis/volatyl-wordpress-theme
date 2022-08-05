@@ -150,7 +150,11 @@ blockquote,
 address {
 	color: lighten( $baseColor, 15% );
 	font-style: italic;
-	margin: 1.125rem;
+	margin: 1.125rem 1.125rem 2rem;
+
+	@media all and (min-width: $smMinWidth) {
+		margin-bottom: 2.5rem;
+	}
 }
 
 cite,
@@ -181,6 +185,7 @@ hr,
 }
 
 table {
+	background: #fff;
 	border: 2px solid $baseColor;
 	border-collapse: collapse;
 

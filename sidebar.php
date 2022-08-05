@@ -1,12 +1,15 @@
-<?php
-/**
- * Theme sidebars based on page
- */
+<?php // Theme sidebars based on page
 
 if ( is_single() ) {
-	dynamic_sidebar( 'Single Post Sidebar' );
+	if ( is_active_sidebar( 'Single Post Sidebar' ) ) {
+		dynamic_sidebar( 'Single Post Sidebar' );
+	}
 } elseif ( is_page() ) {
-	dynamic_sidebar( 'Single Page Sidebar' );
+	if ( is_active_sidebar( 'Single Page Sidebar' ) ) {
+		dynamic_sidebar( 'Single Page Sidebar' );
+	}
 } else {
-	dynamic_sidebar( 'Default Sidebar' );
+	if ( is_active_sidebar( 'Default Sidebar' ) ) {
+		dynamic_sidebar( 'Default Sidebar' );
+	}
 }

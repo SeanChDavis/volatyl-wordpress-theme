@@ -66,8 +66,10 @@
 			&.alternate-layout {
 
 				&.v-grid-columns_3 {
+					column-gap: 1.5rem;
 
 					@media all and (min-width: $smMinWidth) {
+						column-gap: 4rem;
 
 						.fat-footer-area:first-child {
 							grid-column-start: 1;
@@ -77,7 +79,7 @@
 					}
 
 					@media all and (min-width: $mdMinWidth) {
-						grid-template-columns: 2fr 1fr 1fr;
+						grid-template-columns: 3fr 1fr 1fr;
 						margin-bottom: unset;
 
 						.fat-footer-area:first-child {
@@ -89,8 +91,10 @@
 				}
 
 				&.v-grid-columns_4 {
+					column-gap: 1.5rem;
 
 					@media all and (min-width: $smMinWidth) {
+						column-gap: 2rem;
 						grid-template-columns: 1fr 1fr 1fr;
 
 						.fat-footer-area:first-child {
@@ -98,14 +102,11 @@
 							grid-column-end: 4;
 							margin-bottom: 2rem;
 						}
-
-						.fat-footer-area:not(:first-child) {
-
-						}
 					}
 
 					@media all and (min-width: $mdMinWidth) {
-						grid-template-columns: 3fr 1fr 1fr 1fr;
+						column-gap: 4rem;
+						grid-template-columns: 5fr 2fr 2fr 2fr;
 						margin-bottom: unset;
 
 						.fat-footer-area:first-child {
@@ -121,8 +122,8 @@
 }
 
 .site-footer {
-	background: $lightBackground;
 	@include fontSmaller;
+	background: $lightBackground;
 
 	.inner {
 		padding-bottom: 1.5rem;

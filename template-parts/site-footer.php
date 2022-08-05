@@ -1,8 +1,4 @@
-<?php
-/**
- * The main site footer
- */
-?>
+<?php // The main site footer ?>
 
 <footer id="colophon" class="site-footer">
 	<div class="inner">

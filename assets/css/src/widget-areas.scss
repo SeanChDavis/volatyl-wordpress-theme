@@ -1,11 +1,141 @@
 .widget {
 	@include fontSmaller;
+	margin-bottom: 1.25rem;
 
 	ul {
-		margin: 0 0 0 1.125rem;
+		margin: 0 0 0 1em;
 	}
 
 	ol {
-		margin: 0 0 0 1.3rem;
+		margin: 0 0 0 1.1em;
+	}
+
+	h1, .h1,
+	h2, .h2,
+	h3, .h3,
+	h4, .h4,
+	h5, .h5,
+	h6, .h6 {
+		margin-bottom: 1rem;
+	}
+
+	h1, .h1,
+	h2, .h2,
+	h3, .h3 {
+		font-size: 1.35rem;
+		line-height: 1.35;
+
+		@media all and (min-width: $xsMinWidth) {
+			font-size: 1.65rem;
+		}
+	}
+
+	h4, .h4 {
+		color: lighten( $baseColor, 10% );
+		font-size: 1.125rem;
+		line-height: 1.4;
+		text-transform: uppercase;
+
+		@media all and (min-width: $xsMinWidth) {
+			font-size: 1.25rem;
+		}
+
+		@media all and (min-width: $smMinWidth) {
+			line-height: 1.45;
+		}
+	}
+
+	h5, .h5 {
+		font-size: 1rem;
+
+		@media all and (min-width: $xsMinWidth) {
+			font-size: 1.125rem;
+		}
+	}
+
+	p {
+		margin-bottom: 1.25rem;
+
+		&:last-child {
+			margin-bottom: 1.25rem;
+		}
+
+		& + h1, & + .h1 {
+
+			@media all and (min-width: $smMinWidth) {
+				margin-top: 1.75rem;
+			}
+		}
+
+		& + h2, & + .h2 {
+
+			@media all and (min-width: $smMinWidth) {
+				margin-top: 1.5rem;
+			}
+		}
+
+		& + h3, & + .h3,
+		& + h4, & + .h4,
+		& + h5, & + .h5,
+		& + h6, & + .h6 {
+
+			@media all and (min-width: $smMinWidth) {
+				margin-top: 1.35rem;
+			}
+		}
+	}
+
+	ul,
+	ol {
+		padding: 0;
+
+		li {
+
+			& ul,
+			& ol {
+				margin-top: .75rem;
+			}
+
+			& + li {
+				margin-top: .75rem;
+			}
+		}
+	}
+
+	& > ul,
+	& > ol {
+		margin-bottom: 1.25rem;
+		margin-top: 1.25rem;
+	}
+
+	hr,
+	.wp-block-separator {
+
+		@media all and (min-width: $mdMinWidth) {
+			margin: 2rem 0;
+		}
+	}
+
+	pre,
+	dl {
+
+		@media all and (min-width: $smMinWidth) {
+			padding: 1.625rem;
+		}
+	}
+}
+
+.fat-footer {
+
+	.widget {
+
+		pre,
+		dl,
+		code,
+		kbd,
+		tt,
+		var {
+			background: #fff;
+		}
 	}
 }

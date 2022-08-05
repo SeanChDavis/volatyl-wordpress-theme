@@ -3,11 +3,9 @@ get_header();
 ?>
 
 	<main id="main">
-
 		<?php
 		$blog_grid_name  = 'volatyl_front_page_blog_posts_grid_columns_rows';
 		$blog_grid_value = get_theme_mod( $blog_grid_name );
-
 		if ( empty( $blog_grid_value ) ) {
 			$blog_grid_post_count = 4;
 			$blog_grid_columns    = 2;
@@ -15,16 +13,12 @@ get_header();
 			$blog_grid_post_count = volatyl_get_posts_per_page( $blog_grid_name );
 			$blog_grid_columns    = (int) substr( $blog_grid_value, 0, 1 );
 		}
-
-		// Query recent posts and display them if at least one exists
 		$recent_posts = wp_get_recent_posts( array(
 			'numberposts' => $blog_grid_post_count,
 			'post_status' => 'publish'
 		) );
-
 		if ( ! empty( $recent_posts ) ) {
 			?>
-
 			<section class="recent-posts">
 				<div class="inner large">
 					<span class="subdued-title"><?php echo __( 'From the blog', 'volatyl' ); ?></span>
@@ -50,11 +44,9 @@ get_header();
 					<?php } ?>
 				</div>
 			</section>
-
 			<?php
 		}
 		?>
-
 	</main>
 
 <?php
