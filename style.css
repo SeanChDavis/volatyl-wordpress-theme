@@ -340,6 +340,27 @@ h5 a, .h5 a,
 h6 a, .h6 a {
   color: #313240;
 }
+h1.has-background, .h1.has-background,
+h2.has-background, .h2.has-background,
+h3.has-background, .h3.has-background,
+h4.has-background, .h4.has-background,
+h5.has-background, .h5.has-background,
+h6.has-background, .h6.has-background {
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  padding: 0.75em 1.125em;
+}
+@media all and (min-width: 768px) {
+  h1.has-background, .h1.has-background,
+h2.has-background, .h2.has-background,
+h3.has-background, .h3.has-background,
+h4.has-background, .h4.has-background,
+h5.has-background, .h5.has-background,
+h6.has-background, .h6.has-background {
+    margin-bottom: 2rem;
+  }
+}
 
 h1, .h1 {
   font-size: 2rem;
@@ -490,6 +511,47 @@ address {
   }
 }
 
+.wp-block-pullquote {
+  margin-bottom: 0;
+  padding: 3em 1em;
+}
+.wp-block-pullquote blockquote {
+  margin: 0;
+}
+.wp-block-pullquote blockquote > p {
+  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+.wp-block-pullquote.alignleft {
+  float: left;
+  margin-right: 2rem;
+}
+@media all and (min-width: 768px) {
+  .wp-block-pullquote.alignleft {
+    margin-right: 3rem;
+  }
+}
+.wp-block-pullquote.alignright {
+  float: right;
+  margin-left: 2rem;
+}
+@media all and (min-width: 768px) {
+  .wp-block-pullquote.alignright {
+    margin-left: 3rem;
+  }
+}
+@media all and (min-width: 992px) {
+  .no-sidebar .wp-block-pullquote.alignleft {
+    margin-left: -10rem;
+  }
+}
+@media all and (min-width: 1200px) {
+  .no-sidebar .wp-block-pullquote.alignright {
+    margin-right: -10rem;
+  }
+}
+
 cite,
 q {
   color: #52546b;
@@ -540,6 +602,22 @@ table th {
 }
 table td {
   font-size: 90%;
+}
+table tfoot {
+  font-style: italic;
+}
+
+.wp-block-table {
+  margin-bottom: 0;
+}
+.wp-block-table.is-style-stripes table th, .wp-block-table.is-style-stripes table td {
+  border-color: #313240;
+}
+.wp-block-table.is-style-stripes table th {
+  background: #fff;
+}
+.wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1) {
+  background: #eeeef2;
 }
 
 pre {
@@ -617,10 +695,6 @@ img {
 }
 
 /* WP elements */
-.wp-block-table {
-  margin-bottom: 0;
-}
-
 .wp-caption,
 .wp-block-image {
   max-width: 100%;
@@ -846,6 +920,7 @@ img {
 @media all and (min-width: 992px) {
   .site-hero .inner .hero > [class*=-title] {
     font-size: 5rem;
+    max-width: 85%;
   }
 }
 .site-hero .inner .hero > [class*=-title]:last-child {
@@ -1550,12 +1625,6 @@ main {
   line-height: 1.6;
   margin-bottom: 1.25rem;
 }
-.widget ul {
-  margin: 0 0 0 1em;
-}
-.widget ol {
-  margin: 0 0 0 1.1em;
-}
 .widget h1, .widget .h1,
 .widget h2, .widget .h2,
 .widget h3, .widget .h3,
@@ -1622,6 +1691,12 @@ main {
     margin-top: 1.35rem;
   }
 }
+.widget ul {
+  margin: 0 0 0 1em;
+}
+.widget ol {
+  margin: 0 0 0 1.1em;
+}
 .widget ul,
 .widget ol {
   padding: 0;
@@ -1652,6 +1727,15 @@ main {
   }
 }
 
+.fat-footer .widget ul li ul, .fat-footer .widget ul li ol,
+.fat-footer .widget ol li ul,
+.fat-footer .widget ol li ol {
+  margin-top: 0.5rem;
+}
+.fat-footer .widget ul li + li,
+.fat-footer .widget ol li + li {
+  margin-top: 0.5rem;
+}
 .fat-footer .widget pre,
 .fat-footer .widget dl,
 .fat-footer .widget code,

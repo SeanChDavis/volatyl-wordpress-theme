@@ -2,14 +2,6 @@
 	@include fontSmaller;
 	margin-bottom: 1.25rem;
 
-	ul {
-		margin: 0 0 0 1em;
-	}
-
-	ol {
-		margin: 0 0 0 1.1em;
-	}
-
 	h1, .h1,
 	h2, .h2,
 	h3, .h3,
@@ -85,6 +77,14 @@
 		}
 	}
 
+	ul {
+		margin: 0 0 0 1em;
+	}
+
+	ol {
+		margin: 0 0 0 1.1em;
+	}
+
 	ul,
 	ol {
 		padding: 0;
@@ -128,6 +128,22 @@
 .fat-footer {
 
 	.widget {
+
+		ul,
+		ol {
+
+			li {
+
+				& ul,
+				& ol {
+					margin-top: .5rem;
+				}
+
+				& + li {
+					margin-top: .5rem;
+				}
+			}
+		}
 
 		pre,
 		dl,

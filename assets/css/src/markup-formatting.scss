@@ -14,6 +14,17 @@ h6, .h6 {
 	a {
 		color: $baseColor;
 	}
+
+	&.has-background {
+		border-radius: 10px;
+		margin-bottom: 1.5rem;
+		margin-top: 2rem;
+		padding: .75em 1.125em;
+
+		@media all and (min-width: $smMinWidth) {
+			margin-bottom: 2rem;
+		}
+	}
 }
 
 h1, .h1 {
@@ -157,6 +168,67 @@ address {
 	}
 }
 
+.wp-block-pullquote {
+	margin-bottom: 0;
+	padding: 3em 1em;
+
+	blockquote {
+		margin: 0;
+
+		& > p {
+			@include headingFont;
+			font-style: normal;
+			font-weight: 700;
+		}
+	}
+
+	&.alignleft {
+		float: left;
+		margin-right: 2rem;
+
+		@media all and (min-width: $smMinWidth) {
+			margin-right: 3rem;
+		}
+
+		@media all and (min-width: $mdMinWidth) {
+			//margin-left: -10rem;
+		}
+	}
+
+	&.alignright {
+		float: right;
+		margin-left: 2rem;
+
+		@media all and (min-width: $smMinWidth) {
+			margin-left: 3rem;
+		}
+
+		@media all and (min-width: $lgMinWidth) {
+			//margin-right: -10rem;
+		}
+	}
+}
+
+.no-sidebar {
+
+	.wp-block-pullquote {
+
+		&.alignleft {
+
+			@media all and (min-width: $mdMinWidth) {
+				margin-left: -10rem;
+			}
+		}
+
+		&.alignright {
+
+			@media all and (min-width: $lgMinWidth) {
+				margin-right: -10rem;
+			}
+		}
+	}
+}
+
 cite,
 q {
 	color: lighten( $baseColor, 15% );
@@ -204,6 +276,35 @@ table {
 
 	td {
 		font-size: 90%;
+	}
+
+	tfoot {
+		font-style: italic;
+	}
+}
+
+.wp-block-table {
+	margin-bottom: 0;
+
+	&.is-style-stripes {
+
+		table {
+
+			th, td {
+				border-color: $baseColor;
+			}
+
+			th {
+				background: #fff;
+			}
+
+			tbody {
+
+				tr:nth-child(2n+1) {
+					background: darken( $lightBackground, 3% );
+				}
+			}
+		}
 	}
 }
 
@@ -284,10 +385,6 @@ img {
 }
 
 /* WP elements */
-.wp-block-table {
-	margin-bottom: 0;
-}
-
 .wp-caption,
 .wp-block-image {
 	max-width: 100%;
