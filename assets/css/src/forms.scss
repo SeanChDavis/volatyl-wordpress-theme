@@ -3,8 +3,10 @@ button,
 [type="button"],
 [type="submit"],
 [type="reset"],
-.v-button {
+.wp-block-button__link,
+.wp-block-file .wp-block-file__button {
 	@include headingFont;
+	@include fontSmaller;
 	background: $baseColor;
 	border: none;
 	border-radius: 3px;
@@ -12,12 +14,15 @@ button,
 	cursor: pointer;
 	display: inline-block;
 	font-weight: 600;
-	height: 3em;
 	letter-spacing: 1px;
-	line-height: 1;
-	padding: 1em;
+	line-height: 1.6;
+	padding: 14px;
 	text-decoration: none;
 	text-transform: uppercase;
+
+	@media all and (min-width: $xsMinWidth) {
+		line-height: 1;
+	}
 
 	&:active,
 	&:focus,
@@ -27,12 +32,12 @@ button,
 	}
 
 	&.large {
-		font-size: 1.15rem;
-	}
-}
 
-input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]) {
-	height: 3em;
+		@media all and (min-width: $xsMinWidth) {
+			font-size: 1.15rem;
+			padding: 1em;
+		}
+	}
 }
 
 input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),

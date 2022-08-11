@@ -31,8 +31,9 @@
 @import "forms";
 @import "search";
 @import "footer";
-
 @import "archives";
-@import "home";
 @import "singulars";
-@import "front-page";
+
+@import "templates/home";
+@import "templates/front-page";
+@import "templates/full-width";

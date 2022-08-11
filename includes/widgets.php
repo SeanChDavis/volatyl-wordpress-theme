@@ -94,3 +94,19 @@ function volatyl_fat_footer_areas() {
 	}
 }
 add_action( 'widgets_init', 'volatyl_fat_footer_areas' );
+
+// Register footer widget area intended for social media icons
+function volatyl_social_media_footer_area() {
+	register_sidebar( array(
+		'name'           => esc_html__( 'Social Media Footer Area', 'volatyl' ),
+		'id'             => 'social-media-footer-area',
+		'description'    => esc_html__( 'Intended to display social media icons above the persistent site footer, below the Fat Footer (if in use).', 'volatyl' ),
+		'before_sidebar' => '<div class="%2$s %1$s">',
+		'after_sidebar'  => '</div>',
+		'before_widget'  => '<section class="widget %2$s">',
+		'after_widget'   => '</section>',
+		'before_title'   => '<h2 class="widget-title">',
+		'after_title'    => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'volatyl_social_media_footer_area' );

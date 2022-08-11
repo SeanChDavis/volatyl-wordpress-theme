@@ -183,6 +183,10 @@
 					@media all and (min-width: $mdMinWidth) {
 						padding: .5rem 2rem 2.25rem;
 					}
+
+					.button {
+						@include fontSmallest;
+					}
 				}
 			}
 		}

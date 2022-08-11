@@ -49,11 +49,11 @@
 			padding: 2rem 0;
 
 			@media all and (min-width: $xsMinWidth) {
-				padding: 3rem 0;
+				padding: 3rem 0 2.5rem;
 			}
 
 			@media all and (min-width: $smMinWidth) {
-				padding: 4.5rem 0;
+				padding: 4.5rem 0 2.5rem;
 			}
 
 			.widget {

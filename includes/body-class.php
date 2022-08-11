@@ -19,14 +19,16 @@ function volatyl_body_class( $classes ) {
 
 	if (
 		// single blog posts
-		( is_singular( 'post' ) && ! is_active_sidebar( 'single-post-sidebar' ) )
+		( is_singular( 'post' ) && ! is_active_sidebar( 'single-post-sidebar' ) && ! is_page_template( 'page-templates/full-width.php' ) )
 
 		// single pages
-		|| ( is_singular( 'page' ) && ! is_active_sidebar( 'single-page-sidebar' ) )
+		|| ( is_singular( 'page' ) && ! is_active_sidebar( 'single-page-sidebar' ) && ! is_page_template( 'page-templates/full-width.php' ) )
 	) {
 		$classes[] = 'no-sidebar';
-	} else {
-		$classes[] = 'has-sidebar';
+	}
+
+	if ( is_page_template( 'page-templates/full-width.php' ) ) {
+		$classes[] = 'full-width-template';
 	}
 
 	if ( is_home() && is_front_page() ) {

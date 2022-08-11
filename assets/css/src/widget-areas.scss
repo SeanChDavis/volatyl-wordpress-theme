@@ -123,6 +123,10 @@
 			padding: 1.625rem;
 		}
 	}
+
+	.wp-block-search__button:not(.has-icon) {
+		flex-basis: 120px;
+	}
 }
 
 .fat-footer {

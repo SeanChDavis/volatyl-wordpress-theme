@@ -375,8 +375,6 @@
 		gap: 1rem;
 		justify-content: space-between;
 
-		.nav-previous {}
-
 		.nav-next {
 			text-align: right;
 		}
@@ -385,166 +383,25 @@
 
 .social-navigation {
 	background: $lightBackground;
+	padding-top: 10px;
 
 	.inner {
 		padding-bottom: 1rem;
 		padding-top: 1rem;
-	}
 
-	#social-menu {
-		column-gap: 1.2rem;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		margin: 0;
-		padding: 0;
-		row-gap: .5rem;
+		.widget:last-child {
+			margin-bottom: 0;
+		}
 
-		.menu-item {
-			font-size: 14px;
-			font-weight: 500;
-			list-style-type: none;
+		.wp-block-social-links {
+			margin: 0;
 
-			a {
-				color: $linkColor;
-				display: inline-block;
-				text-decoration: none;
+			li.wp-social-link {
+				margin-top: 0;
 
-				&:active,
-				&:focus,
-				&:hover {
-					color: $baseColor;
-					text-decoration: none;
+				span {
+					@include fontSmaller;
 				}
-
-				&:before {
-					font-family: "Dashicons";
-					font-size: 16px;
-					font-weight: 400;
-					line-height: 1;
-					margin-right: 3px;
-					position: relative;
-					top: 2px;
-				}
-
-				&[href*="instagram"] {
-
-					&:before {
-						color: #fe0075;
-						content: "\f12d";
-					}
-
-					&:active,
-					&:focus,
-					&:hover {
-
-						&:before {
-						}
-					}
-				}
-
-				&[href*="facebook"] {
-
-					&:before {
-						color: #1877f2;
-						content: "\f304";
-					}
-
-					&:active,
-					&:focus,
-					&:hover {
-
-						&:before {
-						}
-					}
-				}
-
-				&[href*="youtube"] {
-
-					&:before {
-						color: #ff0000;
-						content: "\f19b";
-						font-size: 17px;
-						top: 3px;
-					}
-
-					&:active,
-					&:focus,
-					&:hover {
-
-						&:before {
-						}
-					}
-				}
-
-				&[href*="twitter"] {
-
-					&:before {
-						color: #1d9bf0;
-						content: "\f301";
-					}
-
-					&:active,
-					&:focus,
-					&:hover {
-
-						&:before {
-						}
-					}
-				}
-
-				&[href*="linkedin"] {
-
-					&:before {
-						color: #0077b5;
-						content: "\f18d";
-					}
-
-					&:active,
-					&:focus,
-					&:hover {
-
-						&:before {
-						}
-					}
-				}
-
-				&[href*="wordpress"] {
-
-					&:before {
-						color: #0073aa;
-						content: "\f120";
-					}
-
-					&:active,
-					&:focus,
-					&:hover {
-
-						&:before {
-						}
-					}
-				}
-
-				&[href*="mailto"] {
-
-					&:before {
-						color: $linkColor;
-						content: "\f465";
-						top: 3px;
-					}
-
-					&:active,
-					&:focus,
-					&:hover {
-
-						&:before {
-						}
-					}
-				}
-			}
-
-			&:first-child > a {
-				padding-left: 0;
 			}
 		}
 	}

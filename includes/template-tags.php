@@ -44,7 +44,7 @@ if ( ! function_exists( 'volatyl_hero' ) ) :
 					<?php } ?>
 					<?php if ( ! empty( $primary_cta_url ) && ! empty( $primary_cta_text ) ) { ?>
 						<p class="primary-cta-container">
-							<a href="<?php echo $primary_cta_url; ?>" class="button"><?php echo $primary_cta_text; ?></a>
+							<a href="<?php echo $primary_cta_url; ?>" class="button large"><?php echo $primary_cta_text; ?></a>
 						</p>
 					<?php } ?>
 					<?php if ( ! empty( $secondary_cta_url ) && ! empty( $secondary_cta_text ) ) { ?>

@@ -1,7 +1,8 @@
-.searchform {
+#searchform {
 	@include fontSmaller;
 
-	.search-submit {
+	#searchsubmit {
+		line-height: 1.2;
 		margin-top: 3px;
 
 		@media all and (min-width: $xsMinWidth) {

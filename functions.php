@@ -48,8 +48,7 @@ function volatyl_setup() {
 
 	// This theme uses wp_nav_menu() in multiple locations.
 	register_nav_menus( array(
-		'primary-menu' => esc_html__( 'Primary Menu', 'volatyl' ),
-		'social-menu'  => esc_html__( 'Social Menu', 'volatyl' ),
+		'primary-menu' => esc_html__( 'Primary Menu', 'volatyl' )
 	) );
 
 	// Switch default core markup for search form, comment form, and comments to output valid HTML5.

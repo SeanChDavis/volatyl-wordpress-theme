@@ -1,6 +1,31 @@
 /**
  * Common element styles used across the theme
  */
+.alignleft {
+	margin-bottom: 1.5rem;
+
+	@media all and (min-width: $xsMinWidth) {
+		float: left;
+		margin-right: 1.5rem;
+	}
+
+	@media all and (min-width: $mdMinWidth) {
+		margin-right: 3rem;
+	}
+}
+
+.alignright {
+	margin-bottom: 1.5rem;
+
+	@media all and (min-width: $xsMinWidth) {
+		float: right;
+		margin-left: 1.5rem;
+	}
+
+	@media all and (min-width: $lgMinWidth) {
+		margin-left: 3rem;
+	}
+}
 
 .subdued-title {
 	@include fontSmaller;

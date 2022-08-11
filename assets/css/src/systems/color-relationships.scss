@@ -29,7 +29,13 @@
 		}
 	}
 
-	.button, button, [type="button"], [type="submit"], [type="reset"], .v-button {
+	.button,
+	button,
+	[type="button"],
+	[type="submit"],
+	[type="reset"],
+	.wp-block-button__link,
+	.wp-block-file .wp-block-file__button {
 		background: $linkColor;
 		color: #fff;
 

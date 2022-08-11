@@ -11,8 +11,9 @@ if ( 1 === get_theme_mod( 'volatyl_fat_footer', 0 ) && volatyl_has_fat_footer_co
 	get_template_part( 'template-parts/fat', 'footer' );
 }
 
-// Social menu
-if ( has_nav_menu( 'social-menu' ) ) {
+// Intended to be used as a social media icon list
+// Technically can be used for any other widget content, but not recommended
+if ( is_active_sidebar( 'Social Media Footer Area' ) ) {
 	get_template_part( 'template-parts/social', 'navigation' );
 }
 
