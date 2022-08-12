@@ -2,17 +2,22 @@
 
 	.inner {
 
-		& > [class*="-title"] {
-			margin-bottom: .75rem;
+		& [class*="-title"] {
+			margin-bottom: 0;
 			max-width: 770px;
 
 			@media all and (min-width: $lgMinWidth) {
 				max-width: 940px;
 			}
+
+			& + [class*="-meta"],
+			& + [class*="-description"] {
+				margin-top: .75rem;
+			}
 		}
 
-		& > [class*="-meta"],
-		& > [class*="-description"] {
+		& [class*="-meta"],
+		& [class*="-description"] {
 			@include fontSmallest;
 			max-width: 765px;
 
@@ -21,7 +26,7 @@
 			}
 		}
 
-		& > [class*="-content-container"] {
+		& [class*="-content-container"] {
 			display: flex;
 			flex-direction: column;
 			gap: .5rem;
@@ -32,10 +37,6 @@
 				gap: 1.5rem;
 				justify-content: space-between;
 			}
-
-			& > [class*="-content-left"] {}
-
-			& > [class*="-content-right"] {}
 		}
 	}
 }
@@ -47,12 +48,12 @@
 
 		.inner {
 
-			& > [class*="-title"] {
+			& [class*="-title"] {
 				margin: 0 auto .75rem;
 			}
 
-			& > [class*="-meta"],
-			& > [class*="-description"] {
+			& [class*="-meta"],
+			& [class*="-description"] {
 				margin: 1rem auto 0;
 			}
 		}

@@ -33,23 +33,23 @@ if ( ! function_exists( 'volatyl_hero' ) ) :
 		$secondary_cta_url  = $new_args['secondary_cta']['url'];
 		?>
 
-		<div class="site-hero">
+		<div class="v-site-hero">
 
 			<div class="inner v-large">
 
-				<div class="hero<?php echo $alignment ? ' v-content-centered' : ''; ?>">
-					<h1 class="hero-title"><?php echo $title; ?></h1>
+				<div class="v-hero<?php echo $alignment ? ' v-hero-centered' : ''; ?>">
+					<h1 class="v-hero-title"><?php echo $title; ?></h1>
 					<?php if ( ! empty( $subtitle ) ) { ?>
-						<p class="hero-subtitle"><?php echo $subtitle; ?></p>
+						<p class="v-hero-subtitle"><?php echo $subtitle; ?></p>
 					<?php } ?>
 					<?php if ( ! empty( $primary_cta_url ) && ! empty( $primary_cta_text ) ) { ?>
-						<p class="primary-cta-container">
-							<a href="<?php echo $primary_cta_url; ?>" class="button v-large"><?php echo $primary_cta_text; ?></a>
+						<p class="v-hero-primary-cta">
+							<a href="<?php echo $primary_cta_url; ?>" class="v-button"><?php echo $primary_cta_text; ?></a>
 						</p>
 					<?php } ?>
 					<?php if ( ! empty( $secondary_cta_url ) && ! empty( $secondary_cta_text ) ) { ?>
-						<p class="secondary-cta-container">
-							<a href="<?php echo $secondary_cta_url; ?>" class="secondary-cta"><?php echo $secondary_cta_text; ?></a>
+						<p class="v-hero-secondary-cta">
+							<a href="<?php echo $secondary_cta_url; ?>"><?php echo $secondary_cta_text; ?></a>
 						</p>
 					<?php } ?>
 				</div>

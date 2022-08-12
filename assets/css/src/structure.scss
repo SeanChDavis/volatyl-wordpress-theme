@@ -26,14 +26,6 @@ body {
 	height: 100vh;
 }
 
-/* Added to the body when site HTML structure is set to full width */
-.full-width-structure {
-
-	#page {
-		max-width: 100%;
-	}
-}
-
 /* Adjust sticky footer prep when WP admin bar is present */
 .logged-in {
 
@@ -46,6 +38,14 @@ body {
 	}
 }
 
+/* Added to the body when site HTML structure is set to full width */
+.full-width-structure {
+
+	#page {
+		max-width: 100%;
+	}
+}
+
 main {
 
 	/* Create sticky footer */
@@ -54,59 +54,18 @@ main {
 
 /* Separated from parent elements for easy override */
 .inner {
-	margin: 0 auto;
-	max-width: calc( 1200px + 1.25rem );
-	padding: 3rem 1.25rem;
-
-	@media all and (min-width: $xsMinWidth) {
-		max-width: calc( 1200px + 2rem );
-		padding-left: 2rem;
-		padding-right: 2rem;
-	}
-
-	// Keep content width in check on tablets
-		@media all and (min-width: $smMinWidth) {
-			padding-left: 4rem;
-			padding-right: 4rem;
-		}
-
-		@media all and (min-width: 860px) {
-			padding-left: 6rem;
-			padding-right: 6rem;
-		}
-
-	@media all and (min-width: $mdMinWidth) {
-		padding-left: 2rem;
-		padding-right: 2rem;
-	}
+	@include innerSpacing;
 
 	&.v-small {
-
-		@media all and (min-width: $mdMinWidth) {
-			padding-bottom: 4rem;
-			padding-top: 4rem;
-		}
+		@include innerSpacingSmall;
 	}
 
 	&.v-medium {
-
-		@media all and (min-width: $mdMinWidth) {
-			padding-bottom: 6rem;
-			padding-top: 6rem;
-		}
+		@include innerSpacingMedium;
 	}
 
 	&.v-large {
-
-		@media all and (min-width: $mdMinWidth) {
-			padding-bottom: 6rem;
-			padding-top: 6rem;
-		}
-
-		@media all and (min-width: $lgMinWidth) {
-			padding-bottom: 8rem;
-			padding-top: 8rem;
-		}
+		@include innerSpacingLarge;
 	}
 }
 

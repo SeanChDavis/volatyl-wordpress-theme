@@ -3,13 +3,13 @@ get_header();
 ?>
 
 	<main id="main">
-		<header class="jumbo-header v-gray-background">
-			<div class="inner">
-				<?php if ( ! empty( get_the_title() ) ) { ?>
+		<?php if ( ! empty( get_the_title() ) ) { ?>
+			<header class="jumbo-header v-gray-background">
+				<div class="inner">
 					<h1 class="singular-title"><?php echo get_the_title(); ?></h1>
-				<?php } ?>
-			</div>
-		</header>
+				</div>
+			</header>
+		<?php } ?>
 		<div class="inner v-medium">
 			<div class="main-content-wrap">
 				<div id="primary-content">

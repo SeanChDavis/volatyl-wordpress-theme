@@ -2,18 +2,40 @@
 	background: $baseColor;
 	color: #fff;
 
-	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+	h1, .h1,
+	h2, .h2,
+	h3, .h3,
+	h4, .h4,
+	h5, .h5,
+	h6, .h6 {
 
 		a {
 			color: lighten( $linkColor, 30% );
 		}
 	}
 
-	a, h4, .h4, h6, .h6, blockquote, address, cite, q, code, kbd, tt, var, strike, del {
+	a,
+	h4,.h4,
+	h6, .h6,
+	blockquote,
+	address,
+	cite,
+	q,
+	code,
+	kbd,
+	tt,
+	var,
+	strike,
+	del {
 		color: lighten( $linkColor, 35% );
 	}
 
-	pre, dl, code, kbd, tt, var {
+	pre,
+	dl,
+	code,
+	kbd,
+	tt,
+	var {
 		background: lighten( $baseColor, 3% );
 	}
 

@@ -4,29 +4,7 @@
 		margin: 0;
 
 		& > .wp-block-group__inner-container {
-			margin: 0 auto;
-			max-width: calc( 1200px + 1.25rem );
-			padding: 2.5rem 1.25rem;
-
-			@media all and (min-width: $xsMinWidth) {
-				max-width: calc( 1200px + 2rem );
-				padding: 3rem 2rem;
-			}
-
-			@media all and (min-width: $smMinWidth) {
-				padding-left: 4rem;
-				padding-right: 4rem;
-			}
-
-			@media all and (min-width: 860px) {
-				padding-left: 6rem;
-				padding-right: 6rem;
-			}
-
-			@media all and (min-width: $mdMinWidth) {
-				padding-left: 2rem;
-				padding-right: 2rem;
-			}
+			@include innerSpacing;
 
 			& > [class*="wp-block-"] {
 
@@ -36,49 +14,24 @@
 			}
 		}
 
-		&.v-no-spacing {
-
-			& > .wp-block-group__inner-container {
-				padding-bottom: 0;
-				padding-top: 0;
-			}
-		}
-
 		&.v-small {
 
 			& > .wp-block-group__inner-container {
-
-				@media all and (min-width: $mdMinWidth) {
-					padding-bottom: 4rem;
-					padding-top: 4rem;
-				}
+				@include innerSpacingSmall;
 			}
 		}
 
 		&.v-medium {
 
 			& > .wp-block-group__inner-container {
-
-				@media all and (min-width: $mdMinWidth) {
-					padding-bottom: 6rem;
-					padding-top: 6rem;
-				}
+				@include innerSpacingMedium;
 			}
 		}
 
 		&.v-large {
 
 			& > .wp-block-group__inner-container {
-
-				@media all and (min-width: $mdMinWidth) {
-					padding-bottom: 6rem;
-					padding-top: 6rem;
-				}
-
-				@media all and (min-width: $lgMinWidth) {
-					padding-bottom: 8rem;
-					padding-top: 8rem;
-				}
+				@include innerSpacingLarge;
 			}
 		}
 	}

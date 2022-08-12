@@ -17,7 +17,7 @@ button,
 	font-weight: 600;
 	letter-spacing: 1px;
 	line-height: 1.6;
-	padding: 1em;
+	padding: .8em;
 	text-decoration: none;
 	text-transform: uppercase;
 
@@ -40,11 +40,24 @@ button,
 	}
 }
 
+.wp-block-buttons {
+
+	&.v-large {
+
+		& > .wp-block-button .wp-block-button__link {
+
+			@media all and (min-width: $xsMinWidth) {
+				font-size: 1.15rem;
+			}
+		}
+	}
+}
+
 input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
 textarea {
 	border: 2px solid $baseColor;
 	border-radius: 3px;
-	padding: 7px 9px;
+	padding: .8em;
 	vertical-align: bottom;
 
 	&:active,

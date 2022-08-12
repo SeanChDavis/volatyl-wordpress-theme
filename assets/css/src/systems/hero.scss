@@ -1,91 +1,99 @@
-.site-hero {
+.v-hero {
 
-	.inner {
+	&.v-hero-centered {
+		text-align: center;
 
-		.hero {
+		.v-hero-title,
+		.v-hero-subtitle,
+		.v-hero-primary-cta,
+		.v-hero-primary-cta.wp-block-buttons .wp-block-button,
+		.v-hero-secondary-cta {
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
+	}
 
-			& > [class*="-title"] {
-				margin-bottom: .4em;
+	.v-hero-title {
+		margin-bottom: .4em;
 
-				@media all and (min-width: $mdMinWidth) {
-					font-size: 5rem;
-					max-width: 85%;
-				}
+		@media all and (min-width: $mdMinWidth) {
+			font-size: 5rem;
+			max-width: 85%;
+		}
 
-				&:last-child {
-					margin-bottom: 0;
-				}
+		&:last-child {
+			margin-bottom: 0;
+		}
 
-				& + .primary-cta-container,
-				& + .secondary-cta-container {
-					margin-top: 2rem;
+		& + .v-hero-primary-cta,
+		& + .v-hero-secondary-cta {
+			margin-top: 2rem;
 
-					@media all and (min-width: $xsMinWidth) {
-						margin-top: 3rem;
-					}
-
-					@media all and (min-width: $mdMinWidth) {
-						margin-top: 6rem;
-					}
-				}
+			@media all and (min-width: $xsMinWidth) {
+				margin-top: 3rem;
 			}
 
-			& > [class*="-subtitle"],
-			& > [class*="-description"] {
-				@include fontSmaller;
-				max-width: 665px;
-
-				@media all and (min-width: $xsMinWidth) {
-					@include fontSmall;
-				}
-
-				@media all and (min-width: $smMinWidth) {
-					@include fontBase;
-				}
-
-				@media all and (min-width: $mdMinWidth) {
-					@include fontBig;
-				}
-
-				&:not(:last-child) {
-					margin-bottom: 2rem;
-
-					@media all and (min-width: $xsMinWidth) {
-						margin-bottom: 2.5rem;
-					}
-
-					@media all and (min-width: $mdMinWidth) {
-						margin-bottom: 5rem;
-					}
-				}
-			}
-
-			& .primary-cta-container {
-				@include fontSmaller;
-				margin-bottom: 8px;
-				max-width: 665px;
-
-				@media all and (min-width: $xsMinWidth) {
-					@include fontBase;
-					margin-bottom: 12px;
-				}
-			}
-
-			& .secondary-cta-container {
-
-				.secondary-cta {
-					@include fontSmaller;
-				}
-			}
-
-			&.v-content-centered {
-				text-align: center;
-
-				& > * {
-					margin-left: auto;
-					margin-right: auto;
-				}
+			@media all and (min-width: $mdMinWidth) {
+				margin-top: 6rem;
 			}
 		}
+	}
+
+	.v-hero-subtitle {
+		@include fontSmaller;
+		max-width: 665px;
+
+		@media all and (min-width: $xsMinWidth) {
+			@include fontSmall;
+		}
+
+		@media all and (min-width: $smMinWidth) {
+			@include fontBase;
+		}
+
+		@media all and (min-width: $mdMinWidth) {
+			@include fontBig;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+
+			@media all and (min-width: $xsMinWidth) {
+				margin-bottom: 2.5rem;
+			}
+
+			@media all and (min-width: $mdMinWidth) {
+				margin-bottom: 5rem;
+			}
+		}
+	}
+
+	.v-hero-primary-cta {
+		margin-bottom: 8px;
+		max-width: 665px;
+
+		@media all and (min-width: $xsMinWidth) {
+			margin-bottom: 12px;
+
+			.v-button,
+			.button,
+			button,
+			&.wp-block-buttons .wp-block-button .wp-block-button__link {
+				font-size: 1.15rem;
+			}
+		}
+
+		&.wp-block-buttons {
+			margin-bottom: 8px;
+
+			@media all and (min-width: $xsMinWidth) {
+				margin-bottom: 12px;
+			}
+		}
+	}
+
+	.v-hero-secondary-cta {
+		@include fontSmaller;
 	}
 }

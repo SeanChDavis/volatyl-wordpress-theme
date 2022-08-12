@@ -1,7 +1,7 @@
 <?php // When there's no relevant content to display ?>
 
 <div class="v-grid v-grid-centered-column">
-	<div class="v-grid-centered-column-content text-align-center">
+	<div class="v-grid-centered-column-content v-text-align-center">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 			?>
@@ -24,6 +24,7 @@
 			<span class="h3"><?php _e( 'Nothing found', 'volatyl' ); ?></span>
 			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'volatyl' ); ?></p>
 			<?php
+			get_search_form();
 		else :
 			?>
 			<span class="h3"><?php _e( 'Nothing found', 'volatyl' ); ?></span>

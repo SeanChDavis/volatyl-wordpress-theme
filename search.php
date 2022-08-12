@@ -1,25 +1,31 @@
 <?php
 get_header();
+$search_query = get_search_query();
 ?>
 
 	<main id="main">
-		<header class="jumbo-header v-gray-background">
-			<div class="inner">
-				<div class="search-content-container">
-					<div class="search-content-left">
-						<h1 class="archive-title"><span
-								class="v-subdued-title v-v-large"><?php
-								printf( esc_html__( 'Search results for:', 'volatyl' ) ); ?></span><?php echo esc_html( get_search_query() ); ?></h1>
-					</div>
-					<div class="search-content-right">
-						<?php get_search_form(); ?>
+		<?php if ( ! empty( $search_query ) ) { ?>
+			<header class="jumbo-header v-gray-background">
+				<div class="inner">
+					<div class="search-content-container">
+						<div class="search-content-left">
+							<h1 class="archive-title">
+							<span class="v-subdued-title v-v-large">
+								<?php printf( esc_html__( 'Search results for:', 'volatyl' ) ); ?>
+							</span>
+								<?php echo esc_html( get_search_query() ); ?>
+							</h1>
+						</div>
+						<div class="search-content-right">
+							<?php get_search_form(); ?>
+						</div>
 					</div>
 				</div>
-			</div>
-		</header>
+			</header>
+		<?php } ?>
 		<div class="inner v-medium">
 			<?php
-			if ( have_posts() ) :
+			if ( have_posts() && ! empty( $search_query ) ) :
 				?>
 				<div class="v-post-type-grid">
 					<div class="v-grid v-grid-columns_3 v-gap-2">

@@ -56,3 +56,71 @@
 @mixin lineHeightBase {
 	line-height: 1.6;
 }
+
+/**
+ * Structure spacing, mainly the .inner class
+ *
+ * This CSS is made available through mixins because it is shared by custom
+ * HTML and HTML implemented by WordPress core. The custom .inner class and the
+ * .wp-block-group__inner-container class, which is a direct child of the
+ * WordPress core Group block (.wp-block-group), share styles so that the custom
+ * theme structure can be mimicked by creating a Group block in the Full-width
+ * Page Template.
+ */
+@mixin innerSpacing {
+	margin: 0 auto;
+	max-width: calc( 1200px + 1.25rem );
+	padding: 3rem 1.25rem;
+
+	@media all and (min-width: $xsMinWidth) {
+		max-width: calc( 1200px + 2rem );
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	// Keep content width in check on tablets
+	@media all and (min-width: $smMinWidth) {
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
+
+	// Keep content width in check on tablets
+	@media all and (min-width: 860px) {
+		padding-left: 6rem;
+		padding-right: 6rem;
+	}
+
+	@media all and (min-width: $mdMinWidth) {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}
+
+@mixin innerSpacingSmall {
+
+	@media all and (min-width: $mdMinWidth) {
+		padding-bottom: 4rem;
+		padding-top: 4rem;
+	}
+}
+
+@mixin innerSpacingMedium {
+
+	@media all and (min-width: $mdMinWidth) {
+		padding-bottom: 6rem;
+		padding-top: 6rem;
+	}
+}
+
+@mixin innerSpacingLarge {
+
+	@media all and (min-width: $mdMinWidth) {
+		padding-bottom: 6rem;
+		padding-top: 6rem;
+	}
+
+	@media all and (min-width: $lgMinWidth) {
+		padding-bottom: 8rem;
+		padding-top: 8rem;
+	}
+}

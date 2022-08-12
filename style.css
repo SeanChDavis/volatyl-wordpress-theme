@@ -80,13 +80,6 @@ img {
   border-style: none;
 }
 
-button, input, optgroup, select, textarea {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-}
-
 button, input {
   overflow: visible;
 }
@@ -170,17 +163,49 @@ template {
 
 /* Min-width Breakpoints */
 /* Navigation */
+/**
+ * Structure spacing, mainly the .inner class
+ *
+ * This CSS is made available through mixins because it is shared by custom
+ * HTML and HTML implemented by WordPress core. The custom .inner class and the
+ * .wp-block-group__inner-container class, which is a direct child of the
+ * WordPress core Group block (.wp-block-group), share styles so that the custom
+ * theme structure can be mimicked by creating a Group block in the Full-width
+ * Page Template.
+ */
 .v-dark-background {
   background: #313240;
   color: #fff;
 }
-.v-dark-background h1 a, .v-dark-background .h1 a, .v-dark-background h2 a, .v-dark-background .h2 a, .v-dark-background h3 a, .v-dark-background .h3 a, .v-dark-background h4 a, .v-dark-background .h4 a, .v-dark-background h5 a, .v-dark-background .h5 a, .v-dark-background h6 a, .v-dark-background .h6 a {
+.v-dark-background h1 a, .v-dark-background .h1 a,
+.v-dark-background h2 a, .v-dark-background .h2 a,
+.v-dark-background h3 a, .v-dark-background .h3 a,
+.v-dark-background h4 a, .v-dark-background .h4 a,
+.v-dark-background h5 a, .v-dark-background .h5 a,
+.v-dark-background h6 a, .v-dark-background .h6 a {
   color: #a0a2b6;
 }
-.v-dark-background a, .v-dark-background h4, .v-dark-background .h4, .v-dark-background h6, .v-dark-background .h6, .v-dark-background blockquote, .v-dark-background address, .v-dark-background cite, .v-dark-background q, .v-dark-background code, .v-dark-background kbd, .v-dark-background tt, .v-dark-background var, .v-dark-background strike, .v-dark-background del {
+.v-dark-background a,
+.v-dark-background h4, .v-dark-background .h4,
+.v-dark-background h6, .v-dark-background .h6,
+.v-dark-background blockquote,
+.v-dark-background address,
+.v-dark-background cite,
+.v-dark-background q,
+.v-dark-background code,
+.v-dark-background kbd,
+.v-dark-background tt,
+.v-dark-background var,
+.v-dark-background strike,
+.v-dark-background del {
   color: #afb0c1;
 }
-.v-dark-background pre, .v-dark-background dl, .v-dark-background code, .v-dark-background kbd, .v-dark-background tt, .v-dark-background var {
+.v-dark-background pre,
+.v-dark-background dl,
+.v-dark-background code,
+.v-dark-background kbd,
+.v-dark-background tt,
+.v-dark-background var {
   background: #383949;
 }
 .v-dark-background table {
@@ -396,156 +421,162 @@ template {
   font-size: 13px;
   line-height: 1.6;
 }
-.site-hero .inner .hero > [class*=-title] {
+.v-hero.v-hero-centered {
+  text-align: center;
+}
+.v-hero.v-hero-centered .v-hero-title,
+.v-hero.v-hero-centered .v-hero-subtitle,
+.v-hero.v-hero-centered .v-hero-primary-cta,
+.v-hero.v-hero-centered .v-hero-primary-cta.wp-block-buttons .wp-block-button,
+.v-hero.v-hero-centered .v-hero-secondary-cta {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.v-hero .v-hero-title {
   margin-bottom: 0.4em;
 }
 @media all and (min-width: 992px) {
-  .site-hero .inner .hero > [class*=-title] {
+  .v-hero .v-hero-title {
     font-size: 5rem;
     max-width: 85%;
   }
 }
-.site-hero .inner .hero > [class*=-title]:last-child {
+.v-hero .v-hero-title:last-child {
   margin-bottom: 0;
 }
-.site-hero .inner .hero > [class*=-title] + .primary-cta-container, .site-hero .inner .hero > [class*=-title] + .secondary-cta-container {
+.v-hero .v-hero-title + .v-hero-primary-cta, .v-hero .v-hero-title + .v-hero-secondary-cta {
   margin-top: 2rem;
 }
 @media all and (min-width: 560px) {
-  .site-hero .inner .hero > [class*=-title] + .primary-cta-container, .site-hero .inner .hero > [class*=-title] + .secondary-cta-container {
+  .v-hero .v-hero-title + .v-hero-primary-cta, .v-hero .v-hero-title + .v-hero-secondary-cta {
     margin-top: 3rem;
   }
 }
 @media all and (min-width: 992px) {
-  .site-hero .inner .hero > [class*=-title] + .primary-cta-container, .site-hero .inner .hero > [class*=-title] + .secondary-cta-container {
+  .v-hero .v-hero-title + .v-hero-primary-cta, .v-hero .v-hero-title + .v-hero-secondary-cta {
     margin-top: 6rem;
   }
 }
-.site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
+.v-hero .v-hero-subtitle {
   font-size: 15px;
   line-height: 1.6;
   max-width: 665px;
 }
 @media all and (min-width: 560px) {
-  .site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
+  .v-hero .v-hero-subtitle {
     font-size: 17px;
     line-height: 1.6;
   }
 }
 @media all and (min-width: 768px) {
-  .site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
+  .v-hero .v-hero-subtitle {
     font-size: 17px;
     line-height: 1.6;
   }
 }
 @media all and (min-width: 768px) and (min-width: 560px) {
-  .site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
+  .v-hero .v-hero-subtitle {
     font-size: 17px;
     line-height: 1.6;
   }
 }
 @media all and (min-width: 768px) and (min-width: 768px) {
-  .site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
+  .v-hero .v-hero-subtitle {
     font-size: 18px;
     line-height: 1.6;
   }
 }
 @media all and (min-width: 992px) {
-  .site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
+  .v-hero .v-hero-subtitle {
     font-size: 19px;
     line-height: 1.6;
   }
 }
-.site-hero .inner .hero > [class*=-subtitle]:not(:last-child), .site-hero .inner .hero > [class*=-description]:not(:last-child) {
+.v-hero .v-hero-subtitle:not(:last-child) {
   margin-bottom: 2rem;
 }
 @media all and (min-width: 560px) {
-  .site-hero .inner .hero > [class*=-subtitle]:not(:last-child), .site-hero .inner .hero > [class*=-description]:not(:last-child) {
+  .v-hero .v-hero-subtitle:not(:last-child) {
     margin-bottom: 2.5rem;
   }
 }
 @media all and (min-width: 992px) {
-  .site-hero .inner .hero > [class*=-subtitle]:not(:last-child), .site-hero .inner .hero > [class*=-description]:not(:last-child) {
+  .v-hero .v-hero-subtitle:not(:last-child) {
     margin-bottom: 5rem;
   }
 }
-.site-hero .inner .hero .primary-cta-container {
-  font-size: 15px;
-  line-height: 1.6;
+.v-hero .v-hero-primary-cta {
   margin-bottom: 8px;
   max-width: 665px;
 }
 @media all and (min-width: 560px) {
-  .site-hero .inner .hero .primary-cta-container {
-    font-size: 17px;
-    line-height: 1.6;
+  .v-hero .v-hero-primary-cta {
+    margin-bottom: 12px;
+  }
+  .v-hero .v-hero-primary-cta .v-button,
+.v-hero .v-hero-primary-cta .button,
+.v-hero .v-hero-primary-cta button, .v-hero .v-hero-primary-cta.wp-block-buttons .wp-block-button .wp-block-button__link {
+    font-size: 1.15rem;
+  }
+}
+.v-hero .v-hero-primary-cta.wp-block-buttons {
+  margin-bottom: 8px;
+}
+@media all and (min-width: 560px) {
+  .v-hero .v-hero-primary-cta.wp-block-buttons {
     margin-bottom: 12px;
   }
 }
-@media all and (min-width: 560px) and (min-width: 560px) {
-  .site-hero .inner .hero .primary-cta-container {
-    font-size: 17px;
-    line-height: 1.6;
-  }
-}
-@media all and (min-width: 560px) and (min-width: 768px) {
-  .site-hero .inner .hero .primary-cta-container {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-}
-.site-hero .inner .hero .secondary-cta-container .secondary-cta {
+.v-hero .v-hero-secondary-cta {
   font-size: 15px;
   line-height: 1.6;
 }
-.site-hero .inner .hero.v-content-centered {
-  text-align: center;
-}
-.site-hero .inner .hero.v-content-centered > * {
-  margin-left: auto;
-  margin-right: auto;
-}
 
-.jumbo-header .inner > [class*=-title] {
-  margin-bottom: 0.75rem;
+.jumbo-header .inner [class*=-title] {
+  margin-bottom: 0;
   max-width: 770px;
 }
 @media all and (min-width: 1200px) {
-  .jumbo-header .inner > [class*=-title] {
+  .jumbo-header .inner [class*=-title] {
     max-width: 940px;
   }
 }
-.jumbo-header .inner > [class*=-meta], .jumbo-header .inner > [class*=-description] {
+.jumbo-header .inner [class*=-title] + [class*=-meta], .jumbo-header .inner [class*=-title] + [class*=-description] {
+  margin-top: 0.75rem;
+}
+.jumbo-header .inner [class*=-meta], .jumbo-header .inner [class*=-description] {
   font-size: 13px;
   line-height: 1.6;
   max-width: 765px;
 }
 @media all and (min-width: 768px) {
-  .jumbo-header .inner > [class*=-meta], .jumbo-header .inner > [class*=-description] {
+  .jumbo-header .inner [class*=-meta], .jumbo-header .inner [class*=-description] {
     font-size: 15px;
     line-height: 1.6;
   }
 }
-.jumbo-header .inner > [class*=-content-container] {
+.jumbo-header .inner [class*=-content-container] {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 @media all and (min-width: 992px) {
-  .jumbo-header .inner > [class*=-content-container] {
+  .jumbo-header .inner [class*=-content-container] {
     align-items: center;
     flex-direction: row;
     gap: 1.5rem;
     justify-content: space-between;
   }
 }
+
 .no-sidebar .jumbo-header {
   text-align: center;
 }
-.no-sidebar .jumbo-header .inner > [class*=-title] {
+.no-sidebar .jumbo-header .inner [class*=-title] {
   margin: 0 auto 0.75rem;
 }
-.no-sidebar .jumbo-header .inner > [class*=-meta], .no-sidebar .jumbo-header .inner > [class*=-description] {
+.no-sidebar .jumbo-header .inner [class*=-meta], .no-sidebar .jumbo-header .inner [class*=-description] {
   margin: 1rem auto 0;
 }
 
@@ -1417,11 +1448,6 @@ body {
   height: 100vh;
 }
 
-/* Added to the body when site HTML structure is set to full width */
-.full-width-structure #page {
-  max-width: 100%;
-}
-
 /* Adjust sticky footer prep when WP admin bar is present */
 .logged-in #page {
   height: calc(100vh - 46px);
@@ -1430,6 +1456,11 @@ body {
   .logged-in #page {
     height: calc(100vh - 32px);
   }
+}
+
+/* Added to the body when site HTML structure is set to full width */
+.full-width-structure #page {
+  max-width: 100%;
 }
 
 main {
@@ -2213,6 +2244,16 @@ main {
   display: block;
   font-weight: 600;
 }
+#comments #respond #commentform .comment-form-comment input, #comments #respond #commentform .comment-form-comment textarea,
+#comments #respond #commentform .comment-form-author input,
+#comments #respond #commentform .comment-form-author textarea,
+#comments #respond #commentform .comment-form-email input,
+#comments #respond #commentform .comment-form-email textarea,
+#comments #respond #commentform .comment-form-url input,
+#comments #respond #commentform .comment-form-url textarea {
+  font-size: 15px;
+  line-height: 1.6;
+}
 #comments #respond #commentform .comment-form-comment textarea#comment {
   max-width: 650px;
   width: 100%;
@@ -2250,7 +2291,7 @@ button,
   font-weight: 600;
   letter-spacing: 1px;
   line-height: 1.6;
-  padding: 1em;
+  padding: 0.8em;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -2304,11 +2345,17 @@ button.v-large,
   }
 }
 
+@media all and (min-width: 560px) {
+  .wp-block-buttons.v-large > .wp-block-button .wp-block-button__link {
+    font-size: 1.15rem;
+  }
+}
+
 input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
 textarea {
   border: 2px solid #313240;
   border-radius: 3px;
-  padding: 7px 9px;
+  padding: 0.8em;
   vertical-align: bottom;
 }
 input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):active, input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus,
@@ -2467,7 +2514,7 @@ textarea:focus {
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.25;
-  margin: 0 0 0.75rem;
+  margin: 0;
   max-width: 770px;
   text-transform: none;
 }
@@ -2582,12 +2629,13 @@ article:last-child .entry-footer {
 .full-width-template .wp-block-group > .wp-block-group__inner-container {
   margin: 0 auto;
   max-width: calc(1200px + 1.25rem);
-  padding: 2.5rem 1.25rem;
+  padding: 3rem 1.25rem;
 }
 @media all and (min-width: 560px) {
   .full-width-template .wp-block-group > .wp-block-group__inner-container {
     max-width: calc(1200px + 2rem);
-    padding: 3rem 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 @media all and (min-width: 768px) {
@@ -2610,10 +2658,6 @@ article:last-child .entry-footer {
 }
 .full-width-template .wp-block-group > .wp-block-group__inner-container > [class*=wp-block-]:last-child {
   margin-bottom: 0;
-}
-.full-width-template .wp-block-group.v-no-spacing > .wp-block-group__inner-container {
-  padding-bottom: 0;
-  padding-top: 0;
 }
 @media all and (min-width: 992px) {
   .full-width-template .wp-block-group.v-small > .wp-block-group__inner-container {
