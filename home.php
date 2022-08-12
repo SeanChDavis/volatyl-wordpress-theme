@@ -4,12 +4,12 @@ $blog_page_object = get_queried_object();
 ?>
 
 	<main id="main">
-		<div class="inner medium">
+		<div class="inner v-medium">
 			<?php
 			if ( have_posts() ) :
 				?>
-				<h1 class="subdued-title"><?php _e( 'Most recently published', 'volatyl' ); ?></h1>
-				<div class="post-type-grid">
+				<h1 class="v-subdued-title v-margin-bottom-3"><?php _e( 'Most recently published', 'volatyl' ); ?></h1>
+				<div class="v-post-type-grid">
 					<?php
 					$blog_grid_value = get_theme_mod( 'volatyl_blog_posts_grid_columns_rows' );
 					if ( empty( $blog_grid_value ) || 'default' === $blog_grid_value ) {

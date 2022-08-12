@@ -35,16 +35,16 @@ if ( ! function_exists( 'volatyl_hero' ) ) :
 
 		<div class="site-hero">
 
-			<div class="inner large">
+			<div class="inner v-large">
 
-				<div class="hero<?php echo $alignment ? ' content-centered' : ''; ?>">
+				<div class="hero<?php echo $alignment ? ' v-content-centered' : ''; ?>">
 					<h1 class="hero-title"><?php echo $title; ?></h1>
 					<?php if ( ! empty( $subtitle ) ) { ?>
 						<p class="hero-subtitle"><?php echo $subtitle; ?></p>
 					<?php } ?>
 					<?php if ( ! empty( $primary_cta_url ) && ! empty( $primary_cta_text ) ) { ?>
 						<p class="primary-cta-container">
-							<a href="<?php echo $primary_cta_url; ?>" class="button large"><?php echo $primary_cta_text; ?></a>
+							<a href="<?php echo $primary_cta_url; ?>" class="button v-large"><?php echo $primary_cta_text; ?></a>
 						</p>
 					<?php } ?>
 					<?php if ( ! empty( $secondary_cta_url ) && ! empty( $secondary_cta_text ) ) { ?>

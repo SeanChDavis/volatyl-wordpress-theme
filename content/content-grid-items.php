@@ -16,14 +16,14 @@ if ( is_front_page() && ! is_home() ) {
 // Set the appropriate grid item container classes
 $container_classes = array( 'v-grid-item-container' );
 if ( is_search() ) {
-	$container_classes[] = 'subdued';
+	$container_classes[] = 'v-subdued';
 }
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( implode( ' ', $container_classes ) ); ?>>
 	<div class="v-grid-item-content-wrap">
 		<?php if ( ! is_search() ) { ?>
-			<figure class="v-grid-item-media">
+			<figure class="v-grid-item-media v-padding-0 v-margin-0">
 				<?php if ( has_post_thumbnail( $the_post_id ) ) { ?>
 					<a href="<?php echo get_permalink( $the_post_id ); ?>"><?php echo get_the_post_thumbnail( $the_post_id, 'v-grid-item-media_large' ); ?></a>
 				<?php } ?>

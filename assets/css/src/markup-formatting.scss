@@ -479,6 +479,14 @@ figure {
 
 .post-password-form {
 	@include fontSmaller;
+
+	label {
+
+		input {
+			display: block;
+			margin-bottom: 6px;
+		}
+	}
 }
 
 /* Try to prevent horizontal scroll caused by long, non-breaking text */
@@ -491,7 +499,6 @@ figure {
 .wp-caption,
 .wp-block-image {
 	max-width: 100%;
-	width: 100% !important;
 }
 
 .wp-block-image,
@@ -533,7 +540,8 @@ figure {
 .wp-block-social-links,
 .wp-block-tag-cloud,
 .wp-block-embed,
-.wp-block-navigation {
+.wp-block-navigation,
+.wp-block-group {
 
 	&:not(.alignleft),
 	&:not(.alignright) {
@@ -542,6 +550,11 @@ figure {
 
 	&:not(:first-child) {
 		margin-top: 2rem;
+	}
+
+	&.alignleft,
+	&.alignright {
+		margin-top: 0;
 	}
 
 	& > label {
@@ -616,25 +629,20 @@ figure {
 	}
 }
 
-.wp-block-embed {
+/* Embeds */
+.twitter-tweet {
+	@include fontSmaller;
+	border: 2px solid $lightBorder;
+	border-radius: 10px;
+	font-style: normal;
+	margin: 0;
+	padding: 1.5rem;
 
-	.wp-block-embed__wrapper {
+	p {
+		margin-bottom: .75rem;
 
-		& .twitter-tweet {
-			@include fontSmaller;
-			border: 2px solid $lightBorder;
-			border-radius: 10px;
-			font-style: normal;
-			margin: 0;
-			padding: 1.5rem;
-
-			p {
-				margin-bottom: .75rem;
-
-				&:last-of-type {
-					margin-bottom: 1.125rem;
-				}
-			}
+		&:last-of-type {
+			margin-bottom: 1.125rem;
 		}
 	}
 }

@@ -2,7 +2,7 @@
 
 	.recent-posts {
 
-		.post-type-grid {
+		.v-post-type-grid {
 
 			&:not(:last-child) {
 				margin-bottom: 3rem;
@@ -26,14 +26,6 @@
 			@media all and (min-width: $smMinWidth) {
 				text-align: center;
 			}
-
-			.subdued-title {
-				margin-bottom: 0;
-			}
 		}
-	}
-
-	.get-in-touch {
-		text-align: center;
 	}
 }

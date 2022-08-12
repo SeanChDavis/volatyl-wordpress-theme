@@ -1,9 +1,10 @@
 .button,
+.v-button,
 button,
 [type="button"],
 [type="submit"],
 [type="reset"],
-.wp-block-button__link,
+.wp-block-buttons > .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button {
 	@include headingFont;
 	@include fontSmaller;
@@ -16,7 +17,7 @@ button,
 	font-weight: 600;
 	letter-spacing: 1px;
 	line-height: 1.6;
-	padding: 14px;
+	padding: 1em;
 	text-decoration: none;
 	text-transform: uppercase;
 
@@ -31,11 +32,10 @@ button,
 		text-decoration: none;
 	}
 
-	&.large {
+	&.v-large {
 
 		@media all and (min-width: $xsMinWidth) {
 			font-size: 1.15rem;
-			padding: 1em;
 		}
 	}
 }

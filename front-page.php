@@ -20,9 +20,9 @@ get_header();
 		if ( ! empty( $recent_posts ) ) {
 			?>
 			<section class="recent-posts">
-				<div class="inner large">
-					<span class="subdued-title"><?php echo __( 'From the blog', 'volatyl' ); ?></span>
-					<div class="post-type-grid">
+				<div class="inner v-large">
+					<span class="v-subdued-title v-margin-bottom-3"><?php echo __( 'From the blog', 'volatyl' ); ?></span>
+					<div class="v-post-type-grid">
 						<div class="v-grid v-grid-columns_<?php echo $blog_grid_columns; ?>">
 							<?php
 							foreach ( $recent_posts as $post ) {
@@ -35,8 +35,8 @@ get_header();
 					<?php if ( get_option( 'page_for_posts' ) ) { ?>
 						<div class="v-grid v-grid-centered-column">
 							<div class="v-grid-centered-column-content">
-								<h5 class="subdued-title"><?php printf( __( 'More content from %s', 'volatyl' ), THEME_NAME ); ?></h5>
-								<p class="subdued-link-container">
+								<h5 class="v-subdued-title v-margin-0"><?php printf( __( 'More content from %s', 'volatyl' ), THEME_NAME ); ?></h5>
+								<p class="v-subdued-link-container">
 									<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>"><?php _e( 'Visit the blog', 'volatyl' ); ?></a>
 								</p>
 							</div>

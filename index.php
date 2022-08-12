@@ -3,7 +3,7 @@ get_header();
 ?>
 
 	<main id="main">
-		<div class="inner medium">
+		<div class="inner v-medium">
 			<div class="main-content-wrap">
 				<div id="primary-content">
 					<?php

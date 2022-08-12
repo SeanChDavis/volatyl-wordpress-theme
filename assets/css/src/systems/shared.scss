@@ -1,7 +1,8 @@
 /**
  * Common element styles used across the theme
  */
-.alignleft {
+.alignleft,
+[class*="wp-block-"] .alignleft {
 	margin-bottom: 1.5rem;
 
 	@media all and (min-width: $xsMinWidth) {
@@ -14,7 +15,8 @@
 	}
 }
 
-.alignright {
+.alignright,
+[class*="wp-block-"] .alignright {
 	margin-bottom: 1.5rem;
 
 	@media all and (min-width: $xsMinWidth) {
@@ -27,41 +29,27 @@
 	}
 }
 
-.subdued-title {
+.v-subdued-title {
 	@include fontSmaller;
 	@include headingFont;
 	color: $lightText;
 	display: block;
 	font-weight: 700;
-	margin-bottom: 1.5rem;
 	text-transform: uppercase;
 }
 
-.subdued-link-container {
+.v-subdued-link-container {
 
 	a {
 		@include fontSmaller;
 	}
 }
 
-.text-align-center {
+.v-text-align-center {
 	text-align: center;
 }
 
-.no-margin {
-	margin: 0;
-}
-
-.no-padding {
-	padding: 0;
-}
-
-.no-spacing {
-	margin: 0;
-	padding: 0;
-}
-
-.post-type-grid {
+.v-post-type-grid {
 	margin-bottom: 1.5rem;
 
 	@media all and (min-width: $smMinWidth) {

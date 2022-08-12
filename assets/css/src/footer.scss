@@ -30,10 +30,6 @@
 				margin-bottom: 12px;
 			}
 		}
-
-		.cta-action {
-
-		}
 	}
 }
 
@@ -42,8 +38,6 @@
 	background: $lightBackground;
 
 	& > .inner {
-		padding-bottom: 0;
-		padding-top: 0;
 
 		.fat-footer-areas {
 			padding: 2rem 0;
@@ -131,7 +125,6 @@
 
 		.site-footer-content {
 			border-top: 2px solid $lightBorder;
-			padding-top: 1.5rem;
 
 			@media all and (min-width: $mdMinWidth) {
 				display: flex;

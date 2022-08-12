@@ -8,22 +8,16 @@
  * License: GNU General Public License Version 2
  * License URI: license.txt
  */
-
 @import "normalize";
-
 @import "variables";
 @import "mixins";
-
-@import "markup-formatting";
-
 @import "systems/color-relationships";
 @import "systems/grid";
 @import "systems/hero";
 @import "systems/jumbo-header";
 @import "systems/shared";
-
+@import "markup-formatting";
 @import "structure";
-
 @import "header";
 @import "navigation";
 @import "widget-areas";
@@ -33,7 +27,6 @@
 @import "footer";
 @import "archives";
 @import "singulars";
-
-@import "templates/home";
 @import "templates/front-page";
 @import "templates/full-width";
+@import "systems/helper-classes";

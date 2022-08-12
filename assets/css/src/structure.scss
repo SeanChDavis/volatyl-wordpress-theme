@@ -79,7 +79,7 @@ main {
 		padding-right: 2rem;
 	}
 
-	&.small {
+	&.v-small {
 
 		@media all and (min-width: $mdMinWidth) {
 			padding-bottom: 4rem;
@@ -87,7 +87,7 @@ main {
 		}
 	}
 
-	&.medium {
+	&.v-medium {
 
 		@media all and (min-width: $mdMinWidth) {
 			padding-bottom: 6rem;
@@ -95,7 +95,7 @@ main {
 		}
 	}
 
-	&.large {
+	&.v-large {
 
 		@media all and (min-width: $mdMinWidth) {
 			padding-bottom: 6rem;

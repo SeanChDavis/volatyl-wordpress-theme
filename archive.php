@@ -3,10 +3,10 @@ get_header();
 ?>
 
 	<main id="main">
-		<header class="jumbo-header gray-background">
+		<header class="jumbo-header v-gray-background">
 			<div class="inner">
 				<?php if ( ! empty( get_the_archive_title() ) ) { ?>
-					<h1 class="archive-title"><?php echo the_archive_title(); ?></h1>
+					<h1 class="archive-title v-margin-bottom-3"><?php echo the_archive_title(); ?></h1>
 				<?php } ?>
 
 				<div class="archive-description">
@@ -14,11 +14,11 @@ get_header();
 				</div>
 			</div>
 		</header>
-		<div class="inner medium">
+		<div class="inner v-medium">
 			<?php
 			if ( have_posts() ) :
 				?>
-				<div class="post-type-grid">
+				<div class="v-post-type-grid">
 					<div class="v-grid v-grid-columns_3">
 						<?php
 						while ( have_posts() ) :

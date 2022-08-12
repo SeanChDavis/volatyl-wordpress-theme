@@ -319,6 +319,452 @@ template {
 
 /* Min-width Breakpoints */
 /* Navigation */
+.v-dark-background {
+  background: #313240;
+  color: #fff;
+}
+.v-dark-background h1 a, .v-dark-background .h1 a, .v-dark-background h2 a, .v-dark-background .h2 a, .v-dark-background h3 a, .v-dark-background .h3 a, .v-dark-background h4 a, .v-dark-background .h4 a, .v-dark-background h5 a, .v-dark-background .h5 a, .v-dark-background h6 a, .v-dark-background .h6 a {
+  color: #a0a2b6;
+}
+.v-dark-background a, .v-dark-background h4, .v-dark-background .h4, .v-dark-background h6, .v-dark-background .h6, .v-dark-background blockquote, .v-dark-background address, .v-dark-background cite, .v-dark-background q, .v-dark-background code, .v-dark-background kbd, .v-dark-background tt, .v-dark-background var, .v-dark-background strike, .v-dark-background del {
+  color: #afb0c1;
+}
+.v-dark-background pre, .v-dark-background dl, .v-dark-background code, .v-dark-background kbd, .v-dark-background tt, .v-dark-background var {
+  background: #383949;
+}
+.v-dark-background table {
+  border: 2px solid #1b1b23;
+}
+.v-dark-background table th, .v-dark-background table td {
+  border: 2px solid #1b1b23;
+}
+.v-dark-background table th {
+  background: #383949;
+}
+.v-dark-background .button,
+.v-dark-background .v-button,
+.v-dark-background button,
+.v-dark-background [type=button],
+.v-dark-background [type=submit],
+.v-dark-background [type=reset],
+.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link,
+.v-dark-background .wp-block-file .wp-block-file__button {
+  background: #52546b;
+  color: #fff;
+}
+.v-dark-background .button:active, .v-dark-background .button:focus, .v-dark-background .button:hover,
+.v-dark-background .v-button:active,
+.v-dark-background .v-button:focus,
+.v-dark-background .v-button:hover,
+.v-dark-background button:active,
+.v-dark-background button:focus,
+.v-dark-background button:hover,
+.v-dark-background [type=button]:active,
+.v-dark-background [type=button]:focus,
+.v-dark-background [type=button]:hover,
+.v-dark-background [type=submit]:active,
+.v-dark-background [type=submit]:focus,
+.v-dark-background [type=submit]:hover,
+.v-dark-background [type=reset]:active,
+.v-dark-background [type=reset]:focus,
+.v-dark-background [type=reset]:hover,
+.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link:active,
+.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link:focus,
+.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link:hover,
+.v-dark-background .wp-block-file .wp-block-file__button:active,
+.v-dark-background .wp-block-file .wp-block-file__button:focus,
+.v-dark-background .wp-block-file .wp-block-file__button:hover {
+  background: #3c3d4e;
+}
+.v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]), .v-dark-background textarea {
+  border: 2px solid #52546b;
+}
+.v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):active, .v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus, .v-dark-background textarea:active, .v-dark-background textarea:focus {
+  border-color: #3c3d4e;
+}
+
+.v-gray-background {
+  background: #f7f7f9;
+}
+
+/**
+ * Basic grid system based on 4, 3, 2, and 1-column grid layouts
+ */
+.v-grid {
+  display: grid;
+  gap: 1.5rem;
+  /**
+   * Center column content that has width limits on wider screens
+   */
+  /**
+   * Card styles to be used alongside the above grid system
+   */
+}
+@media all and (min-width: 768px) {
+  .v-grid {
+    gap: 2rem;
+  }
+}
+@media all and (min-width: 992px) {
+  .v-grid {
+    gap: 3rem;
+  }
+}
+@media all and (min-width: 768px) {
+  .v-grid.v-gap-2 {
+    gap: 2rem;
+  }
+}
+.v-grid.v-gap-1 {
+  gap: 1.5rem;
+}
+@media all and (min-width: 768px) {
+  .v-grid.v-grid-columns_2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (min-width: 768px) {
+  .v-grid.v-grid-columns_3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (min-width: 992px) {
+  .v-grid.v-grid-columns_3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media all and (min-width: 768px) {
+  .v-grid.v-grid-columns_4 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (min-width: 992px) {
+  .v-grid.v-grid-columns_4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.v-grid.v-grid-centered-column {
+  grid-template-columns: 1fr;
+}
+@media all and (min-width: 992px) {
+  .v-grid.v-grid-centered-column {
+    grid-template-columns: 1fr 5fr 1fr;
+  }
+}
+@media all and (min-width: 1200px) {
+  .v-grid.v-grid-centered-column {
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+}
+@media all and (min-width: 992px) {
+  .v-grid.v-grid-centered-column .v-grid-centered-column-content {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+}
+.v-grid [class*=-item-container] {
+  /**
+   * Shared styles across all cards
+   */
+  /**
+   * Fully styled cards
+   */
+  /**
+   * Lightly design cards
+   */
+}
+.v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] {
+  margin-bottom: 4px;
+}
+.v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a {
+  word-break: break-word;
+}
+.v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] {
+  font-size: 13px;
+  line-height: 1.6;
+  display: block;
+  line-height: 1;
+}
+.v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] a {
+  text-decoration: none;
+}
+.v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] a:active, .v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] a:focus, .v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] a:hover {
+  text-decoration: underline;
+}
+.v-grid [class*=-item-container]:not(.v-subdued) {
+  background: #f7f7f9;
+  border-radius: 8px;
+}
+.v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-media] img {
+  border-radius: 8px 8px 0 0;
+  vertical-align: top;
+}
+.v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-header] {
+  padding: 1.25rem 1.25rem 0.75rem;
+}
+@media all and (min-width: 992px) {
+  .v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-header] {
+    padding: 2rem 2rem 1rem;
+  }
+}
+.v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a {
+  text-decoration: none;
+}
+.v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a:active, .v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a:focus, .v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a:hover {
+  color: #52546b;
+}
+.v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-body] {
+  flex: 1 0 auto;
+  padding: 0.5rem 1.25rem 1rem;
+}
+@media all and (min-width: 992px) {
+  .v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-body] {
+    padding: 0.5rem 2rem 1.25rem;
+  }
+}
+.v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-body] [class*=-item-description] {
+  font-size: 17px;
+  line-height: 1.6;
+}
+.v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-footer] {
+  font-size: 13px;
+  line-height: 1.6;
+  padding: 0.5rem 1.25rem 1.75rem;
+}
+@media all and (min-width: 992px) {
+  .v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-footer] {
+    padding: 0.5rem 2rem 2.25rem;
+  }
+}
+.v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-footer] .button {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.site-hero .inner .hero > [class*=-title] {
+  margin-bottom: 0.4em;
+}
+@media all and (min-width: 992px) {
+  .site-hero .inner .hero > [class*=-title] {
+    font-size: 5rem;
+    max-width: 85%;
+  }
+}
+.site-hero .inner .hero > [class*=-title]:last-child {
+  margin-bottom: 0;
+}
+.site-hero .inner .hero > [class*=-title] + .primary-cta-container, .site-hero .inner .hero > [class*=-title] + .secondary-cta-container {
+  margin-top: 2rem;
+}
+@media all and (min-width: 560px) {
+  .site-hero .inner .hero > [class*=-title] + .primary-cta-container, .site-hero .inner .hero > [class*=-title] + .secondary-cta-container {
+    margin-top: 3rem;
+  }
+}
+@media all and (min-width: 992px) {
+  .site-hero .inner .hero > [class*=-title] + .primary-cta-container, .site-hero .inner .hero > [class*=-title] + .secondary-cta-container {
+    margin-top: 6rem;
+  }
+}
+.site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 665px;
+}
+@media all and (min-width: 560px) {
+  .site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+}
+@media all and (min-width: 768px) {
+  .site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+}
+@media all and (min-width: 768px) and (min-width: 560px) {
+  .site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+}
+@media all and (min-width: 768px) and (min-width: 768px) {
+  .site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+}
+@media all and (min-width: 992px) {
+  .site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
+    font-size: 19px;
+    line-height: 1.6;
+  }
+}
+.site-hero .inner .hero > [class*=-subtitle]:not(:last-child), .site-hero .inner .hero > [class*=-description]:not(:last-child) {
+  margin-bottom: 2rem;
+}
+@media all and (min-width: 560px) {
+  .site-hero .inner .hero > [class*=-subtitle]:not(:last-child), .site-hero .inner .hero > [class*=-description]:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+}
+@media all and (min-width: 992px) {
+  .site-hero .inner .hero > [class*=-subtitle]:not(:last-child), .site-hero .inner .hero > [class*=-description]:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+}
+.site-hero .inner .hero .primary-cta-container {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  max-width: 665px;
+}
+@media all and (min-width: 560px) {
+  .site-hero .inner .hero .primary-cta-container {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+}
+@media all and (min-width: 560px) and (min-width: 560px) {
+  .site-hero .inner .hero .primary-cta-container {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+}
+@media all and (min-width: 560px) and (min-width: 768px) {
+  .site-hero .inner .hero .primary-cta-container {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+}
+.site-hero .inner .hero .secondary-cta-container .secondary-cta {
+  font-size: 15px;
+  line-height: 1.6;
+}
+.site-hero .inner .hero.v-content-centered {
+  text-align: center;
+}
+.site-hero .inner .hero.v-content-centered > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.jumbo-header .inner > [class*=-title] {
+  margin-bottom: 0.75rem;
+  max-width: 770px;
+}
+@media all and (min-width: 1200px) {
+  .jumbo-header .inner > [class*=-title] {
+    max-width: 940px;
+  }
+}
+.jumbo-header .inner > [class*=-meta], .jumbo-header .inner > [class*=-description] {
+  font-size: 13px;
+  line-height: 1.6;
+  max-width: 765px;
+}
+@media all and (min-width: 768px) {
+  .jumbo-header .inner > [class*=-meta], .jumbo-header .inner > [class*=-description] {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+.jumbo-header .inner > [class*=-content-container] {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+@media all and (min-width: 992px) {
+  .jumbo-header .inner > [class*=-content-container] {
+    align-items: center;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: space-between;
+  }
+}
+.no-sidebar .jumbo-header {
+  text-align: center;
+}
+.no-sidebar .jumbo-header .inner > [class*=-title] {
+  margin: 0 auto 0.75rem;
+}
+.no-sidebar .jumbo-header .inner > [class*=-meta], .no-sidebar .jumbo-header .inner > [class*=-description] {
+  margin: 1rem auto 0;
+}
+
+/**
+ * Common element styles used across the theme
+ */
+.alignleft,
+[class*=wp-block-] .alignleft {
+  margin-bottom: 1.5rem;
+}
+@media all and (min-width: 560px) {
+  .alignleft,
+[class*=wp-block-] .alignleft {
+    float: left;
+    margin-right: 1.5rem;
+  }
+}
+@media all and (min-width: 992px) {
+  .alignleft,
+[class*=wp-block-] .alignleft {
+    margin-right: 3rem;
+  }
+}
+
+.alignright,
+[class*=wp-block-] .alignright {
+  margin-bottom: 1.5rem;
+}
+@media all and (min-width: 560px) {
+  .alignright,
+[class*=wp-block-] .alignright {
+    float: right;
+    margin-left: 1.5rem;
+  }
+}
+@media all and (min-width: 1200px) {
+  .alignright,
+[class*=wp-block-] .alignright {
+    margin-left: 3rem;
+  }
+}
+
+.v-subdued-title {
+  font-size: 15px;
+  line-height: 1.6;
+  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
+  color: #686a88;
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.v-subdued-link-container a {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.v-text-align-center {
+  text-align: center;
+}
+
+.v-post-type-grid {
+  margin-bottom: 1.5rem;
+}
+@media all and (min-width: 768px) {
+  .v-post-type-grid {
+    margin-bottom: 3rem;
+  }
+}
+
 h1, .h1,
 h2, .h2,
 h3, .h3,
@@ -782,6 +1228,10 @@ figure figcaption {
   font-size: 15px;
   line-height: 1.6;
 }
+.post-password-form label input {
+  display: block;
+  margin-bottom: 6px;
+}
 
 /* Try to prevent horizontal scroll caused by long, non-breaking text */
 .main-content-wrap {
@@ -793,7 +1243,6 @@ figure figcaption {
 .wp-caption,
 .wp-block-image {
   max-width: 100%;
-  width: 100% !important;
 }
 
 .wp-block-image img + figcaption,
@@ -843,7 +1292,9 @@ figure figcaption {
 .wp-block-embed:not(.alignleft),
 .wp-block-embed:not(.alignright),
 .wp-block-navigation:not(.alignleft),
-.wp-block-navigation:not(.alignright) {
+.wp-block-navigation:not(.alignright),
+.wp-block-group:not(.alignleft),
+.wp-block-group:not(.alignright) {
   margin-bottom: 2rem;
 }
 .wp-block-image:not(:first-child),
@@ -860,8 +1311,42 @@ figure figcaption {
 .wp-block-social-links:not(:first-child),
 .wp-block-tag-cloud:not(:first-child),
 .wp-block-embed:not(:first-child),
-.wp-block-navigation:not(:first-child) {
+.wp-block-navigation:not(:first-child),
+.wp-block-group:not(:first-child) {
   margin-top: 2rem;
+}
+.wp-block-image.alignleft, .wp-block-image.alignright,
+.wp-block-cover.alignleft,
+.wp-block-cover.alignright,
+.wp-block-video.alignleft,
+.wp-block-video.alignright,
+.wp-block-buttons.alignleft,
+.wp-block-buttons.alignright,
+.wp-block-audio.alignleft,
+.wp-block-audio.alignright,
+.wp-block-file.alignleft,
+.wp-block-file.alignright,
+.wp-block-columns.alignleft,
+.wp-block-columns.alignright,
+.wp-block-calendar.alignleft,
+.wp-block-calendar.alignright,
+.wp-block-archives.alignleft,
+.wp-block-archives.alignright,
+.wp-block-categories.alignleft,
+.wp-block-categories.alignright,
+.wp-block-search.alignleft,
+.wp-block-search.alignright,
+.wp-block-social-links.alignleft,
+.wp-block-social-links.alignright,
+.wp-block-tag-cloud.alignleft,
+.wp-block-tag-cloud.alignright,
+.wp-block-embed.alignleft,
+.wp-block-embed.alignright,
+.wp-block-navigation.alignleft,
+.wp-block-navigation.alignright,
+.wp-block-group.alignleft,
+.wp-block-group.alignright {
+  margin-top: 0;
 }
 .wp-block-image > label,
 .wp-block-cover > label,
@@ -877,7 +1362,8 @@ figure figcaption {
 .wp-block-social-links > label,
 .wp-block-tag-cloud > label,
 .wp-block-embed > label,
-.wp-block-navigation > label {
+.wp-block-navigation > label,
+.wp-block-group > label {
   font-size: 15px;
   line-height: 1.6;
   color: #686a88;
@@ -925,7 +1411,8 @@ figure figcaption {
   padding: 7px 9px;
 }
 
-.wp-block-embed .wp-block-embed__wrapper .twitter-tweet {
+/* Embeds */
+.twitter-tweet {
   font-size: 15px;
   line-height: 1.6;
   border: 2px solid #e8e9ee;
@@ -934,10 +1421,10 @@ figure figcaption {
   margin: 0;
   padding: 1.5rem;
 }
-.wp-block-embed .wp-block-embed__wrapper .twitter-tweet p {
+.twitter-tweet p {
   margin-bottom: 0.75rem;
 }
-.wp-block-embed .wp-block-embed__wrapper .twitter-tweet p:last-of-type {
+.twitter-tweet p:last-of-type {
   margin-bottom: 1.125rem;
 }
 
@@ -1040,460 +1527,6 @@ article .entry-content .wp-block-social-links li {
   margin-top: 0;
 }
 
-.dark-background {
-  background: #313240;
-  color: #fff;
-}
-.dark-background h1 a, .dark-background .h1 a, .dark-background h2 a, .dark-background .h2 a, .dark-background h3 a, .dark-background .h3 a, .dark-background h4 a, .dark-background .h4 a, .dark-background h5 a, .dark-background .h5 a, .dark-background h6 a, .dark-background .h6 a {
-  color: #a0a2b6;
-}
-.dark-background a, .dark-background h4, .dark-background .h4, .dark-background h6, .dark-background .h6, .dark-background blockquote, .dark-background address, .dark-background cite, .dark-background q, .dark-background code, .dark-background kbd, .dark-background tt, .dark-background var, .dark-background strike, .dark-background del {
-  color: #afb0c1;
-}
-.dark-background pre, .dark-background dl, .dark-background code, .dark-background kbd, .dark-background tt, .dark-background var {
-  background: #383949;
-}
-.dark-background table {
-  border: 2px solid #1b1b23;
-}
-.dark-background table th, .dark-background table td {
-  border: 2px solid #1b1b23;
-}
-.dark-background table th {
-  background: #383949;
-}
-.dark-background .button,
-.dark-background button,
-.dark-background [type=button],
-.dark-background [type=submit],
-.dark-background [type=reset],
-.dark-background .wp-block-button__link,
-.dark-background .wp-block-file .wp-block-file__button {
-  background: #52546b;
-  color: #fff;
-}
-.dark-background .button:active, .dark-background .button:focus, .dark-background .button:hover,
-.dark-background button:active,
-.dark-background button:focus,
-.dark-background button:hover,
-.dark-background [type=button]:active,
-.dark-background [type=button]:focus,
-.dark-background [type=button]:hover,
-.dark-background [type=submit]:active,
-.dark-background [type=submit]:focus,
-.dark-background [type=submit]:hover,
-.dark-background [type=reset]:active,
-.dark-background [type=reset]:focus,
-.dark-background [type=reset]:hover,
-.dark-background .wp-block-button__link:active,
-.dark-background .wp-block-button__link:focus,
-.dark-background .wp-block-button__link:hover,
-.dark-background .wp-block-file .wp-block-file__button:active,
-.dark-background .wp-block-file .wp-block-file__button:focus,
-.dark-background .wp-block-file .wp-block-file__button:hover {
-  background: #3c3d4e;
-}
-.dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]), .dark-background textarea {
-  border: 2px solid #52546b;
-}
-.dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):active, .dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus, .dark-background textarea:active, .dark-background textarea:focus {
-  border-color: #3c3d4e;
-}
-
-.gray-background {
-  background: #f7f7f9;
-}
-
-/**
- * Basic grid system based on 4, 3, 2, and 1-column grid layouts
- */
-.v-grid {
-  display: grid;
-  gap: 1.5rem;
-  /**
-   * Center column content that has width limits on wider screens
-   */
-  /**
-   * Card styles to be used alongside the above grid system
-   */
-}
-@media all and (min-width: 768px) {
-  .v-grid {
-    gap: 2rem;
-  }
-}
-@media all and (min-width: 992px) {
-  .v-grid {
-    gap: 3rem;
-  }
-}
-@media all and (min-width: 768px) {
-  .v-grid.v-gap-2 {
-    gap: 2rem;
-  }
-}
-.v-grid.v-gap-1 {
-  gap: 1.5rem;
-}
-@media all and (min-width: 768px) {
-  .v-grid.v-grid-columns_2 {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media all and (min-width: 768px) {
-  .v-grid.v-grid-columns_3 {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media all and (min-width: 992px) {
-  .v-grid.v-grid-columns_3 {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media all and (min-width: 768px) {
-  .v-grid.v-grid-columns_4 {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media all and (min-width: 992px) {
-  .v-grid.v-grid-columns_4 {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-.v-grid.v-grid-centered-column {
-  grid-template-columns: 1fr;
-}
-@media all and (min-width: 992px) {
-  .v-grid.v-grid-centered-column {
-    grid-template-columns: 1fr 5fr 1fr;
-  }
-}
-@media all and (min-width: 1200px) {
-  .v-grid.v-grid-centered-column {
-    grid-template-columns: 1fr 3fr 1fr;
-  }
-}
-@media all and (min-width: 992px) {
-  .v-grid.v-grid-centered-column .v-grid-centered-column-content {
-    grid-column-start: 2;
-    grid-column-end: 3;
-  }
-}
-.v-grid [class*=-item-container] {
-  /**
-   * Shared styles across all cards
-   */
-  /**
-   * Fully styled cards
-   */
-  /**
-   * Lightly design cards
-   */
-}
-.v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] {
-  margin-bottom: 4px;
-}
-.v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a {
-  word-break: break-word;
-}
-.v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] {
-  font-size: 13px;
-  line-height: 1.6;
-  display: block;
-  line-height: 1;
-}
-.v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] a {
-  text-decoration: none;
-}
-.v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] a:active, .v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] a:focus, .v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-meta] a:hover {
-  text-decoration: underline;
-}
-.v-grid [class*=-item-container]:not(.subdued) {
-  background: #f7f7f9;
-  border-radius: 8px;
-}
-.v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-media] {
-  padding: 0;
-  margin: 0;
-}
-.v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-media] img {
-  border-radius: 8px 8px 0 0;
-  vertical-align: top;
-}
-.v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-header] {
-  padding: 1.25rem 1.25rem 0.75rem;
-}
-@media all and (min-width: 992px) {
-  .v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-header] {
-    padding: 2rem 2rem 1rem;
-  }
-}
-.v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a {
-  text-decoration: none;
-}
-.v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a:active, .v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a:focus, .v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a:hover {
-  color: #52546b;
-}
-.v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-body] {
-  flex: 1 0 auto;
-  padding: 0.5rem 1.25rem 1rem;
-}
-@media all and (min-width: 992px) {
-  .v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-body] {
-    padding: 0.5rem 2rem 1.25rem;
-  }
-}
-.v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-body] [class*=-item-description] {
-  font-size: 17px;
-  line-height: 1.6;
-}
-.v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-footer] {
-  font-size: 13px;
-  line-height: 1.6;
-  padding: 0.5rem 1.25rem 1.75rem;
-}
-@media all and (min-width: 992px) {
-  .v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-footer] {
-    padding: 0.5rem 2rem 2.25rem;
-  }
-}
-.v-grid [class*=-item-container]:not(.subdued) [class*=-item-content-wrap] [class*=-item-footer] .button {
-  font-size: 13px;
-  line-height: 1.6;
-}
-.site-hero .inner .hero > [class*=-title] {
-  margin-bottom: 0.4em;
-}
-@media all and (min-width: 992px) {
-  .site-hero .inner .hero > [class*=-title] {
-    font-size: 5rem;
-    max-width: 85%;
-  }
-}
-.site-hero .inner .hero > [class*=-title]:last-child {
-  margin-bottom: 0;
-}
-.site-hero .inner .hero > [class*=-title] + .primary-cta-container, .site-hero .inner .hero > [class*=-title] + .secondary-cta-container {
-  margin-top: 2rem;
-}
-@media all and (min-width: 560px) {
-  .site-hero .inner .hero > [class*=-title] + .primary-cta-container, .site-hero .inner .hero > [class*=-title] + .secondary-cta-container {
-    margin-top: 3rem;
-  }
-}
-@media all and (min-width: 992px) {
-  .site-hero .inner .hero > [class*=-title] + .primary-cta-container, .site-hero .inner .hero > [class*=-title] + .secondary-cta-container {
-    margin-top: 6rem;
-  }
-}
-.site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
-  font-size: 15px;
-  line-height: 1.6;
-  max-width: 665px;
-}
-@media all and (min-width: 560px) {
-  .site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
-    font-size: 17px;
-    line-height: 1.6;
-  }
-}
-@media all and (min-width: 768px) {
-  .site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
-    font-size: 17px;
-    line-height: 1.6;
-  }
-}
-@media all and (min-width: 768px) and (min-width: 560px) {
-  .site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
-    font-size: 17px;
-    line-height: 1.6;
-  }
-}
-@media all and (min-width: 768px) and (min-width: 768px) {
-  .site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-}
-@media all and (min-width: 992px) {
-  .site-hero .inner .hero > [class*=-subtitle], .site-hero .inner .hero > [class*=-description] {
-    font-size: 19px;
-    line-height: 1.6;
-  }
-}
-.site-hero .inner .hero > [class*=-subtitle]:not(:last-child), .site-hero .inner .hero > [class*=-description]:not(:last-child) {
-  margin-bottom: 2rem;
-}
-@media all and (min-width: 560px) {
-  .site-hero .inner .hero > [class*=-subtitle]:not(:last-child), .site-hero .inner .hero > [class*=-description]:not(:last-child) {
-    margin-bottom: 2.5rem;
-  }
-}
-@media all and (min-width: 992px) {
-  .site-hero .inner .hero > [class*=-subtitle]:not(:last-child), .site-hero .inner .hero > [class*=-description]:not(:last-child) {
-    margin-bottom: 5rem;
-  }
-}
-.site-hero .inner .hero .primary-cta-container {
-  font-size: 15px;
-  line-height: 1.6;
-  margin-bottom: 8px;
-  max-width: 665px;
-}
-@media all and (min-width: 560px) {
-  .site-hero .inner .hero .primary-cta-container {
-    font-size: 17px;
-    line-height: 1.6;
-    margin-bottom: 12px;
-  }
-}
-@media all and (min-width: 560px) and (min-width: 560px) {
-  .site-hero .inner .hero .primary-cta-container {
-    font-size: 17px;
-    line-height: 1.6;
-  }
-}
-@media all and (min-width: 560px) and (min-width: 768px) {
-  .site-hero .inner .hero .primary-cta-container {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-}
-.site-hero .inner .hero .secondary-cta-container .secondary-cta {
-  font-size: 15px;
-  line-height: 1.6;
-}
-.site-hero .inner .hero.content-centered {
-  text-align: center;
-}
-.site-hero .inner .hero.content-centered > * {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.jumbo-header .inner > [class*=-title] {
-  margin-bottom: 0.75rem;
-  max-width: 770px;
-}
-@media all and (min-width: 1200px) {
-  .jumbo-header .inner > [class*=-title] {
-    max-width: 940px;
-  }
-}
-.jumbo-header .inner > [class*=-meta], .jumbo-header .inner > [class*=-description] {
-  font-size: 13px;
-  line-height: 1.6;
-  max-width: 765px;
-}
-@media all and (min-width: 768px) {
-  .jumbo-header .inner > [class*=-meta], .jumbo-header .inner > [class*=-description] {
-    font-size: 15px;
-    line-height: 1.6;
-  }
-}
-.jumbo-header .inner > [class*=-content-container] {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-@media all and (min-width: 992px) {
-  .jumbo-header .inner > [class*=-content-container] {
-    align-items: center;
-    flex-direction: row;
-    gap: 1.5rem;
-    justify-content: space-between;
-  }
-}
-.no-sidebar .jumbo-header {
-  text-align: center;
-}
-.no-sidebar .jumbo-header .inner > [class*=-title] {
-  margin: 0 auto 0.75rem;
-}
-.no-sidebar .jumbo-header .inner > [class*=-meta], .no-sidebar .jumbo-header .inner > [class*=-description] {
-  margin: 1rem auto 0;
-}
-
-/**
- * Common element styles used across the theme
- */
-.alignleft {
-  margin-bottom: 1.5rem;
-}
-@media all and (min-width: 560px) {
-  .alignleft {
-    float: left;
-    margin-right: 1.5rem;
-  }
-}
-@media all and (min-width: 992px) {
-  .alignleft {
-    margin-right: 3rem;
-  }
-}
-
-.alignright {
-  margin-bottom: 1.5rem;
-}
-@media all and (min-width: 560px) {
-  .alignright {
-    float: right;
-    margin-left: 1.5rem;
-  }
-}
-@media all and (min-width: 1200px) {
-  .alignright {
-    margin-left: 3rem;
-  }
-}
-
-.subdued-title {
-  font-size: 15px;
-  line-height: 1.6;
-  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
-  color: #686a88;
-  display: block;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-}
-
-.subdued-link-container a {
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.text-align-center {
-  text-align: center;
-}
-
-.no-margin {
-  margin: 0;
-}
-
-.no-padding {
-  padding: 0;
-}
-
-.no-spacing {
-  margin: 0;
-  padding: 0;
-}
-
-.post-type-grid {
-  margin-bottom: 1.5rem;
-}
-@media all and (min-width: 768px) {
-  .post-type-grid {
-    margin-bottom: 3rem;
-  }
-}
-
 html {
   background: #f4f4f7;
 }
@@ -1584,25 +1617,25 @@ main {
   }
 }
 @media all and (min-width: 992px) {
-  .inner.small {
+  .inner.v-small {
     padding-bottom: 4rem;
     padding-top: 4rem;
   }
 }
 @media all and (min-width: 992px) {
-  .inner.medium {
+  .inner.v-medium {
     padding-bottom: 6rem;
     padding-top: 6rem;
   }
 }
 @media all and (min-width: 992px) {
-  .inner.large {
+  .inner.v-large {
     padding-bottom: 6rem;
     padding-top: 6rem;
   }
 }
 @media all and (min-width: 1200px) {
-  .inner.large {
+  .inner.v-large {
     padding-bottom: 8rem;
     padding-top: 8rem;
   }
@@ -2080,8 +2113,6 @@ main {
 
 #comments .comments-title {
   border-bottom: 2px solid #e8e9ee;
-  padding-bottom: 2.5rem;
-  margin-bottom: 2.5rem;
 }
 #comments .comment-list {
   margin-bottom: 2.5rem;
@@ -2360,11 +2391,12 @@ main {
 }
 
 .button,
+.v-button,
 button,
 [type=button],
 [type=submit],
 [type=reset],
-.wp-block-button__link,
+.wp-block-buttons > .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button {
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   font-size: 15px;
@@ -2378,22 +2410,26 @@ button,
   font-weight: 600;
   letter-spacing: 1px;
   line-height: 1.6;
-  padding: 14px;
+  padding: 1em;
   text-decoration: none;
   text-transform: uppercase;
 }
 @media all and (min-width: 560px) {
   .button,
+.v-button,
 button,
 [type=button],
 [type=submit],
 [type=reset],
-.wp-block-button__link,
+.wp-block-buttons > .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button {
     line-height: 1;
   }
 }
 .button:active, .button:focus, .button:hover,
+.v-button:active,
+.v-button:focus,
+.v-button:hover,
 button:active,
 button:focus,
 button:hover,
@@ -2406,9 +2442,9 @@ button:hover,
 [type=reset]:active,
 [type=reset]:focus,
 [type=reset]:hover,
-.wp-block-button__link:active,
-.wp-block-button__link:focus,
-.wp-block-button__link:hover,
+.wp-block-buttons > .wp-block-button .wp-block-button__link:active,
+.wp-block-buttons > .wp-block-button .wp-block-button__link:focus,
+.wp-block-buttons > .wp-block-button .wp-block-button__link:hover,
 .wp-block-file .wp-block-file__button:active,
 .wp-block-file .wp-block-file__button:focus,
 .wp-block-file .wp-block-file__button:hover {
@@ -2416,15 +2452,15 @@ button:hover,
   text-decoration: none;
 }
 @media all and (min-width: 560px) {
-  .button.large,
-button.large,
-[type=button].large,
-[type=submit].large,
-[type=reset].large,
-.wp-block-button__link.large,
-.wp-block-file .wp-block-file__button.large {
+  .button.v-large,
+.v-button.v-large,
+button.v-large,
+[type=button].v-large,
+[type=submit].v-large,
+[type=reset].v-large,
+.wp-block-buttons > .wp-block-button .wp-block-button__link.v-large,
+.wp-block-file .wp-block-file__button.v-large {
     font-size: 1.15rem;
-    padding: 1em;
   }
 }
 
@@ -2484,14 +2520,11 @@ textarea:focus {
 .footer-lead .footer-lead-cta .cta-content [class*=-title] {
   margin-bottom: 12px;
 }
+
 .fat-footer {
   font-size: 15px;
   line-height: 1.6;
   background: #f7f7f9;
-}
-.fat-footer > .inner {
-  padding-bottom: 0;
-  padding-top: 0;
 }
 .fat-footer > .inner .fat-footer-areas {
   padding: 2rem 0;
@@ -2571,7 +2604,6 @@ textarea:focus {
 }
 .site-footer .inner .site-footer-content {
   border-top: 2px solid #e8e9ee;
-  padding-top: 1.5rem;
 }
 @media all and (min-width: 992px) {
   .site-footer .inner .site-footer-content {
@@ -2593,7 +2625,6 @@ textarea:focus {
   color: #686a88;
   display: block;
   font-weight: 700;
-  margin-bottom: 1.5rem;
   text-transform: uppercase;
 }
 .archive .jumbo-header .archive-title span {
@@ -2696,21 +2727,21 @@ article:last-child .entry-footer {
   margin-bottom: 0;
 }
 
-.front-page .recent-posts .post-type-grid:not(:last-child) {
+.front-page .recent-posts .v-post-type-grid:not(:last-child) {
   margin-bottom: 3rem;
 }
 @media all and (min-width: 768px) {
-  .front-page .recent-posts .post-type-grid:not(:last-child) {
+  .front-page .recent-posts .v-post-type-grid:not(:last-child) {
     margin-bottom: 4rem;
   }
 }
 @media all and (min-width: 992px) {
-  .front-page .recent-posts .post-type-grid:not(:last-child) {
+  .front-page .recent-posts .v-post-type-grid:not(:last-child) {
     margin-bottom: 6rem;
   }
 }
 @media all and (min-width: 1200px) {
-  .front-page .recent-posts .post-type-grid:not(:last-child) {
+  .front-page .recent-posts .v-post-type-grid:not(:last-child) {
     margin-bottom: 8rem;
   }
 }
@@ -2719,72 +2750,860 @@ article:last-child .entry-footer {
     text-align: center;
   }
 }
-.front-page .recent-posts .v-grid-centered-column-content .subdued-title {
-  margin-bottom: 0;
-}
-.front-page .get-in-touch {
-  text-align: center;
-}
 
-.wp-block-group > .wp-block-group__inner-container {
+.full-width-template .wp-block-group {
+  margin: 0;
+}
+.full-width-template .wp-block-group > .wp-block-group__inner-container {
   margin: 0 auto;
   max-width: calc(1200px + 1.25rem);
   padding: 2.5rem 1.25rem;
 }
 @media all and (min-width: 560px) {
-  .wp-block-group > .wp-block-group__inner-container {
+  .full-width-template .wp-block-group > .wp-block-group__inner-container {
     max-width: calc(1200px + 2rem);
     padding: 3rem 2rem;
   }
 }
 @media all and (min-width: 768px) {
-  .wp-block-group > .wp-block-group__inner-container {
+  .full-width-template .wp-block-group > .wp-block-group__inner-container {
     padding-left: 4rem;
     padding-right: 4rem;
   }
 }
 @media all and (min-width: 860px) {
-  .wp-block-group > .wp-block-group__inner-container {
+  .full-width-template .wp-block-group > .wp-block-group__inner-container {
     padding-left: 6rem;
     padding-right: 6rem;
   }
 }
 @media all and (min-width: 992px) {
-  .wp-block-group > .wp-block-group__inner-container {
+  .full-width-template .wp-block-group > .wp-block-group__inner-container {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 }
-.wp-block-group > .wp-block-group__inner-container > [class*=wp-block-]:last-child {
+.full-width-template .wp-block-group > .wp-block-group__inner-container > [class*=wp-block-]:last-child {
   margin-bottom: 0;
 }
-.wp-block-group.no-spacing > .wp-block-group__inner-container {
+.full-width-template .wp-block-group.v-no-spacing > .wp-block-group__inner-container {
   padding-bottom: 0;
   padding-top: 0;
 }
 @media all and (min-width: 992px) {
-  .wp-block-group.small > .wp-block-group__inner-container {
+  .full-width-template .wp-block-group.v-small > .wp-block-group__inner-container {
     padding-bottom: 4rem;
     padding-top: 4rem;
   }
 }
 @media all and (min-width: 992px) {
-  .wp-block-group.medium > .wp-block-group__inner-container {
+  .full-width-template .wp-block-group.v-medium > .wp-block-group__inner-container {
     padding-bottom: 6rem;
     padding-top: 6rem;
   }
 }
 @media all and (min-width: 992px) {
-  .wp-block-group.large > .wp-block-group__inner-container {
+  .full-width-template .wp-block-group.v-large > .wp-block-group__inner-container {
     padding-bottom: 6rem;
     padding-top: 6rem;
   }
 }
 @media all and (min-width: 1200px) {
-  .wp-block-group.large > .wp-block-group__inner-container {
+  .full-width-template .wp-block-group.v-large > .wp-block-group__inner-container {
     padding-bottom: 8rem;
     padding-top: 8rem;
   }
+}
+
+#page main {
+  /* MARGINS */
+  /* PADDING */
+}
+#page main .v-margin-top-0 {
+  margin-top: 0;
+}
+#page main .v-margin-top-1 {
+  margin-top: 0.5rem;
+}
+#page main .v-margin-top-2 {
+  margin-top: 1rem;
+}
+#page main .v-margin-top-3 {
+  margin-top: 1.5rem;
+}
+#page main .v-margin-top-4 {
+  margin-top: 2rem;
+}
+#page main .v-margin-top-5 {
+  margin-top: 2.5rem;
+}
+#page main .v-margin-top-6 {
+  margin-top: 3rem;
+}
+#page main .v-margin-top-7 {
+  margin-top: 3.5rem;
+}
+#page main .v-margin-top-8 {
+  margin-top: 4rem;
+}
+#page main .v-margin-top-9 {
+  margin-top: 4.5rem;
+}
+#page main .v-margin-top-10 {
+  margin-top: 5rem;
+}
+#page main .v-margin-top-11 {
+  margin-top: 5.5rem;
+}
+#page main .v-margin-top-12 {
+  margin-top: 6rem;
+}
+#page main .v-margin-top-13 {
+  margin-top: 6.5rem;
+}
+#page main .v-margin-top-14 {
+  margin-top: 7rem;
+}
+#page main .v-margin-top-15 {
+  margin-top: 7.5rem;
+}
+#page main .v-margin-top-16 {
+  margin-top: 8rem;
+}
+#page main .v-margin-right-0 {
+  margin-right: 0;
+}
+#page main .v-margin-right-1 {
+  margin-right: 0.5rem;
+}
+#page main .v-margin-right-2 {
+  margin-right: 1rem;
+}
+#page main .v-margin-right-3 {
+  margin-right: 1.5rem;
+}
+#page main .v-margin-right-4 {
+  margin-right: 2rem;
+}
+#page main .v-margin-right-5 {
+  margin-right: 2.5rem;
+}
+#page main .v-margin-right-6 {
+  margin-right: 3rem;
+}
+#page main .v-margin-right-7 {
+  margin-right: 3.5rem;
+}
+#page main .v-margin-right-8 {
+  margin-right: 4rem;
+}
+#page main .v-margin-right-9 {
+  margin-right: 4.5rem;
+}
+#page main .v-margin-right-10 {
+  margin-right: 5rem;
+}
+#page main .v-margin-right-11 {
+  margin-right: 5.5rem;
+}
+#page main .v-margin-right-12 {
+  margin-right: 6rem;
+}
+#page main .v-margin-right-13 {
+  margin-right: 6.5rem;
+}
+#page main .v-margin-right-14 {
+  margin-right: 7rem;
+}
+#page main .v-margin-right-15 {
+  margin-right: 7.5rem;
+}
+#page main .v-margin-right-16 {
+  margin-right: 8rem;
+}
+#page main .v-margin-bottom-0 {
+  margin-bottom: 0;
+}
+#page main .v-margin-bottom-1 {
+  margin-bottom: 0.5rem;
+}
+#page main .v-margin-bottom-2 {
+  margin-bottom: 1rem;
+}
+#page main .v-margin-bottom-3 {
+  margin-bottom: 1.5rem;
+}
+#page main .v-margin-bottom-4 {
+  margin-bottom: 2rem;
+}
+#page main .v-margin-bottom-5 {
+  margin-bottom: 2.5rem;
+}
+#page main .v-margin-bottom-6 {
+  margin-bottom: 3rem;
+}
+#page main .v-margin-bottom-7 {
+  margin-bottom: 3.5rem;
+}
+#page main .v-margin-bottom-8 {
+  margin-bottom: 4rem;
+}
+#page main .v-margin-bottom-9 {
+  margin-bottom: 4.5rem;
+}
+#page main .v-margin-bottom-10 {
+  margin-bottom: 5rem;
+}
+#page main .v-margin-bottom-11 {
+  margin-bottom: 5.5rem;
+}
+#page main .v-margin-bottom-12 {
+  margin-bottom: 6rem;
+}
+#page main .v-margin-bottom-13 {
+  margin-bottom: 6.5rem;
+}
+#page main .v-margin-bottom-14 {
+  margin-bottom: 7rem;
+}
+#page main .v-margin-bottom-15 {
+  margin-bottom: 7.5rem;
+}
+#page main .v-margin-bottom-16 {
+  margin-bottom: 8rem;
+}
+#page main .v-margin-bottom-0 {
+  margin-bottom: 0;
+}
+#page main .v-margin-left-1 {
+  margin-left: 0.5rem;
+}
+#page main .v-margin-left-2 {
+  margin-left: 1rem;
+}
+#page main .v-margin-left-3 {
+  margin-left: 1.5rem;
+}
+#page main .v-margin-left-4 {
+  margin-left: 2rem;
+}
+#page main .v-margin-left-5 {
+  margin-left: 2.5rem;
+}
+#page main .v-margin-left-6 {
+  margin-left: 3rem;
+}
+#page main .v-margin-left-7 {
+  margin-left: 3.5rem;
+}
+#page main .v-margin-left-8 {
+  margin-left: 4rem;
+}
+#page main .v-margin-left-9 {
+  margin-left: 4.5rem;
+}
+#page main .v-margin-left-10 {
+  margin-left: 5rem;
+}
+#page main .v-margin-left-11 {
+  margin-left: 5.5rem;
+}
+#page main .v-margin-left-12 {
+  margin-left: 6rem;
+}
+#page main .v-margin-left-13 {
+  margin-left: 6.5rem;
+}
+#page main .v-margin-left-14 {
+  margin-left: 7rem;
+}
+#page main .v-margin-left-15 {
+  margin-left: 7.5rem;
+}
+#page main .v-margin-left-16 {
+  margin-left: 8rem;
+}
+#page main .v-margin-x-0 {
+  margin-right: 0;
+  margin-left: 0;
+}
+#page main .v-margin-x-1 {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+#page main .v-margin-x-2 {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+#page main .v-margin-x-3 {
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+#page main .v-margin-x-4 {
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+#page main .v-margin-x-5 {
+  margin-right: 2.5rem;
+  margin-left: 2.5rem;
+}
+#page main .v-margin-x-6 {
+  margin-right: 3rem;
+  margin-left: 3rem;
+}
+#page main .v-margin-x-7 {
+  margin-right: 3.5rem;
+  margin-left: 3.5rem;
+}
+#page main .v-margin-x-8 {
+  margin-right: 4rem;
+  margin-left: 4rem;
+}
+#page main .v-margin-x-9 {
+  margin-right: 4.5rem;
+  margin-left: 4.5rem;
+}
+#page main .v-margin-x-10 {
+  margin-right: 5rem;
+  margin-left: 5rem;
+}
+#page main .v-margin-x-11 {
+  margin-right: 5.5rem;
+  margin-left: 5.5rem;
+}
+#page main .v-margin-x-12 {
+  margin-right: 6rem;
+  margin-left: 6rem;
+}
+#page main .v-margin-x-13 {
+  margin-right: 6.5rem;
+  margin-left: 6.5rem;
+}
+#page main .v-margin-x-14 {
+  margin-right: 7rem;
+  margin-left: 7rem;
+}
+#page main .v-margin-x-15 {
+  margin-right: 7.5rem;
+  margin-left: 7.5rem;
+}
+#page main .v-margin-x-16 {
+  margin-right: 8rem;
+  margin-left: 8rem;
+}
+#page main .v-margin-y-0 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+#page main .v-margin-y-1 {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+#page main .v-margin-y-2 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+#page main .v-margin-y-3 {
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+#page main .v-margin-y-4 {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+#page main .v-margin-y-5 {
+  margin-bottom: 2.5rem;
+  margin-top: 2.5rem;
+}
+#page main .v-margin-y-6 {
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+#page main .v-margin-y-7 {
+  margin-bottom: 3.5rem;
+  margin-top: 3.5rem;
+}
+#page main .v-margin-y-8 {
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+}
+#page main .v-margin-y-9 {
+  margin-bottom: 4.5rem;
+  margin-top: 4.5rem;
+}
+#page main .v-margin-y-10 {
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+}
+#page main .v-margin-y-11 {
+  margin-bottom: 5.5rem;
+  margin-top: 5.5rem;
+}
+#page main .v-margin-y-12 {
+  margin-bottom: 6rem;
+  margin-top: 6rem;
+}
+#page main .v-margin-y-13 {
+  margin-bottom: 6.5rem;
+  margin-top: 6.5rem;
+}
+#page main .v-margin-y-14 {
+  margin-bottom: 7rem;
+  margin-top: 7rem;
+}
+#page main .v-margin-y-15 {
+  margin-bottom: 7.5rem;
+  margin-top: 7.5rem;
+}
+#page main .v-margin-y-16 {
+  margin-bottom: 8rem;
+  margin-top: 8rem;
+}
+#page main .v-margin-0 {
+  margin: 0;
+}
+#page main .v-margin-1 {
+  margin: 0.5rem;
+}
+#page main .v-margin-2 {
+  margin: 1rem;
+}
+#page main .v-margin-3 {
+  margin: 1.5rem;
+}
+#page main .v-margin-4 {
+  margin: 2rem;
+}
+#page main .v-margin-5 {
+  margin: 2.5rem;
+}
+#page main .v-margin-6 {
+  margin: 3rem;
+}
+#page main .v-margin-7 {
+  margin: 3.5rem;
+}
+#page main .v-margin-8 {
+  margin: 4rem;
+}
+#page main .v-margin-9 {
+  margin: 4.5rem;
+}
+#page main .v-margin-10 {
+  margin: 5rem;
+}
+#page main .v-margin-11 {
+  margin: 5.5rem;
+}
+#page main .v-margin-12 {
+  margin: 6rem;
+}
+#page main .v-margin-13 {
+  margin: 6.5rem;
+}
+#page main .v-margin-14 {
+  margin: 7rem;
+}
+#page main .v-margin-15 {
+  margin: 7.5rem;
+}
+#page main .v-margin-16 {
+  margin: 8rem;
+}
+#page main .v-padding-top-0 {
+  padding-top: 0;
+}
+#page main .v-padding-top-1 {
+  padding-top: 0.5rem;
+}
+#page main .v-padding-top-2 {
+  padding-top: 1rem;
+}
+#page main .v-padding-top-3 {
+  padding-top: 1.5rem;
+}
+#page main .v-padding-top-4 {
+  padding-top: 2rem;
+}
+#page main .v-padding-top-5 {
+  padding-top: 2.5rem;
+}
+#page main .v-padding-top-6 {
+  padding-top: 3rem;
+}
+#page main .v-padding-top-7 {
+  padding-top: 3.5rem;
+}
+#page main .v-padding-top-8 {
+  padding-top: 4rem;
+}
+#page main .v-padding-top-9 {
+  padding-top: 4.5rem;
+}
+#page main .v-padding-top-10 {
+  padding-top: 5rem;
+}
+#page main .v-padding-top-11 {
+  padding-top: 5.5rem;
+}
+#page main .v-padding-top-12 {
+  padding-top: 6rem;
+}
+#page main .v-padding-top-13 {
+  padding-top: 6.5rem;
+}
+#page main .v-padding-top-14 {
+  padding-top: 7rem;
+}
+#page main .v-padding-top-15 {
+  padding-top: 7.5rem;
+}
+#page main .v-padding-top-16 {
+  padding-top: 8rem;
+}
+#page main .v-padding-right-0 {
+  padding-right: 0;
+}
+#page main .v-padding-right-1 {
+  padding-right: 0.5rem;
+}
+#page main .v-padding-right-2 {
+  padding-right: 1rem;
+}
+#page main .v-padding-right-3 {
+  padding-right: 1.5rem;
+}
+#page main .v-padding-right-4 {
+  padding-right: 2rem;
+}
+#page main .v-padding-right-5 {
+  padding-right: 2.5rem;
+}
+#page main .v-padding-right-6 {
+  padding-right: 3rem;
+}
+#page main .v-padding-right-7 {
+  padding-right: 3.5rem;
+}
+#page main .v-padding-right-8 {
+  padding-right: 4rem;
+}
+#page main .v-padding-right-9 {
+  padding-right: 4.5rem;
+}
+#page main .v-padding-right-10 {
+  padding-right: 5rem;
+}
+#page main .v-padding-right-11 {
+  padding-right: 5.5rem;
+}
+#page main .v-padding-right-12 {
+  padding-right: 6rem;
+}
+#page main .v-padding-right-13 {
+  padding-right: 6.5rem;
+}
+#page main .v-padding-right-14 {
+  padding-right: 7rem;
+}
+#page main .v-padding-right-15 {
+  padding-right: 7.5rem;
+}
+#page main .v-padding-right-16 {
+  padding-right: 8rem;
+}
+#page main .v-padding-bottom-0 {
+  padding-bottom: 0;
+}
+#page main .v-padding-bottom-1 {
+  padding-bottom: 0.5rem;
+}
+#page main .v-padding-bottom-2 {
+  padding-bottom: 1rem;
+}
+#page main .v-padding-bottom-3 {
+  padding-bottom: 1.5rem;
+}
+#page main .v-padding-bottom-4 {
+  padding-bottom: 2rem;
+}
+#page main .v-padding-bottom-5 {
+  padding-bottom: 2.5rem;
+}
+#page main .v-padding-bottom-6 {
+  padding-bottom: 3rem;
+}
+#page main .v-padding-bottom-7 {
+  padding-bottom: 3.5rem;
+}
+#page main .v-padding-bottom-8 {
+  padding-bottom: 4rem;
+}
+#page main .v-padding-bottom-9 {
+  padding-bottom: 4.5rem;
+}
+#page main .v-padding-bottom-10 {
+  padding-bottom: 5rem;
+}
+#page main .v-padding-bottom-11 {
+  padding-bottom: 5.5rem;
+}
+#page main .v-padding-bottom-12 {
+  padding-bottom: 6.5rem;
+}
+#page main .v-padding-bottom-13 {
+  padding-bottom: 6rem;
+}
+#page main .v-padding-bottom-14 {
+  padding-bottom: 7.5rem;
+}
+#page main .v-padding-bottom-15 {
+  padding-bottom: 7rem;
+}
+#page main .v-padding-bottom-16 {
+  padding-bottom: 8rem;
+}
+#page main .v-padding-left-0 {
+  padding-left: 0;
+}
+#page main .v-padding-left-1 {
+  padding-left: 0.5rem;
+}
+#page main .v-padding-left-2 {
+  padding-left: 1rem;
+}
+#page main .v-padding-left-3 {
+  padding-left: 1.5rem;
+}
+#page main .v-padding-left-4 {
+  padding-left: 2rem;
+}
+#page main .v-padding-left-5 {
+  padding-left: 2.5rem;
+}
+#page main .v-padding-left-6 {
+  padding-left: 3rem;
+}
+#page main .v-padding-left-7 {
+  padding-left: 3.5rem;
+}
+#page main .v-padding-left-8 {
+  padding-left: 4rem;
+}
+#page main .v-padding-left-9 {
+  padding-left: 4.5rem;
+}
+#page main .v-padding-left-10 {
+  padding-left: 5rem;
+}
+#page main .v-padding-left-11 {
+  padding-left: 5.5rem;
+}
+#page main .v-padding-left-12 {
+  padding-left: 6rem;
+}
+#page main .v-padding-left-13 {
+  padding-left: 6.5rem;
+}
+#page main .v-padding-left-14 {
+  padding-left: 7rem;
+}
+#page main .v-padding-left-15 {
+  padding-left: 7.5rem;
+}
+#page main .v-padding-left-16 {
+  padding-left: 8rem;
+}
+#page main .v-padding-x-0 {
+  padding-right: 0;
+  padding-left: 0;
+}
+#page main .v-padding-x-1 {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+#page main .v-padding-x-2 {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+#page main .v-padding-x-3 {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+#page main .v-padding-x-4 {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+#page main .v-padding-x-5 {
+  padding-right: 2.5rem;
+  padding-left: 2.5rem;
+}
+#page main .v-padding-x-6 {
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+#page main .v-padding-x-7 {
+  padding-right: 3.5rem;
+  padding-left: 3.5rem;
+}
+#page main .v-padding-x-8 {
+  padding-right: 4rem;
+  padding-left: 4rem;
+}
+#page main .v-padding-x-9 {
+  padding-right: 4.5rem;
+  padding-left: 4.5rem;
+}
+#page main .v-padding-x-10 {
+  padding-right: 5rem;
+  padding-left: 5rem;
+}
+#page main .v-padding-x-11 {
+  padding-right: 5.5rem;
+  padding-left: 5.5rem;
+}
+#page main .v-padding-x-12 {
+  padding-right: 6rem;
+  padding-left: 6rem;
+}
+#page main .v-padding-x-13 {
+  padding-right: 6.5rem;
+  padding-left: 6.5rem;
+}
+#page main .v-padding-x-14 {
+  padding-right: 7rem;
+  padding-left: 7rem;
+}
+#page main .v-padding-x-15 {
+  padding-right: 7.5rem;
+  padding-left: 7.5rem;
+}
+#page main .v-padding-x-16 {
+  padding-right: 8rem;
+  padding-left: 8rem;
+}
+#page main .v-padding-y-0 {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+#page main .v-padding-y-1 {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+#page main .v-padding-y-2 {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+#page main .v-padding-y-3 {
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+#page main .v-padding-y-4 {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+#page main .v-padding-y-5 {
+  padding-bottom: 2.5rem;
+  padding-top: 2.5rem;
+}
+#page main .v-padding-y-6 {
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+#page main .v-padding-y-7 {
+  padding-bottom: 3.5rem;
+  padding-top: 3.5rem;
+}
+#page main .v-padding-y-8 {
+  padding-bottom: 4rem;
+  padding-top: 4rem;
+}
+#page main .v-padding-y-9 {
+  padding-bottom: 4.5rem;
+  padding-top: 4.5rem;
+}
+#page main .v-padding-y-10 {
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+}
+#page main .v-padding-y-11 {
+  padding-bottom: 5.5rem;
+  padding-top: 5.5rem;
+}
+#page main .v-padding-y-12 {
+  padding-bottom: 6rem;
+  padding-top: 6rem;
+}
+#page main .v-padding-y-13 {
+  padding-bottom: 6.5rem;
+  padding-top: 6.5rem;
+}
+#page main .v-padding-y-14 {
+  padding-bottom: 7rem;
+  padding-top: 7rem;
+}
+#page main .v-padding-y-15 {
+  padding-bottom: 7.5rem;
+  padding-top: 7.5rem;
+}
+#page main .v-padding-y-16 {
+  padding-bottom: 8rem;
+  padding-top: 8rem;
+}
+#page main .v-padding-0 {
+  padding: 0;
+}
+#page main .v-padding-1 {
+  padding: 0.5rem;
+}
+#page main .v-padding-2 {
+  padding: 1rem;
+}
+#page main .v-padding-3 {
+  padding: 1.5rem;
+}
+#page main .v-padding-4 {
+  padding: 2rem;
+}
+#page main .v-padding-5 {
+  padding: 2.5rem;
+}
+#page main .v-padding-6 {
+  padding: 3rem;
+}
+#page main .v-padding-7 {
+  padding: 3.5rem;
+}
+#page main .v-padding-8 {
+  padding: 4rem;
+}
+#page main .v-padding-9 {
+  padding: 4.5rem;
+}
+#page main .v-padding-10 {
+  padding: 5rem;
+}
+#page main .v-padding-11 {
+  padding: 5.5rem;
+}
+#page main .v-padding-12 {
+  padding: 6rem;
+}
+#page main .v-padding-13 {
+  padding: 6.5rem;
+}
+#page main .v-padding-14 {
+  padding: 7rem;
+}
+#page main .v-padding-15 {
+  padding: 7.5rem;
+}
+#page main .v-padding-16 {
+  padding: 8rem;
+}
+#page main .v-no-spacing {
+  margin: 0;
+  padding: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

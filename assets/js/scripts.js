@@ -139,7 +139,8 @@
 	});
 
 }());
-;/**
+
+/**
  * Add a class to the  site header (#masthead) if it contains a hero (.site-hero) element
  */
 const siteHeader = document.querySelector("#masthead .site-hero");
