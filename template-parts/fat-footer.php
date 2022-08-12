@@ -23,14 +23,14 @@
  */
 
 // Set the classes for the Fat Footer area based on layout
-$fat_footer_classes = array( 'fat-footer-areas', 'v-grid' );
+$fat_footer_classes = array( 'fat-footer-areas', 'v-grid', 'v-padding-y-4' );
 if ( 1 == get_theme_mod( 'volatyl_fat_footer_alternate_layout', 0 ) ) {
 	$fat_footer_classes[] = 'alternate-layout';
 }
 ?>
 
 <div class="fat-footer">
-	<div class="inner">
+	<div class="inner v-padding-y-0">
 		<div class="<?php echo implode( ' ', $fat_footer_classes ); ?>">
 			<?php
 			$fat_footer_areas = array(

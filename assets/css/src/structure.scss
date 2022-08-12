@@ -56,11 +56,12 @@ main {
 .inner {
 	margin: 0 auto;
 	max-width: calc( 1200px + 1.25rem );
-	padding: 2.5rem 1.25rem;
+	padding: 3rem 1.25rem;
 
 	@media all and (min-width: $xsMinWidth) {
 		max-width: calc( 1200px + 2rem );
-		padding: 3rem 2rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
 	}
 
 	// Keep content width in check on tablets

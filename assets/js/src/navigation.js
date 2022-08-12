@@ -98,9 +98,9 @@
 	// Conduct all the tasks required for opening the menu modal.
 	button.addEventListener('click', function() {
 		siteNavigation.classList.toggle("toggled");
-		menuModalOuter.classList.add("menu-modal-active");
+		menuModalOuter.classList.add("menu-modal-active","v-padding-2");
 
-		closeButton.classList.add('close-menu-modal');
+		closeButton.classList.add('close-menu-modal','v-margin-top-4');
 		closeButton.textContent = "close menu";
 		menuModalInner.appendChild(closeButton);
 
@@ -113,7 +113,7 @@
 
 	// Conduct all the tasks required for closing the menu modal.
 	function closeMenuModal() {
-		menuModalOuter.classList.remove("menu-modal-active");
+		menuModalOuter.classList.remove("menu-modal-active","v-padding-2");
 		siteNavigation.classList.remove("toggled");
 		button.setAttribute("aria-expanded", "false");
 	}

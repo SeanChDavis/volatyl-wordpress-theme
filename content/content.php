@@ -1,7 +1,7 @@
 <?php // Template part for displaying posts ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header v-margin-bottom-5">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -19,7 +19,7 @@
 		<?php endif; ?>
 	</header>
 	<?php volatyl_post_thumbnail(); ?>
-	<div class="entry-content">
+	<div class="entry-content v-margin-bottom-3">
 		<?php
 		if ( is_home() || is_search() || is_archive() ) {
 			the_excerpt();
@@ -47,7 +47,7 @@
 		}
 		?>
 	</div>
-	<footer class="entry-footer">
+	<footer class="entry-footer v-margin-bottom-5">
 		<?php volatyl_entry_footer(); ?>
 	</footer>
 </article>

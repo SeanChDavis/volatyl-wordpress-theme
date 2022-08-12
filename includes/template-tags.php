@@ -102,7 +102,7 @@ if ( ! function_exists( 'volatyl_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<div class="post-thumbnail">
+			<div class="post-thumbnail v-margin-bottom-3">
 				<?php the_post_thumbnail(); ?>
 			</div>
 

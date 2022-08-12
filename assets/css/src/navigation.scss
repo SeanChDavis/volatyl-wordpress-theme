@@ -83,8 +83,6 @@
 		#primary-menu {
 			display: none;
 			flex-direction: row;
-			margin: 0;
-			padding: 0;
 
 			@media all and (min-width: $menuModalMinWidth) {
 				display: flex;
@@ -195,7 +193,6 @@
 		font-weight: 700;
 		height: unset;
 		letter-spacing: 0;
-		padding: 0;
 		text-transform: uppercase;
 
 		&:hover {
@@ -237,7 +234,6 @@
 
 			&.menu-modal-active {
 				opacity: 1;
-				padding: 1rem;
 				pointer-events: all;
 
 				@media all and (min-width: $xsMinWidth) {
@@ -265,7 +261,6 @@
 						@include fontSmallest;
 						display: block;
 						line-height: 1;
-						margin-top: 2rem;
 					}
 
 					.menu-item {
@@ -386,8 +381,6 @@
 	padding-top: 10px;
 
 	.inner {
-		padding-bottom: 1rem;
-		padding-top: 1rem;
 
 		.widget:last-child {
 			margin-bottom: 0;

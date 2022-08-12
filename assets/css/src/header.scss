@@ -6,8 +6,6 @@
 		.inner {
 			display: flex;
 			justify-content: space-between;
-			padding-bottom: 1rem;
-			padding-top: 1rem;
 
 			@media all and (min-width: $xsMinWidth) {
 				padding-bottom: 2rem;
@@ -33,7 +31,6 @@
 					font-weight: 700;
 					font-size: 1.25rem;
 					line-height: 1;
-					margin: 0;
 
 					a {
 						color: $baseColor;

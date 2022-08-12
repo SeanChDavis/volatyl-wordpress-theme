@@ -2,7 +2,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php volatyl_post_thumbnail(); ?>
-	<div class="entry-content">
+	<div class="entry-content v-margin-bottom-3">
 		<?php
 		the_content(
 			sprintf(
@@ -26,7 +26,7 @@
 		);
 		?>
 	</div>
-	<footer class="entry-footer">
+	<footer class="entry-footer v-margin-bottom-5">
 		<?php volatyl_entry_footer(); ?>
 	</footer>
 </article>

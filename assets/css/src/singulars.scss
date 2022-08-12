@@ -2,7 +2,6 @@
 article {
 
 	.entry-header {
-		margin-bottom: 2.5rem;
 
 		.entry-title {
 			margin-bottom: .25rem;
@@ -15,7 +14,6 @@ article {
 
 	.post-thumbnail {
 		display: block;
-		margin-bottom: 1.5rem;
 
 		img {
 			vertical-align: top;
@@ -23,7 +21,6 @@ article {
 	}
 
 	.entry-content {
-		margin-bottom: 1.5rem;
 
 		ul {
 			margin: 0 0 0 1.125rem;
@@ -66,7 +63,6 @@ article {
 		display: flex;
 		flex-direction: column;
 		gap: .5rem;
-		margin-bottom: 2.5rem;
 	}
 
 	&:last-child {

@@ -9,114 +9,59 @@
  * License URI: license.txt
  */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-/* Document
-   ========================================================================== */
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
 html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
 }
 
-/* Sections
-   ========================================================================== */
-/**
- * Remove the margin in all browsers.
- */
 body {
   margin: 0;
 }
 
-/**
- * Render the `main` element consistently in IE.
- */
 main {
   display: block;
 }
 
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
-/* Grouping content
-   ========================================================================== */
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
 hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
 }
 
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
 pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  font-size: 1em;
 }
 
-/* Text-level semantics
-   ========================================================================== */
-/**
- * Remove the gray background on active links in IE 10.
- */
 a {
   background-color: transparent;
 }
 
-/**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
 }
 
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-b,
-strong {
+b, strong {
   font-weight: bolder;
 }
 
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-code,
-kbd,
-samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+code, kbd, samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
 }
 
-/**
- * Add the correct font size in all browsers.
- */
 small {
   font-size: 80%;
 }
 
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
-sub,
-sup {
+sub, sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -131,188 +76,94 @@ sup {
   top: -0.5em;
 }
 
-/* Embedded content
-   ========================================================================== */
-/**
- * Remove the border on images inside links in IE 10.
- */
 img {
   border-style: none;
 }
 
-/* Forms
-   ========================================================================== */
-/**
- * 1. Change the font styles in all browsers.
- * 2. Remove the margin in Firefox and Safari.
- */
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
 }
 
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-button,
-input { /* 1 */
+button, input {
   overflow: visible;
 }
 
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
-button,
-select { /* 1 */
+button, select {
   text-transform: none;
 }
 
-/**
- * Correct the inability to style clickable types in iOS and Safari.
- */
-button,
-[type=button],
-[type=reset],
-[type=submit] {
+button, [type=button], [type=reset], [type=submit] {
   -webkit-appearance: button;
 }
 
-/**
- * Remove the inner border and padding in Firefox.
- */
-button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
-/**
- * Restore the focus styles unset by the previous rule.
- */
-button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
-/**
- * Correct the padding in Firefox.
- */
 fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
 
-/**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
- */
 legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
 }
 
-/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
 progress {
   vertical-align: baseline;
 }
 
-/**
- * Remove the default vertical scrollbar in IE 10+.
- */
 textarea {
   overflow: auto;
 }
 
-/**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
-[type=checkbox],
-[type=radio] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+[type=checkbox], [type=radio] {
+  box-sizing: border-box;
+  padding: 0;
 }
 
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
 [type=search] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
 }
 
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
 [type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+  -webkit-appearance: button;
+  font: inherit;
 }
 
-/* Interactive
-   ========================================================================== */
-/*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
 details {
   display: block;
 }
 
-/*
- * Add the correct display in all browsers.
- */
 summary {
   display: list-item;
 }
 
-/* Misc
-   ========================================================================== */
-/**
- * Add the correct display in IE 10+.
- */
 template {
   display: none;
 }
 
-/**
- * Add the correct display in IE 10.
- */
 [hidden] {
   display: none;
 }
@@ -1590,12 +1441,13 @@ main {
 .inner {
   margin: 0 auto;
   max-width: calc(1200px + 1.25rem);
-  padding: 2.5rem 1.25rem;
+  padding: 3rem 1.25rem;
 }
 @media all and (min-width: 560px) {
   .inner {
     max-width: calc(1200px + 2rem);
-    padding: 3rem 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 @media all and (min-width: 768px) {
@@ -1671,8 +1523,6 @@ main {
 #masthead .site-header .inner {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 1rem;
-  padding-top: 1rem;
 }
 @media all and (min-width: 560px) {
   #masthead .site-header .inner {
@@ -1692,7 +1542,6 @@ main {
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1;
-  margin: 0;
 }
 #masthead .site-header .inner .site-branding .site-title a {
   color: #313240;
@@ -1762,8 +1611,6 @@ main {
 #site-navigation:not(.toggled) #primary-menu {
   display: none;
   flex-direction: row;
-  margin: 0;
-  padding: 0;
 }
 @media all and (min-width: 992px) {
   #site-navigation:not(.toggled) #primary-menu {
@@ -1831,7 +1678,6 @@ main {
   font-weight: 700;
   height: unset;
   letter-spacing: 0;
-  padding: 0;
   text-transform: uppercase;
 }
 #site-navigation .menu-toggle:hover {
@@ -1864,7 +1710,6 @@ main {
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active {
   opacity: 1;
-  padding: 1rem;
   pointer-events: all;
 }
 @media all and (min-width: 560px) {
@@ -1896,7 +1741,6 @@ main {
   line-height: 1.6;
   display: block;
   line-height: 1;
-  margin-top: 2rem;
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu .menu-item a {
   color: #fff;
@@ -1964,10 +1808,6 @@ main {
 .social-navigation {
   background: #f7f7f9;
   padding-top: 10px;
-}
-.social-navigation .inner {
-  padding-bottom: 1rem;
-  padding-top: 1rem;
 }
 .social-navigation .inner .widget:last-child {
   margin-bottom: 0;
@@ -2526,9 +2366,6 @@ textarea:focus {
   line-height: 1.6;
   background: #f7f7f9;
 }
-.fat-footer > .inner .fat-footer-areas {
-  padding: 2rem 0;
-}
 @media all and (min-width: 560px) {
   .fat-footer > .inner .fat-footer-areas {
     padding: 3rem 0 2.5rem;
@@ -2598,10 +2435,6 @@ textarea:focus {
   line-height: 1.6;
   background: #f7f7f9;
 }
-.site-footer .inner {
-  padding-bottom: 1.5rem;
-  padding-top: 0;
-}
 .site-footer .inner .site-footer-content {
   border-top: 2px solid #e8e9ee;
 }
@@ -2667,9 +2500,6 @@ textarea:focus {
 }
 
 /* Catch all styles for general singulars */
-article .entry-header {
-  margin-bottom: 2.5rem;
-}
 article .entry-header .entry-title {
   margin-bottom: 0.25rem;
 }
@@ -2679,13 +2509,9 @@ article .entry-header .entry-meta {
 }
 article .post-thumbnail {
   display: block;
-  margin-bottom: 1.5rem;
 }
 article .post-thumbnail img {
   vertical-align: top;
-}
-article .entry-content {
-  margin-bottom: 1.5rem;
 }
 article .entry-content ul {
   margin: 0 0 0 1.125rem;
@@ -2721,7 +2547,6 @@ article .entry-footer {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 2.5rem;
 }
 article:last-child .entry-footer {
   margin-bottom: 0;
@@ -2815,793 +2640,799 @@ article:last-child .entry-footer {
   }
 }
 
-#page main {
-  /* MARGINS */
-  /* PADDING */
-}
-#page main .v-margin-top-0 {
+/**
+ * OPTIONAL classes that help build layouts in the block editor and other
+ * hard-to-reach areas of your site. Use them to keep things simple. Do not
+ * use them if implementing the classes complicate the build or maintenance
+ * of your site. They're only here to help when needed.
+ */
+/**
+ * MARGINS
+ */
+.v-margin-top-0 {
   margin-top: 0;
 }
-#page main .v-margin-top-1 {
+
+.v-margin-top-1 {
   margin-top: 0.5rem;
 }
-#page main .v-margin-top-2 {
+
+.v-margin-top-2 {
   margin-top: 1rem;
 }
-#page main .v-margin-top-3 {
+
+.v-margin-top-3 {
   margin-top: 1.5rem;
 }
-#page main .v-margin-top-4 {
+
+.v-margin-top-4 {
   margin-top: 2rem;
 }
-#page main .v-margin-top-5 {
+
+.v-margin-top-5 {
   margin-top: 2.5rem;
 }
-#page main .v-margin-top-6 {
+
+.v-margin-top-6 {
   margin-top: 3rem;
 }
-#page main .v-margin-top-7 {
+
+.v-margin-top-7 {
   margin-top: 3.5rem;
 }
-#page main .v-margin-top-8 {
+
+.v-margin-top-8 {
   margin-top: 4rem;
 }
-#page main .v-margin-top-9 {
+
+.v-margin-top-9 {
   margin-top: 4.5rem;
 }
-#page main .v-margin-top-10 {
+
+.v-margin-top-10 {
   margin-top: 5rem;
 }
-#page main .v-margin-top-11 {
+
+.v-margin-top-11 {
   margin-top: 5.5rem;
 }
-#page main .v-margin-top-12 {
+
+.v-margin-top-12 {
   margin-top: 6rem;
 }
-#page main .v-margin-top-13 {
-  margin-top: 6.5rem;
-}
-#page main .v-margin-top-14 {
-  margin-top: 7rem;
-}
-#page main .v-margin-top-15 {
-  margin-top: 7.5rem;
-}
-#page main .v-margin-top-16 {
-  margin-top: 8rem;
-}
-#page main .v-margin-right-0 {
+
+.v-margin-right-0 {
   margin-right: 0;
 }
-#page main .v-margin-right-1 {
+
+.v-margin-right-1 {
   margin-right: 0.5rem;
 }
-#page main .v-margin-right-2 {
+
+.v-margin-right-2 {
   margin-right: 1rem;
 }
-#page main .v-margin-right-3 {
+
+.v-margin-right-3 {
   margin-right: 1.5rem;
 }
-#page main .v-margin-right-4 {
+
+.v-margin-right-4 {
   margin-right: 2rem;
 }
-#page main .v-margin-right-5 {
+
+.v-margin-right-5 {
   margin-right: 2.5rem;
 }
-#page main .v-margin-right-6 {
+
+.v-margin-right-6 {
   margin-right: 3rem;
 }
-#page main .v-margin-right-7 {
+
+.v-margin-right-7 {
   margin-right: 3.5rem;
 }
-#page main .v-margin-right-8 {
+
+.v-margin-right-8 {
   margin-right: 4rem;
 }
-#page main .v-margin-right-9 {
+
+.v-margin-right-9 {
   margin-right: 4.5rem;
 }
-#page main .v-margin-right-10 {
+
+.v-margin-right-10 {
   margin-right: 5rem;
 }
-#page main .v-margin-right-11 {
+
+.v-margin-right-11 {
   margin-right: 5.5rem;
 }
-#page main .v-margin-right-12 {
+
+.v-margin-right-12 {
   margin-right: 6rem;
 }
-#page main .v-margin-right-13 {
-  margin-right: 6.5rem;
-}
-#page main .v-margin-right-14 {
-  margin-right: 7rem;
-}
-#page main .v-margin-right-15 {
-  margin-right: 7.5rem;
-}
-#page main .v-margin-right-16 {
-  margin-right: 8rem;
-}
-#page main .v-margin-bottom-0 {
+
+.v-margin-bottom-0 {
   margin-bottom: 0;
 }
-#page main .v-margin-bottom-1 {
+
+.v-margin-bottom-1 {
   margin-bottom: 0.5rem;
 }
-#page main .v-margin-bottom-2 {
+
+.v-margin-bottom-2 {
   margin-bottom: 1rem;
 }
-#page main .v-margin-bottom-3 {
+
+.v-margin-bottom-3 {
   margin-bottom: 1.5rem;
 }
-#page main .v-margin-bottom-4 {
+
+.v-margin-bottom-4 {
   margin-bottom: 2rem;
 }
-#page main .v-margin-bottom-5 {
+
+.v-margin-bottom-5 {
   margin-bottom: 2.5rem;
 }
-#page main .v-margin-bottom-6 {
+
+.v-margin-bottom-6 {
   margin-bottom: 3rem;
 }
-#page main .v-margin-bottom-7 {
+
+.v-margin-bottom-7 {
   margin-bottom: 3.5rem;
 }
-#page main .v-margin-bottom-8 {
+
+.v-margin-bottom-8 {
   margin-bottom: 4rem;
 }
-#page main .v-margin-bottom-9 {
+
+.v-margin-bottom-9 {
   margin-bottom: 4.5rem;
 }
-#page main .v-margin-bottom-10 {
+
+.v-margin-bottom-10 {
   margin-bottom: 5rem;
 }
-#page main .v-margin-bottom-11 {
+
+.v-margin-bottom-11 {
   margin-bottom: 5.5rem;
 }
-#page main .v-margin-bottom-12 {
+
+.v-margin-bottom-12 {
   margin-bottom: 6rem;
 }
-#page main .v-margin-bottom-13 {
-  margin-bottom: 6.5rem;
-}
-#page main .v-margin-bottom-14 {
-  margin-bottom: 7rem;
-}
-#page main .v-margin-bottom-15 {
-  margin-bottom: 7.5rem;
-}
-#page main .v-margin-bottom-16 {
-  margin-bottom: 8rem;
-}
-#page main .v-margin-bottom-0 {
+
+.v-margin-bottom-0 {
   margin-bottom: 0;
 }
-#page main .v-margin-left-1 {
+
+.v-margin-left-1 {
   margin-left: 0.5rem;
 }
-#page main .v-margin-left-2 {
+
+.v-margin-left-2 {
   margin-left: 1rem;
 }
-#page main .v-margin-left-3 {
+
+.v-margin-left-3 {
   margin-left: 1.5rem;
 }
-#page main .v-margin-left-4 {
+
+.v-margin-left-4 {
   margin-left: 2rem;
 }
-#page main .v-margin-left-5 {
+
+.v-margin-left-5 {
   margin-left: 2.5rem;
 }
-#page main .v-margin-left-6 {
+
+.v-margin-left-6 {
   margin-left: 3rem;
 }
-#page main .v-margin-left-7 {
+
+.v-margin-left-7 {
   margin-left: 3.5rem;
 }
-#page main .v-margin-left-8 {
+
+.v-margin-left-8 {
   margin-left: 4rem;
 }
-#page main .v-margin-left-9 {
+
+.v-margin-left-9 {
   margin-left: 4.5rem;
 }
-#page main .v-margin-left-10 {
+
+.v-margin-left-10 {
   margin-left: 5rem;
 }
-#page main .v-margin-left-11 {
+
+.v-margin-left-11 {
   margin-left: 5.5rem;
 }
-#page main .v-margin-left-12 {
+
+.v-margin-left-12 {
   margin-left: 6rem;
 }
-#page main .v-margin-left-13 {
-  margin-left: 6.5rem;
-}
-#page main .v-margin-left-14 {
-  margin-left: 7rem;
-}
-#page main .v-margin-left-15 {
-  margin-left: 7.5rem;
-}
-#page main .v-margin-left-16 {
-  margin-left: 8rem;
-}
-#page main .v-margin-x-0 {
+
+.v-margin-x-0 {
   margin-right: 0;
   margin-left: 0;
 }
-#page main .v-margin-x-1 {
+
+.v-margin-x-1 {
   margin-right: 0.5rem;
   margin-left: 0.5rem;
 }
-#page main .v-margin-x-2 {
+
+.v-margin-x-2 {
   margin-right: 1rem;
   margin-left: 1rem;
 }
-#page main .v-margin-x-3 {
+
+.v-margin-x-3 {
   margin-right: 1.5rem;
   margin-left: 1.5rem;
 }
-#page main .v-margin-x-4 {
+
+.v-margin-x-4 {
   margin-right: 2rem;
   margin-left: 2rem;
 }
-#page main .v-margin-x-5 {
+
+.v-margin-x-5 {
   margin-right: 2.5rem;
   margin-left: 2.5rem;
 }
-#page main .v-margin-x-6 {
+
+.v-margin-x-6 {
   margin-right: 3rem;
   margin-left: 3rem;
 }
-#page main .v-margin-x-7 {
+
+.v-margin-x-7 {
   margin-right: 3.5rem;
   margin-left: 3.5rem;
 }
-#page main .v-margin-x-8 {
+
+.v-margin-x-8 {
   margin-right: 4rem;
   margin-left: 4rem;
 }
-#page main .v-margin-x-9 {
+
+.v-margin-x-9 {
   margin-right: 4.5rem;
   margin-left: 4.5rem;
 }
-#page main .v-margin-x-10 {
+
+.v-margin-x-10 {
   margin-right: 5rem;
   margin-left: 5rem;
 }
-#page main .v-margin-x-11 {
+
+.v-margin-x-11 {
   margin-right: 5.5rem;
   margin-left: 5.5rem;
 }
-#page main .v-margin-x-12 {
+
+.v-margin-x-12 {
   margin-right: 6rem;
   margin-left: 6rem;
 }
-#page main .v-margin-x-13 {
-  margin-right: 6.5rem;
-  margin-left: 6.5rem;
-}
-#page main .v-margin-x-14 {
-  margin-right: 7rem;
-  margin-left: 7rem;
-}
-#page main .v-margin-x-15 {
-  margin-right: 7.5rem;
-  margin-left: 7.5rem;
-}
-#page main .v-margin-x-16 {
-  margin-right: 8rem;
-  margin-left: 8rem;
-}
-#page main .v-margin-y-0 {
+
+.v-margin-y-0 {
   margin-bottom: 0;
   margin-top: 0;
 }
-#page main .v-margin-y-1 {
+
+.v-margin-y-1 {
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
 }
-#page main .v-margin-y-2 {
+
+.v-margin-y-2 {
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
-#page main .v-margin-y-3 {
+
+.v-margin-y-3 {
   margin-bottom: 1.5rem;
   margin-top: 1.5rem;
 }
-#page main .v-margin-y-4 {
+
+.v-margin-y-4 {
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
-#page main .v-margin-y-5 {
+
+.v-margin-y-5 {
   margin-bottom: 2.5rem;
   margin-top: 2.5rem;
 }
-#page main .v-margin-y-6 {
+
+.v-margin-y-6 {
   margin-bottom: 3rem;
   margin-top: 3rem;
 }
-#page main .v-margin-y-7 {
+
+.v-margin-y-7 {
   margin-bottom: 3.5rem;
   margin-top: 3.5rem;
 }
-#page main .v-margin-y-8 {
+
+.v-margin-y-8 {
   margin-bottom: 4rem;
   margin-top: 4rem;
 }
-#page main .v-margin-y-9 {
+
+.v-margin-y-9 {
   margin-bottom: 4.5rem;
   margin-top: 4.5rem;
 }
-#page main .v-margin-y-10 {
+
+.v-margin-y-10 {
   margin-bottom: 5rem;
   margin-top: 5rem;
 }
-#page main .v-margin-y-11 {
+
+.v-margin-y-11 {
   margin-bottom: 5.5rem;
   margin-top: 5.5rem;
 }
-#page main .v-margin-y-12 {
+
+.v-margin-y-12 {
   margin-bottom: 6rem;
   margin-top: 6rem;
 }
-#page main .v-margin-y-13 {
-  margin-bottom: 6.5rem;
-  margin-top: 6.5rem;
-}
-#page main .v-margin-y-14 {
-  margin-bottom: 7rem;
-  margin-top: 7rem;
-}
-#page main .v-margin-y-15 {
-  margin-bottom: 7.5rem;
-  margin-top: 7.5rem;
-}
-#page main .v-margin-y-16 {
-  margin-bottom: 8rem;
-  margin-top: 8rem;
-}
-#page main .v-margin-0 {
+
+.v-margin-0 {
   margin: 0;
 }
-#page main .v-margin-1 {
+
+.v-margin-1 {
   margin: 0.5rem;
 }
-#page main .v-margin-2 {
+
+.v-margin-2 {
   margin: 1rem;
 }
-#page main .v-margin-3 {
+
+.v-margin-3 {
   margin: 1.5rem;
 }
-#page main .v-margin-4 {
+
+.v-margin-4 {
   margin: 2rem;
 }
-#page main .v-margin-5 {
+
+.v-margin-5 {
   margin: 2.5rem;
 }
-#page main .v-margin-6 {
+
+.v-margin-6 {
   margin: 3rem;
 }
-#page main .v-margin-7 {
+
+.v-margin-7 {
   margin: 3.5rem;
 }
-#page main .v-margin-8 {
+
+.v-margin-8 {
   margin: 4rem;
 }
-#page main .v-margin-9 {
+
+.v-margin-9 {
   margin: 4.5rem;
 }
-#page main .v-margin-10 {
+
+.v-margin-10 {
   margin: 5rem;
 }
-#page main .v-margin-11 {
+
+.v-margin-11 {
   margin: 5.5rem;
 }
-#page main .v-margin-12 {
+
+.v-margin-12 {
   margin: 6rem;
 }
-#page main .v-margin-13 {
-  margin: 6.5rem;
-}
-#page main .v-margin-14 {
-  margin: 7rem;
-}
-#page main .v-margin-15 {
-  margin: 7.5rem;
-}
-#page main .v-margin-16 {
-  margin: 8rem;
-}
-#page main .v-padding-top-0 {
+
+/**
+ * PADDING
+ */
+.v-padding-top-0 {
   padding-top: 0;
 }
-#page main .v-padding-top-1 {
+
+.v-padding-top-1 {
   padding-top: 0.5rem;
 }
-#page main .v-padding-top-2 {
+
+.v-padding-top-2 {
   padding-top: 1rem;
 }
-#page main .v-padding-top-3 {
+
+.v-padding-top-3 {
   padding-top: 1.5rem;
 }
-#page main .v-padding-top-4 {
+
+.v-padding-top-4 {
   padding-top: 2rem;
 }
-#page main .v-padding-top-5 {
+
+.v-padding-top-5 {
   padding-top: 2.5rem;
 }
-#page main .v-padding-top-6 {
+
+.v-padding-top-6 {
   padding-top: 3rem;
 }
-#page main .v-padding-top-7 {
+
+.v-padding-top-7 {
   padding-top: 3.5rem;
 }
-#page main .v-padding-top-8 {
+
+.v-padding-top-8 {
   padding-top: 4rem;
 }
-#page main .v-padding-top-9 {
+
+.v-padding-top-9 {
   padding-top: 4.5rem;
 }
-#page main .v-padding-top-10 {
+
+.v-padding-top-10 {
   padding-top: 5rem;
 }
-#page main .v-padding-top-11 {
+
+.v-padding-top-11 {
   padding-top: 5.5rem;
 }
-#page main .v-padding-top-12 {
+
+.v-padding-top-12 {
   padding-top: 6rem;
 }
-#page main .v-padding-top-13 {
-  padding-top: 6.5rem;
-}
-#page main .v-padding-top-14 {
-  padding-top: 7rem;
-}
-#page main .v-padding-top-15 {
-  padding-top: 7.5rem;
-}
-#page main .v-padding-top-16 {
-  padding-top: 8rem;
-}
-#page main .v-padding-right-0 {
+
+.v-padding-right-0 {
   padding-right: 0;
 }
-#page main .v-padding-right-1 {
+
+.v-padding-right-1 {
   padding-right: 0.5rem;
 }
-#page main .v-padding-right-2 {
+
+.v-padding-right-2 {
   padding-right: 1rem;
 }
-#page main .v-padding-right-3 {
+
+.v-padding-right-3 {
   padding-right: 1.5rem;
 }
-#page main .v-padding-right-4 {
+
+.v-padding-right-4 {
   padding-right: 2rem;
 }
-#page main .v-padding-right-5 {
+
+.v-padding-right-5 {
   padding-right: 2.5rem;
 }
-#page main .v-padding-right-6 {
+
+.v-padding-right-6 {
   padding-right: 3rem;
 }
-#page main .v-padding-right-7 {
+
+.v-padding-right-7 {
   padding-right: 3.5rem;
 }
-#page main .v-padding-right-8 {
+
+.v-padding-right-8 {
   padding-right: 4rem;
 }
-#page main .v-padding-right-9 {
+
+.v-padding-right-9 {
   padding-right: 4.5rem;
 }
-#page main .v-padding-right-10 {
+
+.v-padding-right-10 {
   padding-right: 5rem;
 }
-#page main .v-padding-right-11 {
+
+.v-padding-right-11 {
   padding-right: 5.5rem;
 }
-#page main .v-padding-right-12 {
+
+.v-padding-right-12 {
   padding-right: 6rem;
 }
-#page main .v-padding-right-13 {
-  padding-right: 6.5rem;
-}
-#page main .v-padding-right-14 {
-  padding-right: 7rem;
-}
-#page main .v-padding-right-15 {
-  padding-right: 7.5rem;
-}
-#page main .v-padding-right-16 {
-  padding-right: 8rem;
-}
-#page main .v-padding-bottom-0 {
+
+.v-padding-bottom-0 {
   padding-bottom: 0;
 }
-#page main .v-padding-bottom-1 {
+
+.v-padding-bottom-1 {
   padding-bottom: 0.5rem;
 }
-#page main .v-padding-bottom-2 {
+
+.v-padding-bottom-2 {
   padding-bottom: 1rem;
 }
-#page main .v-padding-bottom-3 {
+
+.v-padding-bottom-3 {
   padding-bottom: 1.5rem;
 }
-#page main .v-padding-bottom-4 {
+
+.v-padding-bottom-4 {
   padding-bottom: 2rem;
 }
-#page main .v-padding-bottom-5 {
+
+.v-padding-bottom-5 {
   padding-bottom: 2.5rem;
 }
-#page main .v-padding-bottom-6 {
+
+.v-padding-bottom-6 {
   padding-bottom: 3rem;
 }
-#page main .v-padding-bottom-7 {
+
+.v-padding-bottom-7 {
   padding-bottom: 3.5rem;
 }
-#page main .v-padding-bottom-8 {
+
+.v-padding-bottom-8 {
   padding-bottom: 4rem;
 }
-#page main .v-padding-bottom-9 {
+
+.v-padding-bottom-9 {
   padding-bottom: 4.5rem;
 }
-#page main .v-padding-bottom-10 {
+
+.v-padding-bottom-10 {
   padding-bottom: 5rem;
 }
-#page main .v-padding-bottom-11 {
+
+.v-padding-bottom-11 {
   padding-bottom: 5.5rem;
 }
-#page main .v-padding-bottom-12 {
+
+.v-padding-bottom-12 {
   padding-bottom: 6.5rem;
 }
-#page main .v-padding-bottom-13 {
-  padding-bottom: 6rem;
-}
-#page main .v-padding-bottom-14 {
-  padding-bottom: 7.5rem;
-}
-#page main .v-padding-bottom-15 {
-  padding-bottom: 7rem;
-}
-#page main .v-padding-bottom-16 {
-  padding-bottom: 8rem;
-}
-#page main .v-padding-left-0 {
+
+.v-padding-left-0 {
   padding-left: 0;
 }
-#page main .v-padding-left-1 {
+
+.v-padding-left-1 {
   padding-left: 0.5rem;
 }
-#page main .v-padding-left-2 {
+
+.v-padding-left-2 {
   padding-left: 1rem;
 }
-#page main .v-padding-left-3 {
+
+.v-padding-left-3 {
   padding-left: 1.5rem;
 }
-#page main .v-padding-left-4 {
+
+.v-padding-left-4 {
   padding-left: 2rem;
 }
-#page main .v-padding-left-5 {
+
+.v-padding-left-5 {
   padding-left: 2.5rem;
 }
-#page main .v-padding-left-6 {
+
+.v-padding-left-6 {
   padding-left: 3rem;
 }
-#page main .v-padding-left-7 {
+
+.v-padding-left-7 {
   padding-left: 3.5rem;
 }
-#page main .v-padding-left-8 {
+
+.v-padding-left-8 {
   padding-left: 4rem;
 }
-#page main .v-padding-left-9 {
+
+.v-padding-left-9 {
   padding-left: 4.5rem;
 }
-#page main .v-padding-left-10 {
+
+.v-padding-left-10 {
   padding-left: 5rem;
 }
-#page main .v-padding-left-11 {
+
+.v-padding-left-11 {
   padding-left: 5.5rem;
 }
-#page main .v-padding-left-12 {
+
+.v-padding-left-12 {
   padding-left: 6rem;
 }
-#page main .v-padding-left-13 {
-  padding-left: 6.5rem;
-}
-#page main .v-padding-left-14 {
-  padding-left: 7rem;
-}
-#page main .v-padding-left-15 {
-  padding-left: 7.5rem;
-}
-#page main .v-padding-left-16 {
-  padding-left: 8rem;
-}
-#page main .v-padding-x-0 {
+
+.v-padding-x-0 {
   padding-right: 0;
   padding-left: 0;
 }
-#page main .v-padding-x-1 {
+
+.v-padding-x-1 {
   padding-right: 0.5rem;
   padding-left: 0.5rem;
 }
-#page main .v-padding-x-2 {
+
+.v-padding-x-2 {
   padding-right: 1rem;
   padding-left: 1rem;
 }
-#page main .v-padding-x-3 {
+
+.v-padding-x-3 {
   padding-right: 1.5rem;
   padding-left: 1.5rem;
 }
-#page main .v-padding-x-4 {
+
+.v-padding-x-4 {
   padding-right: 2rem;
   padding-left: 2rem;
 }
-#page main .v-padding-x-5 {
+
+.v-padding-x-5 {
   padding-right: 2.5rem;
   padding-left: 2.5rem;
 }
-#page main .v-padding-x-6 {
+
+.v-padding-x-6 {
   padding-right: 3rem;
   padding-left: 3rem;
 }
-#page main .v-padding-x-7 {
+
+.v-padding-x-7 {
   padding-right: 3.5rem;
   padding-left: 3.5rem;
 }
-#page main .v-padding-x-8 {
+
+.v-padding-x-8 {
   padding-right: 4rem;
   padding-left: 4rem;
 }
-#page main .v-padding-x-9 {
+
+.v-padding-x-9 {
   padding-right: 4.5rem;
   padding-left: 4.5rem;
 }
-#page main .v-padding-x-10 {
+
+.v-padding-x-10 {
   padding-right: 5rem;
   padding-left: 5rem;
 }
-#page main .v-padding-x-11 {
+
+.v-padding-x-11 {
   padding-right: 5.5rem;
   padding-left: 5.5rem;
 }
-#page main .v-padding-x-12 {
+
+.v-padding-x-12 {
   padding-right: 6rem;
   padding-left: 6rem;
 }
-#page main .v-padding-x-13 {
-  padding-right: 6.5rem;
-  padding-left: 6.5rem;
-}
-#page main .v-padding-x-14 {
-  padding-right: 7rem;
-  padding-left: 7rem;
-}
-#page main .v-padding-x-15 {
-  padding-right: 7.5rem;
-  padding-left: 7.5rem;
-}
-#page main .v-padding-x-16 {
-  padding-right: 8rem;
-  padding-left: 8rem;
-}
-#page main .v-padding-y-0 {
+
+.v-padding-y-0 {
   padding-bottom: 0;
   padding-top: 0;
 }
-#page main .v-padding-y-1 {
+
+.v-padding-y-1 {
   padding-bottom: 0.5rem;
   padding-top: 0.5rem;
 }
-#page main .v-padding-y-2 {
+
+.v-padding-y-2 {
   padding-bottom: 1rem;
   padding-top: 1rem;
 }
-#page main .v-padding-y-3 {
+
+.v-padding-y-3 {
   padding-bottom: 1.5rem;
   padding-top: 1.5rem;
 }
-#page main .v-padding-y-4 {
+
+.v-padding-y-4 {
   padding-bottom: 2rem;
   padding-top: 2rem;
 }
-#page main .v-padding-y-5 {
+
+.v-padding-y-5 {
   padding-bottom: 2.5rem;
   padding-top: 2.5rem;
 }
-#page main .v-padding-y-6 {
+
+.v-padding-y-6 {
   padding-bottom: 3rem;
   padding-top: 3rem;
 }
-#page main .v-padding-y-7 {
+
+.v-padding-y-7 {
   padding-bottom: 3.5rem;
   padding-top: 3.5rem;
 }
-#page main .v-padding-y-8 {
+
+.v-padding-y-8 {
   padding-bottom: 4rem;
   padding-top: 4rem;
 }
-#page main .v-padding-y-9 {
+
+.v-padding-y-9 {
   padding-bottom: 4.5rem;
   padding-top: 4.5rem;
 }
-#page main .v-padding-y-10 {
+
+.v-padding-y-10 {
   padding-bottom: 5rem;
   padding-top: 5rem;
 }
-#page main .v-padding-y-11 {
+
+.v-padding-y-11 {
   padding-bottom: 5.5rem;
   padding-top: 5.5rem;
 }
-#page main .v-padding-y-12 {
+
+.v-padding-y-12 {
   padding-bottom: 6rem;
   padding-top: 6rem;
 }
-#page main .v-padding-y-13 {
-  padding-bottom: 6.5rem;
-  padding-top: 6.5rem;
-}
-#page main .v-padding-y-14 {
-  padding-bottom: 7rem;
-  padding-top: 7rem;
-}
-#page main .v-padding-y-15 {
-  padding-bottom: 7.5rem;
-  padding-top: 7.5rem;
-}
-#page main .v-padding-y-16 {
-  padding-bottom: 8rem;
-  padding-top: 8rem;
-}
-#page main .v-padding-0 {
+
+.v-padding-0 {
   padding: 0;
 }
-#page main .v-padding-1 {
+
+.v-padding-1 {
   padding: 0.5rem;
 }
-#page main .v-padding-2 {
+
+.v-padding-2 {
   padding: 1rem;
 }
-#page main .v-padding-3 {
+
+.v-padding-3 {
   padding: 1.5rem;
 }
-#page main .v-padding-4 {
+
+.v-padding-4 {
   padding: 2rem;
 }
-#page main .v-padding-5 {
+
+.v-padding-5 {
   padding: 2.5rem;
 }
-#page main .v-padding-6 {
+
+.v-padding-6 {
   padding: 3rem;
 }
-#page main .v-padding-7 {
+
+.v-padding-7 {
   padding: 3.5rem;
 }
-#page main .v-padding-8 {
+
+.v-padding-8 {
   padding: 4rem;
 }
-#page main .v-padding-9 {
+
+.v-padding-9 {
   padding: 4.5rem;
 }
-#page main .v-padding-10 {
+
+.v-padding-10 {
   padding: 5rem;
 }
-#page main .v-padding-11 {
+
+.v-padding-11 {
   padding: 5.5rem;
 }
-#page main .v-padding-12 {
+
+.v-padding-12 {
   padding: 6rem;
 }
-#page main .v-padding-13 {
-  padding: 6.5rem;
-}
-#page main .v-padding-14 {
-  padding: 7rem;
-}
-#page main .v-padding-15 {
-  padding: 7.5rem;
-}
-#page main .v-padding-16 {
-  padding: 8rem;
-}
-#page main .v-no-spacing {
+
+.v-no-spacing {
   margin: 0;
   padding: 0;
 }

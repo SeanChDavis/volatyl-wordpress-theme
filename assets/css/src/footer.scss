@@ -40,7 +40,6 @@
 	& > .inner {
 
 		.fat-footer-areas {
-			padding: 2rem 0;
 
 			@media all and (min-width: $xsMinWidth) {
 				padding: 3rem 0 2.5rem;
@@ -120,8 +119,6 @@
 	background: $lightBackground;
 
 	.inner {
-		padding-bottom: 1.5rem;
-		padding-top: 0;
 
 		.site-footer-content {
 			border-top: 2px solid $lightBorder;
