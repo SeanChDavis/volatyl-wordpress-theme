@@ -1,6 +1,6 @@
 <?php // The main site header ?>
 
-<header id="masthead">
+<header id="masthead" class="-gray-background">
 	<div class="site-header">
 		<div class="inner v-padding-y-2">
 			<div class="site-branding">

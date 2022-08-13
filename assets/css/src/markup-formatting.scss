@@ -288,9 +288,15 @@ hr,
 }
 
 .wp-block-separator {
+	width: 25%;
 
 	&.is-style-default {
 		width: 25%;
+	}
+
+	&.is-style-wide,
+	&.is-style-dots {
+		width: 100%;
 	}
 
 	&.is-style-dots {
@@ -743,5 +749,24 @@ article {
 				margin-top: 0;
 			}
 		}
+	}
+}
+
+/**
+ * Override core WordPress .is-stacked-on-mobile breakpoint.
+ * 600px is too narrow. 992px is best for this theme based on horizontal spacing.
+ */
+@media all and (max-width: 992px) {
+
+	.wp-block-media-text.is-stacked-on-mobile {
+		grid-template-columns: 100% !important;
+	}
+	.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media {
+		grid-column: 1;
+		grid-row: 1;
+	}
+	.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+		grid-column: 1;
+		grid-row: 2;
 	}
 }

@@ -1,6 +1,6 @@
 <?php
 get_header();
-$blog_page_object = get_queried_object();
+//$blog_page_object = get_queried_object(); TODO: Determine if this is needed.
 ?>
 
 	<main id="main">

@@ -31,6 +31,10 @@ function volatyl_body_class( $classes ) {
 		$classes[] = 'full-width-template';
 	}
 
+	if ( is_page_template( 'page-templates/page-width.php' ) ) {
+		$classes[] = 'page-width-template';
+	}
+
 	if ( is_home() && is_front_page() ) {
 		$classes[] = 'front-page-blog';
 	}

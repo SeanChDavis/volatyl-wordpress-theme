@@ -121,7 +121,7 @@
 	.inner {
 
 		.site-footer-content {
-			border-top: 2px solid $lightBorder;
+			border-top: 1px solid $lightBorder;
 
 			@media all and (min-width: $mdMinWidth) {
 				display: flex;
