@@ -1,5 +1,10 @@
 .full-width-template {
 
+	/**
+	 * This GROUP block spacing is only be applied to the Full-width template
+	 * because it is used to build structured layouts. In all other contexts,
+	 * we don't want additional spacing.
+	 */
 	.wp-block-group {
 		margin: 0;
 

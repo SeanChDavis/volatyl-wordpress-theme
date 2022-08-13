@@ -439,7 +439,7 @@ template {
 @media all and (min-width: 992px) {
   .v-hero .v-hero-title {
     font-size: 5rem;
-    max-width: 85%;
+    max-width: 90%;
   }
 }
 .v-hero .v-hero-title:last-child {
@@ -1139,17 +1139,31 @@ figure figcaption {
 }
 
 .wp-block-media-text {
-  gap: 1rem;
-  margin: 2rem 0 2.25rem;
+  gap: 3rem;
+  margin: 3rem 0;
 }
 @media all and (min-width: 768px) {
   .wp-block-media-text {
-    gap: 2rem;
-    margin: 3rem 0;
+    gap: 4rem;
+    margin-top: 4rem;
   }
 }
 .wp-block-media-text:first-child {
   margin-top: 0;
+}
+.wp-block-media-text:last-child {
+  margin-bottom: 0;
+}
+.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media {
+  margin-top: 1.5rem;
+}
+@media all and (min-width: 768px) {
+  .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media {
+    margin-top: 0;
+  }
+}
+.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+  padding: 0;
 }
 
 .wp-block-image:not(.alignleft), .wp-block-image:not(.alignright),
@@ -1464,31 +1478,15 @@ body {
   box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.03);
   margin: 0 auto;
   max-width: 1364px;
-  overflow: scroll;
   /* Prepare to create sticky footer */
   display: flex;
   flex-direction: column;
-  height: 100vh;
 }
 
 /* Adjust sticky footer prep when WP admin bar is present */
-.logged-in #page {
-  height: calc(100vh - 46px);
-}
-@media all and (min-width: 783px) {
-  .logged-in #page {
-    height: calc(100vh - 32px);
-  }
-}
-
 /* Added to the body when site HTML structure is set to full width */
 .full-width-structure #page {
   max-width: 100%;
-}
-
-main {
-  /* Create sticky footer */
-  flex: 1 0 auto;
 }
 
 /* Separated from parent elements for easy override */
@@ -2029,7 +2027,7 @@ main {
 #comments .comment-list .comment.byuser .comment-body .comment-meta .comment-author:after,
 #comments .comment-list .pingback.byuser .comment-body .comment-meta .comment-author:after {
   border-radius: 50%;
-  content: url("../../images/icons/byuser-indicator.svg");
+  content: url("assets/images/icons/byuser-indicator.svg");
   height: 19px;
   left: -2px;
   position: absolute;
@@ -2236,6 +2234,17 @@ main {
 #comments .comment-list .pingback .comment .avatar {
   height: 36px;
   width: 36px;
+}
+#comments .comment-list .comment .comment.byuser .comment-body .comment-meta .comment-author,
+#comments .comment-list .pingback .comment.byuser .comment-body .comment-meta .comment-author {
+  position: relative;
+}
+#comments .comment-list .comment .comment.byuser .comment-body .comment-meta .comment-author:after,
+#comments .comment-list .pingback .comment.byuser .comment-body .comment-meta .comment-author:after {
+  height: 15px;
+  left: -3px;
+  top: -9px;
+  width: 15px;
 }
 #comments #respond #reply-title small {
   display: block;
@@ -2646,6 +2655,13 @@ article:last-child .entry-footer {
   }
 }
 
+.full-width-template {
+  /**
+   * This GROUP block spacing is only be applied to the Full-width template
+   * because it is used to build structured layouts. In all other contexts,
+   * we don't want additional spacing.
+   */
+}
 .full-width-template .wp-block-group {
   margin: 0;
 }

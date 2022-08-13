@@ -28,7 +28,7 @@
 
 							&:after {
 								border-radius: 50%;
-								content: url("../../images/icons/byuser-indicator.svg");
+								content: url("assets/images/icons/byuser-indicator.svg");
 								height: 19px;
 								left: -2px;
 								position: absolute;
@@ -218,6 +218,26 @@
 				.avatar {
 					height: 36px;
 					width: 36px;
+				}
+
+				&.byuser {
+
+					.comment-body {
+
+						.comment-meta {
+
+							.comment-author {
+								position: relative;
+
+								&:after {
+									height: 15px;
+									left: -3px;
+									top: -9px;
+									width: 15px;
+								}
+							}
+						}
+					}
 				}
 			}
 		}

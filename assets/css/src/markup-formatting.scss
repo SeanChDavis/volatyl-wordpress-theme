@@ -519,16 +519,35 @@ figure {
 }
 
 .wp-block-media-text {
-	gap: 1rem;
-	margin: 2rem 0 2.25rem;
+	gap: 3rem;
+	margin: 3rem 0;
 
 	@media all and (min-width: $smMinWidth) {
-		gap: 2rem;
-		margin: 3rem 0;
+		gap: 4rem;
+		margin-top: 4rem;
 	}
 
 	&:first-child {
 		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&.is-stacked-on-mobile {
+
+		.wp-block-media-text__media {
+			margin-top: 1.5rem;
+
+			@media all and (min-width: $smMinWidth) {
+				margin-top: 0;
+			}
+		}
+
+		.wp-block-media-text__content {
+			padding: 0;
+		}
 	}
 }
 

@@ -18,25 +18,24 @@ body {
 	box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.03);
 	margin: 0 auto;
 	max-width: 1364px;
-	overflow: scroll;
 
 	/* Prepare to create sticky footer */
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
+	//height: 100vh;
 }
 
 /* Adjust sticky footer prep when WP admin bar is present */
-.logged-in {
-
-	#page {
-		height: calc( 100vh - 46px );
-
-		@media all and (min-width: 783px) {
-			height: calc( 100vh - 32px );
-		}
-	}
-}
+//.logged-in {
+//
+//	#page {
+//		height: calc( 100vh - 46px );
+//
+//		@media all and (min-width: 783px) {
+//			height: calc( 100vh - 32px );
+//		}
+//	}
+//}
 
 /* Added to the body when site HTML structure is set to full width */
 .full-width-structure {
@@ -46,11 +45,11 @@ body {
 	}
 }
 
-main {
-
-	/* Create sticky footer */
-	flex: 1 0 auto;
-}
+//main {
+//
+//	/* Create sticky footer */
+//	flex: 1 0 auto;
+//}
 
 /* Separated from parent elements for easy override */
 .inner {
