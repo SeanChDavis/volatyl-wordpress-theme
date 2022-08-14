@@ -1,4 +1,4 @@
-<?php
+<?php // When there's no relevant content to display
 get_header();
 ?>
 

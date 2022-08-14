@@ -1,10 +1,9 @@
-<?php
+<?php // The template for displaying search results
 get_header();
-$search_query = get_search_query();
 ?>
 
 	<main id="main">
-		<?php if ( ! empty( $search_query ) ) { ?>
+		<?php if ( ! empty( get_search_query() ) ) { ?>
 			<header class="jumbo-header v-gray-background">
 				<div class="inner">
 					<div class="search-content-container">
@@ -25,7 +24,7 @@ $search_query = get_search_query();
 		<?php } ?>
 		<div class="inner v-medium">
 			<?php
-			if ( have_posts() && ! empty( $search_query ) ) :
+			if ( have_posts() && ! empty( get_search_query() ) ) :
 				?>
 				<div class="v-post-type-grid">
 					<div class="v-grid v-grid-columns_3 v-gap-2">

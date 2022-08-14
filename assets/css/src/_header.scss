@@ -1,5 +1,4 @@
 #masthead {
-	background: $lightBackground;
 
 	.site-header {
 
@@ -33,22 +32,11 @@
 					line-height: 1;
 
 					a {
-						color: $baseColor;
 						line-height: 1;
 						text-decoration: none;
-
-						&:active,
-						&:focus,
-						&:hover {
-							color: $linkColor;
-						}
 					}
 				}
 			}
 		}
-	}
-
-	.site-hero {
-
 	}
 }

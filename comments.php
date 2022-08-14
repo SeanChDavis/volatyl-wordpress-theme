@@ -1,10 +1,5 @@
-<?php
-/**
- * Comments and comment form markup
- */
-if ( post_password_required() ) {
-	return;
-}
+<?php // Comments and comment form markup
+if ( post_password_required() ) { return; }
 ?>
 
 <div id="comments" class="comments-area">
@@ -47,10 +42,9 @@ if ( post_password_required() ) {
 		if ( ! comments_open() ) :
 			?>
 			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'volatyl' ); ?></p>
-		<?php
+			<?php
 		endif;
 	endif;
 	comment_form();
 	?>
-
 </div>

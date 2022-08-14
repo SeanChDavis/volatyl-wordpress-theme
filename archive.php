@@ -1,4 +1,4 @@
-<?php
+<?php // Shared by general archives like taxonomy terms, dates, authors, etc.
 get_header();
 ?>
 

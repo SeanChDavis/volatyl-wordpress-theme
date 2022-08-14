@@ -119,7 +119,6 @@
 		 * Fully styled cards
 		 */
 		&:not(.v-subdued) {
-			background: $lightBackground;
 			border-radius: 8px;
 
 			[class*="-item-content-wrap"] {
@@ -146,16 +145,7 @@
 
 						a {
 							text-decoration: none;
-
-							&:active,
-							&:focus,
-							&:hover {
-								color: $linkColor;
-							}
 						}
-					}
-
-					[class*="-item-meta"] {
 					}
 				}
 

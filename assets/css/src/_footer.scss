@@ -35,7 +35,6 @@
 
 .fat-footer {
 	@include fontSmaller;
-	background: $lightBackground;
 
 	& > .inner {
 
@@ -116,12 +115,12 @@
 
 .site-footer {
 	@include fontSmaller;
-	background: $lightBackground;
 
 	.inner {
 
 		.site-footer-content {
-			border-top: 1px solid $lightBorder;
+			border-width: 1px 0 0;
+			border-style: solid;
 
 			@media all and (min-width: $mdMinWidth) {
 				display: flex;

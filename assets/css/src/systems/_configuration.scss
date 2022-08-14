@@ -1,3 +1,17 @@
+/**
+ * Min-width breakpoints
+ */
+$xsMinWidth: 560px;
+$smMinWidth: 768px;
+$mdMinWidth: 992px;
+$lgMinWidth: 1200px;
+$xlMinWidth: 1540px;
+$menuModalMinWidth: $mdMinWidth;
+
+/**
+ * Mixins
+ */
+
 // Heading font
 @mixin headingFont {
 	font-family: 'Red Hat Display', 'Red Hat Text', sans-serif;
@@ -32,6 +46,7 @@
 	font-size: 20px;
 	@include lineHeightBase;
 }
+
 @mixin fontBiggest {
 	font-size: 22px;
 	@include lineHeightBase;
@@ -69,11 +84,11 @@
  */
 @mixin innerSpacing {
 	margin: 0 auto;
-	max-width: calc( 1200px + 1.25rem );
+	max-width: calc(1200px + 1.25rem);
 	padding: 3rem 1.25rem;
 
 	@media all and (min-width: $xsMinWidth) {
-		max-width: calc( 1200px + 2rem );
+		max-width: calc(1200px + 2rem);
 		padding-left: 2rem;
 		padding-right: 2rem;
 	}

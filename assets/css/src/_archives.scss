@@ -5,14 +5,12 @@
 		.archive-title {
 			@include fontSmaller;
 			@include headingFont;
-			color: $lightText;
 			display: block;
 			font-weight: 700;
 			text-transform: uppercase;
 
 			span {
 				@include headingFont;
-				color: $baseColor;
 				display: block;
 				font-size: 2rem;
 				font-weight: 700;

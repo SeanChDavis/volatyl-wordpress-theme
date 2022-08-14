@@ -1,4 +1,4 @@
-<?php
+<?php // WordPress template hierarchy basic theme template
 get_header();
 ?>
 

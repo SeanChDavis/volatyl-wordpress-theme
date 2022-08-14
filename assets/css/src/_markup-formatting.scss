@@ -11,10 +11,6 @@ h6, .h6 {
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 
-	a {
-		color: $baseColor;
-	}
-
 	&.has-background {
 		border-radius: 10px;
 		margin-bottom: 1.5rem;
@@ -92,7 +88,6 @@ h3, .h3 {
 }
 
 h4, .h4 {
-	color: lighten( $baseColor, 10% );
 	font-size: 1.125rem;
 	line-height: 1.4;
 	text-transform: uppercase;
@@ -123,7 +118,6 @@ h5, .h5 {
 }
 
 h6, .h6 {
-	color: lighten( $baseColor, 10% );
 	font-size: 1rem;
 	font-style: italic;
 }
@@ -172,19 +166,18 @@ p {
 }
 
 a {
-	color: $linkColor;
 	text-decoration: underline;
 
 	&:active,
 	&:focus,
 	&:hover {
+		cursor: pointer;
 		text-decoration: none;
 	}
 }
 
 blockquote,
 address {
-	color: lighten( $baseColor, 15% );
 	font-style: italic;
 	margin: 1.125rem 1.125rem 2rem;
 
@@ -195,7 +188,8 @@ address {
 }
 
 .wp-block-quote {
-	border-left: 3px solid darken( $lightBackground, 5% );
+	border-style: solid;
+	border-width: 0 0 0 3px;
 	margin-left: 0;
 	padding-left: 1.25rem;
 
@@ -255,13 +249,11 @@ address {
 
 cite,
 q {
-	color: lighten( $baseColor, 15% );
 	font-style: italic;
 }
 
 cite {
 	@include fontSmaller;
-	color: $baseColor;
 }
 
 table,
@@ -276,10 +268,8 @@ dl {
 
 hr,
 .wp-block-separator {
-	border-bottom: 1px solid;
-	border-top: 2px solid;
-	border-color: darken( $lightBackground, 5% );
-	color: darken( $lightBackground, 5% );
+	border-style: solid;
+	border-width: 2px 0 1px;
 	margin: 2rem 0;
 
 	@media all and (min-width: $smMinWidth) {
@@ -300,7 +290,6 @@ hr,
 	}
 
 	&.is-style-dots {
-		color: $baseColor;
 
 		&:before {
 			letter-spacing: 1em;
@@ -309,18 +298,17 @@ hr,
 }
 
 table {
-	background: #fff;
-	border: 2px solid $baseColor;
+	border-style: solid;
+	border-width: 2px;
 	border-collapse: collapse;
 
 	th, td {
-		border: 2px solid $baseColor;
+		border-style: solid;
+		border-width: 2px;
 		padding: 8px;
 	}
 
 	th {
-		background: $baseColor;
-		color: #fff;
 		font-size: 80%;
 		font-weight: 700;
 		letter-spacing: 1px;
@@ -337,7 +325,6 @@ table {
 
 	caption {
 		@include fontSmaller;
-		color: $lightText;
 		margin-top: .75rem;
 	}
 }
@@ -347,28 +334,12 @@ table {
 
 	&.is-style-stripes {
 		border-bottom: none;
-
-		table {
-
-			th, td {
-				border-color: $baseColor;
-			}
-
-			tbody {
-
-				tr:nth-child(2n+1) {
-					background: darken( $lightBackground, 3% );
-				}
-			}
-		}
 	}
 
 	table {
 		margin-bottom: .75rem;
 
 		th {
-			background: $baseColor;
-			color: #fff;
 			font-weight: 700;
 		}
 	}
@@ -379,27 +350,23 @@ table {
 	.wp-calendar-table {
 		margin-bottom: .75rem;
 
-		th {
-			background: $baseColor;
-			border: 2px solid $baseColor;
-			color: #fff;
-			font-weight: 700;
-			padding: .25em;
+		th, td {
+			border-style: solid;
+			border-width: 2px;
 		}
 
-		td {
-			border: 2px solid $baseColor;
+		th {
+			font-weight: 700;
+			padding: .25em;
 		}
 	}
 
 	.wp-calendar-nav {
 		@include fontSmaller;
-		color: $lightText;
 	}
 }
 
 pre {
-	background: $lightBackground;
 	border-radius: 10px;
 	font-size: 85%;
 	padding: 1.625rem;
@@ -410,7 +377,6 @@ pre {
 }
 
 dl {
-	background: $lightBackground;
 	border-radius: 10px;
 	padding: 1.625rem;
 
@@ -451,17 +417,10 @@ code,
 kbd,
 tt,
 var {
-	background: $lightBackground;
-	color: lighten( $baseColor, 15% );
 	display: inline-block;
 	padding-left: 3px;
 	padding-right: 3px;
 	border-radius: 3px;
-}
-
-strike,
-del {
-	color: lighten( $baseColor, 15% );
 }
 
 iframe,
@@ -478,7 +437,6 @@ figure {
 
 	figcaption {
 		@include fontSmaller;
-		color: $lightText;
 		font-style: italic;
 	}
 }
@@ -491,6 +449,19 @@ figure {
 		input {
 			display: block;
 			margin-bottom: 6px;
+		}
+	}
+}
+
+#searchform {
+	@include fontSmaller;
+
+	#searchsubmit {
+		line-height: 1.2;
+		margin-top: 3px;
+
+		@media all and (min-width: $xsMinWidth) {
+			margin-top: 0;
 		}
 	}
 }
@@ -584,27 +555,27 @@ figure {
 
 	& > label {
 		@include fontSmaller;
-		color: $lightText;
 	}
 }
 
-.wp-block-button {
+.wp-block-buttons {
 
-	&.is-style-outline {
+	& > .wp-block-button {
 
-		.wp-block-button__link {
-			border: 2px solid $baseColor;
+		&.is-style-outline {
+			background: none;
 
-			&:active,
-			&:focus,
-			&:hover {
-				background: darken( $lightBackground, 10% );
+			.wp-block-button__link {
+				border-style: solid;
+				border-width: 2px;
+				padding-bottom: calc(.8em - 2px);
+				padding-top: calc(.8em - 2px);
 			}
 		}
-	}
 
-	.wp-block-button__link {
-		line-height: 1;
+		.wp-block-button__link {
+			line-height: 1;
+		}
 	}
 }
 
@@ -632,7 +603,6 @@ figure {
 	&.wp-block-search__button-inside {
 
 		.wp-block-search__inside-wrapper {
-			background: darken( $lightBackground, 15% );
 			border: none;
 			border-radius: 3px;
 			padding: 8px;
@@ -657,7 +627,8 @@ figure {
 /* Embeds */
 .twitter-tweet {
 	@include fontSmaller;
-	border: 2px solid $lightBorder;
+	border-style: solid;
+	border-width: 2px;
 	border-radius: 10px;
 	font-style: normal;
 	margin: 0;
@@ -724,7 +695,6 @@ article {
 
 		.wp-block-latest-comments {
 			@include fontSmaller;
-			background: $lightBackground;
 			border-radius: 10px;
 			margin-left: 0;
 			padding: 1.125rem;

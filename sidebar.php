@@ -1,4 +1,4 @@
-<?php // Theme sidebars based on page
+<?php // Theme sidebars based on page loaded
 
 if ( is_single() ) {
 	if ( is_active_sidebar( 'Single Post Sidebar' ) ) {

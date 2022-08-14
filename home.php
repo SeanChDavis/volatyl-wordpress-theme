@@ -1,6 +1,5 @@
-<?php
+<?php // Default blog page of the site
 get_header();
-//$blog_page_object = get_queried_object(); TODO: Determine if this is needed.
 ?>
 
 	<main id="main">

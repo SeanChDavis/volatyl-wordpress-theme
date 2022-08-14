@@ -1,0 +1,350 @@
+/**
+ * Colors
+ */
+:root {
+
+	/* This color controls the entire color scheme */
+	--primary-hue: 120;
+
+	--primary-hue_dark: hsl(var(--primary-hue) 13% 22%);
+	--primary-hue_darker: hsl(var(--primary-hue) 13% 20%);
+	--primary-hue_darkest: hsl(var(--primary-hue) 13% 18%);
+
+	--primary-hue_light: hsl(var(--primary-hue) 13% 93%);
+	--primary-hue_lighter: hsl(var(--primary-hue) 13% 95%);
+	--primary-hue_lightest: hsl(var(--primary-hue) 13% 97%);
+
+	--link-color: hsl(var(--primary-hue) 13% 37%);
+	--link-color-hover: hsl(var(--primary-hue) 13% 32%);
+
+	--light-text: hsl(var(--primary-hue) 13% 47%);
+	--light-border: hsl(var(--primary-hue) 13% 91%);
+
+	--accent-hue: calc(var(--primary-hue) - 180);
+}
+
+/**
+ * All theme colors live here!
+ *
+ * Theme CSS still exists throughout the various style sheets. However, none of
+ * them include properties pertaining to colors (background-color, color,
+ * border-color, etc.). All color-related rules are placed in this file to
+ * control the color scheme from a single location.
+ *
+ * The color values below flow from top (white) to bottom (primary hue). When a
+ * color is shared by multiple items, the property names are in alphabetical
+ * order from top to bottom for that particular color.
+ *
+ * To illustrate using white (#fff), gray (#777), and black (#000):
+ *
+ * selector_1,
+ * selector_4 {
+ *     background-color: #fff;
+ * }
+ *
+ * selector_2,
+ * selector_3 {
+ *     color: #fff;
+ * }
+ *
+ * selector_2,
+ * selector_3 {
+ *     background-color: #777;
+ * }
+ *
+ * selector_1
+ * selector_2,
+ * selector_3,
+ * selector_4 {
+ *     border-color: #777;
+ * }
+ *
+ * selector_1,
+ * selector_4 {
+ *     color: #000;
+ * }
+ */
+#page,
+table,
+.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link,
+.fat-footer pre,
+.fat-footer dl,
+.fat-footer code,
+.fat-footer kbd,
+.fat-footer tt,
+.fat-footer var {
+	background-color: #fff;
+}
+
+#site-navigation.toggled > [class*="-container"].menu-modal-active #primary-menu > .menu-item.menu-item-has-children > a:after {
+	border-bottom-color: #fff;
+}
+
+.button,
+.v-button,
+button,
+[type="button"],
+[type="submit"],
+[type="reset"],
+.wp-block-buttons > .wp-block-button .wp-block-button__link,
+.wp-block-file .wp-block-file__button,
+table th,
+.wp-block-table table th,
+.wp-block-calendar .wp-calendar-table th,
+.v-dark-background,
+.v-dark-background .button,
+.v-dark-background .v-button,
+.v-dark-background button,
+.v-dark-background [type="button"],
+.v-dark-background [type="submit"],
+.v-dark-background [type="reset"],
+.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link,
+.v-dark-background .wp-block-file .wp-block-file__button,
+#site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > .sub-menu a,
+#site-navigation.toggled > [class*="-container"].menu-modal-active #primary-menu .menu-item a {
+	color: #fff;
+}
+
+#masthead,
+.v-gray-background,
+.v-grid [class*="-item-container"]:not(.v-subdued),
+.wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1),
+.social-navigation,
+article .entry-content .wp-block-latest-comments,
+dl,
+code,
+kbd,
+tt,
+var {
+	background-color: var(--primary-hue_lightest);
+}
+
+	.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link {
+
+		&:active,
+		&:focus,
+		&:hover {
+			background: var(--primary-hue_lightest);
+		}
+	}
+
+.wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1) {
+	background-color: var(--primary-hue_lighter);
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+	background-color: var(--primary-hue_light);
+}
+
+	.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link {
+
+		&:active,
+		&:focus,
+		&:hover {
+			background-color: var(--primary-hue_light);
+		}
+	}
+
+.v-dark-background a,
+.v-dark-background h4,.h4,
+.v-dark-background h6, .h6,
+.v-dark-background blockquote,
+.v-dark-background address,
+.v-dark-background cite,
+.v-dark-background q,
+.v-dark-background code,
+.v-dark-background kbd,
+.v-dark-background tt,
+.v-dark-background var,
+.v-dark-background strike,
+.v-dark-background del {
+	color: var(--primary-hue_light);
+}
+
+.archive .archive-title,
+.v-subdued-title,
+table caption,
+figure figcaption,
+.wp-block-calendar .wp-calendar-nav,
+[class*="wp-block-"] > label {
+	color: var(--light-text);
+}
+
+	.button,
+	.v-button,
+	button,
+	[type="button"],
+	[type="submit"],
+	[type="reset"],
+	.wp-block-buttons > .wp-block-button .wp-block-button__link,
+	.wp-block-file .wp-block-file__button {
+
+		&:active,
+		&:focus,
+		&:hover {
+			background-color: var(--link-color);
+		}
+	}
+
+#site-navigation #primary-menu > .menu-item.menu-item-has-children > a:after {
+	border-bottom-color: var(--link-color);
+}
+
+a,
+h4, .h4,
+h6, .h6,
+#site-navigation #primary-menu .menu-item a,
+#site-navigation .menu-toggle,
+#comments #respond #reply-title small #cancel-comment-reply-link {
+	color: var(--link-color);
+}
+
+	.v-dark-background .button,
+	.v-dark-background .v-button,
+	.v-dark-background button,
+	.v-dark-background [type="button"],
+	.v-dark-background [type="submit"],
+	.v-dark-background [type="reset"],
+	.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link,
+	.v-dark-background .wp-block-file .wp-block-file__button {
+		background-color: var(--link-color);
+
+		&:active,
+		&:focus,
+		&:hover {
+			background-color: var(--link-color-hover);
+		}
+	}
+
+	.v-dark-background input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
+	.v-dark-background textarea {
+		border-color: var(--link-color);
+
+		&:active,
+		&:focus {
+			border-color: var(--link-color-hover);
+		}
+	}
+
+	input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
+	textarea {
+
+		&:active,
+		&:focus {
+			border-color: var(--link-color);
+		}
+	}
+
+	.site-title a,
+	.v-grid [class*="-item-container"]:not(.v-subdued) [class*="-item-content-wrap"] [class*="-item-header"] [class*="-item-title"] a,
+	#comments .comment-list .comment .comment-body .comment-meta .comment-author .fn a,
+	#comments .comment-list .pingback .comment-body .comment-meta .comment-author .fn a {
+
+		&:active,
+		&:focus,
+		&:hover {
+			color: var(--link-color);
+		}
+	}
+
+#site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > .sub-menu,
+#site-navigation.toggled > [class*="-container"].menu-modal-active #primary-menu {
+	background-color: hsl(var(--primary-hue) 13% 27%);
+}
+
+.v-dark-background h1 a,
+.v-dark-background .h1 a,
+.v-dark-background h2 a,
+.v-dark-background .h2 a,
+.v-dark-background h3 a,
+.v-dark-background .h3 a,
+.v-dark-background h4 a,
+.v-dark-background .h4 a,
+.v-dark-background h5 a,
+.v-dark-background .h5 a,
+.v-dark-background h6 a,
+.v-dark-background .h6 a,
+blockquote,
+address,
+cite,
+q,code,
+kbd,
+tt,
+var,
+strike,
+del {
+	color: hsl(var(--primary-hue) 13% 27%);
+}
+
+.button,
+.v-button,
+button,
+[type="button"],
+[type="submit"],
+[type="reset"],
+.wp-block-buttons > .wp-block-button .wp-block-button__link,
+.wp-block-file .wp-block-file__button,
+.v-dark-background,
+.v-dark-background table th,
+.wp-block-table table th,
+.wp-block-calendar .wp-calendar-table th,
+table th {
+	background-color: var(--primary-hue_dark);
+}
+
+input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
+textarea,
+table,
+table th,
+table td,
+.wp-block-table.is-style-stripes table th,
+.wp-block-table.is-style-stripes table td,
+.wp-block-calendar .wp-calendar-table th,
+.wp-block-calendar .wp-calendar-table td,
+.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link,
+.v-dark-background table,
+.v-dark-background table th,
+.v-dark-background table td {
+	border-color: var(--primary-hue_dark);
+}
+
+#page,
+.site-title a,
+cite,
+.wp-block-separator.is-style-dots::before,
+.v-grid [class*="-item-container"] [class*="-item-content-wrap"] [class*="-item-header"] [class*="-item-title"] a,
+.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link,
+.archive .archive-title span,
+#comments .comment-list .comment .comment-body .comment-meta .comment-author .fn a,
+#comments .comment-list .pingback .comment-body .comment-meta .comment-author .fn a {
+	color: var(--primary-hue_dark);
+}
+
+.v-dark-background pre,
+.v-dark-background dl,
+.v-dark-background code,
+.v-dark-background kbd,
+.v-dark-background tt,
+.v-dark-background var {
+	background-color: hsl(var(--primary-hue) 13% 20%);
+}
+
+html,
+body {
+	background: var(--primary-hue_darkest);
+}
+
+#comments .comments-title,
+#comments .comment-list .comment .comment,
+#comments .comment-list .pingback .comment,
+#comments .comment-list .comment:not(:last-child),
+#comments .comment-list .pingback:not(:last-child),
+#comments .comment-list .comment .comment:not(:last-child),
+#comments .comment-list .pingback .comment:not(:last-child),
+.site-footer-content,
+.wp-block-quote,
+hr,
+.wp-block-separator,
+.twitter-tweet {
+	border-color: var(--light-border);
+}

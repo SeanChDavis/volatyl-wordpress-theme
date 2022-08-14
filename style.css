@@ -161,33 +161,140 @@ template {
   display: none;
 }
 
-/* Min-width Breakpoints */
-/* Navigation */
 /**
- * Structure spacing, mainly the .inner class
- *
- * This CSS is made available through mixins because it is shared by custom
- * HTML and HTML implemented by WordPress core. The custom .inner class and the
- * .wp-block-group__inner-container class, which is a direct child of the
- * WordPress core Group block (.wp-block-group), share styles so that the custom
- * theme structure can be mimicked by creating a Group block in the Full-width
- * Page Template.
+ * Colors
  */
-.v-dark-background {
-  background: #313240;
+:root {
+  /* This color controls the entire color scheme */
+  --primary-hue: 120;
+  --primary-hue_dark: hsl(var(--primary-hue) 13% 22%);
+  --primary-hue_darker: hsl(var(--primary-hue) 13% 20%);
+  --primary-hue_darkest: hsl(var(--primary-hue) 13% 18%);
+  --primary-hue_light: hsl(var(--primary-hue) 13% 93%);
+  --primary-hue_lighter: hsl(var(--primary-hue) 13% 95%);
+  --primary-hue_lightest: hsl(var(--primary-hue) 13% 97%);
+  --link-color: hsl(var(--primary-hue) 13% 37%);
+  --link-color-hover: hsl(var(--primary-hue) 13% 32%);
+  --light-text: hsl(var(--primary-hue) 13% 47%);
+  --light-border: hsl(var(--primary-hue) 13% 91%);
+  --accent-hue: calc(var(--primary-hue) - 180);
+}
+
+/**
+ * All theme colors live here!
+ *
+ * Theme CSS still exists throughout the various style sheets. However, none of
+ * them include properties pertaining to colors (background-color, color,
+ * border-color, etc.). All color-related rules are placed in this file to
+ * control the color scheme from a single location.
+ *
+ * The color values below flow from top (white) to bottom (primary hue). When a
+ * color is shared by multiple items, the property names are in alphabetical
+ * order from top to bottom for that particular color.
+ *
+ * To illustrate using white (#fff), gray (#777), and black (#000):
+ *
+ * selector_1,
+ * selector_4 {
+ *     background-color: #fff;
+ * }
+ *
+ * selector_2,
+ * selector_3 {
+ *     color: #fff;
+ * }
+ *
+ * selector_2,
+ * selector_3 {
+ *     background-color: #777;
+ * }
+ *
+ * selector_1
+ * selector_2,
+ * selector_3,
+ * selector_4 {
+ *     border-color: #777;
+ * }
+ *
+ * selector_1,
+ * selector_4 {
+ *     color: #000;
+ * }
+ */
+#page,
+table,
+.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link,
+.fat-footer pre,
+.fat-footer dl,
+.fat-footer code,
+.fat-footer kbd,
+.fat-footer tt,
+.fat-footer var {
+  background-color: #fff;
+}
+
+#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item.menu-item-has-children > a:after {
+  border-bottom-color: #fff;
+}
+
+.button,
+.v-button,
+button,
+[type=button],
+[type=submit],
+[type=reset],
+.wp-block-buttons > .wp-block-button .wp-block-button__link,
+.wp-block-file .wp-block-file__button,
+table th,
+.wp-block-table table th,
+.wp-block-calendar .wp-calendar-table th,
+.v-dark-background,
+.v-dark-background .button,
+.v-dark-background .v-button,
+.v-dark-background button,
+.v-dark-background [type=button],
+.v-dark-background [type=submit],
+.v-dark-background [type=reset],
+.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link,
+.v-dark-background .wp-block-file .wp-block-file__button,
+#site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > .sub-menu a,
+#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu .menu-item a {
   color: #fff;
 }
-.v-dark-background h1 a, .v-dark-background .h1 a,
-.v-dark-background h2 a, .v-dark-background .h2 a,
-.v-dark-background h3 a, .v-dark-background .h3 a,
-.v-dark-background h4 a, .v-dark-background .h4 a,
-.v-dark-background h5 a, .v-dark-background .h5 a,
-.v-dark-background h6 a, .v-dark-background .h6 a {
-  color: #a0a2b6;
+
+#masthead,
+.v-gray-background,
+.v-grid [class*=-item-container]:not(.v-subdued),
+.wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1),
+.social-navigation,
+article .entry-content .wp-block-latest-comments,
+dl,
+code,
+kbd,
+tt,
+var {
+  background-color: var(--primary-hue_lightest);
 }
+
+.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:active, .wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:focus, .wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:hover {
+  background: var(--primary-hue_lightest);
+}
+
+.wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1) {
+  background-color: var(--primary-hue_lighter);
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+  background-color: var(--primary-hue_light);
+}
+
+.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:active, .wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:focus, .wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:hover {
+  background-color: var(--primary-hue_light);
+}
+
 .v-dark-background a,
-.v-dark-background h4, .v-dark-background .h4,
-.v-dark-background h6, .v-dark-background .h6,
+.v-dark-background h4, .h4,
+.v-dark-background h6, .h6,
 .v-dark-background blockquote,
 .v-dark-background address,
 .v-dark-background cite,
@@ -198,25 +305,56 @@ template {
 .v-dark-background var,
 .v-dark-background strike,
 .v-dark-background del {
-  color: #afb0c1;
+  color: var(--primary-hue_light);
 }
-.v-dark-background pre,
-.v-dark-background dl,
-.v-dark-background code,
-.v-dark-background kbd,
-.v-dark-background tt,
-.v-dark-background var {
-  background: #383949;
+
+.archive .archive-title,
+.v-subdued-title,
+table caption,
+figure figcaption,
+.wp-block-calendar .wp-calendar-nav,
+[class*=wp-block-] > label {
+  color: var(--light-text);
 }
-.v-dark-background table {
-  border: 2px solid #1b1b23;
+
+.button:active, .button:focus, .button:hover,
+.v-button:active,
+.v-button:focus,
+.v-button:hover,
+button:active,
+button:focus,
+button:hover,
+[type=button]:active,
+[type=button]:focus,
+[type=button]:hover,
+[type=submit]:active,
+[type=submit]:focus,
+[type=submit]:hover,
+[type=reset]:active,
+[type=reset]:focus,
+[type=reset]:hover,
+.wp-block-buttons > .wp-block-button .wp-block-button__link:active,
+.wp-block-buttons > .wp-block-button .wp-block-button__link:focus,
+.wp-block-buttons > .wp-block-button .wp-block-button__link:hover,
+.wp-block-file .wp-block-file__button:active,
+.wp-block-file .wp-block-file__button:focus,
+.wp-block-file .wp-block-file__button:hover {
+  background-color: var(--link-color);
 }
-.v-dark-background table th, .v-dark-background table td {
-  border: 2px solid #1b1b23;
+
+#site-navigation #primary-menu > .menu-item.menu-item-has-children > a:after {
+  border-bottom-color: var(--link-color);
 }
-.v-dark-background table th {
-  background: #383949;
+
+a,
+h4, .h4,
+h6, .h6,
+#site-navigation #primary-menu .menu-item a,
+#site-navigation .menu-toggle,
+#comments #respond #reply-title small #cancel-comment-reply-link {
+  color: var(--link-color);
 }
+
 .v-dark-background .button,
 .v-dark-background .v-button,
 .v-dark-background button,
@@ -225,8 +363,7 @@ template {
 .v-dark-background [type=reset],
 .v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link,
 .v-dark-background .wp-block-file .wp-block-file__button {
-  background: #52546b;
-  color: #fff;
+  background-color: var(--link-color);
 }
 .v-dark-background .button:active, .v-dark-background .button:focus, .v-dark-background .button:hover,
 .v-dark-background .v-button:active,
@@ -250,19 +387,156 @@ template {
 .v-dark-background .wp-block-file .wp-block-file__button:active,
 .v-dark-background .wp-block-file .wp-block-file__button:focus,
 .v-dark-background .wp-block-file .wp-block-file__button:hover {
-  background: #3c3d4e;
-}
-.v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]), .v-dark-background textarea {
-  border: 2px solid #52546b;
-}
-.v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):active, .v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus, .v-dark-background textarea:active, .v-dark-background textarea:focus {
-  border-color: #3c3d4e;
+  background-color: var(--link-color-hover);
 }
 
-.v-gray-background {
-  background: #f7f7f9;
+.v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
+.v-dark-background textarea {
+  border-color: var(--link-color);
+}
+.v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):active, .v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus,
+.v-dark-background textarea:active,
+.v-dark-background textarea:focus {
+  border-color: var(--link-color-hover);
 }
 
+input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):active, input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus,
+textarea:active,
+textarea:focus {
+  border-color: var(--link-color);
+}
+
+.site-title a:active, .site-title a:focus, .site-title a:hover,
+.v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a:active,
+.v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a:focus,
+.v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a:hover,
+#comments .comment-list .comment .comment-body .comment-meta .comment-author .fn a:active,
+#comments .comment-list .comment .comment-body .comment-meta .comment-author .fn a:focus,
+#comments .comment-list .comment .comment-body .comment-meta .comment-author .fn a:hover,
+#comments .comment-list .pingback .comment-body .comment-meta .comment-author .fn a:active,
+#comments .comment-list .pingback .comment-body .comment-meta .comment-author .fn a:focus,
+#comments .comment-list .pingback .comment-body .comment-meta .comment-author .fn a:hover {
+  color: var(--link-color);
+}
+
+#site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > .sub-menu,
+#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu {
+  background-color: hsl(var(--primary-hue), 13%, 27%);
+}
+
+.v-dark-background h1 a,
+.v-dark-background .h1 a,
+.v-dark-background h2 a,
+.v-dark-background .h2 a,
+.v-dark-background h3 a,
+.v-dark-background .h3 a,
+.v-dark-background h4 a,
+.v-dark-background .h4 a,
+.v-dark-background h5 a,
+.v-dark-background .h5 a,
+.v-dark-background h6 a,
+.v-dark-background .h6 a,
+blockquote,
+address,
+cite,
+q, code,
+kbd,
+tt,
+var,
+strike,
+del {
+  color: hsl(var(--primary-hue), 13%, 27%);
+}
+
+.button,
+.v-button,
+button,
+[type=button],
+[type=submit],
+[type=reset],
+.wp-block-buttons > .wp-block-button .wp-block-button__link,
+.wp-block-file .wp-block-file__button,
+.v-dark-background,
+.v-dark-background table th,
+.wp-block-table table th,
+.wp-block-calendar .wp-calendar-table th,
+table th {
+  background-color: var(--primary-hue_dark);
+}
+
+input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
+textarea,
+table,
+table th,
+table td,
+.wp-block-table.is-style-stripes table th,
+.wp-block-table.is-style-stripes table td,
+.wp-block-calendar .wp-calendar-table th,
+.wp-block-calendar .wp-calendar-table td,
+.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link,
+.v-dark-background table,
+.v-dark-background table th,
+.v-dark-background table td {
+  border-color: var(--primary-hue_dark);
+}
+
+#page,
+.site-title a,
+cite,
+.wp-block-separator.is-style-dots::before,
+.v-grid [class*=-item-container] [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a,
+.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link,
+.archive .archive-title span,
+#comments .comment-list .comment .comment-body .comment-meta .comment-author .fn a,
+#comments .comment-list .pingback .comment-body .comment-meta .comment-author .fn a {
+  color: var(--primary-hue_dark);
+}
+
+.v-dark-background pre,
+.v-dark-background dl,
+.v-dark-background code,
+.v-dark-background kbd,
+.v-dark-background tt,
+.v-dark-background var {
+  background-color: hsl(var(--primary-hue), 13%, 20%);
+}
+
+html,
+body {
+  background: var(--primary-hue_darkest);
+}
+
+#comments .comments-title,
+#comments .comment-list .comment .comment,
+#comments .comment-list .pingback .comment,
+#comments .comment-list .comment:not(:last-child),
+#comments .comment-list .pingback:not(:last-child),
+#comments .comment-list .comment .comment:not(:last-child),
+#comments .comment-list .pingback .comment:not(:last-child),
+.site-footer-content,
+.wp-block-quote,
+hr,
+.wp-block-separator,
+.twitter-tweet {
+  border-color: var(--light-border);
+}
+
+/**
+ * Min-width breakpoints
+ */
+/**
+ * Mixins
+ */
+/**
+ * Structure spacing, mainly the .inner class
+ *
+ * This CSS is made available through mixins because it is shared by custom
+ * HTML and HTML implemented by WordPress core. The custom .inner class and the
+ * .wp-block-group__inner-container class, which is a direct child of the
+ * WordPress core Group block (.wp-block-group), share styles so that the custom
+ * theme structure can be mimicked by creating a Group block in the Full-width
+ * Page Template.
+ */
 /**
  * Basic grid system based on 4, 3, 2, and 1-column grid layouts
  */
@@ -368,7 +642,6 @@ template {
   text-decoration: underline;
 }
 .v-grid [class*=-item-container]:not(.v-subdued) {
-  background: #f7f7f9;
   border-radius: 8px;
 }
 .v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] {
@@ -390,9 +663,6 @@ template {
 }
 .v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a {
   text-decoration: none;
-}
-.v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a:active, .v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a:focus, .v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a:hover {
-  color: #52546b;
 }
 .v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-body] {
   flex: 1 0 auto;
@@ -623,7 +893,6 @@ template {
   font-size: 15px;
   line-height: 1.6;
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
-  color: #686a88;
   display: block;
   font-weight: 700;
   text-transform: uppercase;
@@ -647,6 +916,18 @@ template {
   }
 }
 
+.v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
+.v-dark-background textarea {
+  border-style: solid;
+  border-width: 2px;
+}
+.v-dark-background .v-dark-background table,
+.v-dark-background .v-dark-background table th,
+.v-dark-background .v-dark-background table td {
+  border-style: solid;
+  border-width: 2px;
+}
+
 h1, .h1,
 h2, .h2,
 h3, .h3,
@@ -659,14 +940,6 @@ h6, .h6 {
   margin: 0 0 1.25rem;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
-}
-h1 a, .h1 a,
-h2 a, .h2 a,
-h3 a, .h3 a,
-h4 a, .h4 a,
-h5 a, .h5 a,
-h6 a, .h6 a {
-  color: #313240;
 }
 h1.has-background, .h1.has-background,
 h2.has-background, .h2.has-background,
@@ -756,7 +1029,6 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  color: #47495d;
   font-size: 1.125rem;
   line-height: 1.4;
   text-transform: uppercase;
@@ -792,7 +1064,6 @@ h5, .h5 {
 }
 
 h6, .h6 {
-  color: #47495d;
   font-size: 1rem;
   font-style: italic;
 }
@@ -837,16 +1108,15 @@ p + .wp-block-image {
 }
 
 a {
-  color: #52546b;
   text-decoration: underline;
 }
 a:active, a:focus, a:hover {
+  cursor: pointer;
   text-decoration: none;
 }
 
 blockquote,
 address {
-  color: #52546b;
   font-style: italic;
   margin: 1.125rem 1.125rem 2rem;
 }
@@ -858,7 +1128,8 @@ address {
 }
 
 .wp-block-quote {
-  border-left: 3px solid #e8e9ee;
+  border-style: solid;
+  border-width: 0 0 0 3px;
   margin-left: 0;
   padding-left: 1.25rem;
 }
@@ -907,14 +1178,12 @@ address {
 
 cite,
 q {
-  color: #52546b;
   font-style: italic;
 }
 
 cite {
   font-size: 15px;
   line-height: 1.6;
-  color: #313240;
 }
 
 table,
@@ -932,10 +1201,8 @@ dl {
 
 hr,
 .wp-block-separator {
-  border-bottom: 1px solid;
-  border-top: 2px solid;
-  border-color: #e8e9ee;
-  color: #e8e9ee;
+  border-style: solid;
+  border-width: 2px 0 1px;
   margin: 2rem 0;
 }
 @media all and (min-width: 768px) {
@@ -954,25 +1221,21 @@ hr,
 .wp-block-separator.is-style-wide, .wp-block-separator.is-style-dots {
   width: 100%;
 }
-.wp-block-separator.is-style-dots {
-  color: #313240;
-}
 .wp-block-separator.is-style-dots:before {
   letter-spacing: 1em;
 }
 
 table {
-  background: #fff;
-  border: 2px solid #313240;
+  border-style: solid;
+  border-width: 2px;
   border-collapse: collapse;
 }
 table th, table td {
-  border: 2px solid #313240;
+  border-style: solid;
+  border-width: 2px;
   padding: 8px;
 }
 table th {
-  background: #313240;
-  color: #fff;
   font-size: 80%;
   font-weight: 700;
   letter-spacing: 1px;
@@ -987,7 +1250,6 @@ table tfoot {
 table caption {
   font-size: 15px;
   line-height: 1.6;
-  color: #686a88;
   margin-top: 0.75rem;
 }
 
@@ -997,42 +1259,30 @@ table caption {
 .wp-block-table.is-style-stripes {
   border-bottom: none;
 }
-.wp-block-table.is-style-stripes table th, .wp-block-table.is-style-stripes table td {
-  border-color: #313240;
-}
-.wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1) {
-  background: #eeeef2;
-}
 .wp-block-table table {
   margin-bottom: 0.75rem;
 }
 .wp-block-table table th {
-  background: #313240;
-  color: #fff;
   font-weight: 700;
 }
 
 .wp-block-calendar .wp-calendar-table {
   margin-bottom: 0.75rem;
 }
+.wp-block-calendar .wp-calendar-table th, .wp-block-calendar .wp-calendar-table td {
+  border-style: solid;
+  border-width: 2px;
+}
 .wp-block-calendar .wp-calendar-table th {
-  background: #313240;
-  border: 2px solid #313240;
-  color: #fff;
   font-weight: 700;
   padding: 0.25em;
-}
-.wp-block-calendar .wp-calendar-table td {
-  border: 2px solid #313240;
 }
 .wp-block-calendar .wp-calendar-nav {
   font-size: 15px;
   line-height: 1.6;
-  color: #686a88;
 }
 
 pre {
-  background: #f7f7f9;
   border-radius: 10px;
   font-size: 85%;
   padding: 1.625rem;
@@ -1044,7 +1294,6 @@ pre {
 }
 
 dl {
-  background: #f7f7f9;
   border-radius: 10px;
   padding: 1.625rem;
 }
@@ -1082,17 +1331,10 @@ code,
 kbd,
 tt,
 var {
-  background: #f7f7f9;
-  color: #52546b;
   display: inline-block;
   padding-left: 3px;
   padding-right: 3px;
   border-radius: 3px;
-}
-
-strike,
-del {
-  color: #52546b;
 }
 
 iframe,
@@ -1108,7 +1350,6 @@ img {
 figure figcaption {
   font-size: 15px;
   line-height: 1.6;
-  color: #686a88;
   font-style: italic;
 }
 
@@ -1119,6 +1360,20 @@ figure figcaption {
 .post-password-form label input {
   display: block;
   margin-bottom: 6px;
+}
+
+#searchform {
+  font-size: 15px;
+  line-height: 1.6;
+}
+#searchform #searchsubmit {
+  line-height: 1.2;
+  margin-top: 3px;
+}
+@media all and (min-width: 560px) {
+  #searchform #searchsubmit {
+    margin-top: 0;
+  }
 }
 
 /* Try to prevent horizontal scroll caused by long, non-breaking text */
@@ -1268,16 +1523,18 @@ figure figcaption {
 .wp-block-group > label {
   font-size: 15px;
   line-height: 1.6;
-  color: #686a88;
 }
 
-.wp-block-button.is-style-outline .wp-block-button__link {
-  border: 2px solid #313240;
+.wp-block-buttons > .wp-block-button.is-style-outline {
+  background: none;
 }
-.wp-block-button.is-style-outline .wp-block-button__link:active, .wp-block-button.is-style-outline .wp-block-button__link:focus, .wp-block-button.is-style-outline .wp-block-button__link:hover {
-  background: #dadae3;
+.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link {
+  border-style: solid;
+  border-width: 2px;
+  padding-bottom: calc(0.8em - 2px);
+  padding-top: calc(0.8em - 2px);
 }
-.wp-block-button .wp-block-button__link {
+.wp-block-buttons > .wp-block-button .wp-block-button__link {
   line-height: 1;
 }
 
@@ -1300,7 +1557,6 @@ figure figcaption {
   line-height: 1.6;
 }
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
-  background: #cbccd8;
   border: none;
   border-radius: 3px;
   padding: 8px;
@@ -1317,7 +1573,8 @@ figure figcaption {
 .twitter-tweet {
   font-size: 15px;
   line-height: 1.6;
-  border: 2px solid #e8e9ee;
+  border-style: solid;
+  border-width: 2px;
   border-radius: 10px;
   font-style: normal;
   margin: 0;
@@ -1395,7 +1652,6 @@ article .entry-content ol.wp-block-latest-posts {
 article .entry-content .wp-block-latest-comments {
   font-size: 15px;
   line-height: 1.6;
-  background: #f7f7f9;
   border-radius: 10px;
   margin-left: 0;
   padding: 1.125rem;
@@ -1446,9 +1702,6 @@ article .entry-content .wp-block-social-links li {
     grid-row: 2;
   }
 }
-html {
-  background: #f4f4f7;
-}
 html * {
   box-sizing: border-box;
 }
@@ -1457,8 +1710,6 @@ body {
   font-family: "Red Hat Text", sans-serif;
   font-size: 17px;
   line-height: 1.6;
-  background: #2a2b37;
-  color: #313240;
 }
 @media all and (min-width: 560px) {
   body {
@@ -1474,7 +1725,6 @@ body {
 }
 
 #page {
-  background: #fff;
   box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.03);
   margin: 0 auto;
   max-width: 1364px;
@@ -1569,9 +1819,6 @@ body {
   justify-content: space-around;
 }
 
-#masthead {
-  background: #f7f7f9;
-}
 #masthead .site-header .inner {
   display: flex;
   justify-content: space-between;
@@ -1596,13 +1843,10 @@ body {
   line-height: 1;
 }
 #masthead .site-header .inner .site-branding .site-title a {
-  color: #313240;
   line-height: 1;
   text-decoration: none;
 }
-#masthead .site-header .inner .site-branding .site-title a:active, #masthead .site-header .inner .site-branding .site-title a:focus, #masthead .site-header .inner .site-branding .site-title a:hover {
-  color: #52546b;
-}
+
 #site-navigation {
   /* Persistent navigation rules */
   /**
@@ -1626,7 +1870,6 @@ body {
   text-transform: uppercase;
 }
 #site-navigation #primary-menu .menu-item a {
-  color: #52546b;
   display: block;
   text-decoration: none;
 }
@@ -1635,8 +1878,9 @@ body {
 }
 #site-navigation #primary-menu > .menu-item.menu-item-has-children > a:after {
   content: "";
-  border-bottom: 6px solid #52546b;
-  border-right: 6px solid transparent;
+  border-right-color: transparent;
+  border-style: solid;
+  border-width: 0 6px 6px 0;
   display: inline-block;
   height: 0;
   margin-left: 5px;
@@ -1677,16 +1921,12 @@ body {
   padding-right: calc(0.75rem + 11px);
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > .sub-menu {
-  background: #3c3d4e;
   border-radius: 5px;
   display: none;
   padding: 7px 1rem;
   position: absolute;
   top: 2rem;
   width: 240px;
-}
-#site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > .sub-menu a {
-  color: #fff;
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > .sub-menu > .menu-item:not(:last-child) {
   border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
@@ -1725,7 +1965,6 @@ body {
   line-height: 1.6;
   background: transparent;
   border: none;
-  color: #52546b;
   display: inline-block;
   font-weight: 700;
   height: unset;
@@ -1770,10 +2009,8 @@ body {
   }
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu {
-  background: #3c3d4e;
   border-radius: 5px;
   box-shadow: 0 0 75px 20px rgba(0, 0, 0, 0.3);
-  display: flex;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -1794,9 +2031,6 @@ body {
   display: block;
   line-height: 1;
 }
-#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu .menu-item a {
-  color: #fff;
-}
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu .menu-item .sub-menu {
   display: none;
 }
@@ -1804,7 +2038,6 @@ body {
   border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item.menu-item-has-children > a:after {
-  border-bottom-color: #fff;
   position: absolute;
   right: 0;
   top: 14px;
@@ -1858,7 +2091,6 @@ body {
 }
 
 .social-navigation {
-  background: #f7f7f9;
   padding-top: 10px;
 }
 .social-navigation .inner .widget:last-child {
@@ -1902,7 +2134,6 @@ body {
   }
 }
 .widget h4, .widget .h4 {
-  color: #47495d;
   font-size: 1.125rem;
   line-height: 1.4;
   text-transform: uppercase;
@@ -1994,17 +2225,10 @@ body {
 .fat-footer .widget ol li + li {
   margin-top: 0.5rem;
 }
-.fat-footer .widget pre,
-.fat-footer .widget dl,
-.fat-footer .widget code,
-.fat-footer .widget kbd,
-.fat-footer .widget tt,
-.fat-footer .widget var {
-  background: #fff;
-}
 
 #comments .comments-title {
-  border-bottom: 2px solid #e8e9ee;
+  border-style: solid;
+  border-width: 0 0 2px;
 }
 #comments .comment-list {
   margin-bottom: 2.5rem;
@@ -2016,7 +2240,8 @@ body {
 }
 #comments .comment-list .comment:not(:last-child),
 #comments .comment-list .pingback:not(:last-child) {
-  border-bottom: 2px solid #e8e9ee;
+  border-style: solid;
+  border-width: 0 0 2px;
   padding-bottom: 2.5rem;
   margin-bottom: 2.5rem;
 }
@@ -2051,14 +2276,7 @@ body {
 }
 #comments .comment-list .comment .comment-body .comment-meta .comment-author .fn a,
 #comments .comment-list .pingback .comment-body .comment-meta .comment-author .fn a {
-  color: #313240;
   text-decoration: none;
-}
-#comments .comment-list .comment .comment-body .comment-meta .comment-author .fn a:active, #comments .comment-list .comment .comment-body .comment-meta .comment-author .fn a:focus, #comments .comment-list .comment .comment-body .comment-meta .comment-author .fn a:hover,
-#comments .comment-list .pingback .comment-body .comment-meta .comment-author .fn a:active,
-#comments .comment-list .pingback .comment-body .comment-meta .comment-author .fn a:focus,
-#comments .comment-list .pingback .comment-body .comment-meta .comment-author .fn a:hover {
-  color: #52546b;
 }
 #comments .comment-list .comment .comment-body .comment-meta .comment-author .says,
 #comments .comment-list .pingback .comment-body .comment-meta .comment-author .says {
@@ -2145,7 +2363,6 @@ body {
 #comments .comment-list .comment .comment-body .comment-content h4, #comments .comment-list .comment .comment-body .comment-content .h4,
 #comments .comment-list .pingback .comment-body .comment-content h4,
 #comments .comment-list .pingback .comment-body .comment-content .h4 {
-  color: #47495d;
   font-size: 1.125rem;
   line-height: 1.4;
   text-transform: uppercase;
@@ -2216,8 +2433,9 @@ body {
 }
 #comments .comment-list .comment .comment,
 #comments .comment-list .pingback .comment {
+  border-style: solid;
+  border-width: 0 0 0 2px;
   padding-left: 1rem;
-  border-left: 2px solid #e8e9ee;
   margin-top: 3rem;
 }
 @media all and (min-width: 768px) {
@@ -2228,7 +2446,8 @@ body {
 }
 #comments .comment-list .comment .comment:not(:last-child),
 #comments .comment-list .pingback .comment:not(:last-child) {
-  border-bottom: 2px solid #e8e9ee;
+  border-style: solid;
+  border-width: 0 0 2px 2px;
 }
 #comments .comment-list .comment .comment .avatar,
 #comments .comment-list .pingback .comment .avatar {
@@ -2253,7 +2472,6 @@ body {
 #comments #respond #reply-title small #cancel-comment-reply-link {
   font-size: 13px;
   line-height: 1.6;
-  color: #52546b;
   font-weight: 400;
   line-height: 1;
 }
@@ -2314,10 +2532,8 @@ button,
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   font-size: 15px;
   line-height: 1.6;
-  background: #313240;
   border: none;
   border-radius: 3px;
-  color: #fff;
   cursor: pointer;
   display: inline-block;
   font-weight: 600;
@@ -2361,7 +2577,6 @@ button:hover,
 .wp-block-file .wp-block-file__button:active,
 .wp-block-file .wp-block-file__button:focus,
 .wp-block-file .wp-block-file__button:hover {
-  background: #52546b;
   text-decoration: none;
 }
 @media all and (min-width: 560px) {
@@ -2385,29 +2600,11 @@ button.v-large,
 
 input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
 textarea {
-  border: 2px solid #313240;
+  border-style: solid;
+  border-width: 2px;
   border-radius: 3px;
   padding: 0.8em;
   vertical-align: bottom;
-}
-input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):active, input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus,
-textarea:active,
-textarea:focus {
-  border-color: #52546b;
-}
-
-#searchform {
-  font-size: 15px;
-  line-height: 1.6;
-}
-#searchform #searchsubmit {
-  line-height: 1.2;
-  margin-top: 3px;
-}
-@media all and (min-width: 560px) {
-  #searchform #searchsubmit {
-    margin-top: 0;
-  }
 }
 
 .footer-lead .footer-lead-cta {
@@ -2443,7 +2640,6 @@ textarea:focus {
 .fat-footer {
   font-size: 15px;
   line-height: 1.6;
-  background: #f7f7f9;
 }
 @media all and (min-width: 560px) {
   .fat-footer > .inner .fat-footer-areas {
@@ -2512,10 +2708,10 @@ textarea:focus {
 .site-footer {
   font-size: 15px;
   line-height: 1.6;
-  background: #f7f7f9;
 }
 .site-footer .inner .site-footer-content {
-  border-top: 1px solid #e8e9ee;
+  border-width: 1px 0 0;
+  border-style: solid;
 }
 @media all and (min-width: 992px) {
   .site-footer .inner .site-footer-content {
@@ -2534,14 +2730,12 @@ textarea:focus {
   font-size: 15px;
   line-height: 1.6;
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
-  color: #686a88;
   display: block;
   font-weight: 700;
   text-transform: uppercase;
 }
 .archive .jumbo-header .archive-title span {
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
-  color: #313240;
   display: block;
   font-size: 2rem;
   font-weight: 700;
@@ -2723,6 +2917,7 @@ article:last-child .entry-footer {
   }
 }
 
+/* Must remain at the bottom */
 /**
  * OPTIONAL classes that help build layouts in the block editor and other
  * hard-to-reach areas of your site. Use them to keep things simple. Do not

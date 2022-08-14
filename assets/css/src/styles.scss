@@ -8,25 +8,28 @@
  * License: GNU General Public License Version 2
  * License URI: license.txt
  */
-@import "normalize";
-@import "variables";
-@import "mixins";
-@import "systems/color-relationships";
-@import "systems/grid";
-@import "systems/hero";
-@import "systems/jumbo-header";
-@import "systems/shared";
-@import "markup-formatting";
-@import "structure";
-@import "header";
-@import "navigation";
-@import "widget-areas";
-@import "comments";
-@import "forms";
-@import "search";
-@import "footer";
-@import "archives";
-@import "singulars";
-@import "templates/front-page";
-@import "templates/full-width";
-@import "systems/helper-classes";
+@import "_normalize";
+
+@import "systems/_color-schemes";
+@import "systems/_configuration";
+@import "systems/_grid";
+@import "systems/_hero";
+@import "systems/_jumbo-header";
+@import "systems/_shared";
+
+@import "_markup-formatting";
+@import "_structure";
+@import "_header";
+@import "_navigation";
+@import "_widget-areas";
+@import "_comments";
+@import "_forms";
+@import "_footer";
+@import "_archives";
+@import "_singulars";
+
+@import "templates/_front-page";
+@import "templates/_full-width";
+
+/* Must remain at the bottom */
+@import "systems/_helper-classes";

@@ -11,7 +11,6 @@
 			text-transform: uppercase;
 
 			a {
-				color: $linkColor;
 				display: block;
 				text-decoration: none;
 			}
@@ -27,8 +26,9 @@
 
 					&:after {
 						content: '';
-						border-bottom: 6px solid $linkColor;
-						border-right: 6px solid transparent;
+						border-right-color: transparent;
+						border-style: solid;
+						border-width: 0 6px 6px 0;
 						display: inline-block;
 						height: 0;
 						margin-left: 5px;
@@ -103,17 +103,12 @@
 					}
 
 					& > .sub-menu {
-						background: $menuModalMinWidthBackground;
 						border-radius: 5px;
 						display: none;
 						padding: 7px 1rem;
 						position: absolute;
 						top: 2rem;
 						width: 240px;
-
-						a {
-							color: #fff;
-						}
 
 						& > .menu-item {
 
@@ -188,7 +183,6 @@
 		@include fontSmallest;
 		background: transparent;
 		border: none;
-		color: $linkColor;
 		display: inline-block;
 		font-weight: 700;
 		height: unset;
@@ -241,9 +235,8 @@
 				}
 
 				#primary-menu {
-					background: $menuModalMinWidthBackground;
 					border-radius: 5px;
-					box-shadow: 0 0 75px 20px rgba(0, 0, 0, 0.3);display: flex;
+					box-shadow: 0 0 75px 20px rgba(0, 0, 0, 0.3);
 					display: flex;
 					flex-direction: column;
 					height: 100%;
@@ -265,10 +258,6 @@
 
 					.menu-item {
 
-						a {
-							color: #fff;
-						}
-
 						.sub-menu {
 							display: none;
 						}
@@ -286,7 +275,6 @@
 							& > a {
 
 								&:after {
-									border-bottom-color: #fff;
 									position: absolute;
 									right: 0;
 									top: 14px;
@@ -377,7 +365,6 @@
 }
 
 .social-navigation {
-	background: $lightBackground;
 	padding-top: 10px;
 
 	.inner {

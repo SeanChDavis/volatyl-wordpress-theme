@@ -1,4 +1,4 @@
-<?php
+<?php // The standard WordPress page template
 get_header();
 ?>
 

@@ -29,7 +29,7 @@ if ( 1 == get_theme_mod( 'volatyl_fat_footer_alternate_layout', 0 ) ) {
 }
 ?>
 
-<div class="fat-footer">
+<div class="fat-footer v-gray-background">
 	<div class="inner v-padding-y-0">
 		<div class="<?php echo implode( ' ', $fat_footer_classes ); ?>">
 			<?php

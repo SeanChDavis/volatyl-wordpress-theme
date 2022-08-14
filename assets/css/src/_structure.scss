@@ -1,5 +1,4 @@
 html {
-	background: $HTMLBackground;
 
 	& * {
 		box-sizing: border-box;
@@ -9,12 +8,9 @@ html {
 body {
 	@include bodyFont;
 	@include fontBase;
-	background: $bodyBackground;
-	color: $baseColor;
 }
 
 #page {
-	background: #fff;
 	box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.03);
 	margin: 0 auto;
 	max-width: 1364px;

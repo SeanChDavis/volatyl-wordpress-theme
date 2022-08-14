@@ -1,4 +1,4 @@
-<?php
+<?php // Default front page of the site, intelligently display basic information
 get_header();
 ?>
 

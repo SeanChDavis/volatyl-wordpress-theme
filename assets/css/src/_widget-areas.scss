@@ -23,7 +23,6 @@
 	}
 
 	h4, .h4 {
-		color: lighten( $baseColor, 10% );
 		font-size: 1.125rem;
 		line-height: 1.4;
 		text-transform: uppercase;
@@ -147,15 +146,6 @@
 					margin-top: .5rem;
 				}
 			}
-		}
-
-		pre,
-		dl,
-		code,
-		kbd,
-		tt,
-		var {
-			background: #fff;
 		}
 	}
 }
