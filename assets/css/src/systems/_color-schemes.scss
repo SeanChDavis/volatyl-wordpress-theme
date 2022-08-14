@@ -6,19 +6,23 @@
 	/* This color controls the entire color scheme */
 	--primary-hue: 120;
 
+	--primary-hue_lightest: hsl(var(--primary-hue) 13% 97%);
+	--primary-hue_lighter: hsl(var(--primary-hue) 13% 95%);
+	--primary-hue_light: hsl(var(--primary-hue) 13% 93%);
+
+	--light-border: hsl(var(--primary-hue) 13% 91%);
+
+	--dark-background-link-color: hsl(var(--primary-hue) 13% 84%);
+
 	--primary-hue_dark: hsl(var(--primary-hue) 13% 22%);
 	--primary-hue_darker: hsl(var(--primary-hue) 13% 20%);
 	--primary-hue_darkest: hsl(var(--primary-hue) 13% 18%);
 
-	--primary-hue_light: hsl(var(--primary-hue) 13% 93%);
-	--primary-hue_lighter: hsl(var(--primary-hue) 13% 95%);
-	--primary-hue_lightest: hsl(var(--primary-hue) 13% 97%);
+	--light-text: hsl(var(--primary-hue) 13% 43%);
 
 	--link-color: hsl(var(--primary-hue) 13% 37%);
 	--link-color-hover: hsl(var(--primary-hue) 13% 32%);
 
-	--light-text: hsl(var(--primary-hue) 13% 47%);
-	--light-border: hsl(var(--primary-hue) 13% 91%);
 
 	--accent-hue: calc(var(--primary-hue) - 180);
 }
@@ -80,6 +84,7 @@ table,
 	border-bottom-color: #fff;
 }
 
+.v-dark-background .site-title a,
 .button,
 .v-button,
 button,
@@ -105,9 +110,11 @@ table th,
 	color: #fff;
 }
 
-#masthead,
 .v-gray-background,
 .v-grid [class*="-item-container"]:not(.v-subdued),
+.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:active,
+.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:focus,
+.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:hover,
 .wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1),
 .social-navigation,
 article .entry-content .wp-block-latest-comments,
@@ -119,34 +126,18 @@ var {
 	background-color: var(--primary-hue_lightest);
 }
 
-	.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link {
-
-		&:active,
-		&:focus,
-		&:hover {
-			background: var(--primary-hue_lightest);
-		}
-	}
-
 .wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1) {
 	background-color: var(--primary-hue_lighter);
 }
 
-.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper,
+.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:active,
+.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:focus,
+.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:hover {
 	background-color: var(--primary-hue_light);
 }
 
-	.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link {
-
-		&:active,
-		&:focus,
-		&:hover {
-			background-color: var(--primary-hue_light);
-		}
-	}
-
-.v-dark-background a,
-.v-dark-background h4,.h4,
+.v-dark-background h4, .h4,
 .v-dark-background h6, .h6,
 .v-dark-background blockquote,
 .v-dark-background address,
@@ -161,6 +152,20 @@ var {
 	color: var(--primary-hue_light);
 }
 
+.v-dark-background #site-navigation #primary-menu > .menu-item.menu-item-has-children > a:after {
+	border-bottom-color: var(--dark-background-link-color);
+}
+
+.v-dark-background a,
+.v-dark-background .site-title a:active,
+.v-dark-background .site-title a:focus,
+.v-dark-background .site-title a:hover,
+.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item > a,
+.v-dark-background #site-navigation .menu-toggle,
+#site-navigation #primary-menu > .menu-item.menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu a {
+	color: var(--dark-background-link-color);
+}
+
 .archive .archive-title,
 .v-subdued-title,
 table caption,
@@ -170,100 +175,114 @@ figure figcaption,
 	color: var(--light-text);
 }
 
-	.button,
-	.v-button,
-	button,
-	[type="button"],
-	[type="submit"],
-	[type="reset"],
-	.wp-block-buttons > .wp-block-button .wp-block-button__link,
-	.wp-block-file .wp-block-file__button {
+.v-dark-background input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):active,
+.v-dark-background input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):focus,
+.v-dark-background textarea:active,
+.v-dark-background textarea:focus {
+	border-color: var(--link-color-hover);
+}
 
-		&:active,
-		&:focus,
-		&:hover {
-			background-color: var(--link-color);
-		}
-	}
+.button:active,
+.button:focus,
+.button:hover,
+.v-button:active,
+.v-button:focus,
+.v-button:hover,
+button:active,
+button:focus,
+button:hover,
+[type="button"]:active,
+[type="button"]:focus,
+[type="button"]:hover,
+[type="submit"]:active,
+[type="submit"]:focus,
+[type="submit"]:hover,
+[type="reset"]:active,
+[type="reset"]:focus,
+[type="reset"]:hover,
+.wp-block-buttons > .wp-block-button .wp-block-button__link:active,
+.wp-block-buttons > .wp-block-button .wp-block-button__link:focus,
+.wp-block-buttons > .wp-block-button .wp-block-button__link:hover,
+.wp-block-file .wp-block-file__button:active,
+.wp-block-file .wp-block-file__button:focus,
+.wp-block-file .wp-block-file__button:hover,
+.v-dark-background .button,
+.v-dark-background .v-button,
+.v-dark-background button:active,
+.v-dark-background [type="button"],
+.v-dark-background [type="submit"],
+.v-dark-background [type="reset"],
+.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link,
+.v-dark-background .wp-block-file .wp-block-file__button {
+	background-color: var(--link-color);
+}
 
 #site-navigation #primary-menu > .menu-item.menu-item-has-children > a:after {
 	border-bottom-color: var(--link-color);
 }
 
+.v-dark-background input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
+input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):active,
+input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):focus,
+.v-dark-background textarea,
+textarea:active,
+textarea:focus {
+	border-color: var(--link-color);
+}
+
 a,
 h4, .h4,
 h6, .h6,
+.site-title a:active,
+.site-title a:focus,
+.site-title a:hover,
 #site-navigation #primary-menu .menu-item a,
 #site-navigation .menu-toggle,
+.v-grid [class*="-item-container"]:not(.v-subdued) [class*="-item-content-wrap"] [class*="-item-header"] [class*="-item-title"] a:active,
+.v-grid [class*="-item-container"]:not(.v-subdued) [class*="-item-content-wrap"] [class*="-item-header"] [class*="-item-title"] a:focus,
+.v-grid [class*="-item-container"]:not(.v-subdued) [class*="-item-content-wrap"] [class*="-item-header"] [class*="-item-title"] a:hover,
+#comments .comment-list .comment .comment-body .comment-meta .comment-author .fn a:active,
+#comments .comment-list .comment .comment-body .comment-meta .comment-author .fn a:focus,
+#comments .comment-list .comment .comment-body .comment-meta .comment-author .fn a:hover,
+#comments .comment-list .pingback .comment-body .comment-meta .comment-author .fn a:active,
+#comments .comment-list .pingback .comment-body .comment-meta .comment-author .fn a:focus,
+#comments .comment-list .pingback .comment-body .comment-meta .comment-author .fn a:hover,
 #comments #respond #reply-title small #cancel-comment-reply-link {
 	color: var(--link-color);
 }
 
-	.v-dark-background .button,
-	.v-dark-background .v-button,
-	.v-dark-background button,
-	.v-dark-background [type="button"],
-	.v-dark-background [type="submit"],
-	.v-dark-background [type="reset"],
-	.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link,
-	.v-dark-background .wp-block-file .wp-block-file__button {
-		background-color: var(--link-color);
-
-		&:active,
-		&:focus,
-		&:hover {
-			background-color: var(--link-color-hover);
-		}
-	}
-
-	.v-dark-background input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
-	.v-dark-background textarea {
-		border-color: var(--link-color);
-
-		&:active,
-		&:focus {
-			border-color: var(--link-color-hover);
-		}
-	}
-
-	input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
-	textarea {
-
-		&:active,
-		&:focus {
-			border-color: var(--link-color);
-		}
-	}
-
-	.site-title a,
-	.v-grid [class*="-item-container"]:not(.v-subdued) [class*="-item-content-wrap"] [class*="-item-header"] [class*="-item-title"] a,
-	#comments .comment-list .comment .comment-body .comment-meta .comment-author .fn a,
-	#comments .comment-list .pingback .comment-body .comment-meta .comment-author .fn a {
-
-		&:active,
-		&:focus,
-		&:hover {
-			color: var(--link-color);
-		}
-	}
+.v-dark-background .button:active,
+.v-dark-background .button:focus,
+.v-dark-background .button:hover,
+.v-dark-background .v-button:active,
+.v-dark-background .v-button:focus,
+.v-dark-background .v-button:hover,
+.v-dark-background button:active,
+.v-dark-background button:focus,
+.v-dark-background button:hover,
+.v-dark-background [type="button"]:active,
+.v-dark-background [type="button"]:focus,
+.v-dark-background [type="button"]:hover,
+.v-dark-background [type="submit"]:active,
+.v-dark-background [type="submit"]:focus,
+.v-dark-background [type="submit"]:hover,
+.v-dark-background [type="reset"]:active,
+.v-dark-background [type="reset"]:focus,
+.v-dark-background [type="reset"]:hover,
+.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link:active,
+.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link:focus,
+.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link:hover,
+.v-dark-background .wp-block-file .wp-block-file__button:active,
+.v-dark-background .wp-block-file .wp-block-file__button:focus,
+.v-dark-background .wp-block-file .wp-block-file__button:hover {
+	background-color: var(--link-color-hover);
+}
 
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > .sub-menu,
 #site-navigation.toggled > [class*="-container"].menu-modal-active #primary-menu {
 	background-color: hsl(var(--primary-hue) 13% 27%);
 }
 
-.v-dark-background h1 a,
-.v-dark-background .h1 a,
-.v-dark-background h2 a,
-.v-dark-background .h2 a,
-.v-dark-background h3 a,
-.v-dark-background .h3 a,
-.v-dark-background h4 a,
-.v-dark-background .h4 a,
-.v-dark-background h5 a,
-.v-dark-background .h5 a,
-.v-dark-background h6 a,
-.v-dark-background .h6 a,
 blockquote,
 address,
 cite,

@@ -7,7 +7,7 @@ get_header();
 			<?php
 			if ( have_posts() ) :
 				?>
-				<h1 class="v-subdued-title v-margin-bottom-3"><?php _e( 'Most recently published', 'volatyl' ); ?></h1>
+				<span class="v-subdued-title v-margin-bottom-3"><?php _e( 'Most recently published', 'volatyl' ); ?></span>
 				<div class="v-post-type-grid">
 					<?php
 					$blog_grid_value = get_theme_mod( 'volatyl_blog_posts_grid_columns_rows' );
