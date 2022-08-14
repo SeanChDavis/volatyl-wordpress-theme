@@ -490,11 +490,10 @@ figure {
 }
 
 .wp-block-media-text {
-	gap: 3rem;
+	gap: 2rem;
 	margin: 3rem 0;
 
-	@media all and (min-width: $smMinWidth) {
-		gap: 4rem;
+	@media all and (min-width: $mdMinWidth) {
 		margin-top: 4rem;
 	}
 
@@ -506,18 +505,41 @@ figure {
 		margin-bottom: 0;
 	}
 
-	&.is-stacked-on-mobile {
+	.wp-block-media-text__content {
+		padding: 8%;
+	}
+
+	&:not(.has-background) {
+		row-gap: 3rem;
 
 		.wp-block-media-text__media {
 			margin-top: 1.5rem;
 
-			@media all and (min-width: $smMinWidth) {
+			@media all and (min-width: $mdMinWidth) {
 				margin-top: 0;
 			}
 		}
 
 		.wp-block-media-text__content {
 			padding: 0;
+
+			@media all and (min-width: $mdMinWidth) {
+				padding: 8%;
+			}
+		}
+	}
+
+	&.has-background {
+		gap: 0;
+
+		.wp-block-media-text__content {
+
+			@media all and (min-width: $mdMinWidth) {
+
+				.wp-block-media-text__content {
+					padding: 10% 8% 5%;
+				}
+			}
 		}
 	}
 }
@@ -625,7 +647,7 @@ figure {
 }
 
 /* Embeds */
-.twitter-tweet {
+.twitter-tweet:not(.twitter-tweet-rendered) {
 	@include fontSmaller;
 	border-style: solid;
 	border-width: 2px;

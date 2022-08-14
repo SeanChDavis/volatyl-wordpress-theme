@@ -237,6 +237,10 @@
 				}
 			}
 		}
+
+		.pingback {
+			@include fontSmaller;
+		}
 	}
 
 	#respond {
