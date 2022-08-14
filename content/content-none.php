@@ -24,7 +24,6 @@
 			<span class="h3"><?php _e( 'Nothing found', 'volatyl' ); ?></span>
 			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'volatyl' ); ?></p>
 			<?php
-			get_search_form();
 		else :
 			?>
 			<span class="h3"><?php _e( 'Nothing found', 'volatyl' ); ?></span>
