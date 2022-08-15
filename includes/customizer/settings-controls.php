@@ -44,6 +44,20 @@ $wp_customize->add_control( 'volatyl_page_comments', array(
 ) );
 
 /**
+ * Color scheme
+ */
+
+// Color scheme
+$wp_customize->add_setting( 'volatyl_primary_brand_color', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox'
+) );
+$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'volatyl_primary_brand_color', array(
+	'label' => __( 'Choose your primary brand color', 'volatyl' ),
+	'section'  => 'volatyl_color_scheme',
+) ) );
+
+/**
  * Template - Front Page
  */
 
