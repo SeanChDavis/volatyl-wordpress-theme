@@ -22,15 +22,13 @@ get_header();
 			<section class="recent-posts">
 				<div class="inner v-large">
 					<span class="v-subdued-title v-margin-bottom-3"><?php echo __( 'From the blog', 'volatyl' ); ?></span>
-					<div class="v-post-type-grid">
-						<div class="v-grid v-grid-columns_<?php echo $blog_grid_columns; ?>">
-							<?php
-							foreach ( $recent_posts as $post ) {
-								get_template_part( 'content/content', 'grid-items', $post );
-							}
-							wp_reset_query();
-							?>
-						</div>
+					<div class="v-grid v-grid-columns_<?php echo $blog_grid_columns; ?>">
+						<?php
+						foreach ( $recent_posts as $post ) {
+							get_template_part( 'content/content', 'grid-items', $post );
+						}
+						wp_reset_query();
+						?>
 					</div>
 					<?php if ( get_option( 'page_for_posts' ) ) { ?>
 						<div class="v-grid v-grid-centered-column">

@@ -19,7 +19,7 @@ get_header();
 			<?php
 			if ( have_posts() ) :
 				?>
-				<div class="v-post-type-grid">
+				<div class="v-margin-bottom-4">
 					<div class="v-grid v-grid-columns_3">
 						<?php
 						while ( have_posts() ) :

@@ -7,8 +7,8 @@ if ( ( is_front_page() && ! is_home() ) && get_theme_mod( 'volatyl_front_page_he
 ?>
 
 <header id="masthead" class="<?php echo $front_page_hero_color_scheme; ?>">
-	<div class="site-header">
-		<div class="inner v-padding-y-2">
+	<div class="inner v-padding-y-4">
+		<div class="site-header">
 			<div class="site-branding">
 				<?php
 				if ( has_custom_logo() ) {

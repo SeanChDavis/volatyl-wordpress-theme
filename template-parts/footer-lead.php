@@ -12,7 +12,7 @@ $volatyl_footer_lead_cta_button_text = get_theme_mod( 'volatyl_footer_lead_cta_b
 			<?php if ( $volatyl_footer_lead_title || $volatyl_footer_lead_description ) { ?>
 				<div class="cta-content">
 					<?php if ( $volatyl_footer_lead_title ) { ?>
-						<p class="h3 section-title"><?php echo $volatyl_footer_lead_title; ?></p>
+						<span class="h3 cta-title"><?php echo $volatyl_footer_lead_title; ?></span>
 					<?php } ?>
 					<?php if ( $volatyl_footer_lead_description ) { ?>
 						<p><?php echo $volatyl_footer_lead_description; ?></p>

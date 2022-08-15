@@ -5,242 +5,238 @@
 		border-width: 0 0 2px;
 	}
 
-	.comment-list {
-		margin-bottom: 2.5rem;
+	.comment,
+	.pingback {
 
-		.comment,
-		.pingback {
-			@include fontSmall;
+		&:not(:last-child) {
+			border-style: solid;
+			border-width: 0 0 2px;
+			padding-bottom: 2.5rem;
+			margin-bottom: 2.5rem;
+		}
+	}
 
-			&:not(:last-child) {
-				border-style: solid;
-				border-width: 0 0 2px;
-				padding-bottom: 2.5rem;
-				margin-bottom: 2.5rem;
-			}
+	.comment {
+		@include fontSmall;
 
-			&.byuser {
+		&.byuser {
 
-				.comment-body {
+			.comment-author {
+				position: relative;
 
-					.comment-meta {
-
-						.comment-author {
-							position: relative;
-
-							&:after {
-								border-radius: 50%;
-								content: url("assets/images/icons/byuser-indicator.svg");
-								height: 19px;
-								left: -2px;
-								position: absolute;
-								top: -2px;
-								width: 19px;
-							}
-						}
-					}
+				&:after {
+					border-radius: 50%;
+					content: url("assets/images/icons/byuser-indicator.svg");
+					height: 19px;
+					left: -2px;
+					position: absolute;
+					top: -2px;
+					width: 19px;
 				}
 			}
+		}
 
-			.comment-body {
+		.comment-body {
 
-				& > *:not(:last-child) {
-					margin-bottom: 2rem;
-				}
+			& > *:not(:last-child) {
+				margin-bottom: 2rem;
+			}
 
-				.comment-meta {
+			.comment-meta {
 
-					.comment-author {
-						display: flex;
-						flex-direction: column;
-						gap: 1rem;
-						margin-bottom: .25rem;
+				.comment-author {
+					display: flex;
+					flex-direction: column;
+					gap: 1rem;
+					margin-bottom: .25rem;
 
-						.avatar {
-							border-radius: 50%;
-						}
+					.avatar {
+						border-radius: 50%;
+					}
 
-						.fn {
+					.fn {
 
-							a {
-								text-decoration: none;
-							}
-						}
-
-						.says {
-							display: none;
+						a {
+							text-decoration: none;
 						}
 					}
 
-					.comment-metadata {
-						@include fontSmallest;
+					.says {
+						display: none;
 					}
 				}
 
-				// Adjust markup & formatting for the smaller comment area
-				.comment-content {
-
-					ul {
-						margin: 0 0 0 1.125rem;
-					}
-
-					ol {
-						margin: 0 0 0 1.3rem;
-					}
-
-					ul,
-					ol {
-						padding: 0;
-
-						li {
-
-							& ul,
-							& ol {
-								margin-top: .75rem;
-							}
-
-							& + li {
-								margin-top: .75rem;
-							}
-						}
-					}
-
-					& > ul,
-					& > ol {
-						margin-bottom: 1.25rem;
-						margin-top: 1.25rem;
-					}
-
-					h1, .h1 {
-						font-size: 2rem;
-
-						@media all and (min-width: $xsMinWidth) {
-							font-size: 2.66666rem;
-						}
-					}
-
-					h2, .h2 {
-						font-size: 1.65rem;
-						line-height: 1.3;
-
-						@media all and (min-width: $xsMinWidth) {
-							font-size: 2.08333rem;
-						}
-					}
-
-					h3, .h3 {
-						font-size: 1.35rem;
-						line-height: 1.35;
-
-						@media all and (min-width: $xsMinWidth) {
-							font-size: 1.65rem;
-						}
-					}
-
-					h4, .h4 {
-						font-size: 1.125rem;
-						line-height: 1.4;
-						text-transform: uppercase;
-
-						@media all and (min-width: $xsMinWidth) {
-							font-size: 1.25rem;
-						}
-
-						@media all and (min-width: $smMinWidth) {
-							line-height: 1.45;
-						}
-					}
-
-					h5, .h5 {
-						font-size: 1rem;
-
-						@media all and (min-width: $xsMinWidth) {
-							font-size: 1.125rem;
-						}
-					}
-
-					p {
-
-						@media all and (min-width: $smMinWidth) {
-							margin-bottom: 1.25rem;
-						}
-
-						& + h1, & + .h1 {
-
-							@media all and (min-width: $smMinWidth) {
-								margin-top: 1.75rem;
-							}
-						}
-
-						& + h2, & + .h2 {
-
-							@media all and (min-width: $smMinWidth) {
-								margin-top: 1.5rem;
-							}
-						}
-
-						& + h3, & + .h3,
-						& + h4, & + .h4,
-						& + h5, & + .h5,
-						& + h6, & + .h6 {
-
-							@media all and (min-width: $smMinWidth) {
-								margin-top: 1.35rem;
-							}
-						}
-					}
-				}
-
-				.reply {
+				.comment-metadata {
 					@include fontSmallest;
 				}
 			}
 
-			.comment {
-				border-style: solid;
-				border-width: 0 0 0 2px;
-				padding-left: 1rem;
-				margin-top: 3rem;
+			// Adjust markup & formatting for the smaller comment area
+			.comment-content {
 
-				@media all and (min-width: $smMinWidth) {
-					padding-left: 2.25rem;
+				ul {
+					margin: 0 0 0 1.125rem;
 				}
 
-				&:not(:last-child) {
-					border-style: solid;
-					border-width: 0 0 2px 2px;
+				ol {
+					margin: 0 0 0 1.3rem;
 				}
 
-				.avatar {
-					height: 36px;
-					width: 36px;
+				ul,
+				ol {
+					padding: 0;
+
+					li {
+
+						& ul,
+						& ol {
+							margin-top: .75rem;
+						}
+
+						& + li {
+							margin-top: .75rem;
+						}
+					}
 				}
 
-				&.byuser {
+				& > ul,
+				& > ol {
+					margin-bottom: 1.25rem;
+					margin-top: 1.25rem;
+				}
 
-					.comment-body {
+				h1, .h1 {
+					font-size: 2rem;
 
-						.comment-meta {
+					@media all and (min-width: $xsMinWidth) {
+						font-size: 2.66666rem;
+					}
+				}
 
-							.comment-author {
-								position: relative;
+				h2, .h2 {
+					font-size: 1.65rem;
+					line-height: 1.3;
 
-								&:after {
-									height: 15px;
-									left: -3px;
-									top: -9px;
-									width: 15px;
-								}
-							}
+					@media all and (min-width: $xsMinWidth) {
+						font-size: 2.08333rem;
+					}
+				}
+
+				h3, .h3 {
+					font-size: 1.35rem;
+					line-height: 1.35;
+
+					@media all and (min-width: $xsMinWidth) {
+						font-size: 1.65rem;
+					}
+				}
+
+				h4, .h4 {
+					font-size: 1.125rem;
+					line-height: 1.4;
+					text-transform: uppercase;
+
+					@media all and (min-width: $xsMinWidth) {
+						font-size: 1.25rem;
+					}
+
+					@media all and (min-width: $smMinWidth) {
+						line-height: 1.45;
+					}
+				}
+
+				h5, .h5 {
+					font-size: 1rem;
+
+					@media all and (min-width: $xsMinWidth) {
+						font-size: 1.125rem;
+					}
+				}
+
+				p {
+
+					@media all and (min-width: $smMinWidth) {
+
+						&:not(:last-child) {
+							margin-bottom: 1.25rem;
+						}
+					}
+
+					& + h1, & + .h1 {
+
+						@media all and (min-width: $smMinWidth) {
+							margin-top: 1.75rem;
+						}
+					}
+
+					& + h2, & + .h2 {
+
+						@media all and (min-width: $smMinWidth) {
+							margin-top: 1.5rem;
+						}
+					}
+
+					& + h3, & + .h3,
+					& + h4, & + .h4,
+					& + h5, & + .h5,
+					& + h6, & + .h6 {
+
+						@media all and (min-width: $smMinWidth) {
+							margin-top: 1.35rem;
 						}
 					}
 				}
 			}
+
+			.reply {
+				@include fontSmallest;
+
+				.comment-reply-link {
+					font-size: 12px;
+					padding: 9px 11px;
+				}
+			}
 		}
 
-		.pingback {
-			@include fontSmaller;
+		.comment {
+			border-style: dotted;
+			border-width: 0 0 0 2px;
+			padding-left: 1rem;
+			margin-top: 3rem;
+
+			@media all and (min-width: $smMinWidth) {
+				padding-left: 2.25rem;
+			}
+
+			&:not(:last-child) {
+				border-style: dotted;
+				border-width: 0 0 2px 2px;
+				padding-bottom: 2rem;
+			}
+
+			.avatar {
+				height: 36px;
+				width: 36px;
+			}
+
+			&.byuser {
+
+				.comment-author {
+					position: relative;
+
+					&:after {
+						height: 15px;
+						left: -3px;
+						top: -9px;
+						width: 15px;
+					}
+				}
+			}
 		}
+	}
+
+	.pingback {
+		@include fontSmaller;
 	}
 
 	#respond {
@@ -249,12 +245,10 @@
 
 			small {
 				display: block;
-				line-height: 1;
 
 				#cancel-comment-reply-link {
-					@include fontSmallest;
-					font-weight: 400;
-					line-height: 1;
+					@include fontSmaller;
+					color: #ae1717;
 				}
 			}
 		}
@@ -263,7 +257,7 @@
 
 			.logged-in-as,
 			.comment-notes {
-				@include fontSmallest;
+				@include fontSmaller;
 
 				.required-field-message {
 					display: block;
@@ -288,12 +282,9 @@
 				}
 			}
 
-			.comment-form-comment {
-
-				textarea#comment {
-					max-width: 650px;
-					width: 100%;
-				}
+			textarea#comment {
+				max-width: 650px;
+				width: 100%;
 			}
 
 			.comment-form-author,
@@ -310,7 +301,9 @@
 			}
 
 			.required {
-				color: red;
+				@include fontSmaller;
+				color: #ae1717;
+				font-weight: 400;
 			}
 		}
 	}

@@ -1,9 +1,8 @@
-/**
- * Basic grid system based on 4, 3, 2, and 1-column grid layouts
- */
+// Basic grid system based on 4, 3, 2, and 1-column grid layouts
 .v-grid {
 	display: grid;
 	gap: 1.5rem;
+	grid-template-columns: 100%;
 
 	@media all and (min-width: $smMinWidth) {
 		gap: 2rem;
@@ -24,179 +23,51 @@
 		gap: 1.5rem;
 	}
 
-	&.v-grid-columns_2 {
+	&.v-grid-columns_2,
+	&.v-grid-columns_3,
+	&.v-grid-columns_4 {
 
 		@media all and (min-width: $smMinWidth) {
-			grid-template-columns: 1fr 1fr;
+			gap: 3rem 4%;
+			grid-template-columns: repeat(2, 48%);
 		}
 	}
 
 	&.v-grid-columns_3 {
 
-		@media all and (min-width: $smMinWidth) {
-			grid-template-columns: 1fr 1fr;
-		}
-
 		@media all and (min-width: $mdMinWidth) {
-			grid-template-columns: repeat( 3, 1fr );
+			gap: 2.56rem 3.5%;
+			grid-template-columns: repeat(3, 31%);
 		}
 	}
 
 	&.v-grid-columns_4 {
 
-		@media all and (min-width: $smMinWidth) {
-			grid-template-columns: 1fr 1fr;
-		}
-
 		@media all and (min-width: $mdMinWidth) {
-			grid-template-columns: repeat( 4, 1fr );
+			gap: 1.5rem 2%;
+			grid-template-columns: repeat(4, 23.5%);
 		}
 	}
 
-	/**
-	 * Center column content that has width limits on wider screens
-	 */
+	// Center column content that has width limits on wider screens
 	&.v-grid-centered-column {
-		grid-template-columns: 1fr;
+		grid-template-columns: 100%;
 
 		@media all and (min-width: $mdMinWidth) {
-			grid-template-columns: 1fr 5fr 1fr;
+			gap: 1.5rem 2%;
+			grid-template-columns: 12% 72% 12%;
 		}
 
 		@media all and (min-width: $lgMinWidth) {
-			grid-template-columns: 1fr 3fr 1fr;
+			gap: 1.5rem 3%;
+			grid-template-columns: 17% 60% 17%;
 		}
 
 		.v-grid-centered-column-content {
 
 			@media all and (min-width: $mdMinWidth) {
-				grid-column-start: 2;
 				grid-column-end: 3;
-			}
-		}
-	}
-
-	/**
-	 * Card styles to be used alongside the above grid system
-	 */
-	[class*="-item-container"] {
-
-		/**
-		 * Shared styles across all cards
-		 */
-		[class*="-item-content-wrap"] {
-
-			[class*="-item-header"] {
-
-				[class*="-item-title"] {
-					margin-bottom: 4px;
-
-					a {
-						word-break: break-word;
-					}
-				}
-
-				[class*="-item-meta"] {
-					@include fontSmallest;
-					display: block;
-					line-height: 1;
-
-					a {
-						text-decoration: none;
-
-						&:active,
-						&:focus,
-						&:hover {
-							text-decoration: underline;
-						}
-					}
-				}
-			}
-		}
-
-
-		/**
-		 * Fully styled cards
-		 */
-		&:not(.v-subdued) {
-			border-radius: 8px;
-
-			[class*="-item-content-wrap"] {
-				display: flex;
-				flex-direction: column;
-				height: 100%;
-
-				[class*="-item-media"] {
-
-					img {
-						border-radius: 8px 8px 0 0;
-						vertical-align: top;
-					}
-				}
-
-				[class*="-item-header"] {
-					padding: 1.25rem 1.25rem .75rem;
-
-					@media all and (min-width: $mdMinWidth) {
-						padding: 2rem 2rem 1rem;
-					}
-
-					[class*="-item-title"] {
-
-						a {
-							text-decoration: none;
-						}
-					}
-				}
-
-				[class*="-item-body"] {
-					flex: 1 0 auto;
-					padding: .5rem 1.25rem 1rem;
-
-					@media all and (min-width: $mdMinWidth) {
-						padding: .5rem 2rem 1.25rem;
-					}
-
-					[class*="-item-description"] {
-						@include fontSmall;
-					}
-				}
-
-				[class*="-item-footer"] {
-					@include fontSmallest;
-					padding: .5rem 1.25rem 1.75rem;
-
-					@media all and (min-width: $mdMinWidth) {
-						padding: .5rem 2rem 2.25rem;
-					}
-
-					.button {
-						@include fontSmallest;
-					}
-				}
-			}
-		}
-
-
-		/**
-		 * Lightly design cards
-		 */
-		&.v-subdued {
-
-			[class*="-item-content-wrap"] {
-
-				[class*="-item-media"] {}
-
-				[class*="-item-header"] {
-
-					[class*="-item-title"] {}
-
-					[class*="-item-meta"] {}
-				}
-
-				[class*="-item-body"] {}
-
-				[class*="-item-footer"] {}
+				grid-column-start: 2;
 			}
 		}
 	}

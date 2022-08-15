@@ -1,142 +1,136 @@
-.footer-lead {
+.footer-lead-cta {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	justify-content: space-between;
+	text-align: center;
 
-	.footer-lead-cta {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-		justify-content: space-between;
-		text-align: center;
+	@media all and (min-width: $smMinWidth) {
+		flex-direction: row;
+		text-align: unset;
+	}
+
+	& > * {
+		align-self: center;
+	}
+
+	.cta-content {
 
 		@media all and (min-width: $smMinWidth) {
-			flex-direction: row;
-			text-align: unset;
+			max-width: 60%;
 		}
 
-		& > * {
-			align-self: center;
+		@media all and (min-width: $mdMinWidth) {
+			max-width: 50%;
 		}
 
-		.cta-content {
+		[class*="-title"] {
+			margin-bottom: 0;
 
-			@media all and (min-width: $smMinWidth) {
-				max-width: 60%;
-			}
-
-			@media all and (min-width: $mdMinWidth) {
-				max-width: 50%;
-			}
-
-			[class*="-title"] {
+			&:not(:last-child) {
 				margin-bottom: 12px;
 			}
 		}
 	}
 }
 
-.fat-footer {
-	@include fontSmaller;
+.fat-footer-areas {
 
-	& > .inner {
+	@media all and (min-width: $mdMinWidth) {
+		padding-top: 3rem;
+	}
 
-		.fat-footer-areas {
+	@media all and (min-width: $lgMinWidth) {
+		padding-top: 4rem;
+	}
+
+	.widget:not(:last-child) {
+		margin-bottom: 1.25rem;
+	}
+
+	&.alternate-layout {
+
+		@media all and (min-width: $xsMinWidth) {
+
+			&.v-grid-columns_3,
+			&.v-grid-columns_4 {
+
+				.fat-footer-area:first-child {
+
+					.widget {
+						@include fontSmall;
+					}
+				}
+			}
+		}
+
+		&.v-grid-columns_3 {
 
 			@media all and (min-width: $xsMinWidth) {
-				padding: 3rem 0 2.5rem;
+				column-gap: 4%;
+				grid-template-columns: 48% 48%;
+
+				.fat-footer-area:first-child {
+					grid-column-end: 3;
+					grid-column-start: 1;
+				}
 			}
+
+			@media all and (min-width: $mdMinWidth) {
+				column-gap: 2%;
+				grid-template-columns: 56% 20% 20%;
+
+				.fat-footer-area:first-child {
+					grid-column-start: unset;
+					grid-column-end: unset;
+					margin-bottom: unset;
+					padding-right: 4rem;
+				}
+			}
+		}
+
+		&.v-grid-columns_4 {
 
 			@media all and (min-width: $smMinWidth) {
-				padding: 4.5rem 0 2.5rem;
-			}
+				column-gap: 3.5%;
+				grid-template-columns: repeat(3, 31%);
 
-			.widget {
-
-				&:not(:last-child) {
-					margin-bottom: 1.25rem;
+				.fat-footer-area:first-child {
+					grid-column-start: 1;
+					grid-column-end: 4;
 				}
 			}
 
-			&.alternate-layout {
+			@media all and (min-width: $mdMinWidth) {
+				column-gap: 2%;
+				grid-template-columns: 43% 17% 17% 17%;
 
-				&.v-grid-columns_3 {
-					column-gap: 1.5rem;
-
-					@media all and (min-width: $smMinWidth) {
-						column-gap: 4rem;
-
-						.fat-footer-area:first-child {
-							grid-column-start: 1;
-							grid-column-end: 4;
-							margin-bottom: 2rem;
-						}
-					}
-
-					@media all and (min-width: $mdMinWidth) {
-						grid-template-columns: 3fr 1fr 1fr;
-						margin-bottom: unset;
-
-						.fat-footer-area:first-child {
-							grid-column-start: unset;
-							grid-column-end: unset;
-							margin-bottom: unset;
-						}
-					}
-				}
-
-				&.v-grid-columns_4 {
-					column-gap: 1.5rem;
-
-					@media all and (min-width: $smMinWidth) {
-						column-gap: 2rem;
-						grid-template-columns: 1fr 1fr 1fr;
-
-						.fat-footer-area:first-child {
-							grid-column-start: 1;
-							grid-column-end: 4;
-							margin-bottom: 2rem;
-						}
-					}
-
-					@media all and (min-width: $mdMinWidth) {
-						column-gap: 4rem;
-						grid-template-columns: 5fr 2fr 2fr 2fr;
-						margin-bottom: unset;
-
-						.fat-footer-area:first-child {
-							grid-column-start: unset;
-							grid-column-end: unset;
-							margin-bottom: unset;
-						}
-					}
+				.fat-footer-area:first-child {
+					grid-column-start: unset;
+					grid-column-end: unset;
+					margin-bottom: unset;
+					padding-right: 3rem;
 				}
 			}
 		}
 	}
 }
 
-.site-footer {
+.site-footer-content {
 	@include fontSmaller;
+	border-style: solid;
+	border-width: 1px 0 0;
 
-	.inner {
+	@media all and (min-width: $mdMinWidth) {
+		display: flex;
+		justify-content: space-between;
+	}
 
-		.site-footer-content {
-			border-width: 1px 0 0;
-			border-style: solid;
+	.blog-name {
+		font-weight: 700;
+	}
 
-			@media all and (min-width: $mdMinWidth) {
-				display: flex;
-				justify-content: space-between;
-			}
-
-			.site-name {
-
-				.blog-name {
-					font-weight: 700;
-				}
-
-				.site-copyright {
-					font-weight: 400;
-				}
-			}
-		}
+	.site-copyright {
+		font-weight: 400;
 	}
 }

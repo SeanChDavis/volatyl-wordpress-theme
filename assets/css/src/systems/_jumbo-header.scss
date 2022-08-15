@@ -1,41 +1,76 @@
 .jumbo-header {
 
-	.inner {
+	[class*="-title"] {
+		margin-bottom: 0;
+		max-width: 770px;
 
-		& [class*="-title"] {
-			margin-bottom: 0;
-			max-width: 770px;
-
-			@media all and (min-width: $lgMinWidth) {
-				max-width: 940px;
-			}
-
-			& + [class*="-meta"],
-			& + [class*="-description"] {
-				margin-top: .75rem;
-			}
+		@media all and (min-width: $lgMinWidth) {
+			max-width: 940px;
 		}
 
-		& [class*="-meta"],
-		& [class*="-description"] {
-			@include fontSmallest;
-			max-width: 765px;
-
-			@media all and (min-width: $smMinWidth) {
-				@include fontSmaller;
-			}
+		& + [class*="-meta"],
+		& + [class*="-description"] {
+			margin-top: .75rem;
 		}
+	}
 
-		& [class*="-content-container"] {
-			display: flex;
-			flex-direction: column;
-			gap: .5rem;
+	[class*="-meta"],
+	[class*="-description"] {
+		@include fontSmallest;
+		max-width: 765px;
 
-			@media all and (min-width: $mdMinWidth) {
-				align-items: center;
-				flex-direction: row;
-				gap: 1.5rem;
-				justify-content: space-between;
+		@media all and (min-width: $smMinWidth) {
+			@include fontSmaller;
+		}
+	}
+
+	[class*="-content-container"] {
+		display: flex;
+		flex-direction: column;
+		gap: .5rem;
+
+		@media all and (min-width: $mdMinWidth) {
+			align-items: center;
+			flex-direction: row;
+			gap: 1.5rem;
+			justify-content: space-between;
+		}
+	}
+}
+
+.archive {
+
+	.jumbo-header {
+
+		[class*="-title"] {
+			@include fontSmaller;
+			@include headingFont;
+			display: block;
+			font-weight: 700;
+			text-transform: uppercase;
+
+			span {
+				@include headingFont;
+				display: block;
+				font-size: 2rem;
+				font-weight: 700;
+				line-height: 1.25;
+				margin: 0;
+				max-width: 770px;
+				text-transform: none;
+
+				@media all and (min-width: $xsMinWidth) {
+					font-size: 2.66666rem;
+				}
+
+				@media all and (min-width: $smMinWidth) {
+					font-size: 3.33333rem;
+				}
+
+				@media all and (min-width: $lgMinWidth) {
+					font-size: 4rem;
+					max-width: 940px;
+				}
 			}
 		}
 	}
@@ -46,16 +81,13 @@
 	.jumbo-header {
 		text-align: center;
 
-		.inner {
+		[class*="-title"] {
+			margin: 0 auto .75rem;
+		}
 
-			& [class*="-title"] {
-				margin: 0 auto .75rem;
-			}
-
-			& [class*="-meta"],
-			& [class*="-description"] {
-				margin: 1rem auto 0;
-			}
+		[class*="-meta"],
+		[class*="-description"] {
+			margin: 1rem auto 0;
 		}
 	}
 }

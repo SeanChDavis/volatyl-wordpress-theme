@@ -4,12 +4,13 @@ button,
 [type="button"],
 [type="submit"],
 [type="reset"],
+.comment-reply-link,
 .wp-block-buttons > .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button {
 	@include headingFont;
 	@include fontSmaller;
 	border: none;
-	border-radius: 3px;
+	border-radius: 2px;
 	cursor: pointer;
 	display: inline-block;
 	font-weight: 600;
@@ -37,6 +38,7 @@ button,
 	}
 }
 
+/* Allow WordPress core buttons to match custom buttons with .v-large class */
 .wp-block-buttons {
 
 	&.v-large {
@@ -54,7 +56,7 @@ input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="r
 textarea {
 	border-style: solid;
 	border-width: 2px;
-	border-radius: 3px;
-	padding: .8em;
+	border-radius: 2px;
+	padding: calc(.8em - 1.17px) .8em;
 	vertical-align: bottom;
 }

@@ -26,7 +26,7 @@ if ( post_password_required() ) { return; }
 			?>
 		</span>
 		<?php the_comments_navigation(); ?>
-		<div class="comment-list">
+		<div class="comment-list v-margin-bottom-5">
 			<?php
 			wp_list_comments(
 				array(

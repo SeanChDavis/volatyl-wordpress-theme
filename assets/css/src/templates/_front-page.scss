@@ -2,7 +2,7 @@
 
 	.recent-posts {
 
-		.v-post-type-grid {
+		[class*="v-grid-columns_"] {
 
 			&:not(:last-child) {
 				margin-bottom: 3rem;

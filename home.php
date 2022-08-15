@@ -8,7 +8,7 @@ get_header();
 			if ( have_posts() ) :
 				?>
 				<span class="v-subdued-title v-margin-bottom-3"><?php _e( 'Most recently published', 'volatyl' ); ?></span>
-				<div class="v-post-type-grid">
+				<div class="v-margin-bottom-4">
 					<?php
 					$blog_grid_value = get_theme_mod( 'volatyl_blog_posts_grid_columns_rows' );
 					if ( empty( $blog_grid_value ) || 'default' === $blog_grid_value ) {

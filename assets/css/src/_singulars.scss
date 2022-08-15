@@ -1,6 +1,10 @@
 article,
 .v-content-container {
 
+	/**
+	 * Singulars use the jumbo header. The .entry-header element is only reached
+	 * from the fallback content/content.php template. That's rare.
+	 */
 	.entry-header {
 
 		.entry-title {
@@ -21,33 +25,6 @@ article,
 	}
 
 	.entry-content {
-
-		/* Match h2/.h2 size in post content */
-		h1, .h1,
-		h2, .h2 {
-			font-size: 1.65rem;
-			line-height: 1.3;
-
-			@media all and (min-width: $xsMinWidth) {
-				font-size: 2rem;
-			}
-
-			@media all and (min-width: $lgMinWidth) {
-				font-size: 2.5rem;
-			}
-		}
-
-		p {
-
-			& + h1, & + .h1,
-			& + h2, & + .h2 {
-				margin-top: 1.5rem;
-
-				@media all and (min-width: $smMinWidth) {
-					margin-top: 2rem;
-				}
-			}
-		}
 
 		ul {
 			margin: 0 0 0 1.125rem;
@@ -100,6 +77,49 @@ article,
 	}
 }
 
+.single {
+
+	article {
+
+		.entry-content {
+
+			/* Force h1/.h1 to match h2/.h2 size only in single post content */
+			h1, .h1,
+			h2, .h2 {
+
+				&:not(.jumbo) {
+					font-size: 1.65rem;
+					line-height: 1.3;
+
+					@media all and (min-width: $xsMinWidth) {
+						font-size: 2rem;
+					}
+
+					@media all and (min-width: $lgMinWidth) {
+						font-size: 2.5rem;
+					}
+				}
+			}
+
+			p {
+
+				& + h1, & + .h1,
+				& + h2, & + .h2 {
+
+					&:not(.jumbo) {
+						margin-top: 1.5rem;
+
+						@media all and (min-width: $smMinWidth) {
+							margin-top: 2rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Duplicate standard ul/ol spacing for use in custom page template content */
 .full-width-template,
 .page-width-template {
 

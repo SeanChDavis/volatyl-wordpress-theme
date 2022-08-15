@@ -3,7 +3,10 @@
 	/**
 	 * This GROUP block spacing is only be applied to the Full-width template
 	 * because it is used to build structured layouts. In all other contexts,
-	 * we don't want additional spacing.
+	 * we don't want additional spacing in the Group block.
+	 *
+	 * The Page-width template displays content that is already nested inside of
+	 * the theme's .inner class. Therefore, this additional spacing unneeded.
 	 */
 	.wp-block-group {
 		margin: 0;

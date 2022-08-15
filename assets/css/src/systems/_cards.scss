@@ -1,0 +1,83 @@
+[class*="-item-container"] {
+
+	// Shared styles across all cards
+	[class*="-item-title"] {
+		margin-bottom: 4px;
+	}
+
+	[class*="-item-meta"] {
+		@include fontSmallest;
+		display: block;
+		line-height: 1;
+
+		a {
+			text-decoration: none;
+
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	// Fully styled cards
+	&:not(.v-subdued) {
+		border-radius: 8px;
+
+		[class*="-item-content-wrap"] {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+
+			[class*="-item-media"] {
+
+				img {
+					border-radius: 8px 8px 0 0;
+					vertical-align: top;
+				}
+			}
+
+			[class*="-item-header"] {
+				padding: 1.25rem 1.25rem .75rem;
+
+				@media all and (min-width: $mdMinWidth) {
+					padding: 2rem 2rem 1rem;
+				}
+
+				[class*="-item-title"] {
+
+					a {
+						text-decoration: none;
+					}
+				}
+			}
+
+			[class*="-item-body"] {
+				flex: 1 0 auto;
+				padding: .5rem 1.25rem 1rem;
+
+				@media all and (min-width: $mdMinWidth) {
+					padding: .5rem 2rem 1.25rem;
+				}
+
+				[class*="-item-description"] {
+					@include fontSmall;
+				}
+			}
+
+			[class*="-item-footer"] {
+				@include fontSmaller;
+				padding: .5rem 1.25rem 1.75rem;
+
+				@media all and (min-width: $mdMinWidth) {
+					padding: .5rem 2rem 2.25rem;
+				}
+
+				[class*="button"] {
+					@include fontSmallest;
+				}
+			}
+		}
+	}
+}

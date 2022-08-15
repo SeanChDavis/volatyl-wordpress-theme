@@ -9,7 +9,7 @@ get_header();
 					<div class="search-content-container">
 						<div class="search-content-left">
 							<h1 class="archive-title">
-							<span class="v-subdued-title v-v-large">
+							<span class="v-subdued-title v-large">
 								<?php printf( esc_html__( 'Search results for:', 'volatyl' ) ); ?>
 							</span>
 								<?php echo esc_html( get_search_query() ); ?>
@@ -26,7 +26,7 @@ get_header();
 			<?php
 			if ( have_posts() && ! empty( get_search_query() ) ) :
 				?>
-				<div class="v-post-type-grid">
+				<div class="v-margin-bottom-4">
 					<div class="v-grid v-grid-columns_3 v-gap-2">
 						<?php
 						while ( have_posts() ) :

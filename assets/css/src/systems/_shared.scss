@@ -1,6 +1,4 @@
-/**
- * Common element styles used across the theme
- */
+// Common element styles used across the theme
 .alignleft,
 [class*="wp-block-"] .alignleft {
 	margin-bottom: 1.5rem;
@@ -48,22 +46,10 @@
 	text-align: center;
 }
 
-.v-post-type-grid {
-	margin-bottom: 1.5rem;
-
-	@media all and (min-width: $smMinWidth) {
-		margin-bottom: 3rem;
-	}
-}
-
 .v-dark-background {
 
 	input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
-	textarea {
-		border-style: solid;
-		border-width: 2px;
-	}
-
+	textarea,
 	.v-dark-background table,
 	.v-dark-background table th,
 	.v-dark-background table td {

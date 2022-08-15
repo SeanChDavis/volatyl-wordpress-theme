@@ -5,9 +5,7 @@
  * of your site. They're only here to help when needed.
  */
 
-/**
- * MARGINS
- */
+// Margin
 .v-margin-top-0 { margin-top: 0; }
 .v-margin-top-1 { margin-top: .5rem; }
 .v-margin-top-2 { margin-top: 1rem; }
@@ -106,9 +104,7 @@
 .v-margin-11 { margin: 5.5rem; }
 .v-margin-12 { margin: 6rem; }
 
-/**
- * PADDING
- */
+// Padding
 .v-padding-top-0 { padding-top: 0; }
 .v-padding-top-1 { padding-top: .5rem; }
 .v-padding-top-2 { padding-top: 1rem; }
@@ -207,4 +203,6 @@
 .v-padding-11 { padding: 5.5rem; }
 .v-padding-12 { padding: 6rem; }
 
+// Helper
 .v-no-spacing { margin: 0; padding: 0; }
+.v-horizontal-center { margin-left: auto; margin-right: auto; }
