@@ -8,35 +8,38 @@
 	.wp-block-group {
 		margin: 0;
 
-		& > .wp-block-group__inner-container {
-			@include innerSpacing;
+		&:not(.v-no-spacing) {
 
-			& > [class*="wp-block-"] {
+			& > .wp-block-group__inner-container {
+				@include innerSpacing;
 
-				&:last-child {
-					margin-bottom: 0;
+				& > [class*="wp-block-"] {
+
+					&:last-child {
+						margin-bottom: 0;
+					}
 				}
 			}
-		}
 
-		&.v-small {
+			&.v-small {
 
-			& > .wp-block-group__inner-container {
-				@include innerSpacingSmall;
+				& > .wp-block-group__inner-container {
+					@include innerSpacingSmall;
+				}
 			}
-		}
 
-		&.v-medium {
+			&.v-medium {
 
-			& > .wp-block-group__inner-container {
-				@include innerSpacingMedium;
+				& > .wp-block-group__inner-container {
+					@include innerSpacingMedium;
+				}
 			}
-		}
 
-		&.v-large {
+			&.v-large {
 
-			& > .wp-block-group__inner-container {
-				@include innerSpacingLarge;
+				& > .wp-block-group__inner-container {
+					@include innerSpacingLarge;
+				}
 			}
 		}
 	}

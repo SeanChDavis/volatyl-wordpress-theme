@@ -35,7 +35,7 @@ get_header();
 					<?php if ( get_option( 'page_for_posts' ) ) { ?>
 						<div class="v-grid v-grid-centered-column">
 							<div class="v-grid-centered-column-content">
-								<h5 class="v-subdued-title v-margin-0"><?php printf( __( 'More content from %s', 'volatyl' ), THEME_NAME ); ?></h5>
+								<span class="v-subdued-title v-margin-0"><?php printf( __( 'More content from %s', 'volatyl' ), THEME_NAME ); ?></span>
 								<p class="v-subdued-link-container">
 									<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>"><?php _e( 'Visit the blog', 'volatyl' ); ?></a>
 								</p>

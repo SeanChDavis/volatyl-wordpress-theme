@@ -1,5 +1,5 @@
-/* Catch all styles for general singulars */
-article {
+article,
+.v-content-container {
 
 	.entry-header {
 
@@ -21,6 +21,33 @@ article {
 	}
 
 	.entry-content {
+
+		/* Match h2/.h2 size in post content */
+		h1, .h1,
+		h2, .h2 {
+			font-size: 1.65rem;
+			line-height: 1.3;
+
+			@media all and (min-width: $xsMinWidth) {
+				font-size: 2rem;
+			}
+
+			@media all and (min-width: $lgMinWidth) {
+				font-size: 2.5rem;
+			}
+		}
+
+		p {
+
+			& + h1, & + .h1,
+			& + h2, & + .h2 {
+				margin-top: 1.5rem;
+
+				@media all and (min-width: $smMinWidth) {
+					margin-top: 2rem;
+				}
+			}
+		}
 
 		ul {
 			margin: 0 0 0 1.125rem;
@@ -69,6 +96,29 @@ article {
 
 		.entry-footer {
 			margin-bottom: 0;
+		}
+	}
+}
+
+.full-width-template,
+.page-width-template {
+
+	.v-content-container {
+
+		.wp-block-group {
+
+			.wp-block-group__inner-container {
+
+				& > ul,
+				& > ol {
+					margin-bottom: 1.25rem;
+					margin-top: 1.25rem;
+
+					@media all and (min-width: $smMinWidth) {
+						margin-bottom: 1.75rem;
+					}
+				}
+			}
 		}
 	}
 }

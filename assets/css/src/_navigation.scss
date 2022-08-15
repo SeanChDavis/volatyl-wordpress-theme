@@ -83,7 +83,7 @@
 			display: none;
 			flex-direction: row;
 
-			@media all and (min-width: $menuModalMinWidth) {
+			@media all and (min-width: $mdMinWidth) {
 				display: flex;
 				flex-wrap: wrap;
 			}
@@ -198,7 +198,7 @@
 			text-decoration: underline;
 		}
 
-		@media all and (min-width: $menuModalMinWidth) {
+		@media all and (min-width: $mdMinWidth) {
 			display: none;
 		}
 	}
@@ -281,7 +281,6 @@
 							}
 
 							& > .sub-menu {
-								background: rgba(255, 255, 255, .05);
 								border-radius: 6px;
 								margin-bottom: 1rem;
 								margin-top: 4px;

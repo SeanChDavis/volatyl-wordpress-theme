@@ -10,12 +10,10 @@
 	/**
 	 * This color controls the entire monochromatic color scheme
 	 */
-	--primary-hue: 236;
-
-	// --accent-hue: calc(var(--primary-hue) - 180);
+	--primary-hue: 280;
 
 	// Very light - based on primary hue
-	--primary-hue_lightest: hsl(var(--primary-hue) 13% 97%);
+	--primary-hue_lightest: hsl(var(--primary-hue) 13% 97.5%);
 	--primary-hue_lighter: hsl(var(--primary-hue) 13% 95%);
 	--primary-hue_light: hsl(var(--primary-hue) 13% 93%);
 
@@ -30,8 +28,11 @@
 	--dark-background-action-color: hsl(var(--primary-hue) 13% 84%);
 
 	// Subdued colors - based on primary hue
-	--subdued-text: hsl(var(--primary-hue) 13% 43%);
+	--subdued-text: hsl(var(--primary-hue) 13% 40%);
 	--subdued-border: hsl(var(--primary-hue) 13% 91%);
+
+	// Miscellaneous
+	--dark-menu-background: hsl(var(--primary-hue) 13% 27%);
 }
 
 /**
@@ -42,13 +43,15 @@
  * border-color, etc.). All theme color-related rules are placed in this file to
  * control the color scheme from a single location.
  */
-#page, table,
+#page,
 .wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link,
 .fat-footer pre, .fat-footer dl, .fat-footer code, .fat-footer kbd, .fat-footer tt, .fat-footer var {
 	background-color: #fff;
 }
 
-#site-navigation.toggled > #primary-menu > .menu-item-has-children > a:after {
+
+#site-navigation.toggled > #primary-menu > .menu-item-has-children > a:after,
+.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after {
 	border-bottom-color: #fff;
 }
 
@@ -57,7 +60,7 @@
 .wp-block-file .wp-block-file__button,
 table th, [class*="wp-block-"] > table th,
 .v-dark-background,
-.v-dark-background .site-title a,
+.v-dark-background a, .v-dark-background .site-title a,
 .v-dark-background .button, .v-dark-background .v-button, .v-dark-background button,
 .v-dark-background [type="button"], .v-dark-background [type="submit"], .v-dark-background [type="reset"],
 .v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link,
@@ -73,7 +76,9 @@ table th, [class*="wp-block-"] > table th,
 .wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:focus,
 .wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:hover,
 .wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1),
-.social-navigation, article .entry-content .wp-block-latest-comments,
+.social-navigation,
+article .entry-content .wp-block-latest-comments,
+.v-content-container .entry-content .wp-block-latest-comments,
 pre, dl, code, kbd, tt, var {
 	background-color: var(--primary-hue_lightest);
 }
@@ -92,7 +97,10 @@ pre, dl, code, kbd, tt, var {
 .v-dark-background h4, .v-dark-background .h4, .v-dark-background h6, .v-dark-background .h6,
 .v-dark-background blockquote, .v-dark-background address, .v-dark-background cite,
 .v-dark-background q, .v-dark-background code, .v-dark-background kbd,
-.v-dark-background tt, .v-dark-background var, .v-dark-background strike, .v-dark-background del {
+.v-dark-background tt, .v-dark-background var, .v-dark-background strike, .v-dark-background del,.v-dark-background .archive .archive-title,.v-dark-background  .v-subdued-title,
+.v-dark-background table caption,.v-dark-background  figure figcaption,
+.v-dark-background .wp-block-calendar .wp-calendar-nav,
+.v-dark-background [class*="wp-block-"] > label {
 	color: var(--primary-hue_light);
 }
 
@@ -100,7 +108,6 @@ pre, dl, code, kbd, tt, var {
 	border-bottom-color: var(--dark-background-action-color);
 }
 
-.v-dark-background a,
 .v-dark-background .site-title a:active,
 .v-dark-background .site-title a:focus,
 .v-dark-background .site-title a:hover,
@@ -179,13 +186,13 @@ a, h4, .h4, h6, .h6,
 	background-color: var(--action-color-alt);
 }
 
-#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu,
-#site-navigation.toggled > [class*="-container"].menu-modal-active #primary-menu {
-	background-color: hsl(var(--primary-hue) 13% 27%);
+blockquote, address, cite, q, code, kbd, tt, var, strike, del {
+	color: var(--action-color-alt);
 }
 
-blockquote, address, cite, q, code, kbd, tt, var, strike, del {
-	color: hsl(var(--primary-hue) 13% 27%);
+#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu,
+#site-navigation.toggled > [class*="-container"].menu-modal-active #primary-menu {
+	background-color: var(--dark-menu-background);
 }
 
 .button, .v-button, button, [type="button"], [type="submit"], [type="reset"],
@@ -193,7 +200,8 @@ blockquote, address, cite, q, code, kbd, tt, var, strike, del {
 .wp-block-file .wp-block-file__button,
 table th,
 [class*="wp-block-"] > table th,
-.v-dark-background, .v-dark-background table th {
+.v-dark-background, .v-dark-background table th,
+#site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu {
 	background-color: var(--primary-hue_dark);
 }
 
@@ -214,13 +222,8 @@ textarea, table, table th, table td,
 	color: var(--primary-hue_dark);
 }
 
-.v-dark-background pre, .v-dark-background dl, .v-dark-background code,
-.v-dark-background kbd, .v-dark-background tt, .v-dark-background var {
-	background-color: hsl(var(--primary-hue) 13% 20%);
-}
-
 html, body {
-	background: var(--primary-hue_darkest);
+	background-color: var(--primary-hue_darkest);
 }
 
 #comments .comments-title,

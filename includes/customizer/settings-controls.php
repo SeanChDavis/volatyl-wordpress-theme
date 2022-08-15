@@ -58,6 +58,18 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'description' => __( 'The following settings apply to the hero area on the front page.', 'volatyl' ),
 ) ) );
 
+// Hero color scheme
+$wp_customize->add_setting( 'volatyl_front_page_hero_dark', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox'
+) );
+$wp_customize->add_control( 'volatyl_front_page_hero_dark', array(
+	'label'    => __( 'Enable dark header & hero', 'volatyl' ),
+	'section'  => 'volatyl_front_page_template',
+	'priority' => 10,
+	'type'     => 'checkbox',
+) );
+
 // Hero alignment
 $wp_customize->add_setting( 'volatyl_front_page_hero_centered', array(
 	'default'           => 0,
@@ -66,7 +78,7 @@ $wp_customize->add_setting( 'volatyl_front_page_hero_centered', array(
 $wp_customize->add_control( 'volatyl_front_page_hero_centered', array(
 	'label'    => __( 'Center the hero content', 'volatyl' ),
 	'section'  => 'volatyl_front_page_template',
-	'priority' => 10,
+	'priority' => 20,
 	'type'     => 'checkbox',
 ) );
 
@@ -79,7 +91,7 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_custo
 	'label'       => __( 'Title', 'volatyl' ),
 	'section'     => 'volatyl_front_page_template',
 	'description' => __( 'By default, your WordPress site tagline is used as the front page hero title. To override that behavior, you may adjust the text here. This text will not change your WordPress site tagline.', 'volatyl' ),
-	'priority'    => 20,
+	'priority'    => 30,
 ) ) );
 
 // Hero Subtitle
@@ -91,7 +103,7 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_custo
 	'label'       => __( 'Subtitle', 'volatyl' ),
 	'section'     => 'volatyl_front_page_template',
 	'description' => sprintf( __( 'This content displays below the hero title in a paragraph format. 2-3 sentences looks best. Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>, <i>' ),
-	'priority'    => 30,
+	'priority'    => 40,
 ) ) );
 
 // Hero primary CTA button URL
@@ -103,7 +115,7 @@ $wp_customize->add_control( 'volatyl_front_page_hero_primary_cta_button_url', ar
 	'label'       => __( 'Primary call-to-action URL', 'volatyl' ),
 	'section'     => 'volatyl_front_page_template',
 	'description' => __( 'Set the URL of the primary call-to-action button.', 'volatyl' ),
-	'priority'    => 40,
+	'priority'    => 50,
 ) );
 
 // Hero primary CTA button text
@@ -115,7 +127,7 @@ $wp_customize->add_control( 'volatyl_front_page_hero_primary_cta_button_text', a
 	'label'       => __( 'Primary call-to-action text', 'volatyl' ),
 	'section'     => 'volatyl_front_page_template',
 	'description' => __( 'Set the text of the primary call-to-action button.', 'volatyl' ),
-	'priority'    => 50,
+	'priority'    => 60,
 ) );
 
 // Hero secondary CTA button URL
@@ -127,7 +139,7 @@ $wp_customize->add_control( 'volatyl_front_page_hero_secondary_cta_button_url', 
 	'label'       => __( 'Secondary call-to-action URL', 'volatyl' ),
 	'section'     => 'volatyl_front_page_template',
 	'description' => __( 'Set the URL of the secondary call-to-action link.', 'volatyl' ),
-	'priority'    => 60,
+	'priority'    => 70,
 ) );
 
 // Hero secondary CTA button text
@@ -139,7 +151,7 @@ $wp_customize->add_control( 'volatyl_front_page_hero_secondary_cta_button_text',
 	'label'       => __( 'Secondary call-to-action text', 'volatyl' ),
 	'section'     => 'volatyl_front_page_template',
 	'description' => __( 'Set the text of the secondary call-to-action link.', 'volatyl' ),
-	'priority'    => 70,
+	'priority'    => 80,
 ) );
 
 // Blog settings area

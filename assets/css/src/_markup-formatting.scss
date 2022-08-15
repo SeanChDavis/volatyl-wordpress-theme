@@ -90,7 +90,6 @@ h3, .h3 {
 h4, .h4 {
 	font-size: 1.125rem;
 	line-height: 1.4;
-	text-transform: uppercase;
 
 	@media all and (min-width: $xsMinWidth) {
 		font-size: 1.25rem;
@@ -182,7 +181,7 @@ address {
 	margin: 1.125rem 1.125rem 2rem;
 
 	@media all and (min-width: $smMinWidth) {
-		margin-bottom: 2.5rem;
+		margin-bottom: 2rem;
 	}
 
 }
@@ -372,7 +371,7 @@ pre {
 	padding: 1.625rem;
 
 	@media all and (min-width: $smMinWidth) {
-		padding: 2.5rem;
+		padding: 2rem;
 	}
 }
 
@@ -381,7 +380,7 @@ dl {
 	padding: 1.625rem;
 
 	@media all and (min-width: $smMinWidth) {
-		padding: 2.5rem;
+		padding: 2rem;
 	}
 
 	dt {
@@ -666,7 +665,8 @@ figure {
 }
 
 /* Deep nesting to override other strong selectors */
-article {
+article,
+.v-content-container {
 
 	.entry-content {
 

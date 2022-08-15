@@ -33,7 +33,7 @@ if ( ! function_exists( 'volatyl_hero' ) ) :
 		$secondary_cta_url  = $new_args['secondary_cta']['url'];
 		?>
 
-		<div class="v-site-hero">
+		<div class="site-hero">
 
 			<div class="inner v-large">
 

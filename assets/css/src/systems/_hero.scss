@@ -26,6 +26,16 @@
 			margin-bottom: 0;
 		}
 
+		a {
+			text-decoration: none;
+
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
 		& + .v-hero-primary-cta,
 		& + .v-hero-secondary-cta {
 			margin-top: 2rem;

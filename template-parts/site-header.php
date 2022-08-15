@@ -1,6 +1,12 @@
-<?php // The main site header ?>
+<?php // The main site header
 
-<header id="masthead" class="v-gray-background">
+$front_page_hero_color_scheme = 'v-gray-background';
+if ( ( is_front_page() && ! is_home() ) && get_theme_mod( 'volatyl_front_page_hero_dark', 0 ) ) {
+	$front_page_hero_color_scheme = 'v-dark-background';
+}
+?>
+
+<header id="masthead" class="<?php echo $front_page_hero_color_scheme; ?>">
 	<div class="site-header">
 		<div class="inner v-padding-y-2">
 			<div class="site-branding">
