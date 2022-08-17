@@ -10,33 +10,33 @@
 	/**
 	 * This color controls the entire monochromatic color scheme
 	 */
-	--monochromatic-hue-1: 220;
+	--monochromatic-hue-1: 155;
 
 	/**
 	 * This percentage controls the default saturation of all non-subdued colors
 	 */
-	--global-hue-saturation: 25%;
+	--global-hue-saturation: 23%;
 
-	// Very light - based on hue 1
+	/* Very light - based on hue 1 */
 	--monochromatic-hue-1_lightest: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 98%);
 	--monochromatic-hue-1_lighter: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 95%);
 	--monochromatic-hue-1_light: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 93%);
 
-	// Very dark - based on hue 1
-	--monochromatic-hue-1_dark: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 22%);
-	--monochromatic-hue-1_darker: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 20%);
-	--monochromatic-hue-1_darkest: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 18%);
+	/* Very dark - based on hue 1 */
+	--monochromatic-hue-1_dark: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 20%);
+	--monochromatic-hue-1_darker: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 18%);
+	--monochromatic-hue-1_darkest: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 16%);
 
-	// Action colors - based on hue 1
+	/* Action colors - based on hue 1 */
 	--action-color: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 37%);
 	--action-color-alt: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 32%);
 	--dark-background-action-color: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 84%);
 
-	// Subdued colors - based on hue 1
-	--subdued-text: hsl(var(--monochromatic-hue-1) 15% 45%);
+	/* Subdued colors - based on hue 1 */
+	--subdued-text: hsl(var(--monochromatic-hue-1) 15% 40%);
 	--subdued-border: hsl(var(--monochromatic-hue-1) 15% 91%);
 
-	// Miscellaneous
+	/* Miscellaneous */
 	--menu-background: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 27%);
 }
 
@@ -48,7 +48,7 @@
  * border-color, etc.). All theme color-related rules are placed in this file to
  * control the color scheme from a single location.
  */
-#page,
+#page-container,
 .wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link,
 .fat-footer pre, .fat-footer dl, .fat-footer code, .fat-footer kbd, .fat-footer tt, .fat-footer var {
 	background-color: #fff;
@@ -64,7 +64,12 @@
 .wp-block-buttons > .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button,
 table th, [class*="wp-block-"] > table th,
-.v-dark-background,
+.v-dark-background h1, .v-dark-background .h1,
+.v-dark-background h2, .v-dark-background .h2,
+.v-dark-background h3, .v-dark-background .h3,
+.v-dark-background h4, .v-dark-background .h4,
+.v-dark-background h5, .v-dark-background .h5,
+.v-dark-background h6, .v-dark-background .h6,
 .v-dark-background a, .v-dark-background .site-title a,
 .v-dark-background .button, .v-dark-background .v-button, .v-dark-background button,
 .v-dark-background [type="button"], .v-dark-background [type="submit"], .v-dark-background [type="reset"],
@@ -77,12 +82,12 @@ table th, [class*="wp-block-"] > table th,
 }
 
 .v-gray-background,
-.v-grid [class*="-item-container"]:not(.v-subdued),
+.v-grid .v-grid-item-container:not(.v-subdued),
 .wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:active,
 .wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:focus,
 .wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:hover,
 .wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1),
-.social-navigation,
+select, .social-navigation,
 article .entry-content .wp-block-latest-comments,
 .v-content-container .entry-content .wp-block-latest-comments,
 pre, dl, code, kbd, tt, var {
@@ -114,6 +119,7 @@ pre, dl, code, kbd, tt, var {
 	border-bottom-color: var(--dark-background-action-color);
 }
 
+.v-dark-background,
 .v-dark-background .site-title a:active,
 .v-dark-background .site-title a:focus,
 .v-dark-background .site-title a:hover,
@@ -131,44 +137,9 @@ table caption, figure figcaption,
 
 .v-dark-background input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):active,
 .v-dark-background input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):focus,
-.v-dark-background textarea:active, .v-dark-background textarea:focus {
+.v-dark-background textarea:active, .v-dark-background textarea:focus,
+.v-dark-background select:active, .v-dark-background select:focus {
 	border-color: var(--action-color-alt);
-}
-
-.button, .v-button, button, [type="button"], [type="submit"], [type="reset"], .comment-reply-link,
-.wp-block-buttons > .wp-block-button .wp-block-button__link,
-.wp-block-file .wp-block-file__button,
-.v-dark-background .button, .v-dark-background .v-button, .v-dark-background button,
-.v-dark-background [type="button"], .v-dark-background [type="submit"], .v-dark-background [type="reset"],
-.v-dark-background .comment-reply-link,
-.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link,
-.v-dark-background .wp-block-file .wp-block-file__button {
-	background-color: var(--action-color);
-}
-
-#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after {
-	border-bottom-color: var(--action-color);
-}
-
-.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link,
-.v-dark-background input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
-.v-dark-background textarea,
-input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):active,
-input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):focus,
-textarea:active, textarea:focus {
-	border-color: var(--action-color);
-}
-
-a, h4, .h4, h6, .h6,
-.site-title a:active, .site-title a:focus, .site-title a:hover,
-#site-navigation #primary-menu .menu-item a, #site-navigation .menu-toggle,
-.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link,
-.v-grid [class*="-item-container"]:not(.v-subdued) [class*="-item-title"] a:active,
-.v-grid [class*="-item-container"]:not(.v-subdued) [class*="-item-title"] a:focus,
-.v-grid [class*="-item-container"]:not(.v-subdued) [class*="-item-title"] a:hover,
-#comments .fn a:active, #comments .fn a:focus, #comments .fn a:hover,
-#comments #respond #reply-title small #cancel-comment-reply-link {
-	color: var(--action-color);
 }
 
 .button:active, .button:focus, .button:hover,
@@ -197,6 +168,40 @@ button:active, button:focus, button:hover,
 .v-dark-background .wp-block-file .wp-block-file__button:active,
 .v-dark-background .wp-block-file .wp-block-file__button:focus,
 .v-dark-background .wp-block-file .wp-block-file__button:hover {
+	background-color: var(--action-color);
+}
+
+#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after {
+	border-bottom-color: var(--action-color);
+}
+
+.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link,
+.v-dark-background input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
+.v-dark-background textarea, .v-dark-background select,
+input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):active,
+input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):focus,
+textarea:active, textarea:focus,
+select:active, select:focus {
+	border-color: var(--action-color);
+}
+
+a, h4, .h4, h6, .h6,
+.site-title a:active, .site-title a:focus, .site-title a:hover,
+#site-navigation #primary-menu .menu-item a, #site-navigation .menu-toggle,
+.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link,
+.v-grid .v-grid-item-container:not(.v-subdued) .v-grid-item-title a:active,
+.v-grid .v-grid-item-container:not(.v-subdued) .v-grid-item-title a:focus,
+.v-grid .v-grid-item-container:not(.v-subdued) .v-grid-item-title a:hover,
+#comments .fn a:active, #comments .fn a:focus, #comments .fn a:hover,
+#comments #respond #reply-title small #cancel-comment-reply-link {
+	color: var(--action-color);
+}
+
+.v-dark-background .button, .v-dark-background .v-button, .v-dark-background button,
+.v-dark-background [type="button"], .v-dark-background [type="submit"], .v-dark-background [type="reset"],
+.v-dark-background .comment-reply-link,
+.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link,
+.v-dark-background .wp-block-file .wp-block-file__button {
 	background-color: var(--action-color-alt);
 }
 
@@ -209,6 +214,9 @@ blockquote, address, cite, q, code, kbd, tt, var, strike, del {
 	background-color: var(--menu-background);
 }
 
+.button, .v-button, button, [type="button"], [type="submit"], [type="reset"], .comment-reply-link,
+.wp-block-buttons > .wp-block-button .wp-block-button__link,
+.wp-block-file .wp-block-file__button,
 table th,
 [class*="wp-block-"] > table th,
 .v-dark-background, .v-dark-background table th,
@@ -216,17 +224,18 @@ table th,
 	background-color: var(--monochromatic-hue-1_dark);
 }
 
+.blog-name a, .blog-name a:active, .blog-name a:focus, .blog-name a:hover,
 input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
-textarea, table, table th, table td,
+textarea, select, table, table th, table td,
 .wp-block-table.is-style-stripes table th, .wp-block-table.is-style-stripes table td,
-[class*="wp-block-"] > table th,
+[class*="wp-block-"] > table th, [class*="wp-block-"] > table td,
 .v-dark-background table, .v-dark-background table th, .v-dark-background table td {
 	border-color: var(--monochromatic-hue-1_dark);
 }
 
-#page, .site-title a, cite,
+#page-container, .site-title a, cite,
 .wp-block-separator.is-style-dots::before,
-.v-grid [class*="-item-container"] [class*="-item-title"] a,
+.v-grid .v-grid-item-container .v-grid-item-title a,
 .archive .archive-title span, #comments .fn a {
 	color: var(--monochromatic-hue-1_dark);
 }

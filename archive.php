@@ -1,20 +1,9 @@
-<?php // Shared by general archives like taxonomy terms, dates, authors, etc.
+<?php // The archive template - taxonomy terms, dates, authors, etc.
 get_header();
 ?>
 
 	<main id="main">
-		<header class="jumbo-header v-gray-background">
-			<div class="inner">
-				<?php if ( ! empty( get_the_archive_title() ) ) { ?>
-					<h1 class="archive-title v-margin-bottom-3"><?php echo the_archive_title(); ?></h1>
-				<?php } ?>
-				<?php if ( ! empty( get_the_archive_description() ) ) { ?>
-					<div class="archive-description">
-						<?php echo the_archive_description(); ?>
-					</div>
-				<?php } ?>
-			</div>
-		</header>
+		<?php get_template_part( 'template-parts/content', 'header' ); ?>
 		<div class="inner v-medium">
 			<?php
 			if ( have_posts() ) :

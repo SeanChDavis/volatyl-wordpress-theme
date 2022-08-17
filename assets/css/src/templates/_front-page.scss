@@ -1,31 +1,16 @@
-.front-page {
+.blog-posts-featured {
 
-	.recent-posts {
+	[class*="v-grid-columns_"] {
 
-		[class*="v-grid-columns_"] {
-
-			&:not(:last-child) {
-				margin-bottom: 3rem;
-
-				@media all and (min-width: $smMinWidth) {
-					margin-bottom: 4rem;
-				}
-
-				@media all and (min-width: $mdMinWidth) {
-					margin-bottom: 6rem;
-				}
-
-				@media all and (min-width: $lgMinWidth) {
-					margin-bottom: 8rem;
-				}
-			}
+		&:not(:last-child) {
+			margin-bottom: 2rem;
 		}
+	}
 
-		.v-grid-centered-column-content {
+	.v-grid-centered-column-content {
 
-			@media all and (min-width: $smMinWidth) {
-				text-align: center;
-			}
+		@media all and (min-width: $smMinWidth) {
+			text-align: center;
 		}
 	}
 }

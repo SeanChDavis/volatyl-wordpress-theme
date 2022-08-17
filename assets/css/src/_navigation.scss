@@ -1,9 +1,7 @@
 #site-navigation {
 
-	/* Persistent navigation rules */
 	#primary-menu {
 
-		// All menu items
 		.menu-item {
 			@include fontSmallest;
 			font-weight: 700;
@@ -16,7 +14,6 @@
 			}
 		}
 
-		// Top level menu item
 		& > .menu-item {
 
 			&.menu-item-has-children {
@@ -64,7 +61,11 @@
 
 							a {
 								font-size: 90%;
-								padding: 5px 0 5px 6px;
+								padding: 5px 0 5px 5px;
+
+								&:before {
+									content: "- ";
+								}
 							}
 						}
 					}
@@ -73,10 +74,7 @@
 		}
 	}
 
-	/**
-	 * Full desktop navigation
-	 * That means the menu display never had to be toggled
-	 */
+	/* Full desktop navigation */
 	&:not(.toggled) {
 
 		#primary-menu {
@@ -92,7 +90,6 @@
 				display: none;
 			}
 
-			// Top level menu item
 			& > .menu-item {
 
 				&.menu-item-has-children {
@@ -173,10 +170,7 @@
 		}
 	}
 
-	/**
-	 * Mobile navigation opener
-	 * The menu is closed by JavaScript click events on other elements
-	 */
+	/* Mobile navigation opener */
 	.menu-toggle {
 		@include bodyFont;
 		@include fontSmallest;
@@ -203,10 +197,7 @@
 		}
 	}
 
-	/**
-	 * Mobile navigation
-	 * Only reachable when the menu is opened by the toggle button
-	 */
+	/* Mobile navigation */
 	&.toggled {
 
 		& > [class*="-container"] {
@@ -262,7 +253,6 @@
 						}
 					}
 
-					// Top level menu item
 					& > .menu-item {
 
 						&:not(:last-child) {
@@ -325,9 +315,6 @@
 	}
 }
 
-/**
- * When logged in and the admin bar is present, adjust spacing
- */
 .logged-in {
 
 	#site-navigation {
@@ -339,7 +326,6 @@
 				&.menu-modal-active {
 					padding-top: calc(46px + 1.25rem);
 
-					/* WP admin bar breakpoint */
 					@media all and (min-width: 783px) {
 						padding-top: calc(32px + 1.25rem);
 					}

@@ -15,7 +15,7 @@
 @import "systems/_grid";
 @import "systems/_cards";
 @import "systems/_hero";
-@import "systems/_jumbo-header";
+@import "systems/_content-header";
 @import "systems/_shared";
 
 @import "_markup-formatting";
@@ -29,6 +29,7 @@
 @import "_singulars";
 
 @import "templates/_front-page";
+@import "templates/_blog";
 @import "templates/_full-width";
 
 /* Must remain at the bottom */

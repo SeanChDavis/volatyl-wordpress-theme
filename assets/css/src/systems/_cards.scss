@@ -1,16 +1,16 @@
-[class*="-item-container"] {
+.v-grid-item-container {
 
-	// Shared styles across all cards
-	[class*="-item-title"] {
+	.v-grid-item-title {
 		margin-bottom: 4px;
 	}
 
-	[class*="-item-meta"] {
+	.v-grid-item-meta {
 		@include fontSmallest;
 		display: block;
 		line-height: 1;
 
 		a {
+			font-weight: 700;
 			text-decoration: none;
 
 			&:active,
@@ -21,16 +21,15 @@
 		}
 	}
 
-	// Fully styled cards
 	&:not(.v-subdued) {
 		border-radius: 8px;
 
-		[class*="-item-content-wrap"] {
+		.v-grid-item-content-wrap {
 			display: flex;
 			flex-direction: column;
 			height: 100%;
 
-			[class*="-item-media"] {
+			.v-grid-item-media {
 
 				img {
 					border-radius: 8px 8px 0 0;
@@ -38,14 +37,14 @@
 				}
 			}
 
-			[class*="-item-header"] {
+			.v-grid-item-header {
 				padding: 1.25rem 1.25rem .75rem;
 
 				@media all and (min-width: $mdMinWidth) {
 					padding: 2rem 2rem 1rem;
 				}
 
-				[class*="-item-title"] {
+				.v-grid-item-title {
 
 					a {
 						text-decoration: none;
@@ -53,7 +52,7 @@
 				}
 			}
 
-			[class*="-item-body"] {
+			.v-grid-item-body {
 				flex: 1 0 auto;
 				padding: .5rem 1.25rem 1rem;
 
@@ -61,12 +60,12 @@
 					padding: .5rem 2rem 1.25rem;
 				}
 
-				[class*="-item-description"] {
+				.v-grid-item-description {
 					@include fontSmall;
 				}
 			}
 
-			[class*="-item-footer"] {
+			.v-grid-item-footer {
 				@include fontSmaller;
 				padding: .5rem 1.25rem 1.75rem;
 
@@ -74,7 +73,7 @@
 					padding: .5rem 2rem 2.25rem;
 				}
 
-				[class*="button"] {
+				.v-gridbutton {
 					@include fontSmallest;
 				}
 			}

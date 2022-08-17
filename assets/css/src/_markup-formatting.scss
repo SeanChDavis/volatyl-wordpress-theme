@@ -468,7 +468,6 @@ figure {
 	}
 }
 
-/* WP block elements */
 .wp-caption,
 .wp-block-image {
 	max-width: 100%;
@@ -636,7 +635,6 @@ figure {
 	}
 }
 
-/* Embeds */
 .twitter-tweet:not(.twitter-tweet-rendered) {
 	@include fontSmaller;
 	border-style: solid;
@@ -655,7 +653,6 @@ figure {
 	}
 }
 
-/* Deep nesting to override other strong selectors */
 article,
 .v-content-container {
 
@@ -740,10 +737,6 @@ article,
 	}
 }
 
-/**
- * Override core WordPress .is-stacked-on-mobile breakpoint.
- * 600px is too narrow. 992px is best for this theme based on horizontal spacing.
- */
 @media all and (max-width: 992px) {
 
 	.wp-block-media-text.is-stacked-on-mobile {

@@ -19,9 +19,9 @@ get_header();
 		) );
 		if ( ! empty( $recent_posts ) ) {
 			?>
-			<section class="recent-posts">
+			<section class="blog-posts-featured">
 				<div class="inner v-large">
-					<span class="v-subdued-title v-margin-bottom-3"><?php echo __( 'From the blog', 'volatyl' ); ?></span>
+					<span class="v-subdued-title v-margin-bottom-3"><?php echo __( 'Featured from the blog', 'volatyl' ); ?></span>
 					<div class="v-grid v-grid-columns_<?php echo $blog_grid_columns; ?>">
 						<?php
 						foreach ( $recent_posts as $post ) {

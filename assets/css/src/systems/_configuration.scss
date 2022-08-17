@@ -1,22 +1,23 @@
-// Min-width breakpoints
+/* Min-width breakpoints */
 $xsMinWidth: 560px;
 $smMinWidth: 768px;
 $mdMinWidth: 992px;
 $lgMinWidth: 1200px;
 
-// Heading font
+/* Heading font */
 @mixin headingFont {
 	font-family: 'Red Hat Display', 'Red Hat Text', sans-serif;
 }
 
-// Body font
+/* Body font */
 @mixin bodyFont {
 	font-family: 'Red Hat Text', sans-serif;
 }
 
-// Base font size
+/* Base font size */
 @mixin fontBase {
 	@include fontSmaller;
+	@include lineHeightBase;
 
 	@media all and (min-width: $xsMinWidth) {
 		@include fontSmall;
@@ -24,58 +25,40 @@ $lgMinWidth: 1200px;
 
 	@media all and (min-width: $smMinWidth) {
 		font-size: 18px;
-		@include lineHeightBase;
 	}
 }
 
-// Font size modifiers
+/* Font size modifiers */
 @mixin fontBig {
 	font-size: 19px;
-	@include lineHeightBase;
 }
 
 @mixin fontBigger {
 	font-size: 20px;
-	@include lineHeightBase;
 }
 
 @mixin fontBiggest {
 	font-size: 22px;
-	@include lineHeightBase;
 }
 
 @mixin fontSmall {
 	font-size: 16px;
-	@include lineHeightBase;
 }
 
 @mixin fontSmaller {
 	font-size: 15px;
-	@include lineHeightBase;
 }
 
 @mixin fontSmallest {
 	font-size: 13px;
-	@include lineHeightBase;
 }
 
-// Line height standard
+/* Line height default */
 @mixin lineHeightBase {
 	line-height: 1.6;
 }
 
-/**
- * Structure spacing, mainly the .inner class
- *
- * This CSS is made available through mixins because it is shared by custom theme
- * HTML and HTML implemented by WordPress core. The custom .inner class and the
- * .wp-block-group__inner-container class, which is a direct child of the
- * WordPress core Group block (.wp-block-group), share styles so that the custom
- * theme structure can be mimicked by creating a Group block in the Full-width
- * Page Template.
- *
- * The sole purpose of this section of mixins is to keep things DRY.
- */
+/* HTML structure spacing */
 @mixin innerSpacing {
 	margin: 0 auto;
 	max-width: calc(1200px + 1.25rem);
@@ -87,13 +70,11 @@ $lgMinWidth: 1200px;
 		padding-right: 2rem;
 	}
 
-	// Keep content width in check on tablets
 	@media all and (min-width: $smMinWidth) {
 		padding-left: 4rem;
 		padding-right: 4rem;
 	}
 
-	// Keep content width in check on tablets
 	@media all and (min-width: 860px) {
 		padding-left: 6rem;
 		padding-right: 6rem;

@@ -16,6 +16,7 @@ $wp_customize->add_control( 'volatyl_full_width_structure', array(
 	'type'     => 'checkbox',
 ) );
 
+
 /**
  * Content Configuration
  */
@@ -43,6 +44,7 @@ $wp_customize->add_control( 'volatyl_page_comments', array(
 	'type'     => 'checkbox',
 ) );
 
+
 /**
  * Color scheme
  */
@@ -56,6 +58,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'vola
 	'label' => __( 'Choose your primary brand color', 'volatyl' ),
 	'section'  => 'volatyl_color_scheme',
 ) ) );
+
 
 /**
  * Template - Front Page
@@ -199,9 +202,56 @@ $wp_customize->add_control( 'volatyl_front_page_blog_posts_grid_columns_rows', a
 	),
 ) );
 
+
 /**
  * Template - Blog
  */
+
+// Blog header
+$wp_customize->add_setting( 'volatyl_blog_header_settings', array(
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
+) );
+$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_blog_header_settings', array(
+	'label'       => __( 'Header Area', 'volatyl' ),
+	'section'     => 'volatyl_blog_template',
+	'priority'    => 1,
+	'description' => __( 'The following settings apply to the header area on the blog page.', 'volatyl' ),
+) ) );
+
+// Blog title
+$wp_customize->add_setting( 'volatyl_blog_title', array(
+	'default'           => NULL,
+	'sanitize_callback' => 'volatyl_sanitize_textarea_lite',
+) );
+$wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_customize, 'volatyl_blog_title', array(
+	'label'       => __( 'Title', 'volatyl' ),
+	'section'     => 'volatyl_blog_template',
+	'description' => __( 'By default, the standard page title is displayed. To override that title, add text here. This text will not change the actual title of the page or its slug.', 'volatyl' ),
+	'priority'    => 10,
+) ) );
+
+// Blog description
+$wp_customize->add_setting( 'volatyl_blog_description', array(
+	'default'           => NULL,
+	'sanitize_callback' => 'volatyl_sanitize_textarea_lite',
+) );
+$wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_customize, 'volatyl_blog_description', array(
+	'label'       => __( 'Description', 'volatyl' ),
+	'section'     => 'volatyl_blog_template',
+	'description' => sprintf( __( 'This content displays below the blog title in a paragraph format. 2-3 sentences looks best. Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>, <i>' ),
+	'priority'    => 20,
+) ) );
+
+// Blog settings area
+$wp_customize->add_setting( 'volatyl_blog_settings', array(
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
+) );
+$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_blog_settings', array(
+	'label'       => __( 'Blog Posts Area', 'volatyl' ),
+	'section'     => 'volatyl_blog_template',
+	'priority'    => 100,
+	'description' => __( 'The following settings apply to the blog posts grid on the blog page.', 'volatyl' ),
+) ) );
 
 // Posts per page (linked to core setting)
 $wp_customize->add_setting( 'volatyl_blog_posts_grid_columns_rows', array(
@@ -211,7 +261,7 @@ $wp_customize->add_setting( 'volatyl_blog_posts_grid_columns_rows', array(
 $wp_customize->add_control( 'volatyl_blog_posts_grid_columns_rows', array(
 	'label'    => __( 'How should blog posts display?', 'volatyl' ),
 	'section'  => 'volatyl_blog_template',
-	'priority' => 10,
+	'priority' => 110,
 	'type'     => 'select',
 	'choices'  => array(
 		'default' => __( 'Default (Settings -> Reading)', 'volatyl' ),
@@ -227,6 +277,90 @@ $wp_customize->add_control( 'volatyl_blog_posts_grid_columns_rows', array(
 		'3_5'     => __( '3 columns / 5 rows -- ( 15 total )', 'volatyl' ),
 	),
 ) );
+
+// Blog grid CTA settings
+$wp_customize->add_setting( 'volatyl_blog_grid_cta_settings', array(
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
+) );
+$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_blog_grid_cta_settings', array(
+	'label'       => __( 'Blog Grid Call-to-action Area', 'volatyl' ),
+	'section'     => 'volatyl_blog_template',
+	'priority'    => 200,
+	'description' => __( 'The following settings apply to the call-to-action area inside the blog grid.', 'volatyl' ),
+) ) );
+
+// Blog grid CTA
+$wp_customize->add_setting( 'volatyl_blog_grid_cta', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox'
+) );
+$wp_customize->add_control( 'volatyl_blog_grid_cta', array(
+	'label'    => __( 'Enable call-to-action in blog grid', 'volatyl' ),
+	'section'  => 'volatyl_blog_template',
+	'priority' => 210,
+	'type'     => 'checkbox',
+) );
+
+// Blog grid CTA color scheme
+$wp_customize->add_setting( 'volatyl_blog_grid_cta_color_scheme', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox'
+) );
+$wp_customize->add_control( 'volatyl_blog_grid_cta_color_scheme', array(
+	'label'    => __( 'Enable dark call-to-action', 'volatyl' ),
+	'section'  => 'volatyl_blog_template',
+	'priority' => 220,
+	'type'     => 'checkbox',
+) );
+
+// Blog grid CTA title
+$wp_customize->add_setting( 'volatyl_blog_grid_cta_title', array(
+	'default'           => NULL,
+	'sanitize_callback' => 'volatyl_sanitize_text',
+) );
+$wp_customize->add_control( 'volatyl_blog_grid_cta_title', array(
+	'label'       => __( 'Title', 'volatyl' ),
+	'section'     => 'volatyl_blog_template',
+	'description' => __( 'The large title text for the call-to-action area.', 'volatyl' ),
+	'priority'    => 230,
+) );
+
+// Blog grid CTA description
+$wp_customize->add_setting( 'volatyl_blog_grid_cta_description', array(
+	'default'           => NULL,
+	'sanitize_callback' => 'volatyl_sanitize_textarea_lite',
+) );
+$wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_customize, 'volatyl_blog_grid_cta_description', array(
+	'label'       => __( 'Description', 'volatyl' ),
+	'section'     => 'volatyl_blog_template',
+	'description' => sprintf( __( 'Describe to your visitor the reason for taking this particular action on your site. Consider 1-2 sentences Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>, <i>' ),
+	'priority'    => 240,
+) ) );
+
+// Blog grid CTA button URL
+$wp_customize->add_setting( 'volatyl_blog_grid_cta_button_url', array(
+	'default'           => NULL,
+	'sanitize_callback' => 'volatyl_sanitize_text',
+) );
+$wp_customize->add_control( 'volatyl_blog_grid_cta_button_url', array(
+	'label'       => __( 'Call-to-action button URL', 'volatyl' ),
+	'section'     => 'volatyl_blog_template',
+	'description' => __( 'Set the URL of the call-to-action button.', 'volatyl' ),
+	'priority'    => 250,
+) );
+
+// Blog grid CTA button text
+$wp_customize->add_setting( 'volatyl_blog_grid_cta_button_text', array(
+	'default'           => NULL,
+	'sanitize_callback' => 'volatyl_sanitize_text',
+) );
+$wp_customize->add_control( 'volatyl_blog_grid_cta_button_text', array(
+	'label'       => __( 'Call-to-action button text', 'volatyl' ),
+	'section'     => 'volatyl_blog_template',
+	'description' => __( 'Set the text of the call-to-action button.', 'volatyl' ),
+	'priority'    => 260,
+) );
+
 
 /**
  * Footer Areas
@@ -276,7 +410,7 @@ $wp_customize->add_setting( 'volatyl_footer_lead_description', array(
 $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_customize, 'volatyl_footer_lead_description', array(
 	'label'       => __( 'Description', 'volatyl' ),
 	'section'     => 'volatyl_footer_areas',
-	'description' => sprintf( __( 'Describe to our visitor the reason for taking this particular action on your site. Consider 1-2 sentences Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>, <i>' ),
+	'description' => sprintf( __( 'Describe to your visitor the reason for taking this particular action on your site. Consider 1-2 sentences Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>, <i>' ),
 	'priority'    => 30,
 ) ) );
 

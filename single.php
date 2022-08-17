@@ -1,21 +1,9 @@
-<?php // The standard WordPress single post template
+<?php // The single post template
 get_header();
 ?>
 
 	<main id="main">
-		<header class="jumbo-header v-gray-background">
-			<div class="inner">
-				<?php if ( ! empty( get_the_title() ) ) { ?>
-					<h1 class="singular-title"><?php echo get_the_title(); ?></h1>
-				<?php } ?>
-				<div class="entry-meta">
-					<?php
-					volatyl_posted_on();
-					volatyl_posted_by( $post->ID );
-					?>
-				</div>
-			</div>
-		</header>
+		<?php get_template_part( 'template-parts/content', 'header' ); ?>
 		<div class="inner v-medium">
 			<div class="main-content-wrap">
 				<div id="primary-content">

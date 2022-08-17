@@ -3,6 +3,7 @@ get_header();
 ?>
 
 	<main id="main">
+		<?php get_template_part( 'template-parts/content', 'header' ); ?>
 		<div class="inner v-medium">
 			<?php
 			if ( have_posts() ) :
@@ -22,7 +23,8 @@ get_header();
 						while ( have_posts() ) :
 							the_post();
 							get_template_part( 'content/content', 'grid-items' );
-						endwhile
+						endwhile;
+						get_template_part( 'template-parts/blog', 'grid-cta' );
 						?>
 					</div>
 				</div>

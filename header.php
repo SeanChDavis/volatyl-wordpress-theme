@@ -8,6 +8,6 @@
 </head>
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
-	<div id="page">
+	<div id="page-container">
 		<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'volatyl' ); ?></a>
 		<?php get_template_part( 'template-parts/site', 'header' ); ?>

@@ -1,6 +1,6 @@
-.jumbo-header {
+.content-header {
 
-	[class*="-title"] {
+	.content-title {
 		margin-bottom: 0;
 		max-width: 770px;
 
@@ -8,14 +8,14 @@
 			max-width: 940px;
 		}
 
-		& + [class*="-meta"],
-		& + [class*="-description"] {
+		& + .content-meta,
+		& + .content-description {
 			margin-top: .75rem;
 		}
 	}
 
-	[class*="-meta"],
-	[class*="-description"] {
+	.content-meta,
+	.content-description {
 		@include fontSmallest;
 		max-width: 765px;
 
@@ -24,25 +24,29 @@
 		}
 	}
 
-	[class*="-content-container"] {
+	.content-container {
 		display: flex;
 		flex-direction: column;
-		gap: .5rem;
+		row-gap: 2rem;
 
 		@media all and (min-width: $mdMinWidth) {
 			align-items: center;
 			flex-direction: row;
-			gap: 1.5rem;
+			column-gap: 1.5rem;
 			justify-content: space-between;
+
+			.content-left {
+				max-width: 60%;
+			}
 		}
 	}
 }
 
 .archive {
 
-	.jumbo-header {
+	.content-header {
 
-		[class*="-title"] {
+		.content-title {
 			@include fontSmaller;
 			@include headingFont;
 			display: block;
@@ -78,15 +82,15 @@
 
 .no-sidebar {
 
-	.jumbo-header {
+	.content-header {
 		text-align: center;
 
-		[class*="-title"] {
+		.content-title {
 			margin: 0 auto .75rem;
 		}
 
-		[class*="-meta"],
-		[class*="-description"] {
+		.content-meta,
+		.content-description {
 			margin: 1rem auto 0;
 		}
 	}

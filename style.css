@@ -172,22 +172,27 @@ template {
   /**
    * This color controls the entire monochromatic color scheme
    */
-  --monochromatic-hue-1: 220;
+  --monochromatic-hue-1: 155;
   /**
    * This percentage controls the default saturation of all non-subdued colors
    */
-  --global-hue-saturation: 25%;
+  --global-hue-saturation: 23%;
+  /* Very light - based on hue 1 */
   --monochromatic-hue-1_lightest: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 98%);
   --monochromatic-hue-1_lighter: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 95%);
   --monochromatic-hue-1_light: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 93%);
-  --monochromatic-hue-1_dark: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 22%);
-  --monochromatic-hue-1_darker: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 20%);
-  --monochromatic-hue-1_darkest: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 18%);
+  /* Very dark - based on hue 1 */
+  --monochromatic-hue-1_dark: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 20%);
+  --monochromatic-hue-1_darker: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 18%);
+  --monochromatic-hue-1_darkest: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 16%);
+  /* Action colors - based on hue 1 */
   --action-color: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 37%);
   --action-color-alt: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 32%);
   --dark-background-action-color: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 84%);
-  --subdued-text: hsl(var(--monochromatic-hue-1) 15% 45%);
+  /* Subdued colors - based on hue 1 */
+  --subdued-text: hsl(var(--monochromatic-hue-1) 15% 40%);
   --subdued-border: hsl(var(--monochromatic-hue-1) 15% 91%);
+  /* Miscellaneous */
   --menu-background: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 27%);
 }
 
@@ -199,7 +204,7 @@ template {
  * border-color, etc.). All theme color-related rules are placed in this file to
  * control the color scheme from a single location.
  */
-#page,
+#page-container,
 .wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link,
 .fat-footer pre, .fat-footer dl, .fat-footer code, .fat-footer kbd, .fat-footer tt, .fat-footer var {
   background-color: #fff;
@@ -214,7 +219,12 @@ template {
 .wp-block-buttons > .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button,
 table th, [class*=wp-block-] > table th,
-.v-dark-background,
+.v-dark-background h1, .v-dark-background .h1,
+.v-dark-background h2, .v-dark-background .h2,
+.v-dark-background h3, .v-dark-background .h3,
+.v-dark-background h4, .v-dark-background .h4,
+.v-dark-background h5, .v-dark-background .h5,
+.v-dark-background h6, .v-dark-background .h6,
 .v-dark-background a, .v-dark-background .site-title a,
 .v-dark-background .button, .v-dark-background .v-button, .v-dark-background button,
 .v-dark-background [type=button], .v-dark-background [type=submit], .v-dark-background [type=reset],
@@ -227,12 +237,12 @@ table th, [class*=wp-block-] > table th,
 }
 
 .v-gray-background,
-.v-grid [class*=-item-container]:not(.v-subdued),
+.v-grid .v-grid-item-container:not(.v-subdued),
 .wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:active,
 .wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:focus,
 .wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:hover,
 .wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1),
-.social-navigation,
+select, .social-navigation,
 article .entry-content .wp-block-latest-comments,
 .v-content-container .entry-content .wp-block-latest-comments,
 pre, dl, code, kbd, tt, var {
@@ -264,6 +274,7 @@ pre, dl, code, kbd, tt, var {
   border-bottom-color: var(--dark-background-action-color);
 }
 
+.v-dark-background,
 .v-dark-background .site-title a:active,
 .v-dark-background .site-title a:focus,
 .v-dark-background .site-title a:hover,
@@ -281,44 +292,9 @@ table caption, figure figcaption,
 
 .v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):active,
 .v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus,
-.v-dark-background textarea:active, .v-dark-background textarea:focus {
+.v-dark-background textarea:active, .v-dark-background textarea:focus,
+.v-dark-background select:active, .v-dark-background select:focus {
   border-color: var(--action-color-alt);
-}
-
-.button, .v-button, button, [type=button], [type=submit], [type=reset], .comment-reply-link,
-.wp-block-buttons > .wp-block-button .wp-block-button__link,
-.wp-block-file .wp-block-file__button,
-.v-dark-background .button, .v-dark-background .v-button, .v-dark-background button,
-.v-dark-background [type=button], .v-dark-background [type=submit], .v-dark-background [type=reset],
-.v-dark-background .comment-reply-link,
-.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link,
-.v-dark-background .wp-block-file .wp-block-file__button {
-  background-color: var(--action-color);
-}
-
-#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after {
-  border-bottom-color: var(--action-color);
-}
-
-.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link,
-.v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
-.v-dark-background textarea,
-input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):active,
-input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus,
-textarea:active, textarea:focus {
-  border-color: var(--action-color);
-}
-
-a, h4, .h4, h6, .h6,
-.site-title a:active, .site-title a:focus, .site-title a:hover,
-#site-navigation #primary-menu .menu-item a, #site-navigation .menu-toggle,
-.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link,
-.v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-title] a:active,
-.v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-title] a:focus,
-.v-grid [class*=-item-container]:not(.v-subdued) [class*=-item-title] a:hover,
-#comments .fn a:active, #comments .fn a:focus, #comments .fn a:hover,
-#comments #respond #reply-title small #cancel-comment-reply-link {
-  color: var(--action-color);
 }
 
 .button:active, .button:focus, .button:hover,
@@ -347,6 +323,40 @@ button:active, button:focus, button:hover,
 .v-dark-background .wp-block-file .wp-block-file__button:active,
 .v-dark-background .wp-block-file .wp-block-file__button:focus,
 .v-dark-background .wp-block-file .wp-block-file__button:hover {
+  background-color: var(--action-color);
+}
+
+#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after {
+  border-bottom-color: var(--action-color);
+}
+
+.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link,
+.v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
+.v-dark-background textarea, .v-dark-background select,
+input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):active,
+input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus,
+textarea:active, textarea:focus,
+select:active, select:focus {
+  border-color: var(--action-color);
+}
+
+a, h4, .h4, h6, .h6,
+.site-title a:active, .site-title a:focus, .site-title a:hover,
+#site-navigation #primary-menu .menu-item a, #site-navigation .menu-toggle,
+.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link,
+.v-grid .v-grid-item-container:not(.v-subdued) .v-grid-item-title a:active,
+.v-grid .v-grid-item-container:not(.v-subdued) .v-grid-item-title a:focus,
+.v-grid .v-grid-item-container:not(.v-subdued) .v-grid-item-title a:hover,
+#comments .fn a:active, #comments .fn a:focus, #comments .fn a:hover,
+#comments #respond #reply-title small #cancel-comment-reply-link {
+  color: var(--action-color);
+}
+
+.v-dark-background .button, .v-dark-background .v-button, .v-dark-background button,
+.v-dark-background [type=button], .v-dark-background [type=submit], .v-dark-background [type=reset],
+.v-dark-background .comment-reply-link,
+.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link,
+.v-dark-background .wp-block-file .wp-block-file__button {
   background-color: var(--action-color-alt);
 }
 
@@ -359,6 +369,9 @@ blockquote, address, cite, q, code, kbd, tt, var, strike, del {
   background-color: var(--menu-background);
 }
 
+.button, .v-button, button, [type=button], [type=submit], [type=reset], .comment-reply-link,
+.wp-block-buttons > .wp-block-button .wp-block-button__link,
+.wp-block-file .wp-block-file__button,
 table th,
 [class*=wp-block-] > table th,
 .v-dark-background, .v-dark-background table th,
@@ -366,17 +379,18 @@ table th,
   background-color: var(--monochromatic-hue-1_dark);
 }
 
+.blog-name a, .blog-name a:active, .blog-name a:focus, .blog-name a:hover,
 input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
-textarea, table, table th, table td,
+textarea, select, table, table th, table td,
 .wp-block-table.is-style-stripes table th, .wp-block-table.is-style-stripes table td,
-[class*=wp-block-] > table th,
+[class*=wp-block-] > table th, [class*=wp-block-] > table td,
 .v-dark-background table, .v-dark-background table th, .v-dark-background table td {
   border-color: var(--monochromatic-hue-1_dark);
 }
 
-#page, .site-title a, cite,
+#page-container, .site-title a, cite,
 .wp-block-separator.is-style-dots::before,
-.v-grid [class*=-item-container] [class*=-item-title] a,
+.v-grid .v-grid-item-container .v-grid-item-title a,
 .archive .archive-title span, #comments .fn a {
   color: var(--monochromatic-hue-1_dark);
 }
@@ -394,18 +408,13 @@ hr, .site-footer-content, .wp-block-quote, .wp-block-separator, .twitter-tweet {
   border-color: var(--subdued-border);
 }
 
-/**
- * Structure spacing, mainly the .inner class
- *
- * This CSS is made available through mixins because it is shared by custom theme
- * HTML and HTML implemented by WordPress core. The custom .inner class and the
- * .wp-block-group__inner-container class, which is a direct child of the
- * WordPress core Group block (.wp-block-group), share styles so that the custom
- * theme structure can be mimicked by creating a Group block in the Full-width
- * Page Template.
- *
- * The sole purpose of this section of mixins is to keep things DRY.
- */
+/* Min-width breakpoints */
+/* Heading font */
+/* Body font */
+/* Base font size */
+/* Font size modifiers */
+/* Line height default */
+/* HTML structure spacing */
 .v-grid {
   display: grid;
   gap: 1.5rem;
@@ -469,70 +478,67 @@ hr, .site-footer-content, .wp-block-quote, .wp-block-separator, .twitter-tweet {
   }
 }
 
-[class*=-item-container] [class*=-item-title] {
+.v-grid-item-container .v-grid-item-title {
   margin-bottom: 4px;
 }
-[class*=-item-container] [class*=-item-meta] {
+.v-grid-item-container .v-grid-item-meta {
   font-size: 13px;
-  line-height: 1.6;
   display: block;
   line-height: 1;
 }
-[class*=-item-container] [class*=-item-meta] a {
+.v-grid-item-container .v-grid-item-meta a {
+  font-weight: 700;
   text-decoration: none;
 }
-[class*=-item-container] [class*=-item-meta] a:active, [class*=-item-container] [class*=-item-meta] a:focus, [class*=-item-container] [class*=-item-meta] a:hover {
+.v-grid-item-container .v-grid-item-meta a:active, .v-grid-item-container .v-grid-item-meta a:focus, .v-grid-item-container .v-grid-item-meta a:hover {
   text-decoration: underline;
 }
-[class*=-item-container]:not(.v-subdued) {
+.v-grid-item-container:not(.v-subdued) {
   border-radius: 8px;
 }
-[class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] {
+.v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
-[class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-media] img {
+.v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-media img {
   border-radius: 8px 8px 0 0;
   vertical-align: top;
 }
-[class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-header] {
+.v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-header {
   padding: 1.25rem 1.25rem 0.75rem;
 }
 @media all and (min-width: 992px) {
-  [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-header] {
+  .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-header {
     padding: 2rem 2rem 1rem;
   }
 }
-[class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-header] [class*=-item-title] a {
+.v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-header .v-grid-item-title a {
   text-decoration: none;
 }
-[class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-body] {
+.v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-body {
   flex: 1 0 auto;
   padding: 0.5rem 1.25rem 1rem;
 }
 @media all and (min-width: 992px) {
-  [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-body] {
+  .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-body {
     padding: 0.5rem 2rem 1.25rem;
   }
 }
-[class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-body] [class*=-item-description] {
+.v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-body .v-grid-item-description {
   font-size: 16px;
-  line-height: 1.6;
 }
-[class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-footer] {
+.v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-footer {
   font-size: 15px;
-  line-height: 1.6;
   padding: 0.5rem 1.25rem 1.75rem;
 }
 @media all and (min-width: 992px) {
-  [class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-footer] {
+  .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-footer {
     padding: 0.5rem 2rem 2.25rem;
   }
 }
-[class*=-item-container]:not(.v-subdued) [class*=-item-content-wrap] [class*=-item-footer] [class*=button] {
+.v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-footer .v-gridbutton {
   font-size: 13px;
-  line-height: 1.6;
 }
 
 .v-hero.v-hero-centered {
@@ -574,13 +580,11 @@ hr, .site-footer-content, .wp-block-quote, .wp-block-separator, .twitter-tweet {
 }
 .v-hero .v-hero-subtitle {
   font-size: 15px;
-  line-height: 1.6;
   max-width: 665px;
 }
 @media all and (min-width: 560px) {
   .v-hero .v-hero-subtitle {
     font-size: 16px;
-    line-height: 1.6;
   }
 }
 @media all and (min-width: 768px) {
@@ -592,19 +596,16 @@ hr, .site-footer-content, .wp-block-quote, .wp-block-separator, .twitter-tweet {
 @media all and (min-width: 768px) and (min-width: 560px) {
   .v-hero .v-hero-subtitle {
     font-size: 16px;
-    line-height: 1.6;
   }
 }
 @media all and (min-width: 768px) and (min-width: 768px) {
   .v-hero .v-hero-subtitle {
     font-size: 18px;
-    line-height: 1.6;
   }
 }
 @media all and (min-width: 992px) {
   .v-hero .v-hero-subtitle {
     font-size: 19px;
-    line-height: 1.6;
   }
 }
 .v-hero .v-hero-subtitle:not(:last-child) {
@@ -631,7 +632,7 @@ hr, .site-footer-content, .wp-block-quote, .wp-block-separator, .twitter-tweet {
   .v-hero .v-hero-primary-cta .v-button,
 .v-hero .v-hero-primary-cta .button,
 .v-hero .v-hero-primary-cta button, .v-hero .v-hero-primary-cta.wp-block-buttons .wp-block-button .wp-block-button__link {
-    font-size: 1.15rem;
+    font-size: 1.3rem;
   }
 }
 .v-hero .v-hero-primary-cta.wp-block-buttons {
@@ -644,57 +645,56 @@ hr, .site-footer-content, .wp-block-quote, .wp-block-separator, .twitter-tweet {
 }
 .v-hero .v-hero-secondary-cta {
   font-size: 15px;
-  line-height: 1.6;
 }
 
-.jumbo-header [class*=-title] {
+.content-header .content-title {
   margin-bottom: 0;
   max-width: 770px;
 }
 @media all and (min-width: 1200px) {
-  .jumbo-header [class*=-title] {
+  .content-header .content-title {
     max-width: 940px;
   }
 }
-.jumbo-header [class*=-title] + [class*=-meta], .jumbo-header [class*=-title] + [class*=-description] {
+.content-header .content-title + .content-meta, .content-header .content-title + .content-description {
   margin-top: 0.75rem;
 }
-.jumbo-header [class*=-meta],
-.jumbo-header [class*=-description] {
+.content-header .content-meta,
+.content-header .content-description {
   font-size: 13px;
-  line-height: 1.6;
   max-width: 765px;
 }
 @media all and (min-width: 768px) {
-  .jumbo-header [class*=-meta],
-.jumbo-header [class*=-description] {
+  .content-header .content-meta,
+.content-header .content-description {
     font-size: 15px;
-    line-height: 1.6;
   }
 }
-.jumbo-header [class*=-content-container] {
+.content-header .content-container {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  row-gap: 2rem;
 }
 @media all and (min-width: 992px) {
-  .jumbo-header [class*=-content-container] {
+  .content-header .content-container {
     align-items: center;
     flex-direction: row;
-    gap: 1.5rem;
+    column-gap: 1.5rem;
     justify-content: space-between;
+  }
+  .content-header .content-container .content-left {
+    max-width: 60%;
   }
 }
 
-.archive .jumbo-header [class*=-title] {
+.archive .content-header .content-title {
   font-size: 15px;
-  line-height: 1.6;
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   display: block;
   font-weight: 700;
   text-transform: uppercase;
 }
-.archive .jumbo-header [class*=-title] span {
+.archive .content-header .content-title span {
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   display: block;
   font-size: 2rem;
@@ -705,30 +705,30 @@ hr, .site-footer-content, .wp-block-quote, .wp-block-separator, .twitter-tweet {
   text-transform: none;
 }
 @media all and (min-width: 560px) {
-  .archive .jumbo-header [class*=-title] span {
+  .archive .content-header .content-title span {
     font-size: 2.66666rem;
   }
 }
 @media all and (min-width: 768px) {
-  .archive .jumbo-header [class*=-title] span {
+  .archive .content-header .content-title span {
     font-size: 3.33333rem;
   }
 }
 @media all and (min-width: 1200px) {
-  .archive .jumbo-header [class*=-title] span {
+  .archive .content-header .content-title span {
     font-size: 4rem;
     max-width: 940px;
   }
 }
 
-.no-sidebar .jumbo-header {
+.no-sidebar .content-header {
   text-align: center;
 }
-.no-sidebar .jumbo-header [class*=-title] {
+.no-sidebar .content-header .content-title {
   margin: 0 auto 0.75rem;
 }
-.no-sidebar .jumbo-header [class*=-meta],
-.no-sidebar .jumbo-header [class*=-description] {
+.no-sidebar .content-header .content-meta,
+.no-sidebar .content-header .content-description {
   margin: 1rem auto 0;
 }
 
@@ -770,7 +770,6 @@ hr, .site-footer-content, .wp-block-quote, .wp-block-separator, .twitter-tweet {
 
 .v-subdued-title {
   font-size: 15px;
-  line-height: 1.6;
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   display: block;
   font-weight: 700;
@@ -779,7 +778,6 @@ hr, .site-footer-content, .wp-block-quote, .wp-block-separator, .twitter-tweet {
 
 .v-subdued-link-container a {
   font-size: 15px;
-  line-height: 1.6;
 }
 
 .v-text-align-center {
@@ -1047,7 +1045,6 @@ q {
 
 cite {
   font-size: 15px;
-  line-height: 1.6;
 }
 
 table,
@@ -1113,7 +1110,6 @@ table tfoot {
 }
 table caption {
   font-size: 15px;
-  line-height: 1.6;
   margin-top: 0.75rem;
 }
 table caption:first-child {
@@ -1146,7 +1142,6 @@ table caption:first-child {
 }
 .wp-block-calendar .wp-calendar-nav {
   font-size: 15px;
-  line-height: 1.6;
 }
 
 pre {
@@ -1217,13 +1212,11 @@ img {
 
 figure figcaption {
   font-size: 15px;
-  line-height: 1.6;
   font-style: italic;
 }
 
 .post-password-form {
   font-size: 15px;
-  line-height: 1.6;
 }
 .post-password-form label input {
   display: block;
@@ -1232,7 +1225,6 @@ figure figcaption {
 
 #searchform {
   font-size: 15px;
-  line-height: 1.6;
 }
 #searchform #searchsubmit {
   margin-top: 3px;
@@ -1243,7 +1235,6 @@ figure figcaption {
   }
 }
 
-/* WP block elements */
 .wp-caption,
 .wp-block-image {
   max-width: 100%;
@@ -1401,7 +1392,6 @@ figure figcaption {
 .wp-block-navigation > label,
 .wp-block-group > label {
   font-size: 15px;
-  line-height: 1.6;
 }
 
 .wp-block-buttons > .wp-block-button.is-style-outline {
@@ -1419,14 +1409,12 @@ figure figcaption {
 
 .wp-block-file .wp-block-file__button {
   font-size: 13px;
-  line-height: 1.6;
   line-height: 1;
 }
 
 .wp-block-search input,
 .wp-block-search button {
   font-size: 15px;
-  line-height: 1.6;
 }
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
   border: none;
@@ -1441,10 +1429,8 @@ figure figcaption {
   padding: 7px 9px;
 }
 
-/* Embeds */
 .twitter-tweet:not(.twitter-tweet-rendered) {
   font-size: 15px;
-  line-height: 1.6;
   border-style: solid;
   border-width: 2px;
   border-radius: 10px;
@@ -1459,7 +1445,6 @@ figure figcaption {
   margin-bottom: 1.125rem;
 }
 
-/* Deep nesting to override other strong selectors */
 @media all and (min-width: 560px) {
   article .entry-content .wp-block-archives-list.alignleft,
 article .entry-content .wp-block-latest-posts.alignleft,
@@ -1507,7 +1492,6 @@ article .entry-content .wp-block-latest-posts,
 article .entry-content .wp-block-latest-comments,
 .v-content-container .entry-content .wp-block-latest-comments {
   font-size: 15px;
-  line-height: 1.6;
   border-radius: 10px;
   margin-left: 0;
   padding: 1.125rem;
@@ -1533,7 +1517,6 @@ article .entry-content .wp-block-latest-comments > .wp-block-latest-comments__co
 article .entry-content .wp-block-latest-comments > .wp-block-latest-comments__comment .wp-block-latest-comments__comment-date,
 .v-content-container .entry-content .wp-block-latest-comments > .wp-block-latest-comments__comment .wp-block-latest-comments__comment-date {
   font-size: 13px;
-  line-height: 1.6;
 }
 article .entry-content .wp-block-latest-comments > .wp-block-latest-comments__comment .wp-block-latest-comments__comment-excerpt p,
 .v-content-container .entry-content .wp-block-latest-comments > .wp-block-latest-comments__comment .wp-block-latest-comments__comment-excerpt p {
@@ -1549,10 +1532,6 @@ article .entry-content .wp-block-social-links li,
   margin-top: 0;
 }
 
-/**
- * Override core WordPress .is-stacked-on-mobile breakpoint.
- * 600px is too narrow. 992px is best for this theme based on horizontal spacing.
- */
 @media all and (max-width: 992px) {
   .wp-block-media-text.is-stacked-on-mobile {
     grid-template-columns: 100% !important;
@@ -1566,10 +1545,6 @@ article .entry-content .wp-block-social-links li,
     grid-row: 2;
   }
 }
-html * {
-  box-sizing: border-box;
-}
-
 body {
   font-family: "Red Hat Text", sans-serif;
   font-size: 15px;
@@ -1579,50 +1554,31 @@ body {
 @media all and (min-width: 560px) {
   body {
     font-size: 16px;
-    line-height: 1.6;
   }
 }
 @media all and (min-width: 768px) {
   body {
     font-size: 18px;
-    line-height: 1.6;
   }
 }
-
-#page {
-  box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.05);
-  margin: 0 auto;
-  max-width: 1364px;
-  display: flex;
-  flex-direction: column;
-  /* Sticky footer preparation
-  height: 100vh;
-  */
+body * {
+  box-sizing: border-box;
 }
-
-/* Adjust sticky footer preparation when WP admin bar is present
-.logged-in {
-
-	#page {
-		height: calc( 100vh - 46px );
-
-		@media all and (min-width: 783px) {
-		    height: calc( 100vh - 32px );
-		}
-	}
-}
-
-// Create sticky footer
-main {
-	flex: 1 0 auto;
-}
-*/
-/* Added to the body when site HTML structure is set to full width */
-.full-width-structure #page {
+body.full-width-structure #page-container {
   max-width: 100%;
 }
+body.no-sidebar .main-content-wrap {
+  justify-content: space-around;
+}
 
-/* Separated from parent elements for easy override */
+#page-container {
+  box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1364px;
+}
+
 .inner {
   margin: 0 auto;
   max-width: calc(1200px + 1.25rem);
@@ -1678,7 +1634,6 @@ main {
   }
 }
 
-/* Separated from parent elements for easy override */
 .main-content-wrap {
   display: flex;
   flex-direction: column;
@@ -1698,10 +1653,28 @@ main {
   }
 }
 
-.no-sidebar .main-content-wrap {
-  justify-content: space-around;
-}
+/*
+Sticky footer preparation
+#page-container {
+	height: 100vh;
+*/
+/* Adjust sticky footer preparation when WP admin bar is present
+.logged-in {
 
+	#page-container {
+		height: calc( 100vh - 46px );
+
+		@media all and (min-width: 783px) {
+		    height: calc( 100vh - 32px );
+		}
+	}
+}
+*/
+/* Create sticky footer
+main {
+	flex: 1 0 auto;
+}
+*/
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -1728,23 +1701,12 @@ main {
 }
 
 #site-navigation {
-  /* Persistent navigation rules */
-  /**
-   * Full desktop navigation
-   * That means the menu display never had to be toggled
-   */
-  /**
-   * Mobile navigation opener
-   * The menu is closed by JavaScript click events on other elements
-   */
-  /**
-   * Mobile navigation
-   * Only reachable when the menu is opened by the toggle button
-   */
+  /* Full desktop navigation */
+  /* Mobile navigation opener */
+  /* Mobile navigation */
 }
 #site-navigation #primary-menu .menu-item {
   font-size: 13px;
-  line-height: 1.6;
   font-weight: 700;
   list-style-type: none;
   text-transform: uppercase;
@@ -1781,7 +1743,10 @@ main {
 }
 #site-navigation #primary-menu > .menu-item.menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu a {
   font-size: 90%;
-  padding: 5px 0 5px 6px;
+  padding: 5px 0 5px 5px;
+}
+#site-navigation #primary-menu > .menu-item.menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu a:before {
+  content: "- ";
 }
 #site-navigation:not(.toggled) #primary-menu {
   display: none;
@@ -1841,7 +1806,6 @@ main {
 #site-navigation .menu-toggle {
   font-family: "Red Hat Text", sans-serif;
   font-size: 13px;
-  line-height: 1.6;
   background: transparent;
   border: none;
   display: inline-block;
@@ -1906,7 +1870,6 @@ main {
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu .close-menu-modal {
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   font-size: 13px;
-  line-height: 1.6;
   display: block;
   line-height: 1;
 }
@@ -1945,12 +1908,8 @@ main {
   padding: 8px 0;
 }
 
-/**
- * When logged in and the admin bar is present, adjust spacing
- */
 .logged-in #site-navigation.toggled > [class*=-container].menu-modal-active {
   padding-top: calc(46px + 1.25rem);
-  /* WP admin bar breakpoint */
 }
 @media all and (min-width: 783px) {
   .logged-in #site-navigation.toggled > [class*=-container].menu-modal-active {
@@ -1960,7 +1919,6 @@ main {
 
 .posts-navigation .nav-links {
   font-size: 15px;
-  line-height: 1.6;
   display: flex;
   gap: 1rem;
   justify-content: space-between;
@@ -1983,12 +1941,10 @@ main {
 }
 .social-navigation .wp-block-social-links li.wp-social-link span {
   font-size: 15px;
-  line-height: 1.6;
 }
 
 .widget {
   font-size: 15px;
-  line-height: 1.6;
   margin-bottom: 1.25rem;
 }
 .widget h1, .widget .h1,
@@ -2115,7 +2071,6 @@ main {
 }
 #comments .comment {
   font-size: 16px;
-  line-height: 1.6;
 }
 #comments .comment.byuser .comment-author {
   position: relative;
@@ -2132,24 +2087,23 @@ main {
 #comments .comment .comment-body > *:not(:last-child) {
   margin-bottom: 2rem;
 }
-#comments .comment .comment-body .comment-meta .comment-author {
+#comments .comment .comment-body .comment-author {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-bottom: 0.25rem;
 }
-#comments .comment .comment-body .comment-meta .comment-author .avatar {
+#comments .comment .comment-body .comment-author .avatar {
   border-radius: 50%;
 }
-#comments .comment .comment-body .comment-meta .comment-author .fn a {
+#comments .comment .comment-body .comment-author .fn a {
   text-decoration: none;
 }
-#comments .comment .comment-body .comment-meta .comment-author .says {
+#comments .comment .comment-body .comment-author .says {
   display: none;
 }
-#comments .comment .comment-body .comment-meta .comment-metadata {
+#comments .comment .comment-body .comment-metadata {
   font-size: 13px;
-  line-height: 1.6;
 }
 #comments .comment .comment-body .comment-content ul {
   margin: 0 0 0 1.125rem;
@@ -2245,7 +2199,6 @@ main {
 }
 #comments .comment .comment-body .reply {
   font-size: 13px;
-  line-height: 1.6;
 }
 #comments .comment .comment-body .reply .comment-reply-link {
   font-size: 12px;
@@ -2271,9 +2224,6 @@ main {
   height: 36px;
   width: 36px;
 }
-#comments .comment .comment.byuser .comment-author {
-  position: relative;
-}
 #comments .comment .comment.byuser .comment-author:after {
   height: 15px;
   left: -3px;
@@ -2282,20 +2232,17 @@ main {
 }
 #comments .pingback {
   font-size: 15px;
-  line-height: 1.6;
 }
 #comments #respond #reply-title small {
   display: block;
 }
 #comments #respond #reply-title small #cancel-comment-reply-link {
   font-size: 15px;
-  line-height: 1.6;
   color: #ae1717;
 }
 #comments #respond #commentform .logged-in-as,
 #comments #respond #commentform .comment-notes {
   font-size: 15px;
-  line-height: 1.6;
 }
 #comments #respond #commentform .logged-in-as .required-field-message,
 #comments #respond #commentform .comment-notes .required-field-message {
@@ -2306,7 +2253,6 @@ main {
 #comments #respond #commentform .comment-form-email > label,
 #comments #respond #commentform .comment-form-url > label {
   font-size: 15px;
-  line-height: 1.6;
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   display: block;
   font-weight: 600;
@@ -2319,7 +2265,6 @@ main {
 #comments #respond #commentform .comment-form-url input,
 #comments #respond #commentform .comment-form-url textarea {
   font-size: 15px;
-  line-height: 1.6;
 }
 #comments #respond #commentform textarea#comment {
   max-width: 650px;
@@ -2332,11 +2277,9 @@ main {
 }
 #comments #respond #commentform .comment-form-cookies-consent label {
   font-size: 15px;
-  line-height: 1.6;
 }
 #comments #respond #commentform .required {
   font-size: 15px;
-  line-height: 1.6;
   color: #ae1717;
   font-weight: 400;
 }
@@ -2352,30 +2295,16 @@ button,
 .wp-block-file .wp-block-file__button {
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   font-size: 15px;
-  line-height: 1.6;
   border: none;
   border-radius: 2px;
   cursor: pointer;
   display: inline-block;
   font-weight: 600;
   letter-spacing: 1px;
-  line-height: 1.6;
+  line-height: 1;
   padding: 0.8em;
   text-decoration: none;
   text-transform: uppercase;
-}
-@media all and (min-width: 560px) {
-  .button,
-.v-button,
-button,
-[type=button],
-[type=submit],
-[type=reset],
-.comment-reply-link,
-.wp-block-buttons > .wp-block-button .wp-block-button__link,
-.wp-block-file .wp-block-file__button {
-    line-height: 1;
-  }
 }
 .button:active, .button:focus, .button:hover,
 .v-button:active,
@@ -2418,7 +2347,6 @@ button.v-large,
   }
 }
 
-/* Allow WordPress core buttons to match custom buttons with .v-large class */
 @media all and (min-width: 560px) {
   .wp-block-buttons.v-large > .wp-block-button .wp-block-button__link {
     font-size: 1.15rem;
@@ -2426,7 +2354,8 @@ button.v-large,
 }
 
 input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
-textarea {
+textarea,
+select {
   border-style: solid;
   border-width: 2px;
   border-radius: 2px;
@@ -2483,7 +2412,6 @@ textarea {
 @media all and (min-width: 560px) {
   .fat-footer-areas.alternate-layout.v-grid-columns_3 .fat-footer-area:first-child .widget, .fat-footer-areas.alternate-layout.v-grid-columns_4 .fat-footer-area:first-child .widget {
     font-size: 16px;
-    line-height: 1.6;
   }
 }
 @media all and (min-width: 560px) {
@@ -2533,7 +2461,6 @@ textarea {
 
 .site-footer-content {
   font-size: 15px;
-  line-height: 1.6;
   border-style: solid;
   border-width: 1px 0 0;
 }
@@ -2546,17 +2473,13 @@ textarea {
 .site-footer-content .blog-name {
   font-weight: 700;
 }
+.site-footer-content .blog-name a {
+  text-decoration: none;
+}
 .site-footer-content .site-copyright {
   font-weight: 400;
 }
 
-article,
-.v-content-container {
-  /**
-   * Singulars use the jumbo header. The .entry-header element is only reached
-   * from the fallback content/content.php template. That's rare.
-   */
-}
 article .entry-header .entry-title,
 .v-content-container .entry-header .entry-title {
   margin-bottom: 0.25rem;
@@ -2564,7 +2487,6 @@ article .entry-header .entry-title,
 article .entry-header .entry-meta,
 .v-content-container .entry-header .entry-meta {
   font-size: 15px;
-  line-height: 1.6;
 }
 article .post-thumbnail,
 .v-content-container .post-thumbnail {
@@ -2619,7 +2541,6 @@ article .entry-content > ul, article .entry-content > ol,
 article .entry-footer,
 .v-content-container .entry-footer {
   font-size: 15px;
-  line-height: 1.6;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -2629,9 +2550,6 @@ article:last-child .entry-footer,
   margin-bottom: 0;
 }
 
-.single article .entry-content {
-  /* Force h1/.h1 to match h2/.h2 size only in single post content */
-}
 .single article .entry-content h1:not(.jumbo), .single article .entry-content .h1:not(.jumbo),
 .single article .entry-content h2:not(.jumbo), .single article .entry-content .h2:not(.jumbo) {
   font-size: 1.65rem;
@@ -2658,7 +2576,6 @@ article:last-child .entry-footer,
   }
 }
 
-/* Duplicate standard ul/ol spacing for use in custom page template content */
 .full-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ul, .full-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ol,
 .page-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ul,
 .page-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ol {
@@ -2673,40 +2590,71 @@ article:last-child .entry-footer,
   }
 }
 
-.front-page .recent-posts [class*=v-grid-columns_]:not(:last-child) {
-  margin-bottom: 3rem;
+.blog-posts-featured [class*=v-grid-columns_]:not(:last-child) {
+  margin-bottom: 2rem;
 }
 @media all and (min-width: 768px) {
-  .front-page .recent-posts [class*=v-grid-columns_]:not(:last-child) {
-    margin-bottom: 4rem;
-  }
-}
-@media all and (min-width: 992px) {
-  .front-page .recent-posts [class*=v-grid-columns_]:not(:last-child) {
-    margin-bottom: 6rem;
-  }
-}
-@media all and (min-width: 1200px) {
-  .front-page .recent-posts [class*=v-grid-columns_]:not(:last-child) {
-    margin-bottom: 8rem;
-  }
-}
-@media all and (min-width: 768px) {
-  .front-page .recent-posts .v-grid-centered-column-content {
+  .blog-posts-featured .v-grid-centered-column-content {
     text-align: center;
   }
 }
 
-.full-width-template {
-  /**
-   * This GROUP block spacing is only be applied to the Full-width template
-   * because it is used to build structured layouts. In all other contexts,
-   * we don't want additional spacing in the Group block.
-   *
-   * The Page-width template displays content that is already nested inside of
-   * the theme's .inner class. Therefore, this additional spacing unneeded.
-   */
+.blog-grid-cta {
+  border-radius: 10px;
+  grid-row-end: 3;
+  grid-row-start: 2;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
 }
+@media all and (min-width: 768px) {
+  .blog-grid-cta {
+    grid-column-end: 3;
+    grid-column-start: 1;
+  }
+}
+@media all and (min-width: 992px) {
+  .blog-grid-cta {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+  }
+}
+.blog-grid-cta .cta-title,
+.blog-grid-cta .cta-description {
+  margin-left: auto;
+  margin-right: auto;
+}
+.blog-grid-cta .cta-title {
+  margin-bottom: 0;
+  max-width: 600px;
+}
+.blog-grid-cta .cta-title:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.blog-grid-cta .cta-description {
+  max-width: 765px;
+}
+.blog-grid-cta .cta-action {
+  margin-top: 2rem;
+}
+
+@media all and (min-width: 992px) {
+  .v-grid-columns_2 .blog-grid-cta {
+    grid-column-end: 3;
+    grid-column-start: 1;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .v-grid-columns_3 .blog-grid-cta {
+    grid-column-end: 4;
+    grid-column-start: 1;
+  }
+}
+
 .full-width-template .wp-block-group {
   margin: 0;
 }
@@ -2769,12 +2717,7 @@ article:last-child .entry-footer,
 }
 
 /* Must remain at the bottom */
-/**
- * OPTIONAL classes that help build layouts in the block editor and other
- * hard-to-reach areas of your site. Use them to keep things simple. Do not
- * use them if implementing the classes complicate the build or maintenance
- * of your site. They're only here to help when needed.
- */
+/* Margin */
 .v-margin-top-0 {
   margin-top: 0;
 }
@@ -2801,30 +2744,6 @@ article:last-child .entry-footer,
 
 .v-margin-top-6 {
   margin-top: 3rem;
-}
-
-.v-margin-top-7 {
-  margin-top: 3.5rem;
-}
-
-.v-margin-top-8 {
-  margin-top: 4rem;
-}
-
-.v-margin-top-9 {
-  margin-top: 4.5rem;
-}
-
-.v-margin-top-10 {
-  margin-top: 5rem;
-}
-
-.v-margin-top-11 {
-  margin-top: 5.5rem;
-}
-
-.v-margin-top-12 {
-  margin-top: 6rem;
 }
 
 .v-margin-right-0 {
@@ -2855,30 +2774,6 @@ article:last-child .entry-footer,
   margin-right: 3rem;
 }
 
-.v-margin-right-7 {
-  margin-right: 3.5rem;
-}
-
-.v-margin-right-8 {
-  margin-right: 4rem;
-}
-
-.v-margin-right-9 {
-  margin-right: 4.5rem;
-}
-
-.v-margin-right-10 {
-  margin-right: 5rem;
-}
-
-.v-margin-right-11 {
-  margin-right: 5.5rem;
-}
-
-.v-margin-right-12 {
-  margin-right: 6rem;
-}
-
 .v-margin-bottom-0 {
   margin-bottom: 0;
 }
@@ -2907,30 +2802,6 @@ article:last-child .entry-footer,
   margin-bottom: 3rem;
 }
 
-.v-margin-bottom-7 {
-  margin-bottom: 3.5rem;
-}
-
-.v-margin-bottom-8 {
-  margin-bottom: 4rem;
-}
-
-.v-margin-bottom-9 {
-  margin-bottom: 4.5rem;
-}
-
-.v-margin-bottom-10 {
-  margin-bottom: 5rem;
-}
-
-.v-margin-bottom-11 {
-  margin-bottom: 5.5rem;
-}
-
-.v-margin-bottom-12 {
-  margin-bottom: 6rem;
-}
-
 .v-margin-bottom-0 {
   margin-bottom: 0;
 }
@@ -2957,30 +2828,6 @@ article:last-child .entry-footer,
 
 .v-margin-left-6 {
   margin-left: 3rem;
-}
-
-.v-margin-left-7 {
-  margin-left: 3.5rem;
-}
-
-.v-margin-left-8 {
-  margin-left: 4rem;
-}
-
-.v-margin-left-9 {
-  margin-left: 4.5rem;
-}
-
-.v-margin-left-10 {
-  margin-left: 5rem;
-}
-
-.v-margin-left-11 {
-  margin-left: 5.5rem;
-}
-
-.v-margin-left-12 {
-  margin-left: 6rem;
 }
 
 .v-margin-x-0 {
@@ -3018,36 +2865,6 @@ article:last-child .entry-footer,
   margin-left: 3rem;
 }
 
-.v-margin-x-7 {
-  margin-right: 3.5rem;
-  margin-left: 3.5rem;
-}
-
-.v-margin-x-8 {
-  margin-right: 4rem;
-  margin-left: 4rem;
-}
-
-.v-margin-x-9 {
-  margin-right: 4.5rem;
-  margin-left: 4.5rem;
-}
-
-.v-margin-x-10 {
-  margin-right: 5rem;
-  margin-left: 5rem;
-}
-
-.v-margin-x-11 {
-  margin-right: 5.5rem;
-  margin-left: 5.5rem;
-}
-
-.v-margin-x-12 {
-  margin-right: 6rem;
-  margin-left: 6rem;
-}
-
 .v-margin-y-0 {
   margin-bottom: 0;
   margin-top: 0;
@@ -3083,36 +2900,6 @@ article:last-child .entry-footer,
   margin-top: 3rem;
 }
 
-.v-margin-y-7 {
-  margin-bottom: 3.5rem;
-  margin-top: 3.5rem;
-}
-
-.v-margin-y-8 {
-  margin-bottom: 4rem;
-  margin-top: 4rem;
-}
-
-.v-margin-y-9 {
-  margin-bottom: 4.5rem;
-  margin-top: 4.5rem;
-}
-
-.v-margin-y-10 {
-  margin-bottom: 5rem;
-  margin-top: 5rem;
-}
-
-.v-margin-y-11 {
-  margin-bottom: 5.5rem;
-  margin-top: 5.5rem;
-}
-
-.v-margin-y-12 {
-  margin-bottom: 6rem;
-  margin-top: 6rem;
-}
-
 .v-margin-0 {
   margin: 0;
 }
@@ -3141,30 +2928,7 @@ article:last-child .entry-footer,
   margin: 3rem;
 }
 
-.v-margin-7 {
-  margin: 3.5rem;
-}
-
-.v-margin-8 {
-  margin: 4rem;
-}
-
-.v-margin-9 {
-  margin: 4.5rem;
-}
-
-.v-margin-10 {
-  margin: 5rem;
-}
-
-.v-margin-11 {
-  margin: 5.5rem;
-}
-
-.v-margin-12 {
-  margin: 6rem;
-}
-
+/* Padding */
 .v-padding-top-0 {
   padding-top: 0;
 }
@@ -3191,30 +2955,6 @@ article:last-child .entry-footer,
 
 .v-padding-top-6 {
   padding-top: 3rem;
-}
-
-.v-padding-top-7 {
-  padding-top: 3.5rem;
-}
-
-.v-padding-top-8 {
-  padding-top: 4rem;
-}
-
-.v-padding-top-9 {
-  padding-top: 4.5rem;
-}
-
-.v-padding-top-10 {
-  padding-top: 5rem;
-}
-
-.v-padding-top-11 {
-  padding-top: 5.5rem;
-}
-
-.v-padding-top-12 {
-  padding-top: 6rem;
 }
 
 .v-padding-right-0 {
@@ -3245,30 +2985,6 @@ article:last-child .entry-footer,
   padding-right: 3rem;
 }
 
-.v-padding-right-7 {
-  padding-right: 3.5rem;
-}
-
-.v-padding-right-8 {
-  padding-right: 4rem;
-}
-
-.v-padding-right-9 {
-  padding-right: 4.5rem;
-}
-
-.v-padding-right-10 {
-  padding-right: 5rem;
-}
-
-.v-padding-right-11 {
-  padding-right: 5.5rem;
-}
-
-.v-padding-right-12 {
-  padding-right: 6rem;
-}
-
 .v-padding-bottom-0 {
   padding-bottom: 0;
 }
@@ -3297,30 +3013,6 @@ article:last-child .entry-footer,
   padding-bottom: 3rem;
 }
 
-.v-padding-bottom-7 {
-  padding-bottom: 3.5rem;
-}
-
-.v-padding-bottom-8 {
-  padding-bottom: 4rem;
-}
-
-.v-padding-bottom-9 {
-  padding-bottom: 4.5rem;
-}
-
-.v-padding-bottom-10 {
-  padding-bottom: 5rem;
-}
-
-.v-padding-bottom-11 {
-  padding-bottom: 5.5rem;
-}
-
-.v-padding-bottom-12 {
-  padding-bottom: 6.5rem;
-}
-
 .v-padding-left-0 {
   padding-left: 0;
 }
@@ -3347,30 +3039,6 @@ article:last-child .entry-footer,
 
 .v-padding-left-6 {
   padding-left: 3rem;
-}
-
-.v-padding-left-7 {
-  padding-left: 3.5rem;
-}
-
-.v-padding-left-8 {
-  padding-left: 4rem;
-}
-
-.v-padding-left-9 {
-  padding-left: 4.5rem;
-}
-
-.v-padding-left-10 {
-  padding-left: 5rem;
-}
-
-.v-padding-left-11 {
-  padding-left: 5.5rem;
-}
-
-.v-padding-left-12 {
-  padding-left: 6rem;
 }
 
 .v-padding-x-0 {
@@ -3408,36 +3076,6 @@ article:last-child .entry-footer,
   padding-left: 3rem;
 }
 
-.v-padding-x-7 {
-  padding-right: 3.5rem;
-  padding-left: 3.5rem;
-}
-
-.v-padding-x-8 {
-  padding-right: 4rem;
-  padding-left: 4rem;
-}
-
-.v-padding-x-9 {
-  padding-right: 4.5rem;
-  padding-left: 4.5rem;
-}
-
-.v-padding-x-10 {
-  padding-right: 5rem;
-  padding-left: 5rem;
-}
-
-.v-padding-x-11 {
-  padding-right: 5.5rem;
-  padding-left: 5.5rem;
-}
-
-.v-padding-x-12 {
-  padding-right: 6rem;
-  padding-left: 6rem;
-}
-
 .v-padding-y-0 {
   padding-bottom: 0;
   padding-top: 0;
@@ -3473,36 +3111,6 @@ article:last-child .entry-footer,
   padding-top: 3rem;
 }
 
-.v-padding-y-7 {
-  padding-bottom: 3.5rem;
-  padding-top: 3.5rem;
-}
-
-.v-padding-y-8 {
-  padding-bottom: 4rem;
-  padding-top: 4rem;
-}
-
-.v-padding-y-9 {
-  padding-bottom: 4.5rem;
-  padding-top: 4.5rem;
-}
-
-.v-padding-y-10 {
-  padding-bottom: 5rem;
-  padding-top: 5rem;
-}
-
-.v-padding-y-11 {
-  padding-bottom: 5.5rem;
-  padding-top: 5.5rem;
-}
-
-.v-padding-y-12 {
-  padding-bottom: 6rem;
-  padding-top: 6rem;
-}
-
 .v-padding-0 {
   padding: 0;
 }
@@ -3531,38 +3139,10 @@ article:last-child .entry-footer,
   padding: 3rem;
 }
 
-.v-padding-7 {
-  padding: 3.5rem;
-}
-
-.v-padding-8 {
-  padding: 4rem;
-}
-
-.v-padding-9 {
-  padding: 4.5rem;
-}
-
-.v-padding-10 {
-  padding: 5rem;
-}
-
-.v-padding-11 {
-  padding: 5.5rem;
-}
-
-.v-padding-12 {
-  padding: 6rem;
-}
-
+/* Helper */
 .v-no-spacing {
   margin: 0;
   padding: 0;
-}
-
-.v-horizontal-center {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,57 +1,35 @@
-html {
-
-	& * {
-		box-sizing: border-box;
-	}
-}
-
 body {
 	@include bodyFont;
 	@include fontBase;
 	overflow-wrap: break-word;
-}
 
-#page {
-	box-shadow: 0 0 50px 20px rgba(0, 0, 0, .05);
-	margin: 0 auto;
-	max-width: 1364px;
+	& * {
+		box-sizing: border-box;
+	}
 
+	&.full-width-structure {
 
-	display: flex;
-	flex-direction: column;
+		#page-container {
+			max-width: 100%;
+		}
+	}
 
-	/* Sticky footer preparation
-	height: 100vh;
-	*/
-}
+	&.no-sidebar {
 
-/* Adjust sticky footer preparation when WP admin bar is present
-.logged-in {
-
-	#page {
-		height: calc( 100vh - 46px );
-
-		@media all and (min-width: 783px) {
-		    height: calc( 100vh - 32px );
+		.main-content-wrap {
+			justify-content: space-around;
 		}
 	}
 }
 
-// Create sticky footer
-main {
-	flex: 1 0 auto;
-}
-*/
-
-/* Added to the body when site HTML structure is set to full width */
-.full-width-structure {
-
-	#page {
-		max-width: 100%;
-	}
+#page-container {
+	box-shadow: 0 0 50px 20px rgba(0, 0, 0, .05);
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	max-width: 1364px;
 }
 
-/* Separated from parent elements for easy override */
 .inner {
 	@include innerSpacing;
 
@@ -68,7 +46,6 @@ main {
 	}
 }
 
-/* Separated from parent elements for easy override */
 .main-content-wrap {
 	display: flex;
 	flex-direction: column;
@@ -89,9 +66,27 @@ main {
 	}
 }
 
-.no-sidebar {
+// TODO: find a way make the footer sticky without body height issues
 
-	.main-content-wrap {
-		justify-content: space-around;
+/*
+Sticky footer preparation
+#page-container {
+	height: 100vh;
+*/
+/* Adjust sticky footer preparation when WP admin bar is present
+.logged-in {
+
+	#page-container {
+		height: calc( 100vh - 46px );
+
+		@media all and (min-width: 783px) {
+		    height: calc( 100vh - 32px );
+		}
 	}
 }
+*/
+/* Create sticky footer
+main {
+	flex: 1 0 auto;
+}
+*/

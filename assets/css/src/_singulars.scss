@@ -1,10 +1,6 @@
 article,
 .v-content-container {
 
-	/**
-	 * Singulars use the jumbo header. The .entry-header element is only reached
-	 * from the fallback content/content.php template. That's rare.
-	 */
 	.entry-header {
 
 		.entry-title {
@@ -83,7 +79,6 @@ article,
 
 		.entry-content {
 
-			/* Force h1/.h1 to match h2/.h2 size only in single post content */
 			h1, .h1,
 			h2, .h2 {
 
@@ -119,7 +114,6 @@ article,
 	}
 }
 
-/* Duplicate standard ul/ol spacing for use in custom page template content */
 .full-width-template,
 .page-width-template {
 
