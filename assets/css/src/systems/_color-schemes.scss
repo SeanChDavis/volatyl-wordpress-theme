@@ -10,7 +10,7 @@
 	/**
 	 * This color controls the entire monochromatic color scheme
 	 */
-	--monochromatic-hue-1: 155;
+	--monochromatic-hue-1: 255;
 
 	/**
 	 * This percentage controls the default saturation of all non-subdued colors
@@ -28,12 +28,12 @@
 	--monochromatic-hue-1_darkest: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 16%);
 
 	/* Action colors - based on hue 1 */
-	--action-color: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 37%);
+	--action-color: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 28%);
 	--action-color-alt: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 32%);
 	--dark-background-action-color: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 84%);
 
 	/* Subdued colors - based on hue 1 */
-	--subdued-text: hsl(var(--monochromatic-hue-1) 15% 40%);
+	--subdued-text: hsl(var(--monochromatic-hue-1) 15% 43%);
 	--subdued-border: hsl(var(--monochromatic-hue-1) 15% 91%);
 
 	/* Miscellaneous */
@@ -54,9 +54,8 @@
 	background-color: #fff;
 }
 
-
-#site-navigation.toggled > #primary-menu > .menu-item-has-children > a:after,
-.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after {
+.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after,
+.v-dark-background #site-navigation #primary-menu > .menu-item-has-children > a:after {
 	border-bottom-color: #fff;
 }
 
@@ -64,6 +63,8 @@
 .wp-block-buttons > .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button,
 table th, [class*="wp-block-"] > table th,
+#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu a,
+#site-navigation.toggled > .menu-modal-active #primary-menu .menu-item a,
 .v-dark-background h1, .v-dark-background .h1,
 .v-dark-background h2, .v-dark-background .h2,
 .v-dark-background h3, .v-dark-background .h3,
@@ -76,8 +77,8 @@ table th, [class*="wp-block-"] > table th,
 .v-dark-background .comment-reply-link,
 .v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link,
 .v-dark-background .wp-block-file .wp-block-file__button,
-#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu a,
-#site-navigation.toggled > .menu-modal-active #primary-menu .menu-item a {
+.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item > a,
+.v-dark-background #site-navigation .menu-toggle {
 	color: #fff;
 }
 
@@ -115,7 +116,7 @@ pre, dl, code, kbd, tt, var {
 	color: var(--monochromatic-hue-1_light);
 }
 
-.v-dark-background #site-navigation #primary-menu > .menu-item-has-children > a:after {
+#site-navigation.toggled > #primary-menu > .menu-item-has-children > a:after {
 	border-bottom-color: var(--dark-background-action-color);
 }
 
@@ -123,8 +124,7 @@ pre, dl, code, kbd, tt, var {
 .v-dark-background .site-title a:active,
 .v-dark-background .site-title a:focus,
 .v-dark-background .site-title a:hover,
-.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item > a,
-.v-dark-background #site-navigation .menu-toggle,
+.v-dark-background .v-hero-secondary-cta a,
 #site-navigation #primary-menu > .menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu a {
 	color: var(--dark-background-action-color);
 }
@@ -135,11 +135,24 @@ table caption, figure figcaption,
 	color: var(--subdued-text);
 }
 
+.v-dark-background .button, .v-dark-background .v-button, .v-dark-background button,
+.v-dark-background [type="button"], .v-dark-background [type="submit"], .v-dark-background [type="reset"],
+.v-dark-background .comment-reply-link,
+.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link,
+.v-dark-background .wp-block-file .wp-block-file__button {
+	background-color: var(--action-color-alt);
+}
+
 .v-dark-background input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):active,
 .v-dark-background input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):focus,
 .v-dark-background textarea:active, .v-dark-background textarea:focus,
 .v-dark-background select:active, .v-dark-background select:focus {
 	border-color: var(--action-color-alt);
+}
+
+.v-grid-item-container .v-grid-item-meta a,
+blockquote, address, cite, q, code, kbd, tt, var, strike, del {
+	color: var(--action-color-alt);
 }
 
 .button:active, .button:focus, .button:hover,
@@ -197,20 +210,9 @@ a, h4, .h4, h6, .h6,
 	color: var(--action-color);
 }
 
-.v-dark-background .button, .v-dark-background .v-button, .v-dark-background button,
-.v-dark-background [type="button"], .v-dark-background [type="submit"], .v-dark-background [type="reset"],
-.v-dark-background .comment-reply-link,
-.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link,
-.v-dark-background .wp-block-file .wp-block-file__button {
-	background-color: var(--action-color-alt);
-}
-
-blockquote, address, cite, q, code, kbd, tt, var, strike, del {
-	color: var(--action-color-alt);
-}
-
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu,
-#site-navigation.toggled > [class*="-container"].menu-modal-active #primary-menu {
+#site-navigation.toggled > [class*="-container"].menu-modal-active #primary-menu,
+.close-menu-modal.v-button {
 	background-color: var(--menu-background);
 }
 
@@ -220,7 +222,8 @@ blockquote, address, cite, q, code, kbd, tt, var, strike, del {
 table th,
 [class*="wp-block-"] > table th,
 .v-dark-background, .v-dark-background table th,
-#site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu {
+#site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu,
+.close-menu-modal.v-button:active, .close-menu-modal.v-button:focus, .close-menu-modal.v-button:hover {
 	background-color: var(--monochromatic-hue-1_dark);
 }
 
@@ -235,7 +238,7 @@ textarea, select, table, table th, table td,
 
 #page-container, .site-title a, cite,
 .wp-block-separator.is-style-dots::before,
-.v-grid .v-grid-item-container .v-grid-item-title a,
+.v-grid-item-title a,
 .archive .archive-title span, #comments .fn a {
 	color: var(--monochromatic-hue-1_dark);
 }
@@ -249,6 +252,6 @@ html, body {
 #comments .comment:not(:last-child),
 #comments .comment .comment:not(:last-child),
 #comments .pingback:not(:last-child),
-hr, .site-footer-content, .wp-block-quote, .wp-block-separator, .twitter-tweet {
+hr, .social-media-footer-area, .wp-block-quote, .wp-block-separator, .twitter-tweet {
 	border-color: var(--subdued-border);
 }

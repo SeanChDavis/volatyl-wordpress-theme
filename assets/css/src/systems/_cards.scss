@@ -1,28 +1,18 @@
 .v-grid-item-container {
 
 	.v-grid-item-title {
-		margin-bottom: 4px;
+		margin-bottom: 8px;
 	}
 
 	.v-grid-item-meta {
 		@include fontSmallest;
 		display: block;
+		font-weight: 600;
 		line-height: 1;
-
-		a {
-			font-weight: 700;
-			text-decoration: none;
-
-			&:active,
-			&:focus,
-			&:hover {
-				text-decoration: underline;
-			}
-		}
 	}
 
 	&:not(.v-subdued) {
-		border-radius: 8px;
+		border-radius: 10px;
 
 		.v-grid-item-content-wrap {
 			display: flex;
@@ -32,16 +22,16 @@
 			.v-grid-item-media {
 
 				img {
-					border-radius: 8px 8px 0 0;
+					border-radius: 10px 10px 0 0;
 					vertical-align: top;
 				}
 			}
 
 			.v-grid-item-header {
-				padding: 1.25rem 1.25rem .75rem;
+				padding: 1.25rem 1.25rem 1rem;
 
 				@media all and (min-width: $mdMinWidth) {
-					padding: 2rem 2rem 1rem;
+					padding: 2rem 2rem 1.25em;
 				}
 
 				.v-grid-item-title {
@@ -53,15 +43,13 @@
 			}
 
 			.v-grid-item-body {
+				@include fontSmall;
 				flex: 1 0 auto;
-				padding: .5rem 1.25rem 1rem;
+				padding: 0 1.25rem 1.5rem;
 
 				@media all and (min-width: $mdMinWidth) {
-					padding: .5rem 2rem 1.25rem;
-				}
-
-				.v-grid-item-description {
-					@include fontSmall;
+					padding-left: 2rem;
+					padding-right: 2rem;
 				}
 			}
 
@@ -73,7 +61,7 @@
 					padding: .5rem 2rem 2.25rem;
 				}
 
-				.v-gridbutton {
+				.v-button {
 					@include fontSmallest;
 				}
 			}

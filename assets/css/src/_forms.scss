@@ -10,7 +10,7 @@ button,
 	@include headingFont;
 	@include fontSmaller;
 	border: none;
-	border-radius: 2px;
+	border-radius: 4px;
 	cursor: pointer;
 	display: inline-block;
 	font-weight: 600;
@@ -52,7 +52,7 @@ textarea,
 select {
 	border-style: solid;
 	border-width: 2px;
-	border-radius: 2px;
+	border-radius: 4px;
 	padding: calc(.8em - 1.17px) .8em;
 	vertical-align: bottom;
 }

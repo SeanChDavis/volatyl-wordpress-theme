@@ -27,7 +27,7 @@
 }
 
 .v-subdued-title {
-	@include fontSmaller;
+	@include fontSmall;
 	@include headingFont;
 	display: block;
 	font-weight: 700;
@@ -37,7 +37,7 @@
 .v-subdued-link-container {
 
 	a {
-		@include fontSmaller;
+		@include fontSmall;
 	}
 }
 

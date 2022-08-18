@@ -76,12 +76,12 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 ) ) );
 
 // Hero color scheme
-$wp_customize->add_setting( 'volatyl_front_page_hero_dark', array(
+$wp_customize->add_setting( 'volatyl_front_page_hero_light', array(
 	'default'           => 0,
 	'sanitize_callback' => 'volatyl_sanitize_checkbox'
 ) );
-$wp_customize->add_control( 'volatyl_front_page_hero_dark', array(
-	'label'    => __( 'Enable dark header & hero', 'volatyl' ),
+$wp_customize->add_control( 'volatyl_front_page_hero_light', array(
+	'label'    => __( 'Enable light header & hero', 'volatyl' ),
 	'section'  => 'volatyl_front_page_template',
 	'priority' => 10,
 	'type'     => 'checkbox',
@@ -99,7 +99,7 @@ $wp_customize->add_control( 'volatyl_front_page_hero_centered', array(
 	'type'     => 'checkbox',
 ) );
 
-// Hero Title
+// Hero title
 $wp_customize->add_setting( 'volatyl_front_page_hero_title', array(
 	'default'           => NULL,
 	'sanitize_callback' => 'volatyl_sanitize_textarea_lite',
@@ -111,7 +111,7 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_custo
 	'priority'    => 30,
 ) ) );
 
-// Hero Subtitle
+// Hero subtitle
 $wp_customize->add_setting( 'volatyl_front_page_hero_subtitle', array(
 	'default'           => NULL,
 	'sanitize_callback' => 'volatyl_sanitize_textarea_lite',
@@ -184,7 +184,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 
 // Blog posts grid display
 $wp_customize->add_setting( 'volatyl_front_page_blog_posts_grid_columns_rows', array(
-	'default'           => '2_2',
+	'default'           => '3_1',
 	'sanitize_callback' => 'volatyl_sanitize_select',
 ) );
 $wp_customize->add_control( 'volatyl_front_page_blog_posts_grid_columns_rows', array(
@@ -255,7 +255,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 
 // Posts per page (linked to core setting)
 $wp_customize->add_setting( 'volatyl_blog_posts_grid_columns_rows', array(
-	'default'           => 'default',
+	'default'           => '3_3',
 	'sanitize_callback' => 'volatyl_sanitize_text',
 ) );
 $wp_customize->add_control( 'volatyl_blog_posts_grid_columns_rows', array(

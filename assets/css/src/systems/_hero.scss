@@ -1,3 +1,10 @@
+.site-hero {
+
+	.inner {
+		padding-bottom: 5rem;
+	}
+}
+
 .v-hero {
 
 	&.v-hero-centered {
@@ -41,19 +48,11 @@
 	}
 
 	.v-hero-subtitle {
-		@include fontSmaller;
+		@include fontBig;
 		max-width: 665px;
 
-		@media all and (min-width: $xsMinWidth) {
-			@include fontSmall;
-		}
-
-		@media all and (min-width: $smMinWidth) {
-			@include fontBase;
-		}
-
 		@media all and (min-width: $mdMinWidth) {
-			@include fontBig;
+			@include fontBigger;
 		}
 
 		&:not(:last-child) {
@@ -94,6 +93,6 @@
 	}
 
 	.v-hero-secondary-cta {
-		@include fontSmaller;
+		@include fontSmall;
 	}
 }

@@ -16,11 +16,11 @@
 
 	.content-meta,
 	.content-description {
-		@include fontSmallest;
+		@include fontSmall;
 		max-width: 765px;
 
-		@media all and (min-width: $smMinWidth) {
-			@include fontSmaller;
+		@media all and (min-width: $mdMinWidth) {
+			@include fontBase;
 		}
 	}
 

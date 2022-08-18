@@ -100,7 +100,7 @@
 		siteNavigation.classList.toggle("toggled");
 		menuModalOuter.classList.add("menu-modal-active","v-padding-2");
 
-		closeButton.classList.add('close-menu-modal','v-margin-top-4');
+		closeButton.classList.add('close-menu-modal','v-button','v-margin-top-4');
 		closeButton.textContent = "close menu";
 		menuModalInner.appendChild(closeButton);
 

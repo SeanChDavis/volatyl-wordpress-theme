@@ -5,7 +5,7 @@ get_header();
 	<main id="main">
 		<?php
 		$blog_grid_name  = 'volatyl_front_page_blog_posts_grid_columns_rows';
-		$blog_grid_value = get_theme_mod( $blog_grid_name );
+		$blog_grid_value = get_theme_mod( $blog_grid_name, '3_1' );
 		if ( empty( $blog_grid_value ) ) {
 			$blog_grid_post_count = 4;
 			$blog_grid_columns    = 2;
@@ -21,7 +21,7 @@ get_header();
 			?>
 			<section class="blog-posts-featured">
 				<div class="inner v-large">
-					<span class="v-subdued-title v-margin-bottom-3"><?php echo __( 'Featured from the blog', 'volatyl' ); ?></span>
+					<span class="v-subdued-title v-margin-bottom-3"><?php echo __( 'From the blog', 'volatyl' ); ?></span>
 					<div class="v-grid v-grid-columns_<?php echo $blog_grid_columns; ?>">
 						<?php
 						foreach ( $recent_posts as $post ) {
@@ -30,16 +30,6 @@ get_header();
 						wp_reset_query();
 						?>
 					</div>
-					<?php if ( get_option( 'page_for_posts' ) ) { ?>
-						<div class="v-grid v-grid-centered-column">
-							<div class="v-grid-centered-column-content">
-								<span class="v-subdued-title v-margin-0"><?php printf( __( 'More content from %s', 'volatyl' ), THEME_NAME ); ?></span>
-								<p class="v-subdued-link-container">
-									<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>"><?php _e( 'Visit the blog', 'volatyl' ); ?></a>
-								</p>
-							</div>
-						</div>
-					<?php } ?>
 				</div>
 			</section>
 			<?php

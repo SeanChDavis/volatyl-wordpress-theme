@@ -16,14 +16,10 @@ $lgMinWidth: 1200px;
 
 /* Base font size */
 @mixin fontBase {
-	@include fontSmaller;
+	@include fontSmall;
 	@include lineHeightBase;
 
 	@media all and (min-width: $xsMinWidth) {
-		@include fontSmall;
-	}
-
-	@media all and (min-width: $smMinWidth) {
 		font-size: 18px;
 	}
 }
@@ -50,7 +46,7 @@ $lgMinWidth: 1200px;
 }
 
 @mixin fontSmallest {
-	font-size: 13px;
+	font-size: 14px;
 }
 
 /* Line height default */

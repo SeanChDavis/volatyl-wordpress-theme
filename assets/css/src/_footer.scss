@@ -50,20 +50,6 @@
 
 	&.alternate-layout {
 
-		@media all and (min-width: $xsMinWidth) {
-
-			&.v-grid-columns_3,
-			&.v-grid-columns_4 {
-
-				.fat-footer-area:first-child {
-
-					.widget {
-						@include fontSmall;
-					}
-				}
-			}
-		}
-
 		&.v-grid-columns_3 {
 
 			@media all and (min-width: $xsMinWidth) {
@@ -116,10 +102,32 @@
 	}
 }
 
+.social-navigation {
+
+	.social-media-footer-area {
+		border-style: solid;
+		border-width: 0;
+	}
+
+	.widget:last-child {
+		margin-bottom: 0;
+	}
+
+	.wp-block-social-links {
+		margin: 0;
+
+		li.wp-social-link {
+			margin-top: 0;
+
+			span {
+				@include fontSmaller;
+			}
+		}
+	}
+}
+
 .site-footer-content {
 	@include fontSmaller;
-	border-style: solid;
-	border-width: 1px 0 0;
 
 	@media all and (min-width: $mdMinWidth) {
 		display: flex;

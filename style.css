@@ -172,7 +172,7 @@ template {
   /**
    * This color controls the entire monochromatic color scheme
    */
-  --monochromatic-hue-1: 155;
+  --monochromatic-hue-1: 255;
   /**
    * This percentage controls the default saturation of all non-subdued colors
    */
@@ -186,11 +186,11 @@ template {
   --monochromatic-hue-1_darker: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 18%);
   --monochromatic-hue-1_darkest: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 16%);
   /* Action colors - based on hue 1 */
-  --action-color: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 37%);
+  --action-color: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 28%);
   --action-color-alt: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 32%);
   --dark-background-action-color: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 84%);
   /* Subdued colors - based on hue 1 */
-  --subdued-text: hsl(var(--monochromatic-hue-1) 15% 40%);
+  --subdued-text: hsl(var(--monochromatic-hue-1) 15% 43%);
   --subdued-border: hsl(var(--monochromatic-hue-1) 15% 91%);
   /* Miscellaneous */
   --menu-background: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 27%);
@@ -210,8 +210,8 @@ template {
   background-color: #fff;
 }
 
-#site-navigation.toggled > #primary-menu > .menu-item-has-children > a:after,
-.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after {
+.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after,
+.v-dark-background #site-navigation #primary-menu > .menu-item-has-children > a:after {
   border-bottom-color: #fff;
 }
 
@@ -219,6 +219,8 @@ template {
 .wp-block-buttons > .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button,
 table th, [class*=wp-block-] > table th,
+#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu a,
+#site-navigation.toggled > .menu-modal-active #primary-menu .menu-item a,
 .v-dark-background h1, .v-dark-background .h1,
 .v-dark-background h2, .v-dark-background .h2,
 .v-dark-background h3, .v-dark-background .h3,
@@ -231,8 +233,8 @@ table th, [class*=wp-block-] > table th,
 .v-dark-background .comment-reply-link,
 .v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link,
 .v-dark-background .wp-block-file .wp-block-file__button,
-#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu a,
-#site-navigation.toggled > .menu-modal-active #primary-menu .menu-item a {
+.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item > a,
+.v-dark-background #site-navigation .menu-toggle {
   color: #fff;
 }
 
@@ -270,7 +272,7 @@ pre, dl, code, kbd, tt, var {
   color: var(--monochromatic-hue-1_light);
 }
 
-.v-dark-background #site-navigation #primary-menu > .menu-item-has-children > a:after {
+#site-navigation.toggled > #primary-menu > .menu-item-has-children > a:after {
   border-bottom-color: var(--dark-background-action-color);
 }
 
@@ -278,8 +280,7 @@ pre, dl, code, kbd, tt, var {
 .v-dark-background .site-title a:active,
 .v-dark-background .site-title a:focus,
 .v-dark-background .site-title a:hover,
-.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item > a,
-.v-dark-background #site-navigation .menu-toggle,
+.v-dark-background .v-hero-secondary-cta a,
 #site-navigation #primary-menu > .menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu a {
   color: var(--dark-background-action-color);
 }
@@ -290,11 +291,24 @@ table caption, figure figcaption,
   color: var(--subdued-text);
 }
 
+.v-dark-background .button, .v-dark-background .v-button, .v-dark-background button,
+.v-dark-background [type=button], .v-dark-background [type=submit], .v-dark-background [type=reset],
+.v-dark-background .comment-reply-link,
+.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link,
+.v-dark-background .wp-block-file .wp-block-file__button {
+  background-color: var(--action-color-alt);
+}
+
 .v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):active,
 .v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus,
 .v-dark-background textarea:active, .v-dark-background textarea:focus,
 .v-dark-background select:active, .v-dark-background select:focus {
   border-color: var(--action-color-alt);
+}
+
+.v-grid-item-container .v-grid-item-meta a,
+blockquote, address, cite, q, code, kbd, tt, var, strike, del {
+  color: var(--action-color-alt);
 }
 
 .button:active, .button:focus, .button:hover,
@@ -352,20 +366,9 @@ a, h4, .h4, h6, .h6,
   color: var(--action-color);
 }
 
-.v-dark-background .button, .v-dark-background .v-button, .v-dark-background button,
-.v-dark-background [type=button], .v-dark-background [type=submit], .v-dark-background [type=reset],
-.v-dark-background .comment-reply-link,
-.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link,
-.v-dark-background .wp-block-file .wp-block-file__button {
-  background-color: var(--action-color-alt);
-}
-
-blockquote, address, cite, q, code, kbd, tt, var, strike, del {
-  color: var(--action-color-alt);
-}
-
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu,
-#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu {
+#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu,
+.close-menu-modal.v-button {
   background-color: var(--menu-background);
 }
 
@@ -375,7 +378,8 @@ blockquote, address, cite, q, code, kbd, tt, var, strike, del {
 table th,
 [class*=wp-block-] > table th,
 .v-dark-background, .v-dark-background table th,
-#site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu {
+#site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu,
+.close-menu-modal.v-button:active, .close-menu-modal.v-button:focus, .close-menu-modal.v-button:hover {
   background-color: var(--monochromatic-hue-1_dark);
 }
 
@@ -390,7 +394,7 @@ textarea, select, table, table th, table td,
 
 #page-container, .site-title a, cite,
 .wp-block-separator.is-style-dots::before,
-.v-grid .v-grid-item-container .v-grid-item-title a,
+.v-grid-item-title a,
 .archive .archive-title span, #comments .fn a {
   color: var(--monochromatic-hue-1_dark);
 }
@@ -404,7 +408,7 @@ html, body {
 #comments .comment:not(:last-child),
 #comments .comment .comment:not(:last-child),
 #comments .pingback:not(:last-child),
-hr, .site-footer-content, .wp-block-quote, .wp-block-separator, .twitter-tweet {
+hr, .social-media-footer-area, .wp-block-quote, .wp-block-separator, .twitter-tweet {
   border-color: var(--subdued-border);
 }
 
@@ -479,22 +483,16 @@ hr, .site-footer-content, .wp-block-quote, .wp-block-separator, .twitter-tweet {
 }
 
 .v-grid-item-container .v-grid-item-title {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 .v-grid-item-container .v-grid-item-meta {
-  font-size: 13px;
+  font-size: 14px;
   display: block;
+  font-weight: 600;
   line-height: 1;
 }
-.v-grid-item-container .v-grid-item-meta a {
-  font-weight: 700;
-  text-decoration: none;
-}
-.v-grid-item-container .v-grid-item-meta a:active, .v-grid-item-container .v-grid-item-meta a:focus, .v-grid-item-container .v-grid-item-meta a:hover {
-  text-decoration: underline;
-}
 .v-grid-item-container:not(.v-subdued) {
-  border-radius: 8px;
+  border-radius: 10px;
 }
 .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap {
   display: flex;
@@ -502,31 +500,30 @@ hr, .site-footer-content, .wp-block-quote, .wp-block-separator, .twitter-tweet {
   height: 100%;
 }
 .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-media img {
-  border-radius: 8px 8px 0 0;
+  border-radius: 10px 10px 0 0;
   vertical-align: top;
 }
 .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-header {
-  padding: 1.25rem 1.25rem 0.75rem;
+  padding: 1.25rem 1.25rem 1rem;
 }
 @media all and (min-width: 992px) {
   .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-header {
-    padding: 2rem 2rem 1rem;
+    padding: 2rem 2rem 1.25em;
   }
 }
 .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-header .v-grid-item-title a {
   text-decoration: none;
 }
 .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-body {
+  font-size: 16px;
   flex: 1 0 auto;
-  padding: 0.5rem 1.25rem 1rem;
+  padding: 0 1.25rem 1.5rem;
 }
 @media all and (min-width: 992px) {
   .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-body {
-    padding: 0.5rem 2rem 1.25rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
-}
-.v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-body .v-grid-item-description {
-  font-size: 16px;
 }
 .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-footer {
   font-size: 15px;
@@ -537,8 +534,12 @@ hr, .site-footer-content, .wp-block-quote, .wp-block-separator, .twitter-tweet {
     padding: 0.5rem 2rem 2.25rem;
   }
 }
-.v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-footer .v-gridbutton {
-  font-size: 13px;
+.v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-footer .v-button {
+  font-size: 14px;
+}
+
+.site-hero .inner {
+  padding-bottom: 5rem;
 }
 
 .v-hero.v-hero-centered {
@@ -579,33 +580,12 @@ hr, .site-footer-content, .wp-block-quote, .wp-block-separator, .twitter-tweet {
   }
 }
 .v-hero .v-hero-subtitle {
-  font-size: 15px;
+  font-size: 19px;
   max-width: 665px;
-}
-@media all and (min-width: 560px) {
-  .v-hero .v-hero-subtitle {
-    font-size: 16px;
-  }
-}
-@media all and (min-width: 768px) {
-  .v-hero .v-hero-subtitle {
-    font-size: 15px;
-    line-height: 1.6;
-  }
-}
-@media all and (min-width: 768px) and (min-width: 560px) {
-  .v-hero .v-hero-subtitle {
-    font-size: 16px;
-  }
-}
-@media all and (min-width: 768px) and (min-width: 768px) {
-  .v-hero .v-hero-subtitle {
-    font-size: 18px;
-  }
 }
 @media all and (min-width: 992px) {
   .v-hero .v-hero-subtitle {
-    font-size: 19px;
+    font-size: 20px;
   }
 }
 .v-hero .v-hero-subtitle:not(:last-child) {
@@ -644,7 +624,7 @@ hr, .site-footer-content, .wp-block-quote, .wp-block-separator, .twitter-tweet {
   }
 }
 .v-hero .v-hero-secondary-cta {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .content-header .content-title {
@@ -661,13 +641,20 @@ hr, .site-footer-content, .wp-block-quote, .wp-block-separator, .twitter-tweet {
 }
 .content-header .content-meta,
 .content-header .content-description {
-  font-size: 13px;
+  font-size: 16px;
   max-width: 765px;
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 992px) {
   .content-header .content-meta,
 .content-header .content-description {
-    font-size: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+@media all and (min-width: 992px) and (min-width: 560px) {
+  .content-header .content-meta,
+.content-header .content-description {
+    font-size: 18px;
   }
 }
 .content-header .content-container {
@@ -769,7 +756,7 @@ hr, .site-footer-content, .wp-block-quote, .wp-block-separator, .twitter-tweet {
 }
 
 .v-subdued-title {
-  font-size: 15px;
+  font-size: 16px;
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   display: block;
   font-weight: 700;
@@ -777,7 +764,7 @@ hr, .site-footer-content, .wp-block-quote, .wp-block-separator, .twitter-tweet {
 }
 
 .v-subdued-link-container a {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .v-text-align-center {
@@ -1408,7 +1395,7 @@ figure figcaption {
 }
 
 .wp-block-file .wp-block-file__button {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1;
 }
 
@@ -1516,7 +1503,7 @@ article .entry-content .wp-block-latest-comments > .wp-block-latest-comments__co
 }
 article .entry-content .wp-block-latest-comments > .wp-block-latest-comments__comment .wp-block-latest-comments__comment-date,
 .v-content-container .entry-content .wp-block-latest-comments > .wp-block-latest-comments__comment .wp-block-latest-comments__comment-date {
-  font-size: 13px;
+  font-size: 14px;
 }
 article .entry-content .wp-block-latest-comments > .wp-block-latest-comments__comment .wp-block-latest-comments__comment-excerpt p,
 .v-content-container .entry-content .wp-block-latest-comments > .wp-block-latest-comments__comment .wp-block-latest-comments__comment-excerpt p {
@@ -1547,16 +1534,11 @@ article .entry-content .wp-block-social-links li,
 }
 body {
   font-family: "Red Hat Text", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   overflow-wrap: break-word;
 }
 @media all and (min-width: 560px) {
-  body {
-    font-size: 16px;
-  }
-}
-@media all and (min-width: 768px) {
   body {
     font-size: 18px;
   }
@@ -1675,28 +1657,28 @@ main {
 	flex: 1 0 auto;
 }
 */
-.site-header {
+.site-header-elements {
   display: flex;
   justify-content: space-between;
 }
-.site-header > * {
+.site-header-elements > * {
   align-self: center;
 }
-.site-header .custom-logo-link .custom-logo {
+.site-header-elements .custom-logo-link .custom-logo {
   max-width: 170px;
   transition: opacity 0.2s;
   vertical-align: bottom;
 }
-.site-header .custom-logo-link .custom-logo:active, .site-header .custom-logo-link .custom-logo:focus, .site-header .custom-logo-link .custom-logo:hover {
+.site-header-elements .custom-logo-link .custom-logo:active, .site-header-elements .custom-logo-link .custom-logo:focus, .site-header-elements .custom-logo-link .custom-logo:hover {
   opacity: 0.7;
 }
-.site-header .site-title {
+.site-header-elements .site-title {
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1;
 }
-.site-header .site-title a {
+.site-header-elements .site-title a {
   text-decoration: none;
 }
 
@@ -1707,7 +1689,7 @@ main {
 }
 #site-navigation #primary-menu .menu-item {
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   list-style-type: none;
   text-transform: uppercase;
 }
@@ -1765,9 +1747,10 @@ main {
   padding-right: calc(0.75rem + 11px);
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > .sub-menu {
-  border-radius: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 45px 0px rgba(0, 0, 0, 0.1);
   display: none;
-  padding: 7px 1rem;
+  padding: 7px 1.2rem;
   position: absolute;
   top: 2rem;
   width: 240px;
@@ -1805,11 +1788,11 @@ main {
 }
 #site-navigation .menu-toggle {
   font-family: "Red Hat Text", sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   background: transparent;
   border: none;
   display: inline-block;
-  font-weight: 700;
+  font-weight: 600;
   height: unset;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -1852,11 +1835,10 @@ main {
   }
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu {
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 0 75px 20px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
-  height: 100%;
   padding: 0.5rem 1.25rem 1.25rem;
   position: relative;
   width: calc(100vw - 2rem);
@@ -1864,19 +1846,20 @@ main {
 @media all and (min-width: 560px) {
   #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu {
     min-width: 300px;
-    width: 35vw;
+    width: 40vw;
   }
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu .close-menu-modal {
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   display: block;
   line-height: 1;
+  margin-top: auto;
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu .menu-item .sub-menu {
   display: none;
 }
-#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item:not(:last-child) {
+#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item:not(:last-of-type) {
   border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item.menu-item-has-children > a:after {
@@ -1885,10 +1868,10 @@ main {
   top: 14px;
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item.menu-item-has-children > .sub-menu {
-  border-radius: 6px;
+  border-radius: 10px;
   margin-bottom: 1rem;
   margin-top: 4px;
-  padding: 7px 1rem;
+  padding: 7px 1.2rem;
   width: 100%;
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item.menu-item-has-children > .sub-menu > .menu-item-has-children:not(:last-child) {
@@ -1927,24 +1910,8 @@ main {
   text-align: right;
 }
 
-.social-navigation {
-  padding-top: 10px;
-}
-.social-navigation .widget:last-child {
-  margin-bottom: 0;
-}
-.social-navigation .wp-block-social-links {
-  margin: 0;
-}
-.social-navigation .wp-block-social-links li.wp-social-link {
-  margin-top: 0;
-}
-.social-navigation .wp-block-social-links li.wp-social-link span {
-  font-size: 15px;
-}
-
 .widget {
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 1.25rem;
 }
 .widget h1, .widget .h1,
@@ -2103,7 +2070,7 @@ main {
   display: none;
 }
 #comments .comment .comment-body .comment-metadata {
-  font-size: 13px;
+  font-size: 14px;
 }
 #comments .comment .comment-body .comment-content ul {
   margin: 0 0 0 1.125rem;
@@ -2198,7 +2165,7 @@ main {
   }
 }
 #comments .comment .comment-body .reply {
-  font-size: 13px;
+  font-size: 14px;
 }
 #comments .comment .comment-body .reply .comment-reply-link {
   font-size: 12px;
@@ -2296,7 +2263,7 @@ button,
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   font-size: 15px;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   cursor: pointer;
   display: inline-block;
   font-weight: 600;
@@ -2358,7 +2325,7 @@ textarea,
 select {
   border-style: solid;
   border-width: 2px;
-  border-radius: 2px;
+  border-radius: 4px;
   padding: calc(0.8em - 1.17px) 0.8em;
   vertical-align: bottom;
 }
@@ -2410,11 +2377,6 @@ select {
   margin-bottom: 1.25rem;
 }
 @media all and (min-width: 560px) {
-  .fat-footer-areas.alternate-layout.v-grid-columns_3 .fat-footer-area:first-child .widget, .fat-footer-areas.alternate-layout.v-grid-columns_4 .fat-footer-area:first-child .widget {
-    font-size: 16px;
-  }
-}
-@media all and (min-width: 560px) {
   .fat-footer-areas.alternate-layout.v-grid-columns_3 {
     column-gap: 4%;
     grid-template-columns: 48% 48%;
@@ -2459,10 +2421,25 @@ select {
   }
 }
 
+.social-navigation .social-media-footer-area {
+  border-style: solid;
+  border-width: 0;
+}
+.social-navigation .widget:last-child {
+  margin-bottom: 0;
+}
+.social-navigation .wp-block-social-links {
+  margin: 0;
+}
+.social-navigation .wp-block-social-links li.wp-social-link {
+  margin-top: 0;
+}
+.social-navigation .wp-block-social-links li.wp-social-link span {
+  font-size: 15px;
+}
+
 .site-footer-content {
   font-size: 15px;
-  border-style: solid;
-  border-width: 1px 0 0;
 }
 @media all and (min-width: 992px) {
   .site-footer-content {
@@ -2593,11 +2570,6 @@ article:last-child .entry-footer,
 .blog-posts-featured [class*=v-grid-columns_]:not(:last-child) {
   margin-bottom: 2rem;
 }
-@media all and (min-width: 768px) {
-  .blog-posts-featured .v-grid-centered-column-content {
-    text-align: center;
-  }
-}
 
 .blog-grid-cta {
   border-radius: 10px;
@@ -2616,7 +2588,7 @@ article:last-child .entry-footer,
 }
 @media all and (min-width: 992px) {
   .blog-grid-cta {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     margin-top: 2rem;
     padding-bottom: 4rem;
     padding-top: 4rem;

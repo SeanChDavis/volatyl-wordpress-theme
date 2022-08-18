@@ -11,6 +11,7 @@ if ( ! function_exists( 'volatyl_hero' ) ) :
 		$default_args = array(
 			'title'         => ! empty( $args['title'] ) ? $args['title'] : get_the_title(),
 			'subtitle'      => ! empty( $args['subtitle'] ) ? $args['subtitle'] : '',
+			'light'         => 1 === $args['light'] ? 1 : 0,
 			'alignment'     => 1 === $args['alignment'] ? 1 : 0,
 			'primary_cta'   => array(
 				'text' => '',
@@ -26,6 +27,7 @@ if ( ! function_exists( 'volatyl_hero' ) ) :
 
 		$title              = $new_args['title'];
 		$subtitle           = $new_args['subtitle'];
+		$light              = $new_args['light'];
 		$alignment          = $new_args['alignment'];
 		$primary_cta_text   = $new_args['primary_cta']['text'];
 		$primary_cta_url    = $new_args['primary_cta']['url'];
@@ -33,10 +35,8 @@ if ( ! function_exists( 'volatyl_hero' ) ) :
 		$secondary_cta_url  = $new_args['secondary_cta']['url'];
 		?>
 
-		<div class="site-hero">
-
+		<div class="site-hero<?php echo $light ? ' v-gray-background' : ' v-dark-background'; ?>">
 			<div class="inner v-large">
-
 				<div class="v-hero<?php echo $alignment ? ' v-hero-centered' : ''; ?>">
 					<h1 class="v-hero-title"><?php echo $title; ?></h1>
 					<?php if ( ! empty( $subtitle ) ) { ?>
@@ -53,9 +53,7 @@ if ( ! function_exists( 'volatyl_hero' ) ) :
 						</p>
 					<?php } ?>
 				</div>
-
 			</div>
-
 		</div>
 
 		<?php

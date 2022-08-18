@@ -3,8 +3,8 @@
 	#primary-menu {
 
 		.menu-item {
-			@include fontSmallest;
-			font-weight: 700;
+			font-size: 13px;
+			font-weight: 600;
 			list-style-type: none;
 			text-transform: uppercase;
 
@@ -99,9 +99,10 @@
 					}
 
 					& > .sub-menu {
-						border-radius: 5px;
+						border-radius: 10px;
+						box-shadow: 0 0 45px 0px rgba(0, 0, 0, 0.1);
 						display: none;
-						padding: 7px 1rem;
+						padding: 7px 1.2rem;
 						position: absolute;
 						top: 2rem;
 						width: 240px;
@@ -177,7 +178,7 @@
 		background: transparent;
 		border: none;
 		display: inline-block;
-		font-weight: 700;
+		font-weight: 600;
 		height: unset;
 		letter-spacing: 0;
 		text-transform: uppercase;
@@ -225,18 +226,17 @@
 				}
 
 				#primary-menu {
-					border-radius: 5px;
+					border-radius: 10px;
 					box-shadow: 0 0 75px 20px rgba(0, 0, 0, 0.3);
 					display: flex;
 					flex-direction: column;
-					height: 100%;
 					padding: .5rem 1.25rem 1.25rem;
 					position: relative;
 					width: calc(100vw - 2rem);
 
 					@media all and (min-width: $xsMinWidth) {
 						min-width: 300px;
-						width: calc(35vw);
+						width: 40vw;
 					}
 
 					.close-menu-modal {
@@ -244,6 +244,7 @@
 						@include fontSmallest;
 						display: block;
 						line-height: 1;
+						margin-top: auto;
 					}
 
 					.menu-item {
@@ -255,7 +256,7 @@
 
 					& > .menu-item {
 
-						&:not(:last-child) {
+						&:not(:last-of-type) {
 							border-bottom: 1px dashed rgba(255, 255, 255, .2);
 						}
 
@@ -271,10 +272,10 @@
 							}
 
 							& > .sub-menu {
-								border-radius: 6px;
+								border-radius: 10px;
 								margin-bottom: 1rem;
 								margin-top: 4px;
-								padding: 7px 1rem;
+								padding: 7px 1.2rem;
 								width: 100%;
 
 								& > .menu-item-has-children {
@@ -345,26 +346,6 @@
 
 		.nav-next {
 			text-align: right;
-		}
-	}
-}
-
-.social-navigation {
-	padding-top: 10px;
-
-	.widget:last-child {
-		margin-bottom: 0;
-	}
-
-	.wp-block-social-links {
-		margin: 0;
-
-		li.wp-social-link {
-			margin-top: 0;
-
-			span {
-				@include fontSmaller;
-			}
 		}
 	}
 }
