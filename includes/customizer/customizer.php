@@ -150,3 +150,26 @@ function volatyl_customize_controls_print_styles() { ?>
 	<?php
 }
 add_action( 'customize_controls_print_styles', 'volatyl_customize_controls_print_styles' );
+
+/**
+ * Add color scheme CSS variables to front-end <head>
+ */
+function volatyl_customizer_head_styles() {
+	?>
+	<style type="text/css">
+		:root {
+
+			/**
+			 * This color controls the entire color scheme!
+			 */
+			--primary-hue: <?php echo get_theme_mod( 'volatyl_primary_hue', 255 ); ?>;
+
+			/**
+			 * This percentage controls the default saturation of all non-subdued colors
+			 */
+			--global-hue-saturation: 23%;
+		}
+	</style>
+	<?php
+}
+add_action( 'wp_head', 'volatyl_customizer_head_styles' );

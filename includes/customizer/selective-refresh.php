@@ -14,7 +14,7 @@ if ( isset( $wp_customize->selective_refresh ) ) {
 		},
 	) );
 	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
-		'selector'        => '.front-page .hero-title',
+		'selector'        => '.front-page .v-hero-title',
 		'render_callback' => function() {
 			bloginfo( 'description' );
 		},

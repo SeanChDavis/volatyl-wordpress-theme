@@ -11,21 +11,21 @@ $wp_customize->add_section( 'volatyl_structure', array(
 ) );
 
 /**
- * Content Configuration
+ * Color Scheme
  */
-$wp_customize->add_section( 'volatyl_content_section', array(
-	'title'       => __( 'Content Configuration', 'volatyl' ),
-	'description' => __( 'Adjust the display of content on your website.', 'volatyl' ),
+$wp_customize->add_section( 'volatyl_color_scheme', array(
+	'title'       => __( 'Color Scheme', 'volatyl' ),
+	'description' => __( 'Easily configure a beautiful color scheme for your website using any combination of the settings below.', 'volatyl' ),
 	'panel'       => 'volatyl_settings',
 	'priority'    => 20,
 ) );
 
 /**
- * Color Scheme
+ * Content Configuration
  */
-$wp_customize->add_section( 'volatyl_color_scheme', array(
-	'title'       => __( 'Color Scheme', 'volatyl' ),
-	'description' => __( 'Easily configure a beautiful color scheme for your website.', 'volatyl' ),
+$wp_customize->add_section( 'volatyl_content_section', array(
+	'title'       => __( 'Content Configuration', 'volatyl' ),
+	'description' => __( 'Adjust the display of content on your website.', 'volatyl' ),
 	'panel'       => 'volatyl_settings',
 	'priority'    => 30,
 ) );

@@ -169,32 +169,23 @@ template {
  * unnecessary technical debt.
  */
 :root {
-  /**
-   * This color controls the entire monochromatic color scheme
-   */
-  --monochromatic-hue-1: 255;
-  --hue-1-pure: hsl(var(--monochromatic-hue-1) 50% 50%);
-  /**
-   * This percentage controls the default saturation of all non-subdued colors
-   */
-  --global-hue-saturation: 23%;
   /* Very light - based on hue 1 */
-  --monochromatic-hue-1_lightest: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 98%);
-  --monochromatic-hue-1_lighter: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 95%);
-  --monochromatic-hue-1_light: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 93%);
+  --primary-hue_lightest: hsl(var(--primary-hue) var(--global-hue-saturation) 98%);
+  --primary-hue_lighter: hsl(var(--primary-hue) var(--global-hue-saturation) 95%);
+  --primary-hue_light: hsl(var(--primary-hue) var(--global-hue-saturation) 93%);
   /* Very dark - based on hue 1 */
-  --monochromatic-hue-1_dark: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 20%);
-  --monochromatic-hue-1_darker: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 18%);
-  --monochromatic-hue-1_darkest: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 16%);
+  --primary-hue_dark: hsl(var(--primary-hue) var(--global-hue-saturation) 20%);
+  --primary-hue_darker: hsl(var(--primary-hue) var(--global-hue-saturation) 18%);
+  --primary-hue_darkest: hsl(var(--primary-hue) var(--global-hue-saturation) 16%);
   /* Action colors - based on hue 1 */
-  --action-color: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 28%);
-  --action-color-alt: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 32%);
-  --dark-background-action-color: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 84%);
+  --action-color: hsl(var(--primary-hue) var(--global-hue-saturation) 28%);
+  --action-color-alt: hsl(var(--primary-hue) var(--global-hue-saturation) 32%);
+  --dark-background-action-color: hsl(var(--primary-hue) var(--global-hue-saturation) 84%);
   /* Subdued colors - based on hue 1 */
-  --subdued-text: hsl(var(--monochromatic-hue-1) 15% 43%);
-  --subdued-border: hsl(var(--monochromatic-hue-1) 15% 91%);
+  --subdued-text: hsl(var(--primary-hue) 15% 43%);
+  --subdued-border: hsl(var(--primary-hue) 15% 91%);
   /* Miscellaneous */
-  --menu-background: hsl(var(--monochromatic-hue-1) var(--global-hue-saturation) 27%);
+  --menu-background: hsl(var(--primary-hue) var(--global-hue-saturation) 27%);
 }
 
 /**
@@ -244,18 +235,18 @@ select, .social-navigation,
 article .entry-content .wp-block-latest-comments,
 .v-content-container .entry-content .wp-block-latest-comments,
 pre, dl, code, kbd, tt, var {
-  background-color: var(--monochromatic-hue-1_lightest);
+  background-color: var(--primary-hue_lightest);
 }
 
 .wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1) {
-  background-color: var(--monochromatic-hue-1_lighter);
+  background-color: var(--primary-hue_lighter);
 }
 
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper,
 .wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:active,
 .wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:focus,
 .wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link:hover {
-  background-color: var(--monochromatic-hue-1_light);
+  background-color: var(--primary-hue_light);
 }
 
 .v-dark-background h4, .v-dark-background .h4, .v-dark-background h6, .v-dark-background .h6,
@@ -265,7 +256,7 @@ pre, dl, code, kbd, tt, var {
 .v-dark-background table caption, .v-dark-background figure figcaption,
 .v-dark-background .wp-block-calendar .wp-calendar-nav,
 .v-dark-background [class*=wp-block-] > label {
-  color: var(--monochromatic-hue-1_light);
+  color: var(--primary-hue_light);
 }
 
 #site-navigation.toggled > #primary-menu > .menu-item-has-children > a:after {
@@ -376,7 +367,7 @@ table th,
 [class*=wp-block-] > table th,
 .v-dark-background, .v-dark-background table th,
 #site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu {
-  background-color: var(--monochromatic-hue-1_dark);
+  background-color: var(--primary-hue_dark);
 }
 
 .blog-name a, .blog-name a:active, .blog-name a:focus, .blog-name a:hover,
@@ -385,7 +376,7 @@ textarea, select, table, table th, table td,
 .wp-block-table.is-style-stripes table th, .wp-block-table.is-style-stripes table td,
 [class*=wp-block-] > table th, [class*=wp-block-] > table td,
 .v-dark-background table, .v-dark-background table th, .v-dark-background table td {
-  border-color: var(--monochromatic-hue-1_dark);
+  border-color: var(--primary-hue_dark);
 }
 
 #page-container, cite,
@@ -393,7 +384,7 @@ textarea, select, table, table th, table td,
 .wp-block-separator.is-style-dots::before,
 .v-grid-item-title a,
 .archive .archive-title span, #comments .fn a {
-  color: var(--monochromatic-hue-1_dark);
+  color: var(--primary-hue_dark);
 }
 
 .v-dark-background .button:active, .v-dark-background .button:focus, .v-dark-background .button:hover,
@@ -409,11 +400,11 @@ textarea, select, table, table th, table td,
 .v-dark-background .wp-block-file .wp-block-file__button:active,
 .v-dark-background .wp-block-file .wp-block-file__button:focus,
 .v-dark-background .wp-block-file .wp-block-file__button:hover {
-  background-color: var(--monochromatic-hue-1_darker);
+  background-color: var(--primary-hue_darker);
 }
 
 html, body {
-  background-color: var(--monochromatic-hue-1_darkest);
+  background-color: var(--primary-hue_darkest);
 }
 
 #comments .comments-title,
