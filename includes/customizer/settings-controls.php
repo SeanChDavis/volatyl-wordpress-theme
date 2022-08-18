@@ -16,7 +16,6 @@ $wp_customize->add_control( 'volatyl_full_width_structure', array(
 	'type'     => 'checkbox',
 ) );
 
-
 /**
  * Content Configuration
  */
@@ -44,7 +43,6 @@ $wp_customize->add_control( 'volatyl_page_comments', array(
 	'type'     => 'checkbox',
 ) );
 
-
 /**
  * Color scheme
  */
@@ -55,10 +53,9 @@ $wp_customize->add_setting( 'volatyl_primary_brand_color', array(
 	'sanitize_callback' => 'volatyl_sanitize_checkbox'
 ) );
 $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'volatyl_primary_brand_color', array(
-	'label' => __( 'Choose your primary brand color', 'volatyl' ),
-	'section'  => 'volatyl_color_scheme',
+	'label'   => __( 'Choose your primary brand color', 'volatyl' ),
+	'section' => 'volatyl_color_scheme',
 ) ) );
-
 
 /**
  * Template - Front Page
@@ -87,6 +84,26 @@ $wp_customize->add_control( 'volatyl_front_page_hero_dark', array(
 	'type'     => 'checkbox',
 ) );
 
+// Hero light logo
+$wp_customize->add_setting( 'volatyl_front_page_hero_light_logo', array(
+	'default'           => 0,
+	'sanitize_callback' => 'absint'
+) );
+$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'volatyl_front_page_hero_light_logo', array(
+	'label'     => __( 'Light logo', 'volatyl' ),
+	'description' => __( 'Upload a light version of your logo to display over the dark background.', 'volatyl' ),
+	'section'   => 'volatyl_front_page_template',
+	'priority'  => 20,
+	'mime_type' => 'image',
+	'active_callback' => function( $control ) {
+		if ( $control->manager->get_setting( 'volatyl_front_page_hero_dark' )->value() === 1 ) {
+			return true;
+		} else {
+			return false;
+		}
+	},
+) ) );
+
 // Hero alignment
 $wp_customize->add_setting( 'volatyl_front_page_hero_centered', array(
 	'default'           => 0,
@@ -95,7 +112,7 @@ $wp_customize->add_setting( 'volatyl_front_page_hero_centered', array(
 $wp_customize->add_control( 'volatyl_front_page_hero_centered', array(
 	'label'    => __( 'Center the hero content', 'volatyl' ),
 	'section'  => 'volatyl_front_page_template',
-	'priority' => 20,
+	'priority' => 30,
 	'type'     => 'checkbox',
 ) );
 
@@ -108,7 +125,7 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_custo
 	'label'       => __( 'Title', 'volatyl' ),
 	'section'     => 'volatyl_front_page_template',
 	'description' => __( 'By default, your WordPress site tagline is used as the front page hero title. To override that behavior, you may adjust the text here. This text will not change your WordPress site tagline.', 'volatyl' ),
-	'priority'    => 30,
+	'priority'    => 40,
 ) ) );
 
 // Hero subtitle
@@ -120,7 +137,7 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_custo
 	'label'       => __( 'Subtitle', 'volatyl' ),
 	'section'     => 'volatyl_front_page_template',
 	'description' => sprintf( __( 'This content displays below the hero title in a paragraph format. 2-3 sentences looks best. Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>, <i>' ),
-	'priority'    => 40,
+	'priority'    => 50,
 ) ) );
 
 // Hero primary CTA button URL
@@ -132,7 +149,7 @@ $wp_customize->add_control( 'volatyl_front_page_hero_primary_cta_button_url', ar
 	'label'       => __( 'Primary call-to-action URL', 'volatyl' ),
 	'section'     => 'volatyl_front_page_template',
 	'description' => __( 'Set the URL of the primary call-to-action button.', 'volatyl' ),
-	'priority'    => 50,
+	'priority'    => 60,
 ) );
 
 // Hero primary CTA button text
@@ -144,7 +161,7 @@ $wp_customize->add_control( 'volatyl_front_page_hero_primary_cta_button_text', a
 	'label'       => __( 'Primary call-to-action text', 'volatyl' ),
 	'section'     => 'volatyl_front_page_template',
 	'description' => __( 'Set the text of the primary call-to-action button.', 'volatyl' ),
-	'priority'    => 60,
+	'priority'    => 70,
 ) );
 
 // Hero secondary CTA button URL
@@ -156,7 +173,7 @@ $wp_customize->add_control( 'volatyl_front_page_hero_secondary_cta_button_url', 
 	'label'       => __( 'Secondary call-to-action URL', 'volatyl' ),
 	'section'     => 'volatyl_front_page_template',
 	'description' => __( 'Set the URL of the secondary call-to-action link.', 'volatyl' ),
-	'priority'    => 70,
+	'priority'    => 80,
 ) );
 
 // Hero secondary CTA button text
@@ -168,7 +185,7 @@ $wp_customize->add_control( 'volatyl_front_page_hero_secondary_cta_button_text',
 	'label'       => __( 'Secondary call-to-action text', 'volatyl' ),
 	'section'     => 'volatyl_front_page_template',
 	'description' => __( 'Set the text of the secondary call-to-action link.', 'volatyl' ),
-	'priority'    => 80,
+	'priority'    => 90,
 ) );
 
 // Blog settings area
@@ -201,7 +218,6 @@ $wp_customize->add_control( 'volatyl_front_page_blog_posts_grid_columns_rows', a
 		'3_3' => __( '3 columns / 3 rows -- ( 9 total )', 'volatyl' ),
 	),
 ) );
-
 
 /**
  * Template - Blog
@@ -311,6 +327,7 @@ $wp_customize->add_control( 'volatyl_blog_grid_cta_color_scheme', array(
 	'section'  => 'volatyl_blog_template',
 	'priority' => 220,
 	'type'     => 'checkbox',
+	'active_callback' => 'volatyl_display_blog_grid_cta_settings',
 ) );
 
 // Blog grid CTA title
@@ -323,6 +340,7 @@ $wp_customize->add_control( 'volatyl_blog_grid_cta_title', array(
 	'section'     => 'volatyl_blog_template',
 	'description' => __( 'The large title text for the call-to-action area.', 'volatyl' ),
 	'priority'    => 230,
+	'active_callback' => 'volatyl_display_blog_grid_cta_settings',
 ) );
 
 // Blog grid CTA description
@@ -335,6 +353,7 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_custo
 	'section'     => 'volatyl_blog_template',
 	'description' => sprintf( __( 'Describe to your visitor the reason for taking this particular action on your site. Consider 1-2 sentences Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>, <i>' ),
 	'priority'    => 240,
+	'active_callback' => 'volatyl_display_blog_grid_cta_settings',
 ) ) );
 
 // Blog grid CTA button URL
@@ -347,6 +366,7 @@ $wp_customize->add_control( 'volatyl_blog_grid_cta_button_url', array(
 	'section'     => 'volatyl_blog_template',
 	'description' => __( 'Set the URL of the call-to-action button.', 'volatyl' ),
 	'priority'    => 250,
+	'active_callback' => 'volatyl_display_blog_grid_cta_settings',
 ) );
 
 // Blog grid CTA button text
@@ -359,8 +379,8 @@ $wp_customize->add_control( 'volatyl_blog_grid_cta_button_text', array(
 	'section'     => 'volatyl_blog_template',
 	'description' => __( 'Set the text of the call-to-action button.', 'volatyl' ),
 	'priority'    => 260,
+	'active_callback' => 'volatyl_display_blog_grid_cta_settings',
 ) );
-
 
 /**
  * Footer Areas
@@ -400,6 +420,7 @@ $wp_customize->add_control( 'volatyl_footer_lead_title', array(
 	'section'     => 'volatyl_footer_areas',
 	'description' => __( 'The large title text for the area.', 'volatyl' ),
 	'priority'    => 20,
+	'active_callback' => 'volatyl_display_footer_lead_settings',
 ) );
 
 // Footer Lead description
@@ -412,6 +433,7 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_custo
 	'section'     => 'volatyl_footer_areas',
 	'description' => sprintf( __( 'Describe to your visitor the reason for taking this particular action on your site. Consider 1-2 sentences Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>, <i>' ),
 	'priority'    => 30,
+	'active_callback' => 'volatyl_display_footer_lead_settings',
 ) ) );
 
 // Footer Lead CTA button URL
@@ -424,6 +446,7 @@ $wp_customize->add_control( 'volatyl_footer_lead_cta_button_url', array(
 	'section'     => 'volatyl_footer_areas',
 	'description' => __( 'Set the URL of the call-to-action button.', 'volatyl' ),
 	'priority'    => 40,
+	'active_callback' => 'volatyl_display_footer_lead_settings',
 ) );
 
 // Footer Lead CTA button text
@@ -436,6 +459,7 @@ $wp_customize->add_control( 'volatyl_footer_lead_cta_button_text', array(
 	'section'     => 'volatyl_footer_areas',
 	'description' => __( 'Set the text of the call-to-action button.', 'volatyl' ),
 	'priority'    => 50,
+	'active_callback' => 'volatyl_display_footer_lead_settings',
 ) );
 
 // Fat Footer area
@@ -473,4 +497,5 @@ $wp_customize->add_control( 'volatyl_fat_footer_alternate_layout', array(
 	'priority'    => 110,
 	'description' => __( 'When either three or four Fat Footer widget areas are in use, the alternate layout makes the left-most area larger than the others.', 'volatyl' ),
 	'type'        => 'checkbox',
+	'active_callback' => 'volatyl_display_fat_footer_settings',
 ) );

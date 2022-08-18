@@ -28,6 +28,39 @@ add_action( 'customize_register', 'volatyl_customize_register' );
 include 'sanitize.php';
 
 /**
+ * Conditionally display Blog Grid CTA options
+ */
+function volatyl_display_blog_grid_cta_settings( $control ) {
+	if ( $control->manager->get_setting( 'volatyl_blog_grid_cta' )->value() === 1 ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+/**
+ * Conditionally display Footer Lead options
+ */
+function volatyl_display_footer_lead_settings( $control ) {
+	if ( $control->manager->get_setting( 'volatyl_footer_lead' )->value() === 1 ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+/**
+ * Conditionally display Fat Footer options
+ */
+function volatyl_display_fat_footer_settings( $control ) {
+	if ( $control->manager->get_setting( 'volatyl_fat_footer' )->value() === 1 ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+/**
  * Custom JS for Customizer controls
  */
 function volatyl_customize_controls_enqueue_scripts() {

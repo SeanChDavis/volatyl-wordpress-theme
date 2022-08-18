@@ -74,11 +74,6 @@ table th, [class*="wp-block-"] > table th,
 .v-dark-background h5, .v-dark-background .h5,
 .v-dark-background h6, .v-dark-background .h6,
 .v-dark-background a, .v-dark-background .site-title a,
-.v-dark-background .button, .v-dark-background .v-button, .v-dark-background button,
-.v-dark-background [type="button"], .v-dark-background [type="submit"], .v-dark-background [type="reset"],
-.v-dark-background .comment-reply-link,
-.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link,
-.v-dark-background .wp-block-file .wp-block-file__button,
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item > a,
 .v-dark-background #site-navigation .menu-toggle {
 	color: #fff;
@@ -127,6 +122,19 @@ pre, dl, code, kbd, tt, var {
 .v-dark-background .site-title a:focus,
 .v-dark-background .site-title a:hover,
 .v-dark-background .v-hero-secondary-cta a,
+.button:active, .button:focus, .button:hover,
+.v-button:active, .v-button:focus, .v-button:hover,
+button:active, button:focus, button:hover,
+[type="button"]:active, [type="button"]:focus, [type="button"]:hover,
+[type="submit"]:active, [type="submit"]:focus, [type="submit"]:hover,
+[type="reset"]:active, [type="reset"]:focus, [type="reset"]:hover,
+.comment-reply-link:active, .comment-reply-link:focus, .comment-reply-link:hover,
+.wp-block-buttons > .wp-block-button .wp-block-button__link:active,
+.wp-block-buttons > .wp-block-button .wp-block-button__link:focus,
+.wp-block-buttons > .wp-block-button .wp-block-button__link:hover,
+.wp-block-file .wp-block-file__button:active,
+.wp-block-file .wp-block-file__button:focus,
+.wp-block-file .wp-block-file__button:hover,
 #site-navigation #primary-menu > .menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu a {
 	color: var(--dark-background-action-color);
 }
@@ -157,32 +165,9 @@ blockquote, address, cite, q, code, kbd, tt, var, strike, del {
 	color: var(--action-color-alt);
 }
 
-.button:active, .button:focus, .button:hover,
-.v-button:active, .v-button:focus, .v-button:hover,
-button:active, button:focus, button:hover,
-[type="button"]:active, [type="button"]:focus, [type="button"]:hover,
-[type="submit"]:active, [type="submit"]:focus, [type="submit"]:hover,
-[type="reset"]:active, [type="reset"]:focus, [type="reset"]:hover,
-.comment-reply-link:active, .comment-reply-link:focus, .comment-reply-link:hover,
-.wp-block-buttons > .wp-block-button .wp-block-button__link:active,
-.wp-block-buttons > .wp-block-button .wp-block-button__link:focus,
-.wp-block-buttons > .wp-block-button .wp-block-button__link:hover,
-.wp-block-file .wp-block-file__button:active,
-.wp-block-file .wp-block-file__button:focus,
-.wp-block-file .wp-block-file__button:hover,
-.v-dark-background .button:active, .v-dark-background .button:focus, .v-dark-background .button:hover,
-.v-dark-background .v-button:active, .v-dark-background .v-button:focus, .v-dark-background .v-button:hover,
-.v-dark-background button:active, .v-dark-background button:focus, .v-dark-background button:hover,
-.v-dark-background [type="button"]:active, .v-dark-background [type="button"]:focus, .v-dark-background [type="button"]:hover,
-.v-dark-background [type="submit"]:active, .v-dark-background [type="submit"]:focus, .v-dark-background [type="submit"]:hover,
-.v-dark-background [type="reset"]:active, .v-dark-background [type="reset"]:focus, .v-dark-background [type="reset"]:hover,
-.v-dark-background .comment-reply-link:active, .v-dark-background .comment-reply-link:focus, .v-dark-background .comment-reply-link:hover,
-.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link:active,
-.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link:focus,
-.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link:hover,
-.v-dark-background .wp-block-file .wp-block-file__button:active,
-.v-dark-background .wp-block-file .wp-block-file__button:focus,
-.v-dark-background .wp-block-file .wp-block-file__button:hover {
+.button, .v-button, button, [type="button"], [type="submit"], [type="reset"], .comment-reply-link,
+.wp-block-buttons > .wp-block-button .wp-block-button__link,
+.wp-block-file .wp-block-file__button {
 	background-color: var(--action-color);
 }
 
@@ -201,7 +186,7 @@ select:active, select:focus {
 }
 
 a, h4, .h4, h6, .h6,
-.site-title a:active, .site-title a:focus, .site-title a:hover,
+.site-title a,
 #site-navigation #primary-menu .menu-item a, #site-navigation .menu-toggle,
 .wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link,
 .v-grid .v-grid-item-container:not(.v-subdued) .v-grid-item-title a:active,
@@ -219,9 +204,19 @@ a, h4, .h4, h6, .h6,
 	background-color: var(--menu-background);
 }
 
-.button, .v-button, button, [type="button"], [type="submit"], [type="reset"], .comment-reply-link,
-.wp-block-buttons > .wp-block-button .wp-block-button__link,
-.wp-block-file .wp-block-file__button,
+.button:active, .button:focus, .button:hover,
+.v-button:active, .v-button:focus, .v-button:hover,
+button:active, button:focus, button:hover,
+[type="button"]:active, [type="button"]:focus, [type="button"]:hover,
+[type="submit"]:active, [type="submit"]:focus, [type="submit"]:hover,
+[type="reset"]:active, [type="reset"]:focus, [type="reset"]:hover,
+.comment-reply-link:active, .comment-reply-link:focus, .comment-reply-link:hover,
+.wp-block-buttons > .wp-block-button .wp-block-button__link:active,
+.wp-block-buttons > .wp-block-button .wp-block-button__link:focus,
+.wp-block-buttons > .wp-block-button .wp-block-button__link:hover,
+.wp-block-file .wp-block-file__button:active,
+.wp-block-file .wp-block-file__button:focus,
+.wp-block-file .wp-block-file__button:hover,
 table th,
 [class*="wp-block-"] > table th,
 .v-dark-background, .v-dark-background table th,
@@ -238,11 +233,28 @@ textarea, select, table, table th, table td,
 	border-color: var(--monochromatic-hue-1_dark);
 }
 
-#page-container, .site-title a, cite,
+#page-container, cite,
+.site-title a:active, .site-title a:focus, .site-title a:hover,
 .wp-block-separator.is-style-dots::before,
 .v-grid-item-title a,
 .archive .archive-title span, #comments .fn a {
 	color: var(--monochromatic-hue-1_dark);
+}
+
+.v-dark-background .button:active, .v-dark-background .button:focus, .v-dark-background .button:hover,
+.v-dark-background .v-button:active, .v-dark-background .v-button:focus, .v-dark-background .v-button:hover,
+.v-dark-background button:active, .v-dark-background button:focus, .v-dark-background button:hover,
+.v-dark-background [type="button"]:active, .v-dark-background [type="button"]:focus, .v-dark-background [type="button"]:hover,
+.v-dark-background [type="submit"]:active, .v-dark-background [type="submit"]:focus, .v-dark-background [type="submit"]:hover,
+.v-dark-background [type="reset"]:active, .v-dark-background [type="reset"]:focus, .v-dark-background [type="reset"]:hover,
+.v-dark-background .comment-reply-link:active, .v-dark-background .comment-reply-link:focus, .v-dark-background .comment-reply-link:hover,
+.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link:active,
+.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link:focus,
+.v-dark-background .wp-block-buttons > .wp-block-button .wp-block-button__link:hover,
+.v-dark-background .wp-block-file .wp-block-file__button:active,
+.v-dark-background .wp-block-file .wp-block-file__button:focus,
+.v-dark-background .wp-block-file .wp-block-file__button:hover {
+	background-color: var(--monochromatic-hue-1_darker);
 }
 
 html, body {
