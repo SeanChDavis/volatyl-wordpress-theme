@@ -173,6 +173,7 @@ template {
    * This color controls the entire monochromatic color scheme
    */
   --monochromatic-hue-1: 255;
+  --hue-1-pure: hsl(var(--monochromatic-hue-1) 50% 50%);
   /**
    * This percentage controls the default saturation of all non-subdued colors
    */
@@ -368,7 +369,8 @@ a, h4, .h4, h6, .h6,
 
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu,
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu,
-.close-menu-modal.v-button {
+.close-menu-modal.v-button,
+.close-menu-modal.v-button:active, .close-menu-modal.v-button:focus, .close-menu-modal.v-button:hover {
   background-color: var(--menu-background);
 }
 
@@ -378,8 +380,7 @@ a, h4, .h4, h6, .h6,
 table th,
 [class*=wp-block-] > table th,
 .v-dark-background, .v-dark-background table th,
-#site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu,
-.close-menu-modal.v-button:active, .close-menu-modal.v-button:focus, .close-menu-modal.v-button:hover {
+#site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu {
   background-color: var(--monochromatic-hue-1_dark);
 }
 
@@ -490,6 +491,12 @@ hr, .social-media-footer-area, .wp-block-quote, .wp-block-separator, .twitter-tw
   display: block;
   font-weight: 600;
   line-height: 1;
+}
+.v-grid-item-container .v-grid-item-meta a {
+  text-decoration: none;
+}
+.v-grid-item-container .v-grid-item-meta a:active, .v-grid-item-container .v-grid-item-meta a:focus, .v-grid-item-container .v-grid-item-meta a:hover {
+  text-decoration: underline;
 }
 .v-grid-item-container:not(.v-subdued) {
   border-radius: 10px;
@@ -1694,8 +1701,12 @@ main {
   text-transform: uppercase;
 }
 #site-navigation #primary-menu .menu-item a {
+  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   display: block;
   text-decoration: none;
+}
+#site-navigation #primary-menu .menu-item a:active, #site-navigation #primary-menu .menu-item a:focus, #site-navigation #primary-menu .menu-item a:hover {
+  text-decoration: underline;
 }
 #site-navigation #primary-menu > .menu-item.menu-item-has-children {
   position: relative;
@@ -1711,7 +1722,6 @@ main {
   position: absolute;
   top: 3px;
   transform: rotate(-45deg);
-  transition: all 0.2s;
   width: 0;
 }
 #site-navigation #primary-menu > .menu-item.menu-item-has-children .sub-menu a {
@@ -1747,13 +1757,13 @@ main {
   padding-right: calc(0.75rem + 11px);
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > .sub-menu {
-  border-radius: 10px;
+  border-radius: 4px;
   box-shadow: 0 0 45px 0px rgba(0, 0, 0, 0.1);
   display: none;
   padding: 7px 1.2rem;
   position: absolute;
   top: 2rem;
-  width: 240px;
+  width: 200px;
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > .sub-menu > .menu-item:not(:last-child) {
   border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
@@ -1792,7 +1802,7 @@ main {
   background: transparent;
   border: none;
   display: inline-block;
-  font-weight: 600;
+  font-weight: 700;
   height: unset;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -1868,7 +1878,7 @@ main {
   top: 14px;
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item.menu-item-has-children > .sub-menu {
-  border-radius: 10px;
+  border-radius: 4px;
   margin-bottom: 1rem;
   margin-top: 4px;
   padding: 7px 1.2rem;

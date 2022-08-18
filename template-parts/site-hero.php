@@ -5,10 +5,10 @@ if ( is_front_page() ) {
 	if ( ! empty( get_theme_mod( 'volatyl_front_page_hero_title' ) ) ) {
 		$front_page_hero_title = get_theme_mod( 'volatyl_front_page_hero_title' );
 	}
-	volatyl_hero( array(
+	$hero_args = array(
 		'title'         => $front_page_hero_title,
 		'subtitle'      => get_theme_mod( 'volatyl_front_page_hero_subtitle', '' ),
-		'light'         => get_theme_mod( 'volatyl_front_page_hero_light', 0 ),
+		'dark'          => get_theme_mod( 'volatyl_front_page_hero_dark', 0 ),
 		'alignment'     => get_theme_mod( 'volatyl_front_page_hero_centered', 0 ),
 		'primary_cta'   => array(
 			'url'  => get_theme_mod( 'volatyl_front_page_hero_primary_cta_button_url', '' ),
@@ -18,5 +18,6 @@ if ( is_front_page() ) {
 			'url'  => get_theme_mod( 'volatyl_front_page_hero_secondary_cta_button_url', '' ),
 			'text' => get_theme_mod( 'volatyl_front_page_hero_secondary_cta_button_text', '' ),
 		),
-	) );
+	);
+	volatyl_hero( $hero_args );
 }

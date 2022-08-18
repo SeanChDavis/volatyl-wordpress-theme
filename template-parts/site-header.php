@@ -1,6 +1,6 @@
 <?php // The main site header
 $header_classes = array( 'site-header', 'v-gray-background' );
-if ( is_front_page() && ! get_theme_mod( 'volatyl_front_page_hero_light', 0 ) ) {
+if ( is_front_page() && get_theme_mod( 'volatyl_front_page_hero_dark', 0 ) ) {
 	unset( $header_classes[1] );
 	$header_classes[] = 'v-dark-background';
 }
@@ -27,8 +27,8 @@ if ( is_front_page() && ! get_theme_mod( 'volatyl_front_page_hero_light', 0 ) ) 
 				get_template_part( 'template-parts/site', 'navigation' );
 			}
 			?>
-			</div>
 		</div>
+	</div>
 	</div>
 	<?php get_template_part( 'template-parts/site', 'hero' ); ?>
 </header>

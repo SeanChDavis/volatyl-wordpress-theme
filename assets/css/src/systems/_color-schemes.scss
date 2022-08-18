@@ -11,6 +11,7 @@
 	 * This color controls the entire monochromatic color scheme
 	 */
 	--monochromatic-hue-1: 255;
+	--hue-1-pure: hsl(var(--monochromatic-hue-1) 50% 50%);
 
 	/**
 	 * This percentage controls the default saturation of all non-subdued colors
@@ -48,6 +49,7 @@
  * border-color, etc.). All theme color-related rules are placed in this file to
  * control the color scheme from a single location.
  */
+
 #page-container,
 .wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link,
 .fat-footer pre, .fat-footer dl, .fat-footer code, .fat-footer kbd, .fat-footer tt, .fat-footer var {
@@ -212,7 +214,8 @@ a, h4, .h4, h6, .h6,
 
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu,
 #site-navigation.toggled > [class*="-container"].menu-modal-active #primary-menu,
-.close-menu-modal.v-button {
+.close-menu-modal.v-button,
+.close-menu-modal.v-button:active, .close-menu-modal.v-button:focus, .close-menu-modal.v-button:hover {
 	background-color: var(--menu-background);
 }
 
@@ -222,8 +225,7 @@ a, h4, .h4, h6, .h6,
 table th,
 [class*="wp-block-"] > table th,
 .v-dark-background, .v-dark-background table th,
-#site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu,
-.close-menu-modal.v-button:active, .close-menu-modal.v-button:focus, .close-menu-modal.v-button:hover {
+#site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu {
 	background-color: var(--monochromatic-hue-1_dark);
 }
 
