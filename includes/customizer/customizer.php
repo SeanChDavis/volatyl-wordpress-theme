@@ -103,7 +103,6 @@ function volatyl_customize_controls_print_styles() { ?>
 			margin-top: 10px;
 		}
 		.customize-control-title {
-			font-size: 13px !important;
 			margin: 8px 0 !important;
 		}
 		.customize-control label {
@@ -143,9 +142,6 @@ function volatyl_customize_controls_print_styles() { ?>
 		.customize-control-image + .customize-control-checkbox {
 			margin-top: 12px;
 		}
-		#customize-control-volatyl_empty_cart_downloads_count input {
-			width: 50px;
-		}
 	</style>
 	<?php
 }
@@ -158,16 +154,10 @@ function volatyl_customizer_head_styles() {
 	?>
 	<style type="text/css">
 		:root {
-
-			/**
-			 * This color controls the entire color scheme!
-			 */
+			/* This color controls the entire color scheme! */
 			--primary-hue: <?php echo get_theme_mod( 'volatyl_primary_hue', 255 ); ?>;
-
-			/**
-			 * This percentage controls the default saturation of all non-subdued colors
-			 */
-			--global-hue-saturation: 23%;
+			/* This percentage controls the default saturation of all non-subdued colors */
+			--global-hue-saturation: 45%;
 		}
 	</style>
 	<?php

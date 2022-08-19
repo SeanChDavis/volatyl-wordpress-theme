@@ -7,22 +7,22 @@
  */
 :root {
 
-	/* Very light - based on hue 1 */
+	/* Very light - based on the primary hue */
 	--primary-hue_lightest: hsl(var(--primary-hue) var(--global-hue-saturation) 98%);
 	--primary-hue_lighter: hsl(var(--primary-hue) var(--global-hue-saturation) 95%);
 	--primary-hue_light: hsl(var(--primary-hue) var(--global-hue-saturation) 93%);
 
-	/* Very dark - based on hue 1 */
+	/* Very dark - based on the primary hue */
 	--primary-hue_dark: hsl(var(--primary-hue) var(--global-hue-saturation) 20%);
 	--primary-hue_darker: hsl(var(--primary-hue) var(--global-hue-saturation) 18%);
 	--primary-hue_darkest: hsl(var(--primary-hue) var(--global-hue-saturation) 16%);
 
-	/* Action colors - based on hue 1 */
+	/* Action colors - based on the primary hue */
 	--action-color: hsl(var(--primary-hue) var(--global-hue-saturation) 28%);
 	--action-color-alt: hsl(var(--primary-hue) var(--global-hue-saturation) 32%);
 	--dark-background-action-color: hsl(var(--primary-hue) var(--global-hue-saturation) 84%);
 
-	/* Subdued colors - based on hue 1 */
+	/* Subdued colors - based on the primary hue */
 	--subdued-text: hsl(var(--primary-hue) 15% 43%);
 	--subdued-border: hsl(var(--primary-hue) 15% 91%);
 

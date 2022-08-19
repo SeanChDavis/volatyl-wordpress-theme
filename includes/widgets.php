@@ -37,8 +37,8 @@ function volatyl_sidebars() {
 			'after_sidebar'  => '</div>',
 			'before_widget'  => '<section class="widget %2$s">',
 			'after_widget'   => '</section>',
-			'before_title'   => '<h2 class="widget-title">',
-			'after_title'    => '</h2>',
+			'before_title'   => '<h5 class="widget-title">',
+			'after_title'    => '</h5>',
 		) );
 	}
 }
@@ -88,8 +88,8 @@ function volatyl_fat_footer_areas() {
 			'after_sidebar'  => '</div>',
 			'before_widget'  => '<section class="widget %2$s">',
 			'after_widget'   => '</section>',
-			'before_title'   => '<h2 class="widget-title">',
-			'after_title'    => '</h2>',
+			'before_title'   => '<h5 class="widget-title">',
+			'after_title'    => '</h5>',
 		) );
 	}
 }
@@ -105,8 +105,8 @@ function volatyl_social_media_footer_area() {
 		'after_sidebar'  => '</div>',
 		'before_widget'  => '<section class="widget %2$s">',
 		'after_widget'   => '</section>',
-		'before_title'   => '<h2 class="widget-title">',
-		'after_title'    => '</h2>',
+		'before_title'   => '<h5 class="widget-title">',
+		'after_title'    => '</h5>',
 	) );
 }
 add_action( 'widgets_init', 'volatyl_social_media_footer_area' );

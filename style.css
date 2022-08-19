@@ -169,19 +169,19 @@ template {
  * unnecessary technical debt.
  */
 :root {
-  /* Very light - based on hue 1 */
+  /* Very light - based on the primary hue */
   --primary-hue_lightest: hsl(var(--primary-hue) var(--global-hue-saturation) 98%);
   --primary-hue_lighter: hsl(var(--primary-hue) var(--global-hue-saturation) 95%);
   --primary-hue_light: hsl(var(--primary-hue) var(--global-hue-saturation) 93%);
-  /* Very dark - based on hue 1 */
+  /* Very dark - based on the primary hue */
   --primary-hue_dark: hsl(var(--primary-hue) var(--global-hue-saturation) 20%);
   --primary-hue_darker: hsl(var(--primary-hue) var(--global-hue-saturation) 18%);
   --primary-hue_darkest: hsl(var(--primary-hue) var(--global-hue-saturation) 16%);
-  /* Action colors - based on hue 1 */
+  /* Action colors - based on the primary hue */
   --action-color: hsl(var(--primary-hue) var(--global-hue-saturation) 28%);
   --action-color-alt: hsl(var(--primary-hue) var(--global-hue-saturation) 32%);
   --dark-background-action-color: hsl(var(--primary-hue) var(--global-hue-saturation) 84%);
-  /* Subdued colors - based on hue 1 */
+  /* Subdued colors - based on the primary hue */
   --subdued-text: hsl(var(--primary-hue) 15% 43%);
   --subdued-border: hsl(var(--primary-hue) 15% 91%);
   /* Miscellaneous */
@@ -1675,9 +1675,9 @@ main {
   align-self: center;
 }
 .site-header-elements .custom-logo-link .custom-logo {
-  max-width: 170px;
   transition: opacity 0.2s;
   vertical-align: bottom;
+  width: 115px;
 }
 .site-header-elements .custom-logo-link .custom-logo:active, .site-header-elements .custom-logo-link .custom-logo:focus, .site-header-elements .custom-logo-link .custom-logo:hover {
   opacity: 0.7;
@@ -2028,14 +2028,30 @@ main {
   flex-basis: 120px;
 }
 
-.fat-footer .widget ul li ul, .fat-footer .widget ul li ol,
-.fat-footer .widget ol li ul,
-.fat-footer .widget ol li ol {
-  margin-top: 0.5rem;
+.fat-footer .widget ul,
+.fat-footer .widget ol {
+  margin: 0;
 }
-.fat-footer .widget ul li + li,
+.fat-footer .widget ul li,
+.fat-footer .widget ol li {
+  list-style-type: none;
+}
+.fat-footer .widget ul li ul, .fat-footer .widget ul li ol, .fat-footer .widget ul li + li,
+.fat-footer .widget ol li ul,
+.fat-footer .widget ol li ol,
 .fat-footer .widget ol li + li {
-  margin-top: 0.5rem;
+  margin-top: 5px;
+}
+.fat-footer .widget ul li a,
+.fat-footer .widget ol li a {
+  font-size: 15px;
+}
+.fat-footer .widget a {
+  text-decoration-style: dotted;
+}
+.fat-footer .widget a:active, .fat-footer .widget a:focus, .fat-footer .widget a:hover {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
 }
 
 #comments .comments-title {

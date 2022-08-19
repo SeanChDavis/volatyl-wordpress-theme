@@ -131,17 +131,31 @@
 
 		ul,
 		ol {
+			margin: 0;
 
 			li {
+				list-style-type: none;
 
 				& ul,
-				& ol {
-					margin-top: .5rem;
+				& ol,
+				& + li {
+					margin-top: 5px;
 				}
 
-				& + li {
-					margin-top: .5rem;
+				a {
+					@include fontSmaller;
 				}
+			}
+		}
+
+		a {
+			text-decoration-style: dotted;
+
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration-line: underline;
+				text-decoration-style: solid;
 			}
 		}
 	}
