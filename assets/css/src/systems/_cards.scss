@@ -9,16 +9,6 @@
 		display: block;
 		font-weight: 600;
 		line-height: 1;
-
-		a {
-			text-decoration: none;
-
-			&:active,
-			&:focus,
-			&:hover {
-				text-decoration: underline;
-			}
-		}
 	}
 
 	&:not(.v-subdued) {

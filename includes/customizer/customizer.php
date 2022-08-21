@@ -154,15 +154,23 @@ add_action( 'customize_controls_print_styles', 'volatyl_customize_controls_print
  * Add color scheme CSS variables to front-end <head>
  */
 function volatyl_customizer_head_styles() {
+
+	// This hue controls the entire color scheme
+	$primary_hue = get_theme_mod( 'volatyl_primary_hue', 255 );
+
+	// This percentage controls the default saturation of all non-subdued colors
+	$global_hue_saturtion = get_theme_mod( 'volatyl_primary_hue_saturation', 43 );
+
+	// Based on global hue saturation percentage, this color sets the
+	// luminance of basic text and similar elements against dark backgrounds
+	$dark_bg_light_color  = '100';
+	if ( $global_hue_saturtion <= 33 ) {
+		$dark_bg_light_color = '84';
+	} elseif ( ( $global_hue_saturtion >= 34 ) && ( $global_hue_saturtion <= 67 ) ) {
+		$dark_bg_light_color = '92';
+	}
 	?>
-	<style>
-		:root {
-			/* This color controls the entire color scheme! */
-			--primary-hue: <?php echo get_theme_mod( 'volatyl_primary_hue', 255 ); ?>;
-			/* This percentage controls the default saturation of all non-subdued colors */
-			--global-hue-saturation: <?php echo get_theme_mod( 'volatyl_primary_hue_saturation', 43 ); ?>%;
-		}
-	</style>
+	<style>:root{--primary-hue:<?php echo $primary_hue; ?>;--global-hue-saturation:<?php echo $global_hue_saturtion; ?>%;--dark-background-light-color-luminance:<?php echo $dark_bg_light_color; ?>%}</style>
 	<?php
 }
 add_action( 'wp_head', 'volatyl_customizer_head_styles' );

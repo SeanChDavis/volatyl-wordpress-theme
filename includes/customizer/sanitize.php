@@ -36,7 +36,6 @@ function volatyl_sanitize_textarea( $input ) {
 		's'         => array(),
 		'br'        => array(),
 		'em'        => array(),
-		'i'         => array(),
 		'strong'    => array(),
 		'b'         => array(),
 		'a'         => array(
@@ -118,9 +117,6 @@ function volatyl_sanitize_textarea_lite( $input ) {
 			'class'         => array(),
 			'id'            => array(),
 			'style'         => array(),
-		),
-		'i'      => array(
-			'class'         => array(),
 		),
 	);
 	return wp_kses( $input, $allowed );

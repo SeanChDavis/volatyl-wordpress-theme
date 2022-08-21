@@ -11,6 +11,7 @@ $wp_customize->add_setting( 'volatyl_full_width_structure', array(
 ) );
 $wp_customize->add_control( 'volatyl_full_width_structure', array(
 	'label'    => __( 'Enable full-width', 'volatyl' ),
+	'description'    => __( 'When enabled, the HTML element that wraps all major site sections will span the full width of the viewport, allowing background colors to display across the screen while the content itself is contained within page boundaries. When disabled, commonly referred to as page-width display, the content itself is still contained but the wrapping element also has horizontal limits.', 'volatyl' ),
 	'section'  => 'volatyl_structure',
 	'priority' => 10,
 	'type'     => 'checkbox',
@@ -29,7 +30,7 @@ $wp_customize->add_setting( 'volatyl_primary_hue', array(
 $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'volatyl_primary_hue', array(
 	'label'           => __( 'Primary hue slider', 'volatyl' ),
 	'section'         => 'volatyl_color_scheme',
-	'description'     => __( 'This single hue will intelligently build the color scheme of your choice.', 'twentytwenty' ),
+	'description'     => sprintf( __( 'Your color scheme is intelligently configured based on your selection of one single hue. A hue (color) is represented as 1 degree of a 360-degree color wheel, with red at the 0/360 point. Use the slider control to choose your desired hue, where the far left represents 0 and the far right represents 360. %s will then use your chosen hue to craft color schemes based on established color theory. Learn more about <a href="https://en.wikipedia.org/wiki/Hue" target="_blank">hue</a> and <a href="https://en.wikipedia.org/wiki/Color_theory" target="_blank">color theory</a>.', 'volatyl' ), THEME_NAME ),
 	'mode'            => 'hue',
 	'priority'        => 10,
 ) ) );
@@ -44,7 +45,7 @@ $wp_customize->add_control( 'volatyl_primary_hue_saturation', array(
 	'type' => 'range',
 	'section' => 'volatyl_color_scheme',
 	'label' => __( 'Global hue saturation' ),
-	'description' => __( 'While the primary hue selection builds your color scheme, this setting controls the saturation of the colors included in your color scheme. The higher the number, the more saturation. The high and low boundaries are set to prevent poor contrast.' ),
+	'description' => __( 'While the primary hue selection builds your color scheme, this setting controls the saturation of the colors included in your color scheme. Use the slider control to choose your desired saturation, where the far left represents 0% (grayscale) and the far right represents 100% (vibrant hue).' ),
 	'input_attrs' => array(
 		'min' => 0,
 		'max' => 100,
@@ -56,17 +57,6 @@ $wp_customize->add_control( 'volatyl_primary_hue_saturation', array(
  * Content Configuration
  */
 
-// Page settings area
-$wp_customize->add_setting( 'volatyl_page_settings', array(
-	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
-) );
-$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_page_settings', array(
-	'label'       => __( 'Pages', 'volatyl' ),
-	'description' => __( 'The following settings are specific to standard WordPress Pages.', 'volatyl' ),
-	'section'     => 'volatyl_content_section',
-	'priority'    => 1,
-) ) );
-
 // Comments on pages?
 $wp_customize->add_setting( 'volatyl_page_comments', array(
 	'default'           => 0,
@@ -75,7 +65,7 @@ $wp_customize->add_setting( 'volatyl_page_comments', array(
 $wp_customize->add_control( 'volatyl_page_comments', array(
 	'label'    => __( 'Enable comments on standard pages', 'volatyl' ),
 	'section'  => 'volatyl_content_section',
-	'priority' => 20,
+	'priority' => 10,
 	'type'     => 'checkbox',
 ) );
 
@@ -113,7 +103,7 @@ $wp_customize->add_setting( 'volatyl_front_page_hero_light_logo', array(
 ) );
 $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'volatyl_front_page_hero_light_logo', array(
 	'label'           => __( 'Light logo', 'volatyl' ),
-	'description'     => __( 'Upload a light version of your logo to display over the dark background.', 'volatyl' ),
+	'description'     => __( 'Upload a light version of your logo to display over the dark header background.', 'volatyl' ),
 	'section'         => 'volatyl_front_page_template',
 	'priority'        => 20,
 	'mime_type'       => 'image',
@@ -158,7 +148,7 @@ $wp_customize->add_setting( 'volatyl_front_page_hero_subtitle', array(
 $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_customize, 'volatyl_front_page_hero_subtitle', array(
 	'label'       => __( 'Subtitle', 'volatyl' ),
 	'section'     => 'volatyl_front_page_template',
-	'description' => sprintf( __( 'This content displays below the hero title in a paragraph format. 2-3 sentences looks best. Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>, <i>' ),
+	'description' => sprintf( __( 'This content displays below the hero title in a paragraph format. 2-3 sentences looks best. Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>' ),
 	'priority'    => 50,
 ) ) );
 
@@ -276,7 +266,7 @@ $wp_customize->add_setting( 'volatyl_blog_description', array(
 $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_customize, 'volatyl_blog_description', array(
 	'label'       => __( 'Description', 'volatyl' ),
 	'section'     => 'volatyl_blog_template',
-	'description' => sprintf( __( 'This content displays below the blog title in a paragraph format. 2-3 sentences looks best. Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>, <i>' ),
+	'description' => sprintf( __( 'This content displays below the blog title in a paragraph format. 2-3 sentences looks best. Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>' ),
 	'priority'    => 20,
 ) ) );
 
@@ -297,7 +287,7 @@ $wp_customize->add_setting( 'volatyl_blog_posts_grid_columns_rows', array(
 	'sanitize_callback' => 'volatyl_sanitize_text',
 ) );
 $wp_customize->add_control( 'volatyl_blog_posts_grid_columns_rows', array(
-	'label'    => __( 'How should blog posts display?', 'volatyl' ),
+	'label'    => __( 'How many blog posts should display?', 'volatyl' ),
 	'section'  => 'volatyl_blog_template',
 	'priority' => 110,
 	'type'     => 'select',
@@ -373,7 +363,7 @@ $wp_customize->add_setting( 'volatyl_blog_grid_cta_description', array(
 $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_customize, 'volatyl_blog_grid_cta_description', array(
 	'label'           => __( 'Description', 'volatyl' ),
 	'section'         => 'volatyl_blog_template',
-	'description'     => sprintf( __( 'Describe to your visitor the reason for taking this particular action on your site. Consider 1-2 sentences Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>, <i>' ),
+	'description'     => sprintf( __( 'Describe to your visitor the reason for taking this particular action on your site. Consider 1-2 sentences Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>' ),
 	'priority'        => 240,
 	'active_callback' => 'volatyl_display_blog_grid_cta_settings',
 ) ) );
@@ -428,7 +418,7 @@ $wp_customize->add_control( 'volatyl_footer_lead', array(
 	'label'       => __( 'Enable Footer Lead area', 'volatyl' ),
 	'section'     => 'volatyl_footer_areas',
 	'priority'    => 10,
-	'description' => __( 'There must also be a title, description, or button in Footer Lead area for it to display.', 'volatyl' ),
+	'description' => __( 'There must be a title, description, or button in Footer Lead area for it to display.', 'volatyl' ),
 	'type'        => 'checkbox',
 ) );
 
@@ -453,7 +443,7 @@ $wp_customize->add_setting( 'volatyl_footer_lead_description', array(
 $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_customize, 'volatyl_footer_lead_description', array(
 	'label'           => __( 'Description', 'volatyl' ),
 	'section'         => 'volatyl_footer_areas',
-	'description'     => sprintf( __( 'Describe to your visitor the reason for taking this particular action on your site. Consider 1-2 sentences Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>, <i>' ),
+	'description'     => sprintf( __( 'Describe to your visitor the reason for taking this particular action on your site. Consider 1-2 sentences Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>' ),
 	'priority'        => 30,
 	'active_callback' => 'volatyl_display_footer_lead_settings',
 ) ) );
@@ -504,7 +494,7 @@ $wp_customize->add_control( 'volatyl_fat_footer', array(
 	'label'       => __( 'Enable Fat Footer area', 'volatyl' ),
 	'section'     => 'volatyl_footer_areas',
 	'priority'    => 110,
-	'description' => __( 'There must also be content in at least one Fat Footer widget area.', 'volatyl' ),
+	'description' => __( 'There must be content in at least one Fat Footer widget area.', 'volatyl' ),
 	'type'        => 'checkbox',
 ) );
 
@@ -517,7 +507,7 @@ $wp_customize->add_control( 'volatyl_fat_footer_alternate_layout', array(
 	'label'           => __( 'Enable alternate layout', 'volatyl' ),
 	'section'         => 'volatyl_footer_areas',
 	'priority'        => 110,
-	'description'     => __( 'When either three or four Fat Footer widget areas are in use, the alternate layout makes the left-most area larger than the others.', 'volatyl' ),
+	'description'     => __( 'When either three or four Fat Footer widget areas are in use, the alternate layout makes the left-most area wider than the others.', 'volatyl' ),
 	'type'            => 'checkbox',
 	'active_callback' => 'volatyl_display_fat_footer_settings',
 ) );

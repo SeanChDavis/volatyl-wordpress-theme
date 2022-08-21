@@ -5,7 +5,7 @@
  */
 $wp_customize->add_section( 'volatyl_structure', array(
 	'title'       => __( 'HTML Structure', 'volatyl' ),
-	'description' => __( 'Control your site HTML structure. When enabled, the HTML element that wraps all major site sections will span the full width of the viewport. This means section background colors will display across the screen while the content itself is contained. When disabled, commonly referred to as page-width display, the content itself is still contained but the wrapping element also has horizontal limits. This layout exposes the HTML body element as the wrapper of all content, which allows the body to have a separate background color, creating distinction between the page structure and the site background. The difference isn\'t noticeable unless the device viewport is wide enough to display the page structure.', 'volatyl' ),
+	'description' => __( 'Control your site HTML structure.', 'volatyl' ),
 	'panel'       => 'volatyl_settings',
 	'priority'    => 10,
 ) );
@@ -15,7 +15,7 @@ $wp_customize->add_section( 'volatyl_structure', array(
  */
 $wp_customize->add_section( 'volatyl_color_scheme', array(
 	'title'       => __( 'Color Scheme', 'volatyl' ),
-	'description' => __( 'Easily configure a beautiful color scheme for your website using any combination of the settings below.', 'volatyl' ),
+	'description' => __( 'Configure your site color scheme.', 'volatyl' ),
 	'panel'       => 'volatyl_settings',
 	'priority'    => 20,
 ) );
@@ -35,7 +35,7 @@ $wp_customize->add_section( 'volatyl_content_section', array(
  */
 $wp_customize->add_section( 'volatyl_front_page_template', array(
 	'title'       => __( 'Template - Front Page', 'volatyl' ),
-	'description' => __( 'Configure the Front Page settings.', 'volatyl' ),
+	'description' => __( 'Configure the Front Page template settings.', 'volatyl' ),
 	'panel'       => 'volatyl_settings',
 	'priority'    => 40,
 ) );
@@ -45,7 +45,7 @@ $wp_customize->add_section( 'volatyl_front_page_template', array(
  */
 $wp_customize->add_section( 'volatyl_blog_template', array(
 	'title'       => __( 'Template - Blog', 'volatyl' ),
-	'description' => __( 'Configure the Blog settings.', 'volatyl' ),
+	'description' => __( 'Configure the Blog template settings.', 'volatyl' ),
 	'panel'       => 'volatyl_settings',
 	'priority'    => 50,
 ) );
@@ -55,7 +55,7 @@ $wp_customize->add_section( 'volatyl_blog_template', array(
  */
 $wp_customize->add_section( 'volatyl_footer_areas', array(
 	'title'       => __( 'Footer Areas', 'volatyl' ),
-	'description' => __( 'Configure the Footer Lead, Fat Footer, and Site Footer areas.', 'volatyl' ),
+	'description' => __( 'Configure the footer areas.', 'volatyl' ),
 	'panel'       => 'volatyl_settings',
 	'priority'    => 60,
 ) );
