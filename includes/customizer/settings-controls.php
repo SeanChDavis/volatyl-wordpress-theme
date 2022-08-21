@@ -20,18 +20,37 @@ $wp_customize->add_control( 'volatyl_full_width_structure', array(
  * Color scheme
  */
 
-// Primary Hue selector
+// Primary hue slider
 $wp_customize->add_setting( 'volatyl_primary_hue', array(
 	'default'           => 255,
 	'type'              => 'theme_mod',
 	'sanitize_callback' => 'absint',
 ) );
 $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'volatyl_primary_hue', array(
-	'label'           => __( 'Primary hue', 'volatyl' ),
+	'label'           => __( 'Primary hue slider', 'volatyl' ),
 	'section'         => 'volatyl_color_scheme',
 	'description'     => __( 'This single hue will intelligently build the color scheme of your choice.', 'twentytwenty' ),
 	'mode'            => 'hue',
+	'priority'        => 10,
 ) ) );
+
+// Global hue saturation
+$wp_customize->add_setting( 'volatyl_primary_hue_saturation', array(
+	'default'           => 43,
+	'type'              => 'theme_mod',
+	'sanitize_callback' => 'absint',
+) );
+$wp_customize->add_control( 'volatyl_primary_hue_saturation', array(
+	'type' => 'range',
+	'section' => 'volatyl_color_scheme',
+	'label' => __( 'Global hue saturation' ),
+	'description' => __( 'While the primary hue selection builds your color scheme, this setting controls the saturation of the colors included in your color scheme. The higher the number, the more saturation. The high and low boundaries are set to prevent poor contrast.' ),
+	'input_attrs' => array(
+		'min' => 0,
+		'max' => 100,
+		'step' => 1,
+	),
+) );
 
 /**
  * Content Configuration

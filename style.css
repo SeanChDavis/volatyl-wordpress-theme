@@ -637,11 +637,19 @@ hr, .social-media-footer-area, .wp-block-quote, .wp-block-separator, .twitter-tw
   font-size: 16px;
 }
 
+.content-header {
+  text-align: center;
+}
+@media all and (min-width: 992px) {
+  .content-header {
+    text-align: left;
+  }
+}
 .content-header .content-title {
   margin-bottom: 0;
   max-width: 770px;
 }
-@media all and (min-width: 1200px) {
+@media all and (min-width: 992px) {
   .content-header .content-title {
     max-width: 940px;
   }
@@ -1676,7 +1684,6 @@ main {
 }
 .site-header-elements .custom-logo-link .custom-logo {
   transition: opacity 0.2s;
-  vertical-align: bottom;
   width: 115px;
 }
 .site-header-elements .custom-logo-link .custom-logo:active, .site-header-elements .custom-logo-link .custom-logo:focus, .site-header-elements .custom-logo-link .custom-logo:hover {

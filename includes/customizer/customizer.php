@@ -142,6 +142,9 @@ function volatyl_customize_controls_print_styles() { ?>
 		.customize-control-image + .customize-control-checkbox {
 			margin-top: 12px;
 		}
+		.customize-control-number input[type="number"] {
+			width: 100px;
+		}
 	</style>
 	<?php
 }
@@ -152,12 +155,12 @@ add_action( 'customize_controls_print_styles', 'volatyl_customize_controls_print
  */
 function volatyl_customizer_head_styles() {
 	?>
-	<style type="text/css">
+	<style>
 		:root {
 			/* This color controls the entire color scheme! */
 			--primary-hue: <?php echo get_theme_mod( 'volatyl_primary_hue', 255 ); ?>;
 			/* This percentage controls the default saturation of all non-subdued colors */
-			--global-hue-saturation: 45%;
+			--global-hue-saturation: <?php echo get_theme_mod( 'volatyl_primary_hue_saturation', 43 ); ?>%;
 		}
 	</style>
 	<?php

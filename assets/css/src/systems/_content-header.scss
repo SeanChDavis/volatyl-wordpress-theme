@@ -1,10 +1,15 @@
 .content-header {
+	text-align: center;
+
+	@media all and (min-width: $mdMinWidth) {
+		text-align: left;
+	}
 
 	.content-title {
 		margin-bottom: 0;
 		max-width: 770px;
 
-		@media all and (min-width: $lgMinWidth) {
+		@media all and (min-width: $mdMinWidth) {
 			max-width: 940px;
 		}
 
