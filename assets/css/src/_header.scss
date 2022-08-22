@@ -6,28 +6,31 @@
 		align-self: center;
 	}
 
-	.custom-logo-link {
-
-		.custom-logo {
-			transition: opacity .2s;
-			width: 115px;
-
-			&:active,
-			&:focus,
-			&:hover {
-				opacity: .7;
-			}
-		}
-	}
-
-	.site-title {
-		@include headingFont;
-		font-weight: 700;
-		font-size: 1.25rem;
+	.site-branding {
 		line-height: 1;
 
-		a {
-			text-decoration: none;
+		.custom-logo-link {
+
+			.custom-logo {
+				transition: opacity .2s;
+				width: 115px;
+
+				&:active,
+				&:focus,
+				&:hover {
+					opacity: .7;
+				}
+			}
+		}
+
+		.site-title {
+			@include headingFont;
+			font-weight: 700;
+			font-size: 1.25rem;
+
+			a {
+				text-decoration: none;
+			}
 		}
 	}
 }

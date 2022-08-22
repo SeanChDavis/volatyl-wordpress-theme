@@ -1,16 +1,14 @@
 <?php // The main site header
-$header_classes       = array( 'site-header', 'v-gray-background' );
 $front_page_hero_dark = is_front_page() && get_theme_mod( 'volatyl_front_page_hero_dark', 0 );
-
+$header_bg_color      = 'v-gray-background';
 if ( $front_page_hero_dark ) {
-	unset( $header_classes[1] );
-	$header_classes[] = 'v-dark-background';
+	$header_bg_color = 'v-dark-background';
 	$light_logo_atts = wp_get_attachment_image_src( get_theme_mod( 'volatyl_front_page_hero_light_logo' ) );
 }
 ?>
 
-<header id="masthead">
-	<div class="<?php echo implode( ' ', $header_classes ); ?>">
+<header id="masthead" class="<?php echo $header_bg_color; ?>">
+	<div class="site-header">
 		<div class="inner v-padding-y-4">
 			<div class="site-header-elements">
 				<div class="site-branding">

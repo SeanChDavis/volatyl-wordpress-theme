@@ -468,6 +468,17 @@ figure {
 	}
 }
 
+.wp-block-gallery {
+
+	&:not(.alignleft) {
+		margin-right: 0;
+	}
+
+	&:not(.alignright) {
+		margin-left: 0;
+	}
+}
+
 .wp-caption,
 .wp-block-image {
 	max-width: 100%;

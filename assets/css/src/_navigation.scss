@@ -84,6 +84,7 @@
 	&:not(.toggled) {
 
 		#primary-menu {
+			align-items: center;
 			display: none;
 			flex-direction: row;
 
@@ -97,6 +98,16 @@
 			}
 
 			& > .menu-item {
+
+				& > a {
+					display: inline-block;
+					line-height: 1;
+					padding: 0 .75rem;
+				}
+
+				&:last-child > a {
+					padding-right: 0;
+				}
 
 				&.menu-item-has-children {
 
@@ -148,6 +159,32 @@
 					}
 				}
 
+				&.menu-item-button {
+					padding-left: 12px;
+
+					& > a {
+						border-radius: 4px;
+						padding: 8px 12px;
+
+						&:active,
+						&:focus,
+						&:hover {
+							text-decoration: none;
+						}
+					}
+
+					&.menu-item-has-children {
+
+						& > a {
+							padding-right: 23px;
+
+							&:after {
+								top: 7px;
+							}
+						}
+					}
+				}
+
 				&:active,
 				&:focus,
 				&:hover {
@@ -155,15 +192,6 @@
 					& > a {
 						text-decoration: underline;
 					}
-				}
-
-				& > a {
-					display: inline-block;
-					padding: 0 .75rem;
-				}
-
-				&:last-child > a {
-					padding-right: 0;
 				}
 
 				&:last-child,

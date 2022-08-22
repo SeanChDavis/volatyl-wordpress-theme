@@ -8,7 +8,6 @@ if ( is_front_page() ) {
 	$hero_args = array(
 		'title'         => $front_page_hero_title,
 		'subtitle'      => get_theme_mod( 'volatyl_front_page_hero_subtitle', '' ),
-		'dark'          => get_theme_mod( 'volatyl_front_page_hero_dark', 0 ),
 		'alignment'     => get_theme_mod( 'volatyl_front_page_hero_centered', 0 ),
 		'primary_cta'   => array(
 			'url'  => get_theme_mod( 'volatyl_front_page_hero_primary_cta_button_url', '' ),
