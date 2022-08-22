@@ -169,7 +169,7 @@ template {
  *
  * --primary-hue
  * --global-hue-saturation
- * --dark-background-light-color
+ * --dark-background-light-color-luminance
  */
 :root {
   /* Very light - based on the primary hue */
