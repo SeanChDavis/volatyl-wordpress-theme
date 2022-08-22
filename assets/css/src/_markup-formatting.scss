@@ -157,6 +157,11 @@ p {
 		}
 	}
 
+	cite {
+		font-weight: 400;
+		margin-top: 1rem;
+	}
+
 	& + .wp-block-image {
 		margin-top: 2rem;
 	}
@@ -181,7 +186,14 @@ address {
 	@media all and (min-width: $smMinWidth) {
 		margin-bottom: 2rem;
 	}
+}
 
+blockquote {
+
+	& > p {
+		@include headingFont;
+		font-weight: 700;
+	}
 }
 
 .wp-block-quote {
@@ -206,12 +218,6 @@ address {
 
 	blockquote {
 		margin: 0;
-
-		& > p {
-			@include headingFont;
-			font-style: normal;
-			font-weight: 700;
-		}
 	}
 
 	&.alignleft,
@@ -252,6 +258,11 @@ q {
 
 cite {
 	@include fontSmaller;
+	display: block;
+
+	&:before {
+		content: "- ";
+	}
 }
 
 table,

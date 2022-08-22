@@ -60,7 +60,7 @@
 		} if ( is_archive() ) {
 			if ( ! empty( get_the_archive_title() ) ) {
 				?>
-				<h1 class="content-title v-margin-bottom-3"><?php echo the_archive_title(); ?></h1>
+				<h1 class="content-title archive-title v-margin-bottom-3"><?php echo the_archive_title(); ?></h1>
 				<?php
 			}
 			if ( ! empty( get_the_archive_description() ) ) {
