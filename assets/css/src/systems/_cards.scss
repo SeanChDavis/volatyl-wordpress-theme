@@ -45,24 +45,10 @@
 			.v-grid-item-body {
 				@include fontSmall;
 				flex: 1 0 auto;
-				padding: 0 1.25rem 1.5rem;
+				padding: 0 1.25rem 1.75rem;
 
 				@media all and (min-width: $mdMinWidth) {
-					padding-left: 2rem;
-					padding-right: 2rem;
-				}
-			}
-
-			.v-grid-item-footer {
-				@include fontSmaller;
-				padding: .5rem 1.25rem 1.75rem;
-
-				@media all and (min-width: $mdMinWidth) {
-					padding: .5rem 2rem 2.25rem;
-				}
-
-				.v-button {
-					@include fontSmallest;
+					padding: 0 2rem 2rem;
 				}
 			}
 		}

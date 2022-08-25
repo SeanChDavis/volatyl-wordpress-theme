@@ -36,9 +36,11 @@
 						<p class="content-description"><?php echo get_theme_mod( 'volatyl_blog_description' ); ?></p>
 					<?php } ?>
 				</div>
-				<div class="content-right">
-					<?php get_search_form(); ?>
-				</div>
+				<?php if ( get_theme_mod( 'volatyl_blog_search_form', 0 ) ) { ?>
+					<div class="content-right">
+						<?php get_search_form(); ?>
+					</div>
+				<?php } ?>
 			</div>
 			<?php
 		} if ( is_search() ) {

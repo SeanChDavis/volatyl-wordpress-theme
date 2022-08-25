@@ -52,7 +52,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'section'     => 'volatyl_color_scheme',
 	'priority'    => 100,
 	'label'       => __( 'Global hue saturation', 'volatyl' ),
-	'description' => __( 'While the primary hue selection is used to build your color scheme, this setting controls the saturation of the colors included in your color scheme. Use the slider control to choose your desired saturation, where the far left represents 0% (grayscale) and the far right represents 100% (vibrant hue).', 'volatyl' ),
+	'description' => __( 'While the primary hue selection is used to build your color scheme, this setting controls the saturation of the colors included in your color scheme. Use the slider control to choose your desired saturation, where the far left represents 0% (grayscale) and the far right represents 85% (vibrant hue).', 'volatyl' ),
 ) ) );
 
 // Global hue saturation slider
@@ -67,7 +67,7 @@ $wp_customize->add_control( 'volatyl_primary_hue_saturation', array(
 	'type'        => 'range',
 	'input_attrs' => array(
 		'min'  => 0,
-		'max'  => 100,
+		'max'  => 85,
 		'step' => 1,
 	),
 ) );
@@ -319,6 +319,18 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_custo
 	'label'       => __( 'Description', 'volatyl' ),
 	'description' => sprintf( __( 'This content displays below the blog title in a paragraph format. 2-3 sentences looks best. Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>' ),
 ) ) );
+
+// Blog search form
+$wp_customize->add_setting( 'volatyl_blog_search_form', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox'
+) );
+$wp_customize->add_control( 'volatyl_blog_search_form', array(
+	'section'  => 'volatyl_blog_template',
+	'priority' => 30,
+	'label'    => __( 'Enable search form', 'volatyl' ),
+	'type'     => 'checkbox',
+) );
 
 // Blog settings area
 $wp_customize->add_setting( 'volatyl_blog_settings', array(

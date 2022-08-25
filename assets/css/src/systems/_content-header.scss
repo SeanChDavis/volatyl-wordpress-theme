@@ -23,10 +23,6 @@
 	.content-description {
 		@include fontSmall;
 		max-width: 765px;
-
-		@media all and (min-width: $mdMinWidth) {
-			@include fontBase;
-		}
 	}
 
 	.content-container {

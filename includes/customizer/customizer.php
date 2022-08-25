@@ -170,7 +170,13 @@ function volatyl_customizer_head_styles() {
 		$dark_bg_light_color = '92';
 	}
 	?>
-	<style>:root{--primary-hue:<?php echo $primary_hue; ?>;--global-hue-saturation:<?php echo $global_hue_saturtion; ?>%;--dark-background-light-color-luminance:<?php echo $dark_bg_light_color; ?>%}</style>
+	<style>
+		:root{
+			--primary-hue:<?php echo $primary_hue; ?>;
+			--complementary-hue: calc(var(--primary-hue) - 180);
+			--global-hue-saturation:<?php echo $global_hue_saturtion; ?>%;
+			--dark-background-light-color-luminance:<?php echo $dark_bg_light_color; ?>%}
+	</style>
 	<?php
 }
 add_action( 'wp_head', 'volatyl_customizer_head_styles' );

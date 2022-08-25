@@ -8,13 +8,42 @@
  */
 function volatyl_body_class( $classes ) {
 
-	// Adds class based on HTML structure
-	if ( 1 == get_theme_mod( 'volatyl_full_width_structure', 0 ) ) {
-		$classes[] = 'full-width-structure';
-	}
-
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
+	}
+
+	switch ( get_theme_mod( 'volatyl_color_scheme_type', 'monochromatic' ) ) {
+
+		case 'monochromatic':
+			$classes[] = 'monochromatic-color-scheme';
+			break;
+
+		case 'complementary':
+			$classes[] = 'complementary-color-scheme';
+			break;
+
+		case 'analogous':
+			$classes[] = 'analogous-color-scheme';
+			break;
+
+		case 'triadic':
+			$classes[] = 'triadic-color-scheme';
+			break;
+
+		case 'split_complementary':
+			$classes[] = 'split_complementary-color-scheme';
+			break;
+
+		case 'tetradic':
+			$classes[] = 'tetradic-color-scheme';
+			break;
+
+		default:
+			$classes[] = 'monochromatic-color-scheme';
+	}
+
+	if ( 1 == get_theme_mod( 'volatyl_full_width_structure', 0 ) ) {
+		$classes[] = 'full-width-structure';
 	}
 
 	if (
