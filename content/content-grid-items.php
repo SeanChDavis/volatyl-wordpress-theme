@@ -38,5 +38,10 @@ if ( is_search() ) {
 				<p class="v-grid-item-description"><?php echo get_the_excerpt( $the_post_id ); ?></p>
 			</section>
 		<?php } ?>
+		<?php if ( ! is_search() ) { ?>
+			<footer class="v-grid-item-footer">
+				<p class="read-more"><a class="" href="<?php echo get_permalink( $the_post_id ); ?>"><?php _e( 'Continue Reading', 'volatyl'); ?></a></p>
+			</footer>
+		<?php } ?>
 	</div>
 </article>

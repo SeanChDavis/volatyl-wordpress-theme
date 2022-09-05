@@ -168,13 +168,14 @@ p {
 }
 
 a {
-	text-decoration: underline;
+	font-weight: 600;
+	text-decoration-style: dotted;
 
 	&:active,
 	&:focus,
 	&:hover {
 		cursor: pointer;
-		text-decoration: none;
+		text-decoration-style: solid;
 	}
 }
 
@@ -213,8 +214,13 @@ blockquote {
 }
 
 .wp-block-pullquote {
-	margin-bottom: 0;
+	border-style: solid;
+	border-width: 3px 0;
 	padding: 3em 1em;
+
+	@media all and (min-width: $mdMinWidth) {
+		margin-bottom: 1rem;
+	}
 
 	blockquote {
 		margin: 0;

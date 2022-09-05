@@ -49,6 +49,10 @@ $lgMinWidth: 1200px;
 	font-size: 14px;
 }
 
+@mixin fontTiny {
+	font-size: 13px;
+}
+
 /* Line height default */
 @mixin lineHeightBase {
 	line-height: 1.6;

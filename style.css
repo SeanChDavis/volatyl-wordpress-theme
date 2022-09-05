@@ -179,14 +179,14 @@ template {
   --dark-background: var(--primary-hue_dark);
   /* Subdued colors - based on the primary hue */
   --subdued-color-light: hsl(var(--primary-hue) 10% 91%);
-  --subdued-color-dark: hsl(var(--primary-hue) 10% 38%);
+  --subdued-color-dark: hsl(var(--primary-hue) 20% 38%);
   /* Miscellaneous */
   --dark-background-light-color: hsl(var(--primary-hue) var(--global-hue-saturation) var(--dark-background-light-color-luminance));
-  --menu-background: hsl(var(--primary-hue) var(--global-hue-saturation) 28%);
+  --menu-background: hsl(var(--primary-hue) var(--global-hue-saturation) 24%);
 }
 :root .monochromatic-color-scheme {
-  --action-color: var(--primary-hue_dark);
-  --action-color-alt: hsl(var(--primary-hue) var(--global-hue-saturation) 32%);
+  --action-color: hsl(var(--primary-hue) var(--global-hue-saturation) 32%);
+  --action-color-alt: hsl(var(--primary-hue) var(--global-hue-saturation) 37%);
 }
 :root .complementary-color-scheme {
   --gray-background: hsl(var(--complementary-hue) 15% 98%);
@@ -219,13 +219,13 @@ button,
 .wp-block-button.is-style-outline .wp-block-button__link:focus,
 .wp-block-button.is-style-outline .wp-block-button__link:hover,
 .comment-reply-link,
-table th,
-[class*=wp-block-] > table th,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu a,
-#site-navigation.toggled > .menu-modal-active #primary-menu .menu-item a {
+#site-navigation.toggled > .menu-modal-active #primary-menu .menu-item a,
+table th,
+[class*=wp-block-] > table th {
   color: #fff;
 }
 
@@ -252,7 +252,6 @@ hr,
 #comments .comment:not(:last-child),
 #comments .comment .comment:not(:last-child),
 #comments .pingback:not(:last-child),
-.wp-block-quote,
 .wp-block-separator,
 .twitter-tweet {
   border-color: var(--subdued-color-light);
@@ -266,14 +265,13 @@ hr,
   color: var(--dark-background-light-color);
 }
 
-.v-grid-item-meta,
-.v-grid-item-meta a,
-.archive-title.content-title,
+.v-hero-secondary-cta a,
 .v-subdued-title,
-table caption,
-figure figcaption,
+.archive-title.content-title,
 .wp-block-calendar .wp-calendar-nav,
-[class*=wp-block-] > label {
+[class*=wp-block-] > label,
+figure figcaption,
+table caption {
   color: var(--subdued-color-dark);
 }
 
@@ -349,10 +347,13 @@ input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):
 textarea:active,
 textarea:focus,
 select:active,
-select:focus {
+select:focus,
+.wp-block-quote,
+.wp-block-pullquote {
   border-color: var(--action-color);
 }
 
+a,
 .site-title a:active,
 .site-title a:focus,
 .site-title a:hover,
@@ -360,6 +361,12 @@ h4,
 .h4,
 h6,
 .h6,
+.v-grid-item-title a:active,
+.v-grid-item-title a:focus,
+.v-grid-item-title a:hover,
+.hellip-link:active,
+.hellip-link:focus,
+.hellip-link:hover,
 .wp-block-button.is-style-outline .wp-block-button__link,
 #comments .fn a:active,
 #comments .fn a:focus,
@@ -410,15 +417,26 @@ table td,
 }
 
 #page-container,
-a,
 .site-title a,
 #site-navigation #primary-menu .menu-item a,
 #site-navigation .menu-toggle,
-cite,
 .wp-block-separator.is-style-dots:before,
 .v-grid-item-title a,
+.v-grid-item-meta,
+.v-grid-item-meta a,
+.hellip-link,
 .archive-title.content-title span,
-#comments .fn a {
+#comments .fn a,
+.content-meta a,
+.entry-footer a,
+.comment-meta a,
+.logged-in-as a,
+.comment-notes a,
+.posts-navigation a,
+.wp-calendar-nav-prev a,
+.wp-block-latest-comments__comment-meta a,
+cite,
+.fat-footer a {
   color: var(--primary-hue_dark);
 }
 
@@ -491,41 +509,6 @@ cite,
 .v-dark-background [class*=wp-block-] > label {
   color: var(--dark-background-light-color);
 }
-.v-dark-background .button:active,
-.v-dark-background .button:focus,
-.v-dark-background .button:hover,
-.v-dark-background .v-button:active,
-.v-dark-background .v-button:focus,
-.v-dark-background .v-button:hover,
-.v-dark-background button:active,
-.v-dark-background button:focus,
-.v-dark-background button:hover,
-.v-dark-background [type=button]:active,
-.v-dark-background [type=button]:focus,
-.v-dark-background [type=button]:hover,
-.v-dark-background [type=submit]:active,
-.v-dark-background [type=submit]:focus,
-.v-dark-background [type=submit]:hover,
-.v-dark-background [type=reset]:active,
-.v-dark-background [type=reset]:focus,
-.v-dark-background [type=reset]:hover,
-.v-dark-background .wp-block-button .wp-block-button__link:active,
-.v-dark-background .wp-block-button .wp-block-button__link:focus,
-.v-dark-background .wp-block-button .wp-block-button__link:hover,
-.v-dark-background .wp-block-file .wp-block-file__button:active,
-.v-dark-background .wp-block-file .wp-block-file__button:focus,
-.v-dark-background .wp-block-file .wp-block-file__button:hover,
-.v-dark-background .wp-block-button.is-style-outline .wp-block-button__link:active,
-.v-dark-background .wp-block-button.is-style-outline .wp-block-button__link:focus,
-.v-dark-background .wp-block-button.is-style-outline .wp-block-button__link:hover,
-.v-dark-background .comment-reply-link:active,
-.v-dark-background .comment-reply-link:focus,
-.v-dark-background .comment-reply-link:hover,
-.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active,
-.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
-.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover {
-  background-color: var(--action-color-alt);
-}
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active,
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
@@ -567,7 +550,10 @@ cite,
 .v-dark-background .wp-block-search[class*=button-inside] button,
 .v-dark-background .comment-reply-link:active,
 .v-dark-background .comment-reply-link:focus,
-.v-dark-background .comment-reply-link:hover {
+.v-dark-background .comment-reply-link:hover,
+.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active,
+.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
+.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover {
   background-color: var(--action-color-alt);
   border-color: var(--action-color-alt);
 }
@@ -655,11 +641,21 @@ cite,
 .v-grid-item-container .v-grid-item-title {
   margin-bottom: 8px;
 }
+.v-grid-item-container .v-grid-item-title a {
+  display: block;
+  text-decoration: none;
+}
 .v-grid-item-container .v-grid-item-meta {
-  font-size: 14px;
+  font-size: 13px;
   display: block;
   font-weight: 600;
   line-height: 1;
+}
+.v-grid-item-container .v-grid-item-meta a {
+  text-decoration: none;
+}
+.v-grid-item-container .v-grid-item-meta a:active, .v-grid-item-container .v-grid-item-meta a:focus, .v-grid-item-container .v-grid-item-meta a:hover {
+  text-decoration: underline;
 }
 .v-grid-item-container:not(.v-subdued) {
   border-radius: 10px;
@@ -681,18 +677,30 @@ cite,
     padding: 2rem 2rem 1.25em;
   }
 }
-.v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-header .v-grid-item-title a {
-  text-decoration: none;
-}
 .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-body {
   font-size: 16px;
   flex: 1 0 auto;
-  padding: 0 1.25rem 1.75rem;
+  padding: 0 1.25rem 1.5rem;
 }
 @media all and (min-width: 992px) {
   .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-body {
-    padding: 0 2rem 2rem;
+    padding: 0 2rem 1.5rem;
   }
+}
+.v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-body .hellip-link {
+  text-decoration: none;
+}
+.v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-footer {
+  font-size: 15px;
+  padding: 0 1.25rem 1.75rem;
+}
+@media all and (min-width: 992px) {
+  .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-footer {
+    padding: 0 2rem 2.25rem;
+  }
+}
+.v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-footer .button {
+  font-size: 14px;
 }
 
 .site-hero .inner {
@@ -1113,11 +1121,12 @@ p + .wp-block-image {
 }
 
 a {
-  text-decoration: underline;
+  font-weight: 600;
+  text-decoration-style: dotted;
 }
 a:active, a:focus, a:hover {
   cursor: pointer;
-  text-decoration: none;
+  text-decoration-style: solid;
 }
 
 blockquote,
@@ -1154,8 +1163,14 @@ blockquote > p {
 }
 
 .wp-block-pullquote {
-  margin-bottom: 0;
+  border-style: solid;
+  border-width: 3px 0;
   padding: 3em 1em;
+}
+@media all and (min-width: 992px) {
+  .wp-block-pullquote {
+    margin-bottom: 1rem;
+  }
 }
 .wp-block-pullquote blockquote {
   margin: 0;
@@ -2522,20 +2537,6 @@ button.v-large,
   .wp-block-buttons.v-large > .wp-block-button .wp-block-button__link {
     font-size: 1.15rem;
   }
-}
-
-.v-dark-background .button,
-.v-dark-background .v-button,
-.v-dark-background button,
-.v-dark-background [type=button],
-.v-dark-background [type=submit],
-.v-dark-background [type=reset],
-.v-dark-background .comment-reply-link,
-.v-dark-background .wp-block-button .wp-block-button__link,
-.v-dark-background .wp-block-file .wp-block-file__button {
-  background: transparent;
-  border-style: solid;
-  border-width: 2px;
 }
 
 input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),

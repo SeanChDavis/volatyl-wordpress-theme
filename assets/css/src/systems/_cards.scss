@@ -2,13 +2,29 @@
 
 	.v-grid-item-title {
 		margin-bottom: 8px;
+
+		a {
+			display: block;
+			text-decoration: none;
+		}
 	}
 
 	.v-grid-item-meta {
-		@include fontSmallest;
+		@include fontTiny;
 		display: block;
 		font-weight: 600;
 		line-height: 1;
+
+
+		a {
+			text-decoration: none;
+
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 
 	&:not(.v-subdued) {
@@ -33,22 +49,32 @@
 				@media all and (min-width: $mdMinWidth) {
 					padding: 2rem 2rem 1.25em;
 				}
-
-				.v-grid-item-title {
-
-					a {
-						text-decoration: none;
-					}
-				}
 			}
 
 			.v-grid-item-body {
 				@include fontSmall;
 				flex: 1 0 auto;
+				padding: 0 1.25rem 1.5rem;
+
+				@media all and (min-width: $mdMinWidth) {
+					padding: 0 2rem 1.5rem;
+				}
+
+				.hellip-link {
+					text-decoration: none;
+				}
+			}
+
+			.v-grid-item-footer {
+				@include fontSmaller;
 				padding: 0 1.25rem 1.75rem;
 
 				@media all and (min-width: $mdMinWidth) {
-					padding: 0 2rem 2rem;
+					padding: 0 2rem 2.25rem;
+				}
+
+				.button {
+					@include fontSmallest;
 				}
 			}
 		}
