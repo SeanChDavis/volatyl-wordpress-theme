@@ -34,7 +34,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 
 // Primary hue slider
 $wp_customize->add_setting( 'volatyl_primary_hue', array(
-	'default'           => 255,
+	'default'           => 215,
 	'sanitize_callback' => 'absint',
 ) );
 $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'volatyl_primary_hue', array(
@@ -85,7 +85,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 
 // Color scheme selector
 $wp_customize->add_setting( 'volatyl_color_scheme_type', array(
-	'default'           => 'monochromatic',
+	'default'           => 'analogous',
 	'sanitize_callback' => 'volatyl_sanitize_select',
 ) );
 $wp_customize->add_control( 'volatyl_color_scheme_type', array(
@@ -97,9 +97,9 @@ $wp_customize->add_control( 'volatyl_color_scheme_type', array(
 		'monochromatic'       => __( 'Monochromatic', 'volatyl' ),
 		'complementary'       => __( 'Complementary', 'volatyl' ),
 		'analogous'           => __( 'Analogous', 'volatyl' ),
-		'triadic'             => __( 'Triadic', 'volatyl' ),
-		'split_complementary' => __( 'Split-complementary', 'volatyl' ),
-		'tetradic'            => __( 'Tetradic', 'volatyl' ),
+//		'triadic'             => __( 'Triadic', 'volatyl' ),
+//		'split_complementary' => __( 'Split-complementary', 'volatyl' ),
+//		'tetradic'            => __( 'Tetradic', 'volatyl' ),
 	),
 ) );
 

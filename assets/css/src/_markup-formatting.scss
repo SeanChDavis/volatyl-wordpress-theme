@@ -378,6 +378,14 @@ table {
 			font-weight: 700;
 			padding: .25em;
 		}
+
+		caption {
+			@include fontTiny;
+			font-weight: 700;
+			margin-bottom: 0;
+			padding: 8px;
+			text-transform: uppercase;
+		}
 	}
 
 	.wp-calendar-nav {

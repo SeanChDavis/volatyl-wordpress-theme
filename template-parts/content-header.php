@@ -30,14 +30,14 @@
 			}
 			?>
 			<div class="content-container">
-				<div class="content-left">
+				<div class="content-primary">
 					<h1 class="content-title"><?php echo $blog_title; ?></h1>
 					<?php if ( get_theme_mod( 'volatyl_blog_description' ) ) { ?>
 						<p class="content-description"><?php echo get_theme_mod( 'volatyl_blog_description' ); ?></p>
 					<?php } ?>
 				</div>
 				<?php if ( get_theme_mod( 'volatyl_blog_search_form', 0 ) ) { ?>
-					<div class="content-right">
+					<div class="content-secondary">
 						<?php get_search_form(); ?>
 					</div>
 				<?php } ?>
@@ -46,7 +46,7 @@
 		} if ( is_search() ) {
 			?>
 			<div class="content-container">
-				<div class="content-left">
+				<div class="content-primary">
 					<h1 class="content-title">
 						<span class="v-subdued-title v-large">
 							<?php printf( esc_html__( 'Search results for:', 'volatyl' ) ); ?>
@@ -54,7 +54,7 @@
 						<?php echo esc_html( get_search_query() ); ?>
 					</h1>
 				</div>
-				<div class="content-right">
+				<div class="content-secondary">
 					<?php get_search_form(); ?>
 				</div>
 			</div>

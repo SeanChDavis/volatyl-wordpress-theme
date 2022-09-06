@@ -31,9 +31,15 @@
 	}
 
 	.complementary-color-scheme {
-		--gray-background: hsl(var(--complementary-hue) 15% 98%);
-		--action-color: hsl(var(--complementary-hue) var(--global-hue-saturation) 32%);
-		--action-color-alt: hsl(var(--complementary-hue) var(--global-hue-saturation) 36%);
+		--gray-background: hsl(var(--complementary-accent-hue) 15% 98%);
+		--action-color: hsl(var(--complementary-accent-hue) var(--global-hue-saturation) 32%);
+		--action-color-alt: hsl(var(--complementary-accent-hue) var(--global-hue-saturation) 36%);
+	}
+
+	.analogous-color-scheme {
+		--gray-background: hsl(var(--analogous-accent-hue_positive) 15% 98%);
+		--action-color: hsl(var(--analogous-accent-hue_negative) var(--global-hue-saturation) 32%);
+		--action-color-alt: hsl(var(--analogous-accent-hue_negative) var(--global-hue-saturation) 36%);
 	}
 }
 
@@ -62,6 +68,8 @@ button,
 .wp-block-button.is-style-outline .wp-block-button__link:focus,
 .wp-block-button.is-style-outline .wp-block-button__link:hover,
 .comment-reply-link,
+.wp-block-calendar .wp-calendar-table caption,
+#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
@@ -108,13 +116,20 @@ hr,
 	color: var(--dark-background-light-color);
 }
 
+h1 a,
+.h1 a,
+h2 a,
+.h2 a,
+h3 a,
+.h3 a,
+h5 a,
+.h5 a,
 .v-hero-secondary-cta a,
 .v-subdued-title,
 .archive-title.content-title,
 .wp-block-calendar .wp-calendar-nav,
 [class*="wp-block-"] > label,
-figure figcaption,
-table caption {
+figure figcaption {
 	color: var(--subdued-color-dark);
 }
 
@@ -164,10 +179,7 @@ button:hover,
 .wp-block-search[class*="button-inside"] [class*="search__inside"],
 .wp-block-button.is-style-outline .wp-block-button__link:active,
 .wp-block-button.is-style-outline .wp-block-button__link:focus,
-.wp-block-button.is-style-outline .wp-block-button__link:hover,
-#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active,
-#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
-#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover {
+.wp-block-button.is-style-outline .wp-block-button__link:hover {
 	border-color: var(--action-color-alt);
 }
 
@@ -180,7 +192,9 @@ button,
 .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button,
 .comment-reply-link,
-.wp-block-search button {
+.wp-block-search button,
+#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a,
+.wp-block-calendar .wp-calendar-table caption {
 	background-color: var(--action-color);
 }
 

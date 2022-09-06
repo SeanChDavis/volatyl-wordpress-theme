@@ -27,7 +27,7 @@
 }
 
 .v-subdued-title {
-	@include fontSmall;
+	@include fontSmallest;
 	@include headingFont;
 	display: block;
 	font-weight: 700;

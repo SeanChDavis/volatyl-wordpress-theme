@@ -189,9 +189,14 @@ template {
   --action-color-alt: hsl(var(--primary-hue) var(--global-hue-saturation) 37%);
 }
 :root .complementary-color-scheme {
-  --gray-background: hsl(var(--complementary-hue) 15% 98%);
-  --action-color: hsl(var(--complementary-hue) var(--global-hue-saturation) 32%);
-  --action-color-alt: hsl(var(--complementary-hue) var(--global-hue-saturation) 36%);
+  --gray-background: hsl(var(--complementary-accent-hue) 15% 98%);
+  --action-color: hsl(var(--complementary-accent-hue) var(--global-hue-saturation) 32%);
+  --action-color-alt: hsl(var(--complementary-accent-hue) var(--global-hue-saturation) 36%);
+}
+:root .analogous-color-scheme {
+  --gray-background: hsl(var(--analogous-accent-hue_positive) 15% 98%);
+  --action-color: hsl(var(--analogous-accent-hue_negative) var(--global-hue-saturation) 32%);
+  --action-color-alt: hsl(var(--analogous-accent-hue_negative) var(--global-hue-saturation) 36%);
 }
 
 /**
@@ -219,6 +224,8 @@ button,
 .wp-block-button.is-style-outline .wp-block-button__link:focus,
 .wp-block-button.is-style-outline .wp-block-button__link:hover,
 .comment-reply-link,
+.wp-block-calendar .wp-calendar-table caption,
+#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
@@ -265,13 +272,20 @@ hr,
   color: var(--dark-background-light-color);
 }
 
+h1 a,
+.h1 a,
+h2 a,
+.h2 a,
+h3 a,
+.h3 a,
+h5 a,
+.h5 a,
 .v-hero-secondary-cta a,
 .v-subdued-title,
 .archive-title.content-title,
 .wp-block-calendar .wp-calendar-nav,
 [class*=wp-block-] > label,
-figure figcaption,
-table caption {
+figure figcaption {
   color: var(--subdued-color-dark);
 }
 
@@ -321,10 +335,7 @@ button:hover,
 .wp-block-search[class*=button-inside] [class*=search__inside],
 .wp-block-button.is-style-outline .wp-block-button__link:active,
 .wp-block-button.is-style-outline .wp-block-button__link:focus,
-.wp-block-button.is-style-outline .wp-block-button__link:hover,
-#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active,
-#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
-#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover {
+.wp-block-button.is-style-outline .wp-block-button__link:hover {
   border-color: var(--action-color-alt);
 }
 
@@ -337,7 +348,9 @@ button,
 .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button,
 .comment-reply-link,
-.wp-block-search button {
+.wp-block-search button,
+#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a,
+.wp-block-calendar .wp-calendar-table caption {
   background-color: var(--action-color);
 }
 
@@ -724,8 +737,7 @@ cite,
 }
 @media all and (min-width: 992px) {
   .v-hero .v-hero-title {
-    font-size: 5rem;
-    max-width: 90%;
+    max-width: 940px;
   }
 }
 .v-hero .v-hero-title:last-child {
@@ -748,22 +760,12 @@ cite,
   font-size: 19px;
   max-width: 665px;
 }
-@media all and (min-width: 992px) {
-  .v-hero .v-hero-subtitle {
-    font-size: 20px;
-  }
-}
 .v-hero .v-hero-subtitle:not(:last-child) {
   margin-bottom: 2rem;
 }
 @media all and (min-width: 560px) {
   .v-hero .v-hero-subtitle:not(:last-child) {
-    margin-bottom: 2.5rem;
-  }
-}
-@media all and (min-width: 992px) {
-  .v-hero .v-hero-subtitle:not(:last-child) {
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
   }
 }
 .v-hero .v-hero-primary-cta {
@@ -821,17 +823,7 @@ cite,
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
-}
-@media all and (min-width: 992px) {
-  .content-header .content-container {
-    align-items: center;
-    flex-direction: row;
-    column-gap: 1.5rem;
-    justify-content: space-between;
-  }
-  .content-header .content-container .content-left {
-    max-width: 60%;
-  }
+  max-width: 60%;
 }
 
 .archive .content-header .content-title {
@@ -916,7 +908,7 @@ cite,
 }
 
 .v-subdued-title {
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   display: block;
   font-weight: 700;
@@ -1301,6 +1293,13 @@ table caption:first-child {
 .wp-block-calendar .wp-calendar-table th {
   font-weight: 700;
   padding: 0.25em;
+}
+.wp-block-calendar .wp-calendar-table caption {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 0;
+  padding: 8px;
+  text-transform: uppercase;
 }
 .wp-block-calendar .wp-calendar-nav {
   font-size: 15px;
@@ -1973,8 +1972,6 @@ main {
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-button > a {
   border-radius: 4px;
-  border-style: solid;
-  border-width: 2px;
   padding: 8px 12px;
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-button > a:active, #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-button > a:focus, #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-button > a:hover {

@@ -31,7 +31,7 @@ if ( ! function_exists( 'volatyl_hero' ) ) :
 		?>
 
 		<div class="site-hero">
-			<div class="inner v-large">
+			<div class="inner">
 				<div class="v-hero<?php echo $alignment ? ' v-hero-centered' : ''; ?>">
 					<h1 class="v-hero-title"><?php echo $title; ?></h1>
 					<?php if ( ! empty( $subtitle ) ) { ?>

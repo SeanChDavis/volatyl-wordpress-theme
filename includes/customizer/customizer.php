@@ -156,7 +156,7 @@ add_action( 'customize_controls_print_styles', 'volatyl_customize_controls_print
 function volatyl_customizer_head_styles() {
 
 	// This hue controls the entire color scheme
-	$primary_hue = get_theme_mod( 'volatyl_primary_hue', 255 );
+	$primary_hue = get_theme_mod( 'volatyl_primary_hue', 215 );
 
 	// This percentage controls the default saturation of all non-subdued colors
 	$global_hue_saturtion = get_theme_mod( 'volatyl_primary_hue_saturation', 43 );
@@ -172,10 +172,18 @@ function volatyl_customizer_head_styles() {
 	?>
 	<style>
 		:root{
-			--primary-hue:<?php echo $primary_hue; ?>;
-			--complementary-hue: calc(var(--primary-hue) - 180);
 			--global-hue-saturation:<?php echo $global_hue_saturtion; ?>%;
-			--dark-background-light-color-luminance:<?php echo $dark_bg_light_color; ?>%}
+			--dark-background-light-color-luminance:<?php echo $dark_bg_light_color; ?>%;
+
+			--primary-hue:<?php echo $primary_hue; ?>;
+
+			/* Complementary Color Scheme */
+			--complementary-accent-hue: calc(var(--primary-hue) - 180);
+
+			/* Analogous Color Scheme */
+			--analogous-accent-hue_negative: calc(var(--primary-hue) - 30);
+			--analogous-accent-hue_positive: calc(var(--primary-hue) + 30);
+		}
 	</style>
 	<?php
 }
