@@ -45,6 +45,14 @@
 	text-align: center;
 }
 
+.section-footer-cta {
+	padding-top: 1rem;
+
+	@media all and (min-width: $xsMinWidth) {
+		padding-top: 2rem;
+	}
+}
+
 .v-dark-background {
 
 	input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),

@@ -12,7 +12,7 @@ function volatyl_body_class( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
-	switch ( get_theme_mod( 'volatyl_color_scheme_type', 'monochromatic' ) ) {
+	switch ( get_theme_mod( 'volatyl_color_scheme_type', DEFAULT_COLOR_SCHEME_TYPE ) ) {
 
 		case 'monochromatic':
 			$classes[] = 'monochromatic-color-scheme';
@@ -39,7 +39,7 @@ function volatyl_body_class( $classes ) {
 			break;
 
 		default:
-			$classes[] = 'monochromatic-color-scheme';
+			$classes[] = 'analogous-color-scheme';
 	}
 
 	if ( 1 == get_theme_mod( 'volatyl_full_width_structure', 0 ) ) {

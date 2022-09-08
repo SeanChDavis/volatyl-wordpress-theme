@@ -116,8 +116,9 @@
 					}
 
 					& > .sub-menu {
+						border: 1px solid rgba(255, 255, 255, .1);
 						border-radius: 4px;
-						box-shadow: 0 0 45px 0px rgba(0, 0, 0, 0.1);
+						box-shadow: 0 0 45px 0px rgba(0, 0, 0, .1);
 						display: none;
 						padding: 7px 1.2rem;
 						position: absolute;
@@ -251,6 +252,7 @@
 				}
 
 				#primary-menu {
+					border: 1px solid rgba(255, 255, 255, .1);
 					border-radius: 10px;
 					box-shadow: 0 0 75px 20px rgba(0, 0, 0, 0.3);
 					display: flex;
@@ -297,6 +299,7 @@
 							}
 
 							& > .sub-menu {
+								background-color: rgba(0, 0, 0, .15);
 								border-radius: 4px;
 								margin-bottom: 1rem;
 								margin-top: 4px;

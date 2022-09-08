@@ -34,14 +34,14 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 
 // Primary hue slider
 $wp_customize->add_setting( 'volatyl_primary_hue', array(
-	'default'           => 215,
+	'default'           => DEFAULT_PRIMARY_HUE,
 	'sanitize_callback' => 'absint',
 ) );
 $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'volatyl_primary_hue', array(
-	'section'     => 'volatyl_color_scheme',
-	'priority'    => 10,
-	'label'       => __( 'Choose your preferred hue', 'volatyl' ),
-	'mode'        => 'hue',
+	'section'  => 'volatyl_color_scheme',
+	'priority' => 10,
+	'label'    => __( 'Choose your preferred hue', 'volatyl' ),
+	'mode'     => 'hue',
 ) ) );
 
 // Global hue saturation
@@ -52,22 +52,22 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'section'     => 'volatyl_color_scheme',
 	'priority'    => 100,
 	'label'       => __( 'Global hue saturation', 'volatyl' ),
-	'description' => __( 'While the primary hue selection is used to build your color scheme, this setting controls the saturation of the colors included in your color scheme. Use the slider control to choose your desired saturation, where the far left represents 0% (grayscale) and the far right represents 85% (vibrant hue).', 'volatyl' ),
+	'description' => __( 'While the primary hue selection is used to build your color scheme, this setting controls the saturation of the colors included in your color scheme. Use the slider control to choose your desired saturation, where the far left represents 0% (grayscale) and the far right represents 100% (vibrant hue).', 'volatyl' ),
 ) ) );
 
 // Global hue saturation slider
-$wp_customize->add_setting( 'volatyl_primary_hue_saturation', array(
-	'default'           => 43,
+$wp_customize->add_setting( 'volatyl_global_hue_saturation', array(
+	'default'           => DEFAULT_GLOBAL_HUE_SATURATION,
 	'sanitize_callback' => 'absint',
 ) );
-$wp_customize->add_control( 'volatyl_primary_hue_saturation', array(
+$wp_customize->add_control( 'volatyl_global_hue_saturation', array(
 	'section'     => 'volatyl_color_scheme',
 	'priority'    => 110,
 	'label'       => __( 'Set a global hue saturation', 'volatyl' ),
 	'type'        => 'range',
 	'input_attrs' => array(
 		'min'  => 0,
-		'max'  => 85,
+		'max'  => 100,
 		'step' => 1,
 	),
 ) );
@@ -85,7 +85,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 
 // Color scheme selector
 $wp_customize->add_setting( 'volatyl_color_scheme_type', array(
-	'default'           => 'analogous',
+	'default'           => DEFAULT_COLOR_SCHEME_TYPE,
 	'sanitize_callback' => 'volatyl_sanitize_select',
 ) );
 $wp_customize->add_control( 'volatyl_color_scheme_type', array(
@@ -94,9 +94,9 @@ $wp_customize->add_control( 'volatyl_color_scheme_type', array(
 	'label'    => __( 'Select a color scheme type', 'volatyl' ),
 	'type'     => 'select',
 	'choices'  => array(
-		'monochromatic'       => __( 'Monochromatic', 'volatyl' ),
-		'complementary'       => __( 'Complementary', 'volatyl' ),
-		'analogous'           => __( 'Analogous', 'volatyl' ),
+		'monochromatic' => __( 'Monochromatic', 'volatyl' ),
+		'complementary' => __( 'Complementary', 'volatyl' ),
+		'analogous'     => __( 'Analogous', 'volatyl' ),
 //		'triadic'             => __( 'Triadic', 'volatyl' ),
 //		'split_complementary' => __( 'Split-complementary', 'volatyl' ),
 //		'tetradic'            => __( 'Tetradic', 'volatyl' ),
@@ -279,6 +279,30 @@ $wp_customize->add_control( 'volatyl_front_page_blog_posts_grid_columns_rows', a
 		'3_2' => __( '3 columns / 2 rows -- ( 6 total )', 'volatyl' ),
 		'3_3' => __( '3 columns / 3 rows -- ( 9 total )', 'volatyl' ),
 	),
+) );
+
+// Featured Page settings area
+$wp_customize->add_setting( 'volatyl_front_page_featured_page_settings', array(
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
+) );
+$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_front_page_featured_page_settings', array(
+	'section'     => 'volatyl_front_page_template',
+	'priority'    => 201,
+	'label'       => __( 'Featured Page Area', 'volatyl' ),
+	'description' => __( 'The following settings apply to the Featured Page area on the front page.', 'volatyl' ),
+) ) );
+
+// Featured Page select
+$wp_customize->add_setting( 'volatyl_front_page_featured_page_select', array(
+	'default' => '',
+) );
+$wp_customize->add_control( 'volatyl_front_page_featured_page_select', array(
+	'section'        => 'volatyl_front_page_template',
+	'priority'       => 210,
+	'label'          => __( 'Choose an existing page to feature.', 'volatyl' ),
+	'description'    => __( 'The title and complete content of the selected page will display on your front page. If needed, create a page specific for this section. If an excerpt is added to the page, it will display below the title.', 'volatyl' ),
+	'type'           => 'dropdown-pages',
+	'allow_addition' => true,
 ) );
 
 /**

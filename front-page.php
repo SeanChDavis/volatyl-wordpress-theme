@@ -20,7 +20,7 @@ get_header();
 		if ( ! empty( $recent_posts ) ) {
 			?>
 			<section class="blog-posts-featured">
-				<div class="inner v-large">
+				<div class="inner v-medium">
 					<span class="v-subdued-title v-margin-bottom-3"><?php echo __( 'From the blog', 'volatyl' ); ?></span>
 					<div class="v-grid v-grid-columns_<?php echo $blog_grid_columns; ?>">
 						<?php
@@ -29,6 +29,41 @@ get_header();
 						}
 						wp_reset_query();
 						?>
+					</div>
+					<?php if ( get_option( 'page_for_posts' ) ) { ?>
+						<div class="section-footer-cta v-grid v-grid-centered-column v-text-align-center">
+							<div class="v-grid-centered-column-content">
+								<p class="v-subdued-link-container">
+									<a class="v-button" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>"><?php _e( 'Visit the blog', 'volatyl' ); ?></a>
+								</p>
+							</div>
+						</div>
+					<?php } ?>
+				</div>
+			</section>
+			<?php
+		}
+
+		$featured_page_id = get_theme_mod( 'volatyl_front_page_featured_page_select' );
+		if ( false !== get_post_status( $featured_page_id ) && ! empty( $featured_page_id ) ) {
+			$featured_page = get_post( $featured_page_id );
+			?>
+			<section class="featured-page v-gray-background">
+				<div class="inner v-medium">
+					<div class="v-grid v-grid-columns_2">
+						<div class="content-left">
+							<span class="section-title h3">
+								<?php echo $featured_page->post_title; ?>
+							</span>
+							<?php if ( ! empty( $featured_page->post_excerpt ) ) { ?>
+								<p class="section-description"><?php echo $featured_page->post_excerpt; ?></p>
+							<?php } ?>
+						</div>
+						<div class="content-right">
+							<div class="section-content">
+								<?php echo $featured_page->post_content; ?>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>

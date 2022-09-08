@@ -29,7 +29,10 @@
 		display: flex;
 		flex-direction: column;
 		row-gap: 2rem;
-		max-width: 60%;
+
+		@media all and (min-width: $mdMinWidth) {
+			max-width: 60%;
+		}
 	}
 }
 

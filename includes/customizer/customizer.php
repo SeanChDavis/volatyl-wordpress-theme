@@ -156,26 +156,26 @@ add_action( 'customize_controls_print_styles', 'volatyl_customize_controls_print
 function volatyl_customizer_head_styles() {
 
 	// This hue controls the entire color scheme
-	$primary_hue = get_theme_mod( 'volatyl_primary_hue', 215 );
+	$primary_hue = get_theme_mod( 'volatyl_primary_hue', DEFAULT_PRIMARY_HUE );
 
 	// This percentage controls the default saturation of all non-subdued colors
-	$global_hue_saturtion = get_theme_mod( 'volatyl_primary_hue_saturation', 43 );
+	$global_hue_saturation = get_theme_mod( 'volatyl_global_hue_saturation', DEFAULT_GLOBAL_HUE_SATURATION );
 
 	// Based on global hue saturation percentage, this color sets the
 	// luminance of basic text and similar elements against dark backgrounds
 	$dark_bg_light_color  = '100';
-	if ( $global_hue_saturtion <= 33 ) {
+	if ( $global_hue_saturation <= 33 ) {
 		$dark_bg_light_color = '84';
-	} elseif ( ( $global_hue_saturtion >= 34 ) && ( $global_hue_saturtion <= 67 ) ) {
+	} elseif ( ( $global_hue_saturation >= 34 ) && ( $global_hue_saturation <= 67 ) ) {
 		$dark_bg_light_color = '92';
 	}
 	?>
 	<style>
 		:root{
-			--global-hue-saturation:<?php echo $global_hue_saturtion; ?>%;
-			--dark-background-light-color-luminance:<?php echo $dark_bg_light_color; ?>%;
+			--global-hue-saturation: <?php echo $global_hue_saturation; ?>%;
+			--dark-background-light-color-luminance: <?php echo $dark_bg_light_color; ?>%;
 
-			--primary-hue:<?php echo $primary_hue; ?>;
+			--primary-hue: <?php echo $primary_hue; ?>;
 
 			/* Complementary Color Scheme */
 			--complementary-accent-hue: calc(var(--primary-hue) - 180);

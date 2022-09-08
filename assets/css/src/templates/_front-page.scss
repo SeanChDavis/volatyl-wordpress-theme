@@ -7,3 +7,20 @@
 		}
 	}
 }
+
+.featured-page {
+
+	.v-grid-columns_2 {
+		row-gap: 0;
+		grid-template-columns: 100%;
+
+		@media all and ( min-width: $mdMinWidth ) {
+			column-gap: 8%;
+			grid-template-columns: 26.5% 65.5%;
+		}
+	}
+
+	.section-description {
+		@include fontSmaller;
+	}
+}

@@ -6,6 +6,7 @@
 		if ( is_page() ) {
 			?>
 			<h1 class="content-title"><?php echo get_the_title(); ?></h1>
+			<p class="content-description"><?php echo get_the_excerpt(); ?></p>
 			<?php
 		} if ( is_single() ) {
 			if ( ! empty( get_the_title() ) ) {

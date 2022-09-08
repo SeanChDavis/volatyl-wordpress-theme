@@ -126,6 +126,7 @@ h5 a,
 .h5 a,
 .v-hero-secondary-cta a,
 .v-subdued-title,
+.featured-page .section-description,
 .archive-title.content-title,
 .wp-block-calendar .wp-calendar-nav,
 [class*="wp-block-"] > label,
@@ -232,25 +233,21 @@ h6,
 	color: var(--action-color);
 }
 
-#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu,
-#site-navigation.toggled > [class*="-container"].menu-modal-active #primary-menu,
-.close-menu-modal.v-button,
-.close-menu-modal.v-button:active,
-.close-menu-modal.v-button:focus,
-.close-menu-modal.v-button:hover {
-	background-color: var(--menu-background);
-}
-
 #searchform #searchsubmit,
 .wp-block-search button,
 .wp-block-search[class*="button-inside"] [class*="search__inside"] button,
 table th,
 [class*="wp-block-"] > table th,
 table th,
-#site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu {
+#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu,
+#site-navigation.toggled > [class*="-container"].menu-modal-active #primary-menu,
+#site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu,
+.close-menu-modal.v-button,
+.close-menu-modal.v-button:active,
+.close-menu-modal.v-button:focus,
+.close-menu-modal.v-button:hover {
 	background-color: var(--primary-hue_dark);
 }
-
 
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after {
 	border-bottom-color: var(--primary-hue_dark);
@@ -344,9 +341,6 @@ cite,
 		color: #fff;
 	}
 
-	.site-title a:active,
-	.site-title a:focus,
-	.site-title a:hover,
 	.v-hero-secondary-cta a,
 	.archive-title.content-title,
 	h4,
