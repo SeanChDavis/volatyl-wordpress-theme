@@ -30,15 +30,6 @@ get_header();
 						wp_reset_query();
 						?>
 					</div>
-					<?php if ( get_option( 'page_for_posts' ) ) { ?>
-						<div class="section-footer-cta v-grid v-grid-centered-column v-text-align-center">
-							<div class="v-grid-centered-column-content">
-								<p class="v-subdued-link-container">
-									<a class="v-button" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>"><?php _e( 'Visit the blog', 'volatyl' ); ?></a>
-								</p>
-							</div>
-						</div>
-					<?php } ?>
 				</div>
 			</section>
 			<?php

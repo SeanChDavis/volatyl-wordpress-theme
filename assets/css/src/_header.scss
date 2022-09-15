@@ -25,10 +25,11 @@
 
 		.site-title {
 			@include headingFont;
-			font-weight: 700;
-			font-size: 1.25rem;
+			font-size: 1rem;
+			text-transform: uppercase;
 
 			a {
+				font-weight: 900;
 				text-decoration: none;
 			}
 		}

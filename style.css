@@ -197,6 +197,7 @@ template {
   --gray-background: hsl(var(--analogous-accent-hue_positive) 15% 98%);
   --action-color: hsl(var(--analogous-accent-hue_negative) var(--global-hue-saturation) 32%);
   --action-color-alt: hsl(var(--analogous-accent-hue_negative) var(--global-hue-saturation) 36%);
+  --accent-color: hsl(var(--analogous-accent-hue_positive) var(--global-hue-saturation) 32%);
 }
 
 /**
@@ -238,6 +239,7 @@ table th,
 
 body,
 .v-gray-background,
+.v-variable-background,
 .v-grid .v-grid-item-container:not(.v-subdued),
 .wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1),
 select,
@@ -327,10 +329,18 @@ button:hover,
 .wp-block-search button:focus,
 .wp-block-search button:hover,
 .wp-block-search[class*=button-inside] [class*=search__inside],
+.v-hero .v-hero-primary-cta [class*=button]:active,
+.v-hero .v-hero-primary-cta [class*=button]:focus,
+.v-hero .v-hero-primary-cta [class*=button]:hover,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover {
   background-color: var(--action-color-alt);
+}
+
+.v-hero .v-hero-primary-cta [class*=button],
+#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
+  background-color: var(--action-color);
 }
 
 .wp-block-search[class*=button-inside] [class*=search__inside],
@@ -338,21 +348,6 @@ button:hover,
 .wp-block-button.is-style-outline .wp-block-button__link:focus,
 .wp-block-button.is-style-outline .wp-block-button__link:hover {
   border-color: var(--action-color-alt);
-}
-
-.button,
-.v-button,
-button,
-[type=button],
-[type=submit],
-[type=reset],
-.wp-block-button .wp-block-button__link,
-.wp-block-file .wp-block-file__button,
-.comment-reply-link,
-.wp-block-search button,
-#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a,
-.wp-block-calendar .wp-calendar-table caption {
-  background-color: var(--action-color);
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link,
@@ -389,6 +384,17 @@ h6,
   color: var(--action-color);
 }
 
+.button,
+.v-button,
+button,
+[type=button],
+[type=submit],
+[type=reset],
+.wp-block-button .wp-block-button__link,
+.wp-block-file .wp-block-file__button,
+.comment-reply-link,
+.wp-block-search button,
+.wp-block-calendar .wp-calendar-table caption,
 #searchform #searchsubmit,
 .wp-block-search button,
 .wp-block-search[class*=button-inside] [class*=search__inside] button,
@@ -416,7 +422,6 @@ table th,
 input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
 textarea,
 select,
-#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a,
 table,
 table th,
 table td,
@@ -516,6 +521,20 @@ cite,
 .v-dark-background .wp-block-calendar .wp-calendar-nav,
 .v-dark-background [class*=wp-block-] > label {
   color: var(--dark-background-light-color);
+}
+.v-dark-background .button,
+.v-dark-background .v-button,
+.v-dark-background button,
+.v-dark-background [type=button],
+.v-dark-background [type=submit],
+.v-dark-background [type=reset],
+.v-dark-background .wp-block-button .wp-block-button__link,
+.v-dark-background .wp-block-file .wp-block-file__button,
+.v-dark-background .comment-reply-link,
+.v-dark-background .wp-block-search button,
+.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a,
+.v-dark-background .wp-block-calendar .wp-calendar-table caption {
+  background-color: var(--action-color);
 }
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active,
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
@@ -707,12 +726,22 @@ cite,
     padding: 0 2rem 2.25rem;
   }
 }
-.v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-footer .button {
+.v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-footer .v-button {
   font-size: 14px;
 }
 
 .site-hero .inner {
   padding-bottom: 5rem;
+}
+@media all and (min-width: 992px) {
+  .site-hero .inner {
+    padding-top: 5rem;
+  }
+}
+@media all and (min-width: 1200px) {
+  .site-hero .inner {
+    padding-top: 8rem;
+  }
 }
 
 .v-hero.v-hero-centered {
@@ -795,6 +824,16 @@ cite,
 @media all and (min-width: 992px) {
   .content-header {
     text-align: left;
+  }
+}
+@media all and (min-width: 992px) {
+  .content-header .inner {
+    padding-top: 5rem;
+  }
+}
+@media all and (min-width: 1200px) {
+  .content-header .inner {
+    padding-top: 8rem;
   }
 }
 .content-header .content-title {
@@ -1865,10 +1904,11 @@ main {
 }
 .site-header-elements .site-branding .site-title {
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
-  font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 .site-header-elements .site-branding .site-title a {
+  font-weight: 900;
   text-decoration: none;
 }
 

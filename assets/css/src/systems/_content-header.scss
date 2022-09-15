@@ -5,6 +5,17 @@
 		text-align: left;
 	}
 
+	.inner {
+
+		@media all and ( min-width: $mdMinWidth ) {
+			padding-top: 5rem;
+		}
+
+		@media all and ( min-width: $lgMinWidth ) {
+			padding-top: 8rem;
+		}
+	}
+
 	.content-title {
 		margin-bottom: 0;
 		max-width: 770px;
