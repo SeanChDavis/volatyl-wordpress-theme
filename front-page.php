@@ -21,7 +21,7 @@ get_header();
 			?>
 			<section class="blog-posts-featured">
 				<div class="inner v-medium">
-					<span class="v-subdued-title v-margin-bottom-3"><?php echo __( 'From the blog', 'volatyl' ); ?></span>
+					<span class="v-subdued-title v-margin-bottom-2"><?php echo __( 'From the blog', 'volatyl' ); ?></span>
 					<div class="v-grid v-grid-columns_<?php echo $blog_grid_columns; ?>">
 						<?php
 						foreach ( $recent_posts as $post ) {
@@ -47,7 +47,7 @@ get_header();
 								<?php echo $featured_page->post_title; ?>
 							</span>
 							<?php if ( ! empty( $featured_page->post_excerpt ) ) { ?>
-								<p class="section-description"><?php echo $featured_page->post_excerpt; ?></p>
+								<p class="section-description v-margin-bottom-3"><?php echo $featured_page->post_excerpt; ?></p>
 							<?php } ?>
 						</div>
 						<div class="content-right">

@@ -127,7 +127,10 @@ p {
 	}
 
 	&:last-child {
-		margin-bottom: 0;
+
+		&:not([class*="v-margin-bottom-"]) {
+			margin-bottom: 0;
+		}
 	}
 
 	& + h1, & + .h1 {
