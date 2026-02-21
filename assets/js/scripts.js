@@ -151,5 +151,7 @@ if (siteHeader) {
  * Count the number of fat footer areas in use and add an appropriate class to the parent element
  */
 const fatFooterAreas = document.querySelector(".fat-footer-areas");
-const fatFooterAreasCount = fatFooterAreas.childElementCount;
-fatFooterAreas.classList.add(`v-grid-columns_${fatFooterAreasCount}`);
+if (fatFooterAreas) {
+	const fatFooterAreasCount = fatFooterAreas.childElementCount;
+	fatFooterAreas.classList.add(`v-grid-columns_${fatFooterAreasCount}`);
+}
