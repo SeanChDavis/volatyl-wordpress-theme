@@ -13,18 +13,20 @@ if ( $front_page_hero_dark ) {
 			<div class="site-header-elements">
 				<div class="site-branding">
 					<?php
+					$home_url = esc_url( home_url( '/' ) );
+					$blog_name = get_bloginfo( 'name' );
 					if ( $front_page_hero_dark && ! empty( $light_logo_atts[0] ) ) {
 						?>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>"  class="custom-logo-link" rel="home"><img src="<?php echo $light_logo_atts[0]; ?>" class="custom-logo" alt="<?php echo get_bloginfo( 'name' ); ?>"></a>
+						<a href="<?php echo $home_url; ?>" class="custom-logo-link" rel="home"><img src="<?php echo $light_logo_atts[0]; ?>" class="custom-logo" alt="<?php echo $blog_name; ?>"></a>
 						<?php
 					} else {
 						if ( has_custom_logo() ) {
 							the_custom_logo();
 						} else {
-							$title_tag = is_front_page() ? 'p' : 'h1';
-							?>
-							<<?php echo $title_tag ?> class="site-title v-margin-0"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo get_bloginfo( 'description', 'display' ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></<?php echo $title_tag ?>>
-							<?php
+							$title_classes = 'site-title v-margin-0';
+							echo is_front_page() ? '<p class="' . $title_classes . '">' : '<h1 class="' . $title_classes . '">';
+							echo '<a href="' . $home_url . '" rel="home">' . $blog_name . '</a>';
+							echo is_front_page() ? '</p>' : '</h1>';
 						}
 					}
 				?>

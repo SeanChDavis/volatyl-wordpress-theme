@@ -1,7 +1,7 @@
 <?php // Site hero inside the #masthead as a sibling to the .site-header
 
 if ( is_front_page() ) {
-	$front_page_hero_title = get_bloginfo( 'description' );
+	$front_page_hero_title = get_bloginfo( 'description' ) ?: sprintf( 'Welcome to %1$s', get_bloginfo( 'name' ) );
 	if ( ! empty( get_theme_mod( 'volatyl_front_page_hero_title' ) ) ) {
 		$front_page_hero_title = get_theme_mod( 'volatyl_front_page_hero_title' );
 	}

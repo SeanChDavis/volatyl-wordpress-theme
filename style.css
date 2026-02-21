@@ -1882,9 +1882,6 @@ main {
 .site-header-elements > * {
   align-self: center;
 }
-.site-header-elements .site-branding {
-  line-height: 1;
-}
 .site-header-elements .site-branding .custom-logo-link .custom-logo {
   transition: opacity 0.2s;
   vertical-align: middle;
@@ -1895,7 +1892,10 @@ main {
 }
 .site-header-elements .site-branding .site-title {
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
+}
+.site-header-elements .site-branding .site-title {
   font-size: 1rem;
+  line-height: 1;
   text-transform: uppercase;
 }
 .site-header-elements .site-branding .site-title a {
