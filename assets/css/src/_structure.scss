@@ -1,7 +1,14 @@
-body {
+html {
 	@include bodyFont;
 	@include fontBase;
-	overflow-wrap: break-word;
+	@include lineHeightBase;
+
+	& {
+		overflow-wrap: break-word;
+	}
+}
+
+body {
 
 	& * {
 		box-sizing: border-box;

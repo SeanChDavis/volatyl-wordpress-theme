@@ -16,46 +16,35 @@ $lgMinWidth: 1200px;
 
 /* Base font size */
 @mixin fontBase {
-	@include fontSmall;
-	@include lineHeightBase;
+	font-size: 18px;
+}
 
-	@media all and (min-width: $xsMinWidth) {
-		font-size: 18px;
-	}
+/* Base line height */
+@mixin lineHeightBase {
+	line-height: 1.6;
 }
 
 /* Font size modifiers */
-@mixin fontBig {
-	font-size: 19px;
-}
-
-@mixin fontBigger {
-	font-size: 20px;
-}
-
-@mixin fontBiggest {
-	font-size: 22px;
-}
-
-@mixin fontSmall {
-	font-size: 16px;
-}
-
-@mixin fontSmaller {
-	font-size: 15px;
-}
-
-@mixin fontSmallest {
-	font-size: 14px;
-}
-
 @mixin fontTiny {
-	font-size: 13px;
+	font-size: .722rem;
 }
-
-/* Line height default */
-@mixin lineHeightBase {
-	line-height: 1.6;
+@mixin fontSmallest {
+	font-size: .778rem;
+}
+@mixin fontSmaller {
+	font-size: .833rem;
+}
+@mixin fontSmall {
+	font-size: .889rem;
+}
+@mixin fontBig {
+	font-size: 1.056rem;
+}
+@mixin fontBigger {
+	font-size: 1.111rem;
+}
+@mixin fontBiggest {
+	font-size: 1.222rem;
 }
 
 /* HTML structure spacing */

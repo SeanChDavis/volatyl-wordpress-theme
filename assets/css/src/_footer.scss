@@ -47,11 +47,7 @@
 .fat-footer-areas {
 
 	@media all and (min-width: $mdMinWidth) {
-		padding-top: 3rem;
-	}
-
-	@media all and (min-width: $lgMinWidth) {
-		padding-top: 4rem;
+		padding-top: clamp(3rem, 4.5vw, 4rem);
 	}
 
 	.widget:not(:last-child) {

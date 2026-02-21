@@ -22,20 +22,8 @@ h6, .h6 {
 }
 
 h1, .h1 {
-	font-size: 2rem;
+	font-size: clamp(2rem, 5vw, 4rem);
 	line-height: 1.25;
-
-	@media all and (min-width: $xsMinWidth) {
-		font-size: 2.66666rem;
-	}
-
-	@media all and (min-width: $smMinWidth) {
-		font-size: 3.33333rem;
-	}
-
-	@media all and (min-width: $lgMinWidth) {
-		font-size: 4rem;
-	}
 
 	&.jumbo {
 
@@ -46,16 +34,8 @@ h1, .h1 {
 }
 
 h2, .h2 {
-	font-size: 1.65rem;
+	font-size: clamp(1.65rem, 4vw, 3rem);
 	line-height: 1.3;
-
-	@media all and (min-width: $xsMinWidth) {
-		font-size: 2.08333rem;
-	}
-
-	@media all and (min-width: $lgMinWidth) {
-		font-size: 3rem;
-	}
 
 	&.jumbo {
 
@@ -66,16 +46,8 @@ h2, .h2 {
 }
 
 h3, .h3 {
-	font-size: 1.35rem;
+	font-size: clamp(1.35rem, 2.5vw, 2rem);
 	line-height: 1.35;
-
-	@media all and (min-width: $xsMinWidth) {
-		font-size: 1.65rem;
-	}
-
-	@media all and (min-width: $lgMinWidth) {
-		font-size: 2rem;
-	}
 
 	&.jumbo {
 
@@ -86,32 +58,12 @@ h3, .h3 {
 }
 
 h4, .h4 {
-	font-size: 1.125rem;
+	font-size: clamp(1.125rem, 2vw, 1.5rem);
 	line-height: 1.4;
-
-	@media all and (min-width: $xsMinWidth) {
-		font-size: 1.25rem;
-	}
-
-	@media all and (min-width: $smMinWidth) {
-		line-height: 1.45;
-	}
-
-	@media all and (min-width: $lgMinWidth) {
-		font-size: 1.5rem;
-	}
 }
 
 h5, .h5 {
-	font-size: 1rem;
-
-	@media all and (min-width: $xsMinWidth) {
-		font-size: 1.125rem;
-	}
-
-	@media all and (min-width: $lgMinWidth) {
-		font-size: 1.25rem;
-	}
+	font-size: clamp(1rem, 1.75vw, 1.25rem);
 }
 
 h6, .h6 {
@@ -120,11 +72,7 @@ h6, .h6 {
 }
 
 p {
-	margin: 0 0 1.25rem;
-
-	@media all and (min-width: $smMinWidth) {
-		margin-bottom: 1.5rem;
-	}
+	margin: 0 0 clamp(1.25rem, 2vw, 1.5rem);
 
 	&:last-child {
 
@@ -134,30 +82,18 @@ p {
 	}
 
 	& + h1, & + .h1 {
-		margin-top: 1.75rem;
-
-		@media all and (min-width: $smMinWidth) {
-			margin-top: 2.25rem;
-		}
+		margin-top: clamp(1.75rem, 2.75vw, 2.25rem);
 	}
 
 	& + h2, & + .h2 {
-		margin-top: 1.5rem;
-
-		@media all and (min-width: $smMinWidth) {
-			margin-top: 2rem;
-		}
+		margin-top: clamp(1.5rem, 2.5vw, 2rem);
 	}
 
 	& + h3, & + .h3,
 	& + h4, & + .h4,
 	& + h5, & + .h5,
 	& + h6, & + .h6 {
-		margin-top: 1.35rem;
-
-		@media all and (min-width: $smMinWidth) {
-			margin-top: 1.75rem;
-		}
+		margin-top: clamp(1.35rem, 2.25vw, 1.75rem);
 	}
 
 	cite {
@@ -186,10 +122,6 @@ blockquote,
 address {
 	font-style: italic;
 	margin: 1.125rem 1.125rem 2rem;
-
-	@media all and (min-width: $smMinWidth) {
-		margin-bottom: 2rem;
-	}
 }
 
 blockquote {
@@ -204,11 +136,7 @@ blockquote {
 	border-style: solid;
 	border-width: 0 0 0 3px;
 	margin-left: 0;
-	padding-left: 1.25rem;
-
-	@media all and (min-width: $smMinWidth) {
-		padding-left: 2rem;
-	}
+	padding-left: clamp(1.25rem, 2.5vw, 2rem);
 
 	&.is-style-plain {
 		border: none;
@@ -277,22 +205,14 @@ cite {
 table,
 pre,
 dl {
-	margin: 1rem 0 2rem;
-
-	@media all and (min-width: $smMinWidth) {
-		margin-bottom: 2.5rem;
-	}
+	margin: 1rem 0 clamp(2rem, 3vw, 2.5rem);
 }
 
 hr,
 .wp-block-separator {
 	border-style: solid;
 	border-width: 2px 0 1px;
-	margin: 2rem 0;
-
-	@media all and (min-width: $smMinWidth) {
-		margin: 3rem 0;
-	}
+	margin: clamp(2rem, 3.5vw, 3rem) 0;
 }
 
 .wp-block-separator {
@@ -327,14 +247,14 @@ table {
 	}
 
 	th {
-		font-size: 80%;
+		@include fontSmaller;
 		font-weight: 700;
 		letter-spacing: 1px;
 		text-transform: uppercase;
 	}
 
 	td {
-		font-size: 90%;
+		@include fontSmall;
 	}
 
 	tfoot {
@@ -398,22 +318,18 @@ table {
 
 pre {
 	border-radius: 10px;
-	font-size: 93%;
+	@include fontSmall;
 	padding: 1.625rem;
 
 	@media all and (min-width: $smMinWidth) {
-		font-size: 85%;
+		@include fontSmall;
 		padding: 2rem;
 	}
 }
 
 dl {
 	border-radius: 10px;
-	padding: 1.625rem;
-
-	@media all and (min-width: $smMinWidth) {
-		padding: 2rem;
-	}
+	padding: clamp(1.625rem, 2.25vw, 2rem);
 
 	dt {
 		font-weight: 700;
@@ -525,11 +441,7 @@ figure {
 
 .wp-block-media-text {
 	gap: 2rem;
-	margin: 3rem 0;
-
-	@media all and (min-width: $mdMinWidth) {
-		margin-top: 4rem;
-	}
+	margin: clamp(3rem, 4.4vw, 4rem) 0 3rem;
 
 	&:first-child {
 		margin-top: 0;
@@ -704,22 +616,14 @@ article,
 			&.alignleft {
 
 				@media all and (min-width: $xsMinWidth) {
-					margin-right: 1.5rem;
-				}
-
-				@media all and (min-width: $mdMinWidth) {
-					margin-right: 3rem;
+					margin-right: clamp(1.5rem, 3.5vw, 3rem);
 				}
 			}
 
 			&.alignright {
 
 				@media all and (min-width: $xsMinWidth) {
-					margin-left: 1.5rem;
-				}
-
-				@media all and (min-width: $lgMinWidth) {
-					margin-left: 3rem;
+					margin-left: clamp(1.5rem, 3.5vw, 3rem);
 				}
 			}
 		}
@@ -732,11 +636,7 @@ article,
 			@include fontSmaller;
 			border-radius: 10px;
 			margin-left: 0;
-			padding: 1.125rem;
-
-			@media all and (min-width: $smMinWidth) {
-				padding: 2rem;
-			}
+			padding: clamp(1.125rem, 2.4vw, 2rem);
 
 			& > .wp-block-latest-comments__comment {
 

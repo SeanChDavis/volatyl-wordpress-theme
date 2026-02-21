@@ -599,23 +599,13 @@ cite,
 /* Heading font */
 /* Body font */
 /* Base font size */
+/* Base line height */
 /* Font size modifiers */
-/* Line height default */
 /* HTML structure spacing */
 .v-grid {
   display: grid;
-  gap: 1.5rem;
+  gap: clamp(1.5rem, 4vw, 3rem);
   grid-template-columns: 100%;
-}
-@media all and (min-width: 768px) {
-  .v-grid {
-    gap: 2rem;
-  }
-}
-@media all and (min-width: 992px) {
-  .v-grid {
-    gap: 3rem;
-  }
 }
 @media all and (min-width: 768px) {
   .v-grid.v-gap-2 {
@@ -673,7 +663,7 @@ cite,
   text-decoration: none;
 }
 .v-grid-item-container .v-grid-item-meta {
-  font-size: 13px;
+  font-size: 0.722rem;
   display: block;
   font-weight: 600;
   line-height: 1;
@@ -697,46 +687,22 @@ cite,
   vertical-align: top;
 }
 .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-header {
-  padding: 1.25rem 1.25rem 1rem;
-}
-@media all and (min-width: 992px) {
-  .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-header {
-    padding: 2rem 2rem 1.25em;
-  }
+  padding: clamp(1.25rem, 2.4vw, 2rem) clamp(1.25rem, 2.4vw, 2rem) clamp(1rem, 1.65vw, 1.25rem);
 }
 .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-body {
-  font-size: 16px;
+  font-size: 0.889rem;
   flex: 1 0 auto;
-  padding: 0 1.25rem 1.5rem;
-}
-@media all and (min-width: 992px) {
-  .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-body {
-    padding: 0 2rem 1.5rem;
-  }
+  padding: 0 clamp(1.25rem, 2.4vw, 2rem) 1.5rem;
 }
 .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-body .hellip-link {
   text-decoration: none;
 }
 .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-footer {
-  font-size: 15px;
-  padding: 0 1.25rem 1.75rem;
-}
-@media all and (min-width: 992px) {
-  .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-footer {
-    padding: 0 2rem 2.25rem;
-  }
+  font-size: 0.833rem;
+  padding: 0 clamp(1.25rem, 2.4vw, 2rem) clamp(1.75rem, 2.75vw, 2.25rem);
 }
 .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-footer .v-button {
-  font-size: 14px;
-}
-
-.site-hero .inner {
-  padding-bottom: 5rem;
-}
-@media all and (min-width: 992px) {
-  .site-hero .inner {
-    padding-top: 5rem;
-  }
+  font-size: 0.778rem;
 }
 
 .v-hero.v-hero-centered {
@@ -763,29 +729,14 @@ cite,
   margin-bottom: 0;
 }
 .v-hero .v-hero-title + .v-hero-primary-cta, .v-hero .v-hero-title + .v-hero-secondary-cta {
-  margin-top: 2rem;
-}
-@media all and (min-width: 560px) {
-  .v-hero .v-hero-title + .v-hero-primary-cta, .v-hero .v-hero-title + .v-hero-secondary-cta {
-    margin-top: 3rem;
-  }
-}
-@media all and (min-width: 992px) {
-  .v-hero .v-hero-title + .v-hero-primary-cta, .v-hero .v-hero-title + .v-hero-secondary-cta {
-    margin-top: 6rem;
-  }
+  margin-top: clamp(2rem, 8vw, 6rem);
 }
 .v-hero .v-hero-subtitle {
-  font-size: 19px;
+  font-size: 1.056rem;
   max-width: 665px;
 }
 .v-hero .v-hero-subtitle:not(:last-child) {
-  margin-bottom: 2rem;
-}
-@media all and (min-width: 560px) {
-  .v-hero .v-hero-subtitle:not(:last-child) {
-    margin-bottom: 3rem;
-  }
+  margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 .v-hero .v-hero-primary-cta {
   margin-bottom: 8px;
@@ -798,19 +749,14 @@ cite,
   .v-hero .v-hero-primary-cta .v-button,
   .v-hero .v-hero-primary-cta .button,
   .v-hero .v-hero-primary-cta button, .v-hero .v-hero-primary-cta.wp-block-buttons .wp-block-button .wp-block-button__link {
-    font-size: 1.3rem;
+    font-size: 1.222rem;
   }
 }
 .v-hero .v-hero-primary-cta.wp-block-buttons {
-  margin-bottom: 8px;
-}
-@media all and (min-width: 560px) {
-  .v-hero .v-hero-primary-cta.wp-block-buttons {
-    margin-bottom: 12px;
-  }
+  margin-bottom: clamp(8px, 0.8vw, 12px);
 }
 .v-hero .v-hero-secondary-cta {
-  font-size: 16px;
+  font-size: 0.889rem;
 }
 
 .content-header {
@@ -821,26 +767,16 @@ cite,
     text-align: left;
   }
 }
-@media all and (min-width: 992px) {
-  .content-header .inner {
-    padding-top: 5rem;
-  }
-}
 .content-header .content-title {
   margin-bottom: 0;
-  max-width: 770px;
-}
-@media all and (min-width: 992px) {
-  .content-header .content-title {
-    max-width: 940px;
-  }
+  max-width: clamp(770px, 50vw, 940px);
 }
 .content-header .content-title + .content-meta, .content-header .content-title + .content-description {
   margin-top: 0.75rem;
 }
 .content-header .content-meta,
 .content-header .content-description {
-  font-size: 16px;
+  font-size: 0.889rem;
   max-width: 765px;
 }
 .content-header .content-container {
@@ -855,7 +791,7 @@ cite,
 }
 
 .archive .content-header .content-title {
-  font-size: 15px;
+  font-size: 0.833rem;
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   display: block;
   font-weight: 700;
@@ -864,35 +800,19 @@ cite,
 .archive .content-header .content-title span {
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   display: block;
-  font-size: 2rem;
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 700;
   line-height: 1.25;
   margin: 0;
-  max-width: 770px;
+  max-width: clamp(770px, 50vw, 940px);
   text-transform: none;
-}
-@media all and (min-width: 560px) {
-  .archive .content-header .content-title span {
-    font-size: 2.66666rem;
-  }
-}
-@media all and (min-width: 768px) {
-  .archive .content-header .content-title span {
-    font-size: 3.33333rem;
-  }
-}
-@media all and (min-width: 1200px) {
-  .archive .content-header .content-title span {
-    font-size: 4rem;
-    max-width: 940px;
-  }
 }
 
 .no-sidebar .content-header {
   text-align: center;
 }
 .no-sidebar .content-header .content-title {
-  margin: 0 auto 0.75rem;
+  margin: 0 auto;
 }
 .no-sidebar .content-header .content-meta,
 .no-sidebar .content-header .content-description {
@@ -907,13 +827,7 @@ cite,
   .alignleft,
   [class*=wp-block-] .alignleft {
     float: left;
-    margin-right: 1.5rem;
-  }
-}
-@media all and (min-width: 992px) {
-  .alignleft,
-  [class*=wp-block-] .alignleft {
-    margin-right: 3rem;
+    margin-right: clamp(1.5rem, 3.5vw, 3rem);
   }
 }
 
@@ -925,18 +839,12 @@ cite,
   .alignright,
   [class*=wp-block-] .alignright {
     float: right;
-    margin-left: 1.5rem;
-  }
-}
-@media all and (min-width: 1200px) {
-  .alignright,
-  [class*=wp-block-] .alignright {
-    margin-left: 3rem;
+    margin-left: clamp(1.5rem, 3.5vw, 3rem);
   }
 }
 
 .v-subdued-title {
-  font-size: 14px;
+  font-size: 0.778rem;
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   display: block;
   font-weight: 700;
@@ -944,7 +852,7 @@ cite,
 }
 
 .v-subdued-link-container a {
-  font-size: 16px;
+  font-size: 0.889rem;
 }
 
 .v-text-align-center {
@@ -952,12 +860,7 @@ cite,
 }
 
 .section-footer-cta {
-  padding-top: 1rem;
-}
-@media all and (min-width: 560px) {
-  .section-footer-cta {
-    padding-top: 2rem;
-  }
+  padding-top: clamp(1rem, 2.5vw, 2rem);
 }
 
 .v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
@@ -1003,23 +906,8 @@ h6.has-background, .h6.has-background {
 }
 
 h1, .h1 {
-  font-size: 2rem;
+  font-size: clamp(2rem, 5vw, 4rem);
   line-height: 1.25;
-}
-@media all and (min-width: 560px) {
-  h1, .h1 {
-    font-size: 2.66666rem;
-  }
-}
-@media all and (min-width: 768px) {
-  h1, .h1 {
-    font-size: 3.33333rem;
-  }
-}
-@media all and (min-width: 1200px) {
-  h1, .h1 {
-    font-size: 4rem;
-  }
 }
 @media all and (min-width: 992px) {
   h1.jumbo, .h1.jumbo {
@@ -1028,18 +916,8 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: 1.65rem;
+  font-size: clamp(1.65rem, 4vw, 3rem);
   line-height: 1.3;
-}
-@media all and (min-width: 560px) {
-  h2, .h2 {
-    font-size: 2.08333rem;
-  }
-}
-@media all and (min-width: 1200px) {
-  h2, .h2 {
-    font-size: 3rem;
-  }
 }
 @media all and (min-width: 1200px) {
   h2.jumbo, .h2.jumbo {
@@ -1048,18 +926,8 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-size: 1.35rem;
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
   line-height: 1.35;
-}
-@media all and (min-width: 560px) {
-  h3, .h3 {
-    font-size: 1.65rem;
-  }
-}
-@media all and (min-width: 1200px) {
-  h3, .h3 {
-    font-size: 2rem;
-  }
 }
 @media all and (min-width: 1200px) {
   h3.jumbo, .h3.jumbo {
@@ -1068,37 +936,12 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  font-size: 1.125rem;
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
   line-height: 1.4;
-}
-@media all and (min-width: 560px) {
-  h4, .h4 {
-    font-size: 1.25rem;
-  }
-}
-@media all and (min-width: 768px) {
-  h4, .h4 {
-    line-height: 1.45;
-  }
-}
-@media all and (min-width: 1200px) {
-  h4, .h4 {
-    font-size: 1.5rem;
-  }
 }
 
 h5, .h5 {
-  font-size: 1rem;
-}
-@media all and (min-width: 560px) {
-  h5, .h5 {
-    font-size: 1.125rem;
-  }
-}
-@media all and (min-width: 1200px) {
-  h5, .h5 {
-    font-size: 1.25rem;
-  }
+  font-size: clamp(1rem, 1.75vw, 1.25rem);
 }
 
 h6, .h6 {
@@ -1107,39 +950,19 @@ h6, .h6 {
 }
 
 p {
-  margin: 0 0 1.25rem;
-}
-@media all and (min-width: 768px) {
-  p {
-    margin-bottom: 1.5rem;
-  }
+  margin: 0 0 clamp(1.25rem, 2vw, 1.5rem);
 }
 p:last-child:not([class*=v-margin-bottom-]) {
   margin-bottom: 0;
 }
 p + h1, p + .h1 {
-  margin-top: 1.75rem;
-}
-@media all and (min-width: 768px) {
-  p + h1, p + .h1 {
-    margin-top: 2.25rem;
-  }
+  margin-top: clamp(1.75rem, 2.75vw, 2.25rem);
 }
 p + h2, p + .h2 {
-  margin-top: 1.5rem;
-}
-@media all and (min-width: 768px) {
-  p + h2, p + .h2 {
-    margin-top: 2rem;
-  }
+  margin-top: clamp(1.5rem, 2.5vw, 2rem);
 }
 p + h3, p + .h3, p + h4, p + .h4, p + h5, p + .h5, p + h6, p + .h6 {
-  margin-top: 1.35rem;
-}
-@media all and (min-width: 768px) {
-  p + h3, p + .h3, p + h4, p + .h4, p + h5, p + .h5, p + h6, p + .h6 {
-    margin-top: 1.75rem;
-  }
+  margin-top: clamp(1.35rem, 2.25vw, 1.75rem);
 }
 p cite {
   font-weight: 400;
@@ -1163,12 +986,6 @@ address {
   font-style: italic;
   margin: 1.125rem 1.125rem 2rem;
 }
-@media all and (min-width: 768px) {
-  blockquote,
-  address {
-    margin-bottom: 2rem;
-  }
-}
 
 blockquote > p {
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
@@ -1179,12 +996,7 @@ blockquote > p {
   border-style: solid;
   border-width: 0 0 0 3px;
   margin-left: 0;
-  padding-left: 1.25rem;
-}
-@media all and (min-width: 768px) {
-  .wp-block-quote {
-    padding-left: 2rem;
-  }
+  padding-left: clamp(1.25rem, 2.5vw, 2rem);
 }
 .wp-block-quote.is-style-plain {
   border: none;
@@ -1231,7 +1043,7 @@ q {
 }
 
 cite {
-  font-size: 15px;
+  font-size: 0.833rem;
   display: block;
 }
 cite:before {
@@ -1241,27 +1053,14 @@ cite:before {
 table,
 pre,
 dl {
-  margin: 1rem 0 2rem;
-}
-@media all and (min-width: 768px) {
-  table,
-  pre,
-  dl {
-    margin-bottom: 2.5rem;
-  }
+  margin: 1rem 0 clamp(2rem, 3vw, 2.5rem);
 }
 
 hr,
 .wp-block-separator {
   border-style: solid;
   border-width: 2px 0 1px;
-  margin: 2rem 0;
-}
-@media all and (min-width: 768px) {
-  hr,
-  .wp-block-separator {
-    margin: 3rem 0;
-  }
+  margin: clamp(2rem, 3.5vw, 3rem) 0;
 }
 
 .wp-block-separator {
@@ -1288,19 +1087,19 @@ table th, table td {
   padding: 8px;
 }
 table th {
-  font-size: 80%;
+  font-size: 0.833rem;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 table td {
-  font-size: 90%;
+  font-size: 0.889rem;
 }
 table tfoot {
   font-style: italic;
 }
 table caption {
-  font-size: 15px;
+  font-size: 0.833rem;
   margin-top: 0.75rem;
 }
 table caption:first-child {
@@ -1332,36 +1131,31 @@ table caption:first-child {
   padding: 0.25em;
 }
 .wp-block-calendar .wp-calendar-table caption {
-  font-size: 13px;
+  font-size: 0.722rem;
   font-weight: 700;
   margin-bottom: 0;
   padding: 8px;
   text-transform: uppercase;
 }
 .wp-block-calendar .wp-calendar-nav {
-  font-size: 15px;
+  font-size: 0.833rem;
 }
 
 pre {
   border-radius: 10px;
-  font-size: 93%;
+  font-size: 0.889rem;
   padding: 1.625rem;
 }
 @media all and (min-width: 768px) {
   pre {
-    font-size: 85%;
+    font-size: 0.889rem;
     padding: 2rem;
   }
 }
 
 dl {
   border-radius: 10px;
-  padding: 1.625rem;
-}
-@media all and (min-width: 768px) {
-  dl {
-    padding: 2rem;
-  }
+  padding: clamp(1.625rem, 2.25vw, 2rem);
 }
 dl dt {
   font-weight: 700;
@@ -1409,12 +1203,12 @@ img {
 }
 
 figure figcaption {
-  font-size: 15px;
+  font-size: 0.833rem;
   font-style: italic;
 }
 
 .post-password-form {
-  font-size: 15px;
+  font-size: 0.833rem;
 }
 .post-password-form label input {
   display: block;
@@ -1422,7 +1216,7 @@ figure figcaption {
 }
 
 #searchform {
-  font-size: 15px;
+  font-size: 0.833rem;
 }
 #searchform #searchsubmit {
   margin-top: 3px;
@@ -1452,12 +1246,7 @@ figure figcaption {
 
 .wp-block-media-text {
   gap: 2rem;
-  margin: 3rem 0;
-}
-@media all and (min-width: 992px) {
-  .wp-block-media-text {
-    margin-top: 4rem;
-  }
+  margin: clamp(3rem, 4.4vw, 4rem) 0 3rem;
 }
 .wp-block-media-text:first-child {
   margin-top: 0;
@@ -1596,7 +1385,7 @@ figure figcaption {
 .wp-block-embed > label,
 .wp-block-navigation > label,
 .wp-block-group > label {
-  font-size: 15px;
+  font-size: 0.833rem;
 }
 
 .wp-block-buttons > .wp-block-button.is-style-outline {
@@ -1613,13 +1402,13 @@ figure figcaption {
 }
 
 .wp-block-file .wp-block-file__button {
-  font-size: 14px;
+  font-size: 0.778rem;
   line-height: 1;
 }
 
 .wp-block-search input,
 .wp-block-search button {
-  font-size: 15px;
+  font-size: 0.833rem;
 }
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
   border: none;
@@ -1635,7 +1424,7 @@ figure figcaption {
 }
 
 .twitter-tweet:not(.twitter-tweet-rendered) {
-  font-size: 15px;
+  font-size: 0.833rem;
   border-style: solid;
   border-width: 2px;
   border-radius: 10px;
@@ -1657,17 +1446,7 @@ figure figcaption {
   .v-content-container .entry-content .wp-block-archives-list.alignleft,
   .v-content-container .entry-content .wp-block-latest-posts.alignleft,
   .v-content-container .entry-content .wp-block-page-list.alignleft {
-    margin-right: 1.5rem;
-  }
-}
-@media all and (min-width: 992px) {
-  article .entry-content .wp-block-archives-list.alignleft,
-  article .entry-content .wp-block-latest-posts.alignleft,
-  article .entry-content .wp-block-page-list.alignleft,
-  .v-content-container .entry-content .wp-block-archives-list.alignleft,
-  .v-content-container .entry-content .wp-block-latest-posts.alignleft,
-  .v-content-container .entry-content .wp-block-page-list.alignleft {
-    margin-right: 3rem;
+    margin-right: clamp(1.5rem, 3.5vw, 3rem);
   }
 }
 @media all and (min-width: 560px) {
@@ -1677,17 +1456,7 @@ figure figcaption {
   .v-content-container .entry-content .wp-block-archives-list.alignright,
   .v-content-container .entry-content .wp-block-latest-posts.alignright,
   .v-content-container .entry-content .wp-block-page-list.alignright {
-    margin-left: 1.5rem;
-  }
-}
-@media all and (min-width: 1200px) {
-  article .entry-content .wp-block-archives-list.alignright,
-  article .entry-content .wp-block-latest-posts.alignright,
-  article .entry-content .wp-block-page-list.alignright,
-  .v-content-container .entry-content .wp-block-archives-list.alignright,
-  .v-content-container .entry-content .wp-block-latest-posts.alignright,
-  .v-content-container .entry-content .wp-block-page-list.alignright {
-    margin-left: 3rem;
+    margin-left: clamp(1.5rem, 3.5vw, 3rem);
   }
 }
 article .entry-content .wp-block-latest-posts,
@@ -1696,16 +1465,10 @@ article .entry-content .wp-block-latest-posts,
 }
 article .entry-content .wp-block-latest-comments,
 .v-content-container .entry-content .wp-block-latest-comments {
-  font-size: 15px;
+  font-size: 0.833rem;
   border-radius: 10px;
   margin-left: 0;
-  padding: 1.125rem;
-}
-@media all and (min-width: 768px) {
-  article .entry-content .wp-block-latest-comments,
-  .v-content-container .entry-content .wp-block-latest-comments {
-    padding: 2rem;
-  }
+  padding: clamp(1.125rem, 2.4vw, 2rem);
 }
 article .entry-content .wp-block-latest-comments > .wp-block-latest-comments__comment:not(:last-child),
 .v-content-container .entry-content .wp-block-latest-comments > .wp-block-latest-comments__comment:not(:last-child) {
@@ -1721,7 +1484,7 @@ article .entry-content .wp-block-latest-comments > .wp-block-latest-comments__co
 }
 article .entry-content .wp-block-latest-comments > .wp-block-latest-comments__comment .wp-block-latest-comments__comment-date,
 .v-content-container .entry-content .wp-block-latest-comments > .wp-block-latest-comments__comment .wp-block-latest-comments__comment-date {
-  font-size: 14px;
+  font-size: 0.778rem;
 }
 article .entry-content .wp-block-latest-comments > .wp-block-latest-comments__comment .wp-block-latest-comments__comment-excerpt p,
 .v-content-container .entry-content .wp-block-latest-comments > .wp-block-latest-comments__comment .wp-block-latest-comments__comment-excerpt p {
@@ -1750,17 +1513,15 @@ article .entry-content .wp-block-social-links li,
     grid-row: 2;
   }
 }
-body {
+html {
   font-family: "Red Hat Text", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
+}
+html {
   overflow-wrap: break-word;
 }
-@media all and (min-width: 560px) {
-  body {
-    font-size: 18px;
-  }
-}
+
 body * {
   box-sizing: border-box;
 }
@@ -1913,7 +1674,7 @@ main {
   /* Mobile navigation */
 }
 #site-navigation #primary-menu .menu-item {
-  font-size: 13px;
+  font-size: 0.778rem;
   font-weight: 600;
   list-style-type: none;
   text-transform: uppercase;
@@ -1952,7 +1713,7 @@ main {
   text-decoration: underline;
 }
 #site-navigation #primary-menu > .menu-item.menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu a {
-  font-size: 90%;
+  font-size: 0.889rem;
   padding: 5px 0 5px 5px;
 }
 #site-navigation #primary-menu > .menu-item.menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu a:before {
@@ -2004,6 +1765,7 @@ main {
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children.sub-menu-active > a:after {
   top: 6px;
+  transform: rotate(-225deg);
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children.sub-menu-active .sub-menu {
   display: block;
@@ -2032,7 +1794,7 @@ main {
 }
 #site-navigation .menu-toggle {
   font-family: "Red Hat Text", sans-serif;
-  font-size: 14px;
+  font-size: 0.778rem;
   background: transparent;
   border: none;
   display: inline-block;
@@ -2096,7 +1858,7 @@ main {
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu .close-menu-modal {
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
-  font-size: 14px;
+  font-size: 0.778rem;
   display: block;
   line-height: 1;
   margin-top: auto;
@@ -2147,7 +1909,7 @@ main {
 }
 
 .posts-navigation .nav-links {
-  font-size: 15px;
+  font-size: 0.833rem;
   display: flex;
   gap: 1rem;
   justify-content: space-between;
@@ -2157,7 +1919,7 @@ main {
 }
 
 .widget {
-  font-size: 16px;
+  font-size: 0.889rem;
   margin-bottom: 1.25rem;
 }
 .widget h1, .widget .h1,
@@ -2171,38 +1933,16 @@ main {
 .widget h1, .widget .h1,
 .widget h2, .widget .h2,
 .widget h3, .widget .h3 {
-  font-size: 1.35rem;
+  font-size: clamp(1.35rem, 2.15vw, 1.65rem);
   line-height: 1.35;
 }
-@media all and (min-width: 560px) {
-  .widget h1, .widget .h1,
-  .widget h2, .widget .h2,
-  .widget h3, .widget .h3 {
-    font-size: 1.65rem;
-  }
-}
 .widget h4, .widget .h4 {
-  font-size: 1.125rem;
+  font-size: clamp(1.125rem, 1.6vw, 1.25rem);
   line-height: 1.4;
   text-transform: uppercase;
 }
-@media all and (min-width: 560px) {
-  .widget h4, .widget .h4 {
-    font-size: 1.25rem;
-  }
-}
-@media all and (min-width: 768px) {
-  .widget h4, .widget .h4 {
-    line-height: 1.45;
-  }
-}
 .widget h5, .widget .h5 {
-  font-size: 1rem;
-}
-@media all and (min-width: 560px) {
-  .widget h5, .widget .h5 {
-    font-size: 1.125rem;
-  }
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
 }
 .widget p {
   margin-bottom: 1.25rem;
@@ -2277,7 +2017,7 @@ main {
 }
 .fat-footer .widget ul li a,
 .fat-footer .widget ol li a {
-  font-size: 15px;
+  font-size: 0.833rem;
 }
 .fat-footer .widget a {
   text-decoration-style: dotted;
@@ -2297,9 +2037,6 @@ main {
   border-width: 0 0 2px;
   padding-bottom: 2.5rem;
   margin-bottom: 2.5rem;
-}
-#comments .comment {
-  font-size: 16px;
 }
 #comments .comment.byuser .comment-author {
   position: relative;
@@ -2332,7 +2069,7 @@ main {
   display: none;
 }
 #comments .comment .comment-body .comment-metadata {
-  font-size: 14px;
+  font-size: 0.778rem;
 }
 #comments .comment .comment-body .comment-content ul {
   margin: 0 0 0 1.125rem;
@@ -2358,53 +2095,23 @@ main {
   margin-top: 1.25rem;
 }
 #comments .comment .comment-body .comment-content h1, #comments .comment .comment-body .comment-content .h1 {
-  font-size: 2rem;
-}
-@media all and (min-width: 560px) {
-  #comments .comment .comment-body .comment-content h1, #comments .comment .comment-body .comment-content .h1 {
-    font-size: 2.66666rem;
-  }
+  font-size: clamp(2rem, 3.25vw, 2.667rem);
 }
 #comments .comment .comment-body .comment-content h2, #comments .comment .comment-body .comment-content .h2 {
-  font-size: 1.65rem;
+  font-size: clamp(1.65rem, 2.5vw, 2.083rem);
   line-height: 1.3;
 }
-@media all and (min-width: 560px) {
-  #comments .comment .comment-body .comment-content h2, #comments .comment .comment-body .comment-content .h2 {
-    font-size: 2.08333rem;
-  }
-}
 #comments .comment .comment-body .comment-content h3, #comments .comment .comment-body .comment-content .h3 {
-  font-size: 1.35rem;
+  font-size: clamp(1.35rem, 2.15vw, 1.65rem);
   line-height: 1.35;
 }
-@media all and (min-width: 560px) {
-  #comments .comment .comment-body .comment-content h3, #comments .comment .comment-body .comment-content .h3 {
-    font-size: 1.65rem;
-  }
-}
 #comments .comment .comment-body .comment-content h4, #comments .comment .comment-body .comment-content .h4 {
-  font-size: 1.125rem;
+  font-size: clamp(1.125rem, 1.6vw, 1.25rem);
   line-height: 1.4;
   text-transform: uppercase;
 }
-@media all and (min-width: 560px) {
-  #comments .comment .comment-body .comment-content h4, #comments .comment .comment-body .comment-content .h4 {
-    font-size: 1.25rem;
-  }
-}
-@media all and (min-width: 768px) {
-  #comments .comment .comment-body .comment-content h4, #comments .comment .comment-body .comment-content .h4 {
-    line-height: 1.45;
-  }
-}
 #comments .comment .comment-body .comment-content h5, #comments .comment .comment-body .comment-content .h5 {
-  font-size: 1rem;
-}
-@media all and (min-width: 560px) {
-  #comments .comment .comment-body .comment-content h5, #comments .comment .comment-body .comment-content .h5 {
-    font-size: 1.125rem;
-  }
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
 }
 @media all and (min-width: 768px) {
   #comments .comment .comment-body .comment-content p:not(:last-child) {
@@ -2427,22 +2134,17 @@ main {
   }
 }
 #comments .comment .comment-body .reply {
-  font-size: 14px;
+  font-size: 0.778rem;
 }
 #comments .comment .comment-body .reply .comment-reply-link {
-  font-size: 12px;
+  font-size: 0.778rem;
   padding: 9px 11px;
 }
 #comments .comment .comment {
   border-style: dotted;
   border-width: 0 0 0 2px;
-  padding-left: 1rem;
+  padding-left: clamp(1rem, 2.75vw, 2.25rem);
   margin-top: 3rem;
-}
-@media all and (min-width: 768px) {
-  #comments .comment .comment {
-    padding-left: 2.25rem;
-  }
 }
 #comments .comment .comment:not(:last-child) {
   border-style: dotted;
@@ -2460,18 +2162,18 @@ main {
   width: 15px;
 }
 #comments .pingback {
-  font-size: 15px;
+  font-size: 0.833rem;
 }
 #comments #respond #reply-title small {
   display: block;
 }
 #comments #respond #reply-title small #cancel-comment-reply-link {
-  font-size: 15px;
+  font-size: 0.833rem;
   color: #ae1717;
 }
 #comments #respond #commentform .logged-in-as,
 #comments #respond #commentform .comment-notes {
-  font-size: 15px;
+  font-size: 0.833rem;
 }
 #comments #respond #commentform .logged-in-as .required-field-message,
 #comments #respond #commentform .comment-notes .required-field-message {
@@ -2481,7 +2183,7 @@ main {
 #comments #respond #commentform .comment-form-author > label,
 #comments #respond #commentform .comment-form-email > label,
 #comments #respond #commentform .comment-form-url > label {
-  font-size: 15px;
+  font-size: 0.833rem;
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
   display: block;
   font-weight: 600;
@@ -2493,7 +2195,7 @@ main {
 #comments #respond #commentform .comment-form-email textarea,
 #comments #respond #commentform .comment-form-url input,
 #comments #respond #commentform .comment-form-url textarea {
-  font-size: 15px;
+  font-size: 0.833rem;
 }
 #comments #respond #commentform textarea#comment {
   max-width: 650px;
@@ -2505,10 +2207,10 @@ main {
   max-width: 400px;
 }
 #comments #respond #commentform .comment-form-cookies-consent label {
-  font-size: 15px;
+  font-size: 0.833rem;
 }
 #comments #respond #commentform .required {
-  font-size: 15px;
+  font-size: 0.833rem;
   color: #ae1717;
   font-weight: 400;
 }
@@ -2523,7 +2225,7 @@ button,
 .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button {
   font-family: "Red Hat Display", "Red Hat Text", sans-serif;
-  font-size: 15px;
+  font-size: 0.833rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -2572,13 +2274,13 @@ button:hover,
   .comment-reply-link.v-large,
   .wp-block-button .wp-block-button__link.v-large,
   .wp-block-file .wp-block-file__button.v-large {
-    font-size: 1.15rem;
+    font-size: 1.111rem;
   }
 }
 
 @media all and (min-width: 560px) {
   .wp-block-buttons.v-large > .wp-block-button .wp-block-button__link {
-    font-size: 1.15rem;
+    font-size: 1.111rem;
   }
 }
 
@@ -2630,12 +2332,7 @@ select {
 
 @media all and (min-width: 992px) {
   .fat-footer-areas {
-    padding-top: 3rem;
-  }
-}
-@media all and (min-width: 1200px) {
-  .fat-footer-areas {
-    padding-top: 4rem;
+    padding-top: clamp(3rem, 4.5vw, 4rem);
   }
 }
 .fat-footer-areas .widget:not(:last-child) {
@@ -2703,11 +2400,11 @@ select {
   margin-top: 0;
 }
 .social-navigation .wp-block-social-links li.wp-social-link span {
-  font-size: 15px;
+  font-size: 0.833rem;
 }
 
 .site-footer-content {
-  font-size: 15px;
+  font-size: 0.833rem;
 }
 @media all and (min-width: 992px) {
   .site-footer-content {
@@ -2731,7 +2428,7 @@ article .entry-header .entry-title,
 }
 article .entry-header .entry-meta,
 .v-content-container .entry-header .entry-meta {
-  font-size: 15px;
+  font-size: 0.833rem;
 }
 article .post-thumbnail,
 .v-content-container .post-thumbnail {
@@ -2744,7 +2441,7 @@ article .post-thumbnail img,
 @media all and (min-width: 768px) {
   article .entry-content,
   .v-content-container .entry-content {
-    font-size: 19px;
+    font-size: 1.056rem;
   }
 }
 article .entry-content ul,
@@ -2779,19 +2476,12 @@ article .entry-content ol li + li,
 article .entry-content > ul, article .entry-content > ol,
 .v-content-container .entry-content > ul,
 .v-content-container .entry-content > ol {
-  margin-bottom: 1.25rem;
+  margin-bottom: clamp(1.25rem, 2.4vw, 1.75rem);
   margin-top: 1.25rem;
-}
-@media all and (min-width: 768px) {
-  article .entry-content > ul, article .entry-content > ol,
-  .v-content-container .entry-content > ul,
-  .v-content-container .entry-content > ol {
-    margin-bottom: 1.75rem;
-  }
 }
 article .entry-footer,
 .v-content-container .entry-footer {
-  font-size: 15px;
+  font-size: 0.833rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -2803,42 +2493,18 @@ article:last-child .entry-footer,
 
 .single article .entry-content h1:not(.jumbo), .single article .entry-content .h1:not(.jumbo),
 .single article .entry-content h2:not(.jumbo), .single article .entry-content .h2:not(.jumbo) {
-  font-size: 1.65rem;
+  font-size: clamp(1.65rem, 3.25vw, 2.5rem);
   line-height: 1.3;
 }
-@media all and (min-width: 560px) {
-  .single article .entry-content h1:not(.jumbo), .single article .entry-content .h1:not(.jumbo),
-  .single article .entry-content h2:not(.jumbo), .single article .entry-content .h2:not(.jumbo) {
-    font-size: 2rem;
-  }
-}
-@media all and (min-width: 1200px) {
-  .single article .entry-content h1:not(.jumbo), .single article .entry-content .h1:not(.jumbo),
-  .single article .entry-content h2:not(.jumbo), .single article .entry-content .h2:not(.jumbo) {
-    font-size: 2.5rem;
-  }
-}
 .single article .entry-content p + h1:not(.jumbo), .single article .entry-content p + .h1:not(.jumbo), .single article .entry-content p + h2:not(.jumbo), .single article .entry-content p + .h2:not(.jumbo) {
-  margin-top: 1.5rem;
-}
-@media all and (min-width: 768px) {
-  .single article .entry-content p + h1:not(.jumbo), .single article .entry-content p + .h1:not(.jumbo), .single article .entry-content p + h2:not(.jumbo), .single article .entry-content p + .h2:not(.jumbo) {
-    margin-top: 2rem;
-  }
+  margin-top: clamp(1.5rem, 2.5vw, 2rem);
 }
 
 .full-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ul, .full-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ol,
 .page-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ul,
 .page-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ol {
-  margin-bottom: 1.25rem;
+  margin-bottom: clamp(1.25rem, 2.4vw, 1.75rem);
   margin-top: 1.25rem;
-}
-@media all and (min-width: 768px) {
-  .full-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ul, .full-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ol,
-  .page-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ul,
-  .page-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ol {
-    margin-bottom: 1.75rem;
-  }
 }
 
 .blog-posts-featured [class*=v-grid-columns_]:not(:last-child) {
@@ -2856,30 +2522,22 @@ article:last-child .entry-footer,
   }
 }
 .featured-page .section-description {
-  font-size: 15px;
+  font-size: 0.833rem;
 }
 
 .blog-grid-cta {
   border-radius: 10px;
   grid-row-end: 3;
   grid-row-start: 2;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-  padding-bottom: 3rem;
-  padding-top: 3rem;
+  margin-bottom: clamp(1rem, 5vw, 4rem);
+  margin-top: clamp(1rem, 2.5vw, 2rem);
+  padding-bottom: clamp(3rem, 5vw, 4rem);
+  padding-top: clamp(3rem, 5vw, 4rem);
 }
 @media all and (min-width: 768px) {
   .blog-grid-cta {
     grid-column-end: 3;
     grid-column-start: 1;
-  }
-}
-@media all and (min-width: 992px) {
-  .blog-grid-cta {
-    margin-bottom: 4rem;
-    margin-top: 2rem;
-    padding-bottom: 4rem;
-    padding-top: 4rem;
   }
 }
 .blog-grid-cta .cta-title,

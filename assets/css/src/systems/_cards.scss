@@ -44,21 +44,13 @@
 			}
 
 			.v-grid-item-header {
-				padding: 1.25rem 1.25rem 1rem;
-
-				@media all and (min-width: $mdMinWidth) {
-					padding: 2rem 2rem 1.25em;
-				}
+				padding: clamp(1.25rem, 2.4vw, 2rem) clamp(1.25rem, 2.4vw, 2rem) clamp(1rem, 1.65vw, 1.25rem);
 			}
 
 			.v-grid-item-body {
 				@include fontSmall;
 				flex: 1 0 auto;
-				padding: 0 1.25rem 1.5rem;
-
-				@media all and (min-width: $mdMinWidth) {
-					padding: 0 2rem 1.5rem;
-				}
+				padding: 0 clamp(1.25rem, 2.4vw, 2rem) 1.5rem;
 
 				.hellip-link {
 					text-decoration: none;
@@ -67,11 +59,7 @@
 
 			.v-grid-item-footer {
 				@include fontSmaller;
-				padding: 0 1.25rem 1.75rem;
-
-				@media all and (min-width: $mdMinWidth) {
-					padding: 0 2rem 2.25rem;
-				}
+				padding: 0 clamp(1.25rem, 2.4vw, 2rem) clamp(1.75rem, 2.75vw, 2.25rem);
 
 				.v-button {
 					@include fontSmallest;

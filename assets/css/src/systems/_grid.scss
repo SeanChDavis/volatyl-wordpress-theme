@@ -1,15 +1,7 @@
 .v-grid {
 	display: grid;
-	gap: 1.5rem;
+	gap: clamp(1.5rem, 4vw, 3rem);
 	grid-template-columns: 100%;
-
-	@media all and (min-width: $smMinWidth) {
-		gap: 2rem;
-	}
-
-	@media all and (min-width: $mdMinWidth) {
-		gap: 3rem;
-	}
 
 	&.v-gap-2 {
 

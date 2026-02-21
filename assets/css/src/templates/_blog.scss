@@ -2,21 +2,14 @@
 	border-radius: 10px;
 	grid-row-end: 3;
 	grid-row-start: 2;
-	margin-bottom: 1rem;
-	margin-top: 1rem;
-	padding-bottom: 3rem;
-	padding-top: 3rem;
+	margin-bottom: clamp(1rem, 5vw ,4rem);
+	margin-top: clamp(1rem, 2.5vw ,2rem);
+	padding-bottom: clamp(3rem, 5vw ,4rem);
+	padding-top: clamp(3rem, 5vw ,4rem);
 
 	@media all and (min-width: $smMinWidth) {
 		grid-column-end: 3;
 		grid-column-start: 1;
-	}
-
-	@media all and (min-width: $mdMinWidth) {
-		margin-bottom: 4rem;
-		margin-top: 2rem;
-		padding-bottom: 4rem;
-		padding-top: 4rem;
 	}
 
 	.cta-title,

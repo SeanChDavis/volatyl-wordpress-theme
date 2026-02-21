@@ -29,7 +29,7 @@ button,
 	&.v-large {
 
 		@media all and (min-width: $xsMinWidth) {
-			font-size: 1.15rem;
+			@include fontBigger;
 		}
 	}
 }
@@ -41,7 +41,7 @@ button,
 		& > .wp-block-button .wp-block-button__link {
 
 			@media all and (min-width: $xsMinWidth) {
-				font-size: 1.15rem;
+				@include fontBigger;;
 			}
 		}
 	}

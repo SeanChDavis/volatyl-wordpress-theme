@@ -53,12 +53,8 @@ article,
 
 		& > ul,
 		& > ol {
-			margin-bottom: 1.25rem;
+			margin-bottom: clamp(1.25rem, 2.4vw, 1.75rem);
 			margin-top: 1.25rem;
-
-			@media all and (min-width: $smMinWidth) {
-				margin-bottom: 1.75rem;
-			}
 		}
 	}
 
@@ -87,16 +83,8 @@ article,
 			h2, .h2 {
 
 				&:not(.jumbo) {
-					font-size: 1.65rem;
+					font-size: clamp(1.65rem, 3.25vw, 2.5rem);
 					line-height: 1.3;
-
-					@media all and (min-width: $xsMinWidth) {
-						font-size: 2rem;
-					}
-
-					@media all and (min-width: $lgMinWidth) {
-						font-size: 2.5rem;
-					}
 				}
 			}
 
@@ -106,11 +94,7 @@ article,
 				& + h2, & + .h2 {
 
 					&:not(.jumbo) {
-						margin-top: 1.5rem;
-
-						@media all and (min-width: $smMinWidth) {
-							margin-top: 2rem;
-						}
+						margin-top: clamp(1.5rem, 2.5vw, 2rem);
 					}
 				}
 			}
@@ -129,12 +113,8 @@ article,
 
 				& > ul,
 				& > ol {
-					margin-bottom: 1.25rem;
+					margin-bottom: clamp(1.25rem, 2.4vw, 1.75rem);
 					margin-top: 1.25rem;
-
-					@media all and (min-width: $smMinWidth) {
-						margin-bottom: 1.75rem;
-					}
 				}
 			}
 		}

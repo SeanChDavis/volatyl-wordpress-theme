@@ -5,20 +5,9 @@
 		text-align: left;
 	}
 
-	.inner {
-
-		@media all and ( min-width: $mdMinWidth ) {
-			padding-top: 5rem;
-		}
-	}
-
 	.content-title {
 		margin-bottom: 0;
-		max-width: 770px;
-
-		@media all and (min-width: $mdMinWidth) {
-			max-width: 940px;
-		}
+		max-width: clamp(770px, 50vw, 940px);
 
 		& + .content-meta,
 		& + .content-description {
@@ -57,25 +46,12 @@
 			span {
 				@include headingFont;
 				display: block;
-				font-size: 2rem;
+				font-size: clamp(2rem, 5vw, 4rem);
 				font-weight: 700;
 				line-height: 1.25;
 				margin: 0;
-				max-width: 770px;
+				max-width: clamp(770px, 50vw, 940px);
 				text-transform: none;
-
-				@media all and (min-width: $xsMinWidth) {
-					font-size: 2.66666rem;
-				}
-
-				@media all and (min-width: $smMinWidth) {
-					font-size: 3.33333rem;
-				}
-
-				@media all and (min-width: $lgMinWidth) {
-					font-size: 4rem;
-					max-width: 940px;
-				}
 			}
 		}
 	}
@@ -87,7 +63,7 @@
 		text-align: center;
 
 		.content-title {
-			margin: 0 auto .75rem;
+			margin: 0 auto;
 		}
 
 		.content-meta,

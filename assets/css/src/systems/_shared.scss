@@ -4,11 +4,7 @@
 
 	@media all and (min-width: $xsMinWidth) {
 		float: left;
-		margin-right: 1.5rem;
-	}
-
-	@media all and (min-width: $mdMinWidth) {
-		margin-right: 3rem;
+		margin-right: clamp(1.5rem, 3.5vw, 3rem);
 	}
 }
 
@@ -18,11 +14,7 @@
 
 	@media all and (min-width: $xsMinWidth) {
 		float: right;
-		margin-left: 1.5rem;
-	}
-
-	@media all and (min-width: $lgMinWidth) {
-		margin-left: 3rem;
+		margin-left: clamp(1.5rem, 3.5vw, 3rem);
 	}
 }
 
@@ -46,11 +38,7 @@
 }
 
 .section-footer-cta {
-	padding-top: 1rem;
-
-	@media all and (min-width: $xsMinWidth) {
-		padding-top: 2rem;
-	}
+	padding-top: clamp(1rem, 2.5vw, 2rem);
 }
 
 .v-dark-background {
