@@ -1,12 +1,12 @@
 <?php // Widgetized footer area
-$fat_footer_classes = array( 'fat-footer-areas', 'v-grid', 'v-padding-top-3' );
+$fat_footer_classes = array( 'fat-footer-areas', 'v-grid', 'v-padding-top-0' );
 if ( 1 == get_theme_mod( 'volatyl_fat_footer_alternate_layout', 0 ) ) {
 	$fat_footer_classes[] = 'alternate-layout';
 }
 ?>
 
 <div class="fat-footer v-gray-background">
-	<div class="inner">
+	<div class="inner v-small">
 		<div class="<?php echo implode( ' ', $fat_footer_classes ); ?>">
 			<?php
 			$fat_footer_areas = array(

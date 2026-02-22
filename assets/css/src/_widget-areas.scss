@@ -1,6 +1,9 @@
 .widget {
 	@include fontSmall;
-	margin-bottom: 1.25rem;
+
+	&:not(:last-child) {
+		margin-bottom: 1.25rem;
+	}
 
 	h1, .h1,
 	h2, .h2,
@@ -30,10 +33,6 @@
 
 	p {
 		margin-bottom: 1.25rem;
-
-		&:last-child {
-			margin-bottom: 1.25rem;
-		}
 
 		& + h1, & + .h1 {
 

@@ -6,7 +6,7 @@ $volatyl_footer_lead_cta_button_text = get_theme_mod( 'volatyl_footer_lead_cta_b
 ?>
 
 <div class="footer-lead v-dark-background">
-	<div class="inner v-medium">
+	<div class="inner v-small">
 		<div class="footer-lead-cta v-grid v-grid-columns_2">
 			<?php if ( $volatyl_footer_lead_title || $volatyl_footer_lead_description ) { ?>
 				<div class="cta-content">

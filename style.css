@@ -1896,6 +1896,8 @@ main {
 
 .widget {
   font-size: 0.889rem;
+}
+.widget:not(:last-child) {
   margin-bottom: 1.25rem;
 }
 .widget h1, .widget .h1,
@@ -1921,9 +1923,6 @@ main {
   font-size: clamp(1rem, 1.4vw, 1.125rem);
 }
 .widget p {
-  margin-bottom: 1.25rem;
-}
-.widget p:last-child {
   margin-bottom: 1.25rem;
 }
 @media all and (min-width: 768px) {
