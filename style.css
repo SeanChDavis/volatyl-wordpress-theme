@@ -1,8 +1,8 @@
 /*!
  * Theme Name: Volatyl
- * Theme URI: https://getvolatyl.com/
+ * Theme URI: https://crispydiv.com/
  * Author: Sean Davis
- * Author URI: https://toscd.com/
+ * Author URI: https://seanchdavis.com/
  * Description: An intelligently designed WordPress theme that changes based on your needs.
  * Version: 1.0.0
  * License: GNU General Public License Version 2
@@ -598,7 +598,7 @@ cite,
 /* Min-width breakpoints */
 /* Heading font */
 /* Body font */
-/* Base font size */
+/* Base font size - All font size variants are relative to this via rem */
 /* Base line height */
 /* Font size modifiers */
 /* HTML structure spacing */
@@ -769,15 +769,16 @@ cite,
 }
 .content-header .content-title {
   margin-bottom: 0;
-  max-width: clamp(770px, 50vw, 940px);
+  max-width: clamp(770px, 70vw, 1200px);
 }
 .content-header .content-title + .content-meta, .content-header .content-title + .content-description {
   margin-top: 0.75rem;
 }
-.content-header .content-meta,
-.content-header .content-description {
+.content-header .content-meta {
   font-size: 0.889rem;
-  max-width: 765px;
+}
+.content-header .content-description {
+  max-width: 768px;
 }
 .content-header .content-container {
   display: flex;
@@ -1541,76 +1542,51 @@ body.no-sidebar .main-content-wrap {
 }
 
 .inner {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   max-width: calc(1200px + 1.25rem);
-  padding: 3rem 1.25rem;
+  padding: clamp(2rem, 7vw, 5rem) clamp(1.25rem, 7.9vw, 6rem);
+}
+@media all and (min-width: 992px) {
+  .inner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 @media all and (min-width: 560px) {
-  .inner {
-    max-width: calc(1200px + 2rem);
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-@media all and (min-width: 768px) {
-  .inner {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-}
-@media all and (min-width: 860px) {
-  .inner {
-    padding-left: 6rem;
-    padding-right: 6rem;
-  }
-}
-@media all and (min-width: 992px) {
-  .inner {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-@media all and (min-width: 992px) {
   .inner.v-small {
-    padding-bottom: 4rem;
-    padding-top: 4rem;
+    padding-bottom: clamp(2rem, 5.25vw, 4rem);
+    padding-top: clamp(2rem, 5.25vw, 4rem);
   }
 }
-@media all and (min-width: 992px) {
+@media all and (min-width: 560px) {
   .inner.v-medium {
-    padding-bottom: 6rem;
-    padding-top: 6rem;
+    padding-bottom: clamp(2rem, 7.7vw, 6rem);
+    padding-top: clamp(2rem, 7.7vw, 6rem);
   }
 }
-@media all and (min-width: 992px) {
+@media all and (min-width: 560px) {
   .inner.v-large {
-    padding-bottom: 6rem;
-    padding-top: 6rem;
-  }
-}
-@media all and (min-width: 1200px) {
-  .inner.v-large {
-    padding-bottom: 8rem;
-    padding-top: 8rem;
+    padding-bottom: clamp(2rem, 10.5vw, 8rem);
+    padding-top: clamp(2rem, 10.5vw, 8rem);
   }
 }
 
 .main-content-wrap {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 6vw;
 }
 @media all and (min-width: 992px) {
   .main-content-wrap {
     flex-direction: row;
-    gap: unset;
     justify-content: space-between;
   }
   .main-content-wrap #primary-content {
-    width: 65.5%;
+    width: 66.666667%;
   }
   .main-content-wrap .sidebar {
-    width: 28.5%;
+    width: 33.333334%;
   }
 }
 
@@ -2553,7 +2529,7 @@ article:last-child .entry-footer,
   margin-bottom: 1rem;
 }
 .blog-grid-cta .cta-description {
-  max-width: 765px;
+  max-width: 768px;
 }
 .blog-grid-cta .cta-action {
   margin-top: 2rem;
@@ -2577,28 +2553,10 @@ article:last-child .entry-footer,
   margin: 0;
 }
 .full-width-template .wp-block-group:not(.v-no-spacing) > .wp-block-group__inner-container {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   max-width: calc(1200px + 1.25rem);
-  padding: 3rem 1.25rem;
-}
-@media all and (min-width: 560px) {
-  .full-width-template .wp-block-group:not(.v-no-spacing) > .wp-block-group__inner-container {
-    max-width: calc(1200px + 2rem);
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-@media all and (min-width: 768px) {
-  .full-width-template .wp-block-group:not(.v-no-spacing) > .wp-block-group__inner-container {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-}
-@media all and (min-width: 860px) {
-  .full-width-template .wp-block-group:not(.v-no-spacing) > .wp-block-group__inner-container {
-    padding-left: 6rem;
-    padding-right: 6rem;
-  }
+  padding: clamp(2rem, 7vw, 5rem) clamp(1.25rem, 7.9vw, 6rem);
 }
 @media all and (min-width: 992px) {
   .full-width-template .wp-block-group:not(.v-no-spacing) > .wp-block-group__inner-container {
@@ -2609,28 +2567,22 @@ article:last-child .entry-footer,
 .full-width-template .wp-block-group:not(.v-no-spacing) > .wp-block-group__inner-container > [class*=wp-block-]:last-child {
   margin-bottom: 0;
 }
-@media all and (min-width: 992px) {
+@media all and (min-width: 560px) {
   .full-width-template .wp-block-group:not(.v-no-spacing).v-small > .wp-block-group__inner-container {
-    padding-bottom: 4rem;
-    padding-top: 4rem;
+    padding-bottom: clamp(2rem, 5.25vw, 4rem);
+    padding-top: clamp(2rem, 5.25vw, 4rem);
   }
 }
-@media all and (min-width: 992px) {
+@media all and (min-width: 560px) {
   .full-width-template .wp-block-group:not(.v-no-spacing).v-medium > .wp-block-group__inner-container {
-    padding-bottom: 6rem;
-    padding-top: 6rem;
+    padding-bottom: clamp(2rem, 7.7vw, 6rem);
+    padding-top: clamp(2rem, 7.7vw, 6rem);
   }
 }
-@media all and (min-width: 992px) {
+@media all and (min-width: 560px) {
   .full-width-template .wp-block-group:not(.v-no-spacing).v-large > .wp-block-group__inner-container {
-    padding-bottom: 6rem;
-    padding-top: 6rem;
-  }
-}
-@media all and (min-width: 1200px) {
-  .full-width-template .wp-block-group:not(.v-no-spacing).v-large > .wp-block-group__inner-container {
-    padding-bottom: 8rem;
-    padding-top: 8rem;
+    padding-bottom: clamp(2rem, 10.5vw, 8rem);
+    padding-top: clamp(2rem, 10.5vw, 8rem);
   }
 }
 

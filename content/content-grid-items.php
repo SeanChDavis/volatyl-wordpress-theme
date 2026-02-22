@@ -7,7 +7,7 @@
 
 // Set the post ID based on query context
 $the_post_id = 0;
-if ( is_front_page() && ! is_home() ) {
+if ( is_front_page() ) {
 	$the_post_id = $post['ID'];
 } else {
 	$the_post_id = get_the_ID();
@@ -20,7 +20,7 @@ if ( is_search() ) {
 }
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( implode( ' ', $container_classes ) ); ?>>
+<article id="post-<?php echo $the_post_id; ?>" <?php post_class( implode( ' ', $container_classes ) ); ?>>
 	<div class="v-grid-item-content-wrap">
 		<?php if ( ! is_search() ) { ?>
 			<figure class="v-grid-item-media v-padding-0 v-margin-0">

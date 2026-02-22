@@ -48,7 +48,7 @@ function volatyl_body_class( $classes ) {
 
 	if (
 		// single blog posts
-		( is_singular( 'post' ) && ! is_active_sidebar( 'single-post-sidebar' ) && ! is_page_template( 'page-templates/full-width.php' ) )
+		( is_singular( 'post' ) && ! is_active_sidebar( 'single-post-sidebar' ) )
 
 		// single pages
 		|| ( is_singular( 'page' ) && ! is_active_sidebar( 'single-page-sidebar' ) && ! is_page_template( 'page-templates/full-width.php' ) )

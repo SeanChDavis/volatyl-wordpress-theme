@@ -56,19 +56,18 @@ body {
 .main-content-wrap {
 	display: flex;
 	flex-direction: column;
-	gap: 3rem;
+	gap: 6vw;
 
 	@media all and (min-width: $mdMinWidth) {
 		flex-direction: row;
-		gap: unset;
 		justify-content: space-between;
 
 		#primary-content {
-			width: 65.5%;
+			width: 66.666667%;
 		}
 
 		.sidebar {
-			width: 28.5%;
+			width: 33.333334%;
 		}
 	}
 }

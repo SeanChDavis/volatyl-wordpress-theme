@@ -7,7 +7,7 @@
 
 	.content-title {
 		margin-bottom: 0;
-		max-width: clamp(770px, 50vw, 940px);
+		max-width: clamp(770px, 70vw, 1200px);
 
 		& + .content-meta,
 		& + .content-description {
@@ -15,10 +15,12 @@
 		}
 	}
 
-	.content-meta,
-	.content-description {
+	.content-meta {
 		@include fontSmall;
-		max-width: 765px;
+	}
+
+	.content-description {
+		max-width: 768px;
 	}
 
 	.content-container {

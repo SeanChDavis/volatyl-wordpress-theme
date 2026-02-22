@@ -14,7 +14,7 @@ $lgMinWidth: 1200px;
 	font-family: 'Red Hat Text', sans-serif;
 }
 
-/* Base font size */
+/* Base font size - All font size variants are relative to this via rem */
 @mixin fontBase {
 	font-size: 18px;
 }
@@ -49,25 +49,10 @@ $lgMinWidth: 1200px;
 
 /* HTML structure spacing */
 @mixin innerSpacing {
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 	max-width: calc(1200px + 1.25rem);
-	padding: 3rem 1.25rem;
-
-	@media all and (min-width: $xsMinWidth) {
-		max-width: calc(1200px + 2rem);
-		padding-left: 2rem;
-		padding-right: 2rem;
-	}
-
-	@media all and (min-width: $smMinWidth) {
-		padding-left: 4rem;
-		padding-right: 4rem;
-	}
-
-	@media all and (min-width: 860px) {
-		padding-left: 6rem;
-		padding-right: 6rem;
-	}
+	padding: clamp(2rem, 7vw, 5rem) clamp(1.25rem, 7.9vw, 6rem);
 
 	@media all and (min-width: $mdMinWidth) {
 		padding-left: 2rem;
@@ -77,29 +62,24 @@ $lgMinWidth: 1200px;
 
 @mixin innerSpacingSmall {
 
-	@media all and (min-width: $mdMinWidth) {
-		padding-bottom: 4rem;
-		padding-top: 4rem;
+	@media all and (min-width: $xsMinWidth) {
+		padding-bottom: clamp(2rem, 5.25vw, 4rem);
+		padding-top: clamp(2rem, 5.25vw, 4rem);
 	}
 }
 
 @mixin innerSpacingMedium {
 
-	@media all and (min-width: $mdMinWidth) {
-		padding-bottom: 6rem;
-		padding-top: 6rem;
+	@media all and (min-width: $xsMinWidth) {
+		padding-bottom: clamp(2rem, 7.7vw, 6rem);
+		padding-top: clamp(2rem, 7.7vw, 6rem);
 	}
 }
 
 @mixin innerSpacingLarge {
 
-	@media all and (min-width: $mdMinWidth) {
-		padding-bottom: 6rem;
-		padding-top: 6rem;
-	}
-
-	@media all and (min-width: $lgMinWidth) {
-		padding-bottom: 8rem;
-		padding-top: 8rem;
+	@media all and (min-width: $xsMinWidth) {
+		padding-bottom: clamp(2rem, 10.5vw, 8rem);
+		padding-top: clamp(2rem, 10.5vw, 8rem);
 	}
 }
