@@ -72,6 +72,7 @@
 		padding: 0;
 
 		li {
+			line-height: 1.35;
 
 			& ul,
 			& ol,
@@ -124,21 +125,6 @@
 				& + li {
 					margin-top: 5px;
 				}
-
-				a {
-					@include fontSmaller;
-				}
-			}
-		}
-
-		a {
-			text-decoration-style: dotted;
-
-			&:active,
-			&:focus,
-			&:hover {
-				text-decoration-line: underline;
-				text-decoration-style: solid;
 			}
 		}
 	}

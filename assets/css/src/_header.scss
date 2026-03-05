@@ -10,13 +10,14 @@
 	}
 
 	.site-branding {
+		@include headingFont;
 
 		.custom-logo-link {
 
 			.custom-logo {
 				transition: opacity .2s;
 				vertical-align: middle;
-				width: 115px;
+				width: 180px;
 
 				&:active,
 				&:focus,
@@ -27,17 +28,20 @@
 		}
 
 		.site-title {
-			@include headingFont;
 
 			& {
 				font-size: 1rem;
 				line-height: 1;
-				text-transform: uppercase;
 			}
 
 			a {
-				font-weight: 900;
-				text-decoration: none;
+				text-decoration-style: solid;
+
+				&:active,
+				&:focus,
+				&:hover {
+					text-decoration: none;
+				}
 			}
 		}
 	}

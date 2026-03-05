@@ -8,7 +8,7 @@ get_header();
 			get_template_part( 'template-parts/content', 'header' );
 		}
 		?>
-		<div class="inner v-medium">
+		<div class="inner v-small">
 			<?php
 			if ( have_posts() && ! empty( get_search_query() ) ) :
 				?>

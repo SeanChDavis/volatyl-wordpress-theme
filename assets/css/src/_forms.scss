@@ -13,12 +13,10 @@ button,
 	border-radius: 4px;
 	cursor: pointer;
 	display: inline-block;
-	font-weight: 600;
-	letter-spacing: 1px;
+	letter-spacing: .035rem;
 	line-height: 1;
-	padding: .8em;
+	padding: .8em 1em;
 	text-decoration: none;
-	text-transform: uppercase;
 
 	&:active,
 	&:focus,
@@ -27,10 +25,7 @@ button,
 	}
 
 	&.v-large {
-
-		@media all and (min-width: $xsMinWidth) {
-			@include fontBigger;
-		}
+		font-size: clamp(.833rem, 1.3vw, 1rem);
 	}
 }
 

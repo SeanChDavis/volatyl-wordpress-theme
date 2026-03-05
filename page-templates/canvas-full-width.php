@@ -1,6 +1,6 @@
 <?php
 /**
- * Template name: Blank - Full-width
+ * Template name: Canvas - Full-width
  */
 get_header();
 ?>

@@ -4,6 +4,7 @@ get_header();
 
 	<main id="main">
 		<?php
+		get_template_part( 'template-parts/content', 'header' );
 		$blog_grid_name  = 'volatyl_front_page_blog_posts_grid_columns_rows';
 		$blog_grid_value = get_theme_mod( $blog_grid_name, '3_1' );
 		if ( empty( $blog_grid_value ) ) {
@@ -20,7 +21,7 @@ get_header();
 		if ( ! empty( $recent_posts ) ) {
 			?>
 			<section class="blog-posts-featured">
-				<div class="inner v-medium">
+				<div class="inner v-small">
 					<span class="v-subdued-title v-margin-bottom-2"><?php echo __( 'From the blog', 'volatyl' ); ?></span>
 					<div class="v-grid v-grid-columns_<?php echo $blog_grid_columns; ?>">
 						<?php
@@ -40,7 +41,7 @@ get_header();
 			$featured_page = get_post( $featured_page_id );
 			?>
 			<section class="featured-page v-gray-background">
-				<div class="inner v-medium">
+				<div class="inner v-small">
 					<div class="v-grid v-grid-columns_2">
 						<div class="content-left">
 							<span class="section-title h3">

@@ -140,7 +140,7 @@
 }
 
 .site-footer-content {
-	@include fontSmaller;
+	@include fontSmall;
 
 	@media all and (min-width: $mdMinWidth) {
 		display: flex;
@@ -148,14 +148,10 @@
 	}
 
 	.blog-name {
-		font-weight: 700;
+		@include headingFont;
 
 		a {
 			text-decoration: none;
 		}
-	}
-
-	.site-copyright {
-		font-weight: 400;
 	}
 }

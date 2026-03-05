@@ -1,26 +1,23 @@
 .content-header {
-	text-align: center;
-
-	@media all and (min-width: $mdMinWidth) {
-		text-align: left;
-	}
 
 	.content-title {
-		margin-bottom: 0;
-		max-width: clamp(770px, 70vw, 1200px);
+		margin-bottom: .8rem;
 
-		& + .content-meta,
+		@media all and (min-width: $smMinWidth) {
+			max-width: clamp(600px, 65vw, 840px);
+		}
+
 		& + .content-description {
 			margin-top: .75rem;
 		}
 	}
 
-	.content-meta {
-		@include fontSmall;
-	}
-
 	.content-description {
-		max-width: 768px;
+		max-width: clamp(580px, 50vw, 665px);
+
+		&:not(:last-child) {
+			margin-bottom: clamp(1rem, 3vw, 2rem);
+		}
 	}
 
 	.content-container {
@@ -30,6 +27,74 @@
 
 		@media all and (min-width: $mdMinWidth) {
 			max-width: 60%;
+		}
+	}
+
+	/* Hero - lives inside content header as a child of inner */
+	.v-hero {
+
+		&.v-hero-centered {
+			text-align: center;
+
+			.v-hero-title,
+			.v-hero-subtitle,
+			.v-hero-primary-cta,
+			.v-hero-primary-cta.wp-block-buttons .wp-block-button,
+			.v-hero-secondary-cta {
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
+		}
+
+		.v-hero-title {
+			margin-bottom: .8rem;
+
+			@media all and (min-width: $smMinWidth) {
+				max-width: clamp(600px, 65vw, 840px);
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			& + .v-hero-primary-cta,
+			& + .v-hero-secondary-cta {
+				margin-top: clamp(2rem, 8vw, 6rem);
+			}
+		}
+
+		.v-hero-subtitle {
+			max-width: clamp(580px, 50vw, 665px);
+
+			&:not(:last-child) {
+				margin-bottom: clamp(1rem, 3vw, 2rem);
+			}
+		}
+
+		.v-hero-primary-cta {
+			margin-bottom: clamp(8px, .8vw, 12px);
+			max-width: 665px;
+
+			&.wp-block-buttons {
+				margin-bottom: clamp(8px, .8vw, 12px);
+			}
+		}
+
+		.v-hero-secondary-cta {
+			@include headingFont;
+			@include fontSmall;
+		}
+	}
+}
+
+.single {
+
+	.content-header {
+
+		.content-title {
+			font-size: clamp(1.65rem, 4vw, 3rem);
+			line-height: 1.3;
 		}
 	}
 }
@@ -42,14 +107,12 @@
 			@include fontSmaller;
 			@include headingFont;
 			display: block;
-			font-weight: 700;
 			text-transform: uppercase;
 
 			span {
 				@include headingFont;
 				display: block;
 				font-size: clamp(2rem, 5vw, 4rem);
-				font-weight: 700;
 				line-height: 1.25;
 				margin: 0;
 				max-width: clamp(770px, 50vw, 940px);
@@ -64,13 +127,10 @@
 	.content-header {
 		text-align: center;
 
-		.content-title {
-			margin: 0 auto;
-		}
-
-		.content-meta,
+		.content-title,
 		.content-description {
-			margin: 1rem auto 0;
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 }

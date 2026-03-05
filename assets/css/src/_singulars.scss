@@ -22,10 +22,6 @@ article,
 
 	.entry-content {
 
-		@media all and (min-width: $smMinWidth) {
-			@include fontBig;
-		}
-
 		ul {
 			margin: 0 0 0 1.125rem;
 		}
@@ -73,6 +69,57 @@ article,
 	}
 }
 
+.single,
+.page {
+
+	&.has-post-thumbnail {
+
+		.content-header {
+
+			.inner {
+				padding-bottom: clamp(4rem, 7vw, 5.5rem);
+			}
+		}
+
+		article {
+
+			.entry-header {
+				margin-bottom: clamp(1.5rem, 4vw, 3rem);
+				margin-top: -4rem;
+
+				@media all and (min-width: $smMinWidth) {
+					margin-top: -4.25rem;
+				}
+
+				@media all and (min-width: $mdMinWidth) {
+					margin-top: -4.25rem;
+				}
+
+				@media all and (min-width: $lgMinWidth) {
+					margin-top: -6.5rem;
+				}
+
+				.post-thumbnail {
+
+					@media all and (min-width: $mdMinWidth) {
+						margin-left: -3rem;
+						margin-right: -3rem;
+					}
+
+					@media all and (min-width: $lgMinWidth) {
+						margin-left: -4rem;
+						margin-right: -4rem;
+					}
+
+					img {
+						border-radius: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+
 .single {
 
 	article {
@@ -102,8 +149,8 @@ article,
 	}
 }
 
-.full-width-template,
-.page-width-template {
+.canvas-full-width-template,
+.canvas-page-width-template {
 
 	.v-content-container {
 

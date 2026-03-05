@@ -83,6 +83,6 @@ function volatyl_scripts_styles() {
 	wp_enqueue_style( 'volatyl-style', THEME_STYLESHEET, array(), THEME_VERSION );
 
 	// Google fonts
-	wp_enqueue_style( 'google-fonts-red-hat-display', '//fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700;1,900&family=Red+Hat+Text:ital,wght@0,400;0,600;0,700;1,400;1,700' );
+	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css2?family=Cal+Sans&family=Red+Hat+Text:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap' );
 }
 add_action( 'wp_enqueue_scripts', 'volatyl_scripts_styles' );

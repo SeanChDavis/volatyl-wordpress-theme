@@ -1,34 +1,42 @@
-<?php // Displayed above content. Similar to a hero, but relevant to the content. ?>
+<?php
+/**
+ * Page header or hero section depending on the context of the page being viewed.
+ */
 
-<header class="content-header v-gray-background">
-	<div class="inner">
+$front_page_hero_dark = volatyl_front_page_hero_dark();
+$hero_bg_color      = 'v-gray-background';
+if ( $front_page_hero_dark && is_front_page() && ! is_home() ) {
+	$hero_bg_color = 'v-dark-background';
+}
+?>
+
+<section class="content-header <?php echo $hero_bg_color; ?>">
+	<div class="inner v-small">
 		<?php
-		if ( is_page() ) {
-			?>
-			<h1 class="content-title"><?php echo get_the_title(); ?></h1>
-			<?php if ( has_excerpt() ) : ?>
-				<p class="content-description"><?php echo get_the_excerpt(); ?></p>
-			<?php endif; ?>
-			<?php
-		} if ( is_single() ) {
-			if ( ! empty( get_the_title() ) ) {
-				?>
-				<h1 class="content-title"><?php echo get_the_title(); ?></h1>
-				<?php
+		if ( is_front_page() && ! is_home() ) {
+			$front_page_hero_title = get_bloginfo( 'description' ) ?: sprintf( 'Welcome to %1$s', get_bloginfo( 'name' ) );
+			if ( ! empty( get_theme_mod( 'volatyl_front_page_hero_title' ) ) ) {
+				$front_page_hero_title = get_theme_mod( 'volatyl_front_page_hero_title' );
 			}
-			?>
-			<div class="content-meta">
-				<?php
-				volatyl_posted_on();
-				volatyl_posted_by( $post->ID );
-				?>
-			</div>
-			<?php
-		} if ( is_home() ) {
+			$hero_args = array(
+					'title'         => $front_page_hero_title,
+					'subtitle'      => get_theme_mod( 'volatyl_front_page_hero_subtitle', '' ),
+					'alignment'     => get_theme_mod( 'volatyl_front_page_hero_centered', 0 ),
+					'primary_cta'   => array(
+							'url'  => get_theme_mod( 'volatyl_front_page_hero_primary_cta_button_url', '' ),
+							'text' => get_theme_mod( 'volatyl_front_page_hero_primary_cta_button_text', '' ),
+					),
+					'secondary_cta' => array(
+							'url'  => get_theme_mod( 'volatyl_front_page_hero_secondary_cta_button_url', '' ),
+							'text' => get_theme_mod( 'volatyl_front_page_hero_secondary_cta_button_text', '' ),
+					),
+			);
+			volatyl_hero( $hero_args );
+		} elseif ( is_home() && ! is_front_page() ) {
 			$blog_title = get_the_title( get_option( 'page_for_posts' ) );
 			if ( get_theme_mod( 'volatyl_blog_title' ) ) {
 				$blog_title = get_theme_mod( 'volatyl_blog_title',
-					get_the_title( get_option( 'page_for_posts' ) )
+						get_the_title( get_option( 'page_for_posts' ) )
 				);
 			}
 			?>
@@ -46,7 +54,20 @@
 				<?php } ?>
 			</div>
 			<?php
-		} if ( is_search() ) {
+		} elseif ( is_page() ) {
+			?>
+			<h1 class="content-title"><?php echo get_the_title(); ?></h1>
+			<?php if ( has_excerpt() ) : ?>
+				<p class="content-description"><?php echo get_the_excerpt(); ?></p>
+			<?php endif; ?>
+			<?php
+		} elseif ( is_single() ) {
+			if ( ! empty( get_the_title() ) ) {
+				?>
+				<h1 class="content-title"><?php echo get_the_title(); ?></h1>
+				<?php
+			}
+		} elseif ( is_search() ) {
 			?>
 			<div class="content-container">
 				<div class="content-primary">
@@ -62,22 +83,22 @@
 				</div>
 			</div>
 			<?php
-		} if ( is_archive() ) {
+		} elseif ( is_archive() ) {
 			if ( ! empty( get_the_archive_title() ) ) {
 				?>
-				<h1 class="content-title archive-title v-margin-bottom-3"><?php echo the_archive_title(); ?></h1>
+				<h1 class="content-title archive-title v-margin-bottom-3"><?php echo get_the_archive_title(); ?></h1>
 				<?php
 			}
 			if ( ! empty( get_the_archive_description() ) ) {
 				?>
 				<div class="content-description">
-					<?php echo the_archive_description(); ?>
+					<?php echo get_the_archive_description(); ?>
 				</div>
 				<?php
 			}
 		}
 		?>
 	</div>
-</header>
+</section>
 
 

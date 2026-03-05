@@ -1,0 +1,44 @@
+.canvas-full-width-template {
+
+	.entry-content {
+
+		& > .wp-block-group {
+			margin: 0;
+
+			&:not(.v-no-spacing) {
+
+				& > .wp-block-group__inner-container {
+					@include innerSpacing;
+
+					& > [class*="wp-block-"] {
+
+						&:last-child {
+							margin-bottom: 0;
+						}
+					}
+				}
+
+				&.v-small {
+
+					& > .wp-block-group__inner-container {
+						@include innerSpacingBase;
+					}
+				}
+
+				&.v-medium {
+
+					& > .wp-block-group__inner-container {
+						@include innerSpacingLarge;
+					}
+				}
+
+				&.v-large {
+
+					& > .wp-block-group__inner-container {
+						@include innerSpacingLarger;
+					}
+				}
+			}
+		}
+	}
+}

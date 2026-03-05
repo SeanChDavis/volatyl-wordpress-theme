@@ -101,7 +101,7 @@
 		menuModalOuter.classList.add("menu-modal-active","v-padding-2");
 
 		closeButton.classList.add('close-menu-modal','v-button','v-margin-top-4');
-		closeButton.textContent = "close menu";
+		closeButton.textContent = "Close Menu";
 		menuModalInner.appendChild(closeButton);
 
 		if (button.getAttribute('aria-expanded') === 'true') {

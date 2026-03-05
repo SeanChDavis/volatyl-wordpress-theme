@@ -170,13 +170,13 @@
 		}
 
 		.comment {
-			border-style: dotted;
+			border-style: solid;
 			border-width: 0 0 0 2px;
 			padding-left: clamp(1rem, 2.75vw, 2.25rem);
 			margin-top: 3rem;
 
 			&:not(:last-child) {
-				border-style: dotted;
+				border-style: solid;
 				border-width: 0 0 2px 2px;
 				padding-bottom: 2rem;
 			}
@@ -236,7 +236,6 @@
 					@include fontSmaller;
 					@include headingFont;
 					display: block;
-					font-weight: 600;
 				}
 
 				& input,

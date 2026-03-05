@@ -3,10 +3,9 @@
 	#primary-menu {
 
 		.menu-item {
-			@include fontSmallest;
-			font-weight: 600;
+			@include headingFont;
+			@include fontSmall;
 			list-style-type: none;
-			text-transform: uppercase;
 
 			a {
 				@include headingFont;
@@ -37,7 +36,7 @@
 						height: 0;
 						margin-left: 5px;
 						position: absolute;
-						top: 3px;
+						top: calc(.833rem / 2);
 						transform: rotate(-45deg);
 						width: 0;
 					}
@@ -47,8 +46,6 @@
 
 					a {
 						display: block;
-						font-weight: 600;
-						letter-spacing: 1px;
 						padding: 7px 0;
 
 						&:active,
@@ -128,7 +125,7 @@
 						& > .menu-item {
 
 							&:not(:last-child) {
-								border-bottom: 1px dashed rgba(255, 255, 255, .2);
+								border-bottom: 1px solid rgba(255, 255, 255, .1);
 							}
 
 							&.menu-item-has-children {
@@ -144,11 +141,6 @@
 
 						& > a {
 							text-decoration: underline;
-
-							&:after {
-								top: 6px;
-								transform: rotate(-225deg);
-							}
 						}
 
 						.sub-menu {
@@ -200,14 +192,12 @@
 
 	/* Mobile navigation opener */
 	.menu-toggle {
-		@include bodyFont;
+		@include headingFont;
 		@include fontSmallest;
 		background: transparent;
 		border: none;
 		display: inline-block;
-		font-weight: 700;
 		height: unset;
-		letter-spacing: 0;
 		text-transform: uppercase;
 
 		&:hover {
@@ -285,7 +275,7 @@
 					& > .menu-item {
 
 						&:not(:last-of-type) {
-							border-bottom: 1px dashed rgba(255, 255, 255, .2);
+							border-bottom: 1px solid rgba(255, 255, 255, .1);
 						}
 
 						&.menu-item-has-children {
@@ -310,14 +300,14 @@
 								& > .menu-item-has-children {
 
 									&:not(:last-child) {
-										border-bottom: 1px dashed rgba(255, 255, 255, .2);
+										border-bottom: 1px solid rgba(255, 255, 255, .1);
 									}
 								}
 
 								& > .menu-item {
 
 									&:not(:last-child) {
-										border-bottom: 1px dashed rgba(255, 255, 255, .2);
+										border-bottom: 1px solid rgba(255, 255, 255, .1);
 										padding-bottom: 4px;
 									}
 								}

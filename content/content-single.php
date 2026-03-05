@@ -1,7 +1,15 @@
 <?php // Template part for displaying single posts ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php volatyl_post_thumbnail(); ?>
+	<header class="entry-header v-margin-bottom-2">
+		<?php volatyl_post_thumbnail(); ?>
+		<div class="entry-meta">
+			<?php
+			volatyl_posted_on();
+			volatyl_posted_by( get_the_ID() );
+			?>
+		</div>
+	</header>
 	<div class="entry-content v-margin-bottom-3">
 		<?php
 		if ( is_home() || is_search() || is_archive() ) {

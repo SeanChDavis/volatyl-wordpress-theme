@@ -443,7 +443,7 @@ table td,
 .hellip-link,
 .archive-title.content-title span,
 #comments .fn a,
-.content-meta a,
+.entry-meta a,
 .entry-footer a,
 .comment-meta a,
 .logged-in-as a,
@@ -698,6 +698,8 @@ cite,
   text-decoration: none;
 }
 .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-footer {
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
   font-size: 0.833rem;
   padding: 0 clamp(1.25rem, 2.4vw, 2rem) clamp(1.75rem, 2.75vw, 2.25rem);
 }
@@ -705,80 +707,25 @@ cite,
   font-size: 0.778rem;
 }
 
-.v-hero.v-hero-centered {
-  text-align: center;
-}
-.v-hero.v-hero-centered .v-hero-title,
-.v-hero.v-hero-centered .v-hero-subtitle,
-.v-hero.v-hero-centered .v-hero-primary-cta,
-.v-hero.v-hero-centered .v-hero-primary-cta.wp-block-buttons .wp-block-button,
-.v-hero.v-hero-centered .v-hero-secondary-cta {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-.v-hero .v-hero-title {
-  margin-bottom: 0.4em;
-}
-@media all and (min-width: 992px) {
-  .v-hero .v-hero-title {
-    max-width: 940px;
-  }
-}
-.v-hero .v-hero-title:last-child {
-  margin-bottom: 0;
-}
-.v-hero .v-hero-title + .v-hero-primary-cta, .v-hero .v-hero-title + .v-hero-secondary-cta {
-  margin-top: clamp(2rem, 8vw, 6rem);
-}
-.v-hero .v-hero-subtitle {
-  font-size: 1.056rem;
-  max-width: 665px;
-}
-.v-hero .v-hero-subtitle:not(:last-child) {
-  margin-bottom: clamp(2rem, 4vw, 3rem);
-}
-.v-hero .v-hero-primary-cta {
-  margin-bottom: 8px;
-  max-width: 665px;
-}
-@media all and (min-width: 560px) {
-  .v-hero .v-hero-primary-cta {
-    margin-bottom: 12px;
-  }
-  .v-hero .v-hero-primary-cta .v-button,
-  .v-hero .v-hero-primary-cta .button,
-  .v-hero .v-hero-primary-cta button, .v-hero .v-hero-primary-cta.wp-block-buttons .wp-block-button .wp-block-button__link {
-    font-size: 1.222rem;
-  }
-}
-.v-hero .v-hero-primary-cta.wp-block-buttons {
-  margin-bottom: clamp(8px, 0.8vw, 12px);
-}
-.v-hero .v-hero-secondary-cta {
-  font-size: 0.889rem;
-}
-
 .content-header {
-  text-align: center;
-}
-@media all and (min-width: 992px) {
-  .content-header {
-    text-align: left;
-  }
+  /* Hero - lives inside content header as a child of inner */
 }
 .content-header .content-title {
-  margin-bottom: 0;
-  max-width: clamp(770px, 70vw, 1200px);
+  margin-bottom: 0.8rem;
 }
-.content-header .content-title + .content-meta, .content-header .content-title + .content-description {
+@media all and (min-width: 768px) {
+  .content-header .content-title {
+    max-width: clamp(600px, 65vw, 840px);
+  }
+}
+.content-header .content-title + .content-description {
   margin-top: 0.75rem;
 }
-.content-header .content-meta {
-  font-size: 0.889rem;
-}
 .content-header .content-description {
-  max-width: 768px;
+  max-width: clamp(580px, 50vw, 665px);
+}
+.content-header .content-description:not(:last-child) {
+  margin-bottom: clamp(1rem, 3vw, 2rem);
 }
 .content-header .content-container {
   display: flex;
@@ -790,19 +737,68 @@ cite,
     max-width: 60%;
   }
 }
+.content-header .v-hero.v-hero-centered {
+  text-align: center;
+}
+.content-header .v-hero.v-hero-centered .v-hero-title,
+.content-header .v-hero.v-hero-centered .v-hero-subtitle,
+.content-header .v-hero.v-hero-centered .v-hero-primary-cta,
+.content-header .v-hero.v-hero-centered .v-hero-primary-cta.wp-block-buttons .wp-block-button,
+.content-header .v-hero.v-hero-centered .v-hero-secondary-cta {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.content-header .v-hero .v-hero-title {
+  margin-bottom: 0.8rem;
+}
+@media all and (min-width: 768px) {
+  .content-header .v-hero .v-hero-title {
+    max-width: clamp(600px, 65vw, 840px);
+  }
+}
+.content-header .v-hero .v-hero-title:last-child {
+  margin-bottom: 0;
+}
+.content-header .v-hero .v-hero-title + .v-hero-primary-cta, .content-header .v-hero .v-hero-title + .v-hero-secondary-cta {
+  margin-top: clamp(2rem, 8vw, 6rem);
+}
+.content-header .v-hero .v-hero-subtitle {
+  max-width: clamp(580px, 50vw, 665px);
+}
+.content-header .v-hero .v-hero-subtitle:not(:last-child) {
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+}
+.content-header .v-hero .v-hero-primary-cta {
+  margin-bottom: clamp(8px, 0.8vw, 12px);
+  max-width: 665px;
+}
+.content-header .v-hero .v-hero-primary-cta.wp-block-buttons {
+  margin-bottom: clamp(8px, 0.8vw, 12px);
+}
+.content-header .v-hero .v-hero-secondary-cta {
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
+  font-size: 0.889rem;
+}
+
+.single .content-header .content-title {
+  font-size: clamp(1.65rem, 4vw, 3rem);
+  line-height: 1.3;
+}
 
 .archive .content-header .content-title {
   font-size: 0.833rem;
-  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
   display: block;
-  font-weight: 700;
   text-transform: uppercase;
 }
 .archive .content-header .content-title span {
-  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
   display: block;
   font-size: clamp(2rem, 5vw, 4rem);
-  font-weight: 700;
   line-height: 1.25;
   margin: 0;
   max-width: clamp(770px, 50vw, 940px);
@@ -812,12 +808,10 @@ cite,
 .no-sidebar .content-header {
   text-align: center;
 }
-.no-sidebar .content-header .content-title {
-  margin: 0 auto;
-}
-.no-sidebar .content-header .content-meta,
+.no-sidebar .content-header .content-title,
 .no-sidebar .content-header .content-description {
-  margin: 1rem auto 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .alignleft,
@@ -846,9 +840,9 @@ cite,
 
 .v-subdued-title {
   font-size: 0.778rem;
-  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
   display: block;
-  font-weight: 700;
   text-transform: uppercase;
 }
 
@@ -879,9 +873,9 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
   display: block;
-  font-weight: 700;
   margin: 0 0 1.25rem;
 }
 h1.has-background, .h1.has-background,
@@ -966,7 +960,6 @@ p + h3, p + .h3, p + h4, p + .h4, p + h5, p + .h5, p + h6, p + .h6 {
   margin-top: clamp(1.35rem, 2.25vw, 1.75rem);
 }
 p cite {
-  font-weight: 400;
   margin-top: 1rem;
 }
 p + .wp-block-image {
@@ -974,23 +967,17 @@ p + .wp-block-image {
 }
 
 a {
-  font-weight: 600;
-  text-decoration-style: dotted;
+  text-decoration: underline;
 }
 a:active, a:focus, a:hover {
   cursor: pointer;
-  text-decoration-style: solid;
+  text-decoration: none;
 }
 
 blockquote,
 address {
   font-style: italic;
   margin: 1.125rem 1.125rem 2rem;
-}
-
-blockquote > p {
-  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
-  font-weight: 700;
 }
 
 .wp-block-quote {
@@ -1005,8 +992,6 @@ blockquote > p {
 }
 
 .wp-block-pullquote {
-  border-style: solid;
-  border-width: 3px 0;
   padding: 3em 1em;
 }
 @media all and (min-width: 992px) {
@@ -1015,6 +1000,8 @@ blockquote > p {
   }
 }
 .wp-block-pullquote blockquote {
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
   margin: 0;
 }
 .wp-block-pullquote.alignleft, .wp-block-pullquote.alignright {
@@ -1177,10 +1164,6 @@ ul,
 ol {
   margin: 0;
   padding: 0;
-}
-
-big {
-  font-weight: 600;
 }
 
 code,
@@ -1481,7 +1464,7 @@ article .entry-content .wp-block-latest-comments > .wp-block-latest-comments__co
 }
 article .entry-content .wp-block-latest-comments > .wp-block-latest-comments__comment .wp-block-latest-comments__comment-author,
 .v-content-container .entry-content .wp-block-latest-comments > .wp-block-latest-comments__comment .wp-block-latest-comments__comment-author {
-  font-weight: 600;
+  font-weight: 700;
 }
 article .entry-content .wp-block-latest-comments > .wp-block-latest-comments__comment .wp-block-latest-comments__comment-date,
 .v-content-container .entry-content .wp-block-latest-comments > .wp-block-latest-comments__comment .wp-block-latest-comments__comment-date {
@@ -1515,7 +1498,7 @@ article .entry-content .wp-block-social-links li,
   }
 }
 html {
-  font-family: "Red Hat Text", sans-serif;
+  font-family: "Red Hat Text", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 18px;
   line-height: 1.6;
 }
@@ -1545,7 +1528,7 @@ body.no-sidebar .main-content-wrap {
   margin-left: auto;
   margin-right: auto;
   max-width: calc(1200px + 1.25rem);
-  padding: clamp(2rem, 7vw, 5rem) clamp(1.25rem, 7.9vw, 6rem);
+  padding: clamp(2rem, 4.5vw, 3.5rem) clamp(1.25rem, 7.9vw, 6rem);
 }
 @media all and (min-width: 992px) {
   .inner {
@@ -1553,16 +1536,19 @@ body.no-sidebar .main-content-wrap {
     padding-right: 2rem;
   }
 }
+.inner.v-small {
+  /* Same as innerSpacing but without horizontal padding */
+}
 @media all and (min-width: 560px) {
   .inner.v-small {
-    padding-bottom: clamp(2rem, 5.25vw, 4rem);
-    padding-top: clamp(2rem, 5.25vw, 4rem);
+    padding-bottom: clamp(2rem, 4.5vw, 3.5rem);
+    padding-top: clamp(2rem, 4.5vw, 3.5rem);
   }
 }
 @media all and (min-width: 560px) {
   .inner.v-medium {
-    padding-bottom: clamp(2rem, 7.7vw, 6rem);
-    padding-top: clamp(2rem, 7.7vw, 6rem);
+    padding-bottom: clamp(2rem, 7vw, 5rem);
+    padding-top: clamp(2rem, 7vw, 5rem);
   }
 }
 @media all and (min-width: 560px) {
@@ -1619,24 +1605,26 @@ main {
 .site-header-elements > * {
   align-self: center;
 }
+.site-header-elements .site-branding {
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
+}
 .site-header-elements .site-branding .custom-logo-link .custom-logo {
   transition: opacity 0.2s;
   vertical-align: middle;
-  width: 115px;
+  width: 180px;
 }
 .site-header-elements .site-branding .custom-logo-link .custom-logo:active, .site-header-elements .site-branding .custom-logo-link .custom-logo:focus, .site-header-elements .site-branding .custom-logo-link .custom-logo:hover {
   opacity: 0.7;
 }
 .site-header-elements .site-branding .site-title {
-  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
-}
-.site-header-elements .site-branding .site-title {
   font-size: 1rem;
   line-height: 1;
-  text-transform: uppercase;
 }
 .site-header-elements .site-branding .site-title a {
-  font-weight: 900;
+  text-decoration-style: solid;
+}
+.site-header-elements .site-branding .site-title a:active, .site-header-elements .site-branding .site-title a:focus, .site-header-elements .site-branding .site-title a:hover {
   text-decoration: none;
 }
 
@@ -1650,13 +1638,14 @@ main {
   /* Mobile navigation */
 }
 #site-navigation #primary-menu .menu-item {
-  font-size: 0.778rem;
-  font-weight: 600;
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
+  font-size: 0.889rem;
   list-style-type: none;
-  text-transform: uppercase;
 }
 #site-navigation #primary-menu .menu-item a {
-  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
   display: block;
   text-decoration: none;
 }
@@ -1675,14 +1664,12 @@ main {
   height: 0;
   margin-left: 5px;
   position: absolute;
-  top: 3px;
+  top: 0.4165rem;
   transform: rotate(-45deg);
   width: 0;
 }
 #site-navigation #primary-menu > .menu-item.menu-item-has-children .sub-menu a {
   display: block;
-  font-weight: 600;
-  letter-spacing: 1px;
   padding: 7px 0;
 }
 #site-navigation #primary-menu > .menu-item.menu-item-has-children .sub-menu a:active, #site-navigation #primary-menu > .menu-item.menu-item-has-children .sub-menu a:focus, #site-navigation #primary-menu > .menu-item.menu-item-has-children .sub-menu a:hover {
@@ -1731,17 +1718,13 @@ main {
   width: 200px;
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > .sub-menu > .menu-item:not(:last-child) {
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > .sub-menu > .menu-item.menu-item-has-children:not(:last-child) {
   padding-bottom: 4px;
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children.sub-menu-active > a {
   text-decoration: underline;
-}
-#site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children.sub-menu-active > a:after {
-  top: 6px;
-  transform: rotate(-225deg);
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children.sub-menu-active .sub-menu {
   display: block;
@@ -1769,14 +1752,13 @@ main {
   right: 0;
 }
 #site-navigation .menu-toggle {
-  font-family: "Red Hat Text", sans-serif;
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
   font-size: 0.778rem;
   background: transparent;
   border: none;
   display: inline-block;
-  font-weight: 700;
   height: unset;
-  letter-spacing: 0;
   text-transform: uppercase;
 }
 #site-navigation .menu-toggle:hover {
@@ -1833,7 +1815,8 @@ main {
   }
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu .close-menu-modal {
-  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
   font-size: 0.778rem;
   display: block;
   line-height: 1;
@@ -1843,7 +1826,7 @@ main {
   display: none;
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item:not(:last-of-type) {
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item.menu-item-has-children > a:after {
   position: absolute;
@@ -1859,10 +1842,10 @@ main {
   width: 100%;
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item.menu-item-has-children > .sub-menu > .menu-item-has-children:not(:last-child) {
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item.menu-item-has-children > .sub-menu > .menu-item:not(:last-child) {
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 4px;
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu > .menu-item.menu-item-has-children.sub-menu-active > a {
@@ -1950,6 +1933,10 @@ main {
 .widget ol {
   padding: 0;
 }
+.widget ul li,
+.widget ol li {
+  line-height: 1.35;
+}
 .widget ul li ul, .widget ul li ol, .widget ul li + li,
 .widget ol li ul,
 .widget ol li ol,
@@ -1989,17 +1976,6 @@ main {
 .fat-footer .widget ol li ol,
 .fat-footer .widget ol li + li {
   margin-top: 5px;
-}
-.fat-footer .widget ul li a,
-.fat-footer .widget ol li a {
-  font-size: 0.833rem;
-}
-.fat-footer .widget a {
-  text-decoration-style: dotted;
-}
-.fat-footer .widget a:active, .fat-footer .widget a:focus, .fat-footer .widget a:hover {
-  text-decoration-line: underline;
-  text-decoration-style: solid;
 }
 
 #comments .comments-title {
@@ -2116,13 +2092,13 @@ main {
   padding: 9px 11px;
 }
 #comments .comment .comment {
-  border-style: dotted;
+  border-style: solid;
   border-width: 0 0 0 2px;
   padding-left: clamp(1rem, 2.75vw, 2.25rem);
   margin-top: 3rem;
 }
 #comments .comment .comment:not(:last-child) {
-  border-style: dotted;
+  border-style: solid;
   border-width: 0 0 2px 2px;
   padding-bottom: 2rem;
 }
@@ -2159,9 +2135,9 @@ main {
 #comments #respond #commentform .comment-form-email > label,
 #comments #respond #commentform .comment-form-url > label {
   font-size: 0.833rem;
-  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
   display: block;
-  font-weight: 600;
 }
 #comments #respond #commentform .comment-form-comment input, #comments #respond #commentform .comment-form-comment textarea,
 #comments #respond #commentform .comment-form-author input,
@@ -2199,18 +2175,17 @@ button,
 .comment-reply-link,
 .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button {
-  font-family: "Red Hat Display", "Red Hat Text", sans-serif;
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
   font-size: 0.833rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   display: inline-block;
-  font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 0.035rem;
   line-height: 1;
-  padding: 0.8em;
+  padding: 0.8em 1em;
   text-decoration: none;
-  text-transform: uppercase;
 }
 .button:active, .button:focus, .button:hover,
 .v-button:active,
@@ -2239,23 +2214,21 @@ button:hover,
 .wp-block-file .wp-block-file__button:hover {
   text-decoration: none;
 }
-@media all and (min-width: 560px) {
-  .button.v-large,
-  .v-button.v-large,
-  button.v-large,
-  [type=button].v-large,
-  [type=submit].v-large,
-  [type=reset].v-large,
-  .comment-reply-link.v-large,
-  .wp-block-button .wp-block-button__link.v-large,
-  .wp-block-file .wp-block-file__button.v-large {
-    font-size: 1.111rem;
-  }
+.button.v-large,
+.v-button.v-large,
+button.v-large,
+[type=button].v-large,
+[type=submit].v-large,
+[type=reset].v-large,
+.comment-reply-link.v-large,
+.wp-block-button .wp-block-button__link.v-large,
+.wp-block-file .wp-block-file__button.v-large {
+  font-size: clamp(0.833rem, 1.3vw, 1rem);
 }
 
 @media all and (min-width: 560px) {
   .wp-block-buttons.v-large > .wp-block-button .wp-block-button__link {
-    font-size: 1.111rem;
+    font-size: clamp(1rem, 1.4vw, 1.111rem);
   }
 }
 
@@ -2379,7 +2352,7 @@ select {
 }
 
 .site-footer-content {
-  font-size: 0.833rem;
+  font-size: 0.889rem;
 }
 @media all and (min-width: 992px) {
   .site-footer-content {
@@ -2388,13 +2361,11 @@ select {
   }
 }
 .site-footer-content .blog-name {
-  font-weight: 700;
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
 }
 .site-footer-content .blog-name a {
   text-decoration: none;
-}
-.site-footer-content .site-copyright {
-  font-weight: 400;
 }
 
 article .entry-header .entry-title,
@@ -2412,12 +2383,6 @@ article .post-thumbnail,
 article .post-thumbnail img,
 .v-content-container .post-thumbnail img {
   vertical-align: top;
-}
-@media all and (min-width: 768px) {
-  article .entry-content,
-  .v-content-container .entry-content {
-    font-size: 1.056rem;
-  }
 }
 article .entry-content ul,
 .v-content-container .entry-content ul {
@@ -2466,6 +2431,52 @@ article:last-child .entry-footer,
   margin-bottom: 0;
 }
 
+.single.has-post-thumbnail .content-header .inner,
+.page.has-post-thumbnail .content-header .inner {
+  padding-bottom: clamp(4rem, 7vw, 5.5rem);
+}
+.single.has-post-thumbnail article .entry-header,
+.page.has-post-thumbnail article .entry-header {
+  margin-bottom: clamp(1.5rem, 4vw, 3rem);
+  margin-top: -4rem;
+}
+@media all and (min-width: 768px) {
+  .single.has-post-thumbnail article .entry-header,
+  .page.has-post-thumbnail article .entry-header {
+    margin-top: -4.25rem;
+  }
+}
+@media all and (min-width: 992px) {
+  .single.has-post-thumbnail article .entry-header,
+  .page.has-post-thumbnail article .entry-header {
+    margin-top: -4.25rem;
+  }
+}
+@media all and (min-width: 1200px) {
+  .single.has-post-thumbnail article .entry-header,
+  .page.has-post-thumbnail article .entry-header {
+    margin-top: -6.5rem;
+  }
+}
+@media all and (min-width: 992px) {
+  .single.has-post-thumbnail article .entry-header .post-thumbnail,
+  .page.has-post-thumbnail article .entry-header .post-thumbnail {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+@media all and (min-width: 1200px) {
+  .single.has-post-thumbnail article .entry-header .post-thumbnail,
+  .page.has-post-thumbnail article .entry-header .post-thumbnail {
+    margin-left: -4rem;
+    margin-right: -4rem;
+  }
+}
+.single.has-post-thumbnail article .entry-header .post-thumbnail img,
+.page.has-post-thumbnail article .entry-header .post-thumbnail img {
+  border-radius: 10px;
+}
+
 .single article .entry-content h1:not(.jumbo), .single article .entry-content .h1:not(.jumbo),
 .single article .entry-content h2:not(.jumbo), .single article .entry-content .h2:not(.jumbo) {
   font-size: clamp(1.65rem, 3.25vw, 2.5rem);
@@ -2475,9 +2486,9 @@ article:last-child .entry-footer,
   margin-top: clamp(1.5rem, 2.5vw, 2rem);
 }
 
-.full-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ul, .full-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ol,
-.page-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ul,
-.page-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ol {
+.canvas-full-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ul, .canvas-full-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ol,
+.canvas-page-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ul,
+.canvas-page-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ol {
   margin-bottom: clamp(1.25rem, 2.4vw, 1.75rem);
   margin-top: 1.25rem;
 }
@@ -2497,15 +2508,13 @@ article:last-child .entry-footer,
   }
 }
 .featured-page .section-description {
-  font-size: 0.833rem;
+  font-size: 0.889rem;
 }
 
 .blog-grid-cta {
   border-radius: 10px;
   grid-row-end: 3;
   grid-row-start: 2;
-  margin-bottom: clamp(1rem, 5vw, 4rem);
-  margin-top: clamp(1rem, 2.5vw, 2rem);
   padding-bottom: clamp(3rem, 5vw, 4rem);
   padding-top: clamp(3rem, 5vw, 4rem);
 }
@@ -2548,38 +2557,41 @@ article:last-child .entry-footer,
   }
 }
 
-.full-width-template .wp-block-group {
+.canvas-full-width-template .entry-content > .wp-block-group {
   margin: 0;
 }
-.full-width-template .wp-block-group:not(.v-no-spacing) > .wp-block-group__inner-container {
+.canvas-full-width-template .entry-content > .wp-block-group:not(.v-no-spacing) > .wp-block-group__inner-container {
   margin-left: auto;
   margin-right: auto;
   max-width: calc(1200px + 1.25rem);
-  padding: clamp(2rem, 7vw, 5rem) clamp(1.25rem, 7.9vw, 6rem);
+  padding: clamp(2rem, 4.5vw, 3.5rem) clamp(1.25rem, 7.9vw, 6rem);
 }
 @media all and (min-width: 992px) {
-  .full-width-template .wp-block-group:not(.v-no-spacing) > .wp-block-group__inner-container {
+  .canvas-full-width-template .entry-content > .wp-block-group:not(.v-no-spacing) > .wp-block-group__inner-container {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 }
-.full-width-template .wp-block-group:not(.v-no-spacing) > .wp-block-group__inner-container > [class*=wp-block-]:last-child {
+.canvas-full-width-template .entry-content > .wp-block-group:not(.v-no-spacing) > .wp-block-group__inner-container > [class*=wp-block-]:last-child {
   margin-bottom: 0;
 }
+.canvas-full-width-template .entry-content > .wp-block-group:not(.v-no-spacing).v-small > .wp-block-group__inner-container {
+  /* Same as innerSpacing but without horizontal padding */
+}
 @media all and (min-width: 560px) {
-  .full-width-template .wp-block-group:not(.v-no-spacing).v-small > .wp-block-group__inner-container {
-    padding-bottom: clamp(2rem, 5.25vw, 4rem);
-    padding-top: clamp(2rem, 5.25vw, 4rem);
+  .canvas-full-width-template .entry-content > .wp-block-group:not(.v-no-spacing).v-small > .wp-block-group__inner-container {
+    padding-bottom: clamp(2rem, 4.5vw, 3.5rem);
+    padding-top: clamp(2rem, 4.5vw, 3.5rem);
   }
 }
 @media all and (min-width: 560px) {
-  .full-width-template .wp-block-group:not(.v-no-spacing).v-medium > .wp-block-group__inner-container {
-    padding-bottom: clamp(2rem, 7.7vw, 6rem);
-    padding-top: clamp(2rem, 7.7vw, 6rem);
+  .canvas-full-width-template .entry-content > .wp-block-group:not(.v-no-spacing).v-medium > .wp-block-group__inner-container {
+    padding-bottom: clamp(2rem, 7vw, 5rem);
+    padding-top: clamp(2rem, 7vw, 5rem);
   }
 }
 @media all and (min-width: 560px) {
-  .full-width-template .wp-block-group:not(.v-no-spacing).v-large > .wp-block-group__inner-container {
+  .canvas-full-width-template .entry-content > .wp-block-group:not(.v-no-spacing).v-large > .wp-block-group__inner-container {
     padding-bottom: clamp(2rem, 10.5vw, 8rem);
     padding-top: clamp(2rem, 10.5vw, 8rem);
   }
