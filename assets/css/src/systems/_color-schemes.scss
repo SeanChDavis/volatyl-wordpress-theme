@@ -108,7 +108,9 @@ hr,
 #comments .comment .comment:not(:last-child),
 #comments .pingback:not(:last-child),
 .wp-block-separator,
-.twitter-tweet {
+.twitter-tweet,
+.wp-block-quote,
+.wp-block-pullquote {
 	border-color: var(--subdued-color-light);
 }
 
@@ -128,7 +130,7 @@ h3 a,
 .h3 a,
 h5 a,
 .h5 a,
-.v-hero-secondary-cta a,
+.content-header-secondary-cta a,
 .v-subdued-title,
 .featured-page .section-description,
 .archive-title.content-title,
@@ -175,16 +177,16 @@ button:hover,
 .wp-block-search button:focus,
 .wp-block-search button:hover,
 .wp-block-search[class*="button-inside"] [class*="search__inside"],
-.v-hero .v-hero-primary-cta [class*="button"]:active,
-.v-hero .v-hero-primary-cta [class*="button"]:focus,
-.v-hero .v-hero-primary-cta [class*="button"]:hover,
+.content-header-primary-cta [class*="button"]:active,
+.content-header-primary-cta [class*="button"]:focus,
+.content-header-primary-cta [class*="button"]:hover,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover {
 	background-color: var(--action-color-alt);
 }
 
-.v-hero .v-hero-primary-cta [class*="button"],
+.content-header-primary-cta [class*="button"],
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
 	background-color: var(--action-color);
 }
@@ -202,9 +204,7 @@ input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="r
 textarea:active,
 textarea:focus,
 select:active,
-select:focus,
-.wp-block-quote,
-.wp-block-pullquote {
+select:focus {
 	border-color: var(--action-color);
 }
 
@@ -348,7 +348,7 @@ cite,
 		color: #fff;
 	}
 
-	.v-hero-secondary-cta a,
+	.content-header-secondary-cta a,
 	.archive-title.content-title,
 	h4,
 	.h4,

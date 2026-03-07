@@ -178,6 +178,18 @@ $wp_customize->add_control( 'volatyl_front_page_hero_centered', array(
 	'type'     => 'checkbox',
 ) );
 
+// Hero custom title
+$wp_customize->add_setting( 'volatyl_front_page_hero_use_custom_title', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox'
+) );
+$wp_customize->add_control( 'volatyl_front_page_hero_use_custom_title', array(
+	'section'  => 'volatyl_front_page_template',
+	'priority' => 35,
+	'label'    => __( 'Use custom title instead of tagline', 'volatyl' ),
+	'type'     => 'checkbox',
+) );
+
 // Hero title
 $wp_customize->add_setting( 'volatyl_front_page_hero_title', array(
 	'default'           => NULL,
@@ -187,19 +199,38 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_custo
 	'section'     => 'volatyl_front_page_template',
 	'priority'    => 40,
 	'label'       => __( 'Title', 'volatyl' ),
-	'description' => __( 'By default, your WordPress site tagline is used as the front page hero title. To override that behavior, you may adjust the text here. This text will not change your WordPress site tagline.', 'volatyl' ),
+	'description' => __( 'By default, your WordPress site tagline is used as the front page hero title. You have selected to override that title with this custom text. This text will not change your WordPress site tagline. Uncheck the custom title setting to fall back to the site tagline.', 'volatyl' ),
+	'active_callback' => function ( $control ) {
+		if ( $control->manager->get_setting( 'volatyl_front_page_hero_use_custom_title' )->value() === 1 ) {
+			return true;
+		} else {
+			return false;
+		}
+	},
 ) ) );
 
-// Hero subtitle
-$wp_customize->add_setting( 'volatyl_front_page_hero_subtitle', array(
+// Hero description
+$wp_customize->add_setting( 'volatyl_front_page_hero_description', array(
 	'default'           => NULL,
 	'sanitize_callback' => 'volatyl_sanitize_textarea_lite',
 ) );
-$wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_customize, 'volatyl_front_page_hero_subtitle', array(
+$wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_customize, 'volatyl_front_page_hero_description', array(
 	'section'     => 'volatyl_front_page_template',
 	'priority'    => 50,
-	'label'       => __( 'Subtitle', 'volatyl' ),
-	'description' => sprintf( __( 'This content displays below the hero title in a paragraph format. 2-3 sentences looks best. Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>' ),
+	'label'       => __( 'Description', 'volatyl' ),
+	'description' => sprintf( __( 'This content displays below the hero title in a paragraph format. 1-2 sentences looks best. Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>' ),
+) ) );
+
+// Hero primary CTA button text
+$wp_customize->add_setting( 'volatyl_front_page_hero_primary_cta_button_text', array(
+	'default'           => NULL,
+	'sanitize_callback' => 'volatyl_sanitize_text',
+) );
+$wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize, 'volatyl_front_page_hero_primary_cta_button_text', array(
+	'section'     => 'volatyl_front_page_template',
+	'priority'    => 60,
+	'label'       => __( 'Primary call-to-action text', 'volatyl' ),
+	'description' => __( 'Set the text of the primary call-to-action button.', 'volatyl' ),
 ) ) );
 
 // Hero primary CTA button URL
@@ -207,48 +238,36 @@ $wp_customize->add_setting( 'volatyl_front_page_hero_primary_cta_button_url', ar
 	'default'           => NULL,
 	'sanitize_callback' => 'volatyl_sanitize_text',
 ) );
-$wp_customize->add_control( 'volatyl_front_page_hero_primary_cta_button_url', array(
-	'section'     => 'volatyl_front_page_template',
-	'priority'    => 60,
-	'label'       => __( 'Primary call-to-action URL', 'volatyl' ),
-	'description' => __( 'Set the URL of the primary call-to-action button.', 'volatyl' ),
-) );
-
-// Hero primary CTA button text
-$wp_customize->add_setting( 'volatyl_front_page_hero_primary_cta_button_text', array(
-	'default'           => NULL,
-	'sanitize_callback' => 'volatyl_sanitize_text',
-) );
-$wp_customize->add_control( 'volatyl_front_page_hero_primary_cta_button_text', array(
+$wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize, 'volatyl_front_page_hero_primary_cta_button_url', array(
 	'section'     => 'volatyl_front_page_template',
 	'priority'    => 70,
-	'label'       => __( 'Primary call-to-action text', 'volatyl' ),
-	'description' => __( 'Set the text of the primary call-to-action button.', 'volatyl' ),
-) );
-
-// Hero secondary CTA button URL
-$wp_customize->add_setting( 'volatyl_front_page_hero_secondary_cta_button_url', array(
-	'default'           => NULL,
-	'sanitize_callback' => 'volatyl_sanitize_text',
-) );
-$wp_customize->add_control( 'volatyl_front_page_hero_secondary_cta_button_url', array(
-	'section'     => 'volatyl_front_page_template',
-	'priority'    => 80,
-	'label'       => __( 'Secondary call-to-action URL', 'volatyl' ),
-	'description' => __( 'Set the URL of the secondary call-to-action link.', 'volatyl' ),
-) );
+	'label'       => __( 'Primary call-to-action URL', 'volatyl' ),
+	'description' => __( 'Set the URL of the primary call-to-action button.', 'volatyl' ),
+) ) );
 
 // Hero secondary CTA button text
 $wp_customize->add_setting( 'volatyl_front_page_hero_secondary_cta_button_text', array(
 	'default'           => NULL,
 	'sanitize_callback' => 'volatyl_sanitize_text',
 ) );
-$wp_customize->add_control( 'volatyl_front_page_hero_secondary_cta_button_text', array(
+$wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize, 'volatyl_front_page_hero_secondary_cta_button_text', array(
 	'section'     => 'volatyl_front_page_template',
-	'priority'    => 90,
+	'priority'    => 80,
 	'label'       => __( 'Secondary call-to-action text', 'volatyl' ),
 	'description' => __( 'Set the text of the secondary call-to-action link.', 'volatyl' ),
+) ) );
+
+// Hero secondary CTA button URL
+$wp_customize->add_setting( 'volatyl_front_page_hero_secondary_cta_button_url', array(
+	'default'           => NULL,
+	'sanitize_callback' => 'volatyl_sanitize_text',
 ) );
+$wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize, 'volatyl_front_page_hero_secondary_cta_button_url', array(
+	'section'     => 'volatyl_front_page_template',
+	'priority'    => 90,
+	'label'       => __( 'Secondary call-to-action URL', 'volatyl' ),
+	'description' => __( 'Set the URL of the secondary call-to-action link.', 'volatyl' ),
+) ) );
 
 // Blog settings area
 $wp_customize->add_setting( 'volatyl_front_page_blog_settings', array(
@@ -299,8 +318,8 @@ $wp_customize->add_setting( 'volatyl_front_page_featured_page_select', array(
 $wp_customize->add_control( 'volatyl_front_page_featured_page_select', array(
 	'section'        => 'volatyl_front_page_template',
 	'priority'       => 210,
-	'label'          => __( 'Choose an existing page to feature.', 'volatyl' ),
-	'description'    => __( 'The title and complete content of the selected page will display on your front page. If needed, create a page specific for this section. If an excerpt is added to the page, it will display below the title.', 'volatyl' ),
+	'label'          => __( 'Choose a page to feature.', 'volatyl' ),
+	'description'    => __( 'The title and content of the selected page will display on your front page. If needed, create a page specifically for this section. If an excerpt is added to the page, it will display below the title.', 'volatyl' ),
 	'type'           => 'dropdown-pages',
 	'allow_addition' => true,
 ) );
@@ -433,13 +452,13 @@ $wp_customize->add_setting( 'volatyl_blog_grid_cta_title', array(
 	'default'           => NULL,
 	'sanitize_callback' => 'volatyl_sanitize_text',
 ) );
-$wp_customize->add_control( 'volatyl_blog_grid_cta_title', array(
+$wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize, 'volatyl_blog_grid_cta_title', array(
 	'section'         => 'volatyl_blog_template',
 	'priority'        => 230,
 	'label'           => __( 'Title', 'volatyl' ),
 	'description'     => __( 'The large title text for the call-to-action area.', 'volatyl' ),
 	'active_callback' => 'volatyl_display_blog_grid_cta_settings',
-) );
+) ) );
 
 // Blog grid CTA description
 $wp_customize->add_setting( 'volatyl_blog_grid_cta_description', array(
@@ -454,31 +473,31 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_custo
 	'active_callback' => 'volatyl_display_blog_grid_cta_settings',
 ) ) );
 
-// Blog grid CTA button URL
-$wp_customize->add_setting( 'volatyl_blog_grid_cta_button_url', array(
-	'default'           => NULL,
-	'sanitize_callback' => 'volatyl_sanitize_text',
-) );
-$wp_customize->add_control( 'volatyl_blog_grid_cta_button_url', array(
-	'section'         => 'volatyl_blog_template',
-	'priority'        => 250,
-	'label'           => __( 'Call-to-action button URL', 'volatyl' ),
-	'description'     => __( 'Set the URL of the call-to-action button.', 'volatyl' ),
-	'active_callback' => 'volatyl_display_blog_grid_cta_settings',
-) );
-
 // Blog grid CTA button text
 $wp_customize->add_setting( 'volatyl_blog_grid_cta_button_text', array(
 	'default'           => NULL,
 	'sanitize_callback' => 'volatyl_sanitize_text',
 ) );
-$wp_customize->add_control( 'volatyl_blog_grid_cta_button_text', array(
+$wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize, 'volatyl_blog_grid_cta_button_text', array(
 	'section'         => 'volatyl_blog_template',
-	'priority'        => 260,
+	'priority'        => 250,
 	'label'           => __( 'Call-to-action button text', 'volatyl' ),
 	'description'     => __( 'Set the text of the call-to-action button.', 'volatyl' ),
 	'active_callback' => 'volatyl_display_blog_grid_cta_settings',
+) ) );
+
+// Blog grid CTA button URL
+$wp_customize->add_setting( 'volatyl_blog_grid_cta_button_url', array(
+	'default'           => NULL,
+	'sanitize_callback' => 'volatyl_sanitize_text',
 ) );
+$wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize, 'volatyl_blog_grid_cta_button_url', array(
+	'section'         => 'volatyl_blog_template',
+	'priority'        => 260,
+	'label'           => __( 'Call-to-action button URL', 'volatyl' ),
+	'description'     => __( 'Set the URL of the call-to-action button.', 'volatyl' ),
+	'active_callback' => 'volatyl_display_blog_grid_cta_settings',
+) ) );
 
 /**
  * Footer Areas
@@ -513,13 +532,13 @@ $wp_customize->add_setting( 'volatyl_footer_lead_title', array(
 	'default'           => NULL,
 	'sanitize_callback' => 'volatyl_sanitize_text',
 ) );
-$wp_customize->add_control( 'volatyl_footer_lead_title', array(
+$wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize, 'volatyl_footer_lead_title', array(
 	'section'         => 'volatyl_footer_areas',
 	'priority'        => 20,
 	'label'           => __( 'Title', 'volatyl' ),
 	'description'     => __( 'The large title text for the area.', 'volatyl' ),
 	'active_callback' => 'volatyl_display_footer_lead_settings',
-) );
+) ) );
 
 // Footer Lead description
 $wp_customize->add_setting( 'volatyl_footer_lead_description', array(
@@ -534,31 +553,31 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_custo
 	'active_callback' => 'volatyl_display_footer_lead_settings',
 ) ) );
 
-// Footer Lead CTA button URL
-$wp_customize->add_setting( 'volatyl_footer_lead_cta_button_url', array(
-	'default'           => NULL,
-	'sanitize_callback' => 'volatyl_sanitize_text',
-) );
-$wp_customize->add_control( 'volatyl_footer_lead_cta_button_url', array(
-	'section'         => 'volatyl_footer_areas',
-	'priority'        => 40,
-	'label'           => __( 'Call-to-action button URL', 'volatyl' ),
-	'description'     => __( 'Set the URL of the call-to-action button.', 'volatyl' ),
-	'active_callback' => 'volatyl_display_footer_lead_settings',
-) );
-
 // Footer Lead CTA button text
 $wp_customize->add_setting( 'volatyl_footer_lead_cta_button_text', array(
 	'default'           => NULL,
 	'sanitize_callback' => 'volatyl_sanitize_text',
 ) );
-$wp_customize->add_control( 'volatyl_footer_lead_cta_button_text', array(
+$wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize, 'volatyl_footer_lead_cta_button_text', array(
 	'section'         => 'volatyl_footer_areas',
-	'priority'        => 50,
+	'priority'        => 40,
 	'label'           => __( 'Call-to-action button text', 'volatyl' ),
 	'description'     => __( 'Set the text of the call-to-action button.', 'volatyl' ),
 	'active_callback' => 'volatyl_display_footer_lead_settings',
+) ) );
+
+// Footer Lead CTA button URL
+$wp_customize->add_setting( 'volatyl_footer_lead_cta_button_url', array(
+	'default'           => NULL,
+	'sanitize_callback' => 'volatyl_sanitize_text',
 ) );
+$wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize, 'volatyl_footer_lead_cta_button_url', array(
+	'section'         => 'volatyl_footer_areas',
+	'priority'        => 50,
+	'label'           => __( 'Call-to-action button URL', 'volatyl' ),
+	'description'     => __( 'Set the URL of the call-to-action button.', 'volatyl' ),
+	'active_callback' => 'volatyl_display_footer_lead_settings',
+) ) );
 
 // Fat Footer area
 $wp_customize->add_setting( 'volatyl_fat_footer_area', array(

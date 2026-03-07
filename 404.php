@@ -3,7 +3,14 @@ get_header();
 ?>
 
 	<main id="main">
-		<div class="inner v-large">
+		<?php
+		get_template_part( 'template-parts/content', 'header', array(
+			'title' => esc_html__( 'Nothing Found', 'volatyl' ),
+			'description' => esc_html__( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'volatyl' ),
+			'has_search_form' => true,
+		) );
+		?>
+		<div class="inner">
 			<?php get_template_part( 'content/content', 'none' ); ?>
 		</div>
 	</main>

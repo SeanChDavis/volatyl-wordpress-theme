@@ -1,64 +1,15 @@
 <?php // Bits of markup used throughout the theme
 
-// Site hero markup template
-if ( ! function_exists( 'volatyl_hero' ) ) :
+// Check for a dark header/hero
+if ( ! function_exists( 'volatyl_dark_header_hero_background' ) ) :
 
-	function volatyl_hero( $args = array() ) {
+	function volatyl_dark_header_hero_background(): bool {
 
-		$default_args = array(
-			'title'         => ! empty( $args['title'] ) ? $args['title'] : get_the_title(),
-			'subtitle'      => ! empty( $args['subtitle'] ) ? $args['subtitle'] : '',
-			'alignment'     => isset( $args['alignment'] ) && 1 === $args['alignment'] ? 1 : 0,
-			'primary_cta'   => array(
-				'text' => '',
-				'url'  => '',
-			),
-			'secondary_cta' => array(
-				'text' => '',
-				'url'  => '',
-			),
-		);
-
-		$new_args = array_merge( $default_args, $args );
-
-		$title              = $new_args['title'];
-		$subtitle           = $new_args['subtitle'];
-		$alignment          = $new_args['alignment'];
-		$primary_cta_text   = $new_args['primary_cta']['text'];
-		$primary_cta_url    = $new_args['primary_cta']['url'];
-		$secondary_cta_text = $new_args['secondary_cta']['text'];
-		$secondary_cta_url  = $new_args['secondary_cta']['url'];
-		?>
-
-		<div class="v-hero<?php echo $alignment ? ' v-hero-centered' : ''; ?>">
-			<h1 class="v-hero-title"><?php echo $title; ?></h1>
-			<?php if ( ! empty( $subtitle ) ) { ?>
-				<p class="v-hero-subtitle"><?php echo $subtitle; ?></p>
-			<?php } ?>
-			<?php if ( ! empty( $primary_cta_url ) && ! empty( $primary_cta_text ) ) { ?>
-				<p class="v-hero-primary-cta">
-					<a href="<?php echo $primary_cta_url; ?>" class="v-button v-large"><?php echo $primary_cta_text; ?></a>
-				</p>
-			<?php } ?>
-			<?php if ( ! empty( $secondary_cta_url ) && ! empty( $secondary_cta_text ) ) { ?>
-				<p class="v-hero-secondary-cta">
-					<a href="<?php echo $secondary_cta_url; ?>"><?php echo $secondary_cta_text; ?></a>
-				</p>
-			<?php } ?>
-		</div>
-
-		<?php
-	}
-endif;
-
-// Check for a dark header/hero on the front page
-if ( ! function_exists( 'volatyl_front_page_hero_dark' ) ) :
-
-	function volatyl_front_page_hero_dark(): bool {
-
+		// Front page
 		if ( is_front_page() && get_theme_mod( 'volatyl_front_page_hero_dark', 0 ) ) {
 			return true;
 		}
+
 		return false;
 	}
 endif;

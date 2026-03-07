@@ -1,18 +1,27 @@
 .content-header {
 
-	.content-title {
+	.content-header-title {
 		margin-bottom: .8rem;
 
 		@media all and (min-width: $smMinWidth) {
 			max-width: clamp(600px, 65vw, 840px);
 		}
 
-		& + .content-description {
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		& + .content-header-primary-cta,
+		& + .content-header-secondary-cta {
+			margin-top: clamp(2rem, 4vw, 3rem);
+		}
+
+		& + .content-header-description {
 			margin-top: .75rem;
 		}
 	}
 
-	.content-description {
+	.content-header-description {
 		max-width: clamp(580px, 50vw, 665px);
 
 		&:not(:last-child) {
@@ -20,70 +29,30 @@
 		}
 	}
 
-	.content-container {
-		display: flex;
-		flex-direction: column;
-		row-gap: 2rem;
+	.content-header-primary-cta {
+		margin-bottom: clamp(8px, .8vw, 12px);
+		max-width: 665px;
 
-		@media all and (min-width: $mdMinWidth) {
-			max-width: 60%;
+		&.wp-block-buttons {
+			margin-bottom: clamp(8px, .8vw, 12px);
 		}
 	}
 
-	/* Hero - lives inside content header as a child of inner */
-	.v-hero {
+	.content-header-secondary-cta {
+		@include headingFont;
+		@include fontSmall;
+	}
 
-		&.v-hero-centered {
+	&.v-text-align-center {
+
+		.content-header-title,
+		.content-header-description,
+		.content-header-primary-cta,
+		.content-header-primary-cta.wp-block-buttons .wp-block-button,
+		.content-header-secondary-cta {
+			margin-left: auto;
+			margin-right: auto;
 			text-align: center;
-
-			.v-hero-title,
-			.v-hero-subtitle,
-			.v-hero-primary-cta,
-			.v-hero-primary-cta.wp-block-buttons .wp-block-button,
-			.v-hero-secondary-cta {
-				margin-left: auto;
-				margin-right: auto;
-				text-align: center;
-			}
-		}
-
-		.v-hero-title {
-			margin-bottom: .8rem;
-
-			@media all and (min-width: $smMinWidth) {
-				max-width: clamp(600px, 65vw, 840px);
-			}
-
-			&:last-child {
-				margin-bottom: 0;
-			}
-
-			& + .v-hero-primary-cta,
-			& + .v-hero-secondary-cta {
-				margin-top: clamp(2rem, 8vw, 6rem);
-			}
-		}
-
-		.v-hero-subtitle {
-			max-width: clamp(580px, 50vw, 665px);
-
-			&:not(:last-child) {
-				margin-bottom: clamp(1rem, 3vw, 2rem);
-			}
-		}
-
-		.v-hero-primary-cta {
-			margin-bottom: clamp(8px, .8vw, 12px);
-			max-width: 665px;
-
-			&.wp-block-buttons {
-				margin-bottom: clamp(8px, .8vw, 12px);
-			}
-		}
-
-		.v-hero-secondary-cta {
-			@include headingFont;
-			@include fontSmall;
 		}
 	}
 }
@@ -122,13 +91,13 @@
 	}
 }
 
-.no-sidebar {
+.no-sidebar:not(.front-page) {
 
 	.content-header {
 		text-align: center;
 
-		.content-title,
-		.content-description {
+		.content-header-title,
+		.content-header-description {
 			margin-left: auto;
 			margin-right: auto;
 		}

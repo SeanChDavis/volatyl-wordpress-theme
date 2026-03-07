@@ -42,3 +42,29 @@ class Volatyl_WP_Customize_Textarea_Control extends WP_Customize_Control {
 		<?php
 	}
 }
+
+/**
+ * Extends controls class to add text field with description
+ */
+class Volatyl_WP_Customize_Text_Control extends WP_Customize_Control {
+	public $type = 'text';
+	public $description = '';
+	public function render_content() {
+		?>
+
+		<label>
+			<span class="customize-control-title">
+				<?php echo esc_html( $this->label ); ?>
+				<span class="volatyl-toggle-wrap">
+					<?php if ( ! empty( $this->description ) ) { ?>
+						<a href="#" class="volatyl-toggle-description">?</a>
+					<?php } ?>
+				</span>
+			</span>
+			<div class="control-description volatyl-control-description"><?php echo esc_html( $this->description ); ?></div>
+			<input type="text" style="width:98%;" <?php $this->link(); ?> value="<?php echo esc_attr( $this->value() ); ?>" />
+		</label>
+
+		<?php
+	}
+}

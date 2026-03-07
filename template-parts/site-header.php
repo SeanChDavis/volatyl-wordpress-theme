@@ -1,13 +1,12 @@
 <?php // The main site header
-$front_page_hero_dark = volatyl_front_page_hero_dark();
-$header_bg_color      = 'v-gray-background';
-if ( $front_page_hero_dark ) {
-	$header_bg_color = 'v-dark-background';
+$is_dark = volatyl_dark_header_hero_background();
+$light_logo_atts = array();
+if ( $is_dark ) {
 	$light_logo_atts = wp_get_attachment_image_src( get_theme_mod( 'volatyl_front_page_hero_light_logo' ) );
 }
 ?>
 
-<header id="masthead" class="<?php echo $header_bg_color; ?>">
+<header id="masthead" class="<?php echo $is_dark ? 'v-dark-background' : 'v-gray-background'; ?>">
 	<div class="site-header">
 		<div class="inner v-padding-y-3">
 			<div class="site-header-elements">
@@ -15,7 +14,7 @@ if ( $front_page_hero_dark ) {
 					<?php
 					$home_url  = esc_url( home_url( '/' ) );
 					$blog_name = get_bloginfo( 'name' );
-					if ( $front_page_hero_dark && ! empty( $light_logo_atts[0] ) ) {
+					if ( $is_dark && ! empty( $light_logo_atts[0] ) ) {
 						?>
 						<a href="<?php echo $home_url; ?>" class="custom-logo-link" rel="home"><img src="<?php echo $light_logo_atts[0]; ?>" class="custom-logo" alt="<?php echo $blog_name; ?>"></a>
 						<?php

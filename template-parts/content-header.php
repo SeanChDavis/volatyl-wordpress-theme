@@ -3,35 +3,61 @@
  * Page header or hero section depending on the context of the page being viewed.
  */
 
-$front_page_hero_dark = volatyl_front_page_hero_dark();
-$hero_bg_color      = 'v-gray-background';
-if ( $front_page_hero_dark && is_front_page() && ! is_home() ) {
-	$hero_bg_color = 'v-dark-background';
+// Set the args for the content header/hero.
+// This can create both a hero section like the front page and a standard content header for other pages.
+if ( isset( $args ) ) {
+	$args = wp_parse_args(
+			$args,
+			array(
+					'title'         => ! empty( $args['title'] ) ? $args['title'] : get_the_title(),
+					'description'   => ! empty( $args['description'] ) ? $args['description'] : '',
+					'is_centered'   => isset( $args['alignment'] ) && 1 === $args['alignment'] ? 1 : 0,
+					'primary_cta'   => array(
+							'text' => '',
+							'url'  => '',
+					),
+					'secondary_cta' => array(
+							'text' => '',
+							'url'  => '',
+					),
+					'is_dark'       => false,
+					'has_search_form' => false,
+			)
+	);
+}
+
+// Set the classes for the content header/hero section based on the args passed in.
+$content_header_classes = 'content-header';
+if ( isset( $args['is_dark'] ) && $args['is_dark'] ) {
+	$content_header_classes .= ' v-dark-background';
+} else {
+	$content_header_classes .= ' v-gray-background';
+}
+if ( isset( $args['is_centered'] ) && $args['is_centered'] ) {
+	$content_header_classes .= ' v-text-align-center';
 }
 ?>
 
-<section class="content-header <?php echo $hero_bg_color; ?>">
+<section class="<?php echo $content_header_classes; ?>">
 	<div class="inner v-small">
 		<?php
 		if ( is_front_page() && ! is_home() ) {
-			$front_page_hero_title = get_bloginfo( 'description' ) ?: sprintf( 'Welcome to %1$s', get_bloginfo( 'name' ) );
-			if ( ! empty( get_theme_mod( 'volatyl_front_page_hero_title' ) ) ) {
-				$front_page_hero_title = get_theme_mod( 'volatyl_front_page_hero_title' );
-			}
-			$hero_args = array(
-					'title'         => $front_page_hero_title,
-					'subtitle'      => get_theme_mod( 'volatyl_front_page_hero_subtitle', '' ),
-					'alignment'     => get_theme_mod( 'volatyl_front_page_hero_centered', 0 ),
-					'primary_cta'   => array(
-							'url'  => get_theme_mod( 'volatyl_front_page_hero_primary_cta_button_url', '' ),
-							'text' => get_theme_mod( 'volatyl_front_page_hero_primary_cta_button_text', '' ),
-					),
-					'secondary_cta' => array(
-							'url'  => get_theme_mod( 'volatyl_front_page_hero_secondary_cta_button_url', '' ),
-							'text' => get_theme_mod( 'volatyl_front_page_hero_secondary_cta_button_text', '' ),
-					),
-			);
-			volatyl_hero( $hero_args );
+			?>
+			<h1 class="content-header-title"><?php echo $args['title']; ?></h1>
+			<?php if ( ! empty( $args['description'] ) ) { ?>
+				<p class="content-header-description"><?php echo $args['description']; ?></p>
+			<?php } ?>
+			<?php if ( ! empty( $args['primary_cta']['url'] ) && ! empty( $args['primary_cta']['text'] ) ) { ?>
+				<p class="content-header-primary-cta">
+					<a href="<?php echo $args['primary_cta']['url']; ?>" class="v-button v-large"><?php echo $args['primary_cta']['text']; ?></a>
+				</p>
+			<?php } ?>
+			<?php if ( ! empty( $args['secondary_cta']['url'] ) && ! empty( $args['secondary_cta']['text'] ) ) { ?>
+				<p class="content-header-secondary-cta">
+					<a href="<?php echo $args['secondary_cta']['url']; ?>"><?php echo $args['secondary_cta']['text']; ?></a>
+				</p>
+			<?php } ?>
+			<?php
 		} elseif ( is_home() && ! is_front_page() ) {
 			$blog_title = get_the_title( get_option( 'page_for_posts' ) );
 			if ( get_theme_mod( 'volatyl_blog_title' ) ) {
@@ -40,62 +66,61 @@ if ( $front_page_hero_dark && is_front_page() && ! is_home() ) {
 				);
 			}
 			?>
-			<div class="content-container">
-				<div class="content-primary">
-					<h1 class="content-title"><?php echo $blog_title; ?></h1>
-					<?php if ( get_theme_mod( 'volatyl_blog_description' ) ) { ?>
-						<p class="content-description"><?php echo get_theme_mod( 'volatyl_blog_description' ); ?></p>
-					<?php } ?>
-				</div>
-				<?php if ( get_theme_mod( 'volatyl_blog_search_form', 0 ) ) { ?>
-					<div class="content-secondary">
-						<?php get_search_form(); ?>
-					</div>
-				<?php } ?>
-			</div>
+			<h1 class="content-header-title"><?php echo $blog_title; ?></h1>
+			<?php if ( get_theme_mod( 'volatyl_blog_description' ) ) { ?>
+				<p class="content-header-description"><?php echo get_theme_mod( 'volatyl_blog_description' ); ?></p>
+			<?php } ?>
+			<?php if ( get_theme_mod( 'volatyl_blog_search_form', 0 ) ) { ?>
+				<?php get_search_form(); ?>
+			<?php } ?>
 			<?php
 		} elseif ( is_page() ) {
 			?>
-			<h1 class="content-title"><?php echo get_the_title(); ?></h1>
+			<h1 class="content-header-title"><?php echo $args['title']; ?></h1>
 			<?php if ( has_excerpt() ) : ?>
-				<p class="content-description"><?php echo get_the_excerpt(); ?></p>
+				<p class="content-header-description"><?php echo get_the_excerpt(); ?></p>
 			<?php endif; ?>
 			<?php
 		} elseif ( is_single() ) {
 			if ( ! empty( get_the_title() ) ) {
 				?>
-				<h1 class="content-title"><?php echo get_the_title(); ?></h1>
+				<h1 class="content-header-title"><?php echo $args['title']; ?></h1>
 				<?php
 			}
 		} elseif ( is_search() ) {
 			?>
-			<div class="content-container">
-				<div class="content-primary">
-					<h1 class="content-title">
+			<h1 class="content-header-title">
 						<span class="v-subdued-title v-large">
 							<?php printf( esc_html__( 'Search results for:', 'volatyl' ) ); ?>
 						</span>
-						<?php echo esc_html( get_search_query() ); ?>
-					</h1>
-				</div>
-				<div class="content-secondary">
-					<?php get_search_form(); ?>
-				</div>
-			</div>
+				<?php echo esc_html( get_search_query() ); ?>
+			</h1>
 			<?php
 		} elseif ( is_archive() ) {
 			if ( ! empty( get_the_archive_title() ) ) {
 				?>
-				<h1 class="content-title archive-title v-margin-bottom-3"><?php echo get_the_archive_title(); ?></h1>
+				<h1 class="content-header-title archive-title v-margin-bottom-3"><?php echo get_the_archive_title(); ?></h1>
 				<?php
 			}
 			if ( ! empty( get_the_archive_description() ) ) {
 				?>
-				<div class="content-description">
+				<div class="content-header-description">
 					<?php echo get_the_archive_description(); ?>
 				</div>
 				<?php
 			}
+		} else {
+			?>
+			<h1 class="content-header-title"><?php echo $args['title']; ?></h1>
+			<?php if ( ! empty( $args['description'] ) ) { ?>
+				<p class="content-header-description"><?php echo $args['description']; ?></p>
+			<?php } ?>
+			<?php
+		}
+
+		// Display the search form if enabled in theme settings and not already displayed for the blog page.
+		if ( $args['has_search_form'] ) {
+			get_search_form();
 		}
 		?>
 	</div>

@@ -5,10 +5,12 @@ get_header();
 	<main id="main">
 		<?php
 		if ( ! empty( get_search_query() ) ) {
-			get_template_part( 'template-parts/content', 'header' );
+			get_template_part( 'template-parts/content', 'header', array(
+					'has_search_form' => true,
+			) );
 		}
 		?>
-		<div class="inner v-small">
+		<div class="inner">
 			<?php
 			if ( have_posts() && ! empty( get_search_query() ) ) :
 				?>

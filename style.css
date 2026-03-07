@@ -262,7 +262,9 @@ hr,
 #comments .comment .comment:not(:last-child),
 #comments .pingback:not(:last-child),
 .wp-block-separator,
-.twitter-tweet {
+.twitter-tweet,
+.wp-block-quote,
+.wp-block-pullquote {
   border-color: var(--subdued-color-light);
 }
 
@@ -282,7 +284,7 @@ h3 a,
 .h3 a,
 h5 a,
 .h5 a,
-.v-hero-secondary-cta a,
+.content-header-secondary-cta a,
 .v-subdued-title,
 .featured-page .section-description,
 .archive-title.content-title,
@@ -329,16 +331,16 @@ button:hover,
 .wp-block-search button:focus,
 .wp-block-search button:hover,
 .wp-block-search[class*=button-inside] [class*=search__inside],
-.v-hero .v-hero-primary-cta [class*=button]:active,
-.v-hero .v-hero-primary-cta [class*=button]:focus,
-.v-hero .v-hero-primary-cta [class*=button]:hover,
+.content-header-primary-cta [class*=button]:active,
+.content-header-primary-cta [class*=button]:focus,
+.content-header-primary-cta [class*=button]:hover,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover {
   background-color: var(--action-color-alt);
 }
 
-.v-hero .v-hero-primary-cta [class*=button],
+.content-header-primary-cta [class*=button],
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
   background-color: var(--action-color);
 }
@@ -356,9 +358,7 @@ input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):
 textarea:active,
 textarea:focus,
 select:active,
-select:focus,
-.wp-block-quote,
-.wp-block-pullquote {
+select:focus {
   border-color: var(--action-color);
 }
 
@@ -499,7 +499,7 @@ cite,
 .v-dark-background #site-navigation .menu-toggle {
   color: #fff;
 }
-.v-dark-background .v-hero-secondary-cta a,
+.v-dark-background .content-header-secondary-cta a,
 .v-dark-background .archive-title.content-title,
 .v-dark-background h4,
 .v-dark-background .h4,
@@ -707,79 +707,49 @@ cite,
   font-size: 0.778rem;
 }
 
-.content-header {
-  /* Hero - lives inside content header as a child of inner */
-}
-.content-header .content-title {
+.content-header .content-header-title {
   margin-bottom: 0.8rem;
 }
 @media all and (min-width: 768px) {
-  .content-header .content-title {
+  .content-header .content-header-title {
     max-width: clamp(600px, 65vw, 840px);
   }
 }
-.content-header .content-title + .content-description {
-  margin-top: 0.75rem;
-}
-.content-header .content-description {
-  max-width: clamp(580px, 50vw, 665px);
-}
-.content-header .content-description:not(:last-child) {
-  margin-bottom: clamp(1rem, 3vw, 2rem);
-}
-.content-header .content-container {
-  display: flex;
-  flex-direction: column;
-  row-gap: 2rem;
-}
-@media all and (min-width: 992px) {
-  .content-header .content-container {
-    max-width: 60%;
-  }
-}
-.content-header .v-hero.v-hero-centered {
-  text-align: center;
-}
-.content-header .v-hero.v-hero-centered .v-hero-title,
-.content-header .v-hero.v-hero-centered .v-hero-subtitle,
-.content-header .v-hero.v-hero-centered .v-hero-primary-cta,
-.content-header .v-hero.v-hero-centered .v-hero-primary-cta.wp-block-buttons .wp-block-button,
-.content-header .v-hero.v-hero-centered .v-hero-secondary-cta {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-.content-header .v-hero .v-hero-title {
-  margin-bottom: 0.8rem;
-}
-@media all and (min-width: 768px) {
-  .content-header .v-hero .v-hero-title {
-    max-width: clamp(600px, 65vw, 840px);
-  }
-}
-.content-header .v-hero .v-hero-title:last-child {
+.content-header .content-header-title:last-child {
   margin-bottom: 0;
 }
-.content-header .v-hero .v-hero-title + .v-hero-primary-cta, .content-header .v-hero .v-hero-title + .v-hero-secondary-cta {
-  margin-top: clamp(2rem, 8vw, 6rem);
+.content-header .content-header-title + .content-header-primary-cta, .content-header .content-header-title + .content-header-secondary-cta {
+  margin-top: clamp(2rem, 4vw, 3rem);
 }
-.content-header .v-hero .v-hero-subtitle {
+.content-header .content-header-title + .content-header-description {
+  margin-top: 0.75rem;
+}
+.content-header .content-header-description {
   max-width: clamp(580px, 50vw, 665px);
 }
-.content-header .v-hero .v-hero-subtitle:not(:last-child) {
+.content-header .content-header-description:not(:last-child) {
   margin-bottom: clamp(1rem, 3vw, 2rem);
 }
-.content-header .v-hero .v-hero-primary-cta {
+.content-header .content-header-primary-cta {
   margin-bottom: clamp(8px, 0.8vw, 12px);
   max-width: 665px;
 }
-.content-header .v-hero .v-hero-primary-cta.wp-block-buttons {
+.content-header .content-header-primary-cta.wp-block-buttons {
   margin-bottom: clamp(8px, 0.8vw, 12px);
 }
-.content-header .v-hero .v-hero-secondary-cta {
+.content-header .content-header-secondary-cta {
   font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 500;
   font-size: 0.889rem;
+}
+.content-header.v-text-align-center .content-header-title,
+.content-header.v-text-align-center .content-header-description,
+.content-header.v-text-align-center .content-header-primary-cta,
+.content-header.v-text-align-center .content-header-primary-cta.wp-block-buttons .wp-block-button,
+.content-header.v-text-align-center .content-header-secondary-cta {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .single .content-header .content-title {
@@ -805,11 +775,11 @@ cite,
   text-transform: none;
 }
 
-.no-sidebar .content-header {
+.no-sidebar:not(.front-page) .content-header {
   text-align: center;
 }
-.no-sidebar .content-header .content-title,
-.no-sidebar .content-header .content-description {
+.no-sidebar:not(.front-page) .content-header .content-header-title,
+.no-sidebar:not(.front-page) .content-header .content-header-description {
   margin-left: auto;
   margin-right: auto;
 }
