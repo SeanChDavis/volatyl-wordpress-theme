@@ -18,7 +18,7 @@ class Volatyl_Customizer_HTML extends WP_Customize_Control {
 }
 
 /**
- * Extends controls class to add textarea with description
+ * Extends controls class to add a textarea with a description
  */
 class Volatyl_WP_Customize_Textarea_Control extends WP_Customize_Control {
 	public $type = 'textarea';
@@ -44,7 +44,7 @@ class Volatyl_WP_Customize_Textarea_Control extends WP_Customize_Control {
 }
 
 /**
- * Extends controls class to add text field with description
+ * Extends controls class to add a text field with a description
  */
 class Volatyl_WP_Customize_Text_Control extends WP_Customize_Control {
 	public $type = 'text';

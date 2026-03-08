@@ -1,4 +1,12 @@
-<?php // Full site head and opening body/page markup ?>
+<?php // Full site head and opening body/page markup
+
+// get args passed to header for the site-header template part
+if ( ! isset( $args ) ) {
+	$args = array(
+			'is_dark' => false,
+	);
+}
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -10,4 +18,4 @@
 	<?php wp_body_open(); ?>
 	<div id="page-container">
 		<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'volatyl' ); ?></a>
-		<?php get_template_part( 'template-parts/site', 'header' ); ?>
+		<?php get_template_part( 'template-parts/site', 'header', $args ); ?>

@@ -25,7 +25,7 @@ if ( is_search() ) {
 		<?php if ( ! is_search() ) { ?>
 			<figure class="v-grid-item-media v-padding-0 v-margin-0">
 				<?php if ( has_post_thumbnail( $the_post_id ) ) { ?>
-					<a href="<?php echo get_permalink( $the_post_id ); ?>"><?php echo get_the_post_thumbnail( $the_post_id, 'v-grid-item-media_large' ); ?></a>
+					<a href="<?php echo get_permalink( $the_post_id ); ?>" aria-hidden="true" tabindex="-1"><?php echo get_the_post_thumbnail( $the_post_id, 'v-grid-item-media_large' ); ?></a>
 				<?php } ?>
 			</figure>
 		<?php } ?>

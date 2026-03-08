@@ -1,5 +1,9 @@
 <?php // Default front page of the site, intelligently display basic information
-get_header();
+get_header( null,
+		array(
+				'is_dark' => get_theme_mod( 'volatyl_front_page_hero_dark', 0 ),
+		)
+);
 
 // Determine the hero title based on theme settings and site information
 $custom_hero_title     = get_theme_mod( 'volatyl_front_page_hero_title' );
@@ -16,19 +20,41 @@ if ( get_theme_mod( 'volatyl_front_page_hero_use_custom_title' ) && ! empty( $cu
 		 * Build the hero (content header) section arguments
 		 */
 		get_template_part( 'template-parts/content', 'header', array(
-			'title'         => $front_page_hero_title,
-			'description'   => get_theme_mod( 'volatyl_front_page_hero_description', '' ),
-			'alignment'     => get_theme_mod( 'volatyl_front_page_hero_centered', 0 ),
-			'primary_cta'   => array(
-					'url'  => get_theme_mod( 'volatyl_front_page_hero_primary_cta_button_url', '' ),
-					'text' => get_theme_mod( 'volatyl_front_page_hero_primary_cta_button_text', '' ),
-			),
-			'secondary_cta' => array(
-					'url'  => get_theme_mod( 'volatyl_front_page_hero_secondary_cta_button_url', '' ),
-					'text' => get_theme_mod( 'volatyl_front_page_hero_secondary_cta_button_text', '' ),
-			),
-			'is_dark'       => volatyl_dark_header_hero_background(),
+				'title'         => $front_page_hero_title,
+				'description'   => get_theme_mod( 'volatyl_front_page_hero_description', '' ),
+				'alignment'     => get_theme_mod( 'volatyl_front_page_hero_centered', 0 ),
+				'primary_cta'   => array(
+						'url'  => get_theme_mod( 'volatyl_front_page_hero_primary_cta_button_url', '' ),
+						'text' => get_theme_mod( 'volatyl_front_page_hero_primary_cta_button_text', '' ),
+				),
+				'secondary_cta' => array(
+						'url'  => get_theme_mod( 'volatyl_front_page_hero_secondary_cta_button_url', '' ),
+						'text' => get_theme_mod( 'volatyl_front_page_hero_secondary_cta_button_text', '' ),
+				),
+				'is_dark'       => get_theme_mod( 'volatyl_front_page_hero_dark', 0 ),
 		) );
+
+		/**
+		 * General front page content from post_content
+		 */
+		if ( have_posts() && get_theme_mod( 'volatyl_front_page_display_post_content' ) ) :
+			while ( have_posts() ) :
+				the_post();
+				?>
+				<section class="front-page-post-content">
+					<?php
+					if ( get_theme_mod( 'volatyl_front_page_full_width_content' ) ) {
+						get_template_part( 'content/content', 'page' );
+					} else {
+						echo '<div class="inner">';
+						get_template_part( 'content/content', 'page' );
+						echo '</div>';
+					}
+					?>
+				</section>
+				<?php
+			endwhile;
+		endif;
 
 		/**
 		 * Display the blog posts grid if enabled in theme settings
@@ -43,14 +69,15 @@ if ( get_theme_mod( 'volatyl_front_page_hero_use_custom_title' ) && ! empty( $cu
 			$blog_grid_columns    = (int) substr( $blog_grid_value, 0, 1 );
 		}
 		$recent_posts = wp_get_recent_posts( array(
-			'numberposts' => $blog_grid_post_count,
-			'post_status' => 'publish'
+				'numberposts' => $blog_grid_post_count,
+				'post_status' => 'publish'
 		) );
 		if ( ! empty( $recent_posts ) ) {
 			?>
 			<section class="blog-posts-featured">
-				<div class="inner v-small">
-					<span class="v-subdued-title v-margin-bottom-2"><?php echo __( 'From the blog', 'volatyl' ); ?></span>
+				<div class="inner">
+					<span class="v-subdued-title v-margin-bottom-2"><?php echo __( 'From the blog',
+								'volatyl' ); ?></span>
 					<div class="v-grid v-grid-columns_<?php echo $blog_grid_columns; ?>">
 						<?php
 						foreach ( $recent_posts as $post ) {
@@ -71,17 +98,17 @@ if ( get_theme_mod( 'volatyl_front_page_hero_use_custom_title' ) && ! empty( $cu
 		if ( false !== get_post_status( $featured_page_id ) && ! empty( $featured_page_id ) ) {
 			$featured_page = get_post( $featured_page_id );
 			?>
-			<section class="featured-page v-gray-background">
-				<div class="inner v-small">
+			<article class="featured-page v-gray-background">
+				<div class="inner v-medium">
 					<div class="v-grid v-grid-columns_2">
-						<div class="content-left">
-							<span class="section-title h3">
+						<header class="content-left">
+							<h1 class="section-title h3">
 								<?php echo $featured_page->post_title; ?>
-							</span>
+							</h1>
 							<?php if ( ! empty( $featured_page->post_excerpt ) ) { ?>
 								<p class="section-description v-margin-bottom-3"><?php echo $featured_page->post_excerpt; ?></p>
 							<?php } ?>
-						</div>
+						</header>
 						<div class="content-right">
 							<div class="section-content">
 								<?php echo $featured_page->post_content; ?>
@@ -89,7 +116,7 @@ if ( get_theme_mod( 'volatyl_front_page_hero_use_custom_title' ) && ! empty( $cu
 						</div>
 					</div>
 				</div>
-			</section>
+			</article>
 			<?php
 		}
 		?>

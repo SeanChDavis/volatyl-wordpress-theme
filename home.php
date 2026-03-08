@@ -4,11 +4,11 @@ get_header();
 
 	<main id="main">
 		<?php get_template_part( 'template-parts/content', 'header' ); ?>
-		<div class="inner v-small">
+		<div class="inner">
 			<?php
 			if ( have_posts() ) :
 				?>
-				<span class="v-subdued-title v-margin-bottom-2"><?php _e( 'Most recently published', 'volatyl' ); ?></span>
+				<span class="v-subdued-title v-margin-bottom-2"><?php _e( 'Read the blog', 'volatyl' ); ?></span>
 				<div class="v-margin-bottom-4">
 					<?php
 					$blog_grid_value = get_theme_mod( 'volatyl_blog_posts_grid_columns_rows', '3_3' );

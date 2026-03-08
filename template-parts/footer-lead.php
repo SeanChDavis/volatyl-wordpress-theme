@@ -3,10 +3,15 @@ $volatyl_footer_lead_title           = get_theme_mod( 'volatyl_footer_lead_title
 $volatyl_footer_lead_description     = get_theme_mod( 'volatyl_footer_lead_description' );
 $volatyl_footer_lead_cta_button_url  = get_theme_mod( 'volatyl_footer_lead_cta_button_url' );
 $volatyl_footer_lead_cta_button_text = get_theme_mod( 'volatyl_footer_lead_cta_button_text' );
+
+$footer_lead_color_scheme = 'v-gray-background';
+if ( get_theme_mod( 'volatyl_footer_lead_color_scheme' ) ) {
+	$footer_lead_color_scheme = 'v-dark-background';
+}
 ?>
 
-<div class="footer-lead v-dark-background">
-	<div class="inner v-small">
+<div class="footer-lead <?php echo $footer_lead_color_scheme; ?>">
+	<div class="inner">
 		<div class="footer-lead-cta v-grid v-grid-columns_2">
 			<?php if ( $volatyl_footer_lead_title || $volatyl_footer_lead_description ) { ?>
 				<div class="cta-content">
@@ -14,7 +19,7 @@ $volatyl_footer_lead_cta_button_text = get_theme_mod( 'volatyl_footer_lead_cta_b
 						<span class="h3 cta-title"><?php echo $volatyl_footer_lead_title; ?></span>
 					<?php } ?>
 					<?php if ( $volatyl_footer_lead_description ) { ?>
-						<p><?php echo $volatyl_footer_lead_description; ?></p>
+						<p class="cta-description"><?php echo $volatyl_footer_lead_description; ?></p>
 					<?php } ?>
 				</div>
 			<?php } ?>

@@ -92,7 +92,7 @@ $wp_customize->add_control( 'volatyl_color_scheme_type', array(
 	'section'  => 'volatyl_color_scheme',
 	'priority' => 210,
 	'label'    => __( 'Select a color scheme type', 'volatyl' ),
-	'type'     => 'select',
+	'type'     => 'radio',
 	'choices'  => array(
 		'monochromatic' => __( 'Monochromatic', 'volatyl' ),
 		'complementary' => __( 'Complementary', 'volatyl' ),
@@ -157,13 +157,7 @@ $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'vola
 	'label'           => __( 'Light logo', 'volatyl' ),
 	'description'     => __( 'Upload a light version of your logo to display over the dark header background.', 'volatyl' ),
 	'mime_type'       => 'image',
-	'active_callback' => function ( $control ) {
-		if ( $control->manager->get_setting( 'volatyl_front_page_hero_dark' )->value() === 1 ) {
-			return true;
-		} else {
-			return false;
-		}
-	},
+	'active_callback' => 'volatyl_display_front_page_hero_dark_settings',
 ) ) );
 
 // Hero alignment
@@ -200,13 +194,7 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_custo
 	'priority'    => 40,
 	'label'       => __( 'Title', 'volatyl' ),
 	'description' => __( 'By default, your WordPress site tagline is used as the front page hero title. You have selected to override that title with this custom text. This text will not change your WordPress site tagline. Uncheck the custom title setting to fall back to the site tagline.', 'volatyl' ),
-	'active_callback' => function ( $control ) {
-		if ( $control->manager->get_setting( 'volatyl_front_page_hero_use_custom_title' )->value() === 1 ) {
-			return true;
-		} else {
-			return false;
-		}
-	},
+	'active_callback' => 'volatyl_display_front_page_hero_title_settings'
 ) ) );
 
 // Hero description
@@ -268,6 +256,43 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 	'label'       => __( 'Secondary call-to-action URL', 'volatyl' ),
 	'description' => __( 'Set the URL of the secondary call-to-action link.', 'volatyl' ),
 ) ) );
+
+// Page content area
+$wp_customize->add_setting( 'volatyl_front_page_content_area', array(
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
+) );
+$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_front_page_content_area', array(
+	'section'     => 'volatyl_front_page_template',
+	'priority'    => 95,
+	'label'       => __( 'Page Content Area', 'volatyl' ),
+	'description' => __( 'The following settings apply to the content from the page editor.', 'volatyl' ),
+) ) );
+
+// Display post_content
+$wp_customize->add_setting( 'volatyl_front_page_display_post_content', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox'
+) );
+$wp_customize->add_control( 'volatyl_front_page_display_post_content', array(
+	'section'  => 'volatyl_front_page_template',
+	'priority' => 96,
+	'label'    => __( 'Display page editor content below hero', 'volatyl' ),
+	'type'     => 'checkbox',
+) );
+
+// Full-width post_content
+$wp_customize->add_setting( 'volatyl_front_page_full_width_content', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox'
+) );
+$wp_customize->add_control( 'volatyl_front_page_full_width_content', array(
+	'section'  => 'volatyl_front_page_template',
+	'priority' => 97,
+	'label'    => __( 'Allow full-width content', 'volatyl' ),
+	'description' => __( 'By default, content from the editor will be wrapped in a single page section. Check this box to remove that wrapper, allowing you to use the Group Block to create several page sections.', 'volatyl' ),
+	'type'     => 'checkbox',
+	'active_callback' => 'volatyl_display_front_page_post_content_settings',
+) );
 
 // Blog settings area
 $wp_customize->add_setting( 'volatyl_front_page_blog_settings', array(
@@ -527,6 +552,19 @@ $wp_customize->add_control( 'volatyl_footer_lead', array(
 	'type'        => 'checkbox',
 ) );
 
+// Footer Lead color scheme
+$wp_customize->add_setting( 'volatyl_footer_lead_color_scheme', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox'
+) );
+$wp_customize->add_control( 'volatyl_footer_lead_color_scheme', array(
+	'section'         => 'volatyl_footer_areas',
+	'priority'        => 15,
+	'label'           => __( 'Enable dark Footer Lead', 'volatyl' ),
+	'type'            => 'checkbox',
+	'active_callback' => 'volatyl_display_footer_lead_settings',
+) );
+
 // Footer Lead title
 $wp_customize->add_setting( 'volatyl_footer_lead_title', array(
 	'default'           => NULL,
@@ -578,6 +616,29 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 	'description'     => __( 'Set the URL of the call-to-action button.', 'volatyl' ),
 	'active_callback' => 'volatyl_display_footer_lead_settings',
 ) ) );
+
+// Footer general area
+$wp_customize->add_setting( 'volatyl_footer_general_area', array(
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
+) );
+$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_footer_general_area', array(
+	'section'     => 'volatyl_footer_areas',
+	'priority'    => 55,
+	'label'       => __( 'General Footer Area', 'volatyl' ),
+	'description' => __( 'These settings pertain to the Fat Footer, Social Navigation, and Copyright areas.', 'volatyl' ),
+) ) );
+
+// Footer general color scheme
+$wp_customize->add_setting( 'volatyl_footer_general_color_scheme', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox'
+) );
+$wp_customize->add_control( 'volatyl_footer_general_color_scheme', array(
+	'section'         => 'volatyl_footer_areas',
+	'priority'        => 56,
+	'label'           => __( 'Enable dark background', 'volatyl' ),
+	'type'            => 'checkbox',
+) );
 
 // Fat Footer area
 $wp_customize->add_setting( 'volatyl_fat_footer_area', array(

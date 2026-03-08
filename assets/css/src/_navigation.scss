@@ -358,6 +358,7 @@
 .posts-navigation {
 
 	.nav-links {
+		@include headingFont;
 		@include fontSmaller;
 		display: flex;
 		gap: 1rem;

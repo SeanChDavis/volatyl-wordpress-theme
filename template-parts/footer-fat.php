@@ -3,10 +3,15 @@ $fat_footer_classes = array( 'fat-footer-areas', 'v-grid', 'v-padding-top-0' );
 if ( 1 == get_theme_mod( 'volatyl_fat_footer_alternate_layout', 0 ) ) {
 	$fat_footer_classes[] = 'alternate-layout';
 }
+
+$footer_general_color_scheme = 'v-gray-background';
+if ( get_theme_mod( 'volatyl_footer_general_color_scheme' ) ) {
+	$footer_general_color_scheme = 'v-dark-background';
+}
 ?>
 
-<div class="fat-footer v-gray-background">
-	<div class="inner v-small">
+<div class="fat-footer <?php echo $footer_general_color_scheme; ?>">
+	<div class="inner">
 		<div class="<?php echo implode( ' ', $fat_footer_classes ); ?>">
 			<?php
 			$fat_footer_areas = array(

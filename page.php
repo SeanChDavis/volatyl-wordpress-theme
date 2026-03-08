@@ -3,12 +3,8 @@ get_header();
 ?>
 
 	<main id="main">
-		<?php
-		if ( ! empty( get_the_title() ) ) {
-			get_template_part( 'template-parts/content', 'header' );
-		}
-		?>
-		<div class="inner v-small">
+		<?php get_template_part( 'template-parts/content', 'header' ); ?>
+		<div class="inner">
 			<div class="main-content-wrap">
 				<div id="primary-content">
 					<?php

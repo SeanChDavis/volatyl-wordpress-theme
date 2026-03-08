@@ -1,5 +1,13 @@
 <?php // The main site header
-$is_dark = volatyl_dark_header_hero_background();
+
+// get args passed to site-header through the header template
+if ( ! isset( $args ) ) {
+	$args = array(
+			'is_dark' => false,
+	);
+}
+
+$is_dark = isset( $args['is_dark'] ) && $args['is_dark'];
 $light_logo_atts = array();
 if ( $is_dark ) {
 	$light_logo_atts = wp_get_attachment_image_src( get_theme_mod( 'volatyl_front_page_hero_light_logo' ) );
@@ -16,7 +24,7 @@ if ( $is_dark ) {
 					$blog_name = get_bloginfo( 'name' );
 					if ( $is_dark && ! empty( $light_logo_atts[0] ) ) {
 						?>
-						<a href="<?php echo $home_url; ?>" class="custom-logo-link" rel="home"><img src="<?php echo $light_logo_atts[0]; ?>" class="custom-logo" alt="<?php echo $blog_name; ?>"></a>
+						<a href="<?php echo $home_url; ?>" class="custom-logo-link" rel="home"><img src="<?php echo $light_logo_atts[0]; ?>" class="custom-logo"></a>
 						<?php
 					} else {
 						if ( has_custom_logo() ) {

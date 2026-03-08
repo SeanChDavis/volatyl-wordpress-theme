@@ -101,18 +101,30 @@ article,
 
 				.post-thumbnail {
 
-					@media all and (min-width: $mdMinWidth) {
-						margin-left: -3rem;
-						margin-right: -3rem;
-					}
-
-					@media all and (min-width: $lgMinWidth) {
-						margin-left: -4rem;
-						margin-right: -4rem;
-					}
-
 					img {
 						border-radius: 10px;
+					}
+				}
+			}
+		}
+
+		&.no-sidebar {
+
+			article {
+
+				.entry-header {
+
+					.post-thumbnail {
+
+						@media all and (min-width: $mdMinWidth) {
+							margin-left: -3rem;
+							margin-right: -3rem;
+						}
+
+						@media all and (min-width: $lgMinWidth) {
+							margin-left: -4rem;
+							margin-right: -4rem;
+						}
 					}
 				}
 			}

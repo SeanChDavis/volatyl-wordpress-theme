@@ -9,18 +9,18 @@ if ( isset( $args ) ) {
 	$args = wp_parse_args(
 			$args,
 			array(
-					'title'         => ! empty( $args['title'] ) ? $args['title'] : get_the_title(),
-					'description'   => ! empty( $args['description'] ) ? $args['description'] : '',
-					'is_centered'   => isset( $args['alignment'] ) && 1 === $args['alignment'] ? 1 : 0,
-					'primary_cta'   => array(
+					'title'           => ! empty( $args['title'] ) ? $args['title'] : get_the_title(),
+					'description'     => ! empty( $args['description'] ) ? $args['description'] : '',
+					'is_centered'     => isset( $args['alignment'] ) && 1 === $args['alignment'] ? 1 : 0,
+					'primary_cta'     => array(
 							'text' => '',
 							'url'  => '',
 					),
-					'secondary_cta' => array(
+					'secondary_cta'   => array(
 							'text' => '',
 							'url'  => '',
 					),
-					'is_dark'       => false,
+					'is_dark'         => false,
 					'has_search_form' => false,
 			)
 	);
@@ -39,7 +39,7 @@ if ( isset( $args['is_centered'] ) && $args['is_centered'] ) {
 ?>
 
 <section class="<?php echo $content_header_classes; ?>">
-	<div class="inner v-small">
+	<div class="inner">
 		<?php
 		if ( is_front_page() && ! is_home() ) {
 			?>
@@ -71,7 +71,9 @@ if ( isset( $args['is_centered'] ) && $args['is_centered'] ) {
 				<p class="content-header-description"><?php echo get_theme_mod( 'volatyl_blog_description' ); ?></p>
 			<?php } ?>
 			<?php if ( get_theme_mod( 'volatyl_blog_search_form', 0 ) ) { ?>
-				<?php get_search_form(); ?>
+				<div class="content-header-search-form">
+					<?php get_search_form(); ?>
+				</div>
 			<?php } ?>
 			<?php
 		} elseif ( is_page() ) {
@@ -90,9 +92,9 @@ if ( isset( $args['is_centered'] ) && $args['is_centered'] ) {
 		} elseif ( is_search() ) {
 			?>
 			<h1 class="content-header-title">
-						<span class="v-subdued-title v-large">
-							<?php printf( esc_html__( 'Search results for:', 'volatyl' ) ); ?>
-						</span>
+				<span class="v-subdued-title v-large">
+					<?php printf( esc_html__( 'Search results for:', 'volatyl' ) ); ?>
+				</span>
 				<?php echo esc_html( get_search_query() ); ?>
 			</h1>
 			<?php
@@ -118,9 +120,12 @@ if ( isset( $args['is_centered'] ) && $args['is_centered'] ) {
 			<?php
 		}
 
-		// Display the search form if enabled in theme settings and not already displayed for the blog page.
-		if ( $args['has_search_form'] ) {
+		// Display the search form if the args say to, and we're not on the blog page
+		// that has its own search form display logic.
+		if ( $args['has_search_form'] && ! is_home() ) {
+			echo '<div class="content-header-search-form">';
 			get_search_form();
+			echo '</div>';
 		}
 		?>
 	</div>

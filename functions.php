@@ -61,6 +61,7 @@ function volatyl_setup() {
 		'style',
 		'script',
 		'navigation-widgets',
+		'search-form',
 	) );
 
 	// Add support for custom logo

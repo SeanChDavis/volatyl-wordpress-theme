@@ -22,7 +22,7 @@ add_filter( 'excerpt_length', 'volatyl_excerpt_length', 999 );
  * @return string
  */
 function volatyl_excerpt_more( $more ) {
-	return ' [<a class="hellip-link" href="' . get_the_permalink() . '">...</a>]';
+	return ' [...]';
 }
 add_filter( 'excerpt_more', 'volatyl_excerpt_more' );
 

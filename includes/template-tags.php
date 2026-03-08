@@ -1,19 +1,5 @@
 <?php // Bits of markup used throughout the theme
 
-// Check for a dark header/hero
-if ( ! function_exists( 'volatyl_dark_header_hero_background' ) ) :
-
-	function volatyl_dark_header_hero_background(): bool {
-
-		// Front page
-		if ( is_front_page() && get_theme_mod( 'volatyl_front_page_hero_dark', 0 ) ) {
-			return true;
-		}
-
-		return false;
-	}
-endif;
-
 // The current post date and time
 if ( ! function_exists( 'volatyl_posted_on' ) ) :
 
@@ -97,11 +83,13 @@ if ( ! function_exists( 'volatyl_entry_footer' ) ) :
 			}
 		}
 
-		edit_post_link( sprintf( wp_kses( /* translators: %s: Name of current post. Only visible to screen readers */ __( 'Edit <span class="screen-reader-text">%s</span>', 'volatyl' ), array(
-			'span' => array(
-				'class' => array(),
-			),
-		) ), wp_kses_post( get_the_title() ) ), '<span class="edit-link">', '</span>' );
+		if ( ! is_front_page() ) {
+			edit_post_link( sprintf( wp_kses( /* translators: %s: Name of current post. Only visible to screen readers */ __( 'Edit <span class="screen-reader-text">%s</span>', 'volatyl' ), array(
+					'span' => array(
+							'class' => array(),
+					),
+			) ), wp_kses_post( get_the_title() ) ), '<span class="edit-link">', '</span>' );
+		}
 	}
 endif;
 

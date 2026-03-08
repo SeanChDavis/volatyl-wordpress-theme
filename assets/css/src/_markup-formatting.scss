@@ -508,6 +508,10 @@ figure {
 	& > label {
 		@include fontSmaller;
 	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 .wp-block-buttons {

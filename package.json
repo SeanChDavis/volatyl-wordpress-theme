@@ -12,10 +12,11 @@
     "grunt": "^1.6.1"
   },
   "dependencies": {
-    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-concat": "^2.1.0",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-sass": "^2.0.0",
     "grunt-contrib-uglify": "^5.2.2",
-    "grunt-contrib-watch": "^1.1.0"
+    "grunt-contrib-watch": "^1.1.0",
+    "normalize.css": "^8.0.1"
   }
 }

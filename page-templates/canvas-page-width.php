@@ -6,7 +6,7 @@ get_header();
 ?>
 
 	<main id="main">
-		<div class="inner v-small">
+		<div class="inner">
 			<?php
 			if ( have_posts() ) :
 				while ( have_posts() ) :
