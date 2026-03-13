@@ -1,0 +1,808 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+img {
+  border-style: none;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, [type=button], [type=reset], [type=submit] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=checkbox], [type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+/* Min-width breakpoints */
+/* Heading font */
+/* Body font */
+/* Base font size - All font size variants are relative to this via rem */
+/* Base line height */
+/* Font size modifiers */
+/* HTML structure spacing */
+/* Margin */
+.v-margin-top-0 {
+  margin-top: 0;
+}
+
+.v-margin-top-1 {
+  margin-top: 0.5rem;
+}
+
+.v-margin-top-2 {
+  margin-top: 1rem;
+}
+
+.v-margin-top-3 {
+  margin-top: 1.5rem;
+}
+
+.v-margin-top-4 {
+  margin-top: 2rem;
+}
+
+.v-margin-top-5 {
+  margin-top: 2.5rem;
+}
+
+.v-margin-top-6 {
+  margin-top: 3rem;
+}
+
+.v-margin-right-0 {
+  margin-right: 0;
+}
+
+.v-margin-right-1 {
+  margin-right: 0.5rem;
+}
+
+.v-margin-right-2 {
+  margin-right: 1rem;
+}
+
+.v-margin-right-3 {
+  margin-right: 1.5rem;
+}
+
+.v-margin-right-4 {
+  margin-right: 2rem;
+}
+
+.v-margin-right-5 {
+  margin-right: 2.5rem;
+}
+
+.v-margin-right-6 {
+  margin-right: 3rem;
+}
+
+.v-margin-bottom-0 {
+  margin-bottom: 0;
+}
+
+.v-margin-bottom-1 {
+  margin-bottom: 0.5rem;
+}
+
+.v-margin-bottom-2 {
+  margin-bottom: 1rem;
+}
+
+.v-margin-bottom-3 {
+  margin-bottom: 1.5rem;
+}
+
+.v-margin-bottom-4 {
+  margin-bottom: 2rem;
+}
+
+.v-margin-bottom-5 {
+  margin-bottom: 2.5rem;
+}
+
+.v-margin-bottom-6 {
+  margin-bottom: 3rem;
+}
+
+.v-margin-bottom-0 {
+  margin-bottom: 0;
+}
+
+.v-margin-left-1 {
+  margin-left: 0.5rem;
+}
+
+.v-margin-left-2 {
+  margin-left: 1rem;
+}
+
+.v-margin-left-3 {
+  margin-left: 1.5rem;
+}
+
+.v-margin-left-4 {
+  margin-left: 2rem;
+}
+
+.v-margin-left-5 {
+  margin-left: 2.5rem;
+}
+
+.v-margin-left-6 {
+  margin-left: 3rem;
+}
+
+.v-margin-x-0 {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.v-margin-x-1 {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.v-margin-x-2 {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.v-margin-x-3 {
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.v-margin-x-4 {
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.v-margin-x-5 {
+  margin-right: 2.5rem;
+  margin-left: 2.5rem;
+}
+
+.v-margin-x-6 {
+  margin-right: 3rem;
+  margin-left: 3rem;
+}
+
+.v-margin-y-0 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.v-margin-y-1 {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.v-margin-y-2 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.v-margin-y-3 {
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.v-margin-y-4 {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.v-margin-y-5 {
+  margin-bottom: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.v-margin-y-6 {
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+.v-margin-0 {
+  margin: 0;
+}
+
+.v-margin-1 {
+  margin: 0.5rem;
+}
+
+.v-margin-2 {
+  margin: 1rem;
+}
+
+.v-margin-3 {
+  margin: 1.5rem;
+}
+
+.v-margin-4 {
+  margin: 2rem;
+}
+
+.v-margin-5 {
+  margin: 2.5rem;
+}
+
+.v-margin-6 {
+  margin: 3rem;
+}
+
+/* Padding */
+.v-padding-top-0 {
+  padding-top: 0;
+}
+
+.v-padding-top-1 {
+  padding-top: 0.5rem;
+}
+
+.v-padding-top-2 {
+  padding-top: 1rem;
+}
+
+.v-padding-top-3 {
+  padding-top: 1.5rem;
+}
+
+.v-padding-top-4 {
+  padding-top: 2rem;
+}
+
+.v-padding-top-5 {
+  padding-top: 2.5rem;
+}
+
+.v-padding-top-6 {
+  padding-top: 3rem;
+}
+
+.v-padding-right-0 {
+  padding-right: 0;
+}
+
+.v-padding-right-1 {
+  padding-right: 0.5rem;
+}
+
+.v-padding-right-2 {
+  padding-right: 1rem;
+}
+
+.v-padding-right-3 {
+  padding-right: 1.5rem;
+}
+
+.v-padding-right-4 {
+  padding-right: 2rem;
+}
+
+.v-padding-right-5 {
+  padding-right: 2.5rem;
+}
+
+.v-padding-right-6 {
+  padding-right: 3rem;
+}
+
+.v-padding-bottom-0 {
+  padding-bottom: 0;
+}
+
+.v-padding-bottom-1 {
+  padding-bottom: 0.5rem;
+}
+
+.v-padding-bottom-2 {
+  padding-bottom: 1rem;
+}
+
+.v-padding-bottom-3 {
+  padding-bottom: 1.5rem;
+}
+
+.v-padding-bottom-4 {
+  padding-bottom: 2rem;
+}
+
+.v-padding-bottom-5 {
+  padding-bottom: 2.5rem;
+}
+
+.v-padding-bottom-6 {
+  padding-bottom: 3rem;
+}
+
+.v-padding-left-0 {
+  padding-left: 0;
+}
+
+.v-padding-left-1 {
+  padding-left: 0.5rem;
+}
+
+.v-padding-left-2 {
+  padding-left: 1rem;
+}
+
+.v-padding-left-3 {
+  padding-left: 1.5rem;
+}
+
+.v-padding-left-4 {
+  padding-left: 2rem;
+}
+
+.v-padding-left-5 {
+  padding-left: 2.5rem;
+}
+
+.v-padding-left-6 {
+  padding-left: 3rem;
+}
+
+.v-padding-x-0 {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.v-padding-x-1 {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.v-padding-x-2 {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.v-padding-x-3 {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.v-padding-x-4 {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.v-padding-x-5 {
+  padding-right: 2.5rem;
+  padding-left: 2.5rem;
+}
+
+.v-padding-x-6 {
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+
+.v-padding-y-0 {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.v-padding-y-1 {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.v-padding-y-2 {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.v-padding-y-3 {
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.v-padding-y-4 {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.v-padding-y-5 {
+  padding-bottom: 2.5rem;
+  padding-top: 2.5rem;
+}
+
+.v-padding-y-6 {
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+
+.v-padding-0 {
+  padding: 0;
+}
+
+.v-padding-1 {
+  padding: 0.5rem;
+}
+
+.v-padding-2 {
+  padding: 1rem;
+}
+
+.v-padding-3 {
+  padding: 1.5rem;
+}
+
+.v-padding-4 {
+  padding: 2rem;
+}
+
+.v-padding-5 {
+  padding: 2.5rem;
+}
+
+.v-padding-6 {
+  padding: 3rem;
+}
+
+.v-no-spacing {
+  margin: 0;
+  padding: 0;
+}
+
+/* Helper */
+.v-subdued-title {
+  font-size: 0.778rem;
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
+  display: block;
+  text-transform: uppercase;
+}
+
+.v-subdued-link-container a {
+  font-size: 0.889rem;
+}
+
+.v-text-align-center {
+  text-align: center;
+}
+
+.v-text-align-right {
+  text-align: right;
+}
+
+.v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
+.v-dark-background textarea,
+.v-dark-background .v-dark-background table,
+.v-dark-background .v-dark-background table th,
+.v-dark-background .v-dark-background table td {
+  border-style: solid;
+  border-width: 2px;
+}
+
+/* Editor-generated classes */
+/* Primary color classes */
+.has-primary-color {
+  color: hsl(var(--primary-hue), var(--global-hue-saturation), 50%);
+}
+
+.has-primary-background-color {
+  background-color: hsl(var(--primary-hue), var(--global-hue-saturation), 50%);
+}
+
+.has-primary-dark-color {
+  color: var(--primary-hue_dark);
+}
+
+.has-primary-dark-background-color {
+  background-color: var(--primary-hue_dark);
+}
+
+/* Action color classes */
+.has-action-color {
+  color: var(--action);
+}
+
+.has-action-background-color {
+  background-color: var(--action);
+}
+
+.has-action-dark-color {
+  color: var(--action-dark);
+}
+
+.has-action-dark-background-color {
+  background-color: var(--action-dark);
+}
+
+/* Accent color classes */
+.has-accent-color {
+  color: var(--accent);
+}
+
+.has-accent-background-color {
+  background-color: var(--accent);
+}
+
+.has-accent-dark-color {
+  color: var(--accent-dark);
+}
+
+.has-accent-dark-background-color {
+  background-color: var(--accent-dark);
+}
+
+/* Has extra accent color classes */
+.has-extra-accent-color {
+  color: var(--extra-accent);
+}
+
+.has-extra-accent-background-color {
+  background-color: var(--extra-accent);
+}
+
+.has-extra-accent-dark-color {
+  color: var(--extra-accent-dark);
+}
+
+.has-extra-accent-dark-background-color {
+  background-color: var(--extra-accent-dark);
+}
+
+/*
+ * Grays and background color classes
+ */
+.has-gray-color {
+  color: var(--gray-background);
+}
+
+.has-gray-background-color {
+  background-color: var(--gray-background);
+}
+
+.has-dark-color {
+  color: var(--dark-background);
+}
+
+.has-dark-background-color {
+  background-color: var(--dark-background);
+  color: var(--light-text-over-dark);
+}
+
+.has-darker-color {
+  color: var(--darker-background);
+}
+
+.has-darker-background-color {
+  background-color: var(--darker-background);
+  color: var(--light-text-over-dark);
+}
+
+.has-subdued-light-color {
+  color: var(--subdued-light);
+}
+
+.has-subdued-light-background-color {
+  background-color: var(--subdued-light);
+}
+
+.has-subdued-dark-color {
+  color: var(--subdued-dark);
+}
+
+.has-subdued-dark-background-color {
+  background-color: var(--subdued-dark);
+}
+
+.has-light-text-over-dark-color {
+  color: var(--light-text-over-dark);
+}
+
+.has-light-text-over-dark-background-color {
+  background-color: var(--light-text-over-dark);
+}
+
+/**
+ * More useful classes
+ */
+.has-white-color {
+  color: var(--white);
+}
+
+.has-white-background-color {
+  background-color: var(--white);
+}
+
+.has-translucent-light-background-color {
+  background-color: var(--translucent-light);
+}
+
+.has-translucent-dark-background-color {
+  background-color: var(--translucent-dark);
+}
+
+/**
+ * These styles are applied to the editor, separate from front-end styles.
+ */
+body {
+  /* All user-generated post_content */
+}
+body * {
+  box-sizing: border-box;
+}
+body .wp-block-post-content > [class*=wp-block-] {
+  margin: 0;
+}
+body .wp-block-post-content > [class*=wp-block-]:not(.v-no-spacing) > .wp-block-group__inner-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: calc(1200px + 1.25rem);
+  padding: clamp(2rem, 4.5vw, 3.5rem) clamp(1.25rem, 7.9vw, 6rem);
+}
+@media all and (min-width: 992px) {
+  body .wp-block-post-content > [class*=wp-block-]:not(.v-no-spacing) > .wp-block-group__inner-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+body .wp-block-post-content > [class*=wp-block-]:not(.v-no-spacing) > .wp-block-group__inner-container > [class*=wp-block-]:last-child {
+  margin-bottom: 0;
+}
+body .wp-block-post-content > [class*=wp-block-]:not(.v-no-spacing).v-small > .wp-block-group__inner-container {
+  /* Same as innerSpacing but without horizontal padding */
+}
+@media all and (min-width: 560px) {
+  body .wp-block-post-content > [class*=wp-block-]:not(.v-no-spacing).v-small > .wp-block-group__inner-container {
+    padding-bottom: clamp(2rem, 4.5vw, 3.5rem);
+    padding-top: clamp(2rem, 4.5vw, 3.5rem);
+  }
+}
+@media all and (min-width: 560px) {
+  body .wp-block-post-content > [class*=wp-block-]:not(.v-no-spacing).v-medium > .wp-block-group__inner-container {
+    padding-bottom: clamp(2rem, 7vw, 5rem);
+    padding-top: clamp(2rem, 7vw, 5rem);
+  }
+}
+@media all and (min-width: 560px) {
+  body .wp-block-post-content > [class*=wp-block-]:not(.v-no-spacing).v-large > .wp-block-group__inner-container {
+    padding-bottom: clamp(2rem, 10.5vw, 8rem);
+    padding-top: clamp(2rem, 10.5vw, 8rem);
+  }
+}
+
+/*# sourceMappingURL=editor-style.css.map */

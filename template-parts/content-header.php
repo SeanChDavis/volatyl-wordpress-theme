@@ -130,5 +130,3 @@ if ( isset( $args['is_centered'] ) && $args['is_centered'] ) {
 		?>
 	</div>
 </section>
-
-

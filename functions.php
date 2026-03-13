@@ -17,11 +17,13 @@ define( 'DEFAULT_COLOR_SCHEME_TYPE', 'analogous' );
 // Theme functions
 require_once( THEME_INCLUDES . '/helper-functions.php' );
 require_once( THEME_INCLUDES . '/body-class.php' );
+require_once( THEME_INCLUDES . '/color-schemes.php' );
 require_once( THEME_INCLUDES . '/queries.php' );
-
 require_once( THEME_INCLUDES . '/core-modifications.php' );
 require_once( THEME_INCLUDES . '/template-tags.php' );
 require_once( THEME_INCLUDES . '/widgets.php' );
+
+require_once( THEME_INCLUDES . '/gutenberg/styles.php' );
 
 require_once( THEME_INCLUDES . '/customizer/customizer.php' );
 
@@ -46,6 +48,9 @@ function volatyl_setup() {
 	add_image_size( 'v-grid-item-media_medium', 600, 300, true );
 	add_image_size( 'v-grid-item-media_large', 800, 400, true );
 	add_image_size( 'v-grid-item-media_full', 1168, 584, true );
+
+	// Add support for editor styles
+	add_theme_support( 'editor-styles' );
 
 	// Register theme nav menus
 	register_nav_menus( array(

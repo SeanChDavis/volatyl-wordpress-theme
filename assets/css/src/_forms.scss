@@ -84,3 +84,18 @@ form {
 		@include fontSmall;
 	}
 }
+
+.v-dark-background {
+
+	.button,
+	.v-button,
+	button,
+	[type="button"],
+	[type="submit"],
+	[type="reset"],
+	.comment-reply-link,
+	.wp-block-button .wp-block-button__link,
+	.wp-block-file .wp-block-file__button {
+		box-shadow: 0 0 1.5rem rgba(0, 0, 0, .1);
+	}
+}

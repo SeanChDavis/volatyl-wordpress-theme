@@ -1,0 +1,10 @@
+:root {
+	--action: hsl(var(--complementary-accent-hue) var(--global-hue-saturation) 36%);
+	--action-dark: hsl(var(--complementary-accent-hue) var(--global-hue-saturation) 27%);
+
+	--accent: hsl(var(--complementary-accent-hue) var(--global-hue-saturation) 36%);
+	--accent-dark: hsl(var(--complementary-accent-hue) var(--global-hue-saturation) 27%);
+
+	--extra-accent: hsl(var(--complementary-accent-hue) var(--global-hue-saturation) 36%);
+	--extra-accent-dark: hsl(var(--complementary-accent-hue) var(--global-hue-saturation) 27%);
+}

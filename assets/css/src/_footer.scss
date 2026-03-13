@@ -1,5 +1,9 @@
 .footer-lead {
 
+	&.v-dark-background {
+		background-color: var(--darker-background);
+	}
+
 	.footer-lead-cta {
 		display: flex;
 		flex-direction: column;

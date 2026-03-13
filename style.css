@@ -162,45 +162,6 @@ template {
 }
 
 /**
- * Set the theme color variables
- *
- * The following variables are set based on Customizer settings. They live in the
- * site <head> element for global access:
- *
- * --primary-hue
- * --global-hue-saturation
- * --dark-background-light-color-luminance
- */
-:root {
-  /* Very dark - based on the primary hue */
-  --primary-hue_dark: hsl(var(--primary-hue) var(--global-hue-saturation) 18%);
-  /* Backgrounds - based on the primary hue */
-  --gray-background: hsl(var(--primary-hue) 3% 98%);
-  --dark-background: var(--primary-hue_dark);
-  /* Subdued colors - based on the primary hue */
-  --subdued-color-light: hsl(var(--primary-hue) 10% 91%);
-  --subdued-color-dark: hsl(var(--primary-hue) 20% 38%);
-  /* Miscellaneous */
-  --dark-background-light-color: hsl(var(--primary-hue) var(--global-hue-saturation) var(--dark-background-light-color-luminance));
-  --menu-background: hsl(var(--primary-hue) var(--global-hue-saturation) 24%);
-}
-:root .monochromatic-color-scheme {
-  --action-color: hsl(var(--primary-hue) var(--global-hue-saturation) 32%);
-  --action-color-alt: hsl(var(--primary-hue) var(--global-hue-saturation) 37%);
-}
-:root .complementary-color-scheme {
-  --gray-background: hsl(var(--complementary-accent-hue) 15% 98%);
-  --action-color: hsl(var(--complementary-accent-hue) var(--global-hue-saturation) 32%);
-  --action-color-alt: hsl(var(--complementary-accent-hue) var(--global-hue-saturation) 36%);
-}
-:root .analogous-color-scheme {
-  --gray-background: hsl(var(--analogous-accent-hue_positive) 15% 98%);
-  --action-color: hsl(var(--analogous-accent-hue_negative) var(--global-hue-saturation) 32%);
-  --action-color-alt: hsl(var(--analogous-accent-hue_negative) var(--global-hue-saturation) 36%);
-  --accent-color: hsl(var(--analogous-accent-hue_positive) var(--global-hue-saturation) 32%);
-}
-
-/**
  * Control the entire theme color scheme
  */
 #page-container,
@@ -239,19 +200,21 @@ table th,
 
 body,
 .v-gray-background,
-.v-variable-background,
+.has-gray-background-color,
 .v-grid .v-grid-item-container:not(.v-subdued),
 .wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1),
-select,
 article .entry-content .wp-block-latest-comments,
-.v-content-container .entry-content .wp-block-latest-comments,
+.v-content-container .entry-content .wp-block-latest-comments {
+  background-color: var(--gray-background);
+}
+
 pre,
 dl,
 code,
 kbd,
 tt,
 var {
-  background-color: var(--gray-background);
+  background-color: var(--translucent-dark);
 }
 
 hr,
@@ -264,15 +227,15 @@ hr,
 .twitter-tweet,
 .wp-block-quote,
 .wp-block-pullquote {
-  border-color: var(--subdued-color-light);
+  border-color: var(--subdued-light);
 }
 
 #site-navigation.toggled > #primary-menu > .menu-item-has-children > a:after {
-  border-bottom-color: var(--dark-background-light-color);
+  border-bottom-color: var(--light-text-over-dark);
 }
 
 #site-navigation #primary-menu > .menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu a {
-  color: var(--dark-background-light-color);
+  color: var(--light-text-over-dark);
 }
 
 h1 a,
@@ -290,7 +253,32 @@ h5 a,
 .wp-block-calendar .wp-calendar-nav,
 [class*=wp-block-] > label,
 figure figcaption {
-  color: var(--subdued-color-dark);
+  color: var(--subdued-dark);
+}
+
+.close-menu-modal.v-button,
+#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
+  background-color: var(--action);
+}
+
+.wp-block-search[class*=button-inside] [class*=search__inside],
+.wp-block-button.is-style-outline .wp-block-button__link:active,
+.wp-block-button.is-style-outline .wp-block-button__link:focus,
+.wp-block-button.is-style-outline .wp-block-button__link:hover {
+  border-color: var(--action-dark);
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link,
+input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):active,
+input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus,
+input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus-visible,
+textarea:active,
+textarea:focus,
+textarea:focus-visible,
+select:active,
+select:focus,
+select:focus-visible {
+  border-color: var(--action);
 }
 
 .button:active,
@@ -336,78 +324,57 @@ button:hover,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover {
-  background-color: var(--action-color-alt);
-}
-
-.content-header-primary-cta [class*=button],
-#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
-  background-color: var(--action-color);
-}
-
-.wp-block-search[class*=button-inside] [class*=search__inside],
-.wp-block-button.is-style-outline .wp-block-button__link:active,
-.wp-block-button.is-style-outline .wp-block-button__link:focus,
-.wp-block-button.is-style-outline .wp-block-button__link:hover {
-  border-color: var(--action-color-alt);
-}
-
-.wp-block-button.is-style-outline .wp-block-button__link,
-input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):active,
-input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus,
-textarea:active,
-textarea:focus,
-select:active,
-select:focus {
-  border-color: var(--action-color);
+  background-color: var(--action-dark);
+  border-color: var(--action-dark);
 }
 
 a,
-.site-title a:active,
-.site-title a:focus,
-.site-title a:hover,
 h4,
 .h4,
 h6,
 .h6,
+.site-title a:active,
+.site-title a:focus,
+.site-title a:hover,
 .v-grid-item-title a:active,
 .v-grid-item-title a:focus,
 .v-grid-item-title a:hover,
-.hellip-link:active,
-.hellip-link:focus,
-.hellip-link:hover,
 .wp-block-button.is-style-outline .wp-block-button__link,
 #comments .fn a:active,
 #comments .fn a:focus,
 #comments .fn a:hover,
 #comments #respond #reply-title small #cancel-comment-reply-link {
-  color: var(--action-color);
+  color: var(--action);
 }
 
 .button,
 .v-button,
 button,
-[type=button],
-[type=submit],
-[type=reset],
 .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button,
 .comment-reply-link,
-.wp-block-search button,
 .wp-block-calendar .wp-calendar-table caption,
-#searchform #searchsubmit,
-.wp-block-search button,
-.wp-block-search[class*=button-inside] [class*=search__inside] button,
 table th,
 [class*=wp-block-] > table th,
 table th,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu,
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu,
 #site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu,
-.close-menu-modal.v-button,
 .close-menu-modal.v-button:active,
 .close-menu-modal.v-button:focus,
 .close-menu-modal.v-button:hover {
+  background-color: var(--action);
+}
+
+[type=button],
+[type=submit],
+[type=reset],
+.wp-block-search button,
+#searchform #searchsubmit,
+.wp-block-search button,
+.wp-block-search[class*=button-inside] [class*=search__inside] button {
   background-color: var(--primary-hue_dark);
+  border-color: var(--primary-hue_dark);
 }
 
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after {
@@ -439,7 +406,7 @@ table td,
 .v-grid-item-title a,
 .v-grid-item-meta,
 .v-grid-item-meta a,
-.hellip-link,
+.v-grid-item-footer a,
 .archive-title.content-header-title span,
 #comments .fn a,
 .entry-meta a,
@@ -455,9 +422,15 @@ cite,
   color: var(--primary-hue_dark);
 }
 
+#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu,
+#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu,
+#site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu {
+  background-color: var(--menu-background);
+}
+
 .v-dark-background {
   background-color: var(--dark-background);
-  color: var(--dark-background-light-color);
+  color: var(--light-text-over-dark);
 }
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after,
 .v-dark-background #site-navigation #primary-menu > .menu-item-has-children > a:after {
@@ -519,7 +492,7 @@ cite,
 .v-dark-background figure figcaption,
 .v-dark-background .wp-block-calendar .wp-calendar-nav,
 .v-dark-background [class*=wp-block-] > label {
-  color: var(--dark-background-light-color);
+  color: var(--light-text-over-dark);
 }
 .v-dark-background .button,
 .v-dark-background .v-button,
@@ -533,18 +506,7 @@ cite,
 .v-dark-background .wp-block-search button,
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a,
 .v-dark-background .wp-block-calendar .wp-calendar-table caption {
-  background-color: var(--action-color);
-}
-.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active,
-.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
-.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
-.v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):active,
-.v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus,
-.v-dark-background textarea:active,
-.v-dark-background textarea:focus,
-.v-dark-background select:active,
-.v-dark-background select:focus {
-  border-color: var(--action-color-alt);
+  background-color: var(--action);
 }
 .v-dark-background .button:active,
 .v-dark-background .button:focus,
@@ -580,13 +542,27 @@ cite,
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active,
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover {
-  background-color: var(--action-color-alt);
-  border-color: var(--action-color-alt);
+  background-color: var(--action-dark);
+  border-color: var(--action-dark);
+}
+.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active,
+.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
+.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
+.v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):active,
+.v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus,
+.v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus-visible,
+.v-dark-background textarea:active,
+.v-dark-background textarea:focus,
+.v-dark-background textarea:focus-visible,
+.v-dark-background select:active,
+.v-dark-background select:focus,
+.v-dark-background select:focus-visible {
+  border-color: var(--accent);
 }
 .v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
 .v-dark-background textarea,
 .v-dark-background select {
-  border-color: var(--action-color);
+  border-color: var(--action);
 }
 .v-dark-background table,
 .v-dark-background table th,
@@ -601,6 +577,147 @@ cite,
 /* Base line height */
 /* Font size modifiers */
 /* HTML structure spacing */
+/* Editor-generated classes */
+/* Primary color classes */
+.has-primary-color {
+  color: hsl(var(--primary-hue), var(--global-hue-saturation), 50%);
+}
+
+.has-primary-background-color {
+  background-color: hsl(var(--primary-hue), var(--global-hue-saturation), 50%);
+}
+
+.has-primary-dark-color {
+  color: var(--primary-hue_dark);
+}
+
+.has-primary-dark-background-color {
+  background-color: var(--primary-hue_dark);
+}
+
+/* Action color classes */
+.has-action-color {
+  color: var(--action);
+}
+
+.has-action-background-color {
+  background-color: var(--action);
+}
+
+.has-action-dark-color {
+  color: var(--action-dark);
+}
+
+.has-action-dark-background-color {
+  background-color: var(--action-dark);
+}
+
+/* Accent color classes */
+.has-accent-color {
+  color: var(--accent);
+}
+
+.has-accent-background-color {
+  background-color: var(--accent);
+}
+
+.has-accent-dark-color {
+  color: var(--accent-dark);
+}
+
+.has-accent-dark-background-color {
+  background-color: var(--accent-dark);
+}
+
+/* Has extra accent color classes */
+.has-extra-accent-color {
+  color: var(--extra-accent);
+}
+
+.has-extra-accent-background-color {
+  background-color: var(--extra-accent);
+}
+
+.has-extra-accent-dark-color {
+  color: var(--extra-accent-dark);
+}
+
+.has-extra-accent-dark-background-color {
+  background-color: var(--extra-accent-dark);
+}
+
+/*
+ * Grays and background color classes
+ */
+.has-gray-color {
+  color: var(--gray-background);
+}
+
+.has-gray-background-color {
+  background-color: var(--gray-background);
+}
+
+.has-dark-color {
+  color: var(--dark-background);
+}
+
+.has-dark-background-color {
+  background-color: var(--dark-background);
+  color: var(--light-text-over-dark);
+}
+
+.has-darker-color {
+  color: var(--darker-background);
+}
+
+.has-darker-background-color {
+  background-color: var(--darker-background);
+  color: var(--light-text-over-dark);
+}
+
+.has-subdued-light-color {
+  color: var(--subdued-light);
+}
+
+.has-subdued-light-background-color {
+  background-color: var(--subdued-light);
+}
+
+.has-subdued-dark-color {
+  color: var(--subdued-dark);
+}
+
+.has-subdued-dark-background-color {
+  background-color: var(--subdued-dark);
+}
+
+.has-light-text-over-dark-color {
+  color: var(--light-text-over-dark);
+}
+
+.has-light-text-over-dark-background-color {
+  background-color: var(--light-text-over-dark);
+}
+
+/**
+ * More useful classes
+ */
+.has-white-color {
+  color: var(--white);
+}
+
+.has-white-background-color {
+  background-color: var(--white);
+}
+
+.has-translucent-light-background-color {
+  background-color: var(--translucent-light);
+}
+
+.has-translucent-dark-background-color {
+  background-color: var(--translucent-dark);
+}
+
 .v-grid {
   display: grid;
   gap: clamp(1.5rem, 4vw, 3rem);
@@ -805,39 +922,6 @@ cite,
     float: right;
     margin-left: clamp(1.5rem, 3.5vw, 3rem);
   }
-}
-
-.v-subdued-title {
-  font-size: 0.778rem;
-  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-weight: 500;
-  display: block;
-  text-transform: uppercase;
-}
-
-.v-subdued-link-container a {
-  font-size: 0.889rem;
-}
-
-.v-text-align-center {
-  text-align: center;
-}
-
-.v-text-align-right {
-  text-align: right;
-}
-
-.section-footer-cta {
-  padding-top: clamp(1rem, 2.5vw, 2rem);
-}
-
-.v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
-.v-dark-background textarea,
-.v-dark-background .v-dark-background table,
-.v-dark-background .v-dark-background table th,
-.v-dark-background .v-dark-background table td {
-  border-style: solid;
-  border-width: 2px;
 }
 
 h1, .h1,
@@ -1605,9 +1689,6 @@ main {
   vertical-align: middle;
   width: 180px;
 }
-.site-header-elements .site-branding .custom-logo-link .custom-logo:active, .site-header-elements .site-branding .custom-logo-link .custom-logo:focus, .site-header-elements .site-branding .custom-logo-link .custom-logo:hover {
-  opacity: 0.7;
-}
 .site-header-elements .site-branding .site-title {
   font-size: 1rem;
   line-height: 1;
@@ -2268,6 +2349,21 @@ form select {
   font-size: 0.889rem;
 }
 
+.v-dark-background .button,
+.v-dark-background .v-button,
+.v-dark-background button,
+.v-dark-background [type=button],
+.v-dark-background [type=submit],
+.v-dark-background [type=reset],
+.v-dark-background .comment-reply-link,
+.v-dark-background .wp-block-button .wp-block-button__link,
+.v-dark-background .wp-block-file .wp-block-file__button {
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.footer-lead.v-dark-background {
+  background-color: var(--darker-background);
+}
 .footer-lead .footer-lead-cta {
   display: flex;
   flex-direction: column;
@@ -3053,10 +3149,39 @@ article:last-child .entry-footer,
   padding: 3rem;
 }
 
-/* Helper */
 .v-no-spacing {
   margin: 0;
   padding: 0;
+}
+
+/* Helper */
+.v-subdued-title {
+  font-size: 0.778rem;
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
+  display: block;
+  text-transform: uppercase;
+}
+
+.v-subdued-link-container a {
+  font-size: 0.889rem;
+}
+
+.v-text-align-center {
+  text-align: center;
+}
+
+.v-text-align-right {
+  text-align: right;
+}
+
+.v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
+.v-dark-background textarea,
+.v-dark-background .v-dark-background table,
+.v-dark-background .v-dark-background table th,
+.v-dark-background .v-dark-background table td {
+  border-style: solid;
+  border-width: 2px;
 }
 
 /*# sourceMappingURL=style.css.map */

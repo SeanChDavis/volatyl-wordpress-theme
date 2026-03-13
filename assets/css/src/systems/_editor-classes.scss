@@ -1,0 +1,120 @@
+/* Editor-generated classes */
+
+/* Primary color classes */
+.has-primary-color {
+	color: hsl(var(--primary-hue) var(--global-hue-saturation) 50%);
+}
+.has-primary-background-color {
+	background-color: hsl(var(--primary-hue) var(--global-hue-saturation) 50%);
+}
+.has-primary-dark-color {
+	color: var(--primary-hue_dark);
+}
+.has-primary-dark-background-color {
+	background-color: var(--primary-hue_dark);
+}
+
+/* Action color classes */
+.has-action-color {
+	color: var(--action);
+}
+.has-action-background-color {
+	background-color: var(--action);
+}
+.has-action-dark-color {
+	color: var(--action-dark);
+}
+.has-action-dark-background-color {
+	background-color: var(--action-dark);
+}
+
+/* Accent color classes */
+.has-accent-color {
+	color: var(--accent);
+}
+.has-accent-background-color {
+	background-color: var(--accent);
+}
+.has-accent-dark-color {
+	color: var(--accent-dark);
+}
+.has-accent-dark-background-color {
+	background-color: var(--accent-dark);
+}
+
+/* Has extra accent color classes */
+.has-extra-accent-color {
+	color: var(--extra-accent);
+}
+.has-extra-accent-background-color {
+	background-color: var(--extra-accent);
+}
+.has-extra-accent-dark-color {
+	color: var(--extra-accent-dark);
+}
+.has-extra-accent-dark-background-color {
+	background-color: var(--extra-accent-dark);
+}
+
+/*
+ * Grays and background color classes
+ */
+.has-gray-color {
+	color: var(--gray-background);
+}
+.has-gray-background-color {
+	background-color: var(--gray-background);
+}
+
+.has-dark-color {
+	color: var(--dark-background);
+}
+.has-dark-background-color {
+	background-color: var(--dark-background);
+	color: var(--light-text-over-dark);
+}
+
+.has-darker-color {
+	color: var(--darker-background);
+}
+.has-darker-background-color {
+	background-color: var(--darker-background);
+	color: var(--light-text-over-dark);
+}
+
+.has-subdued-light-color {
+	color: var(--subdued-light);
+}
+.has-subdued-light-background-color {
+	background-color: var(--subdued-light);
+}
+.has-subdued-dark-color {
+	color: var(--subdued-dark);
+}
+.has-subdued-dark-background-color {
+	background-color: var(--subdued-dark);
+}
+
+.has-light-text-over-dark-color {
+	color: var(--light-text-over-dark);
+}
+.has-light-text-over-dark-background-color {
+	background-color: var(--light-text-over-dark);
+}
+
+/**
+ * More useful classes
+ */
+.has-white-color {
+	color: var(--white);
+}
+.has-white-background-color {
+	background-color: var(--white);
+}
+
+.has-translucent-light-background-color {
+	background-color: var(--translucent-light);
+}
+.has-translucent-dark-background-color {
+	background-color: var(--translucent-dark);
+}

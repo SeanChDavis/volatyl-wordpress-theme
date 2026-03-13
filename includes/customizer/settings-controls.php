@@ -97,9 +97,9 @@ $wp_customize->add_control( 'volatyl_color_scheme_type', array(
 		'monochromatic' => __( 'Monochromatic', 'volatyl' ),
 		'complementary' => __( 'Complementary', 'volatyl' ),
 		'analogous'     => __( 'Analogous', 'volatyl' ),
-//		'triadic'             => __( 'Triadic', 'volatyl' ),
-//		'split_complementary' => __( 'Split-complementary', 'volatyl' ),
-//		'tetradic'            => __( 'Tetradic', 'volatyl' ),
+		'triadic'             => __( 'Triadic', 'volatyl' ),
+		'split_complementary' => __( 'Split-complementary', 'volatyl' ),
+		'tetradic'            => __( 'Tetradic', 'volatyl' ),
 	),
 ) );
 

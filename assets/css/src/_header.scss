@@ -18,12 +18,6 @@
 				transition: opacity .2s;
 				vertical-align: middle;
 				width: 180px;
-
-				&:active,
-				&:focus,
-				&:hover {
-					opacity: .7;
-				}
 			}
 		}
 

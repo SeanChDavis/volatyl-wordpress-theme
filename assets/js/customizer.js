@@ -49,7 +49,7 @@
 			} else if ( to >= 34 && to <= 67 ) {
 				darkBgLightColor = '92';
 			}
-			document.documentElement.style.setProperty( '--dark-background-light-color-luminance', darkBgLightColor + '%' );
+			document.documentElement.style.setProperty( '--light-text-over-dark-luminance', darkBgLightColor + '%' );
 		} );
 	} );
 	// Color scheme type
