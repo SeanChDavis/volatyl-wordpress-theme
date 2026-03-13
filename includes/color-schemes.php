@@ -57,9 +57,10 @@ function volatyl_root_color_scheme_base() {
 		/* Primary hue and default colors based on the primary hue */
 		--primary-hue: {$primary_hue};
 		--primary-hue_dark: hsl(var(--primary-hue) var(--global-hue-saturation) 18.5%);
+		--body-color: hsl(var(--primary-hue) var(--global-hue-saturation) 11%);
 	
 		/* Backgrounds */
-		--gray-background: hsl(var(--primary-hue) calc(var(--global-hue-saturation) * .3) 96.5%);
+		--gray-background: hsl(var(--primary-hue) calc(var(--global-hue-saturation) * .3) 97.5%);
 		--dark-background: var(--primary-hue_dark);
 		--darker-background: hsl(var(--primary-hue) var(--global-hue-saturation) 15.5%);
 	
@@ -76,12 +77,12 @@ function volatyl_root_color_scheme_base() {
 		
 		/* Action and Accent Colors derived from the primary hue - overridden by different color schemes */
 		/* Technically, this is the monochromatic color scheme */
-		--action: hsl(var(--primary-hue) var(--global-hue-saturation) 32%);
-		--action-dark: hsl(var(--primary-hue) var(--global-hue-saturation) 24%);
-		--accent: hsl(var(--primary-hue) var(--global-hue-saturation) 32%);
-		--accent-dark: hsl(var(--primary-hue) var(--global-hue-saturation) 24%);
-		--extra-accent: hsl(var(--primary-hue) var(--global-hue-saturation) 32%);
-		--extra-accent-dark: hsl(var(--primary-hue) var(--global-hue-saturation) 24%);
+		--action: hsl(var(--primary-hue) var(--global-hue-saturation) 42%);
+		--action-dark: hsl(var(--primary-hue) var(--global-hue-saturation) 32%);
+		--accent: hsl(var(--primary-hue) var(--global-hue-saturation) 42%);
+		--accent-dark: hsl(var(--primary-hue) var(--global-hue-saturation) 32%);
+		--extra-accent: hsl(var(--primary-hue) var(--global-hue-saturation) 42%);
+		--extra-accent-dark: hsl(var(--primary-hue) var(--global-hue-saturation) 32%);
 
 		/* Complementary Color Scheme */
 		--complementary-accent-hue: calc(var(--primary-hue) - 180);

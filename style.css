@@ -164,16 +164,13 @@ template {
 /**
  * Control the entire theme color scheme
  */
-#page-container,
-.fat-footer pre,
-.fat-footer dl,
-.fat-footer code,
-.fat-footer kbd,
-.fat-footer tt,
-.fat-footer var {
+/* Global */
+#page-container {
   background-color: #fff;
+  color: var(--body-color);
 }
 
+/* Everything else */
 .button,
 .v-button,
 button,
@@ -398,7 +395,6 @@ table td,
   border-color: var(--primary-hue_dark);
 }
 
-#page-container,
 .site-title a,
 #site-navigation #primary-menu .menu-item a,
 #site-navigation .menu-toggle,
