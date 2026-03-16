@@ -42,14 +42,15 @@
 	wp.customize( 'volatyl_global_hue_saturation', function( value ) {
 		value.bind( function( to ) {
 			document.documentElement.style.setProperty( '--global-hue-saturation', to + '%' );
+			document.documentElement.style.setProperty( '--global-chroma', to * 0.0025 );
 
 			let darkBgLightColor = '100';
 			if ( to <= 33 ) {
-				darkBgLightColor = '84';
+				darkBgLightColor = '86';
 			} else if ( to >= 34 && to <= 67 ) {
-				darkBgLightColor = '92';
+				darkBgLightColor = '93';
 			}
-			document.documentElement.style.setProperty( '--light-text-over-dark-luminance', darkBgLightColor + '%' );
+			document.documentElement.style.setProperty( '--on-dark-luminance', darkBgLightColor + '%' );
 		} );
 	} );
 	// Color scheme type

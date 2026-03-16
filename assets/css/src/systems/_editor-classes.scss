@@ -2,16 +2,22 @@
 
 /* Primary color classes */
 .has-primary-color {
-	color: hsl(var(--primary-hue) var(--global-hue-saturation) 50%);
+	color: var(--primary);
 }
 .has-primary-background-color {
-	background-color: hsl(var(--primary-hue) var(--global-hue-saturation) 50%);
+	background-color: var(--primary);
+}
+.has-primary-light-color {
+	color: var(--primary-light);
+}
+.has-primary-light-background-color {
+	background-color: var(--primary-light);
 }
 .has-primary-dark-color {
-	color: var(--primary-hue_dark);
+	color: var(--primary-dark);
 }
 .has-primary-dark-background-color {
-	background-color: var(--primary-hue_dark);
+	background-color: var(--primary-dark);
 }
 
 /* Action color classes */
@@ -21,11 +27,23 @@
 .has-action-background-color {
 	background-color: var(--action);
 }
+.has-action-light-color {
+	color: var(--action-light);
+}
+.has-action-light-background-color {
+	background-color: var(--action-light);
+}
 .has-action-dark-color {
 	color: var(--action-dark);
 }
 .has-action-dark-background-color {
 	background-color: var(--action-dark);
+}
+.has-action-tint-color {
+	color: var(--action-tint);
+}
+.has-action-tint-background-color {
+	background-color: var(--action-tint);
 }
 
 /* Accent color classes */
@@ -35,19 +53,37 @@
 .has-accent-background-color {
 	background-color: var(--accent);
 }
+.has-accent-light-color {
+	color: var(--accent-light);
+}
+.has-accent-light-background-color {
+	background-color: var(--accent-light);
+}
 .has-accent-dark-color {
 	color: var(--accent-dark);
 }
 .has-accent-dark-background-color {
 	background-color: var(--accent-dark);
 }
+.has-accent-tint-color {
+	color: var(--accent-tint);
+}
+.has-accent-tint-background-color {
+	background-color: var(--accent-tint);
+}
 
-/* Has extra accent color classes */
+/* Extra accent color classes */
 .has-extra-accent-color {
 	color: var(--extra-accent);
 }
 .has-extra-accent-background-color {
 	background-color: var(--extra-accent);
+}
+.has-extra-accent-light-color {
+	color: var(--extra-accent-light);
+}
+.has-extra-accent-light-background-color {
+	background-color: var(--extra-accent-light);
 }
 .has-extra-accent-dark-color {
 	color: var(--extra-accent-dark);
@@ -55,31 +91,37 @@
 .has-extra-accent-dark-background-color {
 	background-color: var(--extra-accent-dark);
 }
+.has-extra-accent-tint-color {
+	color: var(--extra-accent-tint);
+}
+.has-extra-accent-tint-background-color {
+	background-color: var(--extra-accent-tint);
+}
 
 /*
- * Grays and background color classes
+ * Background color classes
  */
-.has-gray-color {
-	color: var(--gray-background);
+.has-primary-tint-color {
+	color: var(--primary-tint);
 }
-.has-gray-background-color {
-	background-color: var(--gray-background);
+.has-primary-tint-background-color {
+	background-color: var(--primary-tint);
 }
 
 .has-dark-color {
-	color: var(--dark-background);
+	color: var(--dark);
 }
 .has-dark-background-color {
-	background-color: var(--dark-background);
-	color: var(--light-text-over-dark);
+	background-color: var(--dark);
+	color: var(--on-dark);
 }
 
 .has-darker-color {
-	color: var(--darker-background);
+	color: var(--darker);
 }
 .has-darker-background-color {
-	background-color: var(--darker-background);
-	color: var(--light-text-over-dark);
+	background-color: var(--darker);
+	color: var(--on-dark);
 }
 
 .has-subdued-light-color {
@@ -95,11 +137,11 @@
 	background-color: var(--subdued-dark);
 }
 
-.has-light-text-over-dark-color {
-	color: var(--light-text-over-dark);
+.has-on-dark-color {
+	color: var(--on-dark);
 }
-.has-light-text-over-dark-background-color {
-	background-color: var(--light-text-over-dark);
+.has-on-dark-background-color {
+	background-color: var(--on-dark);
 }
 
 /**

@@ -37,12 +37,17 @@ $wp_customize->add_setting( 'volatyl_primary_hue', array(
 	'default'           => DEFAULT_PRIMARY_HUE,
 	'sanitize_callback' => 'absint',
 ) );
-$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'volatyl_primary_hue', array(
-	'section'  => 'volatyl_color_scheme',
-	'priority' => 10,
-	'label'    => __( 'Choose your preferred hue', 'volatyl' ),
-	'mode'     => 'hue',
-) ) );
+$wp_customize->add_control( 'volatyl_primary_hue', array(
+	'section'     => 'volatyl_color_scheme',
+	'priority'    => 10,
+	'label'       => __( 'Choose your preferred hue', 'volatyl' ),
+	'type'        => 'range',
+	'input_attrs' => array(
+		'min'  => 0,
+		'max'  => 360,
+		'step' => 1,
+	),
+) );
 
 // Global hue saturation
 $wp_customize->add_setting( 'volatyl_global_hue_saturation_area', array(

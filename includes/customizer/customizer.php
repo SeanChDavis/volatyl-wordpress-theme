@@ -178,6 +178,50 @@ function volatyl_customize_controls_print_styles() { ?>
 		.customize-control-number input[type="number"] {
 			width: 100px;
 		}
+		#customize-control-volatyl_primary_hue input[type="range"] {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 100%;
+			height: 28px;
+			border-radius: 4px;
+			background: linear-gradient(to right,
+				oklch(65% 0.2 0),
+				oklch(65% 0.2 30),
+				oklch(65% 0.2 60),
+				oklch(65% 0.2 90),
+				oklch(65% 0.2 120),
+				oklch(65% 0.2 150),
+				oklch(65% 0.2 180),
+				oklch(65% 0.2 210),
+				oklch(65% 0.2 240),
+				oklch(65% 0.2 270),
+				oklch(65% 0.2 300),
+				oklch(65% 0.2 330),
+				oklch(65% 0.2 360)
+			);
+			cursor: pointer;
+			outline: none;
+			border: 1px solid rgba(0,0,0,.15);
+		}
+		#customize-control-volatyl_primary_hue input[type="range"]::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			width: 12px;
+			height: 32px;
+			border-radius: 3px;
+			background: transparent;
+			border: 2px solid rgba(255,255,255,1);
+			box-shadow: 0 1px 3px rgba(0,0,0,.3);
+			cursor: pointer;
+		}
+		#customize-control-volatyl_primary_hue input[type="range"]::-moz-range-thumb {
+			width: 12px;
+			height: 32px;
+			border-radius: 3px;
+			background: transparent;
+			border: 2px solid rgba(255,255,255,1);
+			box-shadow: 0 1px 3px rgba(0,0,0,.3);
+			cursor: pointer;
+		}
 	</style>
 	<?php
 }

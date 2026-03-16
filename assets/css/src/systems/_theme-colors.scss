@@ -5,7 +5,31 @@
 /* Global */
 #page-container {
 	background-color: #fff;
-	color: var(--body-color);
+	color: var(--text);
+}
+
+.site-title a,
+#site-navigation #primary-menu .menu-item a,
+#site-navigation .menu-toggle,
+.content-header-secondary-cta a,
+.wp-block-separator.is-style-dots:before,
+.v-grid-item-title a,
+.v-grid-item-meta,
+.v-grid-item-meta a,
+.v-grid-item-footer a,
+.archive-title.content-header-title span,
+#comments .fn a,
+.entry-meta a,
+.entry-footer a,
+.comment-meta a,
+.logged-in-as a,
+.comment-notes a,
+.posts-navigation a,
+.wp-calendar-nav-prev a,
+.wp-block-latest-comments__comment-meta a,
+cite,
+.fat-footer a {
+	color: var(--text);
 }
 
 /* Everything else */
@@ -40,7 +64,7 @@ body,
 .wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1),
 article .entry-content .wp-block-latest-comments,
 .v-content-container .entry-content .wp-block-latest-comments {
-	background-color: var(--gray-background);
+	background-color: var(--primary-tint);
 }
 
 pre,
@@ -66,22 +90,13 @@ hr,
 }
 
 #site-navigation.toggled > #primary-menu > .menu-item-has-children > a:after {
-	border-bottom-color: var(--light-text-over-dark);
+	border-bottom-color: var(--on-dark);
 }
 
 #site-navigation #primary-menu > .menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu a {
-	color: var(--light-text-over-dark);
+	color: var(--on-dark);
 }
 
-h1 a,
-.h1 a,
-h2 a,
-.h2 a,
-h3 a,
-.h3 a,
-h5 a,
-.h5 a,
-.content-header-secondary-cta a,
 .v-subdued-title,
 .featured-page .section-description,
 .archive-title.content-header-title,
@@ -208,12 +223,12 @@ table th,
 #searchform #searchsubmit,
 .wp-block-search button,
 .wp-block-search[class*="button-inside"] [class*="search__inside"] button {
-	background-color: var(--primary-hue_dark);
-	border-color: var(--primary-hue_dark);
+	background-color: var(--dark);
+	border-color: var(--dark);
 }
 
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after {
-	border-bottom-color: var(--primary-hue_dark);
+	border-bottom-color: var(--dark);
 }
 
 .blog-name a,
@@ -230,41 +245,18 @@ table td,
 .wp-block-table.is-style-stripes table td,
 [class*="wp-block-"] > table th,
 [class*="wp-block-"] > table td {
-	border-color: var(--primary-hue_dark);
-}
-
-.site-title a,
-#site-navigation #primary-menu .menu-item a,
-#site-navigation .menu-toggle,
-.wp-block-separator.is-style-dots:before,
-.v-grid-item-title a,
-.v-grid-item-meta,
-.v-grid-item-meta a,
-.v-grid-item-footer a,
-.archive-title.content-header-title span,
-#comments .fn a,
-.entry-meta a,
-.entry-footer a,
-.comment-meta a,
-.logged-in-as a,
-.comment-notes a,
-.posts-navigation a,
-.wp-calendar-nav-prev a,
-.wp-block-latest-comments__comment-meta a,
-cite,
-.fat-footer a {
-	color: var(--primary-hue_dark);
+	border-color: var(--dark);
 }
 
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu,
 #site-navigation.toggled > [class*="-container"].menu-modal-active #primary-menu,
 #site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu {
-	background-color: var(--menu-background);
+	background-color: var(--darker);
 }
 
 .v-dark-background {
-	background-color: var(--dark-background);
-	color: var(--light-text-over-dark);
+	background-color: var(--dark);
+	color: var(--on-dark);
 
 	#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after,
 	#site-navigation #primary-menu > .menu-item-has-children > a:after {
@@ -308,7 +300,6 @@ cite,
 		color: #fff;
 	}
 
-	.content-header-secondary-cta a,
 	.archive-title.content-header-title,
 	h4,
 	.h4,
@@ -329,7 +320,7 @@ cite,
 	figure figcaption,
 	.wp-block-calendar .wp-calendar-nav,
 	[class*="wp-block-"] > label {
-		color: var(--light-text-over-dark);
+		color: var(--on-dark);
 	}
 
 	.button,
@@ -409,6 +400,6 @@ cite,
 	table,
 	table th,
 	table td {
-		border-color: var(--primary-hue_dark);
+		border-color: var(--primary-dark);
 	}
 }

@@ -10,8 +10,8 @@ define( 'THEME_STYLESHEET', get_stylesheet_uri() );
 define( 'THEME_STYLESHEET_DIR', get_stylesheet_directory_uri() );
 define( 'THEME_INCLUDES', THEME_TEMPLATE_DIR . '/includes' );
 
-define( 'DEFAULT_PRIMARY_HUE', 216 );
-define( 'DEFAULT_GLOBAL_HUE_SATURATION', 60 );
+define( 'DEFAULT_PRIMARY_HUE', 260 );
+define( 'DEFAULT_GLOBAL_HUE_SATURATION', 50 );
 define( 'DEFAULT_COLOR_SCHEME_TYPE', 'analogous' );
 
 // Theme functions

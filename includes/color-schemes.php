@@ -41,48 +41,59 @@ function volatyl_root_color_scheme_base() {
 	// This percentage controls the default saturation of all non-subdued colors
 	$global_hue_saturation = get_theme_mod( 'volatyl_global_hue_saturation', DEFAULT_GLOBAL_HUE_SATURATION );
 
-	// Based on global hue saturation percentage, this color sets the
-	// luminance of basic text and similar elements against dark backgrounds
+	// OKLCH chroma derived from the saturation setting (0–100 maps to 0–0.25)
+	$global_chroma = round( $global_hue_saturation * 0.0025, 4 );
+
+	// Based on global hue saturation, this controls the lightness of text
+	// and similar elements rendered against dark backgrounds
 	$dark_bg_light_color  = '100';
 	if ( $global_hue_saturation <= 33 ) {
-		$dark_bg_light_color = '84';
+		$dark_bg_light_color = '86';
 	} elseif ( ( $global_hue_saturation >= 34 ) && ( $global_hue_saturation <= 67 ) ) {
-		$dark_bg_light_color = '92';
+		$dark_bg_light_color = '93';
 	}
 
 	return ":root {
 		--global-hue-saturation: {$global_hue_saturation}%;
-		--light-text-over-dark-luminance: {$dark_bg_light_color}%;
+		--global-chroma: {$global_chroma};
+		--on-dark-luminance: {$dark_bg_light_color}%;
 
 		/* Primary hue and default colors based on the primary hue */
 		--primary-hue: {$primary_hue};
-		--primary-hue_dark: hsl(var(--primary-hue) var(--global-hue-saturation) 18.5%);
-		--body-color: hsl(var(--primary-hue) var(--global-hue-saturation) 11%);
-	
+		--primary: oklch(55% .25 var(--primary-hue));
+		--primary-light: oklch(75% .25 var(--primary-hue));
+		--primary-dark: oklch(30% .25 var(--primary-hue));
+		--primary-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--primary-hue));
+		--text: oklch(20% var(--global-chroma) var(--primary-hue));
+
 		/* Backgrounds */
-		--gray-background: hsl(var(--primary-hue) calc(var(--global-hue-saturation) * .3) 97.5%);
-		--dark-background: var(--primary-hue_dark);
-		--darker-background: hsl(var(--primary-hue) var(--global-hue-saturation) 15.5%);
-	
+		--dark: oklch(15% var(--global-chroma) var(--primary-hue));
+		--darker: oklch(12% var(--global-chroma) var(--primary-hue));
+
 		/* Subdued colors */
-		--subdued-light: hsl(var(--primary-hue) 10% 91%);
-		--subdued-dark: hsl(var(--primary-hue) 20% 32%);
-		
+		--subdued-light: oklch(91% 0.015 var(--primary-hue));
+		--subdued-dark: oklch(44% 0.04 var(--primary-hue));
+
 		/* Miscellaneous */
-		--light-text-over-dark: hsl(var(--primary-hue) var(--global-hue-saturation) var(--light-text-over-dark-luminance));
-		--menu-background: var(--darker-background);
-		--white: #fff;
+		--on-dark: oklch(var(--on-dark-luminance) calc(var(--global-chroma) * 0.5) var(--primary-hue));
+--white: #fff;
 		--translucent-light: rgba(255,255,255,.05);
 		--translucent-dark: rgba(0,0,0,.05);
-		
+
 		/* Action and Accent Colors derived from the primary hue - overridden by different color schemes */
 		/* Technically, this is the monochromatic color scheme */
-		--action: hsl(var(--primary-hue) var(--global-hue-saturation) 42%);
-		--action-dark: hsl(var(--primary-hue) var(--global-hue-saturation) 32%);
-		--accent: hsl(var(--primary-hue) var(--global-hue-saturation) 42%);
-		--accent-dark: hsl(var(--primary-hue) var(--global-hue-saturation) 32%);
-		--extra-accent: hsl(var(--primary-hue) var(--global-hue-saturation) 42%);
-		--extra-accent-dark: hsl(var(--primary-hue) var(--global-hue-saturation) 32%);
+		--action: oklch(55% .25 var(--primary-hue));
+		--action-light: oklch(75% .25 var(--primary-hue));
+		--action-dark: oklch(30% .25 var(--primary-hue));
+		--action-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--primary-hue));
+		--accent: oklch(55% .25 var(--primary-hue));
+		--accent-light: oklch(75% .25 var(--primary-hue));
+		--accent-dark: oklch(30% .25 var(--primary-hue));
+		--accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--primary-hue));
+		--extra-accent: oklch(55% .25 var(--primary-hue));
+		--extra-accent-light: oklch(75% .25 var(--primary-hue));
+		--extra-accent-dark: oklch(30% .25 var(--primary-hue));
+		--extra-accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--primary-hue));
 
 		/* Complementary Color Scheme */
 		--complementary-accent-hue: calc(var(--primary-hue) - 180);
@@ -113,12 +124,18 @@ function volatyl_root_color_scheme_complementary( $scheme_wrapper = true ): stri
 	$scheme = ":root {";
 	$scheme .= $scheme_wrapper ? '.complementary-color-scheme {' : '';
 	$scheme .= "
-			--action: hsl(var(--complementary-accent-hue) var(--global-hue-saturation) 32%);
-			--action-dark: hsl(var(--complementary-accent-hue) var(--global-hue-saturation) 24%);
-			--accent: hsl(var(--complementary-accent-hue) var(--global-hue-saturation) 32%);
-			--accent-dark: hsl(var(--complementary-accent-hue) var(--global-hue-saturation) 24%);
-			--extra-accent: hsl(var(--complementary-accent-hue) var(--global-hue-saturation) 32%);
-			--extra-accent-dark: hsl(var(--complementary-accent-hue) var(--global-hue-saturation) 24%);";
+			--action: oklch(55% .25 var(--complementary-accent-hue));
+			--action-light: oklch(75% .25 var(--complementary-accent-hue));
+			--action-dark: oklch(30% .25 var(--complementary-accent-hue));
+			--action-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--complementary-accent-hue));
+			--accent: oklch(55% .25 var(--complementary-accent-hue));
+			--accent-light: oklch(75% .25 var(--complementary-accent-hue));
+			--accent-dark: oklch(30% .25 var(--complementary-accent-hue));
+			--accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--complementary-accent-hue));
+			--extra-accent: oklch(55% .25 var(--complementary-accent-hue));
+			--extra-accent-light: oklch(75% .25 var(--complementary-accent-hue));
+			--extra-accent-dark: oklch(30% .25 var(--complementary-accent-hue));
+			--extra-accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--complementary-accent-hue));";
 	$scheme .= $scheme_wrapper ? '}' : '';
 	$scheme .= "}";
 	return $scheme;
@@ -131,12 +148,18 @@ function volatyl_root_color_scheme_analogous( $scheme_wrapper = true ): string {
 	$scheme = ":root {";
 	$scheme .= $scheme_wrapper ? '.analogous-color-scheme {' : '';
 	$scheme .= "
-			--action: hsl(var(--analogous-accent-hue-1) var(--global-hue-saturation) 32%);
-			--action-dark: hsl(var(--analogous-accent-hue-1) var(--global-hue-saturation) 24%);
-			--accent: hsl(var(--analogous-accent-hue-2) var(--global-hue-saturation) 32%);
-			--accent-dark: hsl(var(--analogous-accent-hue-2) var(--global-hue-saturation) 24%);
-			--extra-accent: hsl(var(--analogous-accent-hue-2) var(--global-hue-saturation) 32%);
-			--extra-accent-dark: hsl(var(--analogous-accent-hue-2) var(--global-hue-saturation) 24%);";
+			--action: oklch(55% .25 var(--analogous-accent-hue-1));
+			--action-light: oklch(75% .25 var(--analogous-accent-hue-1));
+			--action-dark: oklch(30% .25 var(--analogous-accent-hue-1));
+			--action-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--analogous-accent-hue-1));
+			--accent: oklch(55% .25 var(--analogous-accent-hue-2));
+			--accent-light: oklch(75% .25 var(--analogous-accent-hue-2));
+			--accent-dark: oklch(30% .25 var(--analogous-accent-hue-2));
+			--accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--analogous-accent-hue-2));
+			--extra-accent: oklch(55% .25 var(--analogous-accent-hue-2));
+			--extra-accent-light: oklch(75% .25 var(--analogous-accent-hue-2));
+			--extra-accent-dark: oklch(30% .25 var(--analogous-accent-hue-2));
+			--extra-accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--analogous-accent-hue-2));";
 	$scheme .= $scheme_wrapper ? '}' : '';
 	$scheme .= "}";
 	return $scheme;
@@ -149,12 +172,18 @@ function volatyl_root_color_scheme_triadic( $scheme_wrapper = true ): string {
 	$scheme = ":root {";
 	$scheme .= $scheme_wrapper ? '.triadic-color-scheme {' : '';
 	$scheme .= "
-			--action: hsl(var(--triadic-accent-hue-1) var(--global-hue-saturation) 32%);
-			--action-dark: hsl(var(--triadic-accent-hue-1) var(--global-hue-saturation) 24%);
-			--accent: hsl(var(--triadic-accent-hue-2) var(--global-hue-saturation) 32%);
-			--accent-dark: hsl(var(--triadic-accent-hue-2) var(--global-hue-saturation) 24%);
-			--extra-accent: hsl(var(--triadic-accent-hue-2) var(--global-hue-saturation) 32%);
-			--extra-accent-dark: hsl(var(--triadic-accent-hue-2) var(--global-hue-saturation) 24%);";
+			--action: oklch(55% .25 var(--triadic-accent-hue-1));
+			--action-light: oklch(75% .25 var(--triadic-accent-hue-1));
+			--action-dark: oklch(30% .25 var(--triadic-accent-hue-1));
+			--action-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--triadic-accent-hue-1));
+			--accent: oklch(55% .25 var(--triadic-accent-hue-2));
+			--accent-light: oklch(75% .25 var(--triadic-accent-hue-2));
+			--accent-dark: oklch(30% .25 var(--triadic-accent-hue-2));
+			--accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--triadic-accent-hue-2));
+			--extra-accent: oklch(55% .25 var(--triadic-accent-hue-2));
+			--extra-accent-light: oklch(75% .25 var(--triadic-accent-hue-2));
+			--extra-accent-dark: oklch(30% .25 var(--triadic-accent-hue-2));
+			--extra-accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--triadic-accent-hue-2));";
 	$scheme .= $scheme_wrapper ? '}' : '';
 	$scheme .= "}";
 	return $scheme;
@@ -167,12 +196,18 @@ function volatyl_root_color_scheme_split_complementary( $scheme_wrapper = true )
 	$scheme = ":root {";
 	$scheme .= $scheme_wrapper ? '.split_complementary-color-scheme {' : '';
 	$scheme .= "
-			--action: hsl(var(--split-complementary-accent-hue-1) var(--global-hue-saturation) 32%);
-			--action-dark: hsl(var(--split-complementary-accent-hue-1) var(--global-hue-saturation) 24%);
-			--accent: hsl(var(--split-complementary-accent-hue-2) var(--global-hue-saturation) 32%);
-			--accent-dark: hsl(var(--split-complementary-accent-hue-2) var(--global-hue-saturation) 24%);
-			--extra-accent: hsl(var(--split-complementary-accent-hue-2) var(--global-hue-saturation) 32%);
-			--extra-accent-dark: hsl(var(--split-complementary-accent-hue-2) var(--global-hue-saturation) 24%);";
+			--action: oklch(55% .25 var(--split-complementary-accent-hue-1));
+			--action-light: oklch(75% .25 var(--split-complementary-accent-hue-1));
+			--action-dark: oklch(30% .25 var(--split-complementary-accent-hue-1));
+			--action-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--split-complementary-accent-hue-1));
+			--accent: oklch(55% .25 var(--split-complementary-accent-hue-2));
+			--accent-light: oklch(75% .25 var(--split-complementary-accent-hue-2));
+			--accent-dark: oklch(30% .25 var(--split-complementary-accent-hue-2));
+			--accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--split-complementary-accent-hue-2));
+			--extra-accent: oklch(55% .25 var(--split-complementary-accent-hue-2));
+			--extra-accent-light: oklch(75% .25 var(--split-complementary-accent-hue-2));
+			--extra-accent-dark: oklch(30% .25 var(--split-complementary-accent-hue-2));
+			--extra-accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--split-complementary-accent-hue-2));";
 	$scheme .= $scheme_wrapper ? '}' : '';
 	$scheme .= "}";
 	return $scheme;
@@ -185,12 +220,18 @@ function volatyl_root_color_scheme_tetradic( $scheme_wrapper = true ): string {
 	$scheme = ":root {";
 	$scheme .= $scheme_wrapper ? '.tetradic-color-scheme {' : '';
 	$scheme .= "
-			--action: hsl(var(--tetradic-accent-hue-1) var(--global-hue-saturation) 32%);
-			--action-dark: hsl(var(--tetradic-accent-hue-1) var(--global-hue-saturation) 24%);
-			--accent: hsl(var(--tetradic-accent-hue-2) var(--global-hue-saturation) 32%);
-			--accent-dark: hsl(var(--tetradic-accent-hue-2) var(--global-hue-saturation) 24%);
-			--extra-accent: hsl(var(--tetradic-accent-hue-3) var(--global-hue-saturation) 32%);
-			--extra-accent-dark: hsl(var(--tetradic-accent-hue-3) var(--global-hue-saturation) 24%);";
+			--action: oklch(55% .25 var(--tetradic-accent-hue-1));
+			--action-light: oklch(75% .25 var(--tetradic-accent-hue-1));
+			--action-dark: oklch(30% .25 var(--tetradic-accent-hue-1));
+			--action-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--tetradic-accent-hue-1));
+			--accent: oklch(55% .25 var(--tetradic-accent-hue-2));
+			--accent-light: oklch(75% .25 var(--tetradic-accent-hue-2));
+			--accent-dark: oklch(30% .25 var(--tetradic-accent-hue-2));
+			--accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--tetradic-accent-hue-2));
+			--extra-accent: oklch(55% .25 var(--tetradic-accent-hue-3));
+			--extra-accent-light: oklch(75% .25 var(--tetradic-accent-hue-3));
+			--extra-accent-dark: oklch(30% .25 var(--tetradic-accent-hue-3));
+			--extra-accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--tetradic-accent-hue-3));";
 	$scheme .= $scheme_wrapper ? '}' : '';
 	$scheme .= "}";
 	return $scheme;

@@ -41,6 +41,16 @@
 	.content-header-secondary-cta {
 		@include headingFont;
 		@include fontSmall;
+
+		a {
+			text-decoration: none;
+
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 
 	&.v-text-align-center {

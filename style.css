@@ -167,7 +167,31 @@ template {
 /* Global */
 #page-container {
   background-color: #fff;
-  color: var(--body-color);
+  color: var(--text);
+}
+
+.site-title a,
+#site-navigation #primary-menu .menu-item a,
+#site-navigation .menu-toggle,
+.content-header-secondary-cta a,
+.wp-block-separator.is-style-dots:before,
+.v-grid-item-title a,
+.v-grid-item-meta,
+.v-grid-item-meta a,
+.v-grid-item-footer a,
+.archive-title.content-header-title span,
+#comments .fn a,
+.entry-meta a,
+.entry-footer a,
+.comment-meta a,
+.logged-in-as a,
+.comment-notes a,
+.posts-navigation a,
+.wp-calendar-nav-prev a,
+.wp-block-latest-comments__comment-meta a,
+cite,
+.fat-footer a {
+  color: var(--text);
 }
 
 /* Everything else */
@@ -202,7 +226,7 @@ body,
 .wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1),
 article .entry-content .wp-block-latest-comments,
 .v-content-container .entry-content .wp-block-latest-comments {
-  background-color: var(--gray-background);
+  background-color: var(--primary-tint);
 }
 
 pre,
@@ -228,22 +252,13 @@ hr,
 }
 
 #site-navigation.toggled > #primary-menu > .menu-item-has-children > a:after {
-  border-bottom-color: var(--light-text-over-dark);
+  border-bottom-color: var(--on-dark);
 }
 
 #site-navigation #primary-menu > .menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu a {
-  color: var(--light-text-over-dark);
+  color: var(--on-dark);
 }
 
-h1 a,
-.h1 a,
-h2 a,
-.h2 a,
-h3 a,
-.h3 a,
-h5 a,
-.h5 a,
-.content-header-secondary-cta a,
 .v-subdued-title,
 .featured-page .section-description,
 .archive-title.content-header-title,
@@ -370,12 +385,12 @@ table th,
 #searchform #searchsubmit,
 .wp-block-search button,
 .wp-block-search[class*=button-inside] [class*=search__inside] button {
-  background-color: var(--primary-hue_dark);
-  border-color: var(--primary-hue_dark);
+  background-color: var(--dark);
+  border-color: var(--dark);
 }
 
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after {
-  border-bottom-color: var(--primary-hue_dark);
+  border-bottom-color: var(--dark);
 }
 
 .blog-name a,
@@ -392,41 +407,18 @@ table td,
 .wp-block-table.is-style-stripes table td,
 [class*=wp-block-] > table th,
 [class*=wp-block-] > table td {
-  border-color: var(--primary-hue_dark);
-}
-
-.site-title a,
-#site-navigation #primary-menu .menu-item a,
-#site-navigation .menu-toggle,
-.wp-block-separator.is-style-dots:before,
-.v-grid-item-title a,
-.v-grid-item-meta,
-.v-grid-item-meta a,
-.v-grid-item-footer a,
-.archive-title.content-header-title span,
-#comments .fn a,
-.entry-meta a,
-.entry-footer a,
-.comment-meta a,
-.logged-in-as a,
-.comment-notes a,
-.posts-navigation a,
-.wp-calendar-nav-prev a,
-.wp-block-latest-comments__comment-meta a,
-cite,
-.fat-footer a {
-  color: var(--primary-hue_dark);
+  border-color: var(--dark);
 }
 
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu,
 #site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu,
 #site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu {
-  background-color: var(--menu-background);
+  background-color: var(--darker);
 }
 
 .v-dark-background {
-  background-color: var(--dark-background);
-  color: var(--light-text-over-dark);
+  background-color: var(--dark);
+  color: var(--on-dark);
 }
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after,
 .v-dark-background #site-navigation #primary-menu > .menu-item-has-children > a:after {
@@ -467,7 +459,6 @@ cite,
 .v-dark-background #site-navigation .menu-toggle {
   color: #fff;
 }
-.v-dark-background .content-header-secondary-cta a,
 .v-dark-background .archive-title.content-header-title,
 .v-dark-background h4,
 .v-dark-background .h4,
@@ -488,7 +479,7 @@ cite,
 .v-dark-background figure figcaption,
 .v-dark-background .wp-block-calendar .wp-calendar-nav,
 .v-dark-background [class*=wp-block-] > label {
-  color: var(--light-text-over-dark);
+  color: var(--on-dark);
 }
 .v-dark-background .button,
 .v-dark-background .v-button,
@@ -563,7 +554,7 @@ cite,
 .v-dark-background table,
 .v-dark-background table th,
 .v-dark-background table td {
-  border-color: var(--primary-hue_dark);
+  border-color: var(--primary-dark);
 }
 
 /* Min-width breakpoints */
@@ -576,19 +567,27 @@ cite,
 /* Editor-generated classes */
 /* Primary color classes */
 .has-primary-color {
-  color: hsl(var(--primary-hue), var(--global-hue-saturation), 50%);
+  color: var(--primary);
 }
 
 .has-primary-background-color {
-  background-color: hsl(var(--primary-hue), var(--global-hue-saturation), 50%);
+  background-color: var(--primary);
+}
+
+.has-primary-light-color {
+  color: var(--primary-light);
+}
+
+.has-primary-light-background-color {
+  background-color: var(--primary-light);
 }
 
 .has-primary-dark-color {
-  color: var(--primary-hue_dark);
+  color: var(--primary-dark);
 }
 
 .has-primary-dark-background-color {
-  background-color: var(--primary-hue_dark);
+  background-color: var(--primary-dark);
 }
 
 /* Action color classes */
@@ -600,12 +599,28 @@ cite,
   background-color: var(--action);
 }
 
+.has-action-light-color {
+  color: var(--action-light);
+}
+
+.has-action-light-background-color {
+  background-color: var(--action-light);
+}
+
 .has-action-dark-color {
   color: var(--action-dark);
 }
 
 .has-action-dark-background-color {
   background-color: var(--action-dark);
+}
+
+.has-action-tint-color {
+  color: var(--action-tint);
+}
+
+.has-action-tint-background-color {
+  background-color: var(--action-tint);
 }
 
 /* Accent color classes */
@@ -617,6 +632,14 @@ cite,
   background-color: var(--accent);
 }
 
+.has-accent-light-color {
+  color: var(--accent-light);
+}
+
+.has-accent-light-background-color {
+  background-color: var(--accent-light);
+}
+
 .has-accent-dark-color {
   color: var(--accent-dark);
 }
@@ -625,13 +648,29 @@ cite,
   background-color: var(--accent-dark);
 }
 
-/* Has extra accent color classes */
+.has-accent-tint-color {
+  color: var(--accent-tint);
+}
+
+.has-accent-tint-background-color {
+  background-color: var(--accent-tint);
+}
+
+/* Extra accent color classes */
 .has-extra-accent-color {
   color: var(--extra-accent);
 }
 
 .has-extra-accent-background-color {
   background-color: var(--extra-accent);
+}
+
+.has-extra-accent-light-color {
+  color: var(--extra-accent-light);
+}
+
+.has-extra-accent-light-background-color {
+  background-color: var(--extra-accent-light);
 }
 
 .has-extra-accent-dark-color {
@@ -642,33 +681,41 @@ cite,
   background-color: var(--extra-accent-dark);
 }
 
-/*
- * Grays and background color classes
- */
-.has-gray-color {
-  color: var(--gray-background);
+.has-extra-accent-tint-color {
+  color: var(--extra-accent-tint);
 }
 
-.has-gray-background-color {
-  background-color: var(--gray-background);
+.has-extra-accent-tint-background-color {
+  background-color: var(--extra-accent-tint);
+}
+
+/*
+ * Background color classes
+ */
+.has-primary-tint-color {
+  color: var(--primary-tint);
+}
+
+.has-primary-tint-background-color {
+  background-color: var(--primary-tint);
 }
 
 .has-dark-color {
-  color: var(--dark-background);
+  color: var(--dark);
 }
 
 .has-dark-background-color {
-  background-color: var(--dark-background);
-  color: var(--light-text-over-dark);
+  background-color: var(--dark);
+  color: var(--on-dark);
 }
 
 .has-darker-color {
-  color: var(--darker-background);
+  color: var(--darker);
 }
 
 .has-darker-background-color {
-  background-color: var(--darker-background);
-  color: var(--light-text-over-dark);
+  background-color: var(--darker);
+  color: var(--on-dark);
 }
 
 .has-subdued-light-color {
@@ -687,12 +734,12 @@ cite,
   background-color: var(--subdued-dark);
 }
 
-.has-light-text-over-dark-color {
-  color: var(--light-text-over-dark);
+.has-on-dark-color {
+  color: var(--on-dark);
 }
 
-.has-light-text-over-dark-background-color {
-  background-color: var(--light-text-over-dark);
+.has-on-dark-background-color {
+  background-color: var(--on-dark);
 }
 
 /**
@@ -772,19 +819,12 @@ cite,
 }
 .v-grid-item-container .v-grid-item-title a {
   display: block;
-  text-decoration: none;
 }
 .v-grid-item-container .v-grid-item-meta {
   font-size: 0.722rem;
   display: block;
   font-weight: 600;
   line-height: 1;
-}
-.v-grid-item-container .v-grid-item-meta a {
-  text-decoration: none;
-}
-.v-grid-item-container .v-grid-item-meta a:active, .v-grid-item-container .v-grid-item-meta a:focus, .v-grid-item-container .v-grid-item-meta a:hover {
-  text-decoration: underline;
 }
 .v-grid-item-container:not(.v-subdued) {
   border-radius: 10px;
@@ -805,9 +845,6 @@ cite,
   font-size: 0.889rem;
   flex: 1 0 auto;
   padding: 0 clamp(1.25rem, 2.4vw, 2rem) 1.5rem;
-}
-.v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-body .hellip-link {
-  text-decoration: none;
 }
 .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-footer {
   font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -853,6 +890,12 @@ cite,
   font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 500;
   font-size: 0.889rem;
+}
+.content-header .content-header-secondary-cta a {
+  text-decoration: none;
+}
+.content-header .content-header-secondary-cta a:active, .content-header .content-header-secondary-cta a:focus, .content-header .content-header-secondary-cta a:hover {
+  text-decoration: underline;
 }
 .content-header.v-text-align-center .content-header-title,
 .content-header.v-text-align-center .content-header-description,
@@ -2358,7 +2401,7 @@ form select {
 }
 
 .footer-lead.v-dark-background {
-  background-color: var(--darker-background);
+  background-color: var(--darker);
 }
 .footer-lead .footer-lead-cta {
   display: flex;
