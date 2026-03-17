@@ -2067,6 +2067,14 @@ main {
   font-weight: 500;
   text-decoration: none;
 }
+@media all and (max-width: 767px) {
+  .post-navigation .nav-links {
+    flex-direction: column;
+  }
+  .post-navigation .nav-links .nav-next {
+    text-align: left;
+  }
+}
 .post-navigation .nav-subtitle {
   font-size: 0.778rem;
   display: block;

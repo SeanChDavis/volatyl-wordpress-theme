@@ -431,6 +431,14 @@
 			@include headingFont;
 			text-decoration: none;
 		}
+
+		@media all and (max-width: #{$smMinWidth - 1}) {
+			flex-direction: column;
+
+			.nav-next {
+				text-align: left;
+			}
+		}
 	}
 
 	.nav-subtitle {
