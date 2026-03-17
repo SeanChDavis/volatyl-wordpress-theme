@@ -380,6 +380,7 @@
 }
 
 .pagination {
+	margin-top: 2rem;
 
 	.nav-links {
 		@include headingFont;
@@ -388,7 +389,6 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: .5rem;
-		justify-content: center;
 
 		a {
 			text-decoration: underline;
@@ -418,20 +418,28 @@
 		gap: 1.5rem;
 		justify-content: space-between;
 
+		.nav-previous,
+		.nav-next {
+			flex: 1 1 0;
+		}
+
 		.nav-next {
 			text-align: right;
+		}
+
+		a {
+			@include headingFont;
+			text-decoration: none;
 		}
 	}
 
 	.nav-subtitle {
 		@include fontSmallest;
-		@include headingFont;
 		display: block;
 		text-transform: uppercase;
 	}
 
 	.nav-label {
-		@include headingFont;
 		@include fontSmall;
 		display: block;
 	}
