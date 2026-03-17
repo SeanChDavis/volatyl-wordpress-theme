@@ -12,7 +12,7 @@ get_header();
 						while ( have_posts() ) :
 							the_post();
 							get_template_part( 'content/content', 'single' );
-							the_posts_navigation();
+							the_post_navigation();
 							if ( comments_open() || get_comments_number() ) :
 								comments_template();
 							endif;

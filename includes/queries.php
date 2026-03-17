@@ -58,4 +58,4 @@ function volatyl_found_posts( $found_posts, $query  ) {
 
 	return $found_posts;
 }
-add_action( 'found_posts', 'volatyl_found_posts', 10, 2 );
+add_filter( 'found_posts', 'volatyl_found_posts', 10, 2 );
