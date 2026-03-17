@@ -107,6 +107,8 @@ h6,
 .comment-meta a,
 .logged-in-as a,
 .comment-notes a,
+.pagination a,
+.post-navigation a,
 .posts-navigation a,
 .wp-calendar-nav-prev a,
 .wp-block-latest-comments__comment-meta a,
@@ -122,11 +124,16 @@ cite {
 }
 
 .v-subdued-title,
+.post-navigation .nav-subtitle,
 .featured-page .section-description,
 .archive-title.content-header-title,
 [class*="wp-block-"] > label,
 figure figcaption {
 	color: var(--subdued-dark);
+}
+
+.pagination .page-numbers.current {
+	color: var(--action);
 }
 
 .blog-name a,

@@ -367,5 +367,72 @@
 		.nav-next {
 			text-align: right;
 		}
+
+		a {
+			text-decoration: underline;
+
+			&:hover,
+			&:focus {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.pagination {
+
+	.nav-links {
+		@include headingFont;
+		@include fontSmaller;
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		gap: .5rem;
+		justify-content: center;
+
+		a {
+			text-decoration: underline;
+
+			&:hover,
+			&:focus {
+				text-decoration: none;
+			}
+		}
+
+		.page-numbers.current {
+			font-weight: bold;
+		}
+	}
+}
+
+.post-navigation {
+	border-bottom: 1px solid var(--subdued-light);
+	border-top: 1px solid var(--subdued-light);
+	margin-bottom: 2.5rem;
+	margin-top: 2.5rem;
+	padding-bottom: 1.5rem;
+	padding-top: 1.5rem;
+
+	.nav-links {
+		display: flex;
+		gap: 1.5rem;
+		justify-content: space-between;
+
+		.nav-next {
+			text-align: right;
+		}
+	}
+
+	.nav-subtitle {
+		@include fontSmallest;
+		@include headingFont;
+		display: block;
+		text-transform: uppercase;
+	}
+
+	.nav-label {
+		@include headingFont;
+		@include fontSmall;
+		display: block;
 	}
 }

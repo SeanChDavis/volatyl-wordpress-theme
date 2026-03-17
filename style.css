@@ -191,6 +191,8 @@ h6,
 .comment-meta a,
 .logged-in-as a,
 .comment-notes a,
+.pagination a,
+.post-navigation a,
 .posts-navigation a,
 .wp-calendar-nav-prev a,
 .wp-block-latest-comments__comment-meta a,
@@ -206,11 +208,16 @@ cite {
 }
 
 .v-subdued-title,
+.post-navigation .nav-subtitle,
 .featured-page .section-description,
 .archive-title.content-header-title,
 [class*=wp-block-] > label,
 figure figcaption {
   color: var(--subdued-dark);
+}
+
+.pagination .page-numbers.current {
+  color: var(--action);
 }
 
 .blog-name a,
@@ -2005,6 +2012,62 @@ main {
 }
 .posts-navigation .nav-links .nav-next {
   text-align: right;
+}
+.posts-navigation .nav-links a {
+  text-decoration: underline;
+}
+.posts-navigation .nav-links a:hover, .posts-navigation .nav-links a:focus {
+  text-decoration: none;
+}
+
+.pagination .nav-links {
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
+  font-size: 0.833rem;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.pagination .nav-links a {
+  text-decoration: underline;
+}
+.pagination .nav-links a:hover, .pagination .nav-links a:focus {
+  text-decoration: none;
+}
+.pagination .nav-links .page-numbers.current {
+  font-weight: bold;
+}
+
+.post-navigation {
+  border-bottom: 1px solid var(--subdued-light);
+  border-top: 1px solid var(--subdued-light);
+  margin-bottom: 2.5rem;
+  margin-top: 2.5rem;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+.post-navigation .nav-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+.post-navigation .nav-links .nav-next {
+  text-align: right;
+}
+.post-navigation .nav-subtitle {
+  font-size: 0.778rem;
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
+  display: block;
+  text-transform: uppercase;
+}
+.post-navigation .nav-label {
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
+  font-size: 0.889rem;
+  display: block;
 }
 
 .widget {
