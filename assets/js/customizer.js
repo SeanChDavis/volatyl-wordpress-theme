@@ -53,6 +53,36 @@
 			document.documentElement.style.setProperty( '--on-dark-luminance', darkBgLightColor + '%' );
 		} );
 	} );
+	// Color scheme type — update CSS custom properties directly for live preview
+	wp.customize( 'volatyl_color_scheme_type', function( value ) {
+		value.bind( function( to ) {
+			var root = document.documentElement;
+
+			// Hue variable each slot should reference per scheme
+			var schemeHues = {
+				monochromatic:       { action: '--primary-hue',                      accent: '--primary-hue',                       extraAccent: '--primary-hue' },
+				complementary:       { action: '--complementary-accent-hue',         accent: '--complementary-accent-hue',          extraAccent: '--complementary-accent-hue' },
+				analogous:           { action: '--analogous-accent-hue-1',           accent: '--analogous-accent-hue-2',            extraAccent: '--analogous-accent-hue-2' },
+				triadic:             { action: '--triadic-accent-hue-1',             accent: '--triadic-accent-hue-2',              extraAccent: '--triadic-accent-hue-2' },
+				split_complementary: { action: '--split-complementary-accent-hue-1', accent: '--split-complementary-accent-hue-2',  extraAccent: '--split-complementary-accent-hue-2' },
+				tetradic:            { action: '--tetradic-accent-hue-1',            accent: '--tetradic-accent-hue-2',             extraAccent: '--tetradic-accent-hue-3' },
+			};
+
+			var hues = schemeHues[ to ] || schemeHues.monochromatic;
+
+			function setColorGroup( prefix, hueVar ) {
+				root.style.setProperty( '--' + prefix,            'oklch(55% .25 var(' + hueVar + '))' );
+				root.style.setProperty( '--' + prefix + '-light', 'oklch(75% .25 var(' + hueVar + '))' );
+				root.style.setProperty( '--' + prefix + '-dark',  'oklch(30% .25 var(' + hueVar + '))' );
+				root.style.setProperty( '--' + prefix + '-tint',  'oklch(97.5% calc(var(--global-chroma) * 0.05) var(' + hueVar + '))' );
+			}
+
+			setColorGroup( 'action',       hues.action );
+			setColorGroup( 'accent',       hues.accent );
+			setColorGroup( 'extra-accent', hues.extraAccent );
+		} );
+	} );
+
 	/**
 	 * Front Page Template
 	 */
