@@ -94,15 +94,14 @@
 
 	const menuModalInner = menuModalOuter.querySelector("#primary-menu");
 	const closeButton = document.createElement("button");
+	closeButton.classList.add('close-menu-modal','v-button','v-margin-top-4');
+	closeButton.textContent = "Close Menu";
+	menuModalInner.appendChild(closeButton);
 
 	// Conduct all the tasks required for opening the menu modal.
 	button.addEventListener('click', function() {
 		siteNavigation.classList.toggle("toggled");
 		menuModalOuter.classList.add("menu-modal-active","v-padding-2");
-
-		closeButton.classList.add('close-menu-modal','v-button','v-margin-top-4');
-		closeButton.textContent = "Close Menu";
-		menuModalInner.appendChild(closeButton);
 
 		if (button.getAttribute('aria-expanded') === 'true') {
 			button.setAttribute('aria-expanded', 'false');

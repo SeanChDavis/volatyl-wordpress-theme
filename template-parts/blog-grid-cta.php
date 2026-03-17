@@ -13,16 +13,16 @@ $cta_classes = array( 'blog-grid-cta', 'v-padding-x-4', 'v-text-align-center', $
 
 if ( $cta_area & ( ( $cta_title || $cta_description ) || ( $cta_button_url && $cta_button_text ) ) ) {
 	?>
-	<div class="<?php echo implode( ' ', $cta_classes ); ?>">
+	<div class="<?php echo esc_attr( implode( ' ', $cta_classes ) ); ?>">
 		<?php if ( $cta_title ) { ?>
-			<span class="h3 cta-title"><?php echo $cta_title; ?></span>
+			<span class="h3 cta-title"><?php echo esc_html( $cta_title ); ?></span>
 		<?php } ?>
 		<?php if ( $cta_description ) { ?>
-			<p class="cta-description v-margin-bottom-0"><?php echo $cta_description; ?></p>
+			<p class="cta-description v-margin-bottom-0"><?php echo wp_kses_post( $cta_description ); ?></p>
 		<?php } ?>
 		<?php if ( $cta_button_url && $cta_button_text ) { ?>
 			<div class="cta-action">
-				<a href="<?php echo $cta_button_url; ?>" class="v-button v-large"><?php echo $cta_button_text; ?></a>
+				<a href="<?php echo esc_url( $cta_button_url ); ?>" class="v-button v-large"><?php echo esc_html( $cta_button_text ); ?></a>
 			</div>
 		<?php } ?>
 	</div>

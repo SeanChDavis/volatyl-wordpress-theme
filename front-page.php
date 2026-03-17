@@ -76,14 +76,12 @@ if ( get_theme_mod( 'volatyl_front_page_hero_use_custom_title' ) && ! empty( $cu
 			?>
 			<section class="blog-posts-featured">
 				<div class="inner">
-					<span class="v-subdued-title v-margin-bottom-2"><?php echo __( 'From the blog',
-								'volatyl' ); ?></span>
-					<div class="v-grid v-grid-columns_<?php echo $blog_grid_columns; ?>">
+					<span class="v-subdued-title v-margin-bottom-2"><?php echo esc_html__( 'From the blog', 'volatyl' ); ?></span>
+					<div class="v-grid v-grid-columns_<?php echo absint( $blog_grid_columns ); ?>">
 						<?php
 						foreach ( $recent_posts as $post ) {
 							get_template_part( 'content/content', 'grid-items', $post );
 						}
-						wp_reset_query();
 						?>
 					</div>
 				</div>

@@ -53,15 +53,6 @@
 			document.documentElement.style.setProperty( '--on-dark-luminance', darkBgLightColor + '%' );
 		} );
 	} );
-	// Color scheme type
-	wp.customize( 'volatyl_color_scheme_type', function( value ) {
-		value.bind( function( to ) {
-			$( 'body' )
-				.removeClass( 'monochromatic-color-scheme complementary-color-scheme analogous-color-scheme triadic-color-scheme split_complementary-color-scheme tetradic-color-scheme' )
-				.addClass( to + '-color-scheme' );
-		} );
-	} );
-
 	/**
 	 * Front Page Template
 	 */

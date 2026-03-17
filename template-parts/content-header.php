@@ -32,23 +32,23 @@ if ( isset( $args['is_centered'] ) && $args['is_centered'] ) {
 }
 ?>
 
-<section class="<?php echo $content_header_classes; ?>">
+<section class="<?php echo esc_attr( $content_header_classes ); ?>">
 	<div class="inner">
 		<?php
 		if ( is_front_page() && ! is_home() ) {
 			?>
-			<h1 class="content-header-title"><?php echo $args['title']; ?></h1>
+			<h1 class="content-header-title"><?php echo wp_kses_post( $args['title'] ); ?></h1>
 			<?php if ( ! empty( $args['description'] ) ) { ?>
-				<p class="content-header-description"><?php echo $args['description']; ?></p>
+				<p class="content-header-description"><?php echo wp_kses_post( $args['description'] ); ?></p>
 			<?php } ?>
 			<?php if ( ! empty( $args['primary_cta']['url'] ) && ! empty( $args['primary_cta']['text'] ) ) { ?>
 				<p class="content-header-primary-cta">
-					<a href="<?php echo $args['primary_cta']['url']; ?>" class="v-button v-large"><?php echo $args['primary_cta']['text']; ?></a>
+					<a href="<?php echo esc_url( $args['primary_cta']['url'] ); ?>" class="v-button v-large"><?php echo esc_html( $args['primary_cta']['text'] ); ?></a>
 				</p>
 			<?php } ?>
 			<?php if ( ! empty( $args['secondary_cta']['url'] ) && ! empty( $args['secondary_cta']['text'] ) ) { ?>
 				<p class="content-header-secondary-cta">
-					<a href="<?php echo $args['secondary_cta']['url']; ?>"><?php echo $args['secondary_cta']['text']; ?></a>
+					<a href="<?php echo esc_url( $args['secondary_cta']['url'] ); ?>"><?php echo esc_html( $args['secondary_cta']['text'] ); ?></a>
 				</p>
 			<?php } ?>
 			<?php
@@ -60,9 +60,9 @@ if ( isset( $args['is_centered'] ) && $args['is_centered'] ) {
 				);
 			}
 			?>
-			<h1 class="content-header-title"><?php echo $blog_title; ?></h1>
+			<h1 class="content-header-title"><?php echo wp_kses_post( $blog_title ); ?></h1>
 			<?php if ( get_theme_mod( 'volatyl_blog_description' ) ) { ?>
-				<p class="content-header-description"><?php echo get_theme_mod( 'volatyl_blog_description' ); ?></p>
+				<p class="content-header-description"><?php echo wp_kses_post( get_theme_mod( 'volatyl_blog_description' ) ); ?></p>
 			<?php } ?>
 			<?php if ( get_theme_mod( 'volatyl_blog_search_form', 0 ) ) { ?>
 				<div class="content-header-search-form">
@@ -72,15 +72,15 @@ if ( isset( $args['is_centered'] ) && $args['is_centered'] ) {
 			<?php
 		} elseif ( is_page() ) {
 			?>
-			<h1 class="content-header-title"><?php echo $args['title']; ?></h1>
+			<h1 class="content-header-title"><?php echo wp_kses_post( $args['title'] ); ?></h1>
 			<?php if ( has_excerpt() ) : ?>
-				<p class="content-header-description"><?php echo get_the_excerpt(); ?></p>
+				<p class="content-header-description"><?php echo wp_kses_post( get_the_excerpt() ); ?></p>
 			<?php endif; ?>
 			<?php
 		} elseif ( is_single() ) {
 			if ( ! empty( get_the_title() ) ) {
 				?>
-				<h1 class="content-header-title"><?php echo $args['title']; ?></h1>
+				<h1 class="content-header-title"><?php echo wp_kses_post( $args['title'] ); ?></h1>
 				<?php
 			}
 		} elseif ( is_search() ) {
@@ -95,21 +95,21 @@ if ( isset( $args['is_centered'] ) && $args['is_centered'] ) {
 		} elseif ( is_archive() ) {
 			if ( ! empty( get_the_archive_title() ) ) {
 				?>
-				<h1 class="content-header-title archive-title v-margin-bottom-3"><?php echo get_the_archive_title(); ?></h1>
+				<h1 class="content-header-title archive-title v-margin-bottom-3"><?php echo wp_kses_post( get_the_archive_title() ); ?></h1>
 				<?php
 			}
 			if ( ! empty( get_the_archive_description() ) ) {
 				?>
 				<div class="content-header-description">
-					<?php echo get_the_archive_description(); ?>
+					<?php echo wp_kses_post( get_the_archive_description() ); ?>
 				</div>
 				<?php
 			}
 		} else {
 			?>
-			<h1 class="content-header-title"><?php echo $args['title']; ?></h1>
+			<h1 class="content-header-title"><?php echo wp_kses_post( $args['title'] ); ?></h1>
 			<?php if ( ! empty( $args['description'] ) ) { ?>
-				<p class="content-header-description"><?php echo $args['description']; ?></p>
+				<p class="content-header-description"><?php echo wp_kses_post( $args['description'] ); ?></p>
 			<?php } ?>
 			<?php
 		}

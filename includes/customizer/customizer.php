@@ -217,16 +217,12 @@ function volatyl_customize_controls_print_styles() { ?>
 add_action( 'customize_controls_print_styles', 'volatyl_customize_controls_print_styles' );
 
 /**
- * Add color scheme CSS variables to front-end <head>
+ * Add color scheme CSS variables to front-end <head> as a single <style> block.
+ * Only the active scheme's overrides are output — no wasted CSS for inactive schemes.
  */
 function volatyl_customizer_head_styles() {
-
-	// Base color scheme variables that are used across all color schemes
-	echo '<style>' . volatyl_root_color_scheme_base() . '</style>';
-	echo '<style>' . volatyl_root_color_scheme_complementary() . '</style>';
-	echo '<style>' . volatyl_root_color_scheme_analogous() . '</style>';
-	echo '<style>' . volatyl_root_color_scheme_triadic() . '</style>';
-	echo '<style>' . volatyl_root_color_scheme_split_complementary() . '</style>';
-	echo '<style>' . volatyl_root_color_scheme_tetradic() . '</style>';
+	$scheme  = get_theme_mod( 'volatyl_color_scheme_type', DEFAULT_COLOR_SCHEME_TYPE );
+	$css     = volatyl_root_color_scheme_base() . volatyl_get_scheme_overrides( $scheme );
+	echo '<style>' . $css . '</style>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 add_action( 'wp_head', 'volatyl_customizer_head_styles' );
