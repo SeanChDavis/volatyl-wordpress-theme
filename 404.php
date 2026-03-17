@@ -6,7 +6,7 @@ get_header();
 		<?php
 		get_template_part( 'template-parts/content', 'header', array(
 			'title' => esc_html__( 'Nothing Found', 'volatyl' ),
-			'description' => esc_html__( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'volatyl' ),
+			'description' => esc_html__( "It seems we can't find what you're looking for. Perhaps searching can help.", 'volatyl' ),
 			'has_search_form' => true,
 		) );
 		?>

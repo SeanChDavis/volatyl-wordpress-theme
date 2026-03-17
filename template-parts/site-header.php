@@ -19,13 +19,13 @@ if ( $is_dark ) {
 					$blog_name = get_bloginfo( 'name' );
 					if ( $is_dark && ! empty( $light_logo_atts[0] ) ) {
 						?>
-						<a href="<?php echo $home_url; ?>" class="custom-logo-link" rel="home"><img src="<?php echo $light_logo_atts[0]; ?>" class="custom-logo"></a>
+						<a href="<?php echo $home_url; ?>" class="custom-logo-link" rel="home"><img src="<?php echo esc_url( $light_logo_atts[0] ); ?>" class="custom-logo" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"></a>
 						<?php
 					} else {
 						if ( has_custom_logo() ) {
 							the_custom_logo();
 						} else {
-							echo '<p class="site-title v-margin-0"><a href="' . $home_url . '" rel="home">' . $blog_name . '</a></p>';
+							echo '<p class="site-title v-margin-0"><a href="' . $home_url . '" rel="home">' . esc_html( $blog_name ) . '</a></p>';
 						}
 					}
 					?>

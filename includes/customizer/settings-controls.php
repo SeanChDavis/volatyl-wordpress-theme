@@ -293,7 +293,7 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 // Hero primary CTA button URL
 $wp_customize->add_setting( 'volatyl_front_page_hero_primary_cta_button_url', array(
 	'default'           => NULL,
-	'sanitize_callback' => 'volatyl_sanitize_text',
+	'sanitize_callback' => 'esc_url_raw',
 ) );
 $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize, 'volatyl_front_page_hero_primary_cta_button_url', array(
 	'section'     => 'volatyl_front_page_template',
@@ -317,7 +317,7 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 // Hero secondary CTA button URL
 $wp_customize->add_setting( 'volatyl_front_page_hero_secondary_cta_button_url', array(
 	'default'           => NULL,
-	'sanitize_callback' => 'volatyl_sanitize_text',
+	'sanitize_callback' => 'esc_url_raw',
 ) );
 $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize, 'volatyl_front_page_hero_secondary_cta_button_url', array(
 	'section'     => 'volatyl_front_page_template',
@@ -407,7 +407,8 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 
 // Featured Page select
 $wp_customize->add_setting( 'volatyl_front_page_featured_page_select', array(
-	'default' => '',
+	'default'           => '',
+	'sanitize_callback' => 'absint',
 ) );
 $wp_customize->add_control( 'volatyl_front_page_featured_page_select', array(
 	'section'        => 'volatyl_front_page_template',
@@ -483,7 +484,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 // Posts per page (linked to core setting)
 $wp_customize->add_setting( 'volatyl_blog_posts_grid_columns_rows', array(
 	'default'           => '3_3',
-	'sanitize_callback' => 'volatyl_sanitize_text',
+	'sanitize_callback' => 'volatyl_sanitize_select',
 ) );
 $wp_customize->add_control( 'volatyl_blog_posts_grid_columns_rows', array(
 	'section'  => 'volatyl_blog_template',
@@ -583,7 +584,7 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 // Blog grid CTA button URL
 $wp_customize->add_setting( 'volatyl_blog_grid_cta_button_url', array(
 	'default'           => NULL,
-	'sanitize_callback' => 'volatyl_sanitize_text',
+	'sanitize_callback' => 'esc_url_raw',
 ) );
 $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize, 'volatyl_blog_grid_cta_button_url', array(
 	'section'         => 'volatyl_blog_template',
@@ -663,7 +664,7 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 // Footer Lead CTA button URL
 $wp_customize->add_setting( 'volatyl_footer_lead_cta_button_url', array(
 	'default'           => NULL,
-	'sanitize_callback' => 'volatyl_sanitize_text',
+	'sanitize_callback' => 'esc_url_raw',
 ) );
 $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize, 'volatyl_footer_lead_cta_button_url', array(
 	'section'         => 'volatyl_footer_areas',

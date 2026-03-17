@@ -6,23 +6,9 @@
 function volatyl_editor_style() {
 	add_editor_style();
 	wp_enqueue_style( 'volatyl-editor-style', get_theme_file_uri( 'editor-style.css' ), false, THEME_VERSION, 'all' );
-	wp_add_inline_style( 'volatyl-editor-style', volatyl_root_color_scheme_base() );
-
-	// Override the default color scheme based on the chosen color scheme
-	$color_scheme = get_theme_mod( 'volatyl_color_scheme_type', 'monochromatic' );
-	$color_scheme_variables = '';
-	if ( 'complementary' === $color_scheme ) {
-		$color_scheme_variables = volatyl_root_color_scheme_complementary( false );
-	} elseif ( 'analogous' === $color_scheme ) {
-		$color_scheme_variables = volatyl_root_color_scheme_analogous( false );
-	} elseif ( 'triadic' === $color_scheme ) {
-		$color_scheme_variables = volatyl_root_color_scheme_triadic( false );
-	} elseif ( 'split_complementary' === $color_scheme ) {
-		$color_scheme_variables = volatyl_root_color_scheme_split_complementary( false );
-	} elseif ( 'tetradic' === $color_scheme ) {
-		$color_scheme_variables = volatyl_root_color_scheme_tetradic( false );
-	}
-	wp_add_inline_style( 'volatyl-editor-style', $color_scheme_variables );
+	$scheme          = get_theme_mod( 'volatyl_color_scheme_type', DEFAULT_COLOR_SCHEME_TYPE );
+	$editor_css      = volatyl_root_color_scheme_base() . volatyl_get_scheme_overrides( $scheme );
+	wp_add_inline_style( 'volatyl-editor-style', $editor_css );
 }
 add_action( 'enqueue_block_editor_assets', 'volatyl_editor_style' );
 
