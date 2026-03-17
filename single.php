@@ -12,7 +12,10 @@ get_header();
 						while ( have_posts() ) :
 							the_post();
 							get_template_part( 'content/content', 'single' );
-							the_post_navigation();
+							the_post_navigation( array(
+							'prev_text' => '<span class="nav-subtitle">&#8592; ' . esc_html__( 'Previous Post', 'volatyl' ) . '</span><span class="nav-label">%title</span>',
+							'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next Post', 'volatyl' ) . ' &#8594;</span><span class="nav-label">%title</span>',
+						) );
 							if ( comments_open() || get_comments_number() ) :
 								comments_template();
 							endif;
