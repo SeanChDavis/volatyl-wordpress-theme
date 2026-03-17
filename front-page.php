@@ -103,15 +103,15 @@ if ( get_theme_mod( 'volatyl_front_page_hero_use_custom_title' ) && ! empty( $cu
 					<div class="v-grid v-grid-columns_2">
 						<header class="content-left">
 							<h1 class="section-title h3">
-								<?php echo $featured_page->post_title; ?>
+								<?php echo esc_html( $featured_page->post_title ); ?>
 							</h1>
 							<?php if ( ! empty( $featured_page->post_excerpt ) ) { ?>
-								<p class="section-description v-margin-bottom-3"><?php echo $featured_page->post_excerpt; ?></p>
+								<p class="section-description v-margin-bottom-3"><?php echo wp_kses_post( $featured_page->post_excerpt ); ?></p>
 							<?php } ?>
 						</header>
 						<div class="content-right">
 							<div class="section-content">
-								<?php echo $featured_page->post_content; ?>
+								<?php echo apply_filters( 'the_content', $featured_page->post_content ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 							</div>
 						</div>
 					</div>

@@ -28,17 +28,6 @@ add_action( 'customize_register', 'volatyl_customize_register' );
 include 'sanitize.php';
 
 /**
- * Conditionally display Front Page Hero Dark options
- */
-function volatyl_display_front_page_hero_dark_settings( $control ) {
-	if ( $control->manager->get_setting( 'volatyl_front_page_hero_dark' )->value() === 1 ) {
-		return true;
-	} else {
-		return false;
-	}
-}
-
-/**
  * Conditionally display Front Page Hero Title options
  */
 function volatyl_display_front_page_hero_title_settings( $control ) {

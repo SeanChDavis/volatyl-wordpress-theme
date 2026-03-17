@@ -21,6 +21,16 @@ $wp_customize->add_section( 'volatyl_color_scheme', array(
 ) );
 
 /**
+ * Section Backgrounds
+ */
+$wp_customize->add_section( 'volatyl_section_backgrounds', array(
+	'title'       => __( 'Section Backgrounds', 'volatyl' ),
+	'description' => __( 'Control which site sections display with a dark background. For individual pages and posts, use the Page Layout option in the editor sidebar.', 'volatyl' ),
+	'panel'       => 'volatyl_settings',
+	'priority'    => 25,
+) );
+
+/**
  * Content Configuration
  */
 $wp_customize->add_section( 'volatyl_content_section', array(

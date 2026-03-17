@@ -76,7 +76,7 @@ function volatyl_root_color_scheme_base() {
 
 		/* Miscellaneous */
 		--on-dark: oklch(var(--on-dark-luminance) calc(var(--global-chroma) * 0.5) var(--primary-hue));
---white: #fff;
+		--white: #fff;
 		--translucent-light: rgba(255,255,255,.05);
 		--translucent-dark: rgba(0,0,0,.05);
 

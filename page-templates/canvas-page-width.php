@@ -6,6 +6,11 @@ get_header();
 ?>
 
 	<main id="main">
+		<?php
+		if ( get_post_meta( get_queried_object_id(), '_volatyl_show_page_header', true ) ) {
+			get_template_part( 'template-parts/content', 'header' );
+		}
+		?>
 		<div class="inner">
 			<?php
 			if ( have_posts() ) :

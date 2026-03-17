@@ -1,16 +1,11 @@
 <?php // The main site header
 
-// get args passed to site-header through the header template
-if ( ! isset( $args ) ) {
-	$args = array(
-			'is_dark' => false,
-	);
-}
+$args    = wp_parse_args( $args ?? array(), array( 'is_dark' => false ) );
+$is_dark = (bool) $args['is_dark'];
 
-$is_dark = isset( $args['is_dark'] ) && $args['is_dark'];
 $light_logo_atts = array();
 if ( $is_dark ) {
-	$light_logo_atts = wp_get_attachment_image_src( get_theme_mod( 'volatyl_front_page_hero_light_logo' ) );
+	$light_logo_atts = wp_get_attachment_image_src( get_theme_mod( 'volatyl_light_logo' ) );
 }
 ?>
 

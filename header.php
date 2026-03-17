@@ -1,11 +1,9 @@
 <?php // Full site head and opening body/page markup
 
 // get args passed to header for the site-header template part
-if ( ! isset( $args ) ) {
-	$args = array(
-			'is_dark' => false,
-	);
-}
+$args = wp_parse_args( $args ?? array(), array(
+	'is_dark' => volatyl_has_dark_header(),
+) );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>

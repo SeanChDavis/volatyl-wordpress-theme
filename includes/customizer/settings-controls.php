@@ -1,6 +1,84 @@
 <?php
 
 /**
+ * Section Backgrounds
+ */
+
+// Light logo (used whenever any dark background is active)
+$wp_customize->add_setting( 'volatyl_light_logo', array(
+	'default'           => 0,
+	'sanitize_callback' => 'absint'
+) );
+$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'volatyl_light_logo', array(
+	'section'     => 'volatyl_section_backgrounds',
+	'priority'    => 5,
+	'label'       => __( 'Light logo', 'volatyl' ),
+	'description' => __( 'Upload a light version of your logo to display over any dark background section. If no light logo is uploaded, the standard logo will be used instead.', 'volatyl' ),
+	'mime_type'   => 'image',
+) ) );
+
+// Dark header on archive and blog index pages
+$wp_customize->add_setting( 'volatyl_archive_dark_header', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox',
+) );
+$wp_customize->add_control( 'volatyl_archive_dark_header', array(
+	'section'     => 'volatyl_section_backgrounds',
+	'priority'    => 10,
+	'label'       => __( 'Enable dark header on archive pages', 'volatyl' ),
+	'description' => __( 'Applies to category, tag, author, date, and blog index pages.', 'volatyl' ),
+	'type'        => 'checkbox',
+) );
+
+// Dark header on search results
+$wp_customize->add_setting( 'volatyl_search_dark_header', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox',
+) );
+$wp_customize->add_control( 'volatyl_search_dark_header', array(
+	'section'  => 'volatyl_section_backgrounds',
+	'priority' => 20,
+	'label'    => __( 'Enable dark header on search results', 'volatyl' ),
+	'type'     => 'checkbox',
+) );
+
+// Dark header on 404
+$wp_customize->add_setting( 'volatyl_404_dark_header', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox',
+) );
+$wp_customize->add_control( 'volatyl_404_dark_header', array(
+	'section'  => 'volatyl_section_backgrounds',
+	'priority' => 30,
+	'label'    => __( 'Enable dark header on 404 page', 'volatyl' ),
+	'type'     => 'checkbox',
+) );
+
+// Dark footer lead
+$wp_customize->add_setting( 'volatyl_footer_lead_color_scheme', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox'
+) );
+$wp_customize->add_control( 'volatyl_footer_lead_color_scheme', array(
+	'section'  => 'volatyl_section_backgrounds',
+	'priority' => 40,
+	'label'    => __( 'Enable dark Footer Lead area', 'volatyl' ),
+	'type'     => 'checkbox',
+) );
+
+// Dark general footer (Fat Footer, Social Navigation, Copyright)
+$wp_customize->add_setting( 'volatyl_footer_general_color_scheme', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox'
+) );
+$wp_customize->add_control( 'volatyl_footer_general_color_scheme', array(
+	'section'  => 'volatyl_section_backgrounds',
+	'priority' => 50,
+	'label'    => __( 'Enable dark footer background', 'volatyl' ),
+	'type'     => 'checkbox',
+) );
+
+/**
  * HTML Structure
  */
 
@@ -150,20 +228,6 @@ $wp_customize->add_control( 'volatyl_front_page_hero_dark', array(
 	'label'    => __( 'Enable dark header & hero', 'volatyl' ),
 	'type'     => 'checkbox',
 ) );
-
-// Hero light logo
-$wp_customize->add_setting( 'volatyl_front_page_hero_light_logo', array(
-	'default'           => 0,
-	'sanitize_callback' => 'absint'
-) );
-$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'volatyl_front_page_hero_light_logo', array(
-	'section'         => 'volatyl_front_page_template',
-	'priority'        => 20,
-	'label'           => __( 'Light logo', 'volatyl' ),
-	'description'     => __( 'Upload a light version of your logo to display over the dark header background.', 'volatyl' ),
-	'mime_type'       => 'image',
-	'active_callback' => 'volatyl_display_front_page_hero_dark_settings',
-) ) );
 
 // Hero alignment
 $wp_customize->add_setting( 'volatyl_front_page_hero_centered', array(
@@ -557,19 +621,6 @@ $wp_customize->add_control( 'volatyl_footer_lead', array(
 	'type'        => 'checkbox',
 ) );
 
-// Footer Lead color scheme
-$wp_customize->add_setting( 'volatyl_footer_lead_color_scheme', array(
-	'default'           => 0,
-	'sanitize_callback' => 'volatyl_sanitize_checkbox'
-) );
-$wp_customize->add_control( 'volatyl_footer_lead_color_scheme', array(
-	'section'         => 'volatyl_footer_areas',
-	'priority'        => 15,
-	'label'           => __( 'Enable dark Footer Lead', 'volatyl' ),
-	'type'            => 'checkbox',
-	'active_callback' => 'volatyl_display_footer_lead_settings',
-) );
-
 // Footer Lead title
 $wp_customize->add_setting( 'volatyl_footer_lead_title', array(
 	'default'           => NULL,
@@ -621,29 +672,6 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 	'description'     => __( 'Set the URL of the call-to-action button.', 'volatyl' ),
 	'active_callback' => 'volatyl_display_footer_lead_settings',
 ) ) );
-
-// Footer general area
-$wp_customize->add_setting( 'volatyl_footer_general_area', array(
-	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
-) );
-$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_footer_general_area', array(
-	'section'     => 'volatyl_footer_areas',
-	'priority'    => 55,
-	'label'       => __( 'General Footer Area', 'volatyl' ),
-	'description' => __( 'These settings pertain to the Fat Footer, Social Navigation, and Copyright areas.', 'volatyl' ),
-) ) );
-
-// Footer general color scheme
-$wp_customize->add_setting( 'volatyl_footer_general_color_scheme', array(
-	'default'           => 0,
-	'sanitize_callback' => 'volatyl_sanitize_checkbox'
-) );
-$wp_customize->add_control( 'volatyl_footer_general_color_scheme', array(
-	'section'         => 'volatyl_footer_areas',
-	'priority'        => 56,
-	'label'           => __( 'Enable dark background', 'volatyl' ),
-	'type'            => 'checkbox',
-) );
 
 // Fat Footer area
 $wp_customize->add_setting( 'volatyl_fat_footer_area', array(

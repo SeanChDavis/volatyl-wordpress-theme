@@ -5,25 +5,19 @@
 
 // Set the args for the content header/hero.
 // This can create both a hero section like the front page and a standard content header for other pages.
-if ( isset( $args ) ) {
-	$args = wp_parse_args(
-			$args,
-			array(
-					'title'           => ! empty( $args['title'] ) ? $args['title'] : get_the_title(),
-					'description'     => ! empty( $args['description'] ) ? $args['description'] : '',
-					'is_centered'     => isset( $args['alignment'] ) && 1 === $args['alignment'] ? 1 : 0,
-					'primary_cta'     => array(
-							'text' => '',
-							'url'  => '',
-					),
-					'secondary_cta'   => array(
-							'text' => '',
-							'url'  => '',
-					),
-					'is_dark'         => false,
-					'has_search_form' => false,
-			)
-	);
+$args = wp_parse_args( $args ?? array(), array(
+	'title'           => get_the_title(),
+	'description'     => '',
+	'is_centered'     => 0,
+	'primary_cta'     => array( 'text' => '', 'url' => '' ),
+	'secondary_cta'   => array( 'text' => '', 'url' => '' ),
+	'is_dark'         => volatyl_has_dark_header(),
+	'has_search_form' => false,
+) );
+
+// is_centered can also be passed as 'alignment' for back-compat with the front page template
+if ( ! $args['is_centered'] && isset( $args['alignment'] ) && 1 === $args['alignment'] ) {
+	$args['is_centered'] = 1;
 }
 
 // Set the classes for the content header/hero section based on the args passed in.

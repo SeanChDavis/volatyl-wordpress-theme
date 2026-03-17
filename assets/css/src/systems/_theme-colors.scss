@@ -2,23 +2,106 @@
  * Control the entire theme color scheme
  */
 
-/* Global */
+// ─────────────────────────────────────────────────────────────
+// Mixins
+// ─────────────────────────────────────────────────────────────
+
+/// Primary action buttons — fills with --action, darkens on interaction.
+/// @param {Color | null} $border [null] — pass a color to set an explicit border; omit to leave browser default
+@mixin action-buttons( $border: null ) {
+	.button,
+	.v-button,
+	button,
+	.wp-block-button .wp-block-button__link,
+	.wp-block-file .wp-block-file__button,
+	.comment-reply-link,
+	.wp-block-calendar .wp-calendar-table caption,
+	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
+		background-color: var(--action);
+		color: var(--white);
+
+		@if $border != null {
+			border-color: $border;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: var(--action-dark);
+			border-color: var(--action-dark);
+		}
+	}
+}
+
+/// Utility buttons (search, input[type=submit], etc.) — fills with $bg, darkens on interaction.
+/// @param {Color} $bg [var(--dark)]
+@mixin utility-buttons( $bg: var(--dark) ) {
+	[type="button"],
+	[type="submit"],
+	[type="reset"],
+	.wp-block-search button,
+	#searchform #searchsubmit,
+	.wp-block-search[class*="button-inside"] [class*="search__inside"] button {
+		background-color: $bg;
+		border-color: $bg;
+		color: var(--white);
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: var(--action-dark);
+			border-color: var(--action-dark);
+		}
+	}
+}
+
+/// Form inputs — sets default and focus/active border colors.
+/// @param {Color} $border [var(--dark)]
+/// @param {Color} $focus-border [var(--action)]
+@mixin form-inputs( $border: var(--dark), $focus-border: var(--action) ) {
+	input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
+	textarea,
+	select {
+		border-color: $border;
+
+		&:active,
+		&:focus,
+		&:focus-visible {
+			border-color: $focus-border;
+		}
+	}
+}
+
+// ─────────────────────────────────────────────────────────────
+// Global
+// ─────────────────────────────────────────────────────────────
+
 #page-container {
-	background-color: #fff;
+	background-color: var(--white);
 	color: var(--text);
 }
 
+body,
+.v-gray-background,
+.has-gray-background-color {
+	background-color: var(--primary-tint);
+}
+
+// ─────────────────────────────────────────────────────────────
+// Typography & Links
+// ─────────────────────────────────────────────────────────────
+
+a,
+h4,
+.h4,
+h6,
+.h6 {
+	color: var(--action);
+}
+
 .site-title a,
-#site-navigation #primary-menu .menu-item a,
-#site-navigation .menu-toggle,
 .content-header-secondary-cta a,
-.wp-block-separator.is-style-dots:before,
-.v-grid-item-title a,
-.v-grid-item-meta,
-.v-grid-item-meta a,
-.v-grid-item-footer a,
 .archive-title.content-header-title span,
-#comments .fn a,
 .entry-meta a,
 .entry-footer a,
 .comment-meta a,
@@ -27,45 +110,137 @@
 .posts-navigation a,
 .wp-calendar-nav-prev a,
 .wp-block-latest-comments__comment-meta a,
-cite,
-.fat-footer a {
+.fat-footer a,
+cite {
 	color: var(--text);
 }
 
-/* Everything else */
-.button,
-.v-button,
-button,
-[type="button"],
-[type="submit"],
-[type="reset"],
-.wp-block-button .wp-block-button__link,
-.wp-block-file .wp-block-file__button,
-.wp-block-button.is-style-outline .wp-block-button__link:active,
-.wp-block-button.is-style-outline .wp-block-button__link:focus,
-.wp-block-button.is-style-outline .wp-block-button__link:hover,
-.comment-reply-link,
-.wp-block-calendar .wp-calendar-table caption,
-#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a,
-#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active,
-#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
-#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
-#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu a,
-#site-navigation.toggled > .menu-modal-active #primary-menu .menu-item a,
-table th,
-[class*="wp-block-"] > table th {
-	color: #fff;
+.site-title a:hover,
+.site-title a:focus,
+.site-title a:active {
+	color: var(--action);
 }
 
-body,
-.v-gray-background,
-.has-gray-background-color,
-.v-grid .v-grid-item-container:not(.v-subdued),
-.wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1),
-article .entry-content .wp-block-latest-comments,
-.v-content-container .entry-content .wp-block-latest-comments {
+.v-subdued-title,
+.featured-page .section-description,
+.archive-title.content-header-title,
+[class*="wp-block-"] > label,
+figure figcaption {
+	color: var(--subdued-dark);
+}
+
+.blog-name a,
+.blog-name a:hover,
+.blog-name a:focus,
+.blog-name a:active {
+	border-color: var(--dark);
+}
+
+// ─────────────────────────────────────────────────────────────
+// Buttons
+// ─────────────────────────────────────────────────────────────
+
+@include action-buttons();
+@include utility-buttons();
+
+// Outline button
+.wp-block-button.is-style-outline .wp-block-button__link {
+	border-color: var(--action);
+	color: var(--action);
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: var(--action-dark);
+		border-color: var(--action-dark);
+		color: var(--white);
+	}
+}
+
+// Search "button inside" — the inner container is always action-dark colored
+.wp-block-search[class*="button-inside"] [class*="search__inside"] {
+	background-color: var(--action-dark);
+	border-color: var(--action-dark);
+}
+
+// Content header CTA — interaction states only (inherits base button styles from above)
+.content-header-primary-cta [class*="button"]:hover,
+.content-header-primary-cta [class*="button"]:focus,
+.content-header-primary-cta [class*="button"]:active {
+	background-color: var(--action-dark);
+	border-color: var(--action-dark);
+}
+
+// ─────────────────────────────────────────────────────────────
+// Forms
+// ─────────────────────────────────────────────────────────────
+
+@include form-inputs();
+
+// ─────────────────────────────────────────────────────────────
+// Navigation
+// ─────────────────────────────────────────────────────────────
+
+#site-navigation #primary-menu .menu-item a,
+#site-navigation .menu-toggle {
+	color: var(--text);
+}
+
+// Dropdown and mobile modal backgrounds
+#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu,
+#site-navigation.toggled > [class*="-container"].menu-modal-active #primary-menu,
+#site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu {
+	background-color: var(--darker);
+}
+
+// Dropdown and mobile modal link colors
+#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu a,
+#site-navigation.toggled > .menu-modal-active #primary-menu .menu-item a {
+	color: var(--white);
+}
+
+// Third-level sub-menu links
+#site-navigation #primary-menu > .menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu a {
+	color: var(--on-dark);
+}
+
+// Chevron indicators
+#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after {
+	border-bottom-color: var(--dark);
+}
+
+#site-navigation.toggled > #primary-menu > .menu-item-has-children > a:after {
+	border-bottom-color: var(--on-dark);
+}
+
+// ─────────────────────────────────────────────────────────────
+// Tables
+// ─────────────────────────────────────────────────────────────
+
+table,
+table th,
+table td,
+.wp-block-table.is-style-stripes table th,
+.wp-block-table.is-style-stripes table td,
+[class*="wp-block-"] > table th,
+[class*="wp-block-"] > table td {
+	border-color: var(--dark);
+}
+
+// Table headers share action color with buttons
+table th,
+[class*="wp-block-"] > table th {
+	background-color: var(--action);
+	color: var(--white);
+}
+
+.wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1) {
 	background-color: var(--primary-tint);
 }
+
+// ─────────────────────────────────────────────────────────────
+// Content Elements
+// ─────────────────────────────────────────────────────────────
 
 pre,
 dl,
@@ -77,11 +252,6 @@ var {
 }
 
 hr,
-#comments .comments-title,
-#comments .comment .comment,
-#comments .comment:not(:last-child),
-#comments .comment .comment:not(:last-child),
-#comments .pingback:not(:last-child),
 .wp-block-separator,
 .twitter-tweet,
 .wp-block-quote,
@@ -89,222 +259,108 @@ hr,
 	border-color: var(--subdued-light);
 }
 
-#site-navigation.toggled > #primary-menu > .menu-item-has-children > a:after {
-	border-bottom-color: var(--on-dark);
+.wp-block-separator.is-style-dots:before {
+	color: var(--text);
 }
 
-#site-navigation #primary-menu > .menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu a {
-	color: var(--on-dark);
-}
-
-.v-subdued-title,
-.featured-page .section-description,
-.archive-title.content-header-title,
-.wp-block-calendar .wp-calendar-nav,
-[class*="wp-block-"] > label,
-figure figcaption {
+.wp-block-calendar .wp-calendar-nav {
 	color: var(--subdued-dark);
 }
 
-.close-menu-modal.v-button,
-#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
-	background-color: var(--action);
+// ─────────────────────────────────────────────────────────────
+// Grid & Cards
+// ─────────────────────────────────────────────────────────────
+
+.v-grid .v-grid-item-container:not(.v-subdued) {
+	background-color: var(--primary-tint);
 }
 
-.wp-block-search[class*="button-inside"] [class*="search__inside"],
-.wp-block-button.is-style-outline .wp-block-button__link:active,
-.wp-block-button.is-style-outline .wp-block-button__link:focus,
-.wp-block-button.is-style-outline .wp-block-button__link:hover {
-	border-color: var(--action-dark);
+.v-grid-item-title a {
+	color: var(--text);
 }
 
-.wp-block-button.is-style-outline .wp-block-button__link,
-input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):active,
-input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):focus,
-input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):focus-visible,
-textarea:active,
-textarea:focus,
-textarea:focus-visible,
-select:active,
-select:focus,
-select:focus-visible {
-	border-color: var(--action);
-}
-
-.button:active,
-.button:focus,
-.button:hover,
-.v-button:active,
-.v-button:focus,
-.v-button:hover,
-button:active,
-button:focus,
-button:hover,
-[type="button"]:active,
-[type="button"]:focus,
-[type="button"]:hover,
-[type="submit"]:active,
-[type="submit"]:focus,
-[type="submit"]:hover,
-[type="reset"]:active,
-[type="reset"]:focus,
-[type="reset"]:hover,
-.wp-block-button .wp-block-button__link:active,
-.wp-block-button .wp-block-button__link:focus,
-.wp-block-button .wp-block-button__link:hover,
-.wp-block-file .wp-block-file__button:active,
-.wp-block-file .wp-block-file__button:focus,
-.wp-block-file .wp-block-file__button:hover,
-.wp-block-button.is-style-outline .wp-block-button__link:active,
-.wp-block-button.is-style-outline .wp-block-button__link:focus,
-.wp-block-button.is-style-outline .wp-block-button__link:hover,
-.comment-reply-link:active,
-.comment-reply-link:focus,
-.comment-reply-link:hover,
-#searchform #searchsubmit:active,
-#searchform #searchsubmit:focus,
-#searchform #searchsubmit:hover,
-.wp-block-search button:active,
-.wp-block-search button:focus,
-.wp-block-search button:hover,
-.wp-block-search[class*="button-inside"] [class*="search__inside"],
-.content-header-primary-cta [class*="button"]:active,
-.content-header-primary-cta [class*="button"]:focus,
-.content-header-primary-cta [class*="button"]:hover,
-#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active,
-#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
-#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover {
-	background-color: var(--action-dark);
-	border-color: var(--action-dark);
-}
-
-a,
-h4,
-.h4,
-h6,
-.h6,
-.site-title a:active,
-.site-title a:focus,
-.site-title a:hover,
-.v-grid-item-title a:active,
-.v-grid-item-title a:focus,
 .v-grid-item-title a:hover,
-.wp-block-button.is-style-outline .wp-block-button__link,
-#comments .fn a:active,
-#comments .fn a:focus,
+.v-grid-item-title a:focus,
+.v-grid-item-title a:active {
+	color: var(--action);
+}
+
+.v-grid-item-meta,
+.v-grid-item-meta a,
+.v-grid-item-footer a {
+	color: var(--text);
+}
+
+// ─────────────────────────────────────────────────────────────
+// Comments
+// ─────────────────────────────────────────────────────────────
+
+#comments .comments-title,
+#comments .comment .comment,
+#comments .comment:not(:last-child),
+#comments .comment .comment:not(:last-child),
+#comments .pingback:not(:last-child) {
+	border-color: var(--subdued-light);
+}
+
+#comments .fn a {
+	color: var(--text);
+}
+
 #comments .fn a:hover,
+#comments .fn a:focus,
+#comments .fn a:active,
 #comments #respond #reply-title small #cancel-comment-reply-link {
 	color: var(--action);
 }
 
-.button,
-.v-button,
-button,
-.wp-block-button .wp-block-button__link,
-.wp-block-file .wp-block-file__button,
-.comment-reply-link,
-.wp-block-calendar .wp-calendar-table caption,
-table th,
-[class*="wp-block-"] > table th,
-table th,
-#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu,
-#site-navigation.toggled > [class*="-container"].menu-modal-active #primary-menu,
-#site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu,
-.close-menu-modal.v-button:active,
-.close-menu-modal.v-button:focus,
-.close-menu-modal.v-button:hover {
-	background-color: var(--action);
+article .entry-content .wp-block-latest-comments,
+.v-content-container .entry-content .wp-block-latest-comments {
+	background-color: var(--primary-tint);
 }
 
-[type="button"],
-[type="submit"],
-[type="reset"],
-.wp-block-search button,
-#searchform #searchsubmit,
-.wp-block-search button,
-.wp-block-search[class*="button-inside"] [class*="search__inside"] button {
-	background-color: var(--dark);
-	border-color: var(--dark);
-}
-
-#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after {
-	border-bottom-color: var(--dark);
-}
-
-.blog-name a,
-.blog-name a:active,
-.blog-name a:focus,
-.blog-name a:hover,
-input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
-textarea,
-select,
-table,
-table th,
-table td,
-.wp-block-table.is-style-stripes table th,
-.wp-block-table.is-style-stripes table td,
-[class*="wp-block-"] > table th,
-[class*="wp-block-"] > table td {
-	border-color: var(--dark);
-}
-
-#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu,
-#site-navigation.toggled > [class*="-container"].menu-modal-active #primary-menu,
-#site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu {
-	background-color: var(--darker);
-}
+// ─────────────────────────────────────────────────────────────
+// Dark Background Context
+// ─────────────────────────────────────────────────────────────
 
 .v-dark-background {
 	background-color: var(--dark);
 	color: var(--on-dark);
 
-	#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after,
-	#site-navigation #primary-menu > .menu-item-has-children > a:after {
-		border-bottom-color: #fff;
+	// Buttons — white border in dark context; utility buttons collapse to action color
+	@include action-buttons( var(--white) );
+	@include utility-buttons( var(--action) );
+
+	// Forms — border shifts to action; focus border shifts to accent
+	@include form-inputs( var(--action), var(--accent) );
+
+	// Nav button hover border uses accent instead of action-dark
+	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
+	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
+	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
+		border-color: var(--accent);
 	}
 
-	.button,
-	.v-button,
-	button,
-	[type="button"],
-	[type="submit"],
-	[type="reset"],
-	.wp-block-button .wp-block-button__link,
-	.wp-block-file .wp-block-file__button,
-	.comment-reply-link,
-	.wp-block-search[class*="button-inside"] button:active,
-	.wp-block-search[class*="button-inside"] button:focus,
-	.wp-block-search[class*="button-inside"] button:hover,
-	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
-		border-color: #fff;
-	}
-
-	h1,
-	.h1,
-	h2,
-	.h2,
-	h3,
-	.h3,
-	h4,
-	.h4,
-	h5,
-	.h5,
-	h6,
-	.h6,
+	// Typography — headings and links become white
+	h1, .h1,
+	h2, .h2,
+	h3, .h3,
+	h4, .h4,
+	h5, .h5,
+	h6, .h6,
 	a,
 	.site-title a,
 	.content-header-title,
 	.archive-title.content-header-title span,
 	#site-navigation:not(.toggled) #primary-menu > .menu-item > a,
 	#site-navigation .menu-toggle {
-		color: #fff;
+		color: var(--white);
 	}
 
+	// Secondary text — subdued elements shift to on-dark
 	.archive-title.content-header-title,
-	h4,
-	.h4,
-	h6,
-	.h6,
+	h4, .h4,
+	h6, .h6,
 	blockquote,
 	address,
 	cite,
@@ -323,80 +379,13 @@ table td,
 		color: var(--on-dark);
 	}
 
-	.button,
-	.v-button,
-	button,
-	[type="button"],
-	[type="submit"],
-	[type="reset"],
-	.wp-block-button .wp-block-button__link,
-	.wp-block-file .wp-block-file__button,
-	.comment-reply-link,
-	.wp-block-search button,
-	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a,
-	.wp-block-calendar .wp-calendar-table caption {
-		background-color: var(--action);
+	// Navigation — chevrons become white
+	#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after,
+	#site-navigation #primary-menu > .menu-item-has-children > a:after {
+		border-bottom-color: var(--white);
 	}
 
-	.button:active,
-	.button:focus,
-	.button:hover,
-	.v-button:active,
-	.v-button:focus,
-	.v-button:hover,
-	button:active,
-	button:focus,
-	button:hover,
-	[type="button"]:active,
-	[type="button"]:focus,
-	[type="button"]:hover,
-	[type="submit"]:active,
-	[type="submit"]:focus,
-	[type="submit"]:hover,
-	[type="reset"]:active,
-	[type="reset"]:focus,
-	[type="reset"]:hover,
-	.wp-block-button .wp-block-button__link:active,
-	.wp-block-button .wp-block-button__link:focus,
-	.wp-block-button .wp-block-button__link:hover,
-	.wp-block-file .wp-block-file__button:active,
-	.wp-block-file .wp-block-file__button:focus,
-	.wp-block-file .wp-block-file__button:hover,
-	.wp-block-button.is-style-outline .wp-block-button__link:active,
-	.wp-block-button.is-style-outline .wp-block-button__link:focus,
-	.wp-block-button.is-style-outline .wp-block-button__link:hover,
-	.wp-block-search[class*="button-inside"] button,
-	.comment-reply-link:active,
-	.comment-reply-link:focus,
-	.comment-reply-link:hover,
-	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active,
-	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
-	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover {
-		background-color: var(--action-dark);
-		border-color: var(--action-dark);
-	}
-
-	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active,
-	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
-	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
-	input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):active,
-	input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):focus,
-	input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):focus-visible,
-	textarea:active,
-	textarea:focus,
-	textarea:focus-visible,
-	select:active,
-	select:focus,
-	select:focus-visible {
-		border-color: var(--accent);
-	}
-
-	input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
-	textarea,
-	select {
-		border-color: var(--action);
-	}
-
+	// Tables — use primary-dark for borders against dark background
 	table,
 	table th,
 	table td {

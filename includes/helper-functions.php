@@ -1,6 +1,53 @@
 <?php
 
 /**
+ * Should the site header and content header display with a dark background?
+ *
+ * For singular posts and pages, this checks post meta set via the Page Header meta box.
+ * For non-editable contexts (archives, search, 404), this checks Customizer settings.
+ * The front page is excluded — it manages its own dark header via front-page.php.
+ *
+ * @return bool
+ */
+function volatyl_has_dark_header() {
+
+	if ( is_singular() ) {
+		return (bool) get_post_meta( get_the_ID(), '_volatyl_dark_header', true );
+	}
+
+	if ( is_archive() || is_home() ) {
+		return (bool) get_theme_mod( 'volatyl_archive_dark_header', 0 );
+	}
+
+	if ( is_search() ) {
+		return (bool) get_theme_mod( 'volatyl_search_dark_header', 0 );
+	}
+
+	if ( is_404() ) {
+		return (bool) get_theme_mod( 'volatyl_404_dark_header', 0 );
+	}
+
+	return false;
+}
+
+/**
+ * Should the footer render in minimal mode (no Footer Lead, no Fat Footer)?
+ *
+ * Checks per-page post meta set via the Page Layout meta box.
+ * On non-singular contexts (archives, search, etc.) this always returns false.
+ *
+ * @return bool
+ */
+function volatyl_has_minimal_footer() {
+
+	if ( is_singular() ) {
+		return (bool) get_post_meta( get_the_ID(), '_volatyl_minimal_footer', true );
+	}
+
+	return false;
+}
+
+/**
  * Does the Footer Lead have a title, description, or button with a target?
  *
  * @return bool

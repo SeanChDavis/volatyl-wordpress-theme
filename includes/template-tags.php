@@ -93,9 +93,3 @@ if ( ! function_exists( 'volatyl_entry_footer' ) ) :
 	}
 endif;
 
-// Check for wp_body_open() before using it. Needed for WP older than 5.2.
-if ( ! function_exists( 'wp_body_open' ) ) :
-	function wp_body_open() {
-		do_action( 'wp_body_open' );
-	}
-endif;

@@ -13,7 +13,7 @@
 			$( '.site-title a' ).text( to );
 		} );
 	} );
-	// Front page hero title
+	// Site description (used in site footer)
 	wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
 			$( '.site-footer .blog-description' ).text( to );
@@ -80,13 +80,13 @@
 		} );
 	} );
 	// Front page hero title
-	wp.customize( 'front_page_hero_title', function( value ) {
+	wp.customize( 'volatyl_front_page_hero_title', function( value ) {
 		value.bind( function( to ) {
 			$( '.front-page .content-header-title' ).text( to );
 		} );
 	} );
 	// Front page hero description
-	wp.customize( 'front_page_hero_description', function( value ) {
+	wp.customize( 'volatyl_front_page_hero_description', function( value ) {
 		value.bind( function( to ) {
 			$( '.front-page .content-header-description' ).text( to );
 		} );

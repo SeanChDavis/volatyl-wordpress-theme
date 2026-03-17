@@ -16,6 +16,7 @@ define( 'DEFAULT_COLOR_SCHEME_TYPE', 'analogous' );
 
 // Theme functions
 require_once( THEME_INCLUDES . '/helper-functions.php' );
+require_once( THEME_INCLUDES . '/page-layout.php' );
 require_once( THEME_INCLUDES . '/body-class.php' );
 require_once( THEME_INCLUDES . '/color-schemes.php' );
 require_once( THEME_INCLUDES . '/queries.php' );
