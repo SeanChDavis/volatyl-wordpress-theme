@@ -5,14 +5,21 @@
 	 */
 	const topMenuItemsWithChildren = document.querySelectorAll('#site-navigation .menu > .menu-item-has-children > a');
 
+	// Set initial aria-expanded state on all sub-menu toggle anchors
+	topMenuItemsWithChildren.forEach(function(item) {
+		item.setAttribute('aria-expanded', 'false');
+	});
+
 	// Loop through all top level menu anchors that have sub-menus
 	topMenuItemsWithChildren.forEach(function(item) {
 
 		// Listen for a click on a top level anchor whose parent list item has a sub-menu child
 		item.addEventListener("click", function(event) {
 
-			// When the anchor is click, add a class to the parent list item
+			// When the anchor is clicked, toggle the class on the parent list item
+			const isOpening = !event.target.parentNode.classList.contains("sub-menu-active");
 			event.target.parentNode.classList.toggle("sub-menu-active");
+			event.target.setAttribute('aria-expanded', isOpening ? 'true' : 'false');
 
 			// Get the very first top level anchor, regardless of its parent's children
 			let siblingItem = event.target.parentNode.parentNode.firstElementChild;
@@ -23,6 +30,10 @@
 
 				if (event.target.parentNode !== siblingItem && siblingItem.classList.contains("sub-menu-active")) {
 					siblingItem.classList.remove("sub-menu-active");
+					const siblingAnchor = siblingItem.querySelector(':scope > a');
+					if (siblingAnchor) {
+						siblingAnchor.setAttribute('aria-expanded', 'false');
+					}
 				}
 
 			} while (siblingItem = siblingItem.nextElementSibling);
@@ -48,6 +59,10 @@
 		// If there's an active sub-menu and there's a verified "outside" sub-menu click, close the active sub-menu.
 		if (null !== activeMenu && null === clickedInsideMenu) {
 			activeMenu.classList.remove("sub-menu-active");
+			const toggleAnchor = activeMenu.querySelector(':scope > a');
+			if (toggleAnchor) {
+				toggleAnchor.setAttribute('aria-expanded', 'false');
+			}
 		}
 	});
 
@@ -94,20 +109,31 @@
 
 	const menuModalInner = menuModalOuter.querySelector("#primary-menu");
 	const closeButton = document.createElement("button");
+	closeButton.classList.add('close-menu-modal','v-button','v-margin-top-4');
+	closeButton.textContent = "Close Menu";
+	menuModalInner.appendChild(closeButton);
+
+	// Returns all keyboard-focusable elements within a container.
+	function getFocusableElements(container) {
+		return Array.from(container.querySelectorAll(
+			'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+		));
+	}
 
 	// Conduct all the tasks required for opening the menu modal.
 	button.addEventListener('click', function() {
 		siteNavigation.classList.toggle("toggled");
 		menuModalOuter.classList.add("menu-modal-active","v-padding-2");
 
-		closeButton.classList.add('close-menu-modal','v-button','v-margin-top-4');
-		closeButton.textContent = "Close Menu";
-		menuModalInner.appendChild(closeButton);
-
 		if (button.getAttribute('aria-expanded') === 'true') {
 			button.setAttribute('aria-expanded', 'false');
 		} else {
 			button.setAttribute('aria-expanded', 'true');
+			// Move focus into the modal
+			const focusable = getFocusableElements(menuModalOuter);
+			if (focusable.length) {
+				focusable[0].focus();
+			}
 		}
 	});
 
@@ -116,6 +142,7 @@
 		menuModalOuter.classList.remove("menu-modal-active","v-padding-2");
 		siteNavigation.classList.remove("toggled");
 		button.setAttribute("aria-expanded", "false");
+		button.focus();
 	}
 
 	// Close the menu modal if the user clicks the close button.
@@ -135,6 +162,29 @@
 	window.addEventListener("keydown", (event) => {
 		if (event.key === "Escape") {
 			closeMenuModal();
+		}
+	});
+
+	// Trap focus within the modal while it is open.
+	menuModalOuter.addEventListener("keydown", function(event) {
+		if (event.key !== 'Tab' || !siteNavigation.classList.contains('toggled')) {
+			return;
+		}
+
+		const focusable = getFocusableElements(menuModalOuter);
+		const first = focusable[0];
+		const last  = focusable[focusable.length - 1];
+
+		if (event.shiftKey) {
+			if (document.activeElement === first) {
+				event.preventDefault();
+				last.focus();
+			}
+		} else {
+			if (document.activeElement === last) {
+				event.preventDefault();
+				first.focus();
+			}
 		}
 	});
 

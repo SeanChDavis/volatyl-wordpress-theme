@@ -84,7 +84,7 @@ add_action( 'after_setup_theme', 'volatyl_setup' );
 function volatyl_scripts_styles() {
 
 	// Theme JS
-	wp_enqueue_script( 'volatyl-scripts', THEME_STYLESHEET_DIR . '/assets/js/scripts.min.js', array( 'jquery' ), THEME_VERSION, true );
+	wp_enqueue_script( 'volatyl-scripts', THEME_STYLESHEET_DIR . '/assets/js/scripts.min.js', array(), THEME_VERSION, true );
 
 	// Theme styles
 	wp_enqueue_style( 'volatyl-style', THEME_STYLESHEET, array(), THEME_VERSION );
