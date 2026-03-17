@@ -31,7 +31,7 @@ function volatyl_pre_get_posts( $query ) {
 	 * Adjust the number of search results
 	 */
 	if ( $query->is_search && ! is_admin() ) {
-		$query->set( 'posts_per_page', 100 );
+		$query->set( 'posts_per_page', 12 );
 	}
 }
 add_action( 'pre_get_posts', 'volatyl_pre_get_posts' );
