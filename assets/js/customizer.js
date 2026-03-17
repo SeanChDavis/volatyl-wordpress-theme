@@ -5,6 +5,19 @@
 ( function( $ ) {
 
 	/**
+	 * Binds a Customizer setting to toggle v-dark-background / v-gray-background on a selector.
+	 */
+	function bindDarkToggle( setting, selector ) {
+		wp.customize( setting, function( value ) {
+			value.bind( function( to ) {
+				$( selector )
+					.toggleClass( 'v-dark-background', to )
+					.toggleClass( 'v-gray-background', !to );
+			} );
+		} );
+	}
+
+	/**
 	 * Site Identity
 	 */
 	// Site title
@@ -87,13 +100,7 @@
 	 * Front Page Template
 	 */
 	// Front page dark header & hero background
-	wp.customize( 'volatyl_front_page_hero_dark', function( value ) {
-		value.bind( function( to ) {
-			$( '.front-page #masthead, .front-page .content-header' )
-				.toggleClass( 'v-dark-background', to )
-				.toggleClass( 'v-gray-background', !to );
-		} );
-	} );
+	bindDarkToggle( 'volatyl_front_page_hero_dark', '.front-page #masthead, .front-page .content-header' );
 	// Front page hero centered
 	wp.customize( 'volatyl_front_page_hero_centered', function( value ) {
 		value.bind( function( to ) {
@@ -171,13 +178,7 @@
 		} );
 	} );
 	// Blog CTA color scheme
-	wp.customize( 'volatyl_blog_grid_cta_color_scheme', function( value ) {
-		value.bind( function( to ) {
-			$( '.blog .blog-grid-cta' )
-				.toggleClass( 'v-dark-background', to )
-				.toggleClass( 'v-gray-background', !to );
-		} );
-	} );
+	bindDarkToggle( 'volatyl_blog_grid_cta_color_scheme', '.blog .blog-grid-cta' );
 	// Blog CTA title
 	wp.customize( 'volatyl_blog_grid_cta_title', function( value ) {
 		value.bind( function( to ) {
@@ -211,13 +212,7 @@
 	 * Footer Areas
 	 */
 	// Footer Lead color scheme
-	wp.customize( 'volatyl_footer_lead_color_scheme', function( value ) {
-		value.bind( function( to ) {
-			$( '.footer-lead' )
-				.toggleClass( 'v-dark-background', to )
-				.toggleClass( 'v-gray-background', !to );
-		} );
-	} );
+	bindDarkToggle( 'volatyl_footer_lead_color_scheme', '.footer-lead' );
 	// Footer Lead title
 	wp.customize( 'volatyl_footer_lead_title', function( value ) {
 		value.bind( function( to ) {
@@ -246,14 +241,8 @@
 			$( '.footer-lead .cta-action a' ).attr( 'href', to );
 		} );
 	} );
-	// Footer Lead color scheme
-	wp.customize( 'volatyl_footer_general_color_scheme', function( value ) {
-		value.bind( function( to ) {
-			$( '.fat-footer, .social-navigation, .site-footer' )
-				.toggleClass( 'v-dark-background', to )
-				.toggleClass( 'v-gray-background', !to );
-		} );
-	} );
+	// Footer general color scheme
+	bindDarkToggle( 'volatyl_footer_general_color_scheme', '.fat-footer, .social-navigation, .site-footer' );
 	// Fat Footer Alternate Layout
 	wp.customize( 'volatyl_fat_footer_alternate_layout', function( value ) {
 		value.bind( function( to ) {

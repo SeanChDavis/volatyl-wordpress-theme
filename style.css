@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  * Theme Name: Volatyl
  * Theme URI: https://crispydiv.com/
@@ -589,7 +590,7 @@ article .entry-content .wp-block-latest-comments,
 /* Font size modifiers */
 /* HTML structure spacing */
 /* Editor-generated classes */
-/* Primary color classes */
+/* Primary */
 .has-primary-color {
   color: var(--primary);
 }
@@ -614,7 +615,15 @@ article .entry-content .wp-block-latest-comments,
   background-color: var(--primary-dark);
 }
 
-/* Action color classes */
+.has-primary-tint-color {
+  color: var(--primary-tint);
+}
+
+.has-primary-tint-background-color {
+  background-color: var(--primary-tint);
+}
+
+/* Action, accent, extra-accent */
 .has-action-color {
   color: var(--action);
 }
@@ -647,7 +656,6 @@ article .entry-content .wp-block-latest-comments,
   background-color: var(--action-tint);
 }
 
-/* Accent color classes */
 .has-accent-color {
   color: var(--accent);
 }
@@ -680,7 +688,6 @@ article .entry-content .wp-block-latest-comments,
   background-color: var(--accent-tint);
 }
 
-/* Extra accent color classes */
 .has-extra-accent-color {
   color: var(--extra-accent);
 }
@@ -713,17 +720,7 @@ article .entry-content .wp-block-latest-comments,
   background-color: var(--extra-accent-tint);
 }
 
-/*
- * Background color classes
- */
-.has-primary-tint-color {
-  color: var(--primary-tint);
-}
-
-.has-primary-tint-background-color {
-  background-color: var(--primary-tint);
-}
-
+/* Background colors */
 .has-dark-color {
   color: var(--dark);
 }
@@ -766,9 +763,6 @@ article .entry-content .wp-block-latest-comments,
   background-color: var(--on-dark);
 }
 
-/**
- * More useful classes
- */
 .has-white-color {
   color: var(--white);
 }
@@ -777,6 +771,7 @@ article .entry-content .wp-block-latest-comments,
   background-color: var(--white);
 }
 
+/* Translucent — background only, no color class */
 .has-translucent-light-background-color {
   background-color: var(--translucent-light);
 }

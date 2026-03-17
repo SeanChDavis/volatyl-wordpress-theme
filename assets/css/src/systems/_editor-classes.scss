@@ -1,162 +1,42 @@
 /* Editor-generated classes */
 
-/* Primary color classes */
-.has-primary-color {
-	color: var(--primary);
-}
-.has-primary-background-color {
-	background-color: var(--primary);
-}
-.has-primary-light-color {
-	color: var(--primary-light);
-}
-.has-primary-light-background-color {
-	background-color: var(--primary-light);
-}
-.has-primary-dark-color {
-	color: var(--primary-dark);
-}
-.has-primary-dark-background-color {
-	background-color: var(--primary-dark);
+// Outputs .has-{$name}-color and .has-{$name}-background-color
+// Optional $on-color sets a foreground color override on the background class
+@mixin color-pair( $name, $on-color: null ) {
+	.has-#{$name}-color { color: var(--#{$name}); }
+	.has-#{$name}-background-color {
+		background-color: var(--#{$name});
+		@if $on-color { color: var(--#{$on-color}); }
+	}
 }
 
-/* Action color classes */
-.has-action-color {
-	color: var(--action);
-}
-.has-action-background-color {
-	background-color: var(--action);
-}
-.has-action-light-color {
-	color: var(--action-light);
-}
-.has-action-light-background-color {
-	background-color: var(--action-light);
-}
-.has-action-dark-color {
-	color: var(--action-dark);
-}
-.has-action-dark-background-color {
-	background-color: var(--action-dark);
-}
-.has-action-tint-color {
-	color: var(--action-tint);
-}
-.has-action-tint-background-color {
-	background-color: var(--action-tint);
+// Outputs color-pair for base + light + dark + tint variants
+@mixin color-group( $name ) {
+	@include color-pair( '#{$name}' );
+	@include color-pair( '#{$name}-light' );
+	@include color-pair( '#{$name}-dark' );
+	@include color-pair( '#{$name}-tint' );
 }
 
-/* Accent color classes */
-.has-accent-color {
-	color: var(--accent);
-}
-.has-accent-background-color {
-	background-color: var(--accent);
-}
-.has-accent-light-color {
-	color: var(--accent-light);
-}
-.has-accent-light-background-color {
-	background-color: var(--accent-light);
-}
-.has-accent-dark-color {
-	color: var(--accent-dark);
-}
-.has-accent-dark-background-color {
-	background-color: var(--accent-dark);
-}
-.has-accent-tint-color {
-	color: var(--accent-tint);
-}
-.has-accent-tint-background-color {
-	background-color: var(--accent-tint);
-}
+/* Primary */
+@include color-pair( 'primary' );
+@include color-pair( 'primary-light' );
+@include color-pair( 'primary-dark' );
+@include color-pair( 'primary-tint' );
 
-/* Extra accent color classes */
-.has-extra-accent-color {
-	color: var(--extra-accent);
-}
-.has-extra-accent-background-color {
-	background-color: var(--extra-accent);
-}
-.has-extra-accent-light-color {
-	color: var(--extra-accent-light);
-}
-.has-extra-accent-light-background-color {
-	background-color: var(--extra-accent-light);
-}
-.has-extra-accent-dark-color {
-	color: var(--extra-accent-dark);
-}
-.has-extra-accent-dark-background-color {
-	background-color: var(--extra-accent-dark);
-}
-.has-extra-accent-tint-color {
-	color: var(--extra-accent-tint);
-}
-.has-extra-accent-tint-background-color {
-	background-color: var(--extra-accent-tint);
-}
+/* Action, accent, extra-accent */
+@include color-group( 'action' );
+@include color-group( 'accent' );
+@include color-group( 'extra-accent' );
 
-/*
- * Background color classes
- */
-.has-primary-tint-color {
-	color: var(--primary-tint);
-}
-.has-primary-tint-background-color {
-	background-color: var(--primary-tint);
-}
+/* Background colors */
+@include color-pair( 'dark', 'on-dark' );
+@include color-pair( 'darker', 'on-dark' );
+@include color-pair( 'subdued-light' );
+@include color-pair( 'subdued-dark' );
+@include color-pair( 'on-dark' );
+@include color-pair( 'white' );
 
-.has-dark-color {
-	color: var(--dark);
-}
-.has-dark-background-color {
-	background-color: var(--dark);
-	color: var(--on-dark);
-}
-
-.has-darker-color {
-	color: var(--darker);
-}
-.has-darker-background-color {
-	background-color: var(--darker);
-	color: var(--on-dark);
-}
-
-.has-subdued-light-color {
-	color: var(--subdued-light);
-}
-.has-subdued-light-background-color {
-	background-color: var(--subdued-light);
-}
-.has-subdued-dark-color {
-	color: var(--subdued-dark);
-}
-.has-subdued-dark-background-color {
-	background-color: var(--subdued-dark);
-}
-
-.has-on-dark-color {
-	color: var(--on-dark);
-}
-.has-on-dark-background-color {
-	background-color: var(--on-dark);
-}
-
-/**
- * More useful classes
- */
-.has-white-color {
-	color: var(--white);
-}
-.has-white-background-color {
-	background-color: var(--white);
-}
-
-.has-translucent-light-background-color {
-	background-color: var(--translucent-light);
-}
-.has-translucent-dark-background-color {
-	background-color: var(--translucent-dark);
-}
+/* Translucent — background only, no color class */
+.has-translucent-light-background-color { background-color: var(--translucent-light); }
+.has-translucent-dark-background-color  { background-color: var(--translucent-dark); }
