@@ -335,6 +335,14 @@
 	}
 }
 
+.logged-in #site-navigation.toggled > [class*="-container"] {
+	padding-top: calc(46px + 1.5rem);
+
+	@media all and (min-width: 783px) {
+		padding-top: calc(32px + 1.5rem);
+	}
+}
+
 .posts-navigation {
 
 	.nav-links {
