@@ -20,9 +20,6 @@ $wp_customize->get_setting( 'volatyl_primary_hue' )->transport           = 'post
 $wp_customize->get_setting( 'volatyl_global_hue_saturation' )->transport = 'postMessage';
 $wp_customize->get_setting( 'volatyl_color_scheme_type' )->transport     = 'postMessage';
 
-// Front Page Hero.
-$wp_customize->get_setting( 'volatyl_front_page_hero_dark' )->transport = 'postMessage';
-
 // Content Configuration.
 $wp_customize->get_setting( 'volatyl_page_comments' )->transport = 'postMessage';
 
