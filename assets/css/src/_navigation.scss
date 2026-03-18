@@ -228,9 +228,9 @@
 			padding: 1.5rem;
 			pointer-events: none;
 			position: fixed;
+			right: 0;
 			top: 0;
 			transition: opacity 0.2s;
-			width: 100vw;
 
 			&.menu-modal-active {
 				opacity: 1;

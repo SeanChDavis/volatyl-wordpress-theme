@@ -338,7 +338,6 @@ select:focus-visible {
 }
 
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu,
-#site-navigation.toggled > [class*=-container].menu-modal-active #primary-menu,
 #site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu {
   background-color: var(--darker);
 }
@@ -1912,9 +1911,9 @@ main {
   padding: 1.5rem;
   pointer-events: none;
   position: fixed;
+  right: 0;
   top: 0;
   transition: opacity 0.2s;
-  width: 100vw;
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active {
   opacity: 1;

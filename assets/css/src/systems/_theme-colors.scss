@@ -195,7 +195,6 @@ figure figcaption {
 
 // Dropdown and mobile modal backgrounds
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu,
-#site-navigation.toggled > [class*="-container"].menu-modal-active #primary-menu,
 #site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu {
 	background-color: var(--darker);
 }
