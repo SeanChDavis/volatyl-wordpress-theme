@@ -2484,8 +2484,8 @@ form select {
   box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.1);
 }
 
-.footer-lead {
-  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+.footer-lead .inner {
+  padding-bottom: 0;
 }
 .footer-lead.v-dark-background .footer-lead-cta {
   border-bottom-color: rgba(255, 255, 255, 0.12);
@@ -2493,7 +2493,7 @@ form select {
 .footer-lead .footer-lead-cta {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   display: flex;
-  padding-bottom: clamp(1rem, 2vw, 1.5rem);
+  padding-bottom: clamp(2rem, 4.5vw, 3.5rem);
   flex-direction: column;
   gap: 2rem;
   justify-content: space-between;
