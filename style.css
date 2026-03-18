@@ -2485,7 +2485,13 @@ form select {
 }
 
 .footer-lead {
-  border-bottom: 1px solid var(--primary-dark);
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+.footer-lead .inner {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.footer-lead.v-dark-background .inner {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
 }
 .footer-lead .footer-lead-cta {
   display: flex;
