@@ -1914,6 +1914,7 @@ main {
   right: 0;
   top: 0;
   transition: opacity 0.2s;
+  z-index: 9999;
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active {
   opacity: 1;
@@ -1939,6 +1940,7 @@ main {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
+  overflow-x: hidden;
   overflow-y: auto;
   padding-top: 1rem;
   width: 100%;
@@ -1978,17 +1980,6 @@ main {
 #site-navigation.toggled #primary-menu > .menu-item > a {
   font-size: 18px;
   padding: 12px 0;
-}
-
-.logged-in #site-navigation.toggled > [class*=-container] {
-  height: calc(100svh - 46px);
-  top: 46px;
-}
-@media all and (min-width: 783px) {
-  .logged-in #site-navigation.toggled > [class*=-container] {
-    height: calc(100svh - 32px);
-    top: 32px;
-  }
 }
 
 .posts-navigation .nav-links {

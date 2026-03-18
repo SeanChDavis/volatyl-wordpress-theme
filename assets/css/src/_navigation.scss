@@ -231,6 +231,7 @@
 			right: 0;
 			top: 0;
 			transition: opacity 0.2s;
+			z-index: 9999;
 
 			&.menu-modal-active {
 				opacity: 1;
@@ -260,6 +261,7 @@
 			display: flex;
 			flex: 1 1 auto;
 			flex-direction: column;
+			overflow-x: hidden;
 			overflow-y: auto;
 			padding-top: 1rem;
 			width: 100%;
@@ -327,25 +329,6 @@
 				& > a {
 					@include fontBase;
 					padding: 12px 0;
-				}
-			}
-		}
-	}
-}
-
-.logged-in {
-
-	#site-navigation {
-
-		&.toggled {
-
-			& > [class*="-container"] {
-				height: calc(100svh - 46px);
-				top: 46px;
-
-				@media all and (min-width: 783px) {
-					height: calc(100svh - 32px);
-					top: 32px;
 				}
 			}
 		}
