@@ -50,11 +50,11 @@
 }
 
 .footer-lead.v-dark-background:has(+ .v-dark-background) .footer-lead-cta {
-	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+	border-bottom: 2px solid var(--translucent-light);
 }
 
 .footer-lead.v-gray-background:has(+ .v-gray-background) .footer-lead-cta {
-	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+	border-bottom: 2px solid var(--translucent-dark);
 }
 
 .fat-footer-areas {
