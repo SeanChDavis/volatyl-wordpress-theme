@@ -80,6 +80,10 @@
 	/* Full desktop navigation */
 	&:not(.toggled) {
 
+		.close-menu-modal {
+			display: none;
+		}
+
 		#primary-menu {
 			align-items: center;
 			display: none;
@@ -88,10 +92,6 @@
 			@media all and (min-width: $mdMinWidth) {
 				display: flex;
 				flex-wrap: wrap;
-			}
-
-			.close-menu-modal {
-				display: none;
 			}
 
 			& > .menu-item {
@@ -227,7 +227,7 @@
 			overflow: hidden;
 			padding: 1.5rem;
 			pointer-events: none;
-			position: absolute;
+			position: fixed;
 			top: 0;
 			transition: opacity 0.2s;
 			width: 100vw;

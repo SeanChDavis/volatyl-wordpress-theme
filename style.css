@@ -1812,6 +1812,9 @@ main {
 #site-navigation #primary-menu > .menu-item.menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu a:before {
   content: "- ";
 }
+#site-navigation:not(.toggled) .close-menu-modal {
+  display: none;
+}
 #site-navigation:not(.toggled) #primary-menu {
   align-items: center;
   display: none;
@@ -1822,9 +1825,6 @@ main {
     display: flex;
     flex-wrap: wrap;
   }
-}
-#site-navigation:not(.toggled) #primary-menu .close-menu-modal {
-  display: none;
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item > a {
   display: inline-block;
@@ -1911,7 +1911,7 @@ main {
   overflow: hidden;
   padding: 1.5rem;
   pointer-events: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   transition: opacity 0.2s;
   width: 100vw;
