@@ -99,8 +99,6 @@
 	/**
 	 * Front Page Template
 	 */
-	// Front page dark header & hero background
-	bindDarkToggle( 'volatyl_front_page_hero_dark', '.front-page #masthead, .front-page .content-header' );
 	// Front page hero centered
 	wp.customize( 'volatyl_front_page_hero_centered', function( value ) {
 		value.bind( function( to ) {

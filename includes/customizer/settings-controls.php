@@ -217,18 +217,6 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'description' => __( 'The following settings apply to the hero area on the front page.', 'volatyl' ),
 ) ) );
 
-// Hero color scheme
-$wp_customize->add_setting( 'volatyl_front_page_hero_dark', array(
-	'default'           => 0,
-	'sanitize_callback' => 'volatyl_sanitize_checkbox'
-) );
-$wp_customize->add_control( 'volatyl_front_page_hero_dark', array(
-	'section'  => 'volatyl_front_page_template',
-	'priority' => 10,
-	'label'    => __( 'Enable dark header & hero', 'volatyl' ),
-	'type'     => 'checkbox',
-) );
-
 // Hero alignment
 $wp_customize->add_setting( 'volatyl_front_page_hero_centered', array(
 	'default'           => 0,

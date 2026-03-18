@@ -1,7 +1,7 @@
 <?php // Default front page of the site, intelligently display basic information
 get_header( null,
 		array(
-				'is_dark' => get_theme_mod( 'volatyl_front_page_hero_dark', 0 ),
+				'is_dark' => (bool) get_post_meta( get_option( 'page_on_front' ), '_volatyl_dark_header', true ),
 		)
 );
 
@@ -31,7 +31,7 @@ if ( get_theme_mod( 'volatyl_front_page_hero_use_custom_title' ) && ! empty( $cu
 						'url'  => get_theme_mod( 'volatyl_front_page_hero_secondary_cta_button_url', '' ),
 						'text' => get_theme_mod( 'volatyl_front_page_hero_secondary_cta_button_text', '' ),
 				),
-				'is_dark'       => get_theme_mod( 'volatyl_front_page_hero_dark', 0 ),
+				'is_dark'       => (bool) get_post_meta( get_option( 'page_on_front' ), '_volatyl_dark_header', true ),
 		) );
 
 		/**
