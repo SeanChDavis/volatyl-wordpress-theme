@@ -4,12 +4,7 @@
 		padding-bottom: 0;
 	}
 
-	&.v-dark-background .footer-lead-cta {
-		border-bottom-color: rgba(255, 255, 255, 0.12);
-	}
-
 	.footer-lead-cta {
-		border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 		display: flex;
 		padding-bottom: clamp(2rem, 4.5vw, 3.5rem);
 		flex-direction: column;
@@ -52,6 +47,14 @@
 			padding-top: 3rem;
 		}
 	}
+}
+
+.footer-lead.v-dark-background:has(+ .v-dark-background) .footer-lead-cta {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-lead.v-gray-background:has(+ .v-gray-background) .footer-lead-cta {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .fat-footer-areas {
