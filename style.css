@@ -2484,8 +2484,8 @@ form select {
   box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.1);
 }
 
-.footer-lead.v-dark-background {
-  background-color: var(--darker);
+.footer-lead {
+  border-bottom: 1px solid var(--primary-dark);
 }
 .footer-lead .footer-lead-cta {
   display: flex;

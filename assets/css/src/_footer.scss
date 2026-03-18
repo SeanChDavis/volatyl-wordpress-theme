@@ -1,8 +1,5 @@
 .footer-lead {
-
-	&.v-dark-background {
-		background-color: var(--darker);
-	}
+	border-bottom: 1px solid var(--primary-dark);
 
 	.footer-lead-cta {
 		display: flex;
