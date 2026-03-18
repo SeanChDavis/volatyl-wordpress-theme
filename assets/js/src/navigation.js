@@ -109,9 +109,9 @@
 
 	const menuModalInner = menuModalOuter.querySelector("#primary-menu");
 	const closeButton = document.createElement("button");
-	closeButton.classList.add('close-menu-modal','v-button','v-margin-top-4');
+	closeButton.classList.add('close-menu-modal');
 	closeButton.textContent = "Close Menu";
-	menuModalInner.appendChild(closeButton);
+	menuModalOuter.prepend(closeButton);
 
 	// Returns all keyboard-focusable elements within a container.
 	function getFocusableElements(container) {
@@ -123,7 +123,7 @@
 	// Conduct all the tasks required for opening the menu modal.
 	button.addEventListener('click', function() {
 		siteNavigation.classList.toggle("toggled");
-		menuModalOuter.classList.add("menu-modal-active","v-padding-2");
+		menuModalOuter.classList.add("menu-modal-active","v-dark-background");
 
 		if (button.getAttribute('aria-expanded') === 'true') {
 			button.setAttribute('aria-expanded', 'false');
@@ -139,7 +139,7 @@
 
 	// Conduct all the tasks required for closing the menu modal.
 	function closeMenuModal() {
-		menuModalOuter.classList.remove("menu-modal-active","v-padding-2");
+		menuModalOuter.classList.remove("menu-modal-active","v-dark-background");
 		siteNavigation.classList.remove("toggled");
 		button.setAttribute("aria-expanded", "false");
 		button.focus();

@@ -219,116 +219,114 @@
 	&.toggled {
 
 		& > [class*="-container"] {
-			display: grid;
+			display: flex;
+			flex-direction: column;
 			height: 100svh;
-			justify-content: center;
 			left: 0;
 			opacity: 0;
+			overflow: hidden;
+			padding: 1.5rem;
 			pointer-events: none;
 			position: absolute;
 			top: 0;
 			transition: opacity 0.2s;
 			width: 100vw;
 
-			@media all and (min-width: $xsMinWidth) {
-				justify-content: flex-end;
-			}
-
 			&.menu-modal-active {
 				opacity: 1;
 				pointer-events: all;
+			}
+		}
 
-				@media all and (min-width: $xsMinWidth) {
-					padding: 1.25rem;
+		.close-menu-modal {
+			@include headingFont;
+			@include fontSmallest;
+			align-self: flex-end;
+			background: transparent;
+			border: none;
+			cursor: pointer;
+			display: block;
+			flex-shrink: 0;
+			line-height: 1;
+			text-decoration: underline;
+
+			&:hover,
+			&:focus {
+				text-decoration: none;
+			}
+		}
+
+		#primary-menu {
+			display: flex;
+			flex: 1 1 auto;
+			flex-direction: column;
+			overflow-y: auto;
+			padding-top: 1rem;
+			width: 100%;
+
+			.menu-item {
+
+				.sub-menu {
+					display: none;
+				}
+			}
+
+			& > .menu-item {
+
+				&:not(:last-of-type) {
+					border-bottom: 1px solid rgba(255, 255, 255, .1);
 				}
 
-				#primary-menu {
-					border: 1px solid rgba(255, 255, 255, .1);
-					border-radius: 10px;
-					box-shadow: 0 0 75px 20px rgba(0, 0, 0, 0.3);
-					display: flex;
-					flex-direction: column;
-					padding: .5rem 1.25rem 1.25rem;
-					position: relative;
-					width: calc(100vw - 2rem);
+				&.menu-item-has-children {
 
-					@media all and (min-width: $xsMinWidth) {
-						min-width: 300px;
-						width: 40vw;
-					}
+					& > a {
 
-					.close-menu-modal {
-						@include headingFont;
-						@include fontSmallest;
-						display: block;
-						line-height: 1;
-						margin-top: auto;
-					}
-
-					.menu-item {
-
-						.sub-menu {
-							display: none;
+						&:after {
+							position: absolute;
+							right: 0;
+							top: 14px;
 						}
 					}
 
-					& > .menu-item {
+					& > .sub-menu {
+						background-color: rgba(0, 0, 0, .15);
+						border-radius: 4px;
+						margin-bottom: 1rem;
+						margin-top: 4px;
+						padding: 7px 1.2rem;
+						width: 100%;
 
-						&:not(:last-of-type) {
-							border-bottom: 1px solid rgba(255, 255, 255, .1);
-						}
+						& > .menu-item-has-children {
 
-						&.menu-item-has-children {
-
-							& > a {
-
-								&:after {
-									position: absolute;
-									right: 0;
-									top: 14px;
-								}
-							}
-
-							& > .sub-menu {
-								background-color: rgba(0, 0, 0, .15);
-								border-radius: 4px;
-								margin-bottom: 1rem;
-								margin-top: 4px;
-								padding: 7px 1.2rem;
-								width: 100%;
-
-								& > .menu-item-has-children {
-
-									&:not(:last-child) {
-										border-bottom: 1px solid rgba(255, 255, 255, .1);
-									}
-								}
-
-								& > .menu-item {
-
-									&:not(:last-child) {
-										border-bottom: 1px solid rgba(255, 255, 255, .1);
-										padding-bottom: 4px;
-									}
-								}
-							}
-
-							&.sub-menu-active {
-
-								& > a {
-									text-decoration: underline;
-								}
-
-								.sub-menu {
-									display: block;
-								}
+							&:not(:last-child) {
+								border-bottom: 1px solid rgba(255, 255, 255, .1);
 							}
 						}
+
+						& > .menu-item {
+
+							&:not(:last-child) {
+								border-bottom: 1px solid rgba(255, 255, 255, .1);
+								padding-bottom: 4px;
+							}
+						}
+					}
+
+					&.sub-menu-active {
 
 						& > a {
-							padding: 8px 0;
+							text-decoration: underline;
+						}
+
+						.sub-menu {
+							display: block;
 						}
 					}
+				}
+
+				& > a {
+					@include fontBase;
+					padding: 12px 0;
 				}
 			}
 		}
@@ -342,13 +340,12 @@
 		&.toggled {
 
 			& > [class*="-container"] {
+				height: calc(100svh - 46px);
+				top: 46px;
 
-				&.menu-modal-active {
-					padding-top: calc(46px + 1.25rem);
-
-					@media all and (min-width: 783px) {
-						padding-top: calc(32px + 1.25rem);
-					}
+				@media all and (min-width: 783px) {
+					height: calc(100svh - 32px);
+					top: 32px;
 				}
 			}
 		}
