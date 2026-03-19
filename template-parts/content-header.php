@@ -30,6 +30,18 @@ if ( isset( $args['is_dark'] ) && $args['is_dark'] ) {
 if ( isset( $args['is_centered'] ) && $args['is_centered'] ) {
 	$content_header_classes .= ' v-text-align-center';
 }
+
+// Determine hero featured image (front page with a static page set only).
+$hero_image_html  = '';
+$hero_image_style = 'flush';
+if ( is_front_page() && volatyl_show_on_front_is_page() ) {
+	$front_page_id = (int) get_option( 'page_on_front' );
+	if ( has_post_thumbnail( $front_page_id ) ) {
+		$hero_image_style = get_theme_mod( 'volatyl_front_page_hero_image_style', 'flush' );
+		$hero_image_html  = get_the_post_thumbnail( $front_page_id, 'full' );
+		$content_header_classes .= ' has-hero-image hero-image-style-' . esc_attr( $hero_image_style );
+	}
+}
 ?>
 
 <section class="<?php echo esc_attr( $content_header_classes ); ?>">
@@ -123,4 +135,9 @@ if ( isset( $args['is_centered'] ) && $args['is_centered'] ) {
 		}
 		?>
 	</div>
+	<?php if ( $hero_image_html ) : ?>
+		<div class="content-header-featured-image">
+			<?php echo wp_kses_post( $hero_image_html ); ?>
+		</div>
+	<?php endif; ?>
 </section>

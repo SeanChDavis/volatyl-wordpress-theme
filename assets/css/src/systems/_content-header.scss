@@ -113,3 +113,56 @@
 		}
 	}
 }
+
+// Hero featured image — front page, static page only
+.front-page {
+
+	.content-header {
+
+		.content-header-featured-image {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: calc(1200px + 1.25rem);
+			padding-left: clamp(1.25rem, 7.9vw, 6rem);
+			padding-right: clamp(1.25rem, 7.9vw, 6rem);
+
+			@media all and (min-width: $mdMinWidth) {
+				padding-left: 2rem;
+				padding-right: 2rem;
+			}
+
+			img {
+				display: block;
+				height: auto;
+				width: 100%;
+			}
+		}
+
+		&.has-hero-image {
+
+			&.hero-image-style-flush,
+			&.hero-image-style-bleed {
+
+				.inner {
+					padding-bottom: 0;
+				}
+			}
+
+			&.hero-image-style-padded {
+
+				.content-header-featured-image {
+					padding-bottom: clamp(2rem, 4.5vw, 3.5rem);
+				}
+			}
+
+			&.hero-image-style-bleed {
+
+				.content-header-featured-image {
+					margin-bottom: clamp(-2rem, -2.5vw, -1.5rem);
+					position: relative;
+					z-index: 1;
+				}
+			}
+		}
+	}
+}

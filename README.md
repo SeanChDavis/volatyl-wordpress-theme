@@ -170,6 +170,10 @@ Configures the static front page template. Requires **Settings → Reading → Y
 - Description
 - Primary CTA button (text + URL)
 - Secondary CTA link (text + URL)
+- **Featured image display** — When the front page has a featured image set, it displays below the hero content. Three layout options:
+  - **Flush** (default) — Image anchors to the bottom edge of the hero with no padding below it
+  - **Padded** — Image displays with standard section spacing below it
+  - **Bleed** — Image overlaps slightly into the section below the hero
 
 **Page Content Area**
 - Display page editor content below the hero

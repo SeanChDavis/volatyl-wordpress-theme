@@ -339,6 +339,25 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 	'description' => __( 'Set the URL of the secondary call-to-action link.', 'volatyl' ),
 ) ) );
 
+// Hero featured image style
+$wp_customize->add_setting( 'volatyl_front_page_hero_image_style', array(
+	'default'           => 'flush',
+	'sanitize_callback' => 'volatyl_sanitize_select',
+) );
+$wp_customize->add_control( 'volatyl_front_page_hero_image_style', array(
+	'section'         => 'volatyl_front_page_template',
+	'priority'        => 92,
+	'label'           => __( 'Featured image display', 'volatyl' ),
+	'description'     => __( 'When a featured image is set on the front page, controls how it anchors to the bottom of the hero. Has no effect if no featured image is set.', 'volatyl' ),
+	'type'            => 'select',
+	'choices'         => array(
+		'flush'  => __( 'Flush — image sits at the bottom edge of the hero', 'volatyl' ),
+		'padded' => __( 'Padded — image displays with standard section spacing below it', 'volatyl' ),
+		'bleed'  => __( 'Bleed — image overlaps slightly into the next section', 'volatyl' ),
+	),
+	'active_callback' => 'volatyl_show_on_front_is_page',
+) );
+
 // Page content area
 $wp_customize->add_setting( 'volatyl_front_page_content_area', array(
 	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
