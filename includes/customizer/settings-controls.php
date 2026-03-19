@@ -214,7 +214,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'section'         => 'volatyl_front_page_template',
 	'priority'        => 0,
 	'label'           => __( 'Optional: Set a Static Front Page', 'volatyl' ),
-	'description'     => __( 'Your site is showing latest posts on the front page. To unlock the Page Content Area — which lets you display WordPress editor content on your front page — go to Settings → Reading and assign a static page as your homepage.', 'volatyl' ),
+	'description'     => __( 'Your site is showing latest posts on the front page. To unlock the Page Content Area — which lets you display WordPress editor content on your front page — assign a static page as your homepage in the <a href="#" class="volatyl-section-link" data-section="static_front_page">Homepage Settings</a> panel.', 'volatyl' ),
 	'active_callback' => 'volatyl_show_on_front_is_posts',
 ) ) );
 
@@ -447,7 +447,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'section'         => 'volatyl_blog_template',
 	'priority'        => 0,
 	'label'           => __( 'Blog Page Not Configured', 'volatyl' ),
-	'description'     => __( 'These settings apply to a dedicated blog posts page. To activate the blog template, go to Settings → Reading, set a static page as your homepage, and assign a separate page as your Posts page.', 'volatyl' ),
+	'description'     => __( 'These settings apply to a dedicated blog posts page. To activate the blog template, assign a static homepage and a separate Posts page in the <a href="#" class="volatyl-section-link" data-section="static_front_page">Homepage Settings</a> panel.', 'volatyl' ),
 	'active_callback' => 'volatyl_no_dedicated_blog_page',
 ) ) );
 
