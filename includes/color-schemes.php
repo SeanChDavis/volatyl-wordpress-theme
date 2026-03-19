@@ -44,19 +44,10 @@ function volatyl_root_color_scheme_base() {
 	// OKLCH chroma derived from the saturation setting (0–100 maps to 0–0.25)
 	$global_chroma = round( $global_hue_saturation * 0.0025, 4 );
 
-	// Based on global hue saturation, this controls the lightness of text
-	// and similar elements rendered against dark backgrounds
-	$dark_bg_light_color  = '100';
-	if ( $global_hue_saturation <= 33 ) {
-		$dark_bg_light_color = '86';
-	} elseif ( ( $global_hue_saturation >= 34 ) && ( $global_hue_saturation <= 67 ) ) {
-		$dark_bg_light_color = '93';
-	}
-
 	return ":root {
 		--global-hue-saturation: {$global_hue_saturation}%;
 		--global-chroma: {$global_chroma};
-		--on-dark-luminance: {$dark_bg_light_color}%;
+		--on-dark-luminance: 100%;
 
 		/* Primary hue and default colors based on the primary hue */
 		--primary-hue: {$primary_hue};
