@@ -11,18 +11,17 @@ function volatyl_register_editor_style() {
 add_action( 'after_setup_theme', 'volatyl_register_editor_style' );
 
 /**
- * Inject OKLCH color variables into the block editor. Uses a virtual handle
- * (no actual file) so the :root {} vars are available to the editor canvas
- * without loading editor-style.css a second time as a global admin stylesheet.
+ * Inject OKLCH color variables into the block editor iframe via
+ * block_editor_settings_all — the correct way to get dynamic CSS
+ * into the iframed editing canvas (WordPress 6.2+).
  */
-function volatyl_editor_color_vars() {
+function volatyl_editor_color_vars( $settings ) {
 	$scheme     = get_theme_mod( 'volatyl_color_scheme_type', DEFAULT_COLOR_SCHEME_TYPE );
 	$editor_css = volatyl_root_color_scheme_base() . volatyl_get_scheme_overrides( $scheme );
-	wp_register_style( 'volatyl-editor-vars', false );
-	wp_enqueue_style( 'volatyl-editor-vars' );
-	wp_add_inline_style( 'volatyl-editor-vars', $editor_css );
+	$settings['styles'][] = array( 'css' => $editor_css );
+	return $settings;
 }
-add_action( 'enqueue_block_editor_assets', 'volatyl_editor_color_vars' );
+add_filter( 'block_editor_settings_all', 'volatyl_editor_color_vars' );
 
 /**
  * Adjust editor styles
