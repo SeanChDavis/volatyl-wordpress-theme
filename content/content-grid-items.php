@@ -29,7 +29,7 @@ if ( is_search() ) {
 		</header>
 		<?php if ( ! is_search() ) { ?>
 			<section class="v-grid-item-body">
-				<p class="v-grid-item-description"><?php echo wp_kses_post( get_the_excerpt( $the_post_id ) ); ?></p>
+				<p class="v-grid-item-description"><?php echo wp_kses_post( get_the_excerpt() ); ?></p>
 			</section>
 		<?php } ?>
 		<?php if ( ! is_search() ) { ?>

@@ -35,7 +35,7 @@ if ( isset( $args['is_centered'] ) && $args['is_centered'] ) {
 <section class="<?php echo esc_attr( $content_header_classes ); ?>">
 	<div class="inner">
 		<?php
-		if ( is_front_page() && ! is_home() ) {
+		if ( is_front_page() ) {
 			?>
 			<h1 class="content-header-title"><?php echo wp_kses_post( $args['title'] ); ?></h1>
 			<?php if ( ! empty( $args['description'] ) ) { ?>
