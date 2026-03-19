@@ -46,6 +46,22 @@ function volatyl_show_on_front_is_page(): bool {
 }
 
 /**
+ * Returns true when the front page is set to show latest posts (no static front page).
+ */
+function volatyl_show_on_front_is_posts(): bool {
+	return 'posts' === get_option( 'show_on_front' );
+}
+
+/**
+ * Returns true when no dedicated blog posts page is configured.
+ * This covers both the "latest posts as front page" case and
+ * the "static front page but no posts page assigned" case.
+ */
+function volatyl_no_dedicated_blog_page(): bool {
+	return ! ( volatyl_show_on_front_is_page() && get_option( 'page_for_posts' ) > 0 );
+}
+
+/**
  * Conditionally display Front Page post_content options.
  * Requires both a static front page AND the display toggle to be enabled.
  */

@@ -206,6 +206,31 @@ $wp_customize->add_control( 'volatyl_page_comments', array(
  * Template - Front Page
  */
 
+// Front page setup notice — shown only when latest posts is the front page
+$wp_customize->add_setting( 'volatyl_front_page_setup_notice', array(
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
+) );
+$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_front_page_setup_notice', array(
+	'section'         => 'volatyl_front_page_template',
+	'priority'        => 0,
+	'label'           => __( 'Optional: Set a Static Front Page', 'volatyl' ),
+	'description'     => __( 'Your site is showing latest posts on the front page. To unlock the Page Content Area — which lets you display WordPress editor content on your front page — go to Settings → Reading and assign a static page as your homepage.', 'volatyl' ),
+	'active_callback' => 'volatyl_show_on_front_is_posts',
+) ) );
+
+// Dark hero — shown only when latest posts is the front page (no page meta available)
+$wp_customize->add_setting( 'volatyl_front_page_hero_dark', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox',
+) );
+$wp_customize->add_control( 'volatyl_front_page_hero_dark', array(
+	'section'         => 'volatyl_front_page_template',
+	'priority'        => 2,
+	'label'           => __( 'Use dark hero background', 'volatyl' ),
+	'type'            => 'checkbox',
+	'active_callback' => 'volatyl_show_on_front_is_posts',
+) );
+
 // Hero settings
 $wp_customize->add_setting( 'volatyl_front_page_hero_settings', array(
 	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
@@ -413,6 +438,18 @@ $wp_customize->add_control( 'volatyl_front_page_featured_page_select', array(
 /**
  * Template - Blog
  */
+
+// Blog setup notice — shown when no dedicated blog posts page is configured
+$wp_customize->add_setting( 'volatyl_blog_setup_notice', array(
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
+) );
+$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_blog_setup_notice', array(
+	'section'         => 'volatyl_blog_template',
+	'priority'        => 0,
+	'label'           => __( 'Blog Page Not Configured', 'volatyl' ),
+	'description'     => __( 'These settings apply to a dedicated blog posts page. To activate the blog template, go to Settings → Reading, set a static page as your homepage, and assign a separate page as your Posts page.', 'volatyl' ),
+	'active_callback' => 'volatyl_no_dedicated_blog_page',
+) ) );
 
 // Blog header
 $wp_customize->add_setting( 'volatyl_blog_header_settings', array(

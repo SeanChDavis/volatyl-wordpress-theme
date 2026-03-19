@@ -24,6 +24,7 @@ $wp_customize->get_setting( 'volatyl_color_scheme_type' )->transport     = 'post
 $wp_customize->get_setting( 'volatyl_page_comments' )->transport = 'postMessage';
 
 // Front Page.
+$wp_customize->get_setting( 'volatyl_front_page_hero_dark' )->transport        = 'postMessage';
 $wp_customize->get_setting( 'volatyl_front_page_hero_centered' )->transport                  = 'postMessage';
 $wp_customize->get_setting( 'volatyl_front_page_hero_title' )->transport                     = 'postMessage';
 $wp_customize->get_setting( 'volatyl_front_page_hero_description' )->transport               = 'postMessage';

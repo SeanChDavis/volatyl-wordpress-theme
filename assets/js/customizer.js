@@ -111,6 +111,14 @@
     /**
      * Front Page Template
      */
+    // Front page hero dark (latest posts mode only — no page meta available)
+    wp.customize('volatyl_front_page_hero_dark', function (value) {
+        value.bind(function (to) {
+            var $header = $('.home.blog .content-header');
+            $header.toggleClass('v-dark-background', !!to);
+            $header.toggleClass('v-gray-background', !to);
+        });
+    });
     // Front page hero centered
     wp.customize('volatyl_front_page_hero_centered', function (value) {
         value.bind(function (to) {
