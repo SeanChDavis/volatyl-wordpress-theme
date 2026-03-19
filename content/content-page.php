@@ -1,7 +1,7 @@
 <?php // Template part for displaying single pages ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if ( has_post_thumbnail() ) { ?>
+	<?php if ( has_post_thumbnail() && ! is_front_page() ) { ?>
 		<header class="entry-header v-margin-bottom-2">
 			<?php volatyl_post_thumbnail(); ?>
 		</header>
