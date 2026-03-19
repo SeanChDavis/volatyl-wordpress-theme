@@ -1891,7 +1891,6 @@ main {
   border: none;
   display: inline-block;
   height: unset;
-  text-transform: uppercase;
 }
 #site-navigation .menu-toggle:hover {
   cursor: pointer;
