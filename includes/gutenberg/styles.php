@@ -1,16 +1,28 @@
 <?php // Gutenberg style functions
 
 /**
- * Add editor styles
+ * Register editor-style.css via add_editor_style() so WordPress automatically
+ * scopes all selectors to .editor-styles-wrapper — keeping theme styles out of
+ * the admin UI and inside the editor canvas only.
  */
-function volatyl_editor_style() {
-	add_editor_style();
-	wp_enqueue_style( 'volatyl-editor-style', get_theme_file_uri( 'editor-style.css' ), false, THEME_VERSION, 'all' );
-	$scheme          = get_theme_mod( 'volatyl_color_scheme_type', DEFAULT_COLOR_SCHEME_TYPE );
-	$editor_css      = volatyl_root_color_scheme_base() . volatyl_get_scheme_overrides( $scheme );
-	wp_add_inline_style( 'volatyl-editor-style', $editor_css );
+function volatyl_register_editor_style() {
+	add_editor_style( 'editor-style.css' );
 }
-add_action( 'enqueue_block_editor_assets', 'volatyl_editor_style' );
+add_action( 'after_setup_theme', 'volatyl_register_editor_style' );
+
+/**
+ * Inject OKLCH color variables into the block editor. Uses a virtual handle
+ * (no actual file) so the :root {} vars are available to the editor canvas
+ * without loading editor-style.css a second time as a global admin stylesheet.
+ */
+function volatyl_editor_color_vars() {
+	$scheme     = get_theme_mod( 'volatyl_color_scheme_type', DEFAULT_COLOR_SCHEME_TYPE );
+	$editor_css = volatyl_root_color_scheme_base() . volatyl_get_scheme_overrides( $scheme );
+	wp_register_style( 'volatyl-editor-vars', false );
+	wp_enqueue_style( 'volatyl-editor-vars' );
+	wp_add_inline_style( 'volatyl-editor-vars', $editor_css );
+}
+add_action( 'enqueue_block_editor_assets', 'volatyl_editor_color_vars' );
 
 /**
  * Adjust editor styles
