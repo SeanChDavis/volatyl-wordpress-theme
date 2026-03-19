@@ -176,12 +176,15 @@ body,
   background-color: var(--primary-tint);
 }
 
-a,
+a {
+  color: var(--action);
+}
+
 h4,
 .h4,
 h6,
 .h6 {
-  color: var(--action);
+  color: var(--subdued-dark);
 }
 
 .site-title a,
