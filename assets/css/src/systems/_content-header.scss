@@ -125,6 +125,7 @@
 			max-width: calc(1200px + 1.25rem);
 			padding-left: clamp(1.25rem, 7.9vw, 6rem);
 			padding-right: clamp(1.25rem, 7.9vw, 6rem);
+			padding-top: clamp(1.5rem, 3vw, 2.5rem);
 
 			@media all and (min-width: $mdMinWidth) {
 				padding-left: 2rem;
