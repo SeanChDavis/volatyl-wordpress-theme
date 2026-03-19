@@ -73,8 +73,9 @@ if ( get_theme_mod( 'volatyl_front_page_hero_use_custom_title' ) && ! empty( $cu
 			$recent_posts = wp_get_recent_posts( array(
 					'numberposts' => $blog_grid_post_count,
 					'post_status' => 'publish'
-			) );
-		if ( ! empty( $recent_posts ) ) {
+			), OBJECT );
+			if ( ! empty( $recent_posts ) ) {
+				global $post;
 				?>
 				<section class="blog-posts-featured">
 					<div class="inner">
