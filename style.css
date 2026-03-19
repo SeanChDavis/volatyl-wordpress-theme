@@ -2542,10 +2542,14 @@ form select {
 .fat-footer-areas .widget:not(:last-child) {
   margin-bottom: 1.25rem;
 }
-.fat-footer-areas a {
+.fat-footer-areas ol a,
+.fat-footer-areas ul a {
   text-decoration: none;
 }
-.fat-footer-areas a:hover, .fat-footer-areas a:focus, .fat-footer-areas a:active {
+.fat-footer-areas ol a:hover, .fat-footer-areas ol a:focus, .fat-footer-areas ol a:active,
+.fat-footer-areas ul a:hover,
+.fat-footer-areas ul a:focus,
+.fat-footer-areas ul a:active {
   text-decoration: underline;
 }
 @media all and (min-width: 560px) {
