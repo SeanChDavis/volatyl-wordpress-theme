@@ -2,11 +2,16 @@
 @import "systems/_configuration";
 @import "systems/_helper-classes";
 @import "systems/_editor-classes";
+@import "_markup-formatting";
 
 /**
  * These styles are applied to the editor, separate from front-end styles.
  */
 body {
+	@include bodyFont;
+	@include fontBase;
+	@include lineHeightBase;
+	color: var(--text);
 
 	* {
 		box-sizing: border-box;
@@ -54,4 +59,43 @@ body {
 			}
 		}
 	}
+}
+
+// ─────────────────────────────────────────────────────────────
+// Content element colors
+// ─────────────────────────────────────────────────────────────
+
+a {
+	color: var(--action);
+}
+
+h4, .h4,
+h6, .h6 {
+	color: var(--subdued-dark);
+}
+
+hr,
+.wp-block-separator,
+.wp-block-quote,
+.wp-block-pullquote {
+	border-color: var(--subdued-light);
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+	background-color: var(--translucent-dark);
+}
+
+table th {
+	background-color: var(--dark);
+	color: var(--white);
+}
+
+table,
+table th,
+table td {
+	border-color: var(--dark);
 }
