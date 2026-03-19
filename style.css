@@ -371,7 +371,7 @@ table td,
 
 table th,
 [class*=wp-block-] > table th {
-  background-color: var(--action);
+  background-color: var(--dark);
   color: var(--white);
 }
 

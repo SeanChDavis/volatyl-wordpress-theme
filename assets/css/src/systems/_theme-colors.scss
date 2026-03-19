@@ -233,10 +233,10 @@ table td,
 	border-color: var(--dark);
 }
 
-// Table headers share action color with buttons
+// Table headers match border color
 table th,
 [class*="wp-block-"] > table th {
-	background-color: var(--action);
+	background-color: var(--dark);
 	color: var(--white);
 }
 
