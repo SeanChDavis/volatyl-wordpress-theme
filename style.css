@@ -2542,6 +2542,12 @@ form select {
 .fat-footer-areas .widget:not(:last-child) {
   margin-bottom: 1.25rem;
 }
+.fat-footer-areas a {
+  text-decoration: none;
+}
+.fat-footer-areas a:hover, .fat-footer-areas a:focus, .fat-footer-areas a:active {
+  text-decoration: underline;
+}
 @media all and (min-width: 560px) {
   .fat-footer-areas.alternate-layout.v-grid-columns_3 {
     column-gap: 4%;

@@ -67,6 +67,16 @@
 		margin-bottom: 1.25rem;
 	}
 
+	a {
+		text-decoration: none;
+
+		&:hover,
+		&:focus,
+		&:active {
+			text-decoration: underline;
+		}
+	}
+
 	&.alternate-layout {
 
 		&.v-grid-columns_3 {
