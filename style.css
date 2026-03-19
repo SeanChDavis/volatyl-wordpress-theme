@@ -1792,10 +1792,6 @@ main {
   text-decoration: none;
 }
 
-.v-dark-background .site-title a:active, .v-dark-background .site-title a:focus, .v-dark-background .site-title a:hover {
-  opacity: 0.7;
-}
-
 #site-navigation {
   /* Full desktop navigation */
   /* Mobile navigation opener */
