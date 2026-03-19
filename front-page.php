@@ -1,4 +1,11 @@
 <?php // Default front page of the site, intelligently display basic information
+
+// If no static front page is set, hand off to the standard blog index template.
+if ( 'posts' === get_option( 'show_on_front' ) ) {
+	load_template( locate_template( array( 'home.php', 'index.php' ) ) );
+	return;
+}
+
 get_header( null,
 		array(
 				'is_dark' => (bool) get_post_meta( get_option( 'page_on_front' ), '_volatyl_dark_header', true ),
