@@ -114,7 +114,7 @@
     // Front page hero centered
     wp.customize('volatyl_front_page_hero_centered', function (value) {
         value.bind(function (to) {
-            $('.front-page .content-header').toggleClass('v-text-align-center', to);
+            $('.front-page .content-header, .home.blog .content-header').toggleClass('v-text-align-center', !!to);
         });
     });
     // Front page hero title
