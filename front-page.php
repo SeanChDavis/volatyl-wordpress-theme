@@ -87,8 +87,10 @@ if ( get_theme_mod( 'volatyl_front_page_hero_use_custom_title' ) && ! empty( $cu
 					<div class="v-grid v-grid-columns_<?php echo absint( $blog_grid_columns ); ?>">
 						<?php
 						foreach ( $recent_posts as $post ) {
-							get_template_part( 'content/content', 'grid-items', $post );
+							setup_postdata( $post );
+							get_template_part( 'content/content', 'grid-items' );
 						}
+						wp_reset_postdata();
 						?>
 					</div>
 				</div>

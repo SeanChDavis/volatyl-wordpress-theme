@@ -5,13 +5,7 @@
  * Used by blog post archives, but can be used for other queried elements.
  */
 
-// Set the post ID based on query context
-$the_post_id = 0;
-if ( is_front_page() ) {
-	$the_post_id = $post['ID'];
-} else {
-	$the_post_id = get_the_ID();
-}
+$the_post_id = get_the_ID();
 
 // Set the appropriate grid item container classes
 $container_classes = array( 'v-grid-item-container' );
