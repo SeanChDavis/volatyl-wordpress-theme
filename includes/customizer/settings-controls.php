@@ -319,10 +319,11 @@ $wp_customize->add_setting( 'volatyl_front_page_content_area', array(
 	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
 ) );
 $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_front_page_content_area', array(
-	'section'     => 'volatyl_front_page_template',
-	'priority'    => 95,
-	'label'       => __( 'Page Content Area', 'volatyl' ),
-	'description' => __( 'The following settings apply to the content from the page editor.', 'volatyl' ),
+	'section'         => 'volatyl_front_page_template',
+	'priority'        => 95,
+	'label'           => __( 'Page Content Area', 'volatyl' ),
+	'description'     => __( 'The following settings apply to the content from the page editor.', 'volatyl' ),
+	'active_callback' => 'volatyl_show_on_front_is_page',
 ) ) );
 
 // Display post_content
@@ -331,10 +332,11 @@ $wp_customize->add_setting( 'volatyl_front_page_display_post_content', array(
 	'sanitize_callback' => 'volatyl_sanitize_checkbox'
 ) );
 $wp_customize->add_control( 'volatyl_front_page_display_post_content', array(
-	'section'  => 'volatyl_front_page_template',
-	'priority' => 96,
-	'label'    => __( 'Display page editor content below hero', 'volatyl' ),
-	'type'     => 'checkbox',
+	'section'         => 'volatyl_front_page_template',
+	'priority'        => 96,
+	'label'           => __( 'Display page editor content below hero', 'volatyl' ),
+	'type'            => 'checkbox',
+	'active_callback' => 'volatyl_show_on_front_is_page',
 ) );
 
 // Full-width post_content
@@ -373,12 +375,13 @@ $wp_customize->add_control( 'volatyl_front_page_blog_posts_grid_columns_rows', a
 	'label'    => __( 'How should blog posts display?', 'volatyl' ),
 	'type'     => 'select',
 	'choices'  => array(
-		'2_1' => __( '2 columns / 1 row -- ( 2 total )', 'volatyl' ),
-		'2_2' => __( '2 columns / 2 rows -- ( 4 total )', 'volatyl' ),
-		'2_3' => __( '2 columns / 3 rows -- ( 6 total )', 'volatyl' ),
-		'3_1' => __( '3 columns / 1 row -- ( 3 total )', 'volatyl' ),
-		'3_2' => __( '3 columns / 2 rows -- ( 6 total )', 'volatyl' ),
-		'3_3' => __( '3 columns / 3 rows -- ( 9 total )', 'volatyl' ),
+		'2_1'  => __( '2 columns / 1 row -- ( 2 total )', 'volatyl' ),
+		'2_2'  => __( '2 columns / 2 rows -- ( 4 total )', 'volatyl' ),
+		'2_3'  => __( '2 columns / 3 rows -- ( 6 total )', 'volatyl' ),
+		'3_1'  => __( '3 columns / 1 row -- ( 3 total )', 'volatyl' ),
+		'3_2'  => __( '3 columns / 2 rows -- ( 6 total )', 'volatyl' ),
+		'3_3'  => __( '3 columns / 3 rows -- ( 9 total )', 'volatyl' ),
+		'none' => __( 'Do not display blog posts', 'volatyl' ),
 	),
 ) );
 

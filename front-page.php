@@ -1,11 +1,5 @@
 <?php // Default front page of the site, intelligently display basic information
 
-// If no static front page is set, hand off to the standard blog index template.
-if ( 'posts' === get_option( 'show_on_front' ) ) {
-	load_template( locate_template( array( 'home.php', 'index.php' ) ) );
-	return;
-}
-
 get_header( null,
 		array(
 				'is_dark' => (bool) get_post_meta( get_option( 'page_on_front' ), '_volatyl_dark_header', true ),
@@ -44,7 +38,7 @@ if ( get_theme_mod( 'volatyl_front_page_hero_use_custom_title' ) && ! empty( $cu
 		/**
 		 * General front page content from post_content
 		 */
-		if ( have_posts() && get_theme_mod( 'volatyl_front_page_display_post_content' ) ) :
+		if ( is_page() && have_posts() && get_theme_mod( 'volatyl_front_page_display_post_content' ) ) :
 			while ( have_posts() ) :
 				the_post();
 				?>
@@ -68,35 +62,37 @@ if ( get_theme_mod( 'volatyl_front_page_hero_use_custom_title' ) && ! empty( $cu
 		 */
 		$blog_grid_name  = 'volatyl_front_page_blog_posts_grid_columns_rows';
 		$blog_grid_value = get_theme_mod( $blog_grid_name, '3_1' );
-		if ( empty( $blog_grid_value ) ) {
-			$blog_grid_post_count = 4;
-			$blog_grid_columns    = 2;
-		} else {
-			$blog_grid_post_count = volatyl_get_posts_per_page( $blog_grid_name );
-			$blog_grid_columns    = (int) substr( $blog_grid_value, 0, 1 );
-		}
-		$recent_posts = wp_get_recent_posts( array(
-				'numberposts' => $blog_grid_post_count,
-				'post_status' => 'publish'
-		) );
+		if ( 'none' !== $blog_grid_value ) :
+			if ( empty( $blog_grid_value ) ) {
+				$blog_grid_post_count = 4;
+				$blog_grid_columns    = 2;
+			} else {
+				$blog_grid_post_count = volatyl_get_posts_per_page( $blog_grid_name );
+				$blog_grid_columns    = (int) substr( $blog_grid_value, 0, 1 );
+			}
+			$recent_posts = wp_get_recent_posts( array(
+					'numberposts' => $blog_grid_post_count,
+					'post_status' => 'publish'
+			) );
 		if ( ! empty( $recent_posts ) ) {
-			?>
-			<section class="blog-posts-featured">
-				<div class="inner">
-					<span class="v-subdued-title v-margin-bottom-2"><?php echo esc_html__( 'From the blog', 'volatyl' ); ?></span>
-					<div class="v-grid v-grid-columns_<?php echo absint( $blog_grid_columns ); ?>">
-						<?php
-						foreach ( $recent_posts as $post ) {
-							setup_postdata( $post );
-							get_template_part( 'content/content', 'grid-items' );
-						}
-						wp_reset_postdata();
-						?>
+				?>
+				<section class="blog-posts-featured">
+					<div class="inner">
+						<span class="v-subdued-title v-margin-bottom-2"><?php echo esc_html__( 'From the blog', 'volatyl' ); ?></span>
+						<div class="v-grid v-grid-columns_<?php echo absint( $blog_grid_columns ); ?>">
+							<?php
+							foreach ( $recent_posts as $post ) {
+								setup_postdata( $post );
+								get_template_part( 'content/content', 'grid-items' );
+							}
+							wp_reset_postdata();
+							?>
+						</div>
 					</div>
-				</div>
-			</section>
-			<?php
-		}
+				</section>
+				<?php
+			}
+		endif;
 
 		/**
 		 * Display the featured page section if a valid page is selected in theme settings

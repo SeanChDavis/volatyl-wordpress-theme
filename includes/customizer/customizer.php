@@ -39,14 +39,21 @@ function volatyl_display_front_page_hero_title_settings( $control ) {
 }
 
 /**
- * Conditionally display Front Page post_content options
+ * Returns true only when WordPress is configured to use a static front page.
  */
-function volatyl_display_front_page_post_content_settings( $control ) {
-	if ( $control->manager->get_setting( 'volatyl_front_page_display_post_content' )->value() === 1 ) {
-		return true;
-	} else {
+function volatyl_show_on_front_is_page(): bool {
+	return 'page' === get_option( 'show_on_front' );
+}
+
+/**
+ * Conditionally display Front Page post_content options.
+ * Requires both a static front page AND the display toggle to be enabled.
+ */
+function volatyl_display_front_page_post_content_settings( $control ): bool {
+	if ( ! volatyl_show_on_front_is_page() ) {
 		return false;
 	}
+	return (bool) $control->manager->get_setting( 'volatyl_front_page_display_post_content' )->value();
 }
 
 /**
