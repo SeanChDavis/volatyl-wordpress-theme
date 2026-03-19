@@ -358,38 +358,20 @@ npm install
 
 ### Build Commands
 
+The recommended workflow is to run `grunt watch` while editing. It monitors SCSS and JS source files and runs the appropriate compile/bundle tasks automatically on save.
+
+```bash
+grunt watch
+```
+
+If you need to run tasks manually:
+
 ```bash
 grunt sass                        # Compile SCSS → style.css + editor-style.css
-grunt concat                      # Bundle JS source files
-grunt uglify                      # Minify JS
-grunt sass && grunt concat && grunt uglify   # Full build
+grunt concat && grunt uglify      # Bundle and minify JS
 ```
 
-There is no default Grunt task — always specify the task explicitly.
-
-### File Structure
-
-```
-assets/
-  css/
-    src/                          # SCSS source files
-      systems/                    # Color, typography, grid, helpers
-      templates/                  # Template-specific styles
-    style.css                     # Compiled front-end stylesheet
-    editor-style.css              # Compiled block editor stylesheet
-  js/
-    src/                          # JavaScript source files
-    navigation.js                 # Compiled navigation script
-    customizer.js                 # Compiled customizer preview script
-includes/
-  color-schemes.php               # OKLCH color variable generation
-  customizer/                     # Customizer settings, controls, selective refresh
-  gutenberg/                      # Block editor styles and color palette
-  page-layout.php                 # Per-page meta box
-  queries.php                     # Custom query modifications
-template-parts/                   # Reusable template fragments
-page-templates/                   # Canvas page templates
-```
+Note: there is no default Grunt task — always specify the task explicitly.
 
 ### Colors and the Build
 

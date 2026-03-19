@@ -39,6 +39,10 @@
 - URL sanitization in Customizer settings: `esc_url_raw`
 - Use `wp_date()` instead of `date()`
 
+## Documentation
+- `README.md` documents all user-facing features — keep it up to date as features are added, removed, or changed
+- When making changes that affect documented features (Customizer options, templates, helper classes, color system, build process, etc.), update the relevant README section in the same session
+
 ## What to Avoid
 - Do not use `wp_reset_query()` after `wp_get_recent_posts()` — it's wrong; use `wp_reset_postdata()` or nothing
 - Do not use CSS nesting (native) — browser compatibility concern; use standard SCSS nesting instead
