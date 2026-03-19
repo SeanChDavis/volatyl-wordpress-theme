@@ -2,5 +2,6 @@
 .sass-cache/
 /node_modules/
 *.css.map
+CLAUDE.md
 .claude/*
 !.claude/settings.json
