@@ -884,6 +884,8 @@ article .entry-content .wp-block-latest-comments,
 }
 
 .content-header .content-header-title {
+  font-size: clamp(1.65rem, 4vw, 3rem);
+  line-height: 1.3;
   margin-bottom: 0.8rem;
 }
 @media all and (min-width: 768px) {
@@ -928,11 +930,6 @@ article .entry-content .wp-block-latest-comments,
   text-align: center;
 }
 
-.single .content-header .content-header-title {
-  font-size: clamp(1.65rem, 4vw, 3rem);
-  line-height: 1.3;
-}
-
 .archive .content-header .content-header-title {
   font-size: 0.833rem;
   font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -944,8 +941,8 @@ article .entry-content .wp-block-latest-comments,
   font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 500;
   display: block;
-  font-size: clamp(2rem, 5vw, 4rem);
-  line-height: 1.25;
+  font-size: clamp(1.65rem, 4vw, 3rem);
+  line-height: 1.3;
   margin: 0;
   max-width: clamp(770px, 50vw, 940px);
   text-transform: none;
@@ -958,6 +955,11 @@ article .entry-content .wp-block-latest-comments,
 .no-sidebar:not(.front-page) .content-header .content-header-description {
   margin-left: auto;
   margin-right: auto;
+}
+
+.content-header.has-jumbo-title .content-header-title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.25;
 }
 
 .front-page .content-header .content-header-featured-image {
