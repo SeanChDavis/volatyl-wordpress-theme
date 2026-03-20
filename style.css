@@ -586,6 +586,7 @@ article .entry-content .wp-block-latest-comments,
 
 /* Min-width breakpoints */
 /* Heading font */
+/* Reduced heading sizes for constrained content areas (sidebars, fat footer, featured sections) */
 /* Body font */
 /* Base font size - All font size variants are relative to this via rem */
 /* Base line height */
@@ -2101,6 +2102,20 @@ main {
 .widget {
   font-size: 0.889rem;
 }
+.widget h1, .widget .h1,
+.widget h2, .widget .h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+.widget h3, .widget .h3 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+}
+.widget h4, .widget .h4 {
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+}
+.widget h5, .widget .h5,
+.widget h6, .widget .h6 {
+  font-size: 1rem;
+}
 .widget:not(:last-child) {
   margin-bottom: 1.25rem;
 }
@@ -2115,16 +2130,11 @@ main {
 .widget h1, .widget .h1,
 .widget h2, .widget .h2,
 .widget h3, .widget .h3 {
-  font-size: clamp(1.35rem, 2.15vw, 1.65rem);
   line-height: 1.35;
 }
 .widget h4, .widget .h4 {
-  font-size: clamp(1.125rem, 1.6vw, 1.25rem);
   line-height: 1.4;
   text-transform: uppercase;
-}
-.widget h5, .widget .h5 {
-  font-size: clamp(1rem, 1.4vw, 1.125rem);
 }
 .widget p {
   margin-bottom: 1.25rem;
@@ -2831,6 +2841,20 @@ article:last-child .entry-footer,
   margin-bottom: 2rem;
 }
 
+.featured-page h1, .featured-page .h1,
+.featured-page h2, .featured-page .h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+.featured-page h3, .featured-page .h3 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+}
+.featured-page h4, .featured-page .h4 {
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+}
+.featured-page h5, .featured-page .h5,
+.featured-page h6, .featured-page .h6 {
+  font-size: 1rem;
+}
 .featured-page .v-grid-columns_2 {
   row-gap: 0;
   grid-template-columns: 100%;

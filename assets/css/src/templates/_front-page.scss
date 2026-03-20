@@ -13,6 +13,7 @@
 }
 
 .featured-page {
+	@include headingFontReduced;
 
 	.v-grid-columns_2 {
 		row-gap: 0;
