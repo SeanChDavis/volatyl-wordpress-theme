@@ -592,6 +592,14 @@ figure {
 	}
 }
 
+body.single,
+body.page:not(.canvas-full-width-template):not(.canvas-page-width-template):not(.front-page) {
+
+	.entry-content {
+		@include headingFontReduced;
+	}
+}
+
 article,
 .v-content-container {
 
