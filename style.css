@@ -912,12 +912,6 @@ article .entry-content .wp-block-latest-comments,
   font-weight: 500;
   font-size: 0.889rem;
 }
-.content-header .content-header-secondary-cta a {
-  text-decoration: none;
-}
-.content-header .content-header-secondary-cta a:active, .content-header .content-header-secondary-cta a:focus, .content-header .content-header-secondary-cta a:hover {
-  text-decoration: underline;
-}
 .content-header.v-text-align-center .content-header-title,
 .content-header.v-text-align-center .content-header-description,
 .content-header.v-text-align-center .content-header-primary-cta,
