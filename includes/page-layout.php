@@ -18,9 +18,12 @@
 function volatyl_register_page_layout_meta() {
 
 	$shared = array(
-		'show_in_rest' => true,
-		'single'       => true,
-		'type'         => 'boolean',
+		'show_in_rest'  => true,
+		'single'        => true,
+		'type'          => 'boolean',
+		'auth_callback' => function( $allowed, $meta_key, $post_id ) {
+			return current_user_can( 'edit_post', $post_id );
+		},
 	);
 
 	register_post_meta( '', '_volatyl_dark_header',      $shared );

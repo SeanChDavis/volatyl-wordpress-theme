@@ -391,6 +391,11 @@ var {
   background-color: var(--translucent-dark);
 }
 
+pre code {
+  background: none;
+  padding: 0;
+}
+
 hr,
 .wp-block-separator,
 .twitter-tweet,
