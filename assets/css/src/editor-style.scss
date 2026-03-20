@@ -12,6 +12,7 @@ body {
 	@include fontBase;
 	@include lineHeightBase;
 	color: var(--text);
+	@include headingFontReduced;
 
 	* {
 		box-sizing: border-box;
