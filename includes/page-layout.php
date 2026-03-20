@@ -29,6 +29,7 @@ function volatyl_register_page_layout_meta() {
 	register_post_meta( '', '_volatyl_dark_header',      $shared );
 	register_post_meta( '', '_volatyl_show_page_header', $shared );
 	register_post_meta( '', '_volatyl_minimal_footer',   $shared );
+	register_post_meta( '', '_volatyl_jumbo_title',      $shared );
 }
 add_action( 'init', 'volatyl_register_page_layout_meta' );
 
@@ -60,6 +61,7 @@ function volatyl_page_layout_meta_box_html( $post ) {
 	$show_page_header = (bool) get_post_meta( $post->ID, '_volatyl_show_page_header', true );
 	$is_dark          = (bool) get_post_meta( $post->ID, '_volatyl_dark_header', true );
 	$minimal_footer   = (bool) get_post_meta( $post->ID, '_volatyl_minimal_footer', true );
+	$jumbo_title      = (bool) get_post_meta( $post->ID, '_volatyl_jumbo_title', true );
 
 	wp_nonce_field( 'volatyl_page_layout_save', 'volatyl_page_layout_nonce' );
 	?>
@@ -78,6 +80,13 @@ function volatyl_page_layout_meta_box_html( $post ) {
 				<input type="checkbox" name="volatyl_dark_header" value="1" <?php checked( $is_dark ); ?>>
 				<?php esc_html_e( 'Enable dark header', 'volatyl' ); ?>
 			</label>
+		</p>
+		<p style="margin: 4px 0;">
+			<label>
+				<input type="checkbox" name="volatyl_jumbo_title" value="1" <?php checked( $jumbo_title ); ?>>
+				<?php esc_html_e( 'Jumbo title', 'volatyl' ); ?>
+			</label>
+			<br><span class="description"><?php esc_html_e( 'Use large display title size.', 'volatyl' ); ?></span>
 		</p>
 	</fieldset>
 
@@ -118,7 +127,7 @@ function volatyl_save_page_layout_meta( $post_id ) {
 		return;
 	}
 
-	$fields = array( 'volatyl_show_page_header', 'volatyl_dark_header', 'volatyl_minimal_footer' );
+	$fields = array( 'volatyl_show_page_header', 'volatyl_dark_header', 'volatyl_minimal_footer', 'volatyl_jumbo_title' );
 
 	foreach ( $fields as $field ) {
 		$meta_key = '_' . $field;

@@ -13,6 +13,7 @@ $args = wp_parse_args( $args ?? array(), array(
 	'secondary_cta'   => array( 'text' => '', 'url' => '' ),
 	'is_dark'         => volatyl_has_dark_header(),
 	'has_search_form' => false,
+	'jumbo_title'     => false,
 ) );
 
 // is_centered can also be passed as 'alignment' for back-compat with the front page template
@@ -29,6 +30,9 @@ if ( isset( $args['is_dark'] ) && $args['is_dark'] ) {
 }
 if ( isset( $args['is_centered'] ) && $args['is_centered'] ) {
 	$content_header_classes .= ' v-text-align-center';
+}
+if ( ! empty( $args['jumbo_title'] ) ) {
+	$content_header_classes .= ' has-jumbo-title';
 }
 
 // Determine hero featured image (front page with a static page set only).

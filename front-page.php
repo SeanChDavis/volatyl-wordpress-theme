@@ -37,6 +37,7 @@ if ( get_theme_mod( 'volatyl_front_page_hero_use_custom_title' ) && ! empty( $cu
 						'text' => get_theme_mod( 'volatyl_front_page_hero_secondary_cta_button_text', '' ),
 				),
 				'is_dark'       => $front_page_is_dark,
+				'jumbo_title'   => true,
 		) );
 
 		/**
