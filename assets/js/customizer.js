@@ -406,16 +406,17 @@
             if ( panel ) { panel.style.display = 'none'; }
         }
 
-        wp.customize.bind( 'ready', function () {
-            // Read initial state directly from localStorage — avoids race condition
-            // with the controls pane push arriving before this listener is registered.
+        // customize-preview is a declared dependency so wp.customize.preview
+        // is available immediately — no ready wrapper needed in the preview context.
+        wp.customize.preview.bind( 'volatyl-palette-panel', function ( data ) {
+            if ( data.visible ) { show(); } else { hide(); }
+        } );
+
+        // Show initial state once DOM is ready, reading directly from localStorage.
+        $( function () {
             if ( localStorage.getItem( 'volatyl_palette_preview' ) !== 'false' ) {
                 show();
             }
-            // Listen for live toggles when the checkbox changes.
-            wp.customize.preview.bind( 'volatyl-palette-panel', function ( data ) {
-                if ( data.visible ) { show(); } else { hide(); }
-            } );
         } );
 
     } )();
