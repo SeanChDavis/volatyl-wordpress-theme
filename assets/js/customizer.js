@@ -302,20 +302,15 @@
                 ],
             },
             {
-                label: 'Backgrounds',
+                label: 'Neutrals',
                 swatches: [
-                    { v: '--darker',        l: 'Darker'    },
-                    { v: '--dark',          l: 'Dark'      },
-                    { v: '--subdued-dark',  l: 'Sub Dark'  },
+                    { v: '--darker',        l: 'Darker'   },
+                    { v: '--dark',          l: 'Dark'     },
+                    { v: '--text',          l: 'Text'     },
+                    { v: '--subdued-dark',  l: 'Sub Dark' },
                     { v: '--subdued-light', l: 'Sub Light', tint: true },
-                ],
-            },
-            {
-                label: 'Text / UI',
-                swatches: [
-                    { v: '--text',    l: 'Text'    },
-                    { v: '--on-dark', l: 'On Dark', tint: true },
-                    { v: '--white',   l: 'White',   tint: true },
+                    { v: '--on-dark',       l: 'On Dark',  tint: true },
+                    { v: '--white',         l: 'White',    tint: true },
                 ],
             },
         ];

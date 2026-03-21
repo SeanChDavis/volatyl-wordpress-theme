@@ -58,8 +58,8 @@ function volatyl_root_color_scheme_base() {
 		--darker: oklch(12% var(--tint-chroma) var(--primary-hue));
 
 		/* Subdued colors */
-		--subdued-light: oklch(91% 0.015 var(--primary-hue));
-		--subdued-dark: oklch(44% 0.04 var(--primary-hue));
+		--subdued-light: oklch(91% calc(var(--tint-chroma) * 0.15) var(--primary-hue));
+		--subdued-dark: oklch(44% calc(var(--tint-chroma) * 0.4) var(--primary-hue));
 
 		/* Miscellaneous */
 		--on-dark: oklch(var(--on-dark-luminance) calc(var(--tint-chroma) * 0.5) var(--primary-hue));
