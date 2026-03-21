@@ -406,8 +406,10 @@
             if ( panel ) { panel.style.display = 'none'; }
         }
 
-        wp.customize.preview.bind( 'volatyl-palette-panel', function ( data ) {
-            if ( data.visible ) { show(); } else { hide(); }
+        wp.customize.bind( 'ready', function () {
+            wp.customize.preview.bind( 'volatyl-palette-panel', function ( data ) {
+                if ( data.visible ) { show(); } else { hide(); }
+            } );
         } );
 
     } )();
