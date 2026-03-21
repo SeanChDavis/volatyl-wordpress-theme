@@ -72,27 +72,27 @@
             var schemeHues = {
                 monochromatic: {action: '--primary-hue', accent: '--primary-hue', extraAccent: '--primary-hue'},
                 complementary: {
-                    action: '--complementary-accent-hue',
+                    action: '--primary-hue',
                     accent: '--complementary-accent-hue',
                     extraAccent: '--complementary-accent-hue'
                 },
                 analogous: {
-                    action: '--analogous-accent-hue-1',
-                    accent: '--analogous-accent-hue-2',
+                    action: '--primary-hue',
+                    accent: '--analogous-accent-hue-1',
                     extraAccent: '--analogous-accent-hue-2'
                 },
                 triadic: {
-                    action: '--triadic-accent-hue-1',
-                    accent: '--triadic-accent-hue-2',
+                    action: '--primary-hue',
+                    accent: '--triadic-accent-hue-1',
                     extraAccent: '--triadic-accent-hue-2'
                 },
                 split_complementary: {
-                    action: '--split-complementary-accent-hue-1',
-                    accent: '--split-complementary-accent-hue-2',
+                    action: '--primary-hue',
+                    accent: '--split-complementary-accent-hue-1',
                     extraAccent: '--split-complementary-accent-hue-2'
                 },
                 tetradic: {
-                    action: '--tetradic-accent-hue-1',
+                    action: '--primary-hue',
                     accent: '--tetradic-accent-hue-2',
                     extraAccent: '--tetradic-accent-hue-3'
                 },

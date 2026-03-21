@@ -117,8 +117,8 @@ $wp_customize->add_setting( 'volatyl_primary_hue_area', array(
 $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_primary_hue_area', array(
 	'section'     => 'volatyl_color_scheme',
 	'priority'    => 1,
-	'label'       => __( 'Primary hue', 'volatyl' ),
-	'description' => __( 'Your color scheme is intelligently configured based on your selection of one single hue. A hue (color) is represented as 1 degree of a 360-degree color wheel, with red at the 0/360 point. Use the slider control to choose your desired hue, where the far left represents 0 and the far right represents 360. <a href="https://en.wikipedia.org/wiki/Hue" target="_blank">Learn more about hue</a>.', 'volatyl' ),
+	'label'       => __( 'Brand & action hue', 'volatyl' ),
+	'description' => __( 'This is your brand color — it always drives your action colors (buttons, links, and primary UI elements). In multi-color schemes, accent and extra-accent colors are derived from this hue using color theory relationships. <a href="https://en.wikipedia.org/wiki/Hue" target="_blank">Learn more about hue</a>.', 'volatyl' ),
 ) ) );
 
 // Primary hue slider
@@ -129,7 +129,7 @@ $wp_customize->add_setting( 'volatyl_primary_hue', array(
 $wp_customize->add_control( 'volatyl_primary_hue', array(
 	'section'     => 'volatyl_color_scheme',
 	'priority'    => 10,
-	'label'       => __( 'Choose your preferred hue', 'volatyl' ),
+	'label'       => __( 'Choose your brand hue', 'volatyl' ),
 	'type'        => 'range',
 	'input_attrs' => array(
 		'min'  => 0,

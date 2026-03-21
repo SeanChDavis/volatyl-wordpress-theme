@@ -43,27 +43,27 @@ function volatyl_palette_colors(): array {
 	// Resolve action / accent / extra-accent hues for the active scheme.
 	switch ( $scheme ) {
 		case 'complementary':
-			$action_hue       = $hue - 180;
+			$action_hue       = $hue;
 			$accent_hue       = $hue - 180;
 			$extra_accent_hue = $hue - 180;
 			break;
 		case 'analogous':
-			$action_hue       = $hue - 30;
-			$accent_hue       = $hue + 30;
+			$action_hue       = $hue;
+			$accent_hue       = $hue - 30;
 			$extra_accent_hue = $hue + 30;
 			break;
 		case 'triadic':
-			$action_hue       = $hue - 120;
-			$accent_hue       = $hue + 120;
+			$action_hue       = $hue;
+			$accent_hue       = $hue - 120;
 			$extra_accent_hue = $hue + 120;
 			break;
 		case 'split_complementary':
-			$action_hue       = $hue - 150;
-			$accent_hue       = $hue + 150;
+			$action_hue       = $hue;
+			$accent_hue       = $hue - 150;
 			$extra_accent_hue = $hue + 150;
 			break;
 		case 'tetradic':
-			$action_hue       = $hue - 90;
+			$action_hue       = $hue;
 			$accent_hue       = $hue + 90;
 			$extra_accent_hue = $hue + 180;
 			break;
