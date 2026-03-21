@@ -407,6 +407,12 @@
         }
 
         wp.customize.bind( 'ready', function () {
+            // Read initial state directly from localStorage — avoids race condition
+            // with the controls pane push arriving before this listener is registered.
+            if ( localStorage.getItem( 'volatyl_palette_preview' ) !== 'false' ) {
+                show();
+            }
+            // Listen for live toggles when the checkbox changes.
             wp.customize.preview.bind( 'volatyl-palette-panel', function ( data ) {
                 if ( data.visible ) { show(); } else { hide(); }
             } );
