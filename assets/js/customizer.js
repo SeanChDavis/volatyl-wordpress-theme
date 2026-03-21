@@ -317,6 +317,7 @@
             },
             {
                 label: 'Neutrals',
+                rowSize: 4,
                 swatches: [
                     { v: '--darker',        l: 'Darker'   },
                     { v: '--dark',          l: 'Dark'     },
