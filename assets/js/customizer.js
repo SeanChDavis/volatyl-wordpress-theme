@@ -60,7 +60,7 @@
     // Background & text tint
     wp.customize('volatyl_background_tint', function (value) {
         value.bind(function (to) {
-            document.documentElement.style.setProperty('--tint-chroma', to * 0.0006);
+            document.documentElement.style.setProperty('--tint-chroma', to * 0.001);
         });
     });
     // Color scheme type — update CSS custom properties directly for live preview
@@ -104,7 +104,7 @@
                 root.style.setProperty('--' + prefix, 'oklch(55% var(--palette-chroma) var(' + hueVar + '))');
                 root.style.setProperty('--' + prefix + '-light', 'oklch(75% var(--palette-chroma) var(' + hueVar + '))');
                 root.style.setProperty('--' + prefix + '-dark', 'oklch(30% var(--palette-chroma) var(' + hueVar + '))');
-                root.style.setProperty('--' + prefix + '-tint', 'oklch(97.5% calc(var(--tint-chroma) * 0.25) var(' + hueVar + '))');
+                root.style.setProperty('--' + prefix + '-tint', 'oklch(97.5% calc(var(--palette-chroma) * 0.05) var(' + hueVar + '))');
             }
 
             setColorGroup('action', hues.action);

@@ -37,7 +37,7 @@ function volatyl_palette_colors(): array {
 	$palette_vibrancy = get_theme_mod( 'volatyl_palette_vibrancy', DEFAULT_PALETTE_VIBRANCY );
 	$background_tint  = get_theme_mod( 'volatyl_background_tint', DEFAULT_BACKGROUND_TINT );
 	$palette_chroma   = round( $palette_vibrancy * 0.0025, 4 );
-	$tint_chroma      = round( $background_tint * 0.0006, 5 );
+	$tint_chroma      = round( $background_tint * 0.001, 5 );
 	$scheme           = get_theme_mod( 'volatyl_color_scheme_type', DEFAULT_COLOR_SCHEME_TYPE );
 
 	// Resolve action / accent / extra-accent hues for the active scheme.
@@ -74,7 +74,7 @@ function volatyl_palette_colors(): array {
 			break;
 	}
 
-	$tint_wash      = round( $tint_chroma * 0.25, 5 );
+	$tint_wash      = round( $palette_chroma * 0.05, 5 );
 	$on_dark_chroma = round( $tint_chroma * 0.5, 5 );
 
 	// Shorthand builders.
