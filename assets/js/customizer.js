@@ -84,8 +84,8 @@
                 root.style.setProperty('--' + prefix + '-darker',  'oklch(18% var(--palette-chroma) var(' + hueVar + '))');
                 root.style.setProperty('--' + prefix + '-dark',    'oklch(30% var(--palette-chroma) var(' + hueVar + '))');
                 root.style.setProperty('--' + prefix,              'oklch(55% var(--palette-chroma) var(' + hueVar + '))');
-                root.style.setProperty('--' + prefix + '-light',   'oklch(75% var(--palette-chroma) var(' + hueVar + '))');
-                root.style.setProperty('--' + prefix + '-lighter', 'oklch(88% var(--palette-chroma) var(' + hueVar + '))');
+                root.style.setProperty('--' + prefix + '-light',   'oklch(80% var(--palette-chroma) var(' + hueVar + '))');
+                root.style.setProperty('--' + prefix + '-lighter', 'oklch(93% var(--palette-chroma) var(' + hueVar + '))');
                 root.style.setProperty('--' + prefix + '-tint',    'oklch(97.5% calc(var(--palette-chroma) * 0.025) var(' + hueVar + '))');
             }
 
