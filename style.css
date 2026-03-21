@@ -599,6 +599,22 @@ article .entry-content .wp-block-latest-comments,
 /* HTML structure spacing */
 /* Editor-generated classes */
 /* Action, accent-1, accent-2, accent-3 */
+.has-action-darker-color {
+  color: var(--action-darker);
+}
+
+.has-action-darker-background-color {
+  background-color: var(--action-darker);
+}
+
+.has-action-dark-color {
+  color: var(--action-dark);
+}
+
+.has-action-dark-background-color {
+  background-color: var(--action-dark);
+}
+
 .has-action-color {
   color: var(--action);
 }
@@ -615,12 +631,12 @@ article .entry-content .wp-block-latest-comments,
   background-color: var(--action-light);
 }
 
-.has-action-dark-color {
-  color: var(--action-dark);
+.has-action-lighter-color {
+  color: var(--action-lighter);
 }
 
-.has-action-dark-background-color {
-  background-color: var(--action-dark);
+.has-action-lighter-background-color {
+  background-color: var(--action-lighter);
 }
 
 .has-action-tint-color {
@@ -629,6 +645,22 @@ article .entry-content .wp-block-latest-comments,
 
 .has-action-tint-background-color {
   background-color: var(--action-tint);
+}
+
+.has-accent-1-darker-color {
+  color: var(--accent-1-darker);
+}
+
+.has-accent-1-darker-background-color {
+  background-color: var(--accent-1-darker);
+}
+
+.has-accent-1-dark-color {
+  color: var(--accent-1-dark);
+}
+
+.has-accent-1-dark-background-color {
+  background-color: var(--accent-1-dark);
 }
 
 .has-accent-1-color {
@@ -647,12 +679,12 @@ article .entry-content .wp-block-latest-comments,
   background-color: var(--accent-1-light);
 }
 
-.has-accent-1-dark-color {
-  color: var(--accent-1-dark);
+.has-accent-1-lighter-color {
+  color: var(--accent-1-lighter);
 }
 
-.has-accent-1-dark-background-color {
-  background-color: var(--accent-1-dark);
+.has-accent-1-lighter-background-color {
+  background-color: var(--accent-1-lighter);
 }
 
 .has-accent-1-tint-color {
@@ -661,6 +693,22 @@ article .entry-content .wp-block-latest-comments,
 
 .has-accent-1-tint-background-color {
   background-color: var(--accent-1-tint);
+}
+
+.has-accent-2-darker-color {
+  color: var(--accent-2-darker);
+}
+
+.has-accent-2-darker-background-color {
+  background-color: var(--accent-2-darker);
+}
+
+.has-accent-2-dark-color {
+  color: var(--accent-2-dark);
+}
+
+.has-accent-2-dark-background-color {
+  background-color: var(--accent-2-dark);
 }
 
 .has-accent-2-color {
@@ -679,12 +727,12 @@ article .entry-content .wp-block-latest-comments,
   background-color: var(--accent-2-light);
 }
 
-.has-accent-2-dark-color {
-  color: var(--accent-2-dark);
+.has-accent-2-lighter-color {
+  color: var(--accent-2-lighter);
 }
 
-.has-accent-2-dark-background-color {
-  background-color: var(--accent-2-dark);
+.has-accent-2-lighter-background-color {
+  background-color: var(--accent-2-lighter);
 }
 
 .has-accent-2-tint-color {
@@ -693,6 +741,22 @@ article .entry-content .wp-block-latest-comments,
 
 .has-accent-2-tint-background-color {
   background-color: var(--accent-2-tint);
+}
+
+.has-accent-3-darker-color {
+  color: var(--accent-3-darker);
+}
+
+.has-accent-3-darker-background-color {
+  background-color: var(--accent-3-darker);
+}
+
+.has-accent-3-dark-color {
+  color: var(--accent-3-dark);
+}
+
+.has-accent-3-dark-background-color {
+  background-color: var(--accent-3-dark);
 }
 
 .has-accent-3-color {
@@ -711,12 +775,12 @@ article .entry-content .wp-block-latest-comments,
   background-color: var(--accent-3-light);
 }
 
-.has-accent-3-dark-color {
-  color: var(--accent-3-dark);
+.has-accent-3-lighter-color {
+  color: var(--accent-3-lighter);
 }
 
-.has-accent-3-dark-background-color {
-  background-color: var(--accent-3-dark);
+.has-accent-3-lighter-background-color {
+  background-color: var(--accent-3-lighter);
 }
 
 .has-accent-3-tint-color {

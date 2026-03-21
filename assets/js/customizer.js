@@ -81,10 +81,12 @@
             var hues = schemeHues[to] || schemeHues.monochromatic;
 
             function setColorGroup(prefix, hueVar) {
-                root.style.setProperty('--' + prefix, 'oklch(55% var(--palette-chroma) var(' + hueVar + '))');
-                root.style.setProperty('--' + prefix + '-light', 'oklch(75% var(--palette-chroma) var(' + hueVar + '))');
-                root.style.setProperty('--' + prefix + '-dark', 'oklch(30% var(--palette-chroma) var(' + hueVar + '))');
-                root.style.setProperty('--' + prefix + '-tint', 'oklch(97.5% calc(var(--palette-chroma) * 0.025) var(' + hueVar + '))');
+                root.style.setProperty('--' + prefix + '-darker',  'oklch(18% var(--palette-chroma) var(' + hueVar + '))');
+                root.style.setProperty('--' + prefix + '-dark',    'oklch(30% var(--palette-chroma) var(' + hueVar + '))');
+                root.style.setProperty('--' + prefix,              'oklch(55% var(--palette-chroma) var(' + hueVar + '))');
+                root.style.setProperty('--' + prefix + '-light',   'oklch(75% var(--palette-chroma) var(' + hueVar + '))');
+                root.style.setProperty('--' + prefix + '-lighter', 'oklch(88% var(--palette-chroma) var(' + hueVar + '))');
+                root.style.setProperty('--' + prefix + '-tint',    'oklch(97.5% calc(var(--palette-chroma) * 0.025) var(' + hueVar + '))');
             }
 
             setColorGroup('action', hues.action);
@@ -267,38 +269,50 @@
         var groups = [
             {
                 label: 'Action',
+                rowSize: 3,
                 swatches: [
-                    { v: '--action-dark',  l: 'Dark'  },
-                    { v: '--action',       l: 'Base'  },
-                    { v: '--action-light', l: 'Light' },
-                    { v: '--action-tint',  l: 'Tint', tint: true },
+                    { v: '--action-darker',  l: 'Darker' },
+                    { v: '--action-dark',    l: 'Dark'   },
+                    { v: '--action',         l: 'Base'   },
+                    { v: '--action-light',   l: 'Light',          tint: true },
+                    { v: '--action-lighter', l: 'Lighter',        tint: true },
+                    { v: '--action-tint',    l: 'Tint',           tint: true },
                 ],
             },
             {
                 label: 'Accent 1',
+                rowSize: 3,
                 swatches: [
-                    { v: '--accent-1-dark',  l: 'Dark'  },
-                    { v: '--accent-1',       l: 'Base'  },
-                    { v: '--accent-1-light', l: 'Light' },
-                    { v: '--accent-1-tint',  l: 'Tint', tint: true },
+                    { v: '--accent-1-darker',  l: 'Darker' },
+                    { v: '--accent-1-dark',    l: 'Dark'   },
+                    { v: '--accent-1',         l: 'Base'   },
+                    { v: '--accent-1-light',   l: 'Light',   tint: true },
+                    { v: '--accent-1-lighter', l: 'Lighter', tint: true },
+                    { v: '--accent-1-tint',    l: 'Tint',    tint: true },
                 ],
             },
             {
                 label: 'Accent 2',
+                rowSize: 3,
                 swatches: [
-                    { v: '--accent-2-dark',  l: 'Dark'  },
-                    { v: '--accent-2',       l: 'Base'  },
-                    { v: '--accent-2-light', l: 'Light' },
-                    { v: '--accent-2-tint',  l: 'Tint', tint: true },
+                    { v: '--accent-2-darker',  l: 'Darker' },
+                    { v: '--accent-2-dark',    l: 'Dark'   },
+                    { v: '--accent-2',         l: 'Base'   },
+                    { v: '--accent-2-light',   l: 'Light',   tint: true },
+                    { v: '--accent-2-lighter', l: 'Lighter', tint: true },
+                    { v: '--accent-2-tint',    l: 'Tint',    tint: true },
                 ],
             },
             {
                 label: 'Accent 3',
+                rowSize: 3,
                 swatches: [
-                    { v: '--accent-3-dark',  l: 'Dark'  },
-                    { v: '--accent-3',       l: 'Base'  },
-                    { v: '--accent-3-light', l: 'Light' },
-                    { v: '--accent-3-tint',  l: 'Tint', tint: true },
+                    { v: '--accent-3-darker',  l: 'Darker' },
+                    { v: '--accent-3-dark',    l: 'Dark'   },
+                    { v: '--accent-3',         l: 'Base'   },
+                    { v: '--accent-3-light',   l: 'Light',   tint: true },
+                    { v: '--accent-3-lighter', l: 'Lighter', tint: true },
+                    { v: '--accent-3-tint',    l: 'Tint',    tint: true },
                 ],
             },
             {
@@ -323,12 +337,17 @@
                 if ( i > 0 ) { html += '<div class="vpp-sep"></div>'; }
                 html += '<div class="vpp-group">';
                 html += '<div class="vpp-label">' + group.label + '</div>';
-                html += '<div class="vpp-row">';
-                group.swatches.forEach( function ( s ) {
-                    var cls = 'vpp-swatch' + ( s.tint ? ' vpp-tint' : '' );
-                    html += '<div class="' + cls + '" style="background:var(' + s.v + ')" title="' + s.v + '"></div>';
-                } );
-                html += '</div></div>';
+                var size     = group.rowSize || group.swatches.length;
+                var swatches = group.swatches;
+                for ( var r = 0; r < swatches.length; r += size ) {
+                    html += '<div class="vpp-row">';
+                    swatches.slice( r, r + size ).forEach( function ( s ) {
+                        var cls = 'vpp-swatch' + ( s.tint ? ' vpp-tint' : '' );
+                        html += '<div class="' + cls + '" style="background:var(' + s.v + ')" title="' + s.v + '"></div>';
+                    } );
+                    html += '</div>';
+                }
+                html += '</div>';
             } );
             html += '</div>';
             el.innerHTML = html;

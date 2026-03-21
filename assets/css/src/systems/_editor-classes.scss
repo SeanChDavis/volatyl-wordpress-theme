@@ -10,11 +10,13 @@
 	}
 }
 
-// Outputs color-pair for base + light + dark + tint variants
+// Outputs color-pair for all 6 variants: darker, dark, base, light, lighter, tint
 @mixin color-group( $name ) {
+	@include color-pair( '#{$name}-darker' );
+	@include color-pair( '#{$name}-dark' );
 	@include color-pair( '#{$name}' );
 	@include color-pair( '#{$name}-light' );
-	@include color-pair( '#{$name}-dark' );
+	@include color-pair( '#{$name}-lighter' );
 	@include color-pair( '#{$name}-tint' );
 }
 
