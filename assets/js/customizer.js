@@ -406,17 +406,15 @@
             if ( panel ) { panel.style.display = 'none'; }
         }
 
-        // customize-preview is a declared dependency so wp.customize.preview
-        // is available immediately — no ready wrapper needed in the preview context.
-        wp.customize.preview.bind( 'volatyl-palette-panel', function ( data ) {
-            if ( data.visible ) { show(); } else { hide(); }
-        } );
-
-        // Show initial state once DOM is ready, reading directly from localStorage.
+        // wp.customize.preview is created by WP's customize-preview.js inside
+        // $(document).ready(), so both calls must wait for DOM ready.
         $( function () {
             if ( localStorage.getItem( 'volatyl_palette_preview' ) !== 'false' ) {
                 show();
             }
+            wp.customize.preview.bind( 'volatyl-palette-panel', function ( data ) {
+                if ( data.visible ) { show(); } else { hide(); }
+            } );
         } );
 
     } )();
