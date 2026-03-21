@@ -33,10 +33,12 @@ add_filter( 'block_editor_settings_all', 'volatyl_editor_color_vars' );
  * @return array[]
  */
 function volatyl_palette_colors(): array {
-	$hue        = get_theme_mod( 'volatyl_primary_hue', DEFAULT_PRIMARY_HUE );
-	$saturation = get_theme_mod( 'volatyl_global_hue_saturation', DEFAULT_GLOBAL_HUE_SATURATION );
-	$chroma     = round( $saturation * 0.0025, 4 );
-	$scheme     = get_theme_mod( 'volatyl_color_scheme_type', DEFAULT_COLOR_SCHEME_TYPE );
+	$hue              = get_theme_mod( 'volatyl_primary_hue', DEFAULT_PRIMARY_HUE );
+	$palette_vibrancy = get_theme_mod( 'volatyl_palette_vibrancy', DEFAULT_PALETTE_VIBRANCY );
+	$background_tint  = get_theme_mod( 'volatyl_background_tint', DEFAULT_BACKGROUND_TINT );
+	$palette_chroma   = round( $palette_vibrancy * 0.0025, 4 );
+	$tint_chroma      = round( $background_tint * 0.0006, 5 );
+	$scheme           = get_theme_mod( 'volatyl_color_scheme_type', DEFAULT_COLOR_SCHEME_TYPE );
 
 	// Resolve action / accent / extra-accent hues for the active scheme.
 	switch ( $scheme ) {
@@ -72,12 +74,12 @@ function volatyl_palette_colors(): array {
 			break;
 	}
 
-	$tint_chroma    = round( $chroma * 0.05, 5 );
-	$on_dark_chroma = round( $chroma * 0.5, 5 );
+	$tint_wash      = round( $tint_chroma * 0.25, 5 );
+	$on_dark_chroma = round( $tint_chroma * 0.5, 5 );
 
 	// Shorthand builders.
-	$vivid = fn( $l, $h ) => "oklch({$l}% 0.25 {$h})";
-	$tint  = fn( $h ) => "oklch(97.5% {$tint_chroma} {$h})";
+	$vivid = fn( $l, $h ) => "oklch({$l}% {$palette_chroma} {$h})";
+	$tint  = fn( $h ) => "oklch(97.5% {$tint_wash} {$h})";
 
 	return array(
 		array( 'name' => __( 'Primary Hue',                       'volatyl' ), 'slug' => 'primary',              'color' => $vivid( 55, $hue ) ),
@@ -96,8 +98,8 @@ function volatyl_palette_colors(): array {
 		array( 'name' => __( 'Extra Accent Color Light',           'volatyl' ), 'slug' => 'extra-accent-light',   'color' => $vivid( 75, $extra_accent_hue ) ),
 		array( 'name' => __( 'Extra Accent Color Dark',            'volatyl' ), 'slug' => 'extra-accent-dark',    'color' => $vivid( 30, $extra_accent_hue ) ),
 		array( 'name' => __( 'Extra Accent Color Tint',            'volatyl' ), 'slug' => 'extra-accent-tint',    'color' => $tint( $extra_accent_hue ) ),
-		array( 'name' => __( 'Dark',                               'volatyl' ), 'slug' => 'dark',                 'color' => "oklch(15% {$chroma} {$hue})" ),
-		array( 'name' => __( 'Darker',                             'volatyl' ), 'slug' => 'darker',               'color' => "oklch(12% {$chroma} {$hue})" ),
+		array( 'name' => __( 'Dark',                               'volatyl' ), 'slug' => 'dark',                 'color' => "oklch(15% {$tint_chroma} {$hue})" ),
+		array( 'name' => __( 'Darker',                             'volatyl' ), 'slug' => 'darker',               'color' => "oklch(12% {$tint_chroma} {$hue})" ),
 		array( 'name' => __( 'Subdued Light',                      'volatyl' ), 'slug' => 'subdued-light',        'color' => "oklch(91% 0.015 {$hue})" ),
 		array( 'name' => __( 'Subdued Dark',                       'volatyl' ), 'slug' => 'subdued-dark',         'color' => "oklch(44% 0.04 {$hue})" ),
 		array( 'name' => __( 'On Dark',                            'volatyl' ), 'slug' => 'on-dark',              'color' => "oklch(100% {$on_dark_chroma} {$hue})" ),

@@ -51,11 +51,16 @@
             document.documentElement.style.setProperty('--primary-hue', to);
         });
     });
-    // Global hue saturation
-    wp.customize('volatyl_global_hue_saturation', function (value) {
+    // Palette vibrancy
+    wp.customize('volatyl_palette_vibrancy', function (value) {
         value.bind(function (to) {
-            document.documentElement.style.setProperty('--global-hue-saturation', to + '%');
-            document.documentElement.style.setProperty('--global-chroma', to * 0.0025);
+            document.documentElement.style.setProperty('--palette-chroma', to * 0.0025);
+        });
+    });
+    // Background & text tint
+    wp.customize('volatyl_background_tint', function (value) {
+        value.bind(function (to) {
+            document.documentElement.style.setProperty('--tint-chroma', to * 0.0006);
         });
     });
     // Color scheme type — update CSS custom properties directly for live preview
@@ -96,10 +101,10 @@
             var hues = schemeHues[to] || schemeHues.monochromatic;
 
             function setColorGroup(prefix, hueVar) {
-                root.style.setProperty('--' + prefix, 'oklch(55% .25 var(' + hueVar + '))');
-                root.style.setProperty('--' + prefix + '-light', 'oklch(75% .25 var(' + hueVar + '))');
-                root.style.setProperty('--' + prefix + '-dark', 'oklch(30% .25 var(' + hueVar + '))');
-                root.style.setProperty('--' + prefix + '-tint', 'oklch(97.5% calc(var(--global-chroma) * 0.05) var(' + hueVar + '))');
+                root.style.setProperty('--' + prefix, 'oklch(55% var(--palette-chroma) var(' + hueVar + '))');
+                root.style.setProperty('--' + prefix + '-light', 'oklch(75% var(--palette-chroma) var(' + hueVar + '))');
+                root.style.setProperty('--' + prefix + '-dark', 'oklch(30% var(--palette-chroma) var(' + hueVar + '))');
+                root.style.setProperty('--' + prefix + '-tint', 'oklch(97.5% calc(var(--tint-chroma) * 0.25) var(' + hueVar + '))');
             }
 
             setColorGroup('action', hues.action);

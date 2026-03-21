@@ -16,9 +16,10 @@ $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 $wp_customize->get_setting( 'volatyl_full_width_structure' )->transport = 'postMessage';
 
 // Color Scheme.
-$wp_customize->get_setting( 'volatyl_primary_hue' )->transport           = 'postMessage';
-$wp_customize->get_setting( 'volatyl_global_hue_saturation' )->transport = 'postMessage';
-$wp_customize->get_setting( 'volatyl_color_scheme_type' )->transport     = 'postMessage';
+$wp_customize->get_setting( 'volatyl_primary_hue' )->transport        = 'postMessage';
+$wp_customize->get_setting( 'volatyl_palette_vibrancy' )->transport   = 'postMessage';
+$wp_customize->get_setting( 'volatyl_background_tint' )->transport    = 'postMessage';
+$wp_customize->get_setting( 'volatyl_color_scheme_type' )->transport  = 'postMessage';
 
 // Content Configuration.
 $wp_customize->get_setting( 'volatyl_page_comments' )->transport = 'postMessage';

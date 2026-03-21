@@ -2,89 +2,85 @@
 /**
  * CSS variables controlling the theme color scheme.
  *
- * These styles are generated based on the primary hue and global hue saturation customizer settings
- * and are used as the basis for all color schemes in the theme. The various color schemes then
- * override the action and accent colors to create different color combinations.
+ * The palette is split into two independently controlled chroma ranges:
+ *
+ * - --palette-chroma (0–0.25): driven by the Palette Vibrancy setting.
+ *   Affects buttons, links, headings, and all Base/Light/Dark palette slots.
+ *   At 0% these colors are near-gray; at 100% they are fully vivid.
+ *
+ * - --tint-chroma (0–0.06): driven by the Background & Text Tint setting.
+ *   Affects dark section backgrounds, body text, on-dark text, and tint washes.
+ *   Intentionally capped low — dark backgrounds stay dark and readable even
+ *   at high values. At 0% all backgrounds and text are neutral black/gray.
  *
  * The color schemes are:
- * - Monochromatic (default):
- * --- All colors are derived from the primary hue
- * - Complementary:
- * --- Action and accent colors are derived from the complementary hue (primary hue - 180)
- * - Analogous:
- * --- Action and accent colors are derived from the analogous hues (primary hue - 30 and primary hue + 30)
- * - Triadic:
- * --- Action and accent colors are derived from the triadic hues (primary hue - 120 and primary hue + 120)
- * - Split Complementary:
- * --- Action and accent colors are derived from the split complementary hues (primary hue - 150 and primary hue + 150)
- * - Tetradic:
- * --- Action and accent colors are derived from the tetradic hues (primary hue - 90, primary hue + 90, and primary hue + 180)
+ * - Monochromatic (default): all colors derived from the primary hue
+ * - Complementary: action/accent from the complementary hue (primary − 180)
+ * - Analogous: action/accent from ±30° hues
+ * - Triadic: action/accent from ±120° hues
+ * - Split Complementary: action/accent from ±150° hues
+ * - Tetradic: action/accent from ±90° and +180° hues
  *
- * All color schemes use the same primary hue and global hue saturation settings, which means that the overall
- * feel of the color scheme is consistent across all schemes, with the action and accent colors providing the variation.
- *
- * All color schemes included all action and accent colors, even if they are not used in a particular scheme. This
- * allows for flexibility in design and potential future use of different color schemes on different sections of the site.
- *
- * The colors are separated into functions so that they can be output in different contexts (Customizer preview vs.
- * front-end, for example).
+ * Only the active scheme's overrides are output as a single :root {} block —
+ * no CSS nesting, no wasted CSS for inactive schemes.
  */
 
 /**
- * The root color scheme styles
+ * The root color scheme styles.
  */
 function volatyl_root_color_scheme_base() {
 
-	// This hue controls the entire color scheme
-	$primary_hue = get_theme_mod( 'volatyl_primary_hue', DEFAULT_PRIMARY_HUE );
+	$primary_hue      = get_theme_mod( 'volatyl_primary_hue', DEFAULT_PRIMARY_HUE );
+	$palette_vibrancy = get_theme_mod( 'volatyl_palette_vibrancy', DEFAULT_PALETTE_VIBRANCY );
+	$background_tint  = get_theme_mod( 'volatyl_background_tint', DEFAULT_BACKGROUND_TINT );
 
-	// This percentage controls the default saturation of all non-subdued colors
-	$global_hue_saturation = get_theme_mod( 'volatyl_global_hue_saturation', DEFAULT_GLOBAL_HUE_SATURATION );
+	// Palette chroma: 0–100 maps to 0–0.25 (buttons, links, brand colors)
+	$palette_chroma = round( $palette_vibrancy * 0.0025, 4 );
 
-	// OKLCH chroma derived from the saturation setting (0–100 maps to 0–0.25)
-	$global_chroma = round( $global_hue_saturation * 0.0025, 4 );
+	// Tint chroma: 0–100 maps to 0–0.06 (dark backgrounds, text, tint washes)
+	$tint_chroma = round( $background_tint * 0.0006, 5 );
 
 	return ":root {
-		--global-hue-saturation: {$global_hue_saturation}%;
-		--global-chroma: {$global_chroma};
+		--palette-chroma: {$palette_chroma};
+		--tint-chroma: {$tint_chroma};
 		--on-dark-luminance: 100%;
 
 		/* Primary hue and default colors based on the primary hue */
 		--primary-hue: {$primary_hue};
-		--primary: oklch(55% .25 var(--primary-hue));
-		--primary-light: oklch(75% .25 var(--primary-hue));
-		--primary-dark: oklch(30% .25 var(--primary-hue));
-		--primary-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--primary-hue));
-		--text: oklch(20% var(--global-chroma) var(--primary-hue));
+		--primary: oklch(55% var(--palette-chroma) var(--primary-hue));
+		--primary-light: oklch(75% var(--palette-chroma) var(--primary-hue));
+		--primary-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
+		--primary-tint: oklch(97.5% calc(var(--tint-chroma) * 0.25) var(--primary-hue));
+		--text: oklch(20% var(--tint-chroma) var(--primary-hue));
 
 		/* Backgrounds */
-		--dark: oklch(15% var(--global-chroma) var(--primary-hue));
-		--darker: oklch(12% var(--global-chroma) var(--primary-hue));
+		--dark: oklch(15% var(--tint-chroma) var(--primary-hue));
+		--darker: oklch(12% var(--tint-chroma) var(--primary-hue));
 
 		/* Subdued colors */
 		--subdued-light: oklch(91% 0.015 var(--primary-hue));
 		--subdued-dark: oklch(44% 0.04 var(--primary-hue));
 
 		/* Miscellaneous */
-		--on-dark: oklch(var(--on-dark-luminance) calc(var(--global-chroma) * 0.5) var(--primary-hue));
+		--on-dark: oklch(var(--on-dark-luminance) calc(var(--tint-chroma) * 0.5) var(--primary-hue));
 		--white: #fff;
 		--translucent-light: rgba(255,255,255,.05);
 		--translucent-dark: rgba(0,0,0,.05);
 
 		/* Action and Accent Colors derived from the primary hue - overridden by different color schemes */
 		/* Technically, this is the monochromatic color scheme */
-		--action: oklch(55% .25 var(--primary-hue));
-		--action-light: oklch(75% .25 var(--primary-hue));
-		--action-dark: oklch(30% .25 var(--primary-hue));
-		--action-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--primary-hue));
-		--accent: oklch(55% .25 var(--primary-hue));
-		--accent-light: oklch(75% .25 var(--primary-hue));
-		--accent-dark: oklch(30% .25 var(--primary-hue));
-		--accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--primary-hue));
-		--extra-accent: oklch(55% .25 var(--primary-hue));
-		--extra-accent-light: oklch(75% .25 var(--primary-hue));
-		--extra-accent-dark: oklch(30% .25 var(--primary-hue));
-		--extra-accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--primary-hue));
+		--action: oklch(55% var(--palette-chroma) var(--primary-hue));
+		--action-light: oklch(75% var(--palette-chroma) var(--primary-hue));
+		--action-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
+		--action-tint: oklch(97.5% calc(var(--tint-chroma) * 0.25) var(--primary-hue));
+		--accent: oklch(55% var(--palette-chroma) var(--primary-hue));
+		--accent-light: oklch(75% var(--palette-chroma) var(--primary-hue));
+		--accent-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
+		--accent-tint: oklch(97.5% calc(var(--tint-chroma) * 0.25) var(--primary-hue));
+		--extra-accent: oklch(55% var(--palette-chroma) var(--primary-hue));
+		--extra-accent-light: oklch(75% var(--palette-chroma) var(--primary-hue));
+		--extra-accent-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
+		--extra-accent-tint: oklch(97.5% calc(var(--tint-chroma) * 0.25) var(--primary-hue));
 
 		/* Complementary Color Scheme */
 		--complementary-accent-hue: calc(var(--primary-hue) - 180);
@@ -113,18 +109,18 @@ function volatyl_root_color_scheme_base() {
  */
 function volatyl_root_color_scheme_complementary(): string {
 	return "
-		--action: oklch(55% .25 var(--complementary-accent-hue));
-		--action-light: oklch(75% .25 var(--complementary-accent-hue));
-		--action-dark: oklch(30% .25 var(--complementary-accent-hue));
-		--action-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--complementary-accent-hue));
-		--accent: oklch(55% .25 var(--complementary-accent-hue));
-		--accent-light: oklch(75% .25 var(--complementary-accent-hue));
-		--accent-dark: oklch(30% .25 var(--complementary-accent-hue));
-		--accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--complementary-accent-hue));
-		--extra-accent: oklch(55% .25 var(--complementary-accent-hue));
-		--extra-accent-light: oklch(75% .25 var(--complementary-accent-hue));
-		--extra-accent-dark: oklch(30% .25 var(--complementary-accent-hue));
-		--extra-accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--complementary-accent-hue));";
+		--action: oklch(55% var(--palette-chroma) var(--complementary-accent-hue));
+		--action-light: oklch(75% var(--palette-chroma) var(--complementary-accent-hue));
+		--action-dark: oklch(30% var(--palette-chroma) var(--complementary-accent-hue));
+		--action-tint: oklch(97.5% calc(var(--tint-chroma) * 0.25) var(--complementary-accent-hue));
+		--accent: oklch(55% var(--palette-chroma) var(--complementary-accent-hue));
+		--accent-light: oklch(75% var(--palette-chroma) var(--complementary-accent-hue));
+		--accent-dark: oklch(30% var(--palette-chroma) var(--complementary-accent-hue));
+		--accent-tint: oklch(97.5% calc(var(--tint-chroma) * 0.25) var(--complementary-accent-hue));
+		--extra-accent: oklch(55% var(--palette-chroma) var(--complementary-accent-hue));
+		--extra-accent-light: oklch(75% var(--palette-chroma) var(--complementary-accent-hue));
+		--extra-accent-dark: oklch(30% var(--palette-chroma) var(--complementary-accent-hue));
+		--extra-accent-tint: oklch(97.5% calc(var(--tint-chroma) * 0.25) var(--complementary-accent-hue));";
 }
 
 /**
@@ -132,18 +128,18 @@ function volatyl_root_color_scheme_complementary(): string {
  */
 function volatyl_root_color_scheme_analogous(): string {
 	return "
-		--action: oklch(55% .25 var(--analogous-accent-hue-1));
-		--action-light: oklch(75% .25 var(--analogous-accent-hue-1));
-		--action-dark: oklch(30% .25 var(--analogous-accent-hue-1));
-		--action-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--analogous-accent-hue-1));
-		--accent: oklch(55% .25 var(--analogous-accent-hue-2));
-		--accent-light: oklch(75% .25 var(--analogous-accent-hue-2));
-		--accent-dark: oklch(30% .25 var(--analogous-accent-hue-2));
-		--accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--analogous-accent-hue-2));
-		--extra-accent: oklch(55% .25 var(--analogous-accent-hue-2));
-		--extra-accent-light: oklch(75% .25 var(--analogous-accent-hue-2));
-		--extra-accent-dark: oklch(30% .25 var(--analogous-accent-hue-2));
-		--extra-accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--analogous-accent-hue-2));";
+		--action: oklch(55% var(--palette-chroma) var(--analogous-accent-hue-1));
+		--action-light: oklch(75% var(--palette-chroma) var(--analogous-accent-hue-1));
+		--action-dark: oklch(30% var(--palette-chroma) var(--analogous-accent-hue-1));
+		--action-tint: oklch(97.5% calc(var(--tint-chroma) * 0.25) var(--analogous-accent-hue-1));
+		--accent: oklch(55% var(--palette-chroma) var(--analogous-accent-hue-2));
+		--accent-light: oklch(75% var(--palette-chroma) var(--analogous-accent-hue-2));
+		--accent-dark: oklch(30% var(--palette-chroma) var(--analogous-accent-hue-2));
+		--accent-tint: oklch(97.5% calc(var(--tint-chroma) * 0.25) var(--analogous-accent-hue-2));
+		--extra-accent: oklch(55% var(--palette-chroma) var(--analogous-accent-hue-2));
+		--extra-accent-light: oklch(75% var(--palette-chroma) var(--analogous-accent-hue-2));
+		--extra-accent-dark: oklch(30% var(--palette-chroma) var(--analogous-accent-hue-2));
+		--extra-accent-tint: oklch(97.5% calc(var(--tint-chroma) * 0.25) var(--analogous-accent-hue-2));";
 }
 
 /**
@@ -151,18 +147,18 @@ function volatyl_root_color_scheme_analogous(): string {
  */
 function volatyl_root_color_scheme_triadic(): string {
 	return "
-		--action: oklch(55% .25 var(--triadic-accent-hue-1));
-		--action-light: oklch(75% .25 var(--triadic-accent-hue-1));
-		--action-dark: oklch(30% .25 var(--triadic-accent-hue-1));
-		--action-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--triadic-accent-hue-1));
-		--accent: oklch(55% .25 var(--triadic-accent-hue-2));
-		--accent-light: oklch(75% .25 var(--triadic-accent-hue-2));
-		--accent-dark: oklch(30% .25 var(--triadic-accent-hue-2));
-		--accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--triadic-accent-hue-2));
-		--extra-accent: oklch(55% .25 var(--triadic-accent-hue-2));
-		--extra-accent-light: oklch(75% .25 var(--triadic-accent-hue-2));
-		--extra-accent-dark: oklch(30% .25 var(--triadic-accent-hue-2));
-		--extra-accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--triadic-accent-hue-2));";
+		--action: oklch(55% var(--palette-chroma) var(--triadic-accent-hue-1));
+		--action-light: oklch(75% var(--palette-chroma) var(--triadic-accent-hue-1));
+		--action-dark: oklch(30% var(--palette-chroma) var(--triadic-accent-hue-1));
+		--action-tint: oklch(97.5% calc(var(--tint-chroma) * 0.25) var(--triadic-accent-hue-1));
+		--accent: oklch(55% var(--palette-chroma) var(--triadic-accent-hue-2));
+		--accent-light: oklch(75% var(--palette-chroma) var(--triadic-accent-hue-2));
+		--accent-dark: oklch(30% var(--palette-chroma) var(--triadic-accent-hue-2));
+		--accent-tint: oklch(97.5% calc(var(--tint-chroma) * 0.25) var(--triadic-accent-hue-2));
+		--extra-accent: oklch(55% var(--palette-chroma) var(--triadic-accent-hue-2));
+		--extra-accent-light: oklch(75% var(--palette-chroma) var(--triadic-accent-hue-2));
+		--extra-accent-dark: oklch(30% var(--palette-chroma) var(--triadic-accent-hue-2));
+		--extra-accent-tint: oklch(97.5% calc(var(--tint-chroma) * 0.25) var(--triadic-accent-hue-2));";
 }
 
 /**
@@ -170,18 +166,18 @@ function volatyl_root_color_scheme_triadic(): string {
  */
 function volatyl_root_color_scheme_split_complementary(): string {
 	return "
-		--action: oklch(55% .25 var(--split-complementary-accent-hue-1));
-		--action-light: oklch(75% .25 var(--split-complementary-accent-hue-1));
-		--action-dark: oklch(30% .25 var(--split-complementary-accent-hue-1));
-		--action-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--split-complementary-accent-hue-1));
-		--accent: oklch(55% .25 var(--split-complementary-accent-hue-2));
-		--accent-light: oklch(75% .25 var(--split-complementary-accent-hue-2));
-		--accent-dark: oklch(30% .25 var(--split-complementary-accent-hue-2));
-		--accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--split-complementary-accent-hue-2));
-		--extra-accent: oklch(55% .25 var(--split-complementary-accent-hue-2));
-		--extra-accent-light: oklch(75% .25 var(--split-complementary-accent-hue-2));
-		--extra-accent-dark: oklch(30% .25 var(--split-complementary-accent-hue-2));
-		--extra-accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--split-complementary-accent-hue-2));";
+		--action: oklch(55% var(--palette-chroma) var(--split-complementary-accent-hue-1));
+		--action-light: oklch(75% var(--palette-chroma) var(--split-complementary-accent-hue-1));
+		--action-dark: oklch(30% var(--palette-chroma) var(--split-complementary-accent-hue-1));
+		--action-tint: oklch(97.5% calc(var(--tint-chroma) * 0.25) var(--split-complementary-accent-hue-1));
+		--accent: oklch(55% var(--palette-chroma) var(--split-complementary-accent-hue-2));
+		--accent-light: oklch(75% var(--palette-chroma) var(--split-complementary-accent-hue-2));
+		--accent-dark: oklch(30% var(--palette-chroma) var(--split-complementary-accent-hue-2));
+		--accent-tint: oklch(97.5% calc(var(--tint-chroma) * 0.25) var(--split-complementary-accent-hue-2));
+		--extra-accent: oklch(55% var(--palette-chroma) var(--split-complementary-accent-hue-2));
+		--extra-accent-light: oklch(75% var(--palette-chroma) var(--split-complementary-accent-hue-2));
+		--extra-accent-dark: oklch(30% var(--palette-chroma) var(--split-complementary-accent-hue-2));
+		--extra-accent-tint: oklch(97.5% calc(var(--tint-chroma) * 0.25) var(--split-complementary-accent-hue-2));";
 }
 
 /**
@@ -189,18 +185,18 @@ function volatyl_root_color_scheme_split_complementary(): string {
  */
 function volatyl_root_color_scheme_tetradic(): string {
 	return "
-		--action: oklch(55% .25 var(--tetradic-accent-hue-1));
-		--action-light: oklch(75% .25 var(--tetradic-accent-hue-1));
-		--action-dark: oklch(30% .25 var(--tetradic-accent-hue-1));
-		--action-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--tetradic-accent-hue-1));
-		--accent: oklch(55% .25 var(--tetradic-accent-hue-2));
-		--accent-light: oklch(75% .25 var(--tetradic-accent-hue-2));
-		--accent-dark: oklch(30% .25 var(--tetradic-accent-hue-2));
-		--accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--tetradic-accent-hue-2));
-		--extra-accent: oklch(55% .25 var(--tetradic-accent-hue-3));
-		--extra-accent-light: oklch(75% .25 var(--tetradic-accent-hue-3));
-		--extra-accent-dark: oklch(30% .25 var(--tetradic-accent-hue-3));
-		--extra-accent-tint: oklch(97.5% calc(var(--global-chroma) * 0.05) var(--tetradic-accent-hue-3));";
+		--action: oklch(55% var(--palette-chroma) var(--tetradic-accent-hue-1));
+		--action-light: oklch(75% var(--palette-chroma) var(--tetradic-accent-hue-1));
+		--action-dark: oklch(30% var(--palette-chroma) var(--tetradic-accent-hue-1));
+		--action-tint: oklch(97.5% calc(var(--tint-chroma) * 0.25) var(--tetradic-accent-hue-1));
+		--accent: oklch(55% var(--palette-chroma) var(--tetradic-accent-hue-2));
+		--accent-light: oklch(75% var(--palette-chroma) var(--tetradic-accent-hue-2));
+		--accent-dark: oklch(30% var(--palette-chroma) var(--tetradic-accent-hue-2));
+		--accent-tint: oklch(97.5% calc(var(--tint-chroma) * 0.25) var(--tetradic-accent-hue-2));
+		--extra-accent: oklch(55% var(--palette-chroma) var(--tetradic-accent-hue-3));
+		--extra-accent-light: oklch(75% var(--palette-chroma) var(--tetradic-accent-hue-3));
+		--extra-accent-dark: oklch(30% var(--palette-chroma) var(--tetradic-accent-hue-3));
+		--extra-accent-tint: oklch(97.5% calc(var(--tint-chroma) * 0.25) var(--tetradic-accent-hue-3));";
 }
 
 /**

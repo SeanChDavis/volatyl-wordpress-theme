@@ -127,26 +127,54 @@ $wp_customize->add_control( 'volatyl_primary_hue', array(
 	),
 ) );
 
-// Global hue saturation
-$wp_customize->add_setting( 'volatyl_global_hue_saturation_area', array(
+// Palette vibrancy
+$wp_customize->add_setting( 'volatyl_palette_vibrancy_area', array(
 	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
 ) );
-$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_global_hue_saturation_area', array(
+$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_palette_vibrancy_area', array(
 	'section'     => 'volatyl_color_scheme',
 	'priority'    => 100,
-	'label'       => __( 'Global hue saturation', 'volatyl' ),
-	'description' => __( 'While the primary hue selection is used to build your color scheme, this setting controls the saturation of the colors included in your color scheme. Use the slider control to choose your desired saturation, where the far left represents 0% (grayscale) and the far right represents 100% (vibrant hue).', 'volatyl' ),
+	'label'       => __( 'Palette vibrancy', 'volatyl' ),
+	'description' => __( 'Controls how vivid your brand colors are — buttons, links, headings, and the core color palette. At 0% palette colors are near-gray regardless of hue; at 100% they reach full vibrancy.', 'volatyl' ),
 ) ) );
 
-// Global hue saturation slider
-$wp_customize->add_setting( 'volatyl_global_hue_saturation', array(
-	'default'           => DEFAULT_GLOBAL_HUE_SATURATION,
+// Palette vibrancy slider
+$wp_customize->add_setting( 'volatyl_palette_vibrancy', array(
+	'default'           => DEFAULT_PALETTE_VIBRANCY,
 	'sanitize_callback' => 'absint',
 ) );
-$wp_customize->add_control( 'volatyl_global_hue_saturation', array(
+$wp_customize->add_control( 'volatyl_palette_vibrancy', array(
 	'section'     => 'volatyl_color_scheme',
 	'priority'    => 110,
-	'label'       => __( 'Set a global hue saturation', 'volatyl' ),
+	'label'       => __( 'Set palette vibrancy', 'volatyl' ),
+	'type'        => 'range',
+	'input_attrs' => array(
+		'min'  => 0,
+		'max'  => 100,
+		'step' => 1,
+	),
+) );
+
+// Background & text tint
+$wp_customize->add_setting( 'volatyl_background_tint_area', array(
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
+) );
+$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_background_tint_area', array(
+	'section'     => 'volatyl_color_scheme',
+	'priority'    => 120,
+	'label'       => __( 'Background & text tint', 'volatyl' ),
+	'description' => __( 'Controls how much of your selected hue bleeds into dark backgrounds and body text. This is intentionally a subtle effect — dark sections stay dark and readable even at high values. At 0%, backgrounds are neutral black and text is neutral dark gray.', 'volatyl' ),
+) ) );
+
+// Background & text tint slider
+$wp_customize->add_setting( 'volatyl_background_tint', array(
+	'default'           => DEFAULT_BACKGROUND_TINT,
+	'sanitize_callback' => 'absint',
+) );
+$wp_customize->add_control( 'volatyl_background_tint', array(
+	'section'     => 'volatyl_color_scheme',
+	'priority'    => 130,
+	'label'       => __( 'Set background & text tint', 'volatyl' ),
 	'type'        => 'range',
 	'input_attrs' => array(
 		'min'  => 0,
@@ -163,7 +191,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'section'     => 'volatyl_color_scheme',
 	'priority'    => 200,
 	'label'       => __( 'Color scheme', 'volatyl' ),
-	'description' => sprintf( __( 'With your primary hue selected and saturation set, %s will now use your chosen hue to craft <a href="https://en.wikipedia.org/wiki/Color_theory" target="_blank">color schemes</a> based on established color theory.', 'volatyl' ), THEME_NAME ),
+	'description' => sprintf( __( 'With your primary hue and color settings configured, %s will now use your chosen hue to craft <a href="https://en.wikipedia.org/wiki/Color_theory" target="_blank">color schemes</a> based on established color theory.', 'volatyl' ), THEME_NAME ),
 ) ) );
 
 // Color scheme selector
