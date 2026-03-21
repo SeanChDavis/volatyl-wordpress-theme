@@ -18,16 +18,11 @@
 	@include color-pair( '#{$name}-tint' );
 }
 
-/* Primary */
-@include color-pair( 'primary' );
-@include color-pair( 'primary-light' );
-@include color-pair( 'primary-dark' );
-@include color-pair( 'primary-tint' );
-
-/* Action, accent, extra-accent */
+/* Action, accent-1, accent-2, accent-3 */
 @include color-group( 'action' );
-@include color-group( 'accent' );
-@include color-group( 'extra-accent' );
+@include color-group( 'accent-1' );
+@include color-group( 'accent-2' );
+@include color-group( 'accent-3' );
 
 /* Background colors */
 @include color-pair( 'dark', 'on-dark' );

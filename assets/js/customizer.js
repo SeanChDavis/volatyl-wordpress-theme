@@ -70,12 +70,12 @@
 
             // Hue variable each slot should reference per scheme
             var schemeHues = {
-                monochromatic:    {action: '--primary-hue', accent: '--primary-hue',                   extraAccent: '--primary-hue',                  primary: '--primary-hue'},
-                complementary:    {action: '--primary-hue', accent: '--complementary-accent-hue',       extraAccent: '--complementary-accent-hue',      primary: '--primary-hue'},
-                analogous:        {action: '--primary-hue', accent: '--analogous-accent-hue-1',         extraAccent: '--analogous-accent-hue-2',        primary: '--primary-hue'},
-                triadic:          {action: '--primary-hue', accent: '--triadic-accent-hue-1',           extraAccent: '--triadic-accent-hue-2',          primary: '--primary-hue'},
-                split_complementary: {action: '--primary-hue', accent: '--split-complementary-accent-hue-1', extraAccent: '--split-complementary-accent-hue-2', primary: '--primary-hue'},
-                tetradic:         {action: '--primary-hue', accent: '--tetradic-accent-hue-2',          extraAccent: '--tetradic-accent-hue-3',         primary: '--tetradic-accent-hue-1'},
+                monochromatic:       {action: '--primary-hue', accent1: '--primary-hue',                        accent2: '--primary-hue',                         accent3: '--primary-hue'},
+                complementary:       {action: '--primary-hue', accent1: '--complementary-accent-hue',           accent2: '--complementary-accent-hue',            accent3: '--primary-hue'},
+                analogous:           {action: '--primary-hue', accent1: '--analogous-accent-hue-1',             accent2: '--analogous-accent-hue-2',              accent3: '--primary-hue'},
+                triadic:             {action: '--primary-hue', accent1: '--triadic-accent-hue-1',               accent2: '--triadic-accent-hue-2',                accent3: '--primary-hue'},
+                split_complementary: {action: '--primary-hue', accent1: '--split-complementary-accent-hue-1',   accent2: '--split-complementary-accent-hue-2',    accent3: '--primary-hue'},
+                tetradic:            {action: '--primary-hue', accent1: '--tetradic-accent-hue-2',              accent2: '--tetradic-accent-hue-3',               accent3: '--tetradic-accent-hue-1'},
             };
 
             var hues = schemeHues[to] || schemeHues.monochromatic;
@@ -88,9 +88,9 @@
             }
 
             setColorGroup('action', hues.action);
-            setColorGroup('accent', hues.accent);
-            setColorGroup('extra-accent', hues.extraAccent);
-            setColorGroup('primary', hues.primary);
+            setColorGroup('accent-1', hues.accent1);
+            setColorGroup('accent-2', hues.accent2);
+            setColorGroup('accent-3', hues.accent3);
         });
     });
 
@@ -266,15 +266,6 @@
 
         var groups = [
             {
-                label: 'Primary',
-                swatches: [
-                    { v: '--primary-dark',  l: 'Dark'  },
-                    { v: '--primary',       l: 'Base'  },
-                    { v: '--primary-light', l: 'Light' },
-                    { v: '--primary-tint',  l: 'Tint', tint: true },
-                ],
-            },
-            {
                 label: 'Action',
                 swatches: [
                     { v: '--action-dark',  l: 'Dark'  },
@@ -284,21 +275,30 @@
                 ],
             },
             {
-                label: 'Accent',
+                label: 'Accent 1',
                 swatches: [
-                    { v: '--accent-dark',  l: 'Dark'  },
-                    { v: '--accent',       l: 'Base'  },
-                    { v: '--accent-light', l: 'Light' },
-                    { v: '--accent-tint',  l: 'Tint', tint: true },
+                    { v: '--accent-1-dark',  l: 'Dark'  },
+                    { v: '--accent-1',       l: 'Base'  },
+                    { v: '--accent-1-light', l: 'Light' },
+                    { v: '--accent-1-tint',  l: 'Tint', tint: true },
                 ],
             },
             {
-                label: 'Extra',
+                label: 'Accent 2',
                 swatches: [
-                    { v: '--extra-accent-dark',  l: 'Dark'  },
-                    { v: '--extra-accent',       l: 'Base'  },
-                    { v: '--extra-accent-light', l: 'Light' },
-                    { v: '--extra-accent-tint',  l: 'Tint', tint: true },
+                    { v: '--accent-2-dark',  l: 'Dark'  },
+                    { v: '--accent-2',       l: 'Base'  },
+                    { v: '--accent-2-light', l: 'Light' },
+                    { v: '--accent-2-tint',  l: 'Tint', tint: true },
+                ],
+            },
+            {
+                label: 'Accent 3',
+                swatches: [
+                    { v: '--accent-3-dark',  l: 'Dark'  },
+                    { v: '--accent-3',       l: 'Base'  },
+                    { v: '--accent-3-light', l: 'Light' },
+                    { v: '--accent-3-tint',  l: 'Tint', tint: true },
                 ],
             },
             {

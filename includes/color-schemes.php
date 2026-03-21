@@ -45,12 +45,12 @@ function volatyl_root_color_scheme_base() {
 		--tint-chroma: {$tint_chroma};
 		--on-dark-luminance: 100%;
 
-		/* Primary hue and default colors based on the primary hue */
+		/* Primary hue — drives all color slots by default */
 		--primary-hue: {$primary_hue};
-		--primary: oklch(55% var(--palette-chroma) var(--primary-hue));
-		--primary-light: oklch(75% var(--palette-chroma) var(--primary-hue));
-		--primary-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
-		--primary-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--primary-hue));
+		--accent-3: oklch(55% var(--palette-chroma) var(--primary-hue));
+		--accent-3-light: oklch(75% var(--palette-chroma) var(--primary-hue));
+		--accent-3-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
+		--accent-3-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--primary-hue));
 		--text: oklch(20% var(--tint-chroma) var(--primary-hue));
 
 		/* Backgrounds */
@@ -67,20 +67,20 @@ function volatyl_root_color_scheme_base() {
 		--translucent-light: rgba(255,255,255,.05);
 		--translucent-dark: rgba(0,0,0,.05);
 
-		/* Action and Accent Colors derived from the primary hue - overridden by different color schemes */
+		/* Action, accent-1, accent-2, accent-3 — derived from the primary hue; overridden by color schemes */
 		/* Technically, this is the monochromatic color scheme */
 		--action: oklch(55% var(--palette-chroma) var(--primary-hue));
 		--action-light: oklch(75% var(--palette-chroma) var(--primary-hue));
 		--action-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
 		--action-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--primary-hue));
-		--accent: oklch(55% var(--palette-chroma) var(--primary-hue));
-		--accent-light: oklch(75% var(--palette-chroma) var(--primary-hue));
-		--accent-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
-		--accent-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--primary-hue));
-		--extra-accent: oklch(55% var(--palette-chroma) var(--primary-hue));
-		--extra-accent-light: oklch(75% var(--palette-chroma) var(--primary-hue));
-		--extra-accent-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
-		--extra-accent-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--primary-hue));
+		--accent-1: oklch(55% var(--palette-chroma) var(--primary-hue));
+		--accent-1-light: oklch(75% var(--palette-chroma) var(--primary-hue));
+		--accent-1-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
+		--accent-1-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--primary-hue));
+		--accent-2: oklch(55% var(--palette-chroma) var(--primary-hue));
+		--accent-2-light: oklch(75% var(--palette-chroma) var(--primary-hue));
+		--accent-2-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
+		--accent-2-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--primary-hue));
 
 		/* Complementary Color Scheme */
 		--complementary-accent-hue: calc(var(--primary-hue) - 180);
@@ -113,14 +113,14 @@ function volatyl_root_color_scheme_complementary(): string {
 		--action-light: oklch(75% var(--palette-chroma) var(--primary-hue));
 		--action-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
 		--action-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--primary-hue));
-		--accent: oklch(55% var(--palette-chroma) var(--complementary-accent-hue));
-		--accent-light: oklch(75% var(--palette-chroma) var(--complementary-accent-hue));
-		--accent-dark: oklch(30% var(--palette-chroma) var(--complementary-accent-hue));
-		--accent-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--complementary-accent-hue));
-		--extra-accent: oklch(55% var(--palette-chroma) var(--complementary-accent-hue));
-		--extra-accent-light: oklch(75% var(--palette-chroma) var(--complementary-accent-hue));
-		--extra-accent-dark: oklch(30% var(--palette-chroma) var(--complementary-accent-hue));
-		--extra-accent-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--complementary-accent-hue));";
+		--accent-1: oklch(55% var(--palette-chroma) var(--complementary-accent-hue));
+		--accent-1-light: oklch(75% var(--palette-chroma) var(--complementary-accent-hue));
+		--accent-1-dark: oklch(30% var(--palette-chroma) var(--complementary-accent-hue));
+		--accent-1-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--complementary-accent-hue));
+		--accent-2: oklch(55% var(--palette-chroma) var(--complementary-accent-hue));
+		--accent-2-light: oklch(75% var(--palette-chroma) var(--complementary-accent-hue));
+		--accent-2-dark: oklch(30% var(--palette-chroma) var(--complementary-accent-hue));
+		--accent-2-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--complementary-accent-hue));";
 }
 
 /**
@@ -132,14 +132,14 @@ function volatyl_root_color_scheme_analogous(): string {
 		--action-light: oklch(75% var(--palette-chroma) var(--primary-hue));
 		--action-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
 		--action-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--primary-hue));
-		--accent: oklch(55% var(--palette-chroma) var(--analogous-accent-hue-1));
-		--accent-light: oklch(75% var(--palette-chroma) var(--analogous-accent-hue-1));
-		--accent-dark: oklch(30% var(--palette-chroma) var(--analogous-accent-hue-1));
-		--accent-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--analogous-accent-hue-1));
-		--extra-accent: oklch(55% var(--palette-chroma) var(--analogous-accent-hue-2));
-		--extra-accent-light: oklch(75% var(--palette-chroma) var(--analogous-accent-hue-2));
-		--extra-accent-dark: oklch(30% var(--palette-chroma) var(--analogous-accent-hue-2));
-		--extra-accent-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--analogous-accent-hue-2));";
+		--accent-1: oklch(55% var(--palette-chroma) var(--analogous-accent-hue-1));
+		--accent-1-light: oklch(75% var(--palette-chroma) var(--analogous-accent-hue-1));
+		--accent-1-dark: oklch(30% var(--palette-chroma) var(--analogous-accent-hue-1));
+		--accent-1-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--analogous-accent-hue-1));
+		--accent-2: oklch(55% var(--palette-chroma) var(--analogous-accent-hue-2));
+		--accent-2-light: oklch(75% var(--palette-chroma) var(--analogous-accent-hue-2));
+		--accent-2-dark: oklch(30% var(--palette-chroma) var(--analogous-accent-hue-2));
+		--accent-2-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--analogous-accent-hue-2));";
 }
 
 /**
@@ -151,14 +151,14 @@ function volatyl_root_color_scheme_triadic(): string {
 		--action-light: oklch(75% var(--palette-chroma) var(--primary-hue));
 		--action-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
 		--action-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--primary-hue));
-		--accent: oklch(55% var(--palette-chroma) var(--triadic-accent-hue-1));
-		--accent-light: oklch(75% var(--palette-chroma) var(--triadic-accent-hue-1));
-		--accent-dark: oklch(30% var(--palette-chroma) var(--triadic-accent-hue-1));
-		--accent-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--triadic-accent-hue-1));
-		--extra-accent: oklch(55% var(--palette-chroma) var(--triadic-accent-hue-2));
-		--extra-accent-light: oklch(75% var(--palette-chroma) var(--triadic-accent-hue-2));
-		--extra-accent-dark: oklch(30% var(--palette-chroma) var(--triadic-accent-hue-2));
-		--extra-accent-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--triadic-accent-hue-2));";
+		--accent-1: oklch(55% var(--palette-chroma) var(--triadic-accent-hue-1));
+		--accent-1-light: oklch(75% var(--palette-chroma) var(--triadic-accent-hue-1));
+		--accent-1-dark: oklch(30% var(--palette-chroma) var(--triadic-accent-hue-1));
+		--accent-1-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--triadic-accent-hue-1));
+		--accent-2: oklch(55% var(--palette-chroma) var(--triadic-accent-hue-2));
+		--accent-2-light: oklch(75% var(--palette-chroma) var(--triadic-accent-hue-2));
+		--accent-2-dark: oklch(30% var(--palette-chroma) var(--triadic-accent-hue-2));
+		--accent-2-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--triadic-accent-hue-2));";
 }
 
 /**
@@ -170,14 +170,14 @@ function volatyl_root_color_scheme_split_complementary(): string {
 		--action-light: oklch(75% var(--palette-chroma) var(--primary-hue));
 		--action-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
 		--action-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--primary-hue));
-		--accent: oklch(55% var(--palette-chroma) var(--split-complementary-accent-hue-1));
-		--accent-light: oklch(75% var(--palette-chroma) var(--split-complementary-accent-hue-1));
-		--accent-dark: oklch(30% var(--palette-chroma) var(--split-complementary-accent-hue-1));
-		--accent-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--split-complementary-accent-hue-1));
-		--extra-accent: oklch(55% var(--palette-chroma) var(--split-complementary-accent-hue-2));
-		--extra-accent-light: oklch(75% var(--palette-chroma) var(--split-complementary-accent-hue-2));
-		--extra-accent-dark: oklch(30% var(--palette-chroma) var(--split-complementary-accent-hue-2));
-		--extra-accent-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--split-complementary-accent-hue-2));";
+		--accent-1: oklch(55% var(--palette-chroma) var(--split-complementary-accent-hue-1));
+		--accent-1-light: oklch(75% var(--palette-chroma) var(--split-complementary-accent-hue-1));
+		--accent-1-dark: oklch(30% var(--palette-chroma) var(--split-complementary-accent-hue-1));
+		--accent-1-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--split-complementary-accent-hue-1));
+		--accent-2: oklch(55% var(--palette-chroma) var(--split-complementary-accent-hue-2));
+		--accent-2-light: oklch(75% var(--palette-chroma) var(--split-complementary-accent-hue-2));
+		--accent-2-dark: oklch(30% var(--palette-chroma) var(--split-complementary-accent-hue-2));
+		--accent-2-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--split-complementary-accent-hue-2));";
 }
 
 /**
@@ -189,18 +189,18 @@ function volatyl_root_color_scheme_tetradic(): string {
 		--action-light: oklch(75% var(--palette-chroma) var(--primary-hue));
 		--action-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
 		--action-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--primary-hue));
-		--accent: oklch(55% var(--palette-chroma) var(--tetradic-accent-hue-2));
-		--accent-light: oklch(75% var(--palette-chroma) var(--tetradic-accent-hue-2));
-		--accent-dark: oklch(30% var(--palette-chroma) var(--tetradic-accent-hue-2));
-		--accent-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--tetradic-accent-hue-2));
-		--extra-accent: oklch(55% var(--palette-chroma) var(--tetradic-accent-hue-3));
-		--extra-accent-light: oklch(75% var(--palette-chroma) var(--tetradic-accent-hue-3));
-		--extra-accent-dark: oklch(30% var(--palette-chroma) var(--tetradic-accent-hue-3));
-		--extra-accent-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--tetradic-accent-hue-3));
-		--primary: oklch(55% var(--palette-chroma) var(--tetradic-accent-hue-1));
-		--primary-light: oklch(75% var(--palette-chroma) var(--tetradic-accent-hue-1));
-		--primary-dark: oklch(30% var(--palette-chroma) var(--tetradic-accent-hue-1));
-		--primary-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--tetradic-accent-hue-1));";
+		--accent-1: oklch(55% var(--palette-chroma) var(--tetradic-accent-hue-2));
+		--accent-1-light: oklch(75% var(--palette-chroma) var(--tetradic-accent-hue-2));
+		--accent-1-dark: oklch(30% var(--palette-chroma) var(--tetradic-accent-hue-2));
+		--accent-1-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--tetradic-accent-hue-2));
+		--accent-2: oklch(55% var(--palette-chroma) var(--tetradic-accent-hue-3));
+		--accent-2-light: oklch(75% var(--palette-chroma) var(--tetradic-accent-hue-3));
+		--accent-2-dark: oklch(30% var(--palette-chroma) var(--tetradic-accent-hue-3));
+		--accent-2-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--tetradic-accent-hue-3));
+		--accent-3: oklch(55% var(--palette-chroma) var(--tetradic-accent-hue-1));
+		--accent-3-light: oklch(75% var(--palette-chroma) var(--tetradic-accent-hue-1));
+		--accent-3-dark: oklch(30% var(--palette-chroma) var(--tetradic-accent-hue-1));
+		--accent-3-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--tetradic-accent-hue-1));";
 }
 
 /**

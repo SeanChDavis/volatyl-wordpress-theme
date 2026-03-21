@@ -128,7 +128,7 @@
 	word-wrap: normal !important;
 
 	&:focus {
-		background-color: var(--primary-tint);
+		background-color: var(--action-tint);
 		clip: auto !important;
 		clip-path: none;
 		color: var(--text);

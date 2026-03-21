@@ -118,7 +118,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'section'     => 'volatyl_color_scheme',
 	'priority'    => 1,
 	'label'       => __( 'Brand & action hue', 'volatyl' ),
-	'description' => __( 'This is your brand color — it always drives your action colors (buttons, links, and primary UI elements). In multi-color schemes, accent and extra-accent colors are derived from this hue using color theory relationships. <a href="https://en.wikipedia.org/wiki/Hue" target="_blank">Learn more about hue</a>.', 'volatyl' ),
+	'description' => __( 'This is your brand color — it always drives your action colors (buttons, links, and primary UI elements). In multi-color schemes, accent colors (accent-1, accent-2, and accent-3) are derived from this hue using color theory relationships. <a href="https://en.wikipedia.org/wiki/Hue" target="_blank">Learn more about hue</a>.', 'volatyl' ),
 ) ) );
 
 // Primary hue slider

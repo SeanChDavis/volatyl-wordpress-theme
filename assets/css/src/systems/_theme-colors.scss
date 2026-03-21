@@ -346,13 +346,13 @@ article .entry-content .wp-block-latest-comments,
 	@include utility-buttons( var(--action) );
 
 	// Forms — border shifts to action; focus border shifts to accent
-	@include form-inputs( var(--action), var(--accent) );
+	@include form-inputs( var(--action), var(--accent-1) );
 
 	// Nav button hover border uses accent instead of action-dark
 	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
 	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
-		border-color: var(--accent);
+		border-color: var(--accent-1);
 	}
 
 	// Typography — headings and links become white
