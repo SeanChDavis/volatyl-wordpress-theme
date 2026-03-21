@@ -273,4 +273,143 @@
         });
     });
 
+    /**
+     * Color Palette Preview Panel
+     * Floats at the bottom of the preview iframe showing all theme color swatches.
+     * Swatches use CSS variables directly so they update live with no extra wiring.
+     */
+    ( function () {
+
+        var panel    = null;
+        var stylesEl = null;
+
+        var groups = [
+            {
+                label: 'Primary',
+                swatches: [
+                    { v: '--primary-dark',  l: 'Dark'  },
+                    { v: '--primary',       l: 'Base'  },
+                    { v: '--primary-light', l: 'Light' },
+                    { v: '--primary-tint',  l: 'Tint', tint: true },
+                ],
+            },
+            {
+                label: 'Action',
+                swatches: [
+                    { v: '--action-dark',  l: 'Dark'  },
+                    { v: '--action',       l: 'Base'  },
+                    { v: '--action-light', l: 'Light' },
+                    { v: '--action-tint',  l: 'Tint', tint: true },
+                ],
+            },
+            {
+                label: 'Accent',
+                swatches: [
+                    { v: '--accent-dark',  l: 'Dark'  },
+                    { v: '--accent',       l: 'Base'  },
+                    { v: '--accent-light', l: 'Light' },
+                    { v: '--accent-tint',  l: 'Tint', tint: true },
+                ],
+            },
+            {
+                label: 'Extra',
+                swatches: [
+                    { v: '--extra-accent-dark',  l: 'Dark'  },
+                    { v: '--extra-accent',       l: 'Base'  },
+                    { v: '--extra-accent-light', l: 'Light' },
+                    { v: '--extra-accent-tint',  l: 'Tint', tint: true },
+                ],
+            },
+            {
+                label: 'Backgrounds',
+                swatches: [
+                    { v: '--darker',        l: 'Darker'    },
+                    { v: '--dark',          l: 'Dark'      },
+                    { v: '--subdued-dark',  l: 'Sub Dark'  },
+                    { v: '--subdued-light', l: 'Sub Light', tint: true },
+                ],
+            },
+            {
+                label: 'Text / UI',
+                swatches: [
+                    { v: '--text',    l: 'Text'    },
+                    { v: '--on-dark', l: 'On Dark', tint: true },
+                    { v: '--white',   l: 'White',   tint: true },
+                ],
+            },
+        ];
+
+        function buildPanel() {
+            var el  = document.createElement( 'div' );
+            el.id   = 'volatyl-palette-panel';
+            var html = '<div class="vpp-inner">';
+            groups.forEach( function ( group, i ) {
+                if ( i > 0 ) { html += '<div class="vpp-sep"></div>'; }
+                html += '<div class="vpp-group">';
+                html += '<div class="vpp-label">' + group.label + '</div>';
+                html += '<div class="vpp-row">';
+                group.swatches.forEach( function ( s ) {
+                    var cls = 'vpp-swatch' + ( s.tint ? ' vpp-tint' : '' );
+                    html += '<div class="' + cls + '" style="background:var(' + s.v + ')" title="' + s.v + '"></div>';
+                } );
+                html += '</div></div>';
+            } );
+            html += '</div>';
+            el.innerHTML = html;
+            return el;
+        }
+
+        function injectStyles() {
+            if ( stylesEl ) { return; }
+            stylesEl = document.createElement( 'style' );
+            stylesEl.id = 'volatyl-palette-panel-styles';
+            stylesEl.textContent = '\
+                #volatyl-palette-panel {\
+                    position: fixed;\
+                    bottom: 16px;\
+                    left: 50%;\
+                    transform: translateX(-50%);\
+                    background: rgba(12,12,14,0.93);\
+                    backdrop-filter: blur(12px);\
+                    -webkit-backdrop-filter: blur(12px);\
+                    border-radius: 10px;\
+                    border: 1px solid rgba(255,255,255,0.08);\
+                    box-shadow: 0 8px 32px rgba(0,0,0,0.55);\
+                    padding: 10px 14px;\
+                    z-index: 99998;\
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;\
+                    user-select: none;\
+                    white-space: nowrap;\
+                }\
+                .vpp-inner { display: flex; align-items: flex-start; gap: 0; }\
+                .vpp-sep { width: 1px; background: rgba(255,255,255,0.1); margin: 0 10px; align-self: stretch; }\
+                .vpp-group { display: flex; flex-direction: column; gap: 5px; }\
+                .vpp-label { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.38); }\
+                .vpp-row { display: flex; gap: 3px; }\
+                .vpp-swatch { width: 22px; height: 22px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); cursor: default; transition: transform 0.1s ease; }\
+                .vpp-swatch:hover { transform: scale(1.25); z-index: 1; position: relative; }\
+                .vpp-tint { border-color: rgba(0,0,0,0.15); box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08); }\
+            ';
+            document.head.appendChild( stylesEl );
+        }
+
+        function show() {
+            injectStyles();
+            if ( ! panel ) {
+                panel = buildPanel();
+                document.body.appendChild( panel );
+            }
+            panel.style.display = '';
+        }
+
+        function hide() {
+            if ( panel ) { panel.style.display = 'none'; }
+        }
+
+        wp.customize.preview.bind( 'volatyl-palette-panel', function ( data ) {
+            if ( data.visible ) { show(); } else { hide(); }
+        } );
+
+    } )();
+
 }(jQuery));

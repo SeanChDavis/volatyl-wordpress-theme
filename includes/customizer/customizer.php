@@ -190,6 +190,14 @@ function volatyl_customize_controls_print_styles() { ?>
 		.customize-control-number input[type="number"] {
 			width: 100px;
 		}
+		.volatyl-palette-toggle-label {
+			display: flex;
+			align-items: center;
+			gap: 7px;
+			cursor: pointer;
+			font-size: 12px;
+			color: #444;
+		}
 		#customize-control-volatyl_primary_hue input[type="range"] {
 			-webkit-appearance: none;
 			appearance: none;

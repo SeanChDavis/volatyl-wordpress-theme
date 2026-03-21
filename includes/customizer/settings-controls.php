@@ -99,6 +99,17 @@ $wp_customize->add_control( 'volatyl_full_width_structure', array(
  * Color scheme
  */
 
+// Color palette preview toggle
+$wp_customize->add_setting( 'volatyl_palette_preview_toggle_area', array(
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
+) );
+$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_palette_preview_toggle_area', array(
+	'section'     => 'volatyl_color_scheme',
+	'priority'    => 5,
+	'label'       => '',
+	'description' => '<label class="volatyl-palette-toggle-label"><input type="checkbox" id="volatyl-palette-preview-toggle"> ' . __( 'Show color palette preview', 'volatyl' ) . '</label>',
+) ) );
+
 // Primary hue
 $wp_customize->add_setting( 'volatyl_primary_hue_area', array(
 	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
