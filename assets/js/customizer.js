@@ -84,7 +84,7 @@
                 root.style.setProperty('--' + prefix, 'oklch(55% var(--palette-chroma) var(' + hueVar + '))');
                 root.style.setProperty('--' + prefix + '-light', 'oklch(75% var(--palette-chroma) var(' + hueVar + '))');
                 root.style.setProperty('--' + prefix + '-dark', 'oklch(30% var(--palette-chroma) var(' + hueVar + '))');
-                root.style.setProperty('--' + prefix + '-tint', 'oklch(97.5% calc(var(--palette-chroma) * 0.05) var(' + hueVar + '))');
+                root.style.setProperty('--' + prefix + '-tint', 'oklch(97.5% calc(var(--palette-chroma) * 0.025) var(' + hueVar + '))');
             }
 
             setColorGroup('action', hues.action);

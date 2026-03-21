@@ -77,7 +77,7 @@ function volatyl_palette_colors(): array {
 			break;
 	}
 
-	$tint_wash      = round( $palette_chroma * 0.05, 5 );
+	$tint_wash      = round( $palette_chroma * 0.025, 5 );
 	$on_dark_chroma = round( $tint_chroma * 0.5, 5 );
 
 	// Shorthand builders.
