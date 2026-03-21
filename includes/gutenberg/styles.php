@@ -81,33 +81,34 @@ function volatyl_palette_colors(): array {
 	$on_dark_chroma = round( $tint_chroma * 0.5, 5 );
 
 	// Shorthand builders.
-	$vivid = fn( $l, $h ) => "oklch({$l}% {$palette_chroma} {$h})";
-	$tint  = fn( $h ) => "oklch(97.5% {$tint_wash} {$h})";
+	$vivid   = fn( $l, $h ) => "oklch({$l}% {$palette_chroma} {$h})";
+	$pastel  = fn( $h ) => "oklch(93% " . round( $palette_chroma * 0.3, 5 ) . " {$h})";
+	$tint    = fn( $h ) => "oklch(97.5% {$tint_wash} {$h})";
 
 	return array(
 		array( 'name' => __( 'Action Darker',                      'volatyl' ), 'slug' => 'action-darker',        'color' => $vivid( 18, $action_hue ) ),
 		array( 'name' => __( 'Action Dark',                        'volatyl' ), 'slug' => 'action-dark',          'color' => $vivid( 30, $action_hue ) ),
 		array( 'name' => __( 'Action',                             'volatyl' ), 'slug' => 'action',               'color' => $vivid( 55, $action_hue ) ),
 		array( 'name' => __( 'Action Light',                       'volatyl' ), 'slug' => 'action-light',         'color' => $vivid( 80, $action_hue ) ),
-		array( 'name' => __( 'Action Lighter',                     'volatyl' ), 'slug' => 'action-lighter',       'color' => $vivid( 93, $action_hue ) ),
+		array( 'name' => __( 'Action Lighter',                     'volatyl' ), 'slug' => 'action-lighter',       'color' => $pastel( $action_hue ) ),
 		array( 'name' => __( 'Action Tint',                        'volatyl' ), 'slug' => 'action-tint',          'color' => $tint( $action_hue ) ),
 		array( 'name' => __( 'Accent 1 Darker',                    'volatyl' ), 'slug' => 'accent-1-darker',      'color' => $vivid( 18, $accent_1_hue ) ),
 		array( 'name' => __( 'Accent 1 Dark',                      'volatyl' ), 'slug' => 'accent-1-dark',        'color' => $vivid( 30, $accent_1_hue ) ),
 		array( 'name' => __( 'Accent 1',                           'volatyl' ), 'slug' => 'accent-1',             'color' => $vivid( 55, $accent_1_hue ) ),
 		array( 'name' => __( 'Accent 1 Light',                     'volatyl' ), 'slug' => 'accent-1-light',       'color' => $vivid( 80, $accent_1_hue ) ),
-		array( 'name' => __( 'Accent 1 Lighter',                   'volatyl' ), 'slug' => 'accent-1-lighter',     'color' => $vivid( 93, $accent_1_hue ) ),
+		array( 'name' => __( 'Accent 1 Lighter',                   'volatyl' ), 'slug' => 'accent-1-lighter',     'color' => $pastel( $accent_1_hue ) ),
 		array( 'name' => __( 'Accent 1 Tint',                      'volatyl' ), 'slug' => 'accent-1-tint',        'color' => $tint( $accent_1_hue ) ),
 		array( 'name' => __( 'Accent 2 Darker',                    'volatyl' ), 'slug' => 'accent-2-darker',      'color' => $vivid( 18, $accent_2_hue ) ),
 		array( 'name' => __( 'Accent 2 Dark',                      'volatyl' ), 'slug' => 'accent-2-dark',        'color' => $vivid( 30, $accent_2_hue ) ),
 		array( 'name' => __( 'Accent 2',                           'volatyl' ), 'slug' => 'accent-2',             'color' => $vivid( 55, $accent_2_hue ) ),
 		array( 'name' => __( 'Accent 2 Light',                     'volatyl' ), 'slug' => 'accent-2-light',       'color' => $vivid( 80, $accent_2_hue ) ),
-		array( 'name' => __( 'Accent 2 Lighter',                   'volatyl' ), 'slug' => 'accent-2-lighter',     'color' => $vivid( 93, $accent_2_hue ) ),
+		array( 'name' => __( 'Accent 2 Lighter',                   'volatyl' ), 'slug' => 'accent-2-lighter',     'color' => $pastel( $accent_2_hue ) ),
 		array( 'name' => __( 'Accent 2 Tint',                      'volatyl' ), 'slug' => 'accent-2-tint',        'color' => $tint( $accent_2_hue ) ),
 		array( 'name' => __( 'Accent 3 Darker',                    'volatyl' ), 'slug' => 'accent-3-darker',      'color' => $vivid( 18, $accent_3_hue ) ),
 		array( 'name' => __( 'Accent 3 Dark',                      'volatyl' ), 'slug' => 'accent-3-dark',        'color' => $vivid( 30, $accent_3_hue ) ),
 		array( 'name' => __( 'Accent 3',                           'volatyl' ), 'slug' => 'accent-3',             'color' => $vivid( 55, $accent_3_hue ) ),
 		array( 'name' => __( 'Accent 3 Light',                     'volatyl' ), 'slug' => 'accent-3-light',       'color' => $vivid( 80, $accent_3_hue ) ),
-		array( 'name' => __( 'Accent 3 Lighter',                   'volatyl' ), 'slug' => 'accent-3-lighter',     'color' => $vivid( 93, $accent_3_hue ) ),
+		array( 'name' => __( 'Accent 3 Lighter',                   'volatyl' ), 'slug' => 'accent-3-lighter',     'color' => $pastel( $accent_3_hue ) ),
 		array( 'name' => __( 'Accent 3 Tint',                      'volatyl' ), 'slug' => 'accent-3-tint',        'color' => $tint( $accent_3_hue ) ),
 		array( 'name' => __( 'Dark',                               'volatyl' ), 'slug' => 'dark',                 'color' => "oklch(15% {$tint_chroma} {$hue})" ),
 		array( 'name' => __( 'Darker',                             'volatyl' ), 'slug' => 'darker',               'color' => "oklch(12% {$tint_chroma} {$hue})" ),
