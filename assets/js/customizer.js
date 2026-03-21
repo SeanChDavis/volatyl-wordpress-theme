@@ -380,6 +380,8 @@
                     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;\
                     user-select: none;\
                     white-space: nowrap;\
+                    max-width: calc(100vw - 32px);\
+                    overflow-x: auto;\
                 }\
                 .vpp-inner { display: flex; align-items: flex-start; gap: 0; }\
                 .vpp-sep { width: 1px; background: rgba(255,255,255,0.1); margin: 0 10px; align-self: stretch; }\
