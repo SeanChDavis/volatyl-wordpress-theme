@@ -41,6 +41,8 @@ function volatyl_palette_colors(): array {
 	$scheme           = get_theme_mod( 'volatyl_color_scheme_type', DEFAULT_COLOR_SCHEME_TYPE );
 
 	// Resolve action / accent / extra-accent hues for the active scheme.
+	$primary_slot_hue = $hue; // equals action in all schemes except tetradic
+
 	switch ( $scheme ) {
 		case 'complementary':
 			$action_hue       = $hue;
@@ -66,6 +68,7 @@ function volatyl_palette_colors(): array {
 			$action_hue       = $hue;
 			$accent_hue       = $hue + 90;
 			$extra_accent_hue = $hue + 180;
+			$primary_slot_hue = $hue - 90; // 4th tetradic color
 			break;
 		default: // monochromatic
 			$action_hue       = $hue;
@@ -82,10 +85,10 @@ function volatyl_palette_colors(): array {
 	$tint  = fn( $h ) => "oklch(97.5% {$tint_wash} {$h})";
 
 	return array(
-		array( 'name' => __( 'Primary Hue',                       'volatyl' ), 'slug' => 'primary',              'color' => $vivid( 55, $hue ) ),
-		array( 'name' => __( 'Primary Hue Light',                  'volatyl' ), 'slug' => 'primary-light',        'color' => $vivid( 75, $hue ) ),
-		array( 'name' => __( 'Primary Hue Dark',                   'volatyl' ), 'slug' => 'primary-dark',         'color' => $vivid( 30, $hue ) ),
-		array( 'name' => __( 'Primary Hue Tint',                   'volatyl' ), 'slug' => 'primary-tint',         'color' => $tint( $hue ) ),
+		array( 'name' => __( 'Primary Hue',                       'volatyl' ), 'slug' => 'primary',              'color' => $vivid( 55, $primary_slot_hue ) ),
+		array( 'name' => __( 'Primary Hue Light',                  'volatyl' ), 'slug' => 'primary-light',        'color' => $vivid( 75, $primary_slot_hue ) ),
+		array( 'name' => __( 'Primary Hue Dark',                   'volatyl' ), 'slug' => 'primary-dark',         'color' => $vivid( 30, $primary_slot_hue ) ),
+		array( 'name' => __( 'Primary Hue Tint',                   'volatyl' ), 'slug' => 'primary-tint',         'color' => $tint( $primary_slot_hue ) ),
 		array( 'name' => __( 'Action Color',                       'volatyl' ), 'slug' => 'action',               'color' => $vivid( 55, $action_hue ) ),
 		array( 'name' => __( 'Action Color Light',                 'volatyl' ), 'slug' => 'action-light',         'color' => $vivid( 75, $action_hue ) ),
 		array( 'name' => __( 'Action Color Dark',                  'volatyl' ), 'slug' => 'action-dark',          'color' => $vivid( 30, $action_hue ) ),

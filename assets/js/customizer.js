@@ -70,32 +70,12 @@
 
             // Hue variable each slot should reference per scheme
             var schemeHues = {
-                monochromatic: {action: '--primary-hue', accent: '--primary-hue', extraAccent: '--primary-hue'},
-                complementary: {
-                    action: '--primary-hue',
-                    accent: '--complementary-accent-hue',
-                    extraAccent: '--complementary-accent-hue'
-                },
-                analogous: {
-                    action: '--primary-hue',
-                    accent: '--analogous-accent-hue-1',
-                    extraAccent: '--analogous-accent-hue-2'
-                },
-                triadic: {
-                    action: '--primary-hue',
-                    accent: '--triadic-accent-hue-1',
-                    extraAccent: '--triadic-accent-hue-2'
-                },
-                split_complementary: {
-                    action: '--primary-hue',
-                    accent: '--split-complementary-accent-hue-1',
-                    extraAccent: '--split-complementary-accent-hue-2'
-                },
-                tetradic: {
-                    action: '--primary-hue',
-                    accent: '--tetradic-accent-hue-2',
-                    extraAccent: '--tetradic-accent-hue-3'
-                },
+                monochromatic:    {action: '--primary-hue', accent: '--primary-hue',                   extraAccent: '--primary-hue',                  primary: '--primary-hue'},
+                complementary:    {action: '--primary-hue', accent: '--complementary-accent-hue',       extraAccent: '--complementary-accent-hue',      primary: '--primary-hue'},
+                analogous:        {action: '--primary-hue', accent: '--analogous-accent-hue-1',         extraAccent: '--analogous-accent-hue-2',        primary: '--primary-hue'},
+                triadic:          {action: '--primary-hue', accent: '--triadic-accent-hue-1',           extraAccent: '--triadic-accent-hue-2',          primary: '--primary-hue'},
+                split_complementary: {action: '--primary-hue', accent: '--split-complementary-accent-hue-1', extraAccent: '--split-complementary-accent-hue-2', primary: '--primary-hue'},
+                tetradic:         {action: '--primary-hue', accent: '--tetradic-accent-hue-2',          extraAccent: '--tetradic-accent-hue-3',         primary: '--tetradic-accent-hue-1'},
             };
 
             var hues = schemeHues[to] || schemeHues.monochromatic;
@@ -110,6 +90,7 @@
             setColorGroup('action', hues.action);
             setColorGroup('accent', hues.accent);
             setColorGroup('extra-accent', hues.extraAccent);
+            setColorGroup('primary', hues.primary);
         });
     });
 

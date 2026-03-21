@@ -84,7 +84,7 @@
 body,
 .v-gray-background,
 .has-gray-background-color {
-	background-color: var(--primary-tint);
+	background-color: var(--action-tint);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -244,7 +244,7 @@ table th,
 }
 
 .wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1) {
-	background-color: var(--primary-tint);
+	background-color: var(--action-tint);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -286,7 +286,7 @@ hr,
 // ─────────────────────────────────────────────────────────────
 
 .v-grid .v-grid-item-container:not(.v-subdued) {
-	background-color: var(--primary-tint);
+	background-color: var(--action-tint);
 }
 
 .v-grid-item-title a {
@@ -330,7 +330,7 @@ hr,
 
 article .entry-content .wp-block-latest-comments,
 .v-content-container .entry-content .wp-block-latest-comments {
-	background-color: var(--primary-tint);
+	background-color: var(--action-tint);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -399,10 +399,10 @@ article .entry-content .wp-block-latest-comments,
 		border-bottom-color: var(--white);
 	}
 
-	// Tables — use primary-dark for borders against dark background
+	// Tables — use action-dark for borders against dark background
 	table,
 	table th,
 	table td {
-		border-color: var(--primary-dark);
+		border-color: var(--action-dark);
 	}
 }

@@ -196,7 +196,11 @@ function volatyl_root_color_scheme_tetradic(): string {
 		--extra-accent: oklch(55% var(--palette-chroma) var(--tetradic-accent-hue-3));
 		--extra-accent-light: oklch(75% var(--palette-chroma) var(--tetradic-accent-hue-3));
 		--extra-accent-dark: oklch(30% var(--palette-chroma) var(--tetradic-accent-hue-3));
-		--extra-accent-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--tetradic-accent-hue-3));";
+		--extra-accent-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--tetradic-accent-hue-3));
+		--primary: oklch(55% var(--palette-chroma) var(--tetradic-accent-hue-1));
+		--primary-light: oklch(75% var(--palette-chroma) var(--tetradic-accent-hue-1));
+		--primary-dark: oklch(30% var(--palette-chroma) var(--tetradic-accent-hue-1));
+		--primary-tint: oklch(97.5% calc(var(--palette-chroma) * 0.05) var(--tetradic-accent-hue-1));";
 }
 
 /**
