@@ -459,7 +459,6 @@ article .entry-content .wp-block-latest-comments,
 .v-dark-background {
   background-color: var(--dark);
   color: var(--on-dark);
-  --recessed-bg: var(--translucent-light);
 }
 .v-dark-background .button,
 .v-dark-background .v-button,

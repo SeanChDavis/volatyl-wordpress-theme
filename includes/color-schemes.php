@@ -70,8 +70,8 @@ function volatyl_root_color_scheme_base() {
 		--translucent-dark: rgba(0,0,0,.05);
 
 		/* Recessed surface — used for pre, code, dl, table stripes, etc.
-		   Switches to translucent-light inside dark backgrounds via context override */
-		--recessed-bg: var(--action-tint);
+		   Derives from currentColor so it adapts to any background automatically */
+		--recessed-bg: color-mix(in oklch, currentColor 8%, transparent);
 
 		/* Action, accent-1, accent-2, accent-3 — derived from the primary hue; overridden by color schemes */
 		/* Technically, this is the monochromatic color scheme */

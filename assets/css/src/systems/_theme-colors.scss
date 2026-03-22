@@ -340,7 +340,6 @@ article .entry-content .wp-block-latest-comments,
 .v-dark-background {
 	background-color: var(--dark);
 	color: var(--on-dark);
-	--recessed-bg: var(--translucent-light);
 
 	// Buttons — white border in dark context; utility buttons collapse to action color
 	@include action-buttons( var(--white) );
