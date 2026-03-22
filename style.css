@@ -162,6 +162,14 @@ template {
   display: none;
 }
 
+/* Min-width breakpoints */
+/* Heading font */
+/* Reduced heading sizes for constrained content areas (sidebars, fat footer, featured sections) */
+/* Body font */
+/* Base font size - All font size variants are relative to this via rem */
+/* Base line height */
+/* Font size modifiers */
+/* HTML structure spacing */
 /**
  * Control the entire theme color scheme
  */
@@ -540,26 +548,15 @@ article .entry-content .wp-block-latest-comments,
 .v-dark-background select:focus-visible {
   border-color: var(--accent-1);
 }
-.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
-.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
-.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
-  border-color: var(--accent-1);
-}
 .v-dark-background h1, .v-dark-background .h1,
 .v-dark-background h2, .v-dark-background .h2,
 .v-dark-background h3, .v-dark-background .h3,
 .v-dark-background h4, .v-dark-background .h4,
 .v-dark-background h5, .v-dark-background .h5,
 .v-dark-background h6, .v-dark-background .h6,
-.v-dark-background a,
-.v-dark-background .site-title a,
-.v-dark-background .content-header-title,
-.v-dark-background .archive-title.content-header-title span,
-.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item > a,
-.v-dark-background #site-navigation .menu-toggle {
+.v-dark-background a {
   color: var(--white);
 }
-.v-dark-background .archive-title.content-header-title,
 .v-dark-background h4, .v-dark-background .h4,
 .v-dark-background h6, .v-dark-background .h6,
 .v-dark-background blockquote,
@@ -579,24 +576,31 @@ article .entry-content .wp-block-latest-comments,
 .v-dark-background [class*=wp-block-] > label {
   color: var(--on-dark);
 }
-.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after,
-.v-dark-background #site-navigation #primary-menu > .menu-item-has-children > a:after {
-  border-bottom-color: var(--white);
-}
 .v-dark-background table,
 .v-dark-background table th,
 .v-dark-background table td {
   border-color: var(--action-dark);
 }
+.v-dark-background .site-title a,
+.v-dark-background .content-header-title,
+.v-dark-background .archive-title.content-header-title span,
+.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item > a,
+.v-dark-background #site-navigation .menu-toggle {
+  color: var(--white);
+}
+.v-dark-background .archive-title.content-header-title {
+  color: var(--on-dark);
+}
+.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
+.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
+.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
+  border-color: var(--accent-1);
+}
+.v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after,
+.v-dark-background #site-navigation #primary-menu > .menu-item-has-children > a:after {
+  border-bottom-color: var(--white);
+}
 
-/* Min-width breakpoints */
-/* Heading font */
-/* Reduced heading sizes for constrained content areas (sidebars, fat footer, featured sections) */
-/* Body font */
-/* Base font size - All font size variants are relative to this via rem */
-/* Base line height */
-/* Font size modifiers */
-/* HTML structure spacing */
 /* Editor-generated classes */
 /* Action, accent-1, accent-2, accent-3 */
 .has-action-darker-color {

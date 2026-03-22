@@ -3,76 +3,6 @@
  */
 
 // ─────────────────────────────────────────────────────────────
-// Mixins
-// ─────────────────────────────────────────────────────────────
-
-/// Primary action buttons — fills with --action, darkens on interaction.
-/// @param {Color | null} $border [null] — pass a color to set an explicit border; omit to leave browser default
-@mixin action-buttons( $border: null ) {
-	.button,
-	.v-button,
-	button,
-	.wp-block-button .wp-block-button__link,
-	.wp-block-file .wp-block-file__button,
-	.comment-reply-link,
-	.wp-block-calendar .wp-calendar-table caption,
-	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
-		background-color: var(--action);
-		color: var(--white);
-
-		@if $border != null {
-			border-color: $border;
-		}
-
-		&:hover,
-		&:focus,
-		&:active {
-			background-color: var(--action-dark);
-			border-color: var(--action-dark);
-		}
-	}
-}
-
-/// Utility buttons (search, input[type=submit], etc.) — fills with $bg, darkens on interaction.
-/// @param {Color} $bg [var(--dark)]
-@mixin utility-buttons( $bg: var(--dark) ) {
-	[type="button"],
-	[type="submit"],
-	[type="reset"],
-	.wp-block-search button,
-	#searchform #searchsubmit,
-	.wp-block-search[class*="button-inside"] [class*="search__inside"] button {
-		background-color: $bg;
-		border-color: $bg;
-		color: var(--white);
-
-		&:hover,
-		&:focus,
-		&:active {
-			background-color: var(--action-dark);
-			border-color: var(--action-dark);
-		}
-	}
-}
-
-/// Form inputs — sets default and focus/active border colors.
-/// @param {Color} $border [var(--dark)]
-/// @param {Color} $focus-border [var(--action)]
-@mixin form-inputs( $border: var(--dark), $focus-border: var(--action) ) {
-	input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
-	textarea,
-	select {
-		border-color: $border;
-
-		&:active,
-		&:focus,
-		&:focus-visible {
-			border-color: $focus-border;
-		}
-	}
-}
-
-// ─────────────────────────────────────────────────────────────
 // Global
 // ─────────────────────────────────────────────────────────────
 
@@ -339,30 +269,10 @@ article .entry-content .wp-block-latest-comments,
 
 .v-dark-background {
 	background-color: var(--dark);
-	color: var(--on-dark);
 
-	// Buttons — white border in dark context; utility buttons collapse to action color
-	@include action-buttons( var(--white) );
-	@include utility-buttons( var(--action) );
+	@include dark-bg-context();
 
-	// Forms — border shifts to action; focus border shifts to accent
-	@include form-inputs( var(--action), var(--accent-1) );
-
-	// Nav button hover border uses accent instead of action-dark
-	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
-	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
-	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
-		border-color: var(--accent-1);
-	}
-
-	// Typography — headings and links become white
-	h1, .h1,
-	h2, .h2,
-	h3, .h3,
-	h4, .h4,
-	h5, .h5,
-	h6, .h6,
-	a,
+	// Site-specific typography overrides — selectors not relevant in the editor
 	.site-title a,
 	.content-header-title,
 	.archive-title.content-header-title span,
@@ -371,38 +281,20 @@ article .entry-content .wp-block-latest-comments,
 		color: var(--white);
 	}
 
-	// Secondary text — subdued elements shift to on-dark
-	.archive-title.content-header-title,
-	h4, .h4,
-	h6, .h6,
-	blockquote,
-	address,
-	cite,
-	q,
-	code,
-	kbd,
-	tt,
-	var,
-	strike,
-	del,
-	.v-subdued-title,
-	table caption,
-	figure figcaption,
-	.wp-block-calendar .wp-calendar-nav,
-	[class*="wp-block-"] > label {
+	.archive-title.content-header-title {
 		color: var(--on-dark);
+	}
+
+	// Nav button hover border uses accent instead of action-dark
+	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
+	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
+	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
+		border-color: var(--accent-1);
 	}
 
 	// Navigation — chevrons become white
 	#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after,
 	#site-navigation #primary-menu > .menu-item-has-children > a:after {
 		border-bottom-color: var(--white);
-	}
-
-	// Tables — use action-dark for borders against dark background
-	table,
-	table th,
-	table td {
-		border-color: var(--action-dark);
 	}
 }

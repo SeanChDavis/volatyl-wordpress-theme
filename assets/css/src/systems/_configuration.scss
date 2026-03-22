@@ -106,3 +106,124 @@ $lgMinWidth: 1200px;
 		padding-top: clamp(2rem, 10.5vw, 8rem);
 	}
 }
+
+// ─────────────────────────────────────────────────────────────
+// Color context mixins
+// Shared between front-end and editor stylesheets.
+// ─────────────────────────────────────────────────────────────
+
+/// Primary action buttons — fills with --action, darkens on interaction.
+/// @param {Color | null} $border [null] — pass a color to set an explicit border
+@mixin action-buttons( $border: null ) {
+	.button,
+	.v-button,
+	button,
+	.wp-block-button .wp-block-button__link,
+	.wp-block-file .wp-block-file__button,
+	.comment-reply-link,
+	.wp-block-calendar .wp-calendar-table caption,
+	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
+		background-color: var(--action);
+		color: var(--white);
+
+		@if $border != null {
+			border-color: $border;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: var(--action-dark);
+			border-color: var(--action-dark);
+		}
+	}
+}
+
+/// Utility buttons (search submit, etc.) — fills with $bg, darkens on interaction.
+/// @param {Color} $bg [var(--dark)]
+@mixin utility-buttons( $bg: var(--dark) ) {
+	[type="button"],
+	[type="submit"],
+	[type="reset"],
+	.wp-block-search button,
+	#searchform #searchsubmit,
+	.wp-block-search[class*="button-inside"] [class*="search__inside"] button {
+		background-color: $bg;
+		border-color: $bg;
+		color: var(--white);
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: var(--action-dark);
+			border-color: var(--action-dark);
+		}
+	}
+}
+
+/// Form inputs — sets default and focus/active border colors.
+/// @param {Color} $border      [var(--dark)]
+/// @param {Color} $focus-border [var(--action)]
+@mixin form-inputs( $border: var(--dark), $focus-border: var(--action) ) {
+	input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
+	textarea,
+	select {
+		border-color: $border;
+
+		&:active,
+		&:focus,
+		&:focus-visible {
+			border-color: $focus-border;
+		}
+	}
+}
+
+/// Dark background context — apply inside any dark-backgrounded element.
+/// Adjusts text, headings, links, buttons, forms, and tables for readability.
+/// Does NOT set background-color — the caller is responsible for that.
+@mixin dark-bg-context() {
+	color: var(--on-dark);
+
+	@include action-buttons( var(--white) );
+	@include utility-buttons( var(--action) );
+	@include form-inputs( var(--action), var(--accent-1) );
+
+	// Headings and links — white
+	h1, .h1,
+	h2, .h2,
+	h3, .h3,
+	h4, .h4,
+	h5, .h5,
+	h6, .h6,
+	a {
+		color: var(--white);
+	}
+
+	// Secondary / subdued elements — on-dark
+	h4, .h4,
+	h6, .h6,
+	blockquote,
+	address,
+	cite,
+	q,
+	code,
+	kbd,
+	tt,
+	var,
+	strike,
+	del,
+	.v-subdued-title,
+	table caption,
+	figure figcaption,
+	.wp-block-calendar .wp-calendar-nav,
+	[class*="wp-block-"] > label {
+		color: var(--on-dark);
+	}
+
+	// Tables — action-dark borders read better on dark backgrounds
+	table,
+	table th,
+	table td {
+		border-color: var(--action-dark);
+	}
+}
