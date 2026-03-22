@@ -225,6 +225,33 @@ $wp_customize->add_control( 'volatyl_color_scheme_type', array(
 	),
 ) );
 
+// Border radius
+$wp_customize->add_setting( 'volatyl_border_radius_area', array(
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
+) );
+$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_border_radius_area', array(
+	'section'     => 'volatyl_color_scheme',
+	'priority'    => 300,
+	'label'       => __( 'Border radius', 'volatyl' ),
+	'description' => __( 'Controls the roundness of corners on cards, buttons, inputs, and other UI elements. At 0 all corners are sharp; higher values create progressively rounder shapes.', 'volatyl' ),
+) ) );
+
+$wp_customize->add_setting( 'volatyl_border_radius', array(
+	'default'           => DEFAULT_BORDER_RADIUS,
+	'sanitize_callback' => 'absint',
+) );
+$wp_customize->add_control( 'volatyl_border_radius', array(
+	'section'     => 'volatyl_color_scheme',
+	'priority'    => 310,
+	'label'       => __( 'Set border radius', 'volatyl' ),
+	'type'        => 'range',
+	'input_attrs' => array(
+		'min'  => 0,
+		'max'  => 50,
+		'step' => 1,
+	),
+) );
+
 /**
  * Content Configuration
  */

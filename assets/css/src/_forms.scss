@@ -10,7 +10,7 @@ button,
 	@include headingFont;
 	@include fontSmaller;
 	border: none;
-	border-radius: 4px;
+	border-radius: calc(var(--radius) * 0.4);
 	cursor: pointer;
 	display: inline-block;
 	letter-spacing: .035rem;
@@ -48,7 +48,7 @@ select {
 	@include bodyFont;
 	border-style: solid;
 	border-width: 2px;
-	border-radius: 4px;
+	border-radius: calc(var(--radius) * 0.4);
 	padding: calc(.8em - 2px) .8em;
 	vertical-align: bottom;
 	width: clamp(13rem, 50vw, 18rem);

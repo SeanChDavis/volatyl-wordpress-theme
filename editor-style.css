@@ -926,7 +926,7 @@ h3.has-background, .h3.has-background,
 h4.has-background, .h4.has-background,
 h5.has-background, .h5.has-background,
 h6.has-background, .h6.has-background {
-  border-radius: 7px;
+  border-radius: calc(var(--radius) * 0.7);
   margin-bottom: 1.5rem;
   margin-top: 2rem;
   padding: 0.75em 1.125em;
@@ -1172,7 +1172,7 @@ table caption:first-child {
 }
 
 pre {
-  border-radius: 10px;
+  border-radius: var(--radius);
   font-size: 0.889rem;
   padding: 1.625rem;
 }
@@ -1184,7 +1184,7 @@ pre {
 }
 
 dl {
-  border-radius: 10px;
+  border-radius: var(--radius);
   padding: clamp(1.625rem, 2.25vw, 2rem);
 }
 dl dt {
@@ -1215,7 +1215,7 @@ var {
   display: inline-block;
   padding-left: 3px;
   padding-right: 3px;
-  border-radius: 3px;
+  border-radius: calc(var(--radius) * 0.3);
 }
 
 iframe,
@@ -1456,7 +1456,7 @@ figure figcaption {
 }
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
   border: none;
-  border-radius: 3px;
+  border-radius: calc(var(--radius) * 0.3);
   padding: 8px;
 }
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button {
@@ -1471,7 +1471,7 @@ figure figcaption {
   font-size: 0.833rem;
   border-style: solid;
   border-width: 2px;
-  border-radius: 10px;
+  border-radius: var(--radius);
   font-style: normal;
   margin: 0;
   padding: 1.5rem;
@@ -1537,7 +1537,7 @@ article .entry-content .wp-block-latest-posts,
 article .entry-content .wp-block-latest-comments,
 .v-content-container .entry-content .wp-block-latest-comments {
   font-size: 0.833rem;
-  border-radius: 10px;
+  border-radius: var(--radius);
   margin-left: 0;
   padding: clamp(1.125rem, 2.4vw, 2rem);
 }

@@ -102,7 +102,7 @@ article,
 				.post-thumbnail {
 
 					img {
-						border-radius: 10px;
+						border-radius: var(--radius);
 					}
 				}
 			}

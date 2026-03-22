@@ -33,6 +33,7 @@ function volatyl_root_color_scheme_base() {
 	$primary_hue      = get_theme_mod( 'volatyl_primary_hue', DEFAULT_PRIMARY_HUE );
 	$palette_vibrancy = get_theme_mod( 'volatyl_palette_vibrancy', DEFAULT_PALETTE_VIBRANCY );
 	$background_tint  = get_theme_mod( 'volatyl_background_tint', DEFAULT_BACKGROUND_TINT );
+	$border_radius    = absint( get_theme_mod( 'volatyl_border_radius', DEFAULT_BORDER_RADIUS ) );
 
 	// Palette chroma: 0–100 maps to 0–0.25 (buttons, links, brand colors)
 	$palette_chroma = round( $palette_vibrancy * 0.0025, 4 );
@@ -43,6 +44,7 @@ function volatyl_root_color_scheme_base() {
 	return ":root {
 		--palette-chroma: {$palette_chroma};
 		--tint-chroma: {$tint_chroma};
+		--radius: {$border_radius}px;
 		--on-dark-luminance: 100%;
 
 		/* Primary hue — drives all color slots by default */

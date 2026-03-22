@@ -1,5 +1,5 @@
 .blog-grid-cta {
-	border-radius: 10px;
+	border-radius: var(--radius);
 	grid-row-end: 3;
 	grid-row-start: 2;
 	padding-bottom: clamp(3rem, 5vw ,4rem);

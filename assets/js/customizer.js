@@ -63,6 +63,12 @@
             document.documentElement.style.setProperty('--tint-chroma', to * 0.001);
         });
     });
+    // Border radius
+    wp.customize('volatyl_border_radius', function (value) {
+        value.bind(function (to) {
+            document.documentElement.style.setProperty('--radius', to + 'px');
+        });
+    });
     // Color scheme type — update CSS custom properties directly for live preview
     wp.customize('volatyl_color_scheme_type', function (value) {
         value.bind(function (to) {

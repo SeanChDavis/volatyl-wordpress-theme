@@ -929,7 +929,7 @@ article .entry-content .wp-block-latest-comments,
   line-height: 1;
 }
 .v-grid-item-container:not(.v-subdued) {
-  border-radius: 10px;
+  border-radius: var(--radius);
 }
 .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap {
   display: flex;
@@ -937,7 +937,7 @@ article .entry-content .wp-block-latest-comments,
   height: 100%;
 }
 .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-media img {
-  border-radius: 10px 10px 0 0;
+  border-radius: var(--radius) var(--radius) 0 0;
   vertical-align: top;
 }
 .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-header {
@@ -1110,7 +1110,7 @@ h3.has-background, .h3.has-background,
 h4.has-background, .h4.has-background,
 h5.has-background, .h5.has-background,
 h6.has-background, .h6.has-background {
-  border-radius: 7px;
+  border-radius: calc(var(--radius) * 0.7);
   margin-bottom: 1.5rem;
   margin-top: 2rem;
   padding: 0.75em 1.125em;
@@ -1356,7 +1356,7 @@ table caption:first-child {
 }
 
 pre {
-  border-radius: 10px;
+  border-radius: var(--radius);
   font-size: 0.889rem;
   padding: 1.625rem;
 }
@@ -1368,7 +1368,7 @@ pre {
 }
 
 dl {
-  border-radius: 10px;
+  border-radius: var(--radius);
   padding: clamp(1.625rem, 2.25vw, 2rem);
 }
 dl dt {
@@ -1399,7 +1399,7 @@ var {
   display: inline-block;
   padding-left: 3px;
   padding-right: 3px;
-  border-radius: 3px;
+  border-radius: calc(var(--radius) * 0.3);
 }
 
 iframe,
@@ -1640,7 +1640,7 @@ figure figcaption {
 }
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
   border: none;
-  border-radius: 3px;
+  border-radius: calc(var(--radius) * 0.3);
   padding: 8px;
 }
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button {
@@ -1655,7 +1655,7 @@ figure figcaption {
   font-size: 0.833rem;
   border-style: solid;
   border-width: 2px;
-  border-radius: 10px;
+  border-radius: var(--radius);
   font-style: normal;
   margin: 0;
   padding: 1.5rem;
@@ -1721,7 +1721,7 @@ article .entry-content .wp-block-latest-posts,
 article .entry-content .wp-block-latest-comments,
 .v-content-container .entry-content .wp-block-latest-comments {
   font-size: 0.833rem;
-  border-radius: 10px;
+  border-radius: var(--radius);
   margin-left: 0;
   padding: clamp(1.125rem, 2.4vw, 2rem);
 }
@@ -1973,7 +1973,7 @@ main {
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > .sub-menu {
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
+  border-radius: calc(var(--radius) * 0.4);
   box-shadow: 0 0 45px 0px rgba(0, 0, 0, 0.1);
   display: none;
   padding: 7px 1.2rem;
@@ -2000,7 +2000,7 @@ main {
   padding-left: 12px;
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-button > a {
-  border-radius: 4px;
+  border-radius: calc(var(--radius) * 0.4);
   padding: 8px 12px;
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-button > a:active, #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-button > a:focus, #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-button > a:hover {
@@ -2092,7 +2092,7 @@ main {
 }
 #site-navigation.toggled #primary-menu > .menu-item.menu-item-has-children > .sub-menu {
   background-color: rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
+  border-radius: calc(var(--radius) * 0.4);
   margin-bottom: 1rem;
   margin-top: 4px;
   padding: 7px 1.2rem;
@@ -2522,7 +2522,7 @@ button,
   font-weight: 500;
   font-size: 0.833rem;
   border: none;
-  border-radius: 4px;
+  border-radius: calc(var(--radius) * 0.4);
   cursor: pointer;
   display: inline-block;
   letter-spacing: 0.035rem;
@@ -2581,7 +2581,7 @@ select {
   font-family: "Red Hat Text", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   border-style: solid;
   border-width: 2px;
-  border-radius: 4px;
+  border-radius: calc(var(--radius) * 0.4);
   padding: calc(0.8em - 2px) 0.8em;
   vertical-align: bottom;
   width: clamp(13rem, 50vw, 18rem);
@@ -2867,7 +2867,7 @@ article:last-child .entry-footer,
 }
 .single.has-post-thumbnail article .entry-header .post-thumbnail img,
 .page.has-post-thumbnail article .entry-header .post-thumbnail img {
-  border-radius: 10px;
+  border-radius: var(--radius);
 }
 @media all and (min-width: 992px) {
   .single.has-post-thumbnail.no-sidebar article .entry-header .post-thumbnail,
@@ -2896,7 +2896,7 @@ article:last-child .entry-footer,
 }
 
 .blog-grid-cta {
-  border-radius: 10px;
+  border-radius: var(--radius);
   grid-row-end: 3;
   grid-row-start: 2;
   padding-bottom: clamp(3rem, 5vw, 4rem);

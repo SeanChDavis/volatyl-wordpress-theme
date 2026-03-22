@@ -16,7 +16,7 @@
 	}
 
 	&:not(.v-subdued) {
-		border-radius: 10px;
+		border-radius: var(--radius);
 
 		.v-grid-item-content-wrap {
 			display: flex;
@@ -26,7 +26,7 @@
 			.v-grid-item-media {
 
 				img {
-					border-radius: 10px 10px 0 0;
+					border-radius: var(--radius) var(--radius) 0 0;
 					vertical-align: top;
 				}
 			}
