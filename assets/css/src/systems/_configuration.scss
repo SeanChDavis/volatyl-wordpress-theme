@@ -139,9 +139,10 @@ $lgMinWidth: 1200px;
 	}
 }
 
-/// Utility buttons (search submit, etc.) — fills with $bg, darkens on interaction.
-/// @param {Color} $bg [var(--dark)]
-@mixin utility-buttons( $bg: var(--dark) ) {
+/// Utility buttons (search submit, etc.) — fills with $bg, transitions to $hover on interaction.
+/// @param {Color} $bg    [var(--dark)]
+/// @param {Color} $hover [var(--action)]
+@mixin utility-buttons( $bg: var(--dark), $hover: var(--action) ) {
 	[type="button"],
 	[type="submit"],
 	[type="reset"],
@@ -155,8 +156,8 @@ $lgMinWidth: 1200px;
 		&:hover,
 		&:focus,
 		&:active {
-			background-color: var(--action-dark);
-			border-color: var(--action-dark);
+			background-color: $hover;
+			border-color: $hover;
 		}
 	}
 }
@@ -185,7 +186,7 @@ $lgMinWidth: 1200px;
 	color: var(--on-dark);
 
 	@include action-buttons( var(--white) );
-	@include utility-buttons( var(--action) );
+	@include utility-buttons( var(--action), var(--action-dark) );
 	@include form-inputs( var(--action), var(--accent-1) );
 
 	// Headings and links — white

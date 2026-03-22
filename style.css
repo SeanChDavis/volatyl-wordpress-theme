@@ -302,8 +302,8 @@ button:active,
 .wp-block-search[class*=button-inside] [class*=search__inside] button:hover,
 .wp-block-search[class*=button-inside] [class*=search__inside] button:focus,
 .wp-block-search[class*=button-inside] [class*=search__inside] button:active {
-  background-color: var(--action-dark);
-  border-color: var(--action-dark);
+  background-color: var(--action);
+  border-color: var(--action);
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link {
