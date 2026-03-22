@@ -10,7 +10,7 @@ $wp_customize->add_setting( 'volatyl_border_radius_area', array(
 ) );
 $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_border_radius_area', array(
 	'section'     => 'volatyl_section_backgrounds',
-	'priority'    => 1,
+	'priority'    => 10,
 	'label'       => __( 'Corner radius', 'volatyl' ),
 	'description' => __( 'Controls the roundness of cards, images, code blocks, and other surfaces. At 0 all corners are sharp; higher values create progressively rounder shapes.', 'volatyl' ),
 ) ) );
@@ -21,8 +21,8 @@ $wp_customize->add_setting( 'volatyl_border_radius', array(
 ) );
 $wp_customize->add_control( 'volatyl_border_radius', array(
 	'section'     => 'volatyl_section_backgrounds',
-	'priority'    => 2,
-	'label'       => __( 'Set corner radius', 'volatyl' ),
+	'priority'    => 20,
+	'label'       => __( 'Corner radius', 'volatyl' ),
 	'type'        => 'range',
 	'input_attrs' => array(
 		'min'  => 0,
@@ -37,7 +37,7 @@ $wp_customize->add_setting( 'volatyl_button_radius_area', array(
 ) );
 $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_button_radius_area', array(
 	'section'     => 'volatyl_section_backgrounds',
-	'priority'    => 3,
+	'priority'    => 30,
 	'label'       => __( 'Button radius', 'volatyl' ),
 	'description' => __( 'Controls button corner roundness. The first half of the range gives fine-grained control; past the midpoint buttons become fully pill-shaped at any size.', 'volatyl' ),
 ) ) );
@@ -48,8 +48,8 @@ $wp_customize->add_setting( 'volatyl_button_radius', array(
 ) );
 $wp_customize->add_control( 'volatyl_button_radius', array(
 	'section'     => 'volatyl_section_backgrounds',
-	'priority'    => 4,
-	'label'       => __( 'Set button radius', 'volatyl' ),
+	'priority'    => 40,
+	'label'       => __( 'Button radius', 'volatyl' ),
 	'type'        => 'range',
 	'input_attrs' => array(
 		'min'  => 0,
@@ -57,6 +57,30 @@ $wp_customize->add_control( 'volatyl_button_radius', array(
 		'step' => 1,
 	),
 ) );
+
+// Full-width layout
+$wp_customize->add_setting( 'volatyl_full_width_structure', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox'
+) );
+$wp_customize->add_control( 'volatyl_full_width_structure', array(
+	'section'     => 'volatyl_section_backgrounds',
+	'priority'    => 50,
+	'label'       => __( 'Enable full-width layout', 'volatyl' ),
+	'description' => __( 'Allows section backgrounds to extend edge-to-edge across the viewport. Content remains contained within page boundaries either way.', 'volatyl' ),
+	'type'        => 'checkbox',
+) );
+
+// Section backgrounds heading
+$wp_customize->add_setting( 'volatyl_section_backgrounds_heading', array(
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
+) );
+$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_section_backgrounds_heading', array(
+	'section'     => 'volatyl_section_backgrounds',
+	'priority'    => 60,
+	'label'       => __( 'Section Backgrounds', 'volatyl' ),
+	'description' => __( 'Choose which page types display with a dark header background. Individual pages and posts can be configured via the Page Layout option in the editor sidebar.', 'volatyl' ),
+) ) );
 
 // Light logo (used whenever any dark background is active)
 $wp_customize->add_setting( 'volatyl_light_logo', array(
@@ -78,8 +102,8 @@ $wp_customize->add_setting( 'volatyl_archive_dark_header', array(
 ) );
 $wp_customize->add_control( 'volatyl_archive_dark_header', array(
 	'section'     => 'volatyl_section_backgrounds',
-	'priority'    => 10,
-	'label'       => __( 'Enable dark header on archive pages', 'volatyl' ),
+	'priority'    => 70,
+	'label'       => __( 'Dark header on archive pages', 'volatyl' ),
 	'description' => __( 'Applies to category, tag, author, date, and blog index pages.', 'volatyl' ),
 	'type'        => 'checkbox',
 ) );
@@ -91,8 +115,8 @@ $wp_customize->add_setting( 'volatyl_search_dark_header', array(
 ) );
 $wp_customize->add_control( 'volatyl_search_dark_header', array(
 	'section'  => 'volatyl_section_backgrounds',
-	'priority' => 20,
-	'label'    => __( 'Enable dark header on search results', 'volatyl' ),
+	'priority' => 80,
+	'label'    => __( 'Dark header on search results', 'volatyl' ),
 	'type'     => 'checkbox',
 ) );
 
@@ -103,50 +127,9 @@ $wp_customize->add_setting( 'volatyl_404_dark_header', array(
 ) );
 $wp_customize->add_control( 'volatyl_404_dark_header', array(
 	'section'  => 'volatyl_section_backgrounds',
-	'priority' => 30,
-	'label'    => __( 'Enable dark header on 404 page', 'volatyl' ),
+	'priority' => 90,
+	'label'    => __( 'Dark header on 404 page', 'volatyl' ),
 	'type'     => 'checkbox',
-) );
-
-// Dark footer lead
-$wp_customize->add_setting( 'volatyl_footer_lead_color_scheme', array(
-	'default'           => 0,
-	'sanitize_callback' => 'volatyl_sanitize_checkbox'
-) );
-$wp_customize->add_control( 'volatyl_footer_lead_color_scheme', array(
-	'section'  => 'volatyl_section_backgrounds',
-	'priority' => 40,
-	'label'    => __( 'Enable dark Footer Lead area', 'volatyl' ),
-	'type'     => 'checkbox',
-) );
-
-// Dark general footer (Fat Footer, Social Navigation, Copyright)
-$wp_customize->add_setting( 'volatyl_footer_general_color_scheme', array(
-	'default'           => 0,
-	'sanitize_callback' => 'volatyl_sanitize_checkbox'
-) );
-$wp_customize->add_control( 'volatyl_footer_general_color_scheme', array(
-	'section'  => 'volatyl_section_backgrounds',
-	'priority' => 50,
-	'label'    => __( 'Enable dark footer background', 'volatyl' ),
-	'type'     => 'checkbox',
-) );
-
-/**
- * HTML Structure
- */
-
-// Full-width HTML structure
-$wp_customize->add_setting( 'volatyl_full_width_structure', array(
-	'default'           => 0,
-	'sanitize_callback' => 'volatyl_sanitize_checkbox'
-) );
-$wp_customize->add_control( 'volatyl_full_width_structure', array(
-	'section'     => 'volatyl_structure',
-	'priority'    => 10,
-	'label'       => __( 'Enable full-width', 'volatyl' ),
-	'description' => __( 'When enabled, the HTML element that wraps all major site sections will span the full width of the viewport, allowing section background colors to display across the screen while the content itself is contained within page boundaries. When disabled, commonly referred to as page-width display, the content itself is still contained but the wrapping element also has horizontal boundaries.', 'volatyl' ),
-	'type'        => 'checkbox',
 ) );
 
 /**
@@ -183,7 +166,7 @@ $wp_customize->add_setting( 'volatyl_primary_hue', array(
 $wp_customize->add_control( 'volatyl_primary_hue', array(
 	'section'     => 'volatyl_color_scheme',
 	'priority'    => 10,
-	'label'       => __( 'Choose your brand hue', 'volatyl' ),
+	'label'       => __( 'Brand hue', 'volatyl' ),
 	'type'        => 'range',
 	'input_attrs' => array(
 		'min'  => 0,
@@ -211,7 +194,7 @@ $wp_customize->add_setting( 'volatyl_palette_vibrancy', array(
 $wp_customize->add_control( 'volatyl_palette_vibrancy', array(
 	'section'     => 'volatyl_color_scheme',
 	'priority'    => 110,
-	'label'       => __( 'Set palette vibrancy', 'volatyl' ),
+	'label'       => __( 'Palette vibrancy', 'volatyl' ),
 	'type'        => 'range',
 	'input_attrs' => array(
 		'min'  => 0,
@@ -239,7 +222,7 @@ $wp_customize->add_setting( 'volatyl_background_tint', array(
 $wp_customize->add_control( 'volatyl_background_tint', array(
 	'section'     => 'volatyl_color_scheme',
 	'priority'    => 130,
-	'label'       => __( 'Set background & text tint', 'volatyl' ),
+	'label'       => __( 'Background & text tint', 'volatyl' ),
 	'type'        => 'range',
 	'input_attrs' => array(
 		'min'  => 0,
@@ -267,7 +250,7 @@ $wp_customize->add_setting( 'volatyl_color_scheme_type', array(
 $wp_customize->add_control( 'volatyl_color_scheme_type', array(
 	'section'  => 'volatyl_color_scheme',
 	'priority' => 210,
-	'label'    => __( 'Select a color scheme type', 'volatyl' ),
+	'label'    => __( 'Color scheme type', 'volatyl' ),
 	'type'     => 'radio',
 	'choices'  => array(
 		'monochromatic' => __( 'Monochromatic', 'volatyl' ),
@@ -332,7 +315,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'section'     => 'volatyl_front_page_template',
 	'priority'    => 1,
 	'label'       => __( 'Hero Area', 'volatyl' ),
-	'description' => __( 'The following settings apply to the hero area on the front page.', 'volatyl' ),
+	'description' => '',
 ) ) );
 
 // Hero alignment
@@ -368,7 +351,7 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_custo
 	'section'     => 'volatyl_front_page_template',
 	'priority'    => 40,
 	'label'       => __( 'Title', 'volatyl' ),
-	'description' => __( 'By default, your WordPress site tagline is used as the front page hero title. You have selected to override that title with this custom text. This text will not change your WordPress site tagline. Uncheck the custom title setting to fall back to the site tagline.', 'volatyl' ),
+	'description' => __( 'Overrides the site tagline as the hero title. Does not affect the actual WordPress tagline setting.', 'volatyl' ),
 	'active_callback' => 'volatyl_display_front_page_hero_title_settings'
 ) ) );
 
@@ -381,7 +364,7 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_custo
 	'section'     => 'volatyl_front_page_template',
 	'priority'    => 50,
 	'label'       => __( 'Description', 'volatyl' ),
-	'description' => sprintf( __( 'This content displays below the hero title in a paragraph format. 1-2 sentences looks best. Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>' ),
+	'description' => sprintf( __( 'Displays below the hero title. 1–2 sentences. Allowed HTML: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>' ),
 ) ) );
 
 // Hero primary CTA button text
@@ -393,7 +376,6 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 	'section'     => 'volatyl_front_page_template',
 	'priority'    => 60,
 	'label'       => __( 'Primary call-to-action text', 'volatyl' ),
-	'description' => __( 'Set the text of the primary call-to-action button.', 'volatyl' ),
 ) ) );
 
 // Hero primary CTA button URL
@@ -405,7 +387,6 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 	'section'     => 'volatyl_front_page_template',
 	'priority'    => 70,
 	'label'       => __( 'Primary call-to-action URL', 'volatyl' ),
-	'description' => __( 'Set the URL of the primary call-to-action button.', 'volatyl' ),
 ) ) );
 
 // Hero secondary CTA button text
@@ -417,7 +398,6 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 	'section'     => 'volatyl_front_page_template',
 	'priority'    => 80,
 	'label'       => __( 'Secondary call-to-action text', 'volatyl' ),
-	'description' => __( 'Set the text of the secondary call-to-action link.', 'volatyl' ),
 ) ) );
 
 // Hero secondary CTA button URL
@@ -429,7 +409,6 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 	'section'     => 'volatyl_front_page_template',
 	'priority'    => 90,
 	'label'       => __( 'Secondary call-to-action URL', 'volatyl' ),
-	'description' => __( 'Set the URL of the secondary call-to-action link.', 'volatyl' ),
 ) ) );
 
 // Hero featured image style
@@ -459,7 +438,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'section'         => 'volatyl_front_page_template',
 	'priority'        => 95,
 	'label'           => __( 'Page Content Area', 'volatyl' ),
-	'description'     => __( 'The following settings apply to the content from the page editor.', 'volatyl' ),
+	'description'     => '',
 	'active_callback' => 'volatyl_show_on_front_is_page',
 ) ) );
 
@@ -485,7 +464,7 @@ $wp_customize->add_control( 'volatyl_front_page_full_width_content', array(
 	'section'  => 'volatyl_front_page_template',
 	'priority' => 97,
 	'label'    => __( 'Allow full-width content', 'volatyl' ),
-	'description' => __( 'By default, content from the editor will be wrapped in a single page section. Check this box to remove that wrapper, allowing you to use the Group Block to create several page sections.', 'volatyl' ),
+	'description' => __( 'Removes the default content wrapper, allowing Group blocks to each define their own full-width sections.', 'volatyl' ),
 	'type'     => 'checkbox',
 	'active_callback' => 'volatyl_display_front_page_post_content_settings',
 ) );
@@ -498,7 +477,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'section'     => 'volatyl_front_page_template',
 	'priority'    => 101,
 	'label'       => __( 'Blog Posts Area', 'volatyl' ),
-	'description' => __( 'The following settings apply to the blog posts area on the front page.', 'volatyl' ),
+	'description' => '',
 ) ) );
 
 // Blog posts grid display
@@ -509,16 +488,16 @@ $wp_customize->add_setting( 'volatyl_front_page_blog_posts_grid_columns_rows', a
 $wp_customize->add_control( 'volatyl_front_page_blog_posts_grid_columns_rows', array(
 	'section'  => 'volatyl_front_page_template',
 	'priority' => 110,
-	'label'    => __( 'How should blog posts display?', 'volatyl' ),
+	'label'    => __( 'Blog posts layout', 'volatyl' ),
 	'type'     => 'select',
 	'choices'  => array(
-		'2_1'  => __( '2 columns / 1 row -- ( 2 total )', 'volatyl' ),
-		'2_2'  => __( '2 columns / 2 rows -- ( 4 total )', 'volatyl' ),
-		'2_3'  => __( '2 columns / 3 rows -- ( 6 total )', 'volatyl' ),
-		'3_1'  => __( '3 columns / 1 row -- ( 3 total )', 'volatyl' ),
-		'3_2'  => __( '3 columns / 2 rows -- ( 6 total )', 'volatyl' ),
-		'3_3'  => __( '3 columns / 3 rows -- ( 9 total )', 'volatyl' ),
-		'none' => __( 'Do not display blog posts', 'volatyl' ),
+		'2_1'  => __( '2 columns, 1 row (2 posts)', 'volatyl' ),
+		'2_2'  => __( '2 columns, 2 rows (4 posts)', 'volatyl' ),
+		'2_3'  => __( '2 columns, 3 rows (6 posts)', 'volatyl' ),
+		'3_1'  => __( '3 columns, 1 row (3 posts)', 'volatyl' ),
+		'3_2'  => __( '3 columns, 2 rows (6 posts)', 'volatyl' ),
+		'3_3'  => __( '3 columns, 3 rows (9 posts)', 'volatyl' ),
+		'none' => __( 'Hidden', 'volatyl' ),
 	),
 ) );
 
@@ -530,7 +509,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'section'     => 'volatyl_front_page_template',
 	'priority'    => 201,
 	'label'       => __( 'Featured Page Area', 'volatyl' ),
-	'description' => __( 'The following settings apply to the Featured Page area on the front page.', 'volatyl' ),
+	'description' => '',
 ) ) );
 
 // Featured Page select
@@ -541,8 +520,8 @@ $wp_customize->add_setting( 'volatyl_front_page_featured_page_select', array(
 $wp_customize->add_control( 'volatyl_front_page_featured_page_select', array(
 	'section'        => 'volatyl_front_page_template',
 	'priority'       => 210,
-	'label'          => __( 'Choose a page to feature.', 'volatyl' ),
-	'description'    => __( 'The title and content of the selected page will display on your front page. If needed, create a page specifically for this section. If an excerpt is added to the page, it will display below the title.', 'volatyl' ),
+	'label'          => __( 'Featured page', 'volatyl' ),
+	'description'    => __( 'Displays the title and content of the selected page. Add an excerpt to the page to show a description below the title.', 'volatyl' ),
 	'type'           => 'dropdown-pages',
 	'allow_addition' => true,
 ) );
@@ -571,7 +550,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'section'     => 'volatyl_blog_template',
 	'priority'    => 1,
 	'label'       => __( 'Header Area', 'volatyl' ),
-	'description' => __( 'The following settings apply to the header area on the blog page.', 'volatyl' ),
+	'description' => '',
 ) ) );
 
 // Blog title
@@ -583,7 +562,7 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_custo
 	'section'     => 'volatyl_blog_template',
 	'priority'    => 10,
 	'label'       => __( 'Title', 'volatyl' ),
-	'description' => __( 'By default, the standard page title is displayed. To override that title, add text here. This text will not change the actual title of the page or its slug.', 'volatyl' ),
+	'description' => __( 'Overrides the page title. Does not affect the page slug or actual title.', 'volatyl' ),
 ) ) );
 
 // Blog description
@@ -595,7 +574,7 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_custo
 	'section'     => 'volatyl_blog_template',
 	'priority'    => 20,
 	'label'       => __( 'Description', 'volatyl' ),
-	'description' => sprintf( __( 'This content displays below the blog title in a paragraph format. 2-3 sentences looks best. Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>' ),
+	'description' => sprintf( __( 'Displays below the blog title. 2–3 sentences. Allowed HTML: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>' ),
 ) ) );
 
 // Blog search form
@@ -618,7 +597,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'section'     => 'volatyl_blog_template',
 	'priority'    => 100,
 	'label'       => __( 'Blog Posts Area', 'volatyl' ),
-	'description' => __( 'The following settings apply to the blog posts grid on the blog page.', 'volatyl' ),
+	'description' => '',
 ) ) );
 
 // Posts per page (linked to core setting)
@@ -629,20 +608,20 @@ $wp_customize->add_setting( 'volatyl_blog_posts_grid_columns_rows', array(
 $wp_customize->add_control( 'volatyl_blog_posts_grid_columns_rows', array(
 	'section'  => 'volatyl_blog_template',
 	'priority' => 110,
-	'label'    => __( 'How many blog posts should display?', 'volatyl' ),
+	'label'    => __( 'Posts per page', 'volatyl' ),
 	'type'     => 'select',
 	'choices'  => array(
-		'default' => __( 'Default (Settings -> Reading)', 'volatyl' ),
-		'2_1'     => __( '2 columns / 1 row -- ( 2 total )', 'volatyl' ),
-		'2_2'     => __( '2 columns / 2 rows -- ( 4 total )', 'volatyl' ),
-		'2_3'     => __( '2 columns / 3 rows -- ( 6 total )', 'volatyl' ),
-		'2_4'     => __( '2 columns / 4 rows -- ( 8 total )', 'volatyl' ),
-		'2_5'     => __( '2 columns / 5 rows -- ( 10 total )', 'volatyl' ),
-		'3_1'     => __( '3 columns / 1 row -- ( 3 total )', 'volatyl' ),
-		'3_2'     => __( '3 columns / 2 rows -- ( 6 total )', 'volatyl' ),
-		'3_3'     => __( '3 columns / 3 rows -- ( 9 total )', 'volatyl' ),
-		'3_4'     => __( '3 columns / 4 rows -- ( 12 total )', 'volatyl' ),
-		'3_5'     => __( '3 columns / 5 rows -- ( 15 total )', 'volatyl' ),
+		'default' => __( 'Default (Settings → Reading)', 'volatyl' ),
+		'2_1'     => __( '2 columns, 1 row (2 posts)', 'volatyl' ),
+		'2_2'     => __( '2 columns, 2 rows (4 posts)', 'volatyl' ),
+		'2_3'     => __( '2 columns, 3 rows (6 posts)', 'volatyl' ),
+		'2_4'     => __( '2 columns, 4 rows (8 posts)', 'volatyl' ),
+		'2_5'     => __( '2 columns, 5 rows (10 posts)', 'volatyl' ),
+		'3_1'     => __( '3 columns, 1 row (3 posts)', 'volatyl' ),
+		'3_2'     => __( '3 columns, 2 rows (6 posts)', 'volatyl' ),
+		'3_3'     => __( '3 columns, 3 rows (9 posts)', 'volatyl' ),
+		'3_4'     => __( '3 columns, 4 rows (12 posts)', 'volatyl' ),
+		'3_5'     => __( '3 columns, 5 rows (15 posts)', 'volatyl' ),
 	),
 ) );
 
@@ -654,7 +633,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'section'     => 'volatyl_blog_template',
 	'priority'    => 200,
 	'label'       => __( 'Blog Grid Call-to-action Area', 'volatyl' ),
-	'description' => __( 'The following settings apply to the call-to-action area inside the blog grid.', 'volatyl' ),
+	'description' => '',
 ) ) );
 
 // Blog grid CTA
@@ -691,7 +670,6 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 	'section'         => 'volatyl_blog_template',
 	'priority'        => 230,
 	'label'           => __( 'Title', 'volatyl' ),
-	'description'     => __( 'The large title text for the call-to-action area.', 'volatyl' ),
 	'active_callback' => 'volatyl_display_blog_grid_cta_settings',
 ) ) );
 
@@ -704,7 +682,7 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_custo
 	'section'         => 'volatyl_blog_template',
 	'priority'        => 240,
 	'label'           => __( 'Description', 'volatyl' ),
-	'description'     => sprintf( __( 'Describe to your visitor the reason for taking this particular action on your site. Consider 1-2 sentences Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>' ),
+	'description'     => sprintf( __( '1–2 sentences. Allowed HTML: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>' ),
 	'active_callback' => 'volatyl_display_blog_grid_cta_settings',
 ) ) );
 
@@ -717,7 +695,6 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 	'section'         => 'volatyl_blog_template',
 	'priority'        => 250,
 	'label'           => __( 'Call-to-action button text', 'volatyl' ),
-	'description'     => __( 'Set the text of the call-to-action button.', 'volatyl' ),
 	'active_callback' => 'volatyl_display_blog_grid_cta_settings',
 ) ) );
 
@@ -730,7 +707,6 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 	'section'         => 'volatyl_blog_template',
 	'priority'        => 260,
 	'label'           => __( 'Call-to-action button URL', 'volatyl' ),
-	'description'     => __( 'Set the URL of the call-to-action button.', 'volatyl' ),
 	'active_callback' => 'volatyl_display_blog_grid_cta_settings',
 ) ) );
 
@@ -746,7 +722,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'section'     => 'volatyl_footer_areas',
 	'priority'    => 1,
 	'label'       => __( 'Footer Lead Area', 'volatyl' ),
-	'description' => __( 'This area displays above the Fat Footer (if present) and the Site Footer. It is used as a site-wide call-to-action, displaying on all pages by default.', 'volatyl' ),
+	'description' => __( 'A site-wide call-to-action area that displays above the Fat Footer and Site Footer on all pages.', 'volatyl' ),
 ) ) );
 
 // Footer Lead
@@ -771,7 +747,6 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 	'section'         => 'volatyl_footer_areas',
 	'priority'        => 20,
 	'label'           => __( 'Title', 'volatyl' ),
-	'description'     => __( 'The large title text for the area.', 'volatyl' ),
 	'active_callback' => 'volatyl_display_footer_lead_settings',
 ) ) );
 
@@ -784,7 +759,7 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Textarea_Control( $wp_custo
 	'section'         => 'volatyl_footer_areas',
 	'priority'        => 30,
 	'label'           => __( 'Description', 'volatyl' ),
-	'description'     => sprintf( __( 'Describe to your visitor the reason for taking this particular action on your site. Consider 1-2 sentences Allowed HTML tags: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>' ),
+	'description'     => sprintf( __( '1–2 sentences. Allowed HTML: %s', 'volatyl' ), '<a>, <span>, <em>, <strong>' ),
 	'active_callback' => 'volatyl_display_footer_lead_settings',
 ) ) );
 
@@ -797,7 +772,6 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 	'section'         => 'volatyl_footer_areas',
 	'priority'        => 40,
 	'label'           => __( 'Call-to-action button text', 'volatyl' ),
-	'description'     => __( 'Set the text of the call-to-action button.', 'volatyl' ),
 	'active_callback' => 'volatyl_display_footer_lead_settings',
 ) ) );
 
@@ -810,7 +784,6 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 	'section'         => 'volatyl_footer_areas',
 	'priority'        => 50,
 	'label'           => __( 'Call-to-action button URL', 'volatyl' ),
-	'description'     => __( 'Set the URL of the call-to-action button.', 'volatyl' ),
 	'active_callback' => 'volatyl_display_footer_lead_settings',
 ) ) );
 
@@ -850,4 +823,39 @@ $wp_customize->add_control( 'volatyl_fat_footer_alternate_layout', array(
 	'description'     => __( 'When either three or four Fat Footer widget areas are in use, the alternate layout makes the left-most area wider than the others.', 'volatyl' ),
 	'type'            => 'checkbox',
 	'active_callback' => 'volatyl_display_fat_footer_settings',
+) );
+
+// Footer backgrounds heading
+$wp_customize->add_setting( 'volatyl_footer_backgrounds_heading', array(
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
+) );
+$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_footer_backgrounds_heading', array(
+	'section'     => 'volatyl_footer_areas',
+	'priority'    => 200,
+	'label'       => __( 'Footer Backgrounds', 'volatyl' ),
+	'description' => '',
+) ) );
+
+// Dark footer lead
+$wp_customize->add_setting( 'volatyl_footer_lead_color_scheme', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox'
+) );
+$wp_customize->add_control( 'volatyl_footer_lead_color_scheme', array(
+	'section'  => 'volatyl_footer_areas',
+	'priority' => 210,
+	'label'    => __( 'Dark Footer Lead background', 'volatyl' ),
+	'type'     => 'checkbox',
+) );
+
+// Dark general footer (Fat Footer, Social Navigation, Copyright)
+$wp_customize->add_setting( 'volatyl_footer_general_color_scheme', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox'
+) );
+$wp_customize->add_control( 'volatyl_footer_general_color_scheme', array(
+	'section'  => 'volatyl_footer_areas',
+	'priority' => 220,
+	'label'    => __( 'Dark footer background', 'volatyl' ),
+	'type'     => 'checkbox',
 ) );
