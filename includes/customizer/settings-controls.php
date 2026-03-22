@@ -64,8 +64,8 @@ $wp_customize->add_setting( 'volatyl_light_logo', array(
 	'sanitize_callback' => 'absint'
 ) );
 $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'volatyl_light_logo', array(
-	'section'     => 'volatyl_section_backgrounds',
-	'priority'    => 5,
+	'section'     => 'title_tagline',
+	'priority'    => 9,
 	'label'       => __( 'Light logo', 'volatyl' ),
 	'description' => __( 'Upload a light version of your logo to display over any dark background section. If no light logo is uploaded, the standard logo will be used instead.', 'volatyl' ),
 	'mime_type'   => 'image',
