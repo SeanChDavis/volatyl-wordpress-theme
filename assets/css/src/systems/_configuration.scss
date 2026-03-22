@@ -189,30 +189,30 @@ $lgMinWidth: 1200px;
 	@include utility-buttons( var(--action), var(--action-dark) );
 	@include form-inputs( var(--action), var(--accent-1) );
 
-	// Headings and links — white
-	h1, .h1,
-	h2, .h2,
-	h3, .h3,
-	h4, .h4,
-	h5, .h5,
-	h6, .h6,
-	a {
+	// Headings and links — white (skip elements the user explicitly colored)
+	h1:not(.has-text-color), .h1,
+	h2:not(.has-text-color), .h2,
+	h3:not(.has-text-color), .h3,
+	h4:not(.has-text-color), .h4,
+	h5:not(.has-text-color), .h5,
+	h6:not(.has-text-color), .h6,
+	a:not(.has-text-color) {
 		color: var(--white);
 	}
 
-	// Secondary / subdued elements — on-dark
-	h4, .h4,
-	h6, .h6,
-	blockquote,
-	address,
-	cite,
-	q,
-	code,
-	kbd,
-	tt,
-	var,
-	strike,
-	del,
+	// Secondary / subdued elements — on-dark (skip elements the user explicitly colored)
+	h4:not(.has-text-color), .h4,
+	h6:not(.has-text-color), .h6,
+	blockquote:not(.has-text-color),
+	address:not(.has-text-color),
+	cite:not(.has-text-color),
+	q:not(.has-text-color),
+	code:not(.has-text-color),
+	kbd:not(.has-text-color),
+	tt:not(.has-text-color),
+	var:not(.has-text-color),
+	strike:not(.has-text-color),
+	del:not(.has-text-color),
 	.v-subdued-title,
 	table caption,
 	figure figcaption,
