@@ -21,42 +21,28 @@ body {
 	/* All user-generated post_content */
 	.wp-block-post-content {
 
-		& > [class*="wp-block-"] {
+		/* Group blocks only — zero margin; spacing comes from inner container padding */
+		& > .wp-block-group {
 			margin: 0;
 
-			&:not(.v-no-spacing) {
+			&:not(.v-no-spacing) > .wp-block-group__inner-container {
+				@include innerSpacing;
 
-				& > .wp-block-group__inner-container {
-					@include innerSpacing;
-
-					& > [class*="wp-block-"] {
-
-						&:last-child {
-							margin-bottom: 0;
-						}
-					}
+				& > [class*="wp-block-"]:last-child {
+					margin-bottom: 0;
 				}
+			}
 
-				&.v-small {
+			&.v-small > .wp-block-group__inner-container {
+				@include innerSpacingBase;
+			}
 
-					& > .wp-block-group__inner-container {
-						@include innerSpacingBase;
-					}
-				}
+			&.v-medium > .wp-block-group__inner-container {
+				@include innerSpacingLarge;
+			}
 
-				&.v-medium {
-
-					& > .wp-block-group__inner-container {
-						@include innerSpacingLarge;
-					}
-				}
-
-				&.v-large {
-
-					& > .wp-block-group__inner-container {
-						@include innerSpacingLarger;
-					}
-				}
+			&.v-large > .wp-block-group__inner-container {
+				@include innerSpacingLarger;
 			}
 		}
 	}
@@ -93,6 +79,38 @@ kbd,
 tt,
 var {
 	background-color: var(--recessed-bg);
+}
+
+// ─────────────────────────────────────────────────────────────
+// Lists
+// _markup-formatting resets ul/ol padding to 0 (needed globally for nav etc.)
+// Restore proper indentation and markers for content lists in the editor.
+// ─────────────────────────────────────────────────────────────
+
+ul,
+ol,
+.wp-block-list {
+	margin-bottom: clamp(1.25rem, 2vw, 1.5rem);
+	padding-left: 1.75rem;
+}
+
+ul,
+.wp-block-list:not(ol) {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li {
+	margin-bottom: .25rem;
+
+	ul,
+	ol {
+		margin-bottom: 0;
+		margin-top: .25rem;
+	}
 }
 
 // ─────────────────────────────────────────────────────────────

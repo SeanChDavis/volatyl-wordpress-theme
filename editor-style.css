@@ -1611,41 +1611,44 @@ body h6, body .h6 {
 body * {
   box-sizing: border-box;
 }
-body .wp-block-post-content > [class*=wp-block-] {
+body .wp-block-post-content {
+  /* Group blocks only — zero margin; spacing comes from inner container padding */
+}
+body .wp-block-post-content > .wp-block-group {
   margin: 0;
 }
-body .wp-block-post-content > [class*=wp-block-]:not(.v-no-spacing) > .wp-block-group__inner-container {
+body .wp-block-post-content > .wp-block-group:not(.v-no-spacing) > .wp-block-group__inner-container {
   margin-left: auto;
   margin-right: auto;
   max-width: calc(1200px + 1.25rem);
   padding: clamp(2rem, 4.5vw, 3.5rem) clamp(1.25rem, 7.9vw, 6rem);
 }
 @media all and (min-width: 992px) {
-  body .wp-block-post-content > [class*=wp-block-]:not(.v-no-spacing) > .wp-block-group__inner-container {
+  body .wp-block-post-content > .wp-block-group:not(.v-no-spacing) > .wp-block-group__inner-container {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 }
-body .wp-block-post-content > [class*=wp-block-]:not(.v-no-spacing) > .wp-block-group__inner-container > [class*=wp-block-]:last-child {
+body .wp-block-post-content > .wp-block-group:not(.v-no-spacing) > .wp-block-group__inner-container > [class*=wp-block-]:last-child {
   margin-bottom: 0;
 }
-body .wp-block-post-content > [class*=wp-block-]:not(.v-no-spacing).v-small > .wp-block-group__inner-container {
+body .wp-block-post-content > .wp-block-group.v-small > .wp-block-group__inner-container {
   /* Same as innerSpacing but without horizontal padding */
 }
 @media all and (min-width: 560px) {
-  body .wp-block-post-content > [class*=wp-block-]:not(.v-no-spacing).v-small > .wp-block-group__inner-container {
+  body .wp-block-post-content > .wp-block-group.v-small > .wp-block-group__inner-container {
     padding-bottom: clamp(2rem, 4.5vw, 3.5rem);
     padding-top: clamp(2rem, 4.5vw, 3.5rem);
   }
 }
 @media all and (min-width: 560px) {
-  body .wp-block-post-content > [class*=wp-block-]:not(.v-no-spacing).v-medium > .wp-block-group__inner-container {
+  body .wp-block-post-content > .wp-block-group.v-medium > .wp-block-group__inner-container {
     padding-bottom: clamp(2rem, 7vw, 5rem);
     padding-top: clamp(2rem, 7vw, 5rem);
   }
 }
 @media all and (min-width: 560px) {
-  body .wp-block-post-content > [class*=wp-block-]:not(.v-no-spacing).v-large > .wp-block-group__inner-container {
+  body .wp-block-post-content > .wp-block-group.v-large > .wp-block-group__inner-container {
     padding-bottom: clamp(2rem, 10.5vw, 8rem);
     padding-top: clamp(2rem, 10.5vw, 8rem);
   }
@@ -1678,6 +1681,31 @@ kbd,
 tt,
 var {
   background-color: var(--recessed-bg);
+}
+
+ul,
+ol,
+.wp-block-list {
+  margin-bottom: clamp(1.25rem, 2vw, 1.5rem);
+  padding-left: 1.75rem;
+}
+
+ul,
+.wp-block-list:not(ol) {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+li ul,
+li ol {
+  margin-bottom: 0;
+  margin-top: 0.25rem;
 }
 
 .button,
