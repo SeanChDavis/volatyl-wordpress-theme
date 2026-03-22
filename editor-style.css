@@ -1805,6 +1805,10 @@ table td {
   background-color: var(--action-tint);
 }
 
+.v-dark-background {
+  background-color: var(--dark);
+}
+
 .v-dark-background,
 .has-darker-background-color,
 .has-dark-background-color,
