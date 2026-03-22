@@ -26,11 +26,12 @@
 @include color-group( 'accent-2' );
 @include color-group( 'accent-3' );
 
-/* Background colors */
-@include color-pair( 'dark', 'on-dark' );
+/* Neutrals */
 @include color-pair( 'darker', 'on-dark' );
-@include color-pair( 'subdued-light' );
+@include color-pair( 'dark', 'on-dark' );
+@include color-pair( 'text' );
 @include color-pair( 'subdued-dark' );
+@include color-pair( 'subdued-light' );
 @include color-pair( 'on-dark' );
 @include color-pair( 'white' );
 

@@ -841,16 +841,7 @@ template {
   background-color: var(--accent-3-tint);
 }
 
-/* Background colors */
-.has-dark-color {
-  color: var(--dark);
-}
-
-.has-dark-background-color {
-  background-color: var(--dark);
-  color: var(--on-dark);
-}
-
+/* Neutrals */
 .has-darker-color {
   color: var(--darker);
 }
@@ -860,12 +851,21 @@ template {
   color: var(--on-dark);
 }
 
-.has-subdued-light-color {
-  color: var(--subdued-light);
+.has-dark-color {
+  color: var(--dark);
 }
 
-.has-subdued-light-background-color {
-  background-color: var(--subdued-light);
+.has-dark-background-color {
+  background-color: var(--dark);
+  color: var(--on-dark);
+}
+
+.has-text-color {
+  color: var(--text);
+}
+
+.has-text-background-color {
+  background-color: var(--text);
 }
 
 .has-subdued-dark-color {
@@ -874,6 +874,14 @@ template {
 
 .has-subdued-dark-background-color {
   background-color: var(--subdued-dark);
+}
+
+.has-subdued-light-color {
+  color: var(--subdued-light);
+}
+
+.has-subdued-light-background-color {
+  background-color: var(--subdued-light);
 }
 
 .has-on-dark-color {
