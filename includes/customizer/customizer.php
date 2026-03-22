@@ -109,7 +109,7 @@ function volatyl_display_fat_footer_settings( $control ) {
  * Custom JS for Customizer controls
  */
 function volatyl_customize_controls_enqueue_scripts() {
-	wp_enqueue_script( 'volatyl_custom_customizer', get_template_directory_uri() . '/assets/js/custom-customizer.js', array( 'jquery', 'customize-controls' ), THEME_VERSION, true );
+	wp_enqueue_script( 'volatyl_custom_customizer', get_template_directory_uri() . '/assets/js/custom-customizer.js', array( 'jquery', 'customize-controls' ), filemtime( get_template_directory() . '/assets/js/custom-customizer.js' ), true );
 }
 add_action( 'customize_controls_enqueue_scripts', 'volatyl_customize_controls_enqueue_scripts' );
 
@@ -117,7 +117,7 @@ add_action( 'customize_controls_enqueue_scripts', 'volatyl_customize_controls_en
  * Bind JS handlers for Customizer controls
  */
 function volatyl_customize_preview_init() {
-	wp_enqueue_script( 'volatyl-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), THEME_VERSION, true );
+	wp_enqueue_script( 'volatyl-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), filemtime( get_template_directory() . '/assets/js/customizer.js' ), true );
 }
 add_action( 'customize_preview_init', 'volatyl_customize_preview_init' );
 

@@ -85,10 +85,10 @@ add_action( 'after_setup_theme', 'volatyl_setup' );
 function volatyl_scripts_styles() {
 
 	// Theme JS
-	wp_enqueue_script( 'volatyl-scripts', THEME_STYLESHEET_DIR . '/assets/js/scripts.min.js', array(), THEME_VERSION, true );
+	wp_enqueue_script( 'volatyl-scripts', THEME_STYLESHEET_DIR . '/assets/js/scripts.min.js', array(), filemtime( get_template_directory() . '/assets/js/scripts.min.js' ), true );
 
 	// Theme styles
-	wp_enqueue_style( 'volatyl-style', THEME_STYLESHEET, array(), THEME_VERSION );
+	wp_enqueue_style( 'volatyl-style', THEME_STYLESHEET, array(), filemtime( get_template_directory() . '/style.css' ) );
 
 	// Google fonts
 	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css2?family=Cal+Sans&family=Red+Hat+Text:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap' );
