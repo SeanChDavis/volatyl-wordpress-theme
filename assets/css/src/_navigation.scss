@@ -157,7 +157,7 @@
 					padding-left: 12px;
 
 					& > a {
-						border-radius: calc(var(--radius) * 0.4);
+						border-radius: var(--radius-button);
 						padding: 8px 12px;
 
 						&:active,

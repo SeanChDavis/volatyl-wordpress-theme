@@ -63,10 +63,16 @@
             document.documentElement.style.setProperty('--tint-chroma', to * 0.001);
         });
     });
-    // Border radius
+    // Corner radius
     wp.customize('volatyl_border_radius', function (value) {
         value.bind(function (to) {
             document.documentElement.style.setProperty('--radius', to + 'px');
+        });
+    });
+    // Button radius
+    wp.customize('volatyl_button_radius', function (value) {
+        value.bind(function (to) {
+            document.documentElement.style.setProperty('--radius-button', to + 'px');
         });
     });
     // Color scheme type — update CSS custom properties directly for live preview

@@ -2000,7 +2000,7 @@ main {
   padding-left: 12px;
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-button > a {
-  border-radius: calc(var(--radius) * 0.4);
+  border-radius: var(--radius-button);
   padding: 8px 12px;
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-button > a:active, #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-button > a:focus, #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-button > a:hover {
@@ -2522,7 +2522,7 @@ button,
   font-weight: 500;
   font-size: 0.833rem;
   border: none;
-  border-radius: calc(var(--radius) * 0.4);
+  border-radius: var(--radius-button);
   cursor: pointer;
   display: inline-block;
   letter-spacing: 0.035rem;

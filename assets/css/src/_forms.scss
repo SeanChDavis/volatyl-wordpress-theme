@@ -10,7 +10,7 @@ button,
 	@include headingFont;
 	@include fontSmaller;
 	border: none;
-	border-radius: calc(var(--radius) * 0.4);
+	border-radius: var(--radius-button);
 	cursor: pointer;
 	display: inline-block;
 	letter-spacing: .035rem;

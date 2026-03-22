@@ -1,8 +1,62 @@
 <?php
 
 /**
- * Section Backgrounds
+ * Design
  */
+
+// Corner radius
+$wp_customize->add_setting( 'volatyl_border_radius_area', array(
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
+) );
+$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_border_radius_area', array(
+	'section'     => 'volatyl_section_backgrounds',
+	'priority'    => 1,
+	'label'       => __( 'Corner radius', 'volatyl' ),
+	'description' => __( 'Controls the roundness of cards, images, code blocks, and other surfaces. At 0 all corners are sharp; higher values create progressively rounder shapes.', 'volatyl' ),
+) ) );
+
+$wp_customize->add_setting( 'volatyl_border_radius', array(
+	'default'           => DEFAULT_BORDER_RADIUS,
+	'sanitize_callback' => 'absint',
+) );
+$wp_customize->add_control( 'volatyl_border_radius', array(
+	'section'     => 'volatyl_section_backgrounds',
+	'priority'    => 2,
+	'label'       => __( 'Set corner radius', 'volatyl' ),
+	'type'        => 'range',
+	'input_attrs' => array(
+		'min'  => 0,
+		'max'  => 20,
+		'step' => 1,
+	),
+) );
+
+// Button radius
+$wp_customize->add_setting( 'volatyl_button_radius_area', array(
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
+) );
+$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_button_radius_area', array(
+	'section'     => 'volatyl_section_backgrounds',
+	'priority'    => 3,
+	'label'       => __( 'Button radius', 'volatyl' ),
+	'description' => __( 'Controls the roundness of buttons specifically. Push all the way up for pill-shaped buttons.', 'volatyl' ),
+) ) );
+
+$wp_customize->add_setting( 'volatyl_button_radius', array(
+	'default'           => DEFAULT_BUTTON_RADIUS,
+	'sanitize_callback' => 'absint',
+) );
+$wp_customize->add_control( 'volatyl_button_radius', array(
+	'section'     => 'volatyl_section_backgrounds',
+	'priority'    => 4,
+	'label'       => __( 'Set button radius', 'volatyl' ),
+	'type'        => 'range',
+	'input_attrs' => array(
+		'min'  => 0,
+		'max'  => 50,
+		'step' => 1,
+	),
+) );
 
 // Light logo (used whenever any dark background is active)
 $wp_customize->add_setting( 'volatyl_light_logo', array(
@@ -222,33 +276,6 @@ $wp_customize->add_control( 'volatyl_color_scheme_type', array(
 		'triadic'             => __( 'Triadic', 'volatyl' ),
 		'split_complementary' => __( 'Split-complementary', 'volatyl' ),
 		'tetradic'            => __( 'Tetradic', 'volatyl' ),
-	),
-) );
-
-// Border radius
-$wp_customize->add_setting( 'volatyl_border_radius_area', array(
-	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
-) );
-$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_border_radius_area', array(
-	'section'     => 'volatyl_color_scheme',
-	'priority'    => 300,
-	'label'       => __( 'Border radius', 'volatyl' ),
-	'description' => __( 'Controls the roundness of corners on cards, buttons, inputs, and other UI elements. At 0 all corners are sharp; higher values create progressively rounder shapes.', 'volatyl' ),
-) ) );
-
-$wp_customize->add_setting( 'volatyl_border_radius', array(
-	'default'           => DEFAULT_BORDER_RADIUS,
-	'sanitize_callback' => 'absint',
-) );
-$wp_customize->add_control( 'volatyl_border_radius', array(
-	'section'     => 'volatyl_color_scheme',
-	'priority'    => 310,
-	'label'       => __( 'Set border radius', 'volatyl' ),
-	'type'        => 'range',
-	'input_attrs' => array(
-		'min'  => 0,
-		'max'  => 50,
-		'step' => 1,
 	),
 ) );
 
