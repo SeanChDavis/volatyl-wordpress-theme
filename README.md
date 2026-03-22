@@ -430,7 +430,4 @@ The OKLCH color system is output dynamically by PHP at runtime — it is not par
 
 ## Developer Documentation
 
-In-depth technical references for the theme's internal systems:
-
-- [**Color System**](docs/color-system.md) — OKLCH architecture, chroma variables, scheme types, CSS variable glossary, background context tiers, and the PHP/SCSS/JS pipeline.
-- [**SCSS Architecture**](docs/scss-architecture.md) — File structure, mixin reference, and extension patterns.
+In-depth technical references for the theme's internal systems are in the [`docs/`](docs/) folder.
