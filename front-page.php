@@ -107,7 +107,7 @@ if ( get_theme_mod( 'volatyl_front_page_hero_use_custom_title' ) && ! empty( $cu
 		if ( false !== get_post_status( $featured_page_id ) && ! empty( $featured_page_id ) ) {
 			$featured_page = get_post( $featured_page_id );
 			?>
-			<article class="featured-page">
+			<article class="featured-page v-gray-background">
 				<div class="inner v-medium">
 					<div class="v-grid v-grid-columns_2">
 						<header class="content-left">
