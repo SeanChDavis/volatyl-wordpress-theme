@@ -2108,10 +2108,6 @@ article .entry-content .wp-block-latest-comments,
   color: var(--on-dark);
 }
 
-.has-text-color {
-  color: var(--text);
-}
-
 .has-text-background-color {
   background-color: var(--text);
 }

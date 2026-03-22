@@ -860,10 +860,6 @@ template {
   color: var(--on-dark);
 }
 
-.has-text-color {
-  color: var(--text);
-}
-
 .has-text-background-color {
   background-color: var(--text);
 }

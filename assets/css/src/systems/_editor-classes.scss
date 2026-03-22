@@ -29,7 +29,10 @@
 /* Neutrals */
 @include color-pair( 'darker', 'on-dark' );
 @include color-pair( 'dark', 'on-dark' );
-@include color-pair( 'text' );
+// NOTE: .has-text-color is also WordPress's generic flag class for any explicitly
+// set text color, so we must NOT emit a color rule for this slot — it would
+// override every other palette color class by source order.
+.has-text-background-color { background-color: var(--text); }
 @include color-pair( 'subdued-dark' );
 @include color-pair( 'subdued-light' );
 @include color-pair( 'on-dark' );
