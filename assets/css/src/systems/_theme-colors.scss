@@ -244,7 +244,7 @@ table th,
 }
 
 .wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1) {
-	background-color: var(--action-tint);
+	background-color: var(--recessed-bg);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -257,7 +257,7 @@ code,
 kbd,
 tt,
 var {
-	background-color: var(--action-tint);
+	background-color: var(--recessed-bg);
 }
 
 pre code {
@@ -286,7 +286,7 @@ hr,
 // ─────────────────────────────────────────────────────────────
 
 .v-grid .v-grid-item-container:not(.v-subdued) {
-	background-color: var(--action-tint);
+	background-color: var(--recessed-bg);
 }
 
 .v-grid-item-title a {
@@ -330,7 +330,7 @@ hr,
 
 article .entry-content .wp-block-latest-comments,
 .v-content-container .entry-content .wp-block-latest-comments {
-	background-color: var(--action-tint);
+	background-color: var(--recessed-bg);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -340,6 +340,7 @@ article .entry-content .wp-block-latest-comments,
 .v-dark-background {
 	background-color: var(--dark);
 	color: var(--on-dark);
+	--recessed-bg: var(--translucent-light);
 
 	// Buttons — white border in dark context; utility buttons collapse to action color
 	@include action-buttons( var(--white) );

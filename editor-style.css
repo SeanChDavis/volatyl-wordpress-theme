@@ -1672,7 +1672,7 @@ code,
 kbd,
 tt,
 var {
-  background-color: var(--translucent-dark);
+  background-color: var(--recessed-bg);
 }
 
 table th {
