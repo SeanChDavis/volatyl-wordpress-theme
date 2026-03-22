@@ -39,7 +39,7 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'section'     => 'volatyl_section_backgrounds',
 	'priority'    => 3,
 	'label'       => __( 'Button radius', 'volatyl' ),
-	'description' => __( 'Controls the roundness of buttons specifically. Push all the way up for pill-shaped buttons.', 'volatyl' ),
+	'description' => __( 'Controls button corner roundness. The first half of the range gives fine-grained control; past the midpoint buttons become fully pill-shaped at any size.', 'volatyl' ),
 ) ) );
 
 $wp_customize->add_setting( 'volatyl_button_radius', array(
@@ -53,7 +53,7 @@ $wp_customize->add_control( 'volatyl_button_radius', array(
 	'type'        => 'range',
 	'input_attrs' => array(
 		'min'  => 0,
-		'max'  => 50,
+		'max'  => 100,
 		'step' => 1,
 	),
 ) );

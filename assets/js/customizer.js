@@ -69,10 +69,12 @@
             document.documentElement.style.setProperty('--radius', to + 'px');
         });
     });
-    // Button radius
+    // Button radius: 0-50 → 0-20px (fine control), 51-100 → 9999px (pill)
     wp.customize('volatyl_button_radius', function (value) {
         value.bind(function (to) {
-            document.documentElement.style.setProperty('--radius-button', to + 'px');
+            var v = parseInt(to, 10);
+            var px = v <= 50 ? (v * 0.4) + 'px' : '9999px';
+            document.documentElement.style.setProperty('--radius-button', px);
         });
     });
     // Color scheme type — update CSS custom properties directly for live preview
