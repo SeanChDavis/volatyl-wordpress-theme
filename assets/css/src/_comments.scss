@@ -211,7 +211,7 @@
 
 				#cancel-comment-reply-link {
 					@include fontSmaller;
-					color: #ae1717;
+					color: var(--error);
 				}
 			}
 		}
@@ -264,7 +264,7 @@
 
 			.required {
 				@include fontSmaller;
-				color: #ae1717;
+				color: var(--error);
 				font-weight: 400;
 			}
 		}

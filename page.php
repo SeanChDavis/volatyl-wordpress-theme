@@ -15,7 +15,7 @@ get_header();
 							the_post();
 							get_template_part( 'content/content', 'page' );
 							the_posts_navigation();
-							if ( 1 == get_theme_mod( 'volatyl_page_comments' ) && ( comments_open() || get_comments_number() ) ) :
+							if ( get_theme_mod( 'volatyl_page_comments' ) && ( comments_open() || get_comments_number() ) ) :
 								comments_template();
 							endif;
 						endwhile;

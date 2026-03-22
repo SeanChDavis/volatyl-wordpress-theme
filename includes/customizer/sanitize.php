@@ -4,7 +4,7 @@
  * Sanitize checkbox options
  */
 function volatyl_sanitize_checkbox( $input ) {
-	return 1 == $input ? 1 : 0;
+	return ! empty( $input ) ? 1 : 0;
 }
 
 /**

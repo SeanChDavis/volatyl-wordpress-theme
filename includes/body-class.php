@@ -43,7 +43,7 @@ function volatyl_body_class( $classes ) {
 			$classes[] = 'analogous-color-scheme';
 	}
 
-	if ( 1 == get_theme_mod( 'volatyl_full_width_structure', 0 ) ) {
+	if ( get_theme_mod( 'volatyl_full_width_structure', 0 ) ) {
 		$classes[] = 'full-width-structure';
 	}
 

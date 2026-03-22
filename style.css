@@ -2463,7 +2463,7 @@ main {
 }
 #comments #respond #reply-title small #cancel-comment-reply-link {
   font-size: 0.833rem;
-  color: #ae1717;
+  color: var(--error);
 }
 #comments #respond #commentform .logged-in-as,
 #comments #respond #commentform .comment-notes {
@@ -2505,7 +2505,7 @@ main {
 }
 #comments #respond #commentform .required {
   font-size: 0.833rem;
-  color: #ae1717;
+  color: var(--error);
   font-weight: 400;
 }
 

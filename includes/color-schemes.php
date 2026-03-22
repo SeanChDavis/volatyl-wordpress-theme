@@ -75,6 +75,9 @@ function volatyl_root_color_scheme_base() {
 		   Derives from currentColor so it adapts to any background automatically */
 		--recessed-bg: color-mix(in oklch, currentColor 8%, transparent);
 
+		/* Error / validation color */
+		--error: oklch(45% 0.2 25);
+
 		/* Action, accent-1, accent-2, accent-3 — derived from the primary hue; overridden by color schemes */
 		/* Technically, this is the monochromatic color scheme */
 		--action-darker: oklch(18% var(--palette-chroma) var(--primary-hue));

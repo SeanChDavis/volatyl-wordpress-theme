@@ -73,7 +73,7 @@ if ( isset( $wp_customize->selective_refresh ) ) {
 	$wp_customize->selective_refresh->add_partial( 'volatyl_page_comments', array(
 		'selector'        => '.page .comments-area',
 		'render_callback' => function () {
-			if ( 1 == get_theme_mod( 'volatyl_page_comments' ) && ( comments_open() || get_comments_number() ) ) {
+			if ( get_theme_mod( 'volatyl_page_comments' ) && ( comments_open() || get_comments_number() ) ) {
 				comments_template();
 			}
 		},
