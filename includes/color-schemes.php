@@ -53,6 +53,11 @@ function volatyl_root_color_scheme_base() {
 		--radius-button: {$button_radius};
 		--on-dark-luminance: 100%;
 
+		/* Per-family hue references — consumed by per-context --on-dark overrides in SCSS */
+		--accent-1-hue: var(--primary-hue);
+		--accent-2-hue: var(--primary-hue);
+		--accent-3-hue: var(--primary-hue);
+
 		/* Primary hue — drives all color slots by default */
 		--primary-hue: {$primary_hue};
 		--accent-3-darker: oklch(18% var(--palette-chroma) var(--primary-hue));
@@ -132,6 +137,8 @@ function volatyl_root_color_scheme_base() {
  */
 function volatyl_root_color_scheme_complementary(): string {
 	return "
+		--accent-1-hue: var(--complementary-accent-hue);
+		--accent-2-hue: var(--complementary-accent-hue);
 		--action-darker: oklch(18% var(--palette-chroma) var(--primary-hue));
 		--action-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
 		--action: oklch(55% var(--palette-chroma) var(--primary-hue));
@@ -157,6 +164,8 @@ function volatyl_root_color_scheme_complementary(): string {
  */
 function volatyl_root_color_scheme_analogous(): string {
 	return "
+		--accent-1-hue: var(--analogous-accent-hue-1);
+		--accent-2-hue: var(--analogous-accent-hue-2);
 		--action-darker: oklch(18% var(--palette-chroma) var(--primary-hue));
 		--action-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
 		--action: oklch(55% var(--palette-chroma) var(--primary-hue));
@@ -182,6 +191,8 @@ function volatyl_root_color_scheme_analogous(): string {
  */
 function volatyl_root_color_scheme_triadic(): string {
 	return "
+		--accent-1-hue: var(--triadic-accent-hue-1);
+		--accent-2-hue: var(--triadic-accent-hue-2);
 		--action-darker: oklch(18% var(--palette-chroma) var(--primary-hue));
 		--action-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
 		--action: oklch(55% var(--palette-chroma) var(--primary-hue));
@@ -207,6 +218,8 @@ function volatyl_root_color_scheme_triadic(): string {
  */
 function volatyl_root_color_scheme_split_complementary(): string {
 	return "
+		--accent-1-hue: var(--split-complementary-accent-hue-1);
+		--accent-2-hue: var(--split-complementary-accent-hue-2);
 		--action-darker: oklch(18% var(--palette-chroma) var(--primary-hue));
 		--action-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
 		--action: oklch(55% var(--palette-chroma) var(--primary-hue));
@@ -232,6 +245,9 @@ function volatyl_root_color_scheme_split_complementary(): string {
  */
 function volatyl_root_color_scheme_tetradic(): string {
 	return "
+		--accent-1-hue: var(--tetradic-accent-hue-2);
+		--accent-2-hue: var(--tetradic-accent-hue-3);
+		--accent-3-hue: var(--tetradic-accent-hue-1);
 		--action-darker: oklch(18% var(--palette-chroma) var(--primary-hue));
 		--action-dark: oklch(30% var(--palette-chroma) var(--primary-hue));
 		--action: oklch(55% var(--palette-chroma) var(--primary-hue));

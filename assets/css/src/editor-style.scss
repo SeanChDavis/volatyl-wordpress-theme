@@ -171,18 +171,37 @@ table td {
 	background-color: var(--dark);
 }
 
+// Neutral dark contexts — on-dark uses primary hue (default)
 .v-dark-background,
 .has-darker-background-color,
 .has-dark-background-color,
 .has-text-background-color,
 .has-subdued-dark-background-color,
 .has-action-darker-background-color,
-.has-action-dark-background-color,
+.has-action-dark-background-color {
+	@include dark-bg-context();
+}
+
+// Accent-1 dark contexts — on-dark nudged toward accent-1 hue
 .has-accent-1-darker-background-color,
-.has-accent-1-dark-background-color,
+.has-accent-1-dark-background-color {
+	--on-dark: oklch(var(--on-dark-luminance) calc(var(--tint-chroma) * 0.5) var(--accent-1-hue));
+
+	@include dark-bg-context();
+}
+
+// Accent-2 dark contexts — on-dark nudged toward accent-2 hue
 .has-accent-2-darker-background-color,
-.has-accent-2-dark-background-color,
+.has-accent-2-dark-background-color {
+	--on-dark: oklch(var(--on-dark-luminance) calc(var(--tint-chroma) * 0.5) var(--accent-2-hue));
+
+	@include dark-bg-context();
+}
+
+// Accent-3 dark contexts — on-dark nudged toward accent-3 hue
 .has-accent-3-darker-background-color,
 .has-accent-3-dark-background-color {
+	--on-dark: oklch(var(--on-dark-luminance) calc(var(--tint-chroma) * 0.5) var(--accent-3-hue));
+
 	@include dark-bg-context();
 }
