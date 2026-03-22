@@ -179,6 +179,31 @@ $lgMinWidth: 1200px;
 	}
 }
 
+/// Colored background context — apply inside mid-lightness colored backgrounds (base palette level).
+/// Sets text, headings, links, and subdued elements to white. Does NOT adjust buttons, forms, or tables.
+@mixin colored-bg-context() {
+	color: var(--white);
+
+	h1:not(.has-text-color), .h1,
+	h2:not(.has-text-color), .h2,
+	h3:not(.has-text-color), .h3,
+	h4:not(.has-text-color), .h4,
+	h5:not(.has-text-color), .h5,
+	h6:not(.has-text-color), .h6,
+	a:not(.has-text-color),
+	blockquote:not(.has-text-color),
+	address:not(.has-text-color),
+	cite:not(.has-text-color),
+	q:not(.has-text-color),
+	.v-subdued-title,
+	table caption,
+	figure figcaption,
+	.wp-block-calendar .wp-calendar-nav,
+	[class*="wp-block-"] > label {
+		color: var(--white);
+	}
+}
+
 /// Dark background context — apply inside any dark-backgrounded element.
 /// Adjusts text, headings, links, buttons, forms, and tables for readability.
 /// Does NOT set background-color — the caller is responsible for that.

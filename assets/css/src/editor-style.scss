@@ -171,6 +171,14 @@ table td {
 	background-color: var(--dark);
 }
 
+// Base-level colored backgrounds — white text, no button/form adjustments
+.has-action-background-color,
+.has-accent-1-background-color,
+.has-accent-2-background-color,
+.has-accent-3-background-color {
+	@include colored-bg-context();
+}
+
 // Neutral dark contexts — on-dark uses primary hue (default)
 .v-dark-background,
 .has-darker-background-color,
