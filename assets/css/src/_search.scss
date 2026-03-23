@@ -81,14 +81,6 @@
 				&::-webkit-search-cancel-button {
 					-webkit-appearance: none;
 					appearance: none;
-					background-color: var(--on-dark);
-					cursor: pointer;
-					height: 16px;
-					mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M18 6L6 18M6 6l12 12'/%3E%3C/svg%3E");
-					mask-size: contain;
-					mask-repeat: no-repeat;
-					mask-position: center;
-					width: 16px;
 				}
 			}
 		}
