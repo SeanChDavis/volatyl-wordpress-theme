@@ -168,9 +168,9 @@ For full technical details on the color system, see [docs/color-system.md](docs/
 - **Full-width structure** — Toggle between page-width and full-width layout mode.
 
 **Section Spacing** — Sets the vertical breathing room inside all content sections across the site. The site header, site footer, fat footer, and footer lead are not affected.
-- **Compact** — Tighter sections (max ~2.25rem).
-- **Default** — Current spacing (max ~3.5rem).
-- **Spacious** — More breathing room (max ~5rem).
+- **Compact** — Tighter sections throughout the site.
+- **Default** — Balanced spacing (this is the baseline).
+- **Spacious** — More breathing room throughout the site.
 
 **Section Backgrounds** — Controls which page headers use a dark background by default. These can be overridden per-page using the [Page Layout meta box](#per-page-options).
 - Dark header on archive pages
@@ -277,9 +277,13 @@ Apply `v-*` utility classes to Group blocks (via the **Additional CSS class** fi
 v-dark-background     → Dark themed section
 v-gray-background     → Light gray section
 v-no-spacing          → Remove all padding and margin
+v-large               → ~1.4× the global section spacing for this section
+v-xl                  → ~2.3× the global section spacing for this section
 v-padding-y-4         → Add vertical padding (scale: 0–6)
 v-text-align-center   → Center-align content
 ```
+
+`v-large` and `v-xl` scale proportionally with whatever global spacing tier is active in the Customizer — so a `v-xl` section in Spacious mode gets even more space than in Default mode.
 
 This mirrors exactly how PHP templates build sections — the same classes, the same CSS rules.
 
