@@ -101,3 +101,18 @@ function volatyl_register_block_patterns() {
 	);
 }
 add_action( 'init', 'volatyl_register_block_patterns' );
+
+/**
+ * Register custom block styles used by theme patterns.
+ */
+function volatyl_register_block_styles() {
+
+	register_block_style(
+		'core/heading',
+		array(
+			'name'  => 'jumbo',
+			'label' => __( 'Jumbo', 'volatyl' ),
+		)
+	);
+}
+add_action( 'init', 'volatyl_register_block_styles' );

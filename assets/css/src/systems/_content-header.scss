@@ -38,6 +38,13 @@
 		& .v-button {
 			margin-bottom: clamp(8px, .8vw, 12px);
 		}
+
+		// Block editor: override the 2rem margin-bottom that _markup-formatting
+		// applies to .wp-block-buttons. Import order ensures this wins at equal specificity.
+		&.wp-block-buttons {
+			margin-bottom: clamp(8px, .8vw, 12px);
+			margin-top: 0;
+		}
 	}
 
 	.content-header-secondary-cta {
@@ -56,6 +63,16 @@
 			margin-right: auto;
 			text-align: center;
 		}
+	}
+
+	// Block editor: per-element text alignment — apply auto margins so max-width
+	// constrained elements centre within the container, matching v-text-align-center.
+	.content-header-title.has-text-align-center,
+	.content-header-description.has-text-align-center,
+	.content-header-secondary-cta.has-text-align-center,
+	.content-header-primary-cta.is-content-justification-center {
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
 
@@ -95,8 +112,9 @@
 	}
 }
 
-// Jumbo title — front page and per-page opt-in via meta box
-.content-header.has-jumbo-title {
+// Jumbo title — front page and per-page opt-in via meta box, or is-style-jumbo in editor
+.content-header.has-jumbo-title,
+.content-header:has(.content-header-title.is-style-jumbo) {
 
 	.content-header-title {
 		font-size: clamp(2rem, 5vw, 4rem);

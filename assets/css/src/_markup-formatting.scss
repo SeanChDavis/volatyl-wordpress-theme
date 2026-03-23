@@ -491,8 +491,7 @@ figure {
 .wp-block-navigation,
 .wp-block-group {
 
-	&:not(.alignleft),
-	&:not(.alignright) {
+	&:not(.alignleft):not(.alignright) {
 		margin-bottom: 2rem;
 	}
 

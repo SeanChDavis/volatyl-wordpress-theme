@@ -21,6 +21,7 @@ button,
 	&:active,
 	&:focus,
 	&:hover {
+		border-radius: var(--radius-button);
 		text-decoration: none;
 	}
 
@@ -36,7 +37,7 @@ button,
 		& > .wp-block-button .wp-block-button__link {
 
 			@media all and (min-width: $xsMinWidth) {
-				@include fontBigger;
+				font-size: clamp(.833rem, 1.3vw, 1rem);
 			}
 		}
 	}

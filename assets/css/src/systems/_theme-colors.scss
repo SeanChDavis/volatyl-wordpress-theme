@@ -104,9 +104,14 @@ figure figcaption {
 }
 
 // Content header CTA — interaction states only (inherits base button styles from above)
-.content-header-primary-cta [class*="button"]:hover,
-.content-header-primary-cta [class*="button"]:focus,
-.content-header-primary-cta [class*="button"]:active {
+// Targets the actual clickable elements: .v-button for PHP template, .wp-block-button__link for block editor.
+// [class*="button"] is intentionally avoided — it matches .wp-block-button (the wrapper div) and corrupts hover rendering.
+.content-header-primary-cta .v-button:hover,
+.content-header-primary-cta .v-button:focus,
+.content-header-primary-cta .v-button:active,
+.content-header-primary-cta .wp-block-button__link:hover,
+.content-header-primary-cta .wp-block-button__link:focus,
+.content-header-primary-cta .wp-block-button__link:active {
 	background-color: var(--action-dark);
 	border-color: var(--action-dark);
 }
