@@ -19,6 +19,19 @@ function volatyl_editor_color_vars( $settings ) {
 	$scheme     = get_theme_mod( 'volatyl_color_scheme_type', DEFAULT_COLOR_SCHEME_TYPE );
 	$editor_css = volatyl_root_color_scheme_base() . volatyl_get_scheme_overrides( $scheme );
 	$settings['styles'][] = array( 'css' => $editor_css );
+
+	// Inject --section-v-spacing so the editor respects the active spacing tier.
+	// This variable is defined in style.css (front end only) and must be explicitly
+	// passed into the iframed editor context.
+	$spacing = get_theme_mod( 'volatyl_section_spacing', 'default' );
+	$spacing_values = array(
+		'compact'  => 'clamp(1.25rem, 3vw, 2.25rem)',
+		'default'  => 'clamp(2rem, 4.5vw, 3.5rem)',
+		'spacious' => 'clamp(2.5rem, 7vw, 5rem)',
+	);
+	$spacing_value = isset( $spacing_values[ $spacing ] ) ? $spacing_values[ $spacing ] : $spacing_values['default'];
+	$settings['styles'][] = array( 'css' => ":root { --section-v-spacing: {$spacing_value}; }" );
+
 	return $settings;
 }
 add_filter( 'block_editor_settings_all', 'volatyl_editor_color_vars' );

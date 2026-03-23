@@ -29,6 +29,7 @@ require_once( THEME_INCLUDES . '/widgets.php' );
 require_once( THEME_INCLUDES . '/search.php' );
 
 require_once( THEME_INCLUDES . '/gutenberg/styles.php' );
+require_once( THEME_INCLUDES . '/patterns.php' );
 
 require_once( THEME_INCLUDES . '/customizer/customizer.php' );
 
