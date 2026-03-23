@@ -389,6 +389,17 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 	'label'       => __( 'Primary call-to-action URL', 'volatyl' ),
 ) ) );
 
+$wp_customize->add_setting( 'volatyl_front_page_hero_primary_cta_button_new_tab', array(
+	'default'           => 0,
+	'sanitize_callback' => 'absint',
+) );
+$wp_customize->add_control( 'volatyl_front_page_hero_primary_cta_button_new_tab', array(
+	'section'  => 'volatyl_front_page_template',
+	'priority' => 75,
+	'label'    => __( 'Open in new tab', 'volatyl' ),
+	'type'     => 'checkbox',
+) );
+
 // Hero secondary CTA button text
 $wp_customize->add_setting( 'volatyl_front_page_hero_secondary_cta_button_text', array(
 	'default'           => NULL,
@@ -410,6 +421,17 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 	'priority'    => 90,
 	'label'       => __( 'Secondary call-to-action URL', 'volatyl' ),
 ) ) );
+
+$wp_customize->add_setting( 'volatyl_front_page_hero_secondary_cta_button_new_tab', array(
+	'default'           => 0,
+	'sanitize_callback' => 'absint',
+) );
+$wp_customize->add_control( 'volatyl_front_page_hero_secondary_cta_button_new_tab', array(
+	'section'  => 'volatyl_front_page_template',
+	'priority' => 91,
+	'label'    => __( 'Open in new tab', 'volatyl' ),
+	'type'     => 'checkbox',
+) );
 
 // Hero featured image style
 $wp_customize->add_setting( 'volatyl_front_page_hero_image_style', array(
@@ -710,6 +732,18 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 	'active_callback' => 'volatyl_display_blog_grid_cta_settings',
 ) ) );
 
+$wp_customize->add_setting( 'volatyl_blog_grid_cta_button_new_tab', array(
+	'default'           => 0,
+	'sanitize_callback' => 'absint',
+) );
+$wp_customize->add_control( 'volatyl_blog_grid_cta_button_new_tab', array(
+	'section'         => 'volatyl_blog_template',
+	'priority'        => 265,
+	'label'           => __( 'Open in new tab', 'volatyl' ),
+	'type'            => 'checkbox',
+	'active_callback' => 'volatyl_display_blog_grid_cta_settings',
+) );
+
 /**
  * Footer Areas
  */
@@ -786,6 +820,18 @@ $wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize
 	'label'           => __( 'Call-to-action button URL', 'volatyl' ),
 	'active_callback' => 'volatyl_display_footer_lead_settings',
 ) ) );
+
+$wp_customize->add_setting( 'volatyl_footer_lead_cta_button_new_tab', array(
+	'default'           => 0,
+	'sanitize_callback' => 'absint',
+) );
+$wp_customize->add_control( 'volatyl_footer_lead_cta_button_new_tab', array(
+	'section'         => 'volatyl_footer_areas',
+	'priority'        => 55,
+	'label'           => __( 'Open in new tab', 'volatyl' ),
+	'type'            => 'checkbox',
+	'active_callback' => 'volatyl_display_footer_lead_settings',
+) );
 
 // Fat Footer area
 $wp_customize->add_setting( 'volatyl_fat_footer_area', array(

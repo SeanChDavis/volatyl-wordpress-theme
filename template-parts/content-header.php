@@ -9,8 +9,8 @@ $args = wp_parse_args( $args ?? array(), array(
 	'title'           => get_the_title(),
 	'description'     => '',
 	'is_centered'     => 0,
-	'primary_cta'     => array( 'text' => '', 'url' => '' ),
-	'secondary_cta'   => array( 'text' => '', 'url' => '' ),
+	'primary_cta'     => array( 'text' => '', 'url' => '', 'new_tab' => 0 ),
+	'secondary_cta'   => array( 'text' => '', 'url' => '', 'new_tab' => 0 ),
 	'is_dark'         => volatyl_has_dark_header(),
 	'has_search_form' => false,
 	'jumbo_title'     => false,
@@ -59,12 +59,12 @@ if ( is_front_page() && volatyl_show_on_front_is_page() ) {
 			<?php } ?>
 			<?php if ( ! empty( $args['primary_cta']['url'] ) && ! empty( $args['primary_cta']['text'] ) ) { ?>
 				<p class="content-header-primary-cta">
-					<a href="<?php echo esc_url( $args['primary_cta']['url'] ); ?>" class="v-button v-large"><?php echo esc_html( $args['primary_cta']['text'] ); ?></a>
+					<a href="<?php echo esc_url( $args['primary_cta']['url'] ); ?>" class="v-button v-large"<?php if ( ! empty( $args['primary_cta']['new_tab'] ) ) { echo ' target="_blank" rel="noopener noreferrer"'; } ?>><?php echo esc_html( $args['primary_cta']['text'] ); ?></a>
 				</p>
 			<?php } ?>
 			<?php if ( ! empty( $args['secondary_cta']['url'] ) && ! empty( $args['secondary_cta']['text'] ) ) { ?>
 				<p class="content-header-secondary-cta">
-					<a href="<?php echo esc_url( $args['secondary_cta']['url'] ); ?>"><?php echo esc_html( $args['secondary_cta']['text'] ); ?></a>
+					<a href="<?php echo esc_url( $args['secondary_cta']['url'] ); ?>"<?php if ( ! empty( $args['secondary_cta']['new_tab'] ) ) { echo ' target="_blank" rel="noopener noreferrer"'; } ?>><?php echo esc_html( $args['secondary_cta']['text'] ); ?></a>
 				</p>
 			<?php } ?>
 			<?php

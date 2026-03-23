@@ -4,6 +4,7 @@ $cta_title       = get_theme_mod( 'volatyl_blog_grid_cta_title' );
 $cta_description = get_theme_mod( 'volatyl_blog_grid_cta_description' );
 $cta_button_url  = get_theme_mod( 'volatyl_blog_grid_cta_button_url' );
 $cta_button_text = get_theme_mod( 'volatyl_blog_grid_cta_button_text' );
+$cta_button_new_tab = get_theme_mod( 'volatyl_blog_grid_cta_button_new_tab', 0 );
 
 $cta_color_scheme = 'v-gray-background';
 if ( get_theme_mod( 'volatyl_blog_grid_cta_color_scheme' ) ) {
@@ -22,7 +23,7 @@ if ( $cta_area & ( ( $cta_title || $cta_description ) || ( $cta_button_url && $c
 		<?php } ?>
 		<?php if ( $cta_button_url && $cta_button_text ) { ?>
 			<div class="cta-action">
-				<a href="<?php echo esc_url( $cta_button_url ); ?>" class="v-button v-large"><?php echo esc_html( $cta_button_text ); ?></a>
+				<a href="<?php echo esc_url( $cta_button_url ); ?>" class="v-button v-large"<?php if ( $cta_button_new_tab ) { echo ' target="_blank" rel="noopener noreferrer"'; } ?>><?php echo esc_html( $cta_button_text ); ?></a>
 			</div>
 		<?php } ?>
 	</div>

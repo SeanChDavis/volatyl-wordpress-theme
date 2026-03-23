@@ -182,8 +182,8 @@ Configures the static front page template. Requires **Settings → Reading → Y
 - Center hero content
 - Title (defaults to site tagline; supports basic HTML: `<a>`, `<span>`, `<em>`, `<strong>`)
 - Description
-- Primary CTA button (text + URL)
-- Secondary CTA link (text + URL)
+- Primary CTA button (text, URL, open in new tab)
+- Secondary CTA link (text, URL, open in new tab)
 - **Featured image display** — When the front page has a featured image set, it displays below the hero content. Three layout options:
   - **Flush** (default) — Image anchors to the bottom edge of the hero with no padding below it
   - **Padded** — Image displays with standard section spacing below it
@@ -212,14 +212,14 @@ Configures the blog index page.
 **Blog Grid Call-to-Action**
 - Enable a CTA widget that appears inside the blog posts grid
 - Toggle dark/light background
-- Title, description, button text, button URL
+- Title, description, button text, button URL, open in new tab
 
 ### Footer Areas
 See [Footer System](#footer-system) for full details.
 
 **Footer Lead**
 - Enable/disable the area
-- Title, description, CTA button (text + URL)
+- Title, description, CTA button (text, URL, open in new tab)
 
 **Fat Footer**
 - Enable/disable the area

@@ -29,12 +29,14 @@ if ( get_theme_mod( 'volatyl_front_page_hero_use_custom_title' ) && ! empty( $cu
 				'description'   => get_theme_mod( 'volatyl_front_page_hero_description', '' ),
 				'alignment'     => get_theme_mod( 'volatyl_front_page_hero_centered', 0 ),
 				'primary_cta'   => array(
-						'url'  => get_theme_mod( 'volatyl_front_page_hero_primary_cta_button_url', '' ),
-						'text' => get_theme_mod( 'volatyl_front_page_hero_primary_cta_button_text', '' ),
+						'url'     => get_theme_mod( 'volatyl_front_page_hero_primary_cta_button_url', '' ),
+						'text'    => get_theme_mod( 'volatyl_front_page_hero_primary_cta_button_text', '' ),
+						'new_tab' => get_theme_mod( 'volatyl_front_page_hero_primary_cta_button_new_tab', 0 ),
 				),
 				'secondary_cta' => array(
-						'url'  => get_theme_mod( 'volatyl_front_page_hero_secondary_cta_button_url', '' ),
-						'text' => get_theme_mod( 'volatyl_front_page_hero_secondary_cta_button_text', '' ),
+						'url'     => get_theme_mod( 'volatyl_front_page_hero_secondary_cta_button_url', '' ),
+						'text'    => get_theme_mod( 'volatyl_front_page_hero_secondary_cta_button_text', '' ),
+						'new_tab' => get_theme_mod( 'volatyl_front_page_hero_secondary_cta_button_new_tab', 0 ),
 				),
 				'is_dark'       => $front_page_is_dark,
 				'jumbo_title'   => true,
