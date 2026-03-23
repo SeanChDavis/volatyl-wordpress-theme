@@ -323,6 +323,8 @@ Volatyl registers three sidebar widget areas. Layout adjusts automatically based
 
 When a sidebar has no active widgets, the main content area expands to full width. No configuration required — the layout responds to whether the sidebar has content.
 
+To hide the sidebar on a specific post or page regardless of widget state, use the **Hide Sidebar** option in the [Page Layout meta box](#per-page-options).
+
 Sidebars do not appear on Canvas template pages.
 
 ---
@@ -335,6 +337,8 @@ Every post and page has a **Page Layout** meta box in the editor that provides p
 |---|---|
 | **Show Page Header** | Displays the content header on Canvas templates (hidden by default on canvas pages) |
 | **Enable Dark Header** | Applies a dark background to this page's header, regardless of the global Customizer setting |
+| **Jumbo Title** | Uses the display/hero title size on the content header |
+| **Hide Sidebar** | Removes the sidebar on this post or page regardless of whether the sidebar widget area has active widgets |
 | **Minimal Footer** | Hides the Footer Lead and Fat Footer on this page only. The Site Footer always remains. |
 
 ---

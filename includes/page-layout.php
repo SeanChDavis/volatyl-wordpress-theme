@@ -9,6 +9,8 @@
  * Controls:
  * - Show page header  — opt-in content header for Canvas templates
  * - Enable dark header — applies to all post types
+ * - Jumbo title       — display-size title on the content header
+ * - Hide sidebar      — removes the sidebar regardless of widget state
  * - Minimal footer    — hides Footer Lead and Fat Footer on any post/page
  */
 
@@ -30,6 +32,7 @@ function volatyl_register_page_layout_meta() {
 	register_post_meta( '', '_volatyl_show_page_header', $shared );
 	register_post_meta( '', '_volatyl_minimal_footer',   $shared );
 	register_post_meta( '', '_volatyl_jumbo_title',      $shared );
+	register_post_meta( '', '_volatyl_hide_sidebar',     $shared );
 }
 add_action( 'init', 'volatyl_register_page_layout_meta' );
 
@@ -62,6 +65,7 @@ function volatyl_page_layout_meta_box_html( $post ) {
 	$is_dark          = (bool) get_post_meta( $post->ID, '_volatyl_dark_header', true );
 	$minimal_footer   = (bool) get_post_meta( $post->ID, '_volatyl_minimal_footer', true );
 	$jumbo_title      = (bool) get_post_meta( $post->ID, '_volatyl_jumbo_title', true );
+	$hide_sidebar     = (bool) get_post_meta( $post->ID, '_volatyl_hide_sidebar', true );
 
 	wp_nonce_field( 'volatyl_page_layout_save', 'volatyl_page_layout_nonce' );
 	?>
@@ -87,6 +91,16 @@ function volatyl_page_layout_meta_box_html( $post ) {
 				<?php esc_html_e( 'Jumbo title', 'volatyl' ); ?>
 			</label>
 			<br><span class="description"><?php esc_html_e( 'Use large display title size.', 'volatyl' ); ?></span>
+		</p>
+	</fieldset>
+
+	<fieldset style="margin-bottom: 12px;">
+		<legend style="font-weight: 600; margin-bottom: 6px;"><?php esc_html_e( 'Sidebar', 'volatyl' ); ?></legend>
+		<p style="margin: 4px 0;">
+			<label>
+				<input type="checkbox" name="volatyl_hide_sidebar" value="1" <?php checked( $hide_sidebar ); ?>>
+				<?php esc_html_e( 'Hide sidebar', 'volatyl' ); ?>
+			</label>
 		</p>
 	</fieldset>
 
@@ -127,7 +141,7 @@ function volatyl_save_page_layout_meta( $post_id ) {
 		return;
 	}
 
-	$fields = array( 'volatyl_show_page_header', 'volatyl_dark_header', 'volatyl_minimal_footer', 'volatyl_jumbo_title' );
+	$fields = array( 'volatyl_show_page_header', 'volatyl_dark_header', 'volatyl_minimal_footer', 'volatyl_jumbo_title', 'volatyl_hide_sidebar' );
 
 	foreach ( $fields as $field ) {
 		$meta_key = '_' . $field;

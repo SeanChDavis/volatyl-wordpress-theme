@@ -53,12 +53,14 @@ function volatyl_body_class( $classes ) {
 		$classes[] = 'has-no-post-thumbnail';
 	}
 
+	$hide_sidebar = is_singular() && get_post_meta( $post->ID, '_volatyl_hide_sidebar', true );
+
 	if (
 		// single blog posts
-		( is_singular( 'post' ) && ! is_active_sidebar( 'single-post-sidebar' ) )
+		( is_singular( 'post' ) && ( ! is_active_sidebar( 'single-post-sidebar' ) || $hide_sidebar ) )
 
 		// single pages
-		|| ( is_singular( 'page' ) && ! is_active_sidebar( 'single-page-sidebar' ) && ! is_page_template( 'page-templates/canvas-full-width.php' ) )
+		|| ( is_singular( 'page' ) && ( ! is_active_sidebar( 'single-page-sidebar' ) || $hide_sidebar ) && ! is_page_template( 'page-templates/canvas-full-width.php' ) )
 	) {
 		$classes[] = 'no-sidebar';
 	}
