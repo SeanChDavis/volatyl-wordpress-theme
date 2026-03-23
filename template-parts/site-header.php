@@ -1,31 +1,31 @@
 <?php // The main site header
 
-    = wp_parse_args(  ?? array(), array( 'is_dark' => false ) );
- = (bool) ['is_dark'];
+$args    = wp_parse_args( $args ?? array(), array( 'is_dark' => false ) );
+$is_dark = (bool) $args['is_dark'];
 
- = array();
-if (  ) {
-	 = wp_get_attachment_image_src( get_theme_mod( 'volatyl_light_logo' ) );
+$light_logo_atts = array();
+if ( $is_dark ) {
+	$light_logo_atts = wp_get_attachment_image_src( get_theme_mod( 'volatyl_light_logo' ) );
 }
 ?>
 
-<header id="masthead" class="<?php echo  ? 'v-dark-background' : 'v-gray-background'; ?>">
+<header id="masthead" class="<?php echo $is_dark ? 'v-dark-background' : 'v-gray-background'; ?>">
 	<div class="site-header">
 		<div class="inner v-padding-y-3">
 			<div class="site-header-elements">
 				<div class="site-branding">
 					<?php
-					  = esc_url( home_url( '/' ) );
-					 = get_bloginfo( 'name' );
-					if (  && ! empty( [0] ) ) {
+					$home_url  = esc_url( home_url( '/' ) );
+					$blog_name = get_bloginfo( 'name' );
+					if ( $is_dark && ! empty( $light_logo_atts[0] ) ) {
 						?>
-						<a href="<?php echo ; ?>" class="custom-logo-link" rel="home"><img src="<?php echo esc_url( [0] ); ?>" class="custom-logo" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"></a>
+						<a href="<?php echo $home_url; ?>" class="custom-logo-link" rel="home"><img src="<?php echo esc_url( $light_logo_atts[0] ); ?>" class="custom-logo" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"></a>
 						<?php
 					} else {
 						if ( has_custom_logo() ) {
 							the_custom_logo();
 						} else {
-							echo '<p class="site-title v-margin-0"><a href="' .  . '" rel="home">' . esc_html(  ) . '</a></p>';
+							echo '<p class="site-title v-margin-0"><a href="' . $home_url . '" rel="home">' . esc_html( $blog_name ) . '</a></p>';
 						}
 					}
 					?>
