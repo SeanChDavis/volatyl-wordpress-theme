@@ -220,11 +220,21 @@ Sets border colors on all text inputs, textareas, and selects.
 
 ```scss
 @include innerSpacing;       // The standard .inner container: max-width ~1200px,
-                             // responsive padding, margin auto
-@include innerSpacingBase;   // Vertical padding only (no horizontal)
-@include innerSpacingLarge;  // Larger vertical padding
-@include innerSpacingLarger; // Largest vertical padding
+                             // responsive padding, margin auto.
+                             // Vertical padding is driven by --section-v-spacing.
+@include innerSpacingLarge;  // v-large modifier — calc(--section-v-spacing * 1.4)
+@include innerSpacingLarger; // v-xl modifier   — calc(--section-v-spacing * 2.3)
 ```
+
+The vertical value is controlled by the `--section-v-spacing` CSS custom property, which is set by the **Section Spacing** Customizer control (Design section). Three body classes correspond to the three tiers:
+
+| Tier | Body class | `--section-v-spacing` value |
+|---|---|---|
+| Compact | `spacing-compact` | `clamp(1.25rem, 3vw, 2.25rem)` |
+| Default | *(none)* | `clamp(2rem, 4.5vw, 3.5rem)` |
+| Spacious | `spacing-spacious` | `clamp(2.5rem, 7vw, 5rem)` |
+
+Footer chrome (`.fat-footer`, `.footer-lead`) and the site header / site footer are not affected — they have their padding pinned independently.
 
 ---
 

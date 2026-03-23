@@ -166,6 +166,12 @@ For full technical details on the color system, see [docs/color-system.md](docs/
 - **Corner radius** — Controls the roundness of cards, inputs, and surfaces (0–20px).
 - **Button radius** — Controls button roundness independently. Slides from square to rounded (0–50) or jumps to full pill shape (51–100).
 - **Full-width structure** — Toggle between page-width and full-width layout mode.
+
+**Section Spacing** — Sets the vertical breathing room inside all content sections across the site. The site header, site footer, fat footer, and footer lead are not affected.
+- **Compact** — Tighter sections (max ~2.25rem).
+- **Default** — Current spacing (max ~3.5rem).
+- **Spacious** — More breathing room (max ~5rem).
+
 **Section Backgrounds** — Controls which page headers use a dark background by default. These can be overridden per-page using the [Page Layout meta box](#per-page-options).
 - Dark header on archive pages
 - Dark header on search results

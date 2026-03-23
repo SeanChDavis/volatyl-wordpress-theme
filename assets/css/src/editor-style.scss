@@ -33,15 +33,11 @@ body {
 				}
 			}
 
-			&.v-small > .wp-block-group__inner-container {
-				@include innerSpacingBase;
-			}
-
-			&.v-medium > .wp-block-group__inner-container {
+			&.v-large > .wp-block-group__inner-container {
 				@include innerSpacingLarge;
 			}
 
-			&.v-large > .wp-block-group__inner-container {
+			&.v-xl > .wp-block-group__inner-container {
 				@include innerSpacingLarger;
 			}
 		}

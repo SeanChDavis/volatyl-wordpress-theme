@@ -71,6 +71,33 @@ $wp_customize->add_control( 'volatyl_full_width_structure', array(
 	'type'        => 'checkbox',
 ) );
 
+// Section spacing heading
+$wp_customize->add_setting( 'volatyl_section_spacing_heading', array(
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
+) );
+$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_section_spacing_heading', array(
+	'section'     => 'volatyl_section_backgrounds',
+	'priority'    => 55,
+	'label'       => __( 'Section Spacing', 'volatyl' ),
+	'description' => __( 'Controls the vertical breathing room inside all content sections across the site. The footer and site header are not affected.', 'volatyl' ),
+) ) );
+
+$wp_customize->add_setting( 'volatyl_section_spacing', array(
+	'default'           => 'default',
+	'sanitize_callback' => 'volatyl_sanitize_section_spacing',
+) );
+$wp_customize->add_control( 'volatyl_section_spacing', array(
+	'section'  => 'volatyl_section_backgrounds',
+	'priority' => 56,
+	'label'    => __( 'Section Spacing', 'volatyl' ),
+	'type'     => 'select',
+	'choices'  => array(
+		'compact'  => __( 'Compact', 'volatyl' ),
+		'default'  => __( 'Default', 'volatyl' ),
+		'spacious' => __( 'Spacious', 'volatyl' ),
+	),
+) );
+
 // Section backgrounds heading
 $wp_customize->add_setting( 'volatyl_section_backgrounds_heading', array(
 	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',

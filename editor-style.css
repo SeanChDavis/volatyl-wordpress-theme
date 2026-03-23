@@ -160,6 +160,8 @@ template {
 /* Base line height */
 /* Font size modifiers */
 /* HTML structure spacing */
+/* v-large section modifier — ~1.4× the global spacing tier */
+/* v-xl section modifier — ~2.3× the global spacing tier */
 /* Margin */
 .v-margin-top-0 {
   margin-top: 0;
@@ -1617,7 +1619,7 @@ body .wp-block-post-content > .wp-block-group:not(.v-no-spacing) > .wp-block-gro
   margin-left: auto;
   margin-right: auto;
   max-width: calc(1200px + 1.25rem);
-  padding: clamp(2rem, 4.5vw, 3.5rem) clamp(1.25rem, 7.9vw, 6rem);
+  padding: var(--section-v-spacing) clamp(1.25rem, 7.9vw, 6rem);
 }
 @media all and (min-width: 992px) {
   body .wp-block-post-content > .wp-block-group:not(.v-no-spacing) > .wp-block-group__inner-container {
@@ -1628,25 +1630,16 @@ body .wp-block-post-content > .wp-block-group:not(.v-no-spacing) > .wp-block-gro
 body .wp-block-post-content > .wp-block-group:not(.v-no-spacing) > .wp-block-group__inner-container > [class*=wp-block-]:last-child {
   margin-bottom: 0;
 }
-body .wp-block-post-content > .wp-block-group.v-small > .wp-block-group__inner-container {
-  /* Same as innerSpacing but without horizontal padding */
-}
-@media all and (min-width: 560px) {
-  body .wp-block-post-content > .wp-block-group.v-small > .wp-block-group__inner-container {
-    padding-bottom: clamp(2rem, 4.5vw, 3.5rem);
-    padding-top: clamp(2rem, 4.5vw, 3.5rem);
-  }
-}
-@media all and (min-width: 560px) {
-  body .wp-block-post-content > .wp-block-group.v-medium > .wp-block-group__inner-container {
-    padding-bottom: clamp(2rem, 7vw, 5rem);
-    padding-top: clamp(2rem, 7vw, 5rem);
-  }
-}
 @media all and (min-width: 560px) {
   body .wp-block-post-content > .wp-block-group.v-large > .wp-block-group__inner-container {
-    padding-bottom: clamp(2rem, 10.5vw, 8rem);
-    padding-top: clamp(2rem, 10.5vw, 8rem);
+    padding-bottom: calc(var(--section-v-spacing) * 1.4);
+    padding-top: calc(var(--section-v-spacing) * 1.4);
+  }
+}
+@media all and (min-width: 560px) {
+  body .wp-block-post-content > .wp-block-group.v-xl > .wp-block-group__inner-container {
+    padding-bottom: calc(var(--section-v-spacing) * 2.3);
+    padding-top: calc(var(--section-v-spacing) * 2.3);
   }
 }
 

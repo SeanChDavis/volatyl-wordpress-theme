@@ -1,4 +1,5 @@
 .footer-lead {
+	--section-v-spacing: clamp(2rem, 4.5vw, 3.5rem); /* Fixed — not affected by global spacing control */
 
 	.inner {
 		padding-bottom: 0;
@@ -55,6 +56,10 @@
 
 .footer-lead.v-gray-background:has(+ .v-gray-background) .footer-lead-cta {
 	border-bottom: 2px solid var(--translucent-dark);
+}
+
+.fat-footer {
+	--section-v-spacing: clamp(2rem, 4.5vw, 3.5rem); /* Fixed — not affected by global spacing control */
 }
 
 .fat-footer-areas {

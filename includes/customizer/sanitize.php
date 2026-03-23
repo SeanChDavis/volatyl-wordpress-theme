@@ -123,6 +123,14 @@ function volatyl_sanitize_textarea_lite( $input ) {
 }
 
 /**
+ * Sanitize section spacing select
+ */
+function volatyl_sanitize_section_spacing( $input ) {
+	$valid = array( 'compact', 'default', 'spacious' );
+	return in_array( $input, $valid, true ) ? $input : 'default';
+}
+
+/**
  * Sanitize select menus
  */
 function volatyl_sanitize_select( $input, $setting ) {

@@ -47,6 +47,13 @@ function volatyl_body_class( $classes ) {
 		$classes[] = 'full-width-structure';
 	}
 
+	$spacing = get_theme_mod( 'volatyl_section_spacing', 'default' );
+	if ( 'compact' === $spacing ) {
+		$classes[] = 'spacing-compact';
+	} elseif ( 'spacious' === $spacing ) {
+		$classes[] = 'spacing-spacious';
+	}
+
 	if ( is_singular( array( 'post', 'page' ) ) && has_post_thumbnail( $post->ID ) ) {
 		$classes[] = 'has-post-thumbnail';
 	} else {

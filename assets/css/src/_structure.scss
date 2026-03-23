@@ -1,3 +1,16 @@
+/* Section vertical spacing — controlled by Customizer → Design → Section Spacing */
+:root {
+	--section-v-spacing: clamp(2rem, 4.5vw, 3.5rem); /* Default */
+}
+
+body.spacing-compact {
+	--section-v-spacing: clamp(1.25rem, 3vw, 2.25rem);
+}
+
+body.spacing-spacious {
+	--section-v-spacing: clamp(2.5rem, 7vw, 5rem);
+}
+
 html {
 	@include bodyFont;
 	@include fontBase;
@@ -40,15 +53,11 @@ body {
 .inner {
 	@include innerSpacing;
 
-	&.v-small {
-		@include innerSpacingBase;
-	}
-
-	&.v-medium {
+	&.v-large {
 		@include innerSpacingLarge;
 	}
 
-	&.v-large {
+	&.v-xl {
 		@include innerSpacingLarger;
 	}
 }

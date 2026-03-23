@@ -42,6 +42,18 @@
         });
     });
 
+    // Section spacing
+    wp.customize('volatyl_section_spacing', function (value) {
+        value.bind(function (to) {
+            var spacings = {
+                'compact':  'clamp(1.25rem, 3vw, 2.25rem)',
+                'default':  'clamp(2rem, 4.5vw, 3.5rem)',
+                'spacious': 'clamp(2.5rem, 7vw, 5rem)'
+            };
+            document.documentElement.style.setProperty('--section-v-spacing', spacings[to] || spacings['default']);
+        });
+    });
+
     /**
      * Color Scheme
      */

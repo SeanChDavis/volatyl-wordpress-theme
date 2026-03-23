@@ -75,7 +75,7 @@ $lgMinWidth: 1200px;
 	margin-left: auto;
 	margin-right: auto;
 	max-width: calc(1200px + 1.25rem);
-	padding: clamp(2rem, 4.5vw, 3.5rem) clamp(1.25rem, 7.9vw, 6rem);
+	padding: var(--section-v-spacing) clamp(1.25rem, 7.9vw, 6rem);
 
 	@media all and (min-width: $mdMinWidth) {
 		padding-left: 2rem;
@@ -83,27 +83,21 @@ $lgMinWidth: 1200px;
 	}
 }
 
-@mixin innerSpacingBase { /* Same as innerSpacing but without horizontal padding */
-
-	@media all and (min-width: $xsMinWidth) {
-		padding-bottom: clamp(2rem, 4.5vw, 3.5rem);
-		padding-top: clamp(2rem, 4.5vw, 3.5rem);
-	}
-}
-
+/* v-large section modifier — ~1.4× the global spacing tier */
 @mixin innerSpacingLarge {
 
 	@media all and (min-width: $xsMinWidth) {
-		padding-bottom: clamp(2rem, 7vw, 5rem);
-		padding-top: clamp(2rem, 7vw, 5rem);
+		padding-bottom: calc(var(--section-v-spacing) * 1.4);
+		padding-top: calc(var(--section-v-spacing) * 1.4);
 	}
 }
 
+/* v-xl section modifier — ~2.3× the global spacing tier */
 @mixin innerSpacingLarger {
 
 	@media all and (min-width: $xsMinWidth) {
-		padding-bottom: clamp(2rem, 10.5vw, 8rem);
-		padding-top: clamp(2rem, 10.5vw, 8rem);
+		padding-bottom: calc(var(--section-v-spacing) * 2.3);
+		padding-top: calc(var(--section-v-spacing) * 2.3);
 	}
 }
 

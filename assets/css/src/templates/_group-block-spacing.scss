@@ -19,21 +19,14 @@
 					}
 				}
 
-				&.v-small {
-
-					& > .wp-block-group__inner-container {
-						@include innerSpacingBase;
-					}
-				}
-
-				&.v-medium {
+				&.v-large {
 
 					& > .wp-block-group__inner-container {
 						@include innerSpacingLarge;
 					}
 				}
 
-				&.v-large {
+				&.v-xl {
 
 					& > .wp-block-group__inner-container {
 						@include innerSpacingLarger;
