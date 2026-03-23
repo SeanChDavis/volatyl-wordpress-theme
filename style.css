@@ -3601,7 +3601,7 @@ main {
 }
 
 .v-dark-background .search-toggle {
-  color: var(--on-dark);
+  color: var(--white);
 }
 
 #site-navigation.toggled .search-toggle {
