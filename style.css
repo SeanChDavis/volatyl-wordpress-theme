@@ -3593,18 +3593,29 @@ main {
   align-items: center;
   background: transparent;
   border: none;
+  border-radius: 0;
   color: var(--action);
   cursor: pointer;
   display: flex;
-  flex-shrink: 0;
-  padding: 0 0 0 1rem;
+  letter-spacing: normal;
+  line-height: normal;
+  padding: 0 0 0 0.75rem;
 }
 .search-toggle svg {
   display: block;
 }
-.search-toggle:hover, .search-toggle:focus {
-  opacity: 0.7;
-  outline: none;
+
+.v-dark-background .search-toggle {
+  background: transparent;
+  border: none;
+  color: var(--on-dark);
+}
+
+#site-navigation.toggled .search-toggle {
+  font-size: 18px;
+  justify-content: flex-start;
+  padding: 12px 0;
+  width: 100%;
 }
 
 #search-overlay {

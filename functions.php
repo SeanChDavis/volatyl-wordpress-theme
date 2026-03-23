@@ -26,6 +26,7 @@ require_once( THEME_INCLUDES . '/queries.php' );
 require_once( THEME_INCLUDES . '/core-modifications.php' );
 require_once( THEME_INCLUDES . '/template-tags.php' );
 require_once( THEME_INCLUDES . '/widgets.php' );
+require_once( THEME_INCLUDES . '/search.php' );
 
 require_once( THEME_INCLUDES . '/gutenberg/styles.php' );
 
