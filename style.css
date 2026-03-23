@@ -3647,17 +3647,17 @@ main {
 }
 #search-overlay .search-overlay-inner .search-form .search-field {
   font-size: clamp(1rem, 1.4vw, 1.111rem);
-  background: transparent;
-  border-color: var(--on-dark);
-  color: var(--on-dark);
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--text);
   width: 100%;
 }
 #search-overlay .search-overlay-inner .search-form .search-field::placeholder {
-  color: var(--on-dark);
+  color: var(--text);
   opacity: 0.5;
 }
 #search-overlay .search-overlay-inner .search-form .search-field:focus {
-  border-color: var(--action-light);
+  border-color: var(--white);
   outline: none;
 }
 #search-overlay .search-overlay-inner .search-form .search-field::-webkit-search-cancel-button {

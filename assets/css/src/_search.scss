@@ -63,18 +63,18 @@
 
 			.search-field {
 				@include fontBigger;
-				background: transparent;
-				border-color: var(--on-dark);
-				color: var(--on-dark);
+				background: var(--white);
+				border-color: var(--white);
+				color: var(--text);
 				width: 100%;
 
 				&::placeholder {
-					color: var(--on-dark);
+					color: var(--text);
 					opacity: 0.5;
 				}
 
 				&:focus {
-					border-color: var(--action-light);
+					border-color: var(--white);
 					outline: none;
 				}
 
