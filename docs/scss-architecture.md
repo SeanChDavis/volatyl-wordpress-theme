@@ -43,6 +43,7 @@ assets/css/src/
 ├── _structure.scss             Page wrapper, .inner container, layout modes
 ├── _header.scss                Site header, logo, tagline
 ├── _navigation.scss            Primary nav, dropdowns, mobile overlay
+├── _search.scss                Header search toggle and full-screen search overlay
 ├── _widget-areas.scss          Sidebar and widget styling
 ├── _comments.scss              Comment threads and reply form
 ├── _forms.scss                 All form elements and button base styles
