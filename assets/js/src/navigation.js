@@ -188,4 +188,51 @@
 		}
 	});
 
+	/**
+	 * Search overlay
+	 */
+	var searchToggle = document.querySelector('.search-toggle');
+	var searchOverlay = document.getElementById('search-overlay');
+
+	if (searchToggle && searchOverlay) {
+		var searchInput = searchOverlay.querySelector('.search-field');
+		var searchClose = searchOverlay.querySelector('.search-overlay-close');
+
+		function openSearch() {
+			searchOverlay.classList.add('search-overlay-active');
+			searchOverlay.setAttribute('aria-hidden', 'false');
+			searchToggle.setAttribute('aria-expanded', 'true');
+			if (searchInput) {
+				searchInput.focus();
+			}
+		}
+
+		function closeSearch() {
+			searchOverlay.classList.remove('search-overlay-active');
+			searchOverlay.setAttribute('aria-hidden', 'true');
+			searchToggle.setAttribute('aria-expanded', 'false');
+			searchToggle.focus();
+		}
+
+		searchToggle.addEventListener('click', openSearch);
+
+		if (searchClose) {
+			searchClose.addEventListener('click', closeSearch);
+		}
+
+		// Close on backdrop click (outside the inner form area)
+		searchOverlay.addEventListener('click', function(event) {
+			if (!event.target.closest('.search-overlay-inner') && !event.target.closest('.search-overlay-close')) {
+				closeSearch();
+			}
+		});
+
+		// Close on Escape
+		window.addEventListener('keydown', function(event) {
+			if (event.key === 'Escape' && searchOverlay.classList.contains('search-overlay-active')) {
+				closeSearch();
+			}
+		});
+	}
+
 }());

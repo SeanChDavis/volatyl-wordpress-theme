@@ -1,0 +1,109 @@
+// Search toggle button in the site header
+.search-toggle {
+	align-items: center;
+	background: transparent;
+	border: none;
+	color: var(--action);
+	cursor: pointer;
+	display: flex;
+	flex-shrink: 0;
+	padding: 0 0 0 1rem;
+
+	svg {
+		display: block;
+	}
+
+	&:hover,
+	&:focus {
+		opacity: 0.7;
+		outline: none;
+	}
+}
+
+// Search overlay
+#search-overlay {
+	align-items: center;
+	background-color: var(--darker);
+	color: var(--on-dark);
+	display: flex;
+	height: 100svh;
+	justify-content: center;
+	left: 0;
+	opacity: 0;
+	pointer-events: none;
+	position: fixed;
+	right: 0;
+	top: 0;
+	transition: opacity 0.2s;
+	z-index: 9999;
+
+	&.search-overlay-active {
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	.search-overlay-inner {
+		max-width: 600px;
+		padding: 0 1.5rem;
+		width: 100%;
+
+		.search-form {
+			display: flex;
+			gap: .75rem;
+			width: 100%;
+
+			label {
+				flex: 1 1 auto;
+				min-width: 0;
+			}
+
+			.search-field {
+				@include fontBigger;
+				background: transparent;
+				border-color: var(--on-dark);
+				color: var(--on-dark);
+				width: 100%;
+
+				&::placeholder {
+					color: var(--on-dark);
+					opacity: 0.5;
+				}
+
+				&:focus {
+					border-color: var(--action-light);
+					outline: none;
+				}
+			}
+		}
+	}
+
+	.search-overlay-close {
+		@include headingFont;
+		@include fontSmallest;
+		background: transparent;
+		border: none;
+		color: var(--on-dark);
+		cursor: pointer;
+		line-height: 1;
+		position: absolute;
+		right: 1.5rem;
+		text-decoration: underline;
+		top: 1.5rem;
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+	}
+}
+
+// Account for admin bar when logged in
+.logged-in #search-overlay {
+	height: calc(100svh - 46px);
+	top: 46px;
+
+	@media all and (min-width: 783px) {
+		height: calc(100svh - 32px);
+		top: 32px;
+	}
+}

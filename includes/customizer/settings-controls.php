@@ -71,6 +71,18 @@ $wp_customize->add_control( 'volatyl_full_width_structure', array(
 	'type'        => 'checkbox',
 ) );
 
+// Header search icon
+$wp_customize->add_setting( 'volatyl_header_search', array(
+	'default'           => 0,
+	'sanitize_callback' => 'volatyl_sanitize_checkbox',
+) );
+$wp_customize->add_control( 'volatyl_header_search', array(
+	'section'  => 'volatyl_section_backgrounds',
+	'priority' => 55,
+	'label'    => __( 'Enable header search icon', 'volatyl' ),
+	'type'     => 'checkbox',
+) );
+
 // Section backgrounds heading
 $wp_customize->add_setting( 'volatyl_section_backgrounds_heading', array(
 	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',

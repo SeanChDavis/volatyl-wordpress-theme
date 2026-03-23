@@ -166,6 +166,7 @@ For full technical details on the color system, see [docs/color-system.md](docs/
 - **Corner radius** — Controls the roundness of cards, inputs, and surfaces (0–20px).
 - **Button radius** — Controls button roundness independently. Slides from square to rounded (0–50) or jumps to full pill shape (51–100).
 - **Full-width structure** — Toggle between page-width and full-width layout mode.
+- **Enable header search icon** — Adds a magnifying glass icon to the site header that opens a full-screen search overlay.
 
 **Section Backgrounds** — Controls which page headers use a dark background by default. These can be overridden per-page using the [Page Layout meta box](#per-page-options).
 - Dark header on archive pages
@@ -326,6 +327,16 @@ When a sidebar has no active widgets, the main content area expands to full widt
 To hide the sidebar on a specific post or page regardless of widget state, use the **Hide Sidebar** option in the [Page Layout meta box](#per-page-options).
 
 Sidebars do not appear on Canvas template pages.
+
+---
+
+## Search
+
+Enable the header search icon under **Customizer → Design → Enable header search icon**. When enabled, a magnifying glass icon appears at the right end of the site header on all pages and at all viewport sizes.
+
+Clicking the icon opens a full-screen search overlay with a prominent search input. The overlay dismisses via the close button, a click anywhere outside the form, or the Escape key. The icon inherits its color from the header context — white on dark headers, action-colored on light headers.
+
+Search results are handled by the standard WordPress search template, with a content header that displays the query.
 
 ---
 
