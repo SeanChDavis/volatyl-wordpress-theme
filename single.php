@@ -3,7 +3,9 @@ get_header();
 ?>
 
 	<main id="main">
-		<?php get_template_part( 'template-parts/content', 'header' ); ?>
+		<?php get_template_part( 'template-parts/content', 'header', array(
+			'jumbo_title' => (bool) get_post_meta( get_the_ID(), '_volatyl_jumbo_title', true ),
+		) ); ?>
 		<div class="inner">
 			<div class="main-content-wrap">
 				<div id="primary-content">
