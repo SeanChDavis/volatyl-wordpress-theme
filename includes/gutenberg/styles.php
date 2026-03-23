@@ -129,3 +129,13 @@ function volatyl_editor_color_palette() {
 	add_theme_support( 'editor-color-palette', volatyl_palette_colors() );
 }
 add_action( 'after_setup_theme', 'volatyl_editor_color_palette' );
+
+/**
+ * Remove WordPress core block patterns and disable the remote Pattern Directory
+ * API call. The inserter will show only patterns registered by this theme.
+ */
+function volatyl_disable_default_patterns() {
+	remove_theme_support( 'core-block-patterns' );
+}
+add_action( 'after_setup_theme', 'volatyl_disable_default_patterns' );
+add_filter( 'should_load_remote_block_patterns', '__return_false' );
