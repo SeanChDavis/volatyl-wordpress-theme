@@ -46,12 +46,12 @@ function volatyl_setup() {
 	// Enable support for Post Thumbnails
 	add_theme_support( 'post-thumbnails' );
 
-	// Hard cropped image size for grid items
-	add_image_size( 'v-grid-item-media', 600, 300, true ); // Default size
-	add_image_size( 'v-grid-item-media_small', 350, 175, true );
-	add_image_size( 'v-grid-item-media_medium', 600, 300, true );
-	add_image_size( 'v-grid-item-media_large', 800, 400, true );
-	add_image_size( 'v-grid-item-media_full', 1168, 584, true );
+	// Hard cropped image size for grid items (16:9)
+	add_image_size( 'v-grid-item-media', 600, 338, true ); // Default size
+	add_image_size( 'v-grid-item-media_small', 350, 197, true );
+	add_image_size( 'v-grid-item-media_medium', 600, 338, true );
+	add_image_size( 'v-grid-item-media_large', 800, 450, true );
+	add_image_size( 'v-grid-item-media_full', 1168, 657, true );
 
 	// Add support for editor styles
 	add_theme_support( 'editor-styles' );
