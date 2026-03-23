@@ -3591,14 +3591,9 @@ main {
 
 .search-toggle {
   align-items: center;
-  background: transparent;
-  border: none;
-  border-radius: 0;
   color: var(--action);
   cursor: pointer;
   display: flex;
-  letter-spacing: normal;
-  line-height: normal;
   padding: 0 0 0 0.75rem;
 }
 .search-toggle svg {
@@ -3606,8 +3601,6 @@ main {
 }
 
 .v-dark-background .search-toggle {
-  background: transparent;
-  border: none;
   color: var(--on-dark);
 }
 

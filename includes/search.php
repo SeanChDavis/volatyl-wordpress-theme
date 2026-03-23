@@ -21,9 +21,9 @@ function volatyl_search_nav_item( $items, $args ) {
 	if ( isset( $args->theme_location ) && 'primary-menu' === $args->theme_location ) {
 		$label   = esc_attr__( 'Open search', 'volatyl' );
 		$items  .= '<li class="menu-item menu-item-search">';
-		$items  .= '<button class="search-toggle" aria-expanded="false" aria-controls="search-overlay" aria-label="' . $label . '">';
+		$items  .= '<span class="search-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="search-overlay" aria-label="' . $label . '">';
 		$items  .= '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>';
-		$items  .= '</button>';
+		$items  .= '</span>';
 		$items  .= '</li>';
 	}
 	return $items;

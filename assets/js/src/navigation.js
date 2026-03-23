@@ -216,6 +216,13 @@
 
 		searchToggle.addEventListener('click', openSearch);
 
+		searchToggle.addEventListener('keydown', function(event) {
+			if (event.key === 'Enter' || event.key === ' ') {
+				event.preventDefault();
+				openSearch();
+			}
+		});
+
 		if (searchClose) {
 			searchClose.addEventListener('click', closeSearch);
 		}
