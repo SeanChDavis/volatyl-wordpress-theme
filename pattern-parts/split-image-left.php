@@ -11,11 +11,11 @@
 <!-- wp:group {"align":"full","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull">
 
-	<!-- wp:columns {"isStackedOnMobile":true,"verticalAlignment":"center"} -->
-	<div class="wp-block-columns are-vertically-aligned-center">
+	<!-- wp:columns {"isStackedOnMobile":true,"verticalAlignment":"center","className":"split-section-columns"} -->
+	<div class="wp-block-columns are-vertically-aligned-center split-section-columns">
 
-		<!-- wp:column {"verticalAlignment":"center"} -->
-		<div class="wp-block-column is-vertically-aligned-center">
+		<!-- wp:column {"verticalAlignment":"center","className":"split-section-media"} -->
+		<div class="wp-block-column is-vertically-aligned-center split-section-media">
 			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
 			<figure class="wp-block-image size-large"><img src="" alt="" /></figure>
 			<!-- /wp:image -->
@@ -24,8 +24,8 @@
 
 		<!-- wp:column {"verticalAlignment":"center"} -->
 		<div class="wp-block-column is-vertically-aligned-center">
-			<!-- wp:heading {"level":2} -->
-			<h2 class="wp-block-heading">Section Heading</h2>
+			<!-- wp:heading {"level":3} -->
+			<h3 class="wp-block-heading">Section Heading</h3>
 			<!-- /wp:heading -->
 			<!-- wp:paragraph -->
 			<p>Supporting content that expands on the heading. Use this space to explain, persuade, or provide context for the image alongside it.</p>

@@ -1,0 +1,56 @@
+// =============================================================================
+// Pattern Shared Styles
+// Reusable CSS for block patterns. Keeps pattern-specific styling out of
+// component files and provides a single source of truth for all patterns.
+// =============================================================================
+
+// Section header — heading + optional description above a content block.
+// Used by Feature Grid, Split Section, and any future pattern with a
+// section intro. Mirrors the max-width constraints in _content-header.scss
+// so section intros feel consistent across the theme.
+
+.section-header-title {
+
+	@media all and (min-width: $smMinWidth) {
+		max-width: clamp(600px, 65vw, 840px);
+	}
+
+	&.has-text-align-center {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+// Split Section — image always appears above text when columns stack on mobile.
+// order: -1 on the media column ensures this regardless of DOM order,
+// covering both image-left and image-right variants.
+.split-section-columns {
+
+	@media all and (max-width: calc($smMinWidth - 1px)) {
+
+		.split-section-media {
+			order: -1;
+
+			figure {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	@media all and (min-width: $smMinWidth) {
+		gap: clamp(3rem, 6vw, 5rem);
+	}
+}
+
+.section-header-description {
+	max-width: clamp(580px, 50vw, 665px);
+
+	&.has-text-align-center {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+	}
+}
