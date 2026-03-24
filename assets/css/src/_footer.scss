@@ -25,10 +25,6 @@
 		.cta-content {
 
 			@media all and (min-width: $smMinWidth) {
-				max-width: 60%;
-			}
-
-			@media all and (min-width: $mdMinWidth) {
 				max-width: 50%;
 			}
 
@@ -56,6 +52,60 @@
 
 .footer-lead.v-gray-background:has(+ .v-gray-background) .footer-lead-cta {
 	border-bottom: 2px solid var(--translucent-dark);
+}
+
+// CTA Banner block patterns — centered and split variants
+.cta-banner {
+
+	.cta-title {
+		margin-bottom: 0;
+
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+	}
+
+	// Centered variant: max-width + auto-margins when elements are centered
+	.cta-title.has-text-align-center {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 768px;
+	}
+
+	.cta-description.has-text-align-center {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 600px;
+	}
+}
+
+// Split variant: center-align everything when columns are stacked
+.cta-banner-split {
+
+	.wp-block-columns {
+
+		@media all and (max-width: calc(#{$smMinWidth} - 1px)) {
+			flex-direction: column;
+		}
+	}
+
+	.wp-block-column {
+
+		@media all and (max-width: calc(#{$smMinWidth} - 1px)) {
+			text-align: center;
+		}
+	}
+
+	.wp-block-buttons {
+
+		@media all and (max-width: calc(#{$smMinWidth} - 1px)) {
+			justify-content: center;
+		}
+
+		@media all and (min-width: $smMinWidth) {
+			align-self: center;
+		}
+	}
 }
 
 .fat-footer {

@@ -2773,7 +2773,6 @@ figure figcaption {
 .wp-block-image:not(.alignleft):not(.alignright),
 .wp-block-cover:not(.alignleft):not(.alignright),
 .wp-block-video:not(.alignleft):not(.alignright),
-.wp-block-buttons:not(.alignleft):not(.alignright),
 .wp-block-audio:not(.alignleft):not(.alignright),
 .wp-block-file:not(.alignleft):not(.alignright),
 .wp-block-columns:not(.alignleft):not(.alignright),
@@ -2791,7 +2790,6 @@ figure figcaption {
 .wp-block-image:not(:first-child),
 .wp-block-cover:not(:first-child),
 .wp-block-video:not(:first-child),
-.wp-block-buttons:not(:first-child),
 .wp-block-audio:not(:first-child),
 .wp-block-file:not(:first-child),
 .wp-block-columns:not(:first-child),
@@ -2811,8 +2809,6 @@ figure figcaption {
 .wp-block-cover.alignright,
 .wp-block-video.alignleft,
 .wp-block-video.alignright,
-.wp-block-buttons.alignleft,
-.wp-block-buttons.alignright,
 .wp-block-audio.alignleft,
 .wp-block-audio.alignright,
 .wp-block-file.alignleft,
@@ -2842,7 +2838,6 @@ figure figcaption {
 .wp-block-image > label,
 .wp-block-cover > label,
 .wp-block-video > label,
-.wp-block-buttons > label,
 .wp-block-audio > label,
 .wp-block-file > label,
 .wp-block-columns > label,
@@ -2860,7 +2855,6 @@ figure figcaption {
 .wp-block-image:last-child,
 .wp-block-cover:last-child,
 .wp-block-video:last-child,
-.wp-block-buttons:last-child,
 .wp-block-audio:last-child,
 .wp-block-file:last-child,
 .wp-block-columns:last-child,
@@ -4140,11 +4134,6 @@ form select {
 }
 @media all and (min-width: 768px) {
   .footer-lead .footer-lead-cta .cta-content {
-    max-width: 60%;
-  }
-}
-@media all and (min-width: 992px) {
-  .footer-lead .footer-lead-cta .cta-content {
     max-width: 50%;
   }
 }
@@ -4164,6 +4153,44 @@ form select {
 
 .footer-lead.v-gray-background:has(+ .v-gray-background) .footer-lead-cta {
   border-bottom: 2px solid var(--translucent-dark);
+}
+
+.cta-banner .cta-title {
+  margin-bottom: 0;
+}
+.cta-banner .cta-title:not(:last-child) {
+  margin-bottom: 12px;
+}
+.cta-banner .cta-title.has-text-align-center {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 768px;
+}
+.cta-banner .cta-description.has-text-align-center {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+}
+
+@media all and (max-width: calc(768px - 1px)) {
+  .cta-banner-split .wp-block-columns {
+    flex-direction: column;
+  }
+}
+@media all and (max-width: calc(768px - 1px)) {
+  .cta-banner-split .wp-block-column {
+    text-align: center;
+  }
+}
+@media all and (max-width: calc(768px - 1px)) {
+  .cta-banner-split .wp-block-buttons {
+    justify-content: center;
+  }
+}
+@media all and (min-width: 768px) {
+  .cta-banner-split .wp-block-buttons {
+    align-self: center;
+  }
 }
 
 .fat-footer {

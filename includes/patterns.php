@@ -41,14 +41,26 @@ function volatyl_register_block_patterns() {
 	);
 
 	register_block_pattern(
-		'volatyl/cta-banner',
+		'volatyl/cta-banner-centered',
 		array(
-			'title'         => __( 'CTA Banner', 'volatyl' ),
-			'description'   => __( 'Full-width call-to-action banner with heading, supporting text, and a button. Background color and text alignment are fully adjustable.', 'volatyl' ),
+			'title'         => __( 'CTA Banner — Centered', 'volatyl' ),
+			'description'   => __( 'Full-width call-to-action with heading, description, and a centered button. Mirrors the blog grid CTA layout.', 'volatyl' ),
 			'categories'    => array( 'call-to-action', 'banner' ),
 			'postTypes'     => array( 'page', 'post' ),
 			'viewportWidth' => 1400,
-			'content'       => volatyl_pattern_content( 'cta-banner' ),
+			'content'       => volatyl_pattern_content( 'cta-banner-centered' ),
+		)
+	);
+
+	register_block_pattern(
+		'volatyl/cta-banner-split',
+		array(
+			'title'         => __( 'CTA Banner — Split', 'volatyl' ),
+			'description'   => __( 'Full-width call-to-action with text on the left and a button on the right. Mirrors the footer lead CTA layout.', 'volatyl' ),
+			'categories'    => array( 'call-to-action', 'banner' ),
+			'postTypes'     => array( 'page', 'post' ),
+			'viewportWidth' => 1400,
+			'content'       => volatyl_pattern_content( 'cta-banner-split' ),
 		)
 	);
 

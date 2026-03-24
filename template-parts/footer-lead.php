@@ -13,7 +13,7 @@ if ( get_theme_mod( 'volatyl_footer_lead_color_scheme' ) ) {
 
 <div class="footer-lead <?php echo esc_attr( $footer_lead_color_scheme ); ?>">
 	<div class="inner">
-		<div class="footer-lead-cta v-grid v-grid-columns_2">
+		<div class="footer-lead-cta">
 			<?php if ( $volatyl_footer_lead_title || $volatyl_footer_lead_description ) { ?>
 				<div class="cta-content">
 					<?php if ( $volatyl_footer_lead_title ) { ?>
