@@ -5069,6 +5069,23 @@ article:last-child .entry-footer,
   text-align: right;
 }
 
+/* Border Radius */
+.v-rounded {
+  border-radius: var(--radius);
+}
+
+.wp-block-image.v-rounded img {
+  border-radius: var(--radius);
+}
+
+.v-circle {
+  border-radius: 50%;
+}
+
+.wp-block-image.v-circle img {
+  border-radius: 50%;
+}
+
 .v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
 .v-dark-background textarea,
 .v-dark-background .v-dark-background table,
