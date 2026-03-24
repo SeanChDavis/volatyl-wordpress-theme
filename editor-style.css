@@ -1049,12 +1049,10 @@ address {
 }
 
 .wp-block-pullquote {
+  border-style: solid;
+  border-width: 2px 0;
+  margin: clamp(2rem, 4.5vw, 3.5rem) 0;
   padding: 3em 1em;
-}
-@media all and (min-width: 992px) {
-  .wp-block-pullquote {
-    margin-bottom: 1rem;
-  }
 }
 .wp-block-pullquote blockquote {
   font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -1694,6 +1692,12 @@ hr,
 .wp-block-quote,
 .wp-block-pullquote {
   border-color: var(--v-subdued-light);
+}
+
+.wp-block-pullquote {
+  border-style: solid;
+  border-width: 2px 0;
+  margin: clamp(2rem, 4.5vw, 3.5rem) 0;
 }
 
 pre,

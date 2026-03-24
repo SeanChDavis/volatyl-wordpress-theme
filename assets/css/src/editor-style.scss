@@ -70,6 +70,12 @@ hr,
 	border-color: var(--v-subdued-light);
 }
 
+.wp-block-pullquote {
+	border-style: solid;
+	border-width: 2px 0;
+	margin: clamp(2rem, 4.5vw, 3.5rem) 0;
+}
+
 pre,
 code,
 kbd,
