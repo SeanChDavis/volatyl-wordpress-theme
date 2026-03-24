@@ -107,12 +107,12 @@
             var hues = schemeHues[to] || schemeHues.monochromatic;
 
             function setColorGroup(prefix, hueVar) {
-                root.style.setProperty('--' + prefix + '-darker',  'oklch(18% var(--v-palette-chroma) var(' + hueVar + '))');
-                root.style.setProperty('--' + prefix + '-dark',    'oklch(30% var(--v-palette-chroma) var(' + hueVar + '))');
-                root.style.setProperty('--' + prefix,              'oklch(55% var(--v-palette-chroma) var(' + hueVar + '))');
-                root.style.setProperty('--' + prefix + '-light',   'oklch(80% var(--v-palette-chroma) var(' + hueVar + '))');
-                root.style.setProperty('--' + prefix + '-lighter', 'oklch(93% calc(var(--v-palette-chroma) * 0.3) var(' + hueVar + '))');
-                root.style.setProperty('--' + prefix + '-tint',    'oklch(97.5% calc(var(--v-palette-chroma) * 0.025) var(' + hueVar + '))');
+                root.style.setProperty('--v-' + prefix + '-darker',  'oklch(18% var(--v-palette-chroma) var(' + hueVar + '))');
+                root.style.setProperty('--v-' + prefix + '-dark',    'oklch(30% var(--v-palette-chroma) var(' + hueVar + '))');
+                root.style.setProperty('--v-' + prefix,              'oklch(55% var(--v-palette-chroma) var(' + hueVar + '))');
+                root.style.setProperty('--v-' + prefix + '-light',   'oklch(80% var(--v-palette-chroma) var(' + hueVar + '))');
+                root.style.setProperty('--v-' + prefix + '-lighter', 'oklch(93% calc(var(--v-palette-chroma) * 0.3) var(' + hueVar + '))');
+                root.style.setProperty('--v-' + prefix + '-tint',    'oklch(97.5% calc(var(--v-palette-chroma) * 0.025) var(' + hueVar + '))');
             }
 
             setColorGroup('action', hues.action);

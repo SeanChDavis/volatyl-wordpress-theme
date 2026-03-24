@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * CSS variables controlling the theme color scheme.
  *

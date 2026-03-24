@@ -1,4 +1,4 @@
-﻿<?php // Gutenberg style functions
+<?php // Gutenberg style functions
 
 /**
  * Register editor-style.css via add_editor_style() so WordPress automatically
