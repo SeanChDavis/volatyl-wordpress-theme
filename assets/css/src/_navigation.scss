@@ -1,4 +1,4 @@
-#site-navigation {
+﻿#site-navigation {
 
 	#primary-menu {
 
@@ -114,7 +114,7 @@
 
 					& > .sub-menu {
 						border: 1px solid rgba(255, 255, 255, .1);
-						border-radius: calc(var(--radius) * 0.4);
+						border-radius: calc(var(--v-radius) * 0.4);
 						box-shadow: 0 0 45px 0px rgba(0, 0, 0, .1);
 						display: none;
 						padding: 7px 1.2rem;
@@ -157,7 +157,7 @@
 					padding-left: 12px;
 
 					& > a {
-						border-radius: var(--radius-button);
+						border-radius: var(--v-radius-button);
 						padding: 8px 12px;
 
 						&:active,
@@ -291,7 +291,7 @@
 
 					& > .sub-menu {
 						background-color: rgba(0, 0, 0, .15);
-						border-radius: calc(var(--radius) * 0.4);
+						border-radius: calc(var(--v-radius) * 0.4);
 						margin-bottom: 1rem;
 						margin-top: 4px;
 						padding: 7px 1.2rem;
@@ -393,8 +393,8 @@
 }
 
 .post-navigation {
-	border-bottom: 2px solid var(--subdued-light);
-	border-top: 2px solid var(--subdued-light);
+	border-bottom: 2px solid var(--v-subdued-light);
+	border-top: 2px solid var(--v-subdued-light);
 	margin-bottom: 2.5rem;
 	margin-top: 2.5rem;
 	padding-bottom: 1.5rem;

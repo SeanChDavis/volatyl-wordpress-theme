@@ -1,4 +1,4 @@
-# Volatyl
+﻿# Volatyl
 ### An Intelligently Designed WordPress Theme
 
 Volatyl is a classic WordPress theme built around the idea that a small amount of information should do a lot of work. Choose a single color hue and a full palette is generated for you. Add widgets to footer areas and the layout adjusts itself. Enable a sidebar and the content column reflows. The goal is a theme that makes intelligent decisions so you don't have to make as many.
@@ -124,27 +124,27 @@ The full palette is available as CSS custom properties on both the front end and
 
 | Variable | Usage |
 |---|---|
-| `--action` | Primary brand color — buttons, links, interactive elements |
-| `--action-dark` | Darkened action — hover and active states |
-| `--action-light` | Lightened action |
-| `--action-tint` | Extremely light action wash — gray background surfaces |
-| `--accent-1` | Secondary color family base (varies by scheme) |
-| `--accent-2` | Tertiary color family base (varies by scheme) |
-| `--dark` | Dark surface background |
-| `--darker` | Deeper dark surface |
-| `--text` | Body text color |
-| `--subdued-dark` | Muted text, secondary headings |
-| `--subdued-light` | Borders, dividers, separators |
-| `--on-dark` | Text rendered over dark backgrounds (near-white, hue-tinted) |
-| `--white` | Pure white |
-| `--translucent-light` | Subtle light overlay |
-| `--translucent-dark` | Subtle dark overlay |
-| `--recessed-bg` | Tinted surface for code blocks, `pre`, and `dl` |
-| `--error` | Error and validation states |
-| `--radius` | Corner radius for surfaces — cards, inputs, containers |
-| `--radius-button` | Corner radius for buttons |
+| `--v-action` | Primary brand color — buttons, links, interactive elements |
+| `--v-action-dark` | Darkened action — hover and active states |
+| `--v-action-light` | Lightened action |
+| `--v-action-tint` | Extremely light action wash — gray background surfaces |
+| `--v-accent-1` | Secondary color family base (varies by scheme) |
+| `--v-accent-2` | Tertiary color family base (varies by scheme) |
+| `--v-dark` | Dark surface background |
+| `--v-darker` | Deeper dark surface |
+| `--v-text` | Body text color |
+| `--v-subdued-dark` | Muted text, secondary headings |
+| `--v-subdued-light` | Borders, dividers, separators |
+| `--v-on-dark` | Text rendered over dark backgrounds (near-white, hue-tinted) |
+| `--v-white` | Pure white |
+| `--v-translucent-light` | Subtle light overlay |
+| `--v-translucent-dark` | Subtle dark overlay |
+| `--v-recessed-bg` | Tinted surface for code blocks, `pre`, and `dl` |
+| `--v-error` | Error and validation states |
+| `--v-radius` | Corner radius for surfaces — cards, inputs, containers |
+| `--v-radius-button` | Corner radius for buttons |
 
-Each color family (`--action`, `--accent-1`, `--accent-2`, `--accent-3`) also has a full range of variants: `-darker`, `-dark`, base, `-light`, `-lighter`, `-tint`.
+Each color family (`--v-action`, `--v-accent-1`, `--v-accent-2`, `--v-accent-3`) also has a full range of variants: `-darker`, `-dark`, base, `-light`, `-lighter`, `-tint`.
 
 For full technical details on the color system, see [docs/color-system.md](docs/color-system.md).
 
@@ -448,7 +448,7 @@ Note: there is no default Grunt task — always specify the task explicitly.
 
 ### Colors and the Build
 
-The OKLCH color system is output dynamically by PHP at runtime — it is not part of the compiled CSS. Changes to color logic in `includes/color-schemes.php` take effect immediately without a build step. The SCSS files reference CSS custom properties (`var(--action)`, etc.) which are defined by the PHP output.
+The OKLCH color system is output dynamically by PHP at runtime — it is not part of the compiled CSS. Changes to color logic in `includes/color-schemes.php` take effect immediately without a build step. The SCSS files reference CSS custom properties (`var(--v-action)`, etc.) which are defined by the PHP output.
 
 ---
 

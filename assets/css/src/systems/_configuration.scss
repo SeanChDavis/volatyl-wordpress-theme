@@ -1,4 +1,4 @@
-/* Min-width breakpoints */
+﻿/* Min-width breakpoints */
 $xsMinWidth: 560px;
 $smMinWidth: 768px;
 $mdMinWidth: 992px;
@@ -75,7 +75,7 @@ $lgMinWidth: 1200px;
 	margin-left: auto;
 	margin-right: auto;
 	max-width: calc(1200px + 1.25rem);
-	padding: var(--section-v-spacing) clamp(1.25rem, 7.9vw, 6rem);
+	padding: var(--v-section-v-spacing) clamp(1.25rem, 7.9vw, 6rem);
 
 	@media all and (min-width: $mdMinWidth) {
 		padding-left: 2rem;
@@ -87,8 +87,8 @@ $lgMinWidth: 1200px;
 @mixin innerSpacingLarge {
 
 	@media all and (min-width: $xsMinWidth) {
-		padding-bottom: calc(var(--section-v-spacing) * 1.4);
-		padding-top: calc(var(--section-v-spacing) * 1.4);
+		padding-bottom: calc(var(--v-section-v-spacing) * 1.4);
+		padding-top: calc(var(--v-section-v-spacing) * 1.4);
 	}
 }
 
@@ -96,8 +96,8 @@ $lgMinWidth: 1200px;
 @mixin innerSpacingLarger {
 
 	@media all and (min-width: $xsMinWidth) {
-		padding-bottom: calc(var(--section-v-spacing) * 2.3);
-		padding-top: calc(var(--section-v-spacing) * 2.3);
+		padding-bottom: calc(var(--v-section-v-spacing) * 2.3);
+		padding-top: calc(var(--v-section-v-spacing) * 2.3);
 	}
 }
 
@@ -106,7 +106,7 @@ $lgMinWidth: 1200px;
 // Shared between front-end and editor stylesheets.
 // ─────────────────────────────────────────────────────────────
 
-/// Primary action buttons — fills with --action, darkens on interaction.
+/// Primary action buttons — fills with --v-action, darkens on interaction.
 /// @param {Color | null} $border [null] — pass a color to set an explicit border
 @mixin action-buttons( $border: null ) {
 	.button,
@@ -117,8 +117,8 @@ $lgMinWidth: 1200px;
 	.comment-reply-link,
 	.wp-block-calendar .wp-calendar-table caption,
 	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
-		background-color: var(--action);
-		color: var(--white);
+		background-color: var(--v-action);
+		color: var(--v-white);
 
 		@if $border != null {
 			border-color: $border;
@@ -127,16 +127,16 @@ $lgMinWidth: 1200px;
 		&:hover,
 		&:focus,
 		&:active {
-			background-color: var(--action-dark);
-			border-color: var(--action-dark);
+			background-color: var(--v-action-dark);
+			border-color: var(--v-action-dark);
 		}
 	}
 }
 
 /// Utility buttons (search submit, etc.) — fills with $bg, transitions to $hover on interaction.
-/// @param {Color} $bg    [var(--dark)]
-/// @param {Color} $hover [var(--action)]
-@mixin utility-buttons( $bg: var(--dark), $hover: var(--action) ) {
+/// @param {Color} $bg    [var(--v-dark)]
+/// @param {Color} $hover [var(--v-action)]
+@mixin utility-buttons( $bg: var(--v-dark), $hover: var(--v-action) ) {
 	[type="button"],
 	[type="submit"],
 	[type="reset"],
@@ -145,7 +145,7 @@ $lgMinWidth: 1200px;
 	.wp-block-search[class*="button-inside"] [class*="search__inside"] button {
 		background-color: $bg;
 		border-color: $bg;
-		color: var(--white);
+		color: var(--v-white);
 
 		&:hover,
 		&:focus,
@@ -157,9 +157,9 @@ $lgMinWidth: 1200px;
 }
 
 /// Form inputs — sets default and focus/active border colors.
-/// @param {Color} $border      [var(--dark)]
-/// @param {Color} $focus-border [var(--action)]
-@mixin form-inputs( $border: var(--dark), $focus-border: var(--action) ) {
+/// @param {Color} $border      [var(--v-dark)]
+/// @param {Color} $focus-border [var(--v-action)]
+@mixin form-inputs( $border: var(--v-dark), $focus-border: var(--v-action) ) {
 	input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
 	textarea,
 	select {
@@ -176,7 +176,7 @@ $lgMinWidth: 1200px;
 /// Colored background context — apply inside mid-lightness colored backgrounds (base palette level).
 /// Sets text, headings, links, and subdued elements to white. Does NOT adjust buttons, forms, or tables.
 @mixin colored-bg-context() {
-	color: var(--white);
+	color: var(--v-white);
 
 	h1:not(.has-text-color), .h1,
 	h2:not(.has-text-color), .h2,
@@ -194,7 +194,7 @@ $lgMinWidth: 1200px;
 	figure figcaption,
 	.wp-block-calendar .wp-calendar-nav,
 	[class*="wp-block-"] > label {
-		color: var(--white);
+		color: var(--v-white);
 	}
 }
 
@@ -202,11 +202,11 @@ $lgMinWidth: 1200px;
 /// Adjusts text, headings, links, buttons, forms, and tables for readability.
 /// Does NOT set background-color — the caller is responsible for that.
 @mixin dark-bg-context() {
-	color: var(--on-dark);
+	color: var(--v-on-dark);
 
-	@include action-buttons( var(--white) );
-	@include utility-buttons( var(--action), var(--action-dark) );
-	@include form-inputs( var(--action), var(--accent-1) );
+	@include action-buttons( var(--v-white) );
+	@include utility-buttons( var(--v-action), var(--v-action-dark) );
+	@include form-inputs( var(--v-action), var(--v-accent-1) );
 
 	// Headings and links — white (skip elements the user explicitly colored)
 	h1:not(.has-text-color), .h1,
@@ -216,7 +216,7 @@ $lgMinWidth: 1200px;
 	h5:not(.has-text-color), .h5,
 	h6:not(.has-text-color), .h6,
 	a:not(.has-text-color) {
-		color: var(--white);
+		color: var(--v-white);
 	}
 
 	// Secondary / subdued elements — on-dark (skip elements the user explicitly colored)
@@ -237,13 +237,13 @@ $lgMinWidth: 1200px;
 	figure figcaption,
 	.wp-block-calendar .wp-calendar-nav,
 	[class*="wp-block-"] > label {
-		color: var(--on-dark);
+		color: var(--v-on-dark);
 	}
 
 	// Tables — action-dark borders read better on dark backgrounds
 	table,
 	table th,
 	table td {
-		border-color: var(--action-dark);
+		border-color: var(--v-action-dark);
 	}
 }

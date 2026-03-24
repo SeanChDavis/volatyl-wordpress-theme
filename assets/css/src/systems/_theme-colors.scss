@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Control the entire theme color scheme
  */
 
@@ -7,14 +7,14 @@
 // ─────────────────────────────────────────────────────────────
 
 #page-container {
-	background-color: var(--white);
-	color: var(--text);
+	background-color: var(--v-white);
+	color: var(--v-text);
 }
 
 body,
 .v-gray-background,
 .has-gray-background-color {
-	background-color: var(--action-tint);
+	background-color: var(--v-action-tint);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -22,14 +22,14 @@ body,
 // ─────────────────────────────────────────────────────────────
 
 a {
-	color: var(--action);
+	color: var(--v-action);
 }
 
 h4,
 .h4,
 h6,
 .h6 {
-	color: var(--subdued-dark);
+	color: var(--v-subdued-dark);
 }
 
 .site-title a,
@@ -47,13 +47,13 @@ h6,
 .wp-block-latest-comments__comment-meta a,
 .fat-footer a,
 cite {
-	color: var(--text);
+	color: var(--v-text);
 }
 
 .site-title a:hover,
 .site-title a:focus,
 .site-title a:active {
-	color: var(--action);
+	color: var(--v-action);
 }
 
 .v-subdued-title,
@@ -62,18 +62,18 @@ cite {
 .archive-title.content-header-title,
 [class*="wp-block-"] > label,
 figure figcaption {
-	color: var(--subdued-dark);
+	color: var(--v-subdued-dark);
 }
 
 .pagination .page-numbers.current {
-	color: var(--action);
+	color: var(--v-action);
 }
 
 .blog-name a,
 .blog-name a:hover,
 .blog-name a:focus,
 .blog-name a:active {
-	border-color: var(--dark);
+	border-color: var(--v-dark);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -85,22 +85,22 @@ figure figcaption {
 
 // Outline button
 .wp-block-button.is-style-outline .wp-block-button__link {
-	border-color: var(--action);
-	color: var(--action);
+	border-color: var(--v-action);
+	color: var(--v-action);
 
 	&:hover,
 	&:focus,
 	&:active {
-		background-color: var(--action-dark);
-		border-color: var(--action-dark);
-		color: var(--white);
+		background-color: var(--v-action-dark);
+		border-color: var(--v-action-dark);
+		color: var(--v-white);
 	}
 }
 
 // Search "button inside" — the inner container is always action-dark colored
 .wp-block-search[class*="button-inside"] [class*="search__inside"] {
-	background-color: var(--action-dark);
-	border-color: var(--action-dark);
+	background-color: var(--v-action-dark);
+	border-color: var(--v-action-dark);
 }
 
 // Content header CTA — interaction states only (inherits base button styles from above)
@@ -112,8 +112,8 @@ figure figcaption {
 .content-header-primary-cta .wp-block-button__link:hover,
 .content-header-primary-cta .wp-block-button__link:focus,
 .content-header-primary-cta .wp-block-button__link:active {
-	background-color: var(--action-dark);
-	border-color: var(--action-dark);
+	background-color: var(--v-action-dark);
+	border-color: var(--v-action-dark);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -128,33 +128,33 @@ figure figcaption {
 
 #site-navigation #primary-menu .menu-item a,
 #site-navigation .menu-toggle {
-	color: var(--text);
+	color: var(--v-text);
 }
 
 // Dropdown and mobile modal backgrounds
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu,
 #site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu {
-	background-color: var(--darker);
+	background-color: var(--v-darker);
 }
 
 // Dropdown and mobile modal link colors
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu a,
 #site-navigation.toggled > .menu-modal-active #primary-menu .menu-item a {
-	color: var(--white);
+	color: var(--v-white);
 }
 
 // Third-level sub-menu links
 #site-navigation #primary-menu > .menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu a {
-	color: var(--on-dark);
+	color: var(--v-on-dark);
 }
 
 // Chevron indicators
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after {
-	border-bottom-color: var(--dark);
+	border-bottom-color: var(--v-dark);
 }
 
 #site-navigation.toggled > #primary-menu > .menu-item-has-children > a:after {
-	border-bottom-color: var(--on-dark);
+	border-bottom-color: var(--v-on-dark);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -168,18 +168,18 @@ table td,
 .wp-block-table.is-style-stripes table td,
 [class*="wp-block-"] > table th,
 [class*="wp-block-"] > table td {
-	border-color: var(--dark);
+	border-color: var(--v-dark);
 }
 
 // Table headers match border color
 table th,
 [class*="wp-block-"] > table th {
-	background-color: var(--dark);
-	color: var(--white);
+	background-color: var(--v-dark);
+	color: var(--v-white);
 }
 
 .wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1) {
-	background-color: var(--recessed-bg);
+	background-color: var(--v-recessed-bg);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -192,7 +192,7 @@ code,
 kbd,
 tt,
 var {
-	background-color: var(--recessed-bg);
+	background-color: var(--v-recessed-bg);
 }
 
 pre code {
@@ -205,15 +205,15 @@ hr,
 .twitter-tweet,
 .wp-block-quote,
 .wp-block-pullquote {
-	border-color: var(--subdued-light);
+	border-color: var(--v-subdued-light);
 }
 
 .wp-block-separator.is-style-dots:before {
-	color: var(--text);
+	color: var(--v-text);
 }
 
 .wp-block-calendar .wp-calendar-nav {
-	color: var(--subdued-dark);
+	color: var(--v-subdued-dark);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -221,23 +221,23 @@ hr,
 // ─────────────────────────────────────────────────────────────
 
 .v-grid .v-grid-item-container:not(.v-subdued) {
-	background-color: var(--action-tint);
+	background-color: var(--v-action-tint);
 }
 
 .v-grid-item-title a {
-	color: var(--text);
+	color: var(--v-text);
 }
 
 .v-grid-item-title a:hover,
 .v-grid-item-title a:focus,
 .v-grid-item-title a:active {
-	color: var(--action);
+	color: var(--v-action);
 }
 
 .v-grid-item-meta,
 .v-grid-item-meta a,
 .v-grid-item-footer a {
-	color: var(--text);
+	color: var(--v-text);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -249,23 +249,23 @@ hr,
 #comments .comment:not(:last-child),
 #comments .comment .comment:not(:last-child),
 #comments .pingback:not(:last-child) {
-	border-color: var(--subdued-light);
+	border-color: var(--v-subdued-light);
 }
 
 #comments .fn a {
-	color: var(--text);
+	color: var(--v-text);
 }
 
 #comments .fn a:hover,
 #comments .fn a:focus,
 #comments .fn a:active,
 #comments #respond #reply-title small #cancel-comment-reply-link {
-	color: var(--action);
+	color: var(--v-action);
 }
 
 article .entry-content .wp-block-latest-comments,
 .v-content-container .entry-content .wp-block-latest-comments {
-	background-color: var(--recessed-bg);
+	background-color: var(--v-recessed-bg);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -273,7 +273,7 @@ article .entry-content .wp-block-latest-comments,
 // ─────────────────────────────────────────────────────────────
 
 .v-dark-background {
-	background-color: var(--dark);
+	background-color: var(--v-dark);
 }
 
 // Base-level colored backgrounds — white text, no button/form adjustments
@@ -298,7 +298,7 @@ article .entry-content .wp-block-latest-comments,
 // Accent-1 dark contexts — on-dark nudged toward accent-1 hue
 .has-accent-1-darker-background-color,
 .has-accent-1-dark-background-color {
-	--on-dark: oklch(var(--on-dark-luminance) calc(var(--tint-chroma) * 0.5) var(--accent-1-hue));
+	--v-on-dark: oklch(var(--v-on-dark-luminance) calc(var(--v-tint-chroma) * 0.5) var(--v-accent-1-hue));
 
 	@include dark-bg-context();
 }
@@ -306,7 +306,7 @@ article .entry-content .wp-block-latest-comments,
 // Accent-2 dark contexts — on-dark nudged toward accent-2 hue
 .has-accent-2-darker-background-color,
 .has-accent-2-dark-background-color {
-	--on-dark: oklch(var(--on-dark-luminance) calc(var(--tint-chroma) * 0.5) var(--accent-2-hue));
+	--v-on-dark: oklch(var(--v-on-dark-luminance) calc(var(--v-tint-chroma) * 0.5) var(--v-accent-2-hue));
 
 	@include dark-bg-context();
 }
@@ -314,7 +314,7 @@ article .entry-content .wp-block-latest-comments,
 // Accent-3 dark contexts — on-dark nudged toward accent-3 hue
 .has-accent-3-darker-background-color,
 .has-accent-3-dark-background-color {
-	--on-dark: oklch(var(--on-dark-luminance) calc(var(--tint-chroma) * 0.5) var(--accent-3-hue));
+	--v-on-dark: oklch(var(--v-on-dark-luminance) calc(var(--v-tint-chroma) * 0.5) var(--v-accent-3-hue));
 
 	@include dark-bg-context();
 }
@@ -327,23 +327,23 @@ article .entry-content .wp-block-latest-comments,
 	.archive-title.content-header-title span,
 	#site-navigation:not(.toggled) #primary-menu > .menu-item > a,
 	#site-navigation .menu-toggle {
-		color: var(--white);
+		color: var(--v-white);
 	}
 
 	.archive-title.content-header-title {
-		color: var(--on-dark);
+		color: var(--v-on-dark);
 	}
 
 	// Nav button hover border uses accent instead of action-dark
 	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
 	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
-		border-color: var(--accent-1);
+		border-color: var(--v-accent-1);
 	}
 
 	// Navigation — chevrons become white
 	#site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after,
 	#site-navigation #primary-menu > .menu-item-has-children > a:after {
-		border-bottom-color: var(--white);
+		border-bottom-color: var(--v-white);
 	}
 }

@@ -1,4 +1,4 @@
-#comments {
+﻿#comments {
 
 	.comments-title {
 		border-style: solid;
@@ -211,7 +211,7 @@
 
 				#cancel-comment-reply-link {
 					@include fontSmaller;
-					color: var(--error);
+					color: var(--v-error);
 				}
 			}
 		}
@@ -264,7 +264,7 @@
 
 			.required {
 				@include fontSmaller;
-				color: var(--error);
+				color: var(--v-error);
 				font-weight: 400;
 			}
 		}

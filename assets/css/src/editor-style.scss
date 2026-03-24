@@ -1,4 +1,4 @@
-@import "_normalize";
+﻿@import "_normalize";
 @import "systems/_configuration";
 @import "systems/_helper-classes";
 @import "systems/_editor-classes";
@@ -12,7 +12,7 @@ body {
 	@include bodyFont;
 	@include fontBase;
 	@include lineHeightBase;
-	color: var(--text);
+	color: var(--v-text);
 	@include headingFontReduced;
 
 	* {
@@ -50,24 +50,24 @@ body {
 // ─────────────────────────────────────────────────────────────
 
 a {
-	color: var(--action);
+	color: var(--v-action);
 }
 
 h4, .h4,
 h6, .h6 {
-	color: var(--subdued-dark);
+	color: var(--v-subdued-dark);
 }
 
 figure figcaption,
 [class*="wp-block-"] > label {
-	color: var(--subdued-dark);
+	color: var(--v-subdued-dark);
 }
 
 hr,
 .wp-block-separator,
 .wp-block-quote,
 .wp-block-pullquote {
-	border-color: var(--subdued-light);
+	border-color: var(--v-subdued-light);
 }
 
 pre,
@@ -75,7 +75,7 @@ code,
 kbd,
 tt,
 var {
-	background-color: var(--recessed-bg);
+	background-color: var(--v-recessed-bg);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -118,15 +118,15 @@ li {
 @include utility-buttons();
 
 .wp-block-button.is-style-outline .wp-block-button__link {
-	border-color: var(--action);
-	color: var(--action);
+	border-color: var(--v-action);
+	color: var(--v-action);
 
 	&:hover,
 	&:focus,
 	&:active {
-		background-color: var(--action-dark);
-		border-color: var(--action-dark);
-		color: var(--white);
+		background-color: var(--v-action-dark);
+		border-color: var(--v-action-dark);
+		color: var(--v-white);
 	}
 }
 
@@ -135,18 +135,18 @@ li {
 // ─────────────────────────────────────────────────────────────
 
 table th {
-	background-color: var(--dark);
-	color: var(--white);
+	background-color: var(--v-dark);
+	color: var(--v-white);
 }
 
 table,
 table th,
 table td {
-	border-color: var(--dark);
+	border-color: var(--v-dark);
 }
 
 .wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1) {
-	background-color: var(--recessed-bg);
+	background-color: var(--v-recessed-bg);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -155,7 +155,7 @@ table td {
 
 .v-gray-background,
 .has-action-tint-background-color {
-	background-color: var(--action-tint);
+	background-color: var(--v-action-tint);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -165,7 +165,7 @@ table td {
 // ─────────────────────────────────────────────────────────────
 
 .v-dark-background {
-	background-color: var(--dark);
+	background-color: var(--v-dark);
 }
 
 // Base-level colored backgrounds — white text, no button/form adjustments
@@ -190,7 +190,7 @@ table td {
 // Accent-1 dark contexts — on-dark nudged toward accent-1 hue
 .has-accent-1-darker-background-color,
 .has-accent-1-dark-background-color {
-	--on-dark: oklch(var(--on-dark-luminance) calc(var(--tint-chroma) * 0.5) var(--accent-1-hue));
+	--v-on-dark: oklch(var(--v-on-dark-luminance) calc(var(--v-tint-chroma) * 0.5) var(--v-accent-1-hue));
 
 	@include dark-bg-context();
 }
@@ -198,7 +198,7 @@ table td {
 // Accent-2 dark contexts — on-dark nudged toward accent-2 hue
 .has-accent-2-darker-background-color,
 .has-accent-2-dark-background-color {
-	--on-dark: oklch(var(--on-dark-luminance) calc(var(--tint-chroma) * 0.5) var(--accent-2-hue));
+	--v-on-dark: oklch(var(--v-on-dark-luminance) calc(var(--v-tint-chroma) * 0.5) var(--v-accent-2-hue));
 
 	@include dark-bg-context();
 }
@@ -206,7 +206,7 @@ table td {
 // Accent-3 dark contexts — on-dark nudged toward accent-3 hue
 .has-accent-3-darker-background-color,
 .has-accent-3-dark-background-color {
-	--on-dark: oklch(var(--on-dark-luminance) calc(var(--tint-chroma) * 0.5) var(--accent-3-hue));
+	--v-on-dark: oklch(var(--v-on-dark-luminance) calc(var(--v-tint-chroma) * 0.5) var(--v-accent-3-hue));
 
 	@include dark-bg-context();
 }

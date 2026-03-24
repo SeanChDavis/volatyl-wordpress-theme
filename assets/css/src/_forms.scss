@@ -1,4 +1,4 @@
-.button,
+﻿.button,
 .v-button,
 button,
 [type="button"],
@@ -10,7 +10,7 @@ button,
 	@include headingFont;
 	@include fontSmaller;
 	border: none;
-	border-radius: var(--radius-button);
+	border-radius: var(--v-radius-button);
 	cursor: pointer;
 	display: inline-block;
 	letter-spacing: .035rem;
@@ -21,7 +21,7 @@ button,
 	&:active,
 	&:focus,
 	&:hover {
-		border-radius: var(--radius-button);
+		border-radius: var(--v-radius-button);
 		text-decoration: none;
 	}
 
@@ -49,7 +49,7 @@ select {
 	@include bodyFont;
 	border-style: solid;
 	border-width: 2px;
-	border-radius: calc(var(--radius) * 0.4);
+	border-radius: calc(var(--v-radius) * 0.4);
 	padding: calc(.8em - 2px) .8em;
 	vertical-align: bottom;
 	width: clamp(13rem, 50vw, 18rem);

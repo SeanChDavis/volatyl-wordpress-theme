@@ -1,4 +1,4 @@
-/* Margin */
+﻿/* Margin */
 .v-margin-top-0 { margin-top: 0; }
 .v-margin-top-1 { margin-top: .5rem; }
 .v-margin-top-2 { margin-top: 1rem; }
@@ -128,10 +128,10 @@
 	word-wrap: normal !important;
 
 	&:focus {
-		background-color: var(--action-tint);
+		background-color: var(--v-action-tint);
 		clip: auto !important;
 		clip-path: none;
-		color: var(--text);
+		color: var(--v-text);
 		display: block;
 		font-size: 1em;
 		height: auto;
@@ -170,11 +170,11 @@
 
 /* Border Radius */
 .v-rounded {
-	border-radius: var(--radius);
+	border-radius: var(--v-radius);
 }
 
 .wp-block-image.v-rounded img {
-	border-radius: var(--radius);
+	border-radius: var(--v-radius);
 }
 
 .v-circle {

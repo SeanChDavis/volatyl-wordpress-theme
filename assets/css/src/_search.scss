@@ -1,7 +1,7 @@
-// Search toggle — sits as the last item in the primary nav menu
+﻿// Search toggle — sits as the last item in the primary nav menu
 .search-toggle {
 	align-items: center;
-	color: var(--action);
+	color: var(--v-action);
 	cursor: pointer;
 	display: flex;
 	padding: 0 0 0 .75rem;
@@ -13,7 +13,7 @@
 
 // In dark contexts (dark header or mobile menu overlay), use on-dark color
 .v-dark-background .search-toggle {
-	color: var(--white);
+	color: var(--v-white);
 }
 
 // Mobile nav: match menu item padding and alignment
@@ -27,8 +27,8 @@
 // Search overlay
 #search-overlay {
 	align-items: center;
-	background-color: var(--darker);
-	color: var(--on-dark);
+	background-color: var(--v-darker);
+	color: var(--v-on-dark);
 	display: flex;
 	height: 100svh;
 	justify-content: center;
@@ -63,18 +63,18 @@
 
 			.search-field {
 				@include fontBigger;
-				background: var(--white);
-				border-color: var(--white);
-				color: var(--text);
+				background: var(--v-white);
+				border-color: var(--v-white);
+				color: var(--v-text);
 				width: 100%;
 
 				&::placeholder {
-					color: var(--text);
+					color: var(--v-text);
 					opacity: 0.5;
 				}
 
 				&:focus {
-					border-color: var(--white);
+					border-color: var(--v-white);
 					outline: none;
 				}
 
@@ -87,7 +87,7 @@
 		@include fontSmallest;
 		background: transparent;
 		border: none;
-		color: var(--on-dark);
+		color: var(--v-on-dark);
 		cursor: pointer;
 		line-height: 1;
 		position: absolute;

@@ -1,4 +1,4 @@
-# SCSS Architecture
+﻿# SCSS Architecture
 
 Volatyl's styles are organized into a deliberate hierarchy. Understanding the structure makes it straightforward to find things, extend the theme, and avoid common pitfalls like specificity conflicts.
 
@@ -99,8 +99,8 @@ All mixins live in `systems/_configuration.scss` and are available to both style
 Apply inside base-level palette background contexts (~55% OKLCH lightness).
 
 **What it does:**
-- Sets `color: var(--white)` on the container
-- Sets `var(--white)` on: h1–h6, links, blockquote, address, cite, q, .v-subdued-title, figcaption, table captions, block labels
+- Sets `color: var(--v-white)` on the container
+- Sets `var(--v-white)` on: h1–h6, links, blockquote, address, cite, q, .v-subdued-title, figcaption, table captions, block labels
 - Skips elements with `.has-text-color` (user's explicit color choice is preserved)
 
 **What it does NOT do:** buttons, forms, tables
@@ -118,13 +118,13 @@ Apply inside base-level palette background contexts (~55% OKLCH lightness).
 Apply inside dark and darker palette background contexts.
 
 **What it does:**
-- Sets `color: var(--on-dark)` on the container
-- Headings and links → `var(--white)`
-- Subdued/secondary elements (h4, h6, blockquote, code, captions, etc.) → `var(--on-dark)`
-- Calls `action-buttons( var(--white) )` — action buttons get a white border
-- Calls `utility-buttons( var(--action), var(--action-dark) )` — utility buttons use action color
-- Calls `form-inputs( var(--action), var(--accent-1) )` — input borders adapt
-- Table borders → `var(--action-dark)`
+- Sets `color: var(--v-on-dark)` on the container
+- Headings and links → `var(--v-white)`
+- Subdued/secondary elements (h4, h6, blockquote, code, captions, etc.) → `var(--v-on-dark)`
+- Calls `action-buttons( var(--v-white) )` — action buttons get a white border
+- Calls `utility-buttons( var(--v-action), var(--v-action-dark) )` — utility buttons use action color
+- Calls `form-inputs( var(--v-action), var(--v-accent-1) )` — input borders adapt
+- Table borders → `var(--v-action-dark)`
 - Skips elements with `.has-text-color`
 
 ```scss
@@ -132,9 +132,9 @@ Apply inside dark and darker palette background contexts.
     @include dark-bg-context();
 }
 
-// With per-hue --on-dark override (used internally for accent contexts):
+// With per-hue --v-on-dark override (used internally for accent contexts):
 .my-accent-section {
-    --on-dark: oklch(var(--on-dark-luminance) calc(var(--tint-chroma) * 0.5) var(--accent-1-hue));
+    --v-on-dark: oklch(var(--v-on-dark-luminance) calc(var(--v-tint-chroma) * 0.5) var(--v-accent-1-hue));
     @include dark-bg-context();
 }
 ```
@@ -148,33 +148,33 @@ Styles the primary action button set. Called inside `dark-bg-context()` and at t
 **Targets:** `.button`, `.v-button`, `button`, `.wp-block-button__link`, `.wp-block-file__button`, `.comment-reply-link`, `.wp-calendar-table caption`, `#primary-menu .menu-item-button > a`
 
 **Parameters:**
-- `$border` *(optional)* — pass a color value to set an explicit border color. Used in dark context to set `var(--white)`.
+- `$border` *(optional)* — pass a color value to set an explicit border color. Used in dark context to set `var(--v-white)`.
 
 ```scss
 @include action-buttons();                    // Default — no explicit border
-@include action-buttons( var(--white) );      // Dark background variant
+@include action-buttons( var(--v-white) );      // Dark background variant
 ```
 
 ---
 
-### `utility-buttons( $bg: var(--dark), $hover: var(--action) )`
+### `utility-buttons( $bg: var(--v-dark), $hover: var(--v-action) )`
 
 Styles utility/functional buttons (search submit, input type buttons).
 
 **Targets:** `[type="button"]`, `[type="submit"]`, `[type="reset"]`, `.wp-block-search button`, `#searchsubmit`
 
 **Parameters:**
-- `$bg` — fill color (default: `var(--dark)`)
-- `$hover` — hover/focus/active fill color (default: `var(--action)`)
+- `$bg` — fill color (default: `var(--v-dark)`)
+- `$hover` — hover/focus/active fill color (default: `var(--v-action)`)
 
 ```scss
 @include utility-buttons();                                  // Default
-@include utility-buttons( var(--action), var(--action-dark) ); // Dark bg variant
+@include utility-buttons( var(--v-action), var(--v-action-dark) ); // Dark bg variant
 ```
 
 ---
 
-### `form-inputs( $border: var(--dark), $focus-border: var(--action) )`
+### `form-inputs( $border: var(--v-dark), $focus-border: var(--v-action) )`
 
 Sets border colors on all text inputs, textareas, and selects.
 
@@ -184,7 +184,7 @@ Sets border colors on all text inputs, textareas, and selects.
 
 ```scss
 @include form-inputs();                                          // Default
-@include form-inputs( var(--action), var(--accent-1) );         // Dark bg variant
+@include form-inputs( var(--v-action), var(--v-accent-1) );         // Dark bg variant
 ```
 
 ---
@@ -221,14 +221,14 @@ Sets border colors on all text inputs, textareas, and selects.
 ```scss
 @include innerSpacing;       // The standard .inner container: max-width ~1200px,
                              // responsive padding, margin auto.
-                             // Vertical padding is driven by --section-v-spacing.
-@include innerSpacingLarge;  // v-large modifier — calc(--section-v-spacing * 1.4)
-@include innerSpacingLarger; // v-xl modifier   — calc(--section-v-spacing * 2.3)
+                             // Vertical padding is driven by --v-section-v-spacing.
+@include innerSpacingLarge;  // v-large modifier — calc(--v-section-v-spacing * 1.4)
+@include innerSpacingLarger; // v-xl modifier   — calc(--v-section-v-spacing * 2.3)
 ```
 
-The vertical value is controlled by the `--section-v-spacing` CSS custom property, which is set by the **Section Spacing** Customizer control (Design section). Three body classes correspond to the three tiers:
+The vertical value is controlled by the `--v-section-v-spacing` CSS custom property, which is set by the **Section Spacing** Customizer control (Design section). Three body classes correspond to the three tiers:
 
-| Tier | Body class | `--section-v-spacing` value |
+| Tier | Body class | `--v-section-v-spacing` value |
 |---|---|---|
 | Compact | `spacing-compact` | `clamp(1.25rem, 3vw, 2.25rem)` |
 | Default | *(none)* | `clamp(2rem, 4.5vw, 3.5rem)` |
@@ -271,9 +271,9 @@ If you introduce a new background class and want it to trigger automatic text ad
     @include dark-bg-context();
 }
 
-// For a dark background with a specific hue for --on-dark:
+// For a dark background with a specific hue for --v-on-dark:
 .my-accent-dark-background {
-    --on-dark: oklch(var(--on-dark-luminance) calc(var(--tint-chroma) * 0.5) var(--accent-1-hue));
+    --v-on-dark: oklch(var(--v-on-dark-luminance) calc(var(--v-tint-chroma) * 0.5) var(--v-accent-1-hue));
     @include dark-bg-context();
 }
 ```
@@ -284,14 +284,14 @@ All variables are available globally. Reference them directly:
 
 ```css
 .my-component {
-    background-color: var(--action-tint);
-    border-color: var(--subdued-light);
-    color: var(--text);
+    background-color: var(--v-action-tint);
+    border-color: var(--v-subdued-light);
+    color: var(--v-text);
 }
 
 .my-component:hover {
-    background-color: var(--action);
-    color: var(--white);
+    background-color: var(--v-action);
+    color: var(--v-white);
 }
 ```
 

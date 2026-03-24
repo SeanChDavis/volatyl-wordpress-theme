@@ -1,4 +1,4 @@
-// Canvas Page-Width — vertical spacing only. Horizontal is owned by the
+﻿// Canvas Page-Width — vertical spacing only. Horizontal is owned by the
 // page-width container; adding it here would double up and break the layout.
 .canvas-page-width-template {
 
@@ -10,8 +10,8 @@
 			&:not(.v-no-spacing) {
 
 				& > .wp-block-group__inner-container {
-					padding-bottom: var(--section-v-spacing);
-					padding-top: var(--section-v-spacing);
+					padding-bottom: var(--v-section-v-spacing);
+					padding-top: var(--v-section-v-spacing);
 
 					& > [class*="wp-block-"] {
 

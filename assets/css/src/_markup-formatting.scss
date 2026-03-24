@@ -1,4 +1,4 @@
-h1, .h1,
+﻿h1, .h1,
 h2, .h2,
 h3, .h3,
 h4, .h4,
@@ -9,7 +9,7 @@ h6, .h6 {
 	margin: 0 0 1.25rem;
 
 	&.has-background {
-		border-radius: calc(var(--radius) * 0.7);
+		border-radius: calc(var(--v-radius) * 0.7);
 		margin-bottom: 1.5rem;
 		margin-top: 2rem;
 		padding: .75em 1.125em;
@@ -305,7 +305,7 @@ table {
 }
 
 pre {
-	border-radius: var(--radius);
+	border-radius: var(--v-radius);
 	@include fontSmall;
 	padding: 1.625rem;
 
@@ -316,7 +316,7 @@ pre {
 }
 
 dl {
-	border-radius: var(--radius);
+	border-radius: var(--v-radius);
 	padding: clamp(1.625rem, 2.25vw, 2rem);
 
 	dt {
@@ -351,7 +351,7 @@ var {
 	display: inline-block;
 	padding-left: 3px;
 	padding-right: 3px;
-	border-radius: calc(var(--radius) * 0.3);
+	border-radius: calc(var(--v-radius) * 0.3);
 }
 
 iframe,
@@ -557,7 +557,7 @@ figure {
 
 		.wp-block-search__inside-wrapper {
 			border: none;
-			border-radius: calc(var(--radius) * 0.3);
+			border-radius: calc(var(--v-radius) * 0.3);
 			padding: 8px;
 
 			.wp-block-search__button {
@@ -581,7 +581,7 @@ figure {
 	@include fontSmaller;
 	border-style: solid;
 	border-width: 2px;
-	border-radius: var(--radius);
+	border-radius: var(--v-radius);
 	font-style: normal;
 	margin: 0;
 	padding: 1.5rem;
@@ -633,7 +633,7 @@ article,
 
 		.wp-block-latest-comments {
 			@include fontSmaller;
-			border-radius: var(--radius);
+			border-radius: var(--v-radius);
 			margin-left: 0;
 			padding: clamp(1.125rem, 2.4vw, 2rem);
 

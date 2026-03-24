@@ -173,28 +173,28 @@ template {
 /* v-large section modifier — ~1.4× the global spacing tier */
 /* v-xl section modifier — ~2.3× the global spacing tier */
 /**
- * Control the entire theme color scheme
- */
+* Control the entire theme color scheme
+*/
 #page-container {
-  background-color: var(--white);
-  color: var(--text);
+  background-color: var(--v-white);
+  color: var(--v-text);
 }
 
 body,
 .v-gray-background,
 .has-gray-background-color {
-  background-color: var(--action-tint);
+  background-color: var(--v-action-tint);
 }
 
 a {
-  color: var(--action);
+  color: var(--v-action);
 }
 
 h4,
 .h4,
 h6,
 .h6 {
-  color: var(--subdued-dark);
+  color: var(--v-subdued-dark);
 }
 
 .site-title a,
@@ -212,13 +212,13 @@ h6,
 .wp-block-latest-comments__comment-meta a,
 .fat-footer a,
 cite {
-  color: var(--text);
+  color: var(--v-text);
 }
 
 .site-title a:hover,
 .site-title a:focus,
 .site-title a:active {
-  color: var(--action);
+  color: var(--v-action);
 }
 
 .v-subdued-title,
@@ -227,18 +227,18 @@ cite {
 .archive-title.content-header-title,
 [class*=wp-block-] > label,
 figure figcaption {
-  color: var(--subdued-dark);
+  color: var(--v-subdued-dark);
 }
 
 .pagination .page-numbers.current {
-  color: var(--action);
+  color: var(--v-action);
 }
 
 .blog-name a,
 .blog-name a:hover,
 .blog-name a:focus,
 .blog-name a:active {
-  border-color: var(--dark);
+  border-color: var(--v-dark);
 }
 
 .button,
@@ -249,8 +249,8 @@ button,
 .comment-reply-link,
 .wp-block-calendar .wp-calendar-table caption,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
-  background-color: var(--action);
-  color: var(--white);
+  background-color: var(--v-action);
+  color: var(--v-white);
 }
 .button:hover, .button:focus, .button:active,
 .v-button:hover,
@@ -274,8 +274,8 @@ button:active,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
-  background-color: var(--action-dark);
-  border-color: var(--action-dark);
+  background-color: var(--v-action-dark);
+  border-color: var(--v-action-dark);
 }
 
 [type=button],
@@ -284,9 +284,9 @@ button:active,
 .wp-block-search button,
 #searchform #searchsubmit,
 .wp-block-search[class*=button-inside] [class*=search__inside] button {
-  background-color: var(--dark);
-  border-color: var(--dark);
-  color: var(--white);
+  background-color: var(--v-dark);
+  border-color: var(--v-dark);
+  color: var(--v-white);
 }
 [type=button]:hover, [type=button]:focus, [type=button]:active,
 [type=submit]:hover,
@@ -304,23 +304,23 @@ button:active,
 .wp-block-search[class*=button-inside] [class*=search__inside] button:hover,
 .wp-block-search[class*=button-inside] [class*=search__inside] button:focus,
 .wp-block-search[class*=button-inside] [class*=search__inside] button:active {
-  background-color: var(--action);
-  border-color: var(--action);
+  background-color: var(--v-action);
+  border-color: var(--v-action);
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link {
-  border-color: var(--action);
-  color: var(--action);
+  border-color: var(--v-action);
+  color: var(--v-action);
 }
 .wp-block-button.is-style-outline .wp-block-button__link:hover, .wp-block-button.is-style-outline .wp-block-button__link:focus, .wp-block-button.is-style-outline .wp-block-button__link:active {
-  background-color: var(--action-dark);
-  border-color: var(--action-dark);
-  color: var(--white);
+  background-color: var(--v-action-dark);
+  border-color: var(--v-action-dark);
+  color: var(--v-white);
 }
 
 .wp-block-search[class*=button-inside] [class*=search__inside] {
-  background-color: var(--action-dark);
-  border-color: var(--action-dark);
+  background-color: var(--v-action-dark);
+  border-color: var(--v-action-dark);
 }
 
 .content-header-primary-cta .v-button:hover,
@@ -329,14 +329,14 @@ button:active,
 .content-header-primary-cta .wp-block-button__link:hover,
 .content-header-primary-cta .wp-block-button__link:focus,
 .content-header-primary-cta .wp-block-button__link:active {
-  background-color: var(--action-dark);
-  border-color: var(--action-dark);
+  background-color: var(--v-action-dark);
+  border-color: var(--v-action-dark);
 }
 
 input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
 textarea,
 select {
-  border-color: var(--dark);
+  border-color: var(--v-dark);
 }
 input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):active, input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus, input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus-visible,
 textarea:active,
@@ -345,34 +345,34 @@ textarea:focus-visible,
 select:active,
 select:focus,
 select:focus-visible {
-  border-color: var(--action);
+  border-color: var(--v-action);
 }
 
 #site-navigation #primary-menu .menu-item a,
 #site-navigation .menu-toggle {
-  color: var(--text);
+  color: var(--v-text);
 }
 
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu,
 #site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu {
-  background-color: var(--darker);
+  background-color: var(--v-darker);
 }
 
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu a,
 #site-navigation.toggled > .menu-modal-active #primary-menu .menu-item a {
-  color: var(--white);
+  color: var(--v-white);
 }
 
 #site-navigation #primary-menu > .menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu a {
-  color: var(--on-dark);
+  color: var(--v-on-dark);
 }
 
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after {
-  border-bottom-color: var(--dark);
+  border-bottom-color: var(--v-dark);
 }
 
 #site-navigation.toggled > #primary-menu > .menu-item-has-children > a:after {
-  border-bottom-color: var(--on-dark);
+  border-bottom-color: var(--v-on-dark);
 }
 
 table,
@@ -382,17 +382,17 @@ table td,
 .wp-block-table.is-style-stripes table td,
 [class*=wp-block-] > table th,
 [class*=wp-block-] > table td {
-  border-color: var(--dark);
+  border-color: var(--v-dark);
 }
 
 table th,
 [class*=wp-block-] > table th {
-  background-color: var(--dark);
-  color: var(--white);
+  background-color: var(--v-dark);
+  color: var(--v-white);
 }
 
 .wp-block-table.is-style-stripes table tbody tr:nth-child(2n+1) {
-  background-color: var(--recessed-bg);
+  background-color: var(--v-recessed-bg);
 }
 
 pre,
@@ -401,7 +401,7 @@ code,
 kbd,
 tt,
 var {
-  background-color: var(--recessed-bg);
+  background-color: var(--v-recessed-bg);
 }
 
 pre code {
@@ -414,35 +414,35 @@ hr,
 .twitter-tweet,
 .wp-block-quote,
 .wp-block-pullquote {
-  border-color: var(--subdued-light);
+  border-color: var(--v-subdued-light);
 }
 
 .wp-block-separator.is-style-dots:before {
-  color: var(--text);
+  color: var(--v-text);
 }
 
 .wp-block-calendar .wp-calendar-nav {
-  color: var(--subdued-dark);
+  color: var(--v-subdued-dark);
 }
 
 .v-grid .v-grid-item-container:not(.v-subdued) {
-  background-color: var(--action-tint);
+  background-color: var(--v-action-tint);
 }
 
 .v-grid-item-title a {
-  color: var(--text);
+  color: var(--v-text);
 }
 
 .v-grid-item-title a:hover,
 .v-grid-item-title a:focus,
 .v-grid-item-title a:active {
-  color: var(--action);
+  color: var(--v-action);
 }
 
 .v-grid-item-meta,
 .v-grid-item-meta a,
 .v-grid-item-footer a {
-  color: var(--text);
+  color: var(--v-text);
 }
 
 #comments .comments-title,
@@ -450,34 +450,34 @@ hr,
 #comments .comment:not(:last-child),
 #comments .comment .comment:not(:last-child),
 #comments .pingback:not(:last-child) {
-  border-color: var(--subdued-light);
+  border-color: var(--v-subdued-light);
 }
 
 #comments .fn a {
-  color: var(--text);
+  color: var(--v-text);
 }
 
 #comments .fn a:hover,
 #comments .fn a:focus,
 #comments .fn a:active,
 #comments #respond #reply-title small #cancel-comment-reply-link {
-  color: var(--action);
+  color: var(--v-action);
 }
 
 article .entry-content .wp-block-latest-comments,
 .v-content-container .entry-content .wp-block-latest-comments {
-  background-color: var(--recessed-bg);
+  background-color: var(--v-recessed-bg);
 }
 
 .v-dark-background {
-  background-color: var(--dark);
+  background-color: var(--v-dark);
 }
 
 .has-action-background-color,
 .has-accent-1-background-color,
 .has-accent-2-background-color,
 .has-accent-3-background-color {
-  color: var(--white);
+  color: var(--v-white);
 }
 .has-action-background-color h1:not(.has-text-color), .has-action-background-color .h1,
 .has-action-background-color h2:not(.has-text-color), .has-action-background-color .h2,
@@ -561,7 +561,7 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-3-background-color figure figcaption,
 .has-accent-3-background-color .wp-block-calendar .wp-calendar-nav,
 .has-accent-3-background-color [class*=wp-block-] > label {
-  color: var(--white);
+  color: var(--v-white);
 }
 
 .v-dark-background,
@@ -571,7 +571,7 @@ article .entry-content .wp-block-latest-comments,
 .has-subdued-dark-background-color,
 .has-action-darker-background-color,
 .has-action-dark-background-color {
-  color: var(--on-dark);
+  color: var(--v-on-dark);
 }
 .v-dark-background .button,
 .v-dark-background .v-button,
@@ -629,9 +629,9 @@ article .entry-content .wp-block-latest-comments,
 .has-action-dark-background-color .comment-reply-link,
 .has-action-dark-background-color .wp-block-calendar .wp-calendar-table caption,
 .has-action-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
-  background-color: var(--action);
-  color: var(--white);
-  border-color: var(--white);
+  background-color: var(--v-action);
+  color: var(--v-white);
+  border-color: var(--v-white);
 }
 .v-dark-background .button:hover, .v-dark-background .button:focus, .v-dark-background .button:active,
 .v-dark-background .v-button:hover,
@@ -799,8 +799,8 @@ article .entry-content .wp-block-latest-comments,
 .has-action-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
 .has-action-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 .has-action-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
-  background-color: var(--action-dark);
-  border-color: var(--action-dark);
+  background-color: var(--v-action-dark);
+  border-color: var(--v-action-dark);
 }
 .v-dark-background [type=button],
 .v-dark-background [type=submit],
@@ -844,9 +844,9 @@ article .entry-content .wp-block-latest-comments,
 .has-action-dark-background-color .wp-block-search button,
 .has-action-dark-background-color #searchform #searchsubmit,
 .has-action-dark-background-color .wp-block-search[class*=button-inside] [class*=search__inside] button {
-  background-color: var(--action);
-  border-color: var(--action);
-  color: var(--white);
+  background-color: var(--v-action);
+  border-color: var(--v-action);
+  color: var(--v-white);
 }
 .v-dark-background [type=button]:hover, .v-dark-background [type=button]:focus, .v-dark-background [type=button]:active,
 .v-dark-background [type=submit]:hover,
@@ -972,8 +972,8 @@ article .entry-content .wp-block-latest-comments,
 .has-action-dark-background-color .wp-block-search[class*=button-inside] [class*=search__inside] button:hover,
 .has-action-dark-background-color .wp-block-search[class*=button-inside] [class*=search__inside] button:focus,
 .has-action-dark-background-color .wp-block-search[class*=button-inside] [class*=search__inside] button:active {
-  background-color: var(--action-dark);
-  border-color: var(--action-dark);
+  background-color: var(--v-action-dark);
+  border-color: var(--v-action-dark);
 }
 .v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
 .v-dark-background textarea,
@@ -996,7 +996,7 @@ article .entry-content .wp-block-latest-comments,
 .has-action-dark-background-color input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
 .has-action-dark-background-color textarea,
 .has-action-dark-background-color select {
-  border-color: var(--action);
+  border-color: var(--v-action);
 }
 .v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):active, .v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus, .v-dark-background input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus-visible,
 .v-dark-background textarea:active,
@@ -1059,7 +1059,7 @@ article .entry-content .wp-block-latest-comments,
 .has-action-dark-background-color select:active,
 .has-action-dark-background-color select:focus,
 .has-action-dark-background-color select:focus-visible {
-  border-color: var(--accent-1);
+  border-color: var(--v-accent-1);
 }
 .v-dark-background h1:not(.has-text-color), .v-dark-background .h1,
 .v-dark-background h2:not(.has-text-color), .v-dark-background .h2,
@@ -1146,7 +1146,7 @@ article .entry-content .wp-block-latest-comments,
 .has-action-dark-background-color h6:not(.has-text-color),
 .has-action-dark-background-color .h6,
 .has-action-dark-background-color a:not(.has-text-color) {
-  color: var(--white);
+  color: var(--v-white);
 }
 .v-dark-background h4:not(.has-text-color), .v-dark-background .h4,
 .v-dark-background h6:not(.has-text-color), .v-dark-background .h6,
@@ -1279,7 +1279,7 @@ article .entry-content .wp-block-latest-comments,
 .has-action-dark-background-color figure figcaption,
 .has-action-dark-background-color .wp-block-calendar .wp-calendar-nav,
 .has-action-dark-background-color [class*=wp-block-] > label {
-  color: var(--on-dark);
+  color: var(--v-on-dark);
 }
 .v-dark-background table,
 .v-dark-background table th,
@@ -1302,13 +1302,13 @@ article .entry-content .wp-block-latest-comments,
 .has-action-dark-background-color table,
 .has-action-dark-background-color table th,
 .has-action-dark-background-color table td {
-  border-color: var(--action-dark);
+  border-color: var(--v-action-dark);
 }
 
 .has-accent-1-darker-background-color,
 .has-accent-1-dark-background-color {
-  --on-dark: oklch(var(--on-dark-luminance) calc(var(--tint-chroma) * 0.5) var(--accent-1-hue));
-  color: var(--on-dark);
+  --v-on-dark: oklch(var(--v-on-dark-luminance) calc(var(--v-tint-chroma) * 0.5) var(--v-accent-1-hue));
+  color: var(--v-on-dark);
 }
 .has-accent-1-darker-background-color .button,
 .has-accent-1-darker-background-color .v-button,
@@ -1326,9 +1326,9 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-1-dark-background-color .comment-reply-link,
 .has-accent-1-dark-background-color .wp-block-calendar .wp-calendar-table caption,
 .has-accent-1-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
-  background-color: var(--action);
-  color: var(--white);
-  border-color: var(--white);
+  background-color: var(--v-action);
+  color: var(--v-white);
+  border-color: var(--v-white);
 }
 .has-accent-1-darker-background-color .button:hover, .has-accent-1-darker-background-color .button:focus, .has-accent-1-darker-background-color .button:active,
 .has-accent-1-darker-background-color .v-button:hover,
@@ -1376,8 +1376,8 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-1-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
 .has-accent-1-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 .has-accent-1-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
-  background-color: var(--action-dark);
-  border-color: var(--action-dark);
+  background-color: var(--v-action-dark);
+  border-color: var(--v-action-dark);
 }
 .has-accent-1-darker-background-color [type=button],
 .has-accent-1-darker-background-color [type=submit],
@@ -1391,9 +1391,9 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-1-dark-background-color .wp-block-search button,
 .has-accent-1-dark-background-color #searchform #searchsubmit,
 .has-accent-1-dark-background-color .wp-block-search[class*=button-inside] [class*=search__inside] button {
-  background-color: var(--action);
-  border-color: var(--action);
-  color: var(--white);
+  background-color: var(--v-action);
+  border-color: var(--v-action);
+  color: var(--v-white);
 }
 .has-accent-1-darker-background-color [type=button]:hover, .has-accent-1-darker-background-color [type=button]:focus, .has-accent-1-darker-background-color [type=button]:active,
 .has-accent-1-darker-background-color [type=submit]:hover,
@@ -1429,8 +1429,8 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-1-dark-background-color .wp-block-search[class*=button-inside] [class*=search__inside] button:hover,
 .has-accent-1-dark-background-color .wp-block-search[class*=button-inside] [class*=search__inside] button:focus,
 .has-accent-1-dark-background-color .wp-block-search[class*=button-inside] [class*=search__inside] button:active {
-  background-color: var(--action-dark);
-  border-color: var(--action-dark);
+  background-color: var(--v-action-dark);
+  border-color: var(--v-action-dark);
 }
 .has-accent-1-darker-background-color input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
 .has-accent-1-darker-background-color textarea,
@@ -1438,7 +1438,7 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-1-dark-background-color input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
 .has-accent-1-dark-background-color textarea,
 .has-accent-1-dark-background-color select {
-  border-color: var(--action);
+  border-color: var(--v-action);
 }
 .has-accent-1-darker-background-color input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):active, .has-accent-1-darker-background-color input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus, .has-accent-1-darker-background-color input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus-visible,
 .has-accent-1-darker-background-color textarea:active,
@@ -1456,7 +1456,7 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-1-dark-background-color select:active,
 .has-accent-1-dark-background-color select:focus,
 .has-accent-1-dark-background-color select:focus-visible {
-  border-color: var(--accent-1);
+  border-color: var(--v-accent-1);
 }
 .has-accent-1-darker-background-color h1:not(.has-text-color), .has-accent-1-darker-background-color .h1,
 .has-accent-1-darker-background-color h2:not(.has-text-color), .has-accent-1-darker-background-color .h2,
@@ -1478,7 +1478,7 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-1-dark-background-color h6:not(.has-text-color),
 .has-accent-1-dark-background-color .h6,
 .has-accent-1-dark-background-color a:not(.has-text-color) {
-  color: var(--white);
+  color: var(--v-white);
 }
 .has-accent-1-darker-background-color h4:not(.has-text-color), .has-accent-1-darker-background-color .h4,
 .has-accent-1-darker-background-color h6:not(.has-text-color), .has-accent-1-darker-background-color .h6,
@@ -1516,7 +1516,7 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-1-dark-background-color figure figcaption,
 .has-accent-1-dark-background-color .wp-block-calendar .wp-calendar-nav,
 .has-accent-1-dark-background-color [class*=wp-block-] > label {
-  color: var(--on-dark);
+  color: var(--v-on-dark);
 }
 .has-accent-1-darker-background-color table,
 .has-accent-1-darker-background-color table th,
@@ -1524,13 +1524,13 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-1-dark-background-color table,
 .has-accent-1-dark-background-color table th,
 .has-accent-1-dark-background-color table td {
-  border-color: var(--action-dark);
+  border-color: var(--v-action-dark);
 }
 
 .has-accent-2-darker-background-color,
 .has-accent-2-dark-background-color {
-  --on-dark: oklch(var(--on-dark-luminance) calc(var(--tint-chroma) * 0.5) var(--accent-2-hue));
-  color: var(--on-dark);
+  --v-on-dark: oklch(var(--v-on-dark-luminance) calc(var(--v-tint-chroma) * 0.5) var(--v-accent-2-hue));
+  color: var(--v-on-dark);
 }
 .has-accent-2-darker-background-color .button,
 .has-accent-2-darker-background-color .v-button,
@@ -1548,9 +1548,9 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-2-dark-background-color .comment-reply-link,
 .has-accent-2-dark-background-color .wp-block-calendar .wp-calendar-table caption,
 .has-accent-2-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
-  background-color: var(--action);
-  color: var(--white);
-  border-color: var(--white);
+  background-color: var(--v-action);
+  color: var(--v-white);
+  border-color: var(--v-white);
 }
 .has-accent-2-darker-background-color .button:hover, .has-accent-2-darker-background-color .button:focus, .has-accent-2-darker-background-color .button:active,
 .has-accent-2-darker-background-color .v-button:hover,
@@ -1598,8 +1598,8 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-2-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
 .has-accent-2-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 .has-accent-2-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
-  background-color: var(--action-dark);
-  border-color: var(--action-dark);
+  background-color: var(--v-action-dark);
+  border-color: var(--v-action-dark);
 }
 .has-accent-2-darker-background-color [type=button],
 .has-accent-2-darker-background-color [type=submit],
@@ -1613,9 +1613,9 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-2-dark-background-color .wp-block-search button,
 .has-accent-2-dark-background-color #searchform #searchsubmit,
 .has-accent-2-dark-background-color .wp-block-search[class*=button-inside] [class*=search__inside] button {
-  background-color: var(--action);
-  border-color: var(--action);
-  color: var(--white);
+  background-color: var(--v-action);
+  border-color: var(--v-action);
+  color: var(--v-white);
 }
 .has-accent-2-darker-background-color [type=button]:hover, .has-accent-2-darker-background-color [type=button]:focus, .has-accent-2-darker-background-color [type=button]:active,
 .has-accent-2-darker-background-color [type=submit]:hover,
@@ -1651,8 +1651,8 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-2-dark-background-color .wp-block-search[class*=button-inside] [class*=search__inside] button:hover,
 .has-accent-2-dark-background-color .wp-block-search[class*=button-inside] [class*=search__inside] button:focus,
 .has-accent-2-dark-background-color .wp-block-search[class*=button-inside] [class*=search__inside] button:active {
-  background-color: var(--action-dark);
-  border-color: var(--action-dark);
+  background-color: var(--v-action-dark);
+  border-color: var(--v-action-dark);
 }
 .has-accent-2-darker-background-color input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
 .has-accent-2-darker-background-color textarea,
@@ -1660,7 +1660,7 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-2-dark-background-color input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
 .has-accent-2-dark-background-color textarea,
 .has-accent-2-dark-background-color select {
-  border-color: var(--action);
+  border-color: var(--v-action);
 }
 .has-accent-2-darker-background-color input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):active, .has-accent-2-darker-background-color input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus, .has-accent-2-darker-background-color input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus-visible,
 .has-accent-2-darker-background-color textarea:active,
@@ -1678,7 +1678,7 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-2-dark-background-color select:active,
 .has-accent-2-dark-background-color select:focus,
 .has-accent-2-dark-background-color select:focus-visible {
-  border-color: var(--accent-1);
+  border-color: var(--v-accent-1);
 }
 .has-accent-2-darker-background-color h1:not(.has-text-color), .has-accent-2-darker-background-color .h1,
 .has-accent-2-darker-background-color h2:not(.has-text-color), .has-accent-2-darker-background-color .h2,
@@ -1700,7 +1700,7 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-2-dark-background-color h6:not(.has-text-color),
 .has-accent-2-dark-background-color .h6,
 .has-accent-2-dark-background-color a:not(.has-text-color) {
-  color: var(--white);
+  color: var(--v-white);
 }
 .has-accent-2-darker-background-color h4:not(.has-text-color), .has-accent-2-darker-background-color .h4,
 .has-accent-2-darker-background-color h6:not(.has-text-color), .has-accent-2-darker-background-color .h6,
@@ -1738,7 +1738,7 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-2-dark-background-color figure figcaption,
 .has-accent-2-dark-background-color .wp-block-calendar .wp-calendar-nav,
 .has-accent-2-dark-background-color [class*=wp-block-] > label {
-  color: var(--on-dark);
+  color: var(--v-on-dark);
 }
 .has-accent-2-darker-background-color table,
 .has-accent-2-darker-background-color table th,
@@ -1746,13 +1746,13 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-2-dark-background-color table,
 .has-accent-2-dark-background-color table th,
 .has-accent-2-dark-background-color table td {
-  border-color: var(--action-dark);
+  border-color: var(--v-action-dark);
 }
 
 .has-accent-3-darker-background-color,
 .has-accent-3-dark-background-color {
-  --on-dark: oklch(var(--on-dark-luminance) calc(var(--tint-chroma) * 0.5) var(--accent-3-hue));
-  color: var(--on-dark);
+  --v-on-dark: oklch(var(--v-on-dark-luminance) calc(var(--v-tint-chroma) * 0.5) var(--v-accent-3-hue));
+  color: var(--v-on-dark);
 }
 .has-accent-3-darker-background-color .button,
 .has-accent-3-darker-background-color .v-button,
@@ -1770,9 +1770,9 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-3-dark-background-color .comment-reply-link,
 .has-accent-3-dark-background-color .wp-block-calendar .wp-calendar-table caption,
 .has-accent-3-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
-  background-color: var(--action);
-  color: var(--white);
-  border-color: var(--white);
+  background-color: var(--v-action);
+  color: var(--v-white);
+  border-color: var(--v-white);
 }
 .has-accent-3-darker-background-color .button:hover, .has-accent-3-darker-background-color .button:focus, .has-accent-3-darker-background-color .button:active,
 .has-accent-3-darker-background-color .v-button:hover,
@@ -1820,8 +1820,8 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-3-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
 .has-accent-3-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 .has-accent-3-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
-  background-color: var(--action-dark);
-  border-color: var(--action-dark);
+  background-color: var(--v-action-dark);
+  border-color: var(--v-action-dark);
 }
 .has-accent-3-darker-background-color [type=button],
 .has-accent-3-darker-background-color [type=submit],
@@ -1835,9 +1835,9 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-3-dark-background-color .wp-block-search button,
 .has-accent-3-dark-background-color #searchform #searchsubmit,
 .has-accent-3-dark-background-color .wp-block-search[class*=button-inside] [class*=search__inside] button {
-  background-color: var(--action);
-  border-color: var(--action);
-  color: var(--white);
+  background-color: var(--v-action);
+  border-color: var(--v-action);
+  color: var(--v-white);
 }
 .has-accent-3-darker-background-color [type=button]:hover, .has-accent-3-darker-background-color [type=button]:focus, .has-accent-3-darker-background-color [type=button]:active,
 .has-accent-3-darker-background-color [type=submit]:hover,
@@ -1873,8 +1873,8 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-3-dark-background-color .wp-block-search[class*=button-inside] [class*=search__inside] button:hover,
 .has-accent-3-dark-background-color .wp-block-search[class*=button-inside] [class*=search__inside] button:focus,
 .has-accent-3-dark-background-color .wp-block-search[class*=button-inside] [class*=search__inside] button:active {
-  background-color: var(--action-dark);
-  border-color: var(--action-dark);
+  background-color: var(--v-action-dark);
+  border-color: var(--v-action-dark);
 }
 .has-accent-3-darker-background-color input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
 .has-accent-3-darker-background-color textarea,
@@ -1882,7 +1882,7 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-3-dark-background-color input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]),
 .has-accent-3-dark-background-color textarea,
 .has-accent-3-dark-background-color select {
-  border-color: var(--action);
+  border-color: var(--v-action);
 }
 .has-accent-3-darker-background-color input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):active, .has-accent-3-darker-background-color input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus, .has-accent-3-darker-background-color input:not([type=button]):not([type=submit]):not([type=reset]):not([type=radio]):not([type=checkbox]):focus-visible,
 .has-accent-3-darker-background-color textarea:active,
@@ -1900,7 +1900,7 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-3-dark-background-color select:active,
 .has-accent-3-dark-background-color select:focus,
 .has-accent-3-dark-background-color select:focus-visible {
-  border-color: var(--accent-1);
+  border-color: var(--v-accent-1);
 }
 .has-accent-3-darker-background-color h1:not(.has-text-color), .has-accent-3-darker-background-color .h1,
 .has-accent-3-darker-background-color h2:not(.has-text-color), .has-accent-3-darker-background-color .h2,
@@ -1922,7 +1922,7 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-3-dark-background-color h6:not(.has-text-color),
 .has-accent-3-dark-background-color .h6,
 .has-accent-3-dark-background-color a:not(.has-text-color) {
-  color: var(--white);
+  color: var(--v-white);
 }
 .has-accent-3-darker-background-color h4:not(.has-text-color), .has-accent-3-darker-background-color .h4,
 .has-accent-3-darker-background-color h6:not(.has-text-color), .has-accent-3-darker-background-color .h6,
@@ -1960,7 +1960,7 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-3-dark-background-color figure figcaption,
 .has-accent-3-dark-background-color .wp-block-calendar .wp-calendar-nav,
 .has-accent-3-dark-background-color [class*=wp-block-] > label {
-  color: var(--on-dark);
+  color: var(--v-on-dark);
 }
 .has-accent-3-darker-background-color table,
 .has-accent-3-darker-background-color table th,
@@ -1968,7 +1968,7 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-3-dark-background-color table,
 .has-accent-3-dark-background-color table th,
 .has-accent-3-dark-background-color table td {
-  border-color: var(--action-dark);
+  border-color: var(--v-action-dark);
 }
 
 .v-dark-background .site-title a,
@@ -1976,19 +1976,19 @@ article .entry-content .wp-block-latest-comments,
 .v-dark-background .archive-title.content-header-title span,
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item > a,
 .v-dark-background #site-navigation .menu-toggle {
-  color: var(--white);
+  color: var(--v-white);
 }
 .v-dark-background .archive-title.content-header-title {
-  color: var(--on-dark);
+  color: var(--v-on-dark);
 }
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
-  border-color: var(--accent-1);
+  border-color: var(--v-accent-1);
 }
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after,
 .v-dark-background #site-navigation #primary-menu > .menu-item-has-children > a:after {
-  border-bottom-color: var(--white);
+  border-bottom-color: var(--v-white);
 }
 
 /* Editor-generated classes */
@@ -2205,7 +2205,7 @@ article .entry-content .wp-block-latest-comments,
 }
 
 .has-text-background-color {
-  background-color: var(--text);
+  background-color: var(--v-text);
 }
 
 .has-subdued-dark-color {
@@ -2242,11 +2242,11 @@ article .entry-content .wp-block-latest-comments,
 
 /* Translucent — background only, no color class */
 .has-translucent-light-background-color {
-  background-color: var(--translucent-light);
+  background-color: var(--v-translucent-light);
 }
 
 .has-translucent-dark-background-color {
-  background-color: var(--translucent-dark);
+  background-color: var(--v-translucent-dark);
 }
 
 .v-grid {
@@ -2315,7 +2315,7 @@ article .entry-content .wp-block-latest-comments,
   line-height: 1;
 }
 .v-grid-item-container:not(.v-subdued) {
-  border-radius: var(--radius);
+  border-radius: var(--v-radius);
 }
 .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap {
   display: flex;
@@ -2323,7 +2323,7 @@ article .entry-content .wp-block-latest-comments,
   height: 100%;
 }
 .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-media img {
-  border-radius: var(--radius) var(--radius) 0 0;
+  border-radius: var(--v-radius) var(--v-radius) 0 0;
   vertical-align: top;
 }
 .v-grid-item-container:not(.v-subdued) .v-grid-item-content-wrap .v-grid-item-header {
@@ -2385,7 +2385,7 @@ h3.has-background, .h3.has-background,
 h4.has-background, .h4.has-background,
 h5.has-background, .h5.has-background,
 h6.has-background, .h6.has-background {
-  border-radius: calc(var(--radius) * 0.7);
+  border-radius: calc(var(--v-radius) * 0.7);
   margin-bottom: 1.5rem;
   margin-top: 2rem;
   padding: 0.75em 1.125em;
@@ -2631,7 +2631,7 @@ table caption:first-child {
 }
 
 pre {
-  border-radius: var(--radius);
+  border-radius: var(--v-radius);
   font-size: 0.889rem;
   padding: 1.625rem;
 }
@@ -2643,7 +2643,7 @@ pre {
 }
 
 dl {
-  border-radius: var(--radius);
+  border-radius: var(--v-radius);
   padding: clamp(1.625rem, 2.25vw, 2rem);
 }
 dl dt {
@@ -2674,7 +2674,7 @@ var {
   display: inline-block;
   padding-left: 3px;
   padding-right: 3px;
-  border-radius: calc(var(--radius) * 0.3);
+  border-radius: calc(var(--v-radius) * 0.3);
 }
 
 iframe,
@@ -2895,7 +2895,7 @@ figure figcaption {
 }
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
   border: none;
-  border-radius: calc(var(--radius) * 0.3);
+  border-radius: calc(var(--v-radius) * 0.3);
   padding: 8px;
 }
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button {
@@ -2910,7 +2910,7 @@ figure figcaption {
   font-size: 0.833rem;
   border-style: solid;
   border-width: 2px;
-  border-radius: var(--radius);
+  border-radius: var(--v-radius);
   font-style: normal;
   margin: 0;
   padding: 1.5rem;
@@ -2976,7 +2976,7 @@ article .entry-content .wp-block-latest-posts,
 article .entry-content .wp-block-latest-comments,
 .v-content-container .entry-content .wp-block-latest-comments {
   font-size: 0.833rem;
-  border-radius: var(--radius);
+  border-radius: var(--v-radius);
   margin-left: 0;
   padding: clamp(1.125rem, 2.4vw, 2rem);
 }
@@ -3183,15 +3183,15 @@ article .entry-content .wp-block-social-links li,
 
 /* Section vertical spacing — controlled by Customizer → Design → Section Spacing */
 :root {
-  --section-v-spacing: clamp(2rem, 4.5vw, 3.5rem); /* Default */
+  --v-section-v-spacing: clamp(2rem, 4.5vw, 3.5rem); /* Default */
 }
 
 body.spacing-compact {
-  --section-v-spacing: clamp(1.25rem, 3vw, 2.25rem);
+  --v-section-v-spacing: clamp(1.25rem, 3vw, 2.25rem);
 }
 
 body.spacing-spacious {
-  --section-v-spacing: clamp(2.5rem, 7vw, 5rem);
+  --v-section-v-spacing: clamp(2.5rem, 7vw, 5rem);
 }
 
 html {
@@ -3225,7 +3225,7 @@ body.no-sidebar .main-content-wrap {
   margin-left: auto;
   margin-right: auto;
   max-width: calc(1200px + 1.25rem);
-  padding: var(--section-v-spacing) clamp(1.25rem, 7.9vw, 6rem);
+  padding: var(--v-section-v-spacing) clamp(1.25rem, 7.9vw, 6rem);
 }
 @media all and (min-width: 992px) {
   .inner {
@@ -3235,14 +3235,14 @@ body.no-sidebar .main-content-wrap {
 }
 @media all and (min-width: 560px) {
   .inner.v-large {
-    padding-bottom: calc(var(--section-v-spacing) * 1.4);
-    padding-top: calc(var(--section-v-spacing) * 1.4);
+    padding-bottom: calc(var(--v-section-v-spacing) * 1.4);
+    padding-top: calc(var(--v-section-v-spacing) * 1.4);
   }
 }
 @media all and (min-width: 560px) {
   .inner.v-xl {
-    padding-bottom: calc(var(--section-v-spacing) * 2.3);
-    padding-top: calc(var(--section-v-spacing) * 2.3);
+    padding-bottom: calc(var(--v-section-v-spacing) * 2.3);
+    padding-top: calc(var(--v-section-v-spacing) * 2.3);
   }
 }
 
@@ -3390,7 +3390,7 @@ main {
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-has-children > .sub-menu {
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: calc(var(--radius) * 0.4);
+  border-radius: calc(var(--v-radius) * 0.4);
   box-shadow: 0 0 45px 0px rgba(0, 0, 0, 0.1);
   display: none;
   padding: 7px 1.2rem;
@@ -3417,7 +3417,7 @@ main {
   padding-left: 12px;
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-button > a {
-  border-radius: var(--radius-button);
+  border-radius: var(--v-radius-button);
   padding: 8px 12px;
 }
 #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-button > a:active, #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-button > a:focus, #site-navigation:not(.toggled) #primary-menu > .menu-item.menu-item-button > a:hover {
@@ -3509,7 +3509,7 @@ main {
 }
 #site-navigation.toggled #primary-menu > .menu-item.menu-item-has-children > .sub-menu {
   background-color: rgba(0, 0, 0, 0.15);
-  border-radius: calc(var(--radius) * 0.4);
+  border-radius: calc(var(--v-radius) * 0.4);
   margin-bottom: 1rem;
   margin-top: 4px;
   padding: 7px 1.2rem;
@@ -3583,8 +3583,8 @@ main {
 }
 
 .post-navigation {
-  border-bottom: 2px solid var(--subdued-light);
-  border-top: 2px solid var(--subdued-light);
+  border-bottom: 2px solid var(--v-subdued-light);
+  border-top: 2px solid var(--v-subdued-light);
   margin-bottom: 2.5rem;
   margin-top: 2.5rem;
   padding-bottom: 1.5rem;
@@ -3627,7 +3627,7 @@ main {
 
 .search-toggle {
   align-items: center;
-  color: var(--action);
+  color: var(--v-action);
   cursor: pointer;
   display: flex;
   padding: 0 0 0 0.75rem;
@@ -3637,7 +3637,7 @@ main {
 }
 
 .v-dark-background .search-toggle {
-  color: var(--white);
+  color: var(--v-white);
 }
 
 #site-navigation.toggled .search-toggle {
@@ -3649,8 +3649,8 @@ main {
 
 #search-overlay {
   align-items: center;
-  background-color: var(--darker);
-  color: var(--on-dark);
+  background-color: var(--v-darker);
+  color: var(--v-on-dark);
   display: flex;
   height: 100svh;
   justify-content: center;
@@ -3683,17 +3683,17 @@ main {
 }
 #search-overlay .search-overlay-inner .search-form .search-field {
   font-size: clamp(1rem, 1.4vw, 1.111rem);
-  background: var(--white);
-  border-color: var(--white);
-  color: var(--text);
+  background: var(--v-white);
+  border-color: var(--v-white);
+  color: var(--v-text);
   width: 100%;
 }
 #search-overlay .search-overlay-inner .search-form .search-field::placeholder {
-  color: var(--text);
+  color: var(--v-text);
   opacity: 0.5;
 }
 #search-overlay .search-overlay-inner .search-form .search-field:focus {
-  border-color: var(--white);
+  border-color: var(--v-white);
   outline: none;
 }
 #search-overlay .search-overlay-close {
@@ -3702,7 +3702,7 @@ main {
   font-size: 0.778rem;
   background: transparent;
   border: none;
-  color: var(--on-dark);
+  color: var(--v-on-dark);
   cursor: pointer;
   line-height: 1;
   position: absolute;
@@ -3980,7 +3980,7 @@ main {
 }
 #comments #respond #reply-title small #cancel-comment-reply-link {
   font-size: 0.833rem;
-  color: var(--error);
+  color: var(--v-error);
 }
 #comments #respond #commentform .logged-in-as,
 #comments #respond #commentform .comment-notes {
@@ -4022,7 +4022,7 @@ main {
 }
 #comments #respond #commentform .required {
   font-size: 0.833rem;
-  color: var(--error);
+  color: var(--v-error);
   font-weight: 400;
 }
 
@@ -4039,7 +4039,7 @@ button,
   font-weight: 500;
   font-size: 0.833rem;
   border: none;
-  border-radius: var(--radius-button);
+  border-radius: var(--v-radius-button);
   cursor: pointer;
   display: inline-block;
   letter-spacing: 0.035rem;
@@ -4072,7 +4072,7 @@ button:hover,
 .wp-block-file .wp-block-file__button:active,
 .wp-block-file .wp-block-file__button:focus,
 .wp-block-file .wp-block-file__button:hover {
-  border-radius: var(--radius-button);
+  border-radius: var(--v-radius-button);
   text-decoration: none;
 }
 .button.v-large,
@@ -4099,7 +4099,7 @@ select {
   font-family: "Red Hat Text", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   border-style: solid;
   border-width: 2px;
-  border-radius: calc(var(--radius) * 0.4);
+  border-radius: calc(var(--v-radius) * 0.4);
   padding: calc(0.8em - 2px) 0.8em;
   vertical-align: bottom;
   width: clamp(13rem, 50vw, 18rem);
@@ -4146,7 +4146,7 @@ form select {
 }
 
 .footer-lead {
-  --section-v-spacing: clamp(2rem, 4.5vw, 3.5rem); /* Fixed — not affected by global spacing control */
+  --v-section-v-spacing: clamp(2rem, 4.5vw, 3.5rem); /* Fixed — not affected by global spacing control */
 }
 .footer-lead .inner {
   padding-bottom: 0;
@@ -4184,11 +4184,11 @@ form select {
 }
 
 .footer-lead.v-dark-background:has(+ .v-dark-background) .footer-lead-cta {
-  border-bottom: 2px solid var(--translucent-light);
+  border-bottom: 2px solid var(--v-translucent-light);
 }
 
 .footer-lead.v-gray-background:has(+ .v-gray-background) .footer-lead-cta {
-  border-bottom: 2px solid var(--translucent-dark);
+  border-bottom: 2px solid var(--v-translucent-dark);
 }
 
 .cta-banner .cta-title {
@@ -4230,7 +4230,7 @@ form select {
 }
 
 .fat-footer {
-  --section-v-spacing: clamp(2rem, 4.5vw, 3.5rem); /* Fixed — not affected by global spacing control */
+  --v-section-v-spacing: clamp(2rem, 4.5vw, 3.5rem); /* Fixed — not affected by global spacing control */
 }
 
 @media all and (min-width: 992px) {
@@ -4425,7 +4425,7 @@ article:last-child .entry-footer,
 }
 .single.has-post-thumbnail article .entry-header .post-thumbnail img,
 .page.has-post-thumbnail article .entry-header .post-thumbnail img {
-  border-radius: var(--radius);
+  border-radius: var(--v-radius);
 }
 @media all and (min-width: 992px) {
   .single.has-post-thumbnail.no-sidebar article .entry-header .post-thumbnail,
@@ -4454,7 +4454,7 @@ article:last-child .entry-footer,
 }
 
 .blog-grid-cta {
-  border-radius: var(--radius);
+  border-radius: var(--v-radius);
   grid-row-end: 3;
   grid-row-start: 2;
   padding-bottom: clamp(3rem, 5vw, 4rem);
@@ -4535,22 +4535,22 @@ article:last-child .entry-footer,
   margin: 0;
 }
 .canvas-page-width-template .entry-content > .wp-block-group:not(.v-no-spacing) > .wp-block-group__inner-container {
-  padding-bottom: var(--section-v-spacing);
-  padding-top: var(--section-v-spacing);
+  padding-bottom: var(--v-section-v-spacing);
+  padding-top: var(--v-section-v-spacing);
 }
 .canvas-page-width-template .entry-content > .wp-block-group:not(.v-no-spacing) > .wp-block-group__inner-container > [class*=wp-block-]:last-child {
   margin-bottom: 0;
 }
 @media all and (min-width: 560px) {
   .canvas-page-width-template .entry-content > .wp-block-group:not(.v-no-spacing).v-large > .wp-block-group__inner-container {
-    padding-bottom: calc(var(--section-v-spacing) * 1.4);
-    padding-top: calc(var(--section-v-spacing) * 1.4);
+    padding-bottom: calc(var(--v-section-v-spacing) * 1.4);
+    padding-top: calc(var(--v-section-v-spacing) * 1.4);
   }
 }
 @media all and (min-width: 560px) {
   .canvas-page-width-template .entry-content > .wp-block-group:not(.v-no-spacing).v-xl > .wp-block-group__inner-container {
-    padding-bottom: calc(var(--section-v-spacing) * 2.3);
-    padding-top: calc(var(--section-v-spacing) * 2.3);
+    padding-bottom: calc(var(--v-section-v-spacing) * 2.3);
+    padding-top: calc(var(--v-section-v-spacing) * 2.3);
   }
 }
 
@@ -4563,7 +4563,7 @@ article:last-child .entry-footer,
   margin-left: auto;
   margin-right: auto;
   max-width: calc(1200px + 1.25rem);
-  padding: var(--section-v-spacing) clamp(1.25rem, 7.9vw, 6rem);
+  padding: var(--v-section-v-spacing) clamp(1.25rem, 7.9vw, 6rem);
 }
 @media all and (min-width: 992px) {
   .canvas-full-width-template .entry-content > .wp-block-group:not(.v-no-spacing) > .wp-block-group__inner-container,
@@ -4579,15 +4579,15 @@ article:last-child .entry-footer,
 @media all and (min-width: 560px) {
   .canvas-full-width-template .entry-content > .wp-block-group:not(.v-no-spacing).v-large > .wp-block-group__inner-container,
   .front-page-post-content > article .entry-content > .wp-block-group:not(.v-no-spacing).v-large > .wp-block-group__inner-container {
-    padding-bottom: calc(var(--section-v-spacing) * 1.4);
-    padding-top: calc(var(--section-v-spacing) * 1.4);
+    padding-bottom: calc(var(--v-section-v-spacing) * 1.4);
+    padding-top: calc(var(--v-section-v-spacing) * 1.4);
   }
 }
 @media all and (min-width: 560px) {
   .canvas-full-width-template .entry-content > .wp-block-group:not(.v-no-spacing).v-xl > .wp-block-group__inner-container,
   .front-page-post-content > article .entry-content > .wp-block-group:not(.v-no-spacing).v-xl > .wp-block-group__inner-container {
-    padding-bottom: calc(var(--section-v-spacing) * 2.3);
-    padding-top: calc(var(--section-v-spacing) * 2.3);
+    padding-bottom: calc(var(--v-section-v-spacing) * 2.3);
+    padding-top: calc(var(--v-section-v-spacing) * 2.3);
   }
 }
 
@@ -5032,10 +5032,10 @@ article:last-child .entry-footer,
   word-wrap: normal !important;
 }
 .screen-reader-text:focus {
-  background-color: var(--action-tint);
+  background-color: var(--v-action-tint);
   clip: auto !important;
   clip-path: none;
-  color: var(--text);
+  color: var(--v-text);
   display: block;
   font-size: 1em;
   height: auto;
@@ -5071,11 +5071,11 @@ article:last-child .entry-footer,
 
 /* Border Radius */
 .v-rounded {
-  border-radius: var(--radius);
+  border-radius: var(--v-radius);
 }
 
 .wp-block-image.v-rounded img {
-  border-radius: var(--radius);
+  border-radius: var(--v-radius);
 }
 
 .v-circle {

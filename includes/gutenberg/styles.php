@@ -1,4 +1,4 @@
-<?php // Gutenberg style functions
+﻿<?php // Gutenberg style functions
 
 /**
  * Register editor-style.css via add_editor_style() so WordPress automatically
@@ -20,7 +20,7 @@ function volatyl_editor_color_vars( $settings ) {
 	$editor_css = volatyl_root_color_scheme_base() . volatyl_get_scheme_overrides( $scheme );
 	$settings['styles'][] = array( 'css' => $editor_css );
 
-	// Inject --section-v-spacing so the editor respects the active spacing tier.
+	// Inject --v-section-v-spacing so the editor respects the active spacing tier.
 	// This variable is defined in style.css (front end only) and must be explicitly
 	// passed into the iframed editor context.
 	$spacing = get_theme_mod( 'volatyl_section_spacing', 'default' );
@@ -30,7 +30,7 @@ function volatyl_editor_color_vars( $settings ) {
 		'spacious' => 'clamp(2.5rem, 7vw, 5rem)',
 	);
 	$spacing_value = isset( $spacing_values[ $spacing ] ) ? $spacing_values[ $spacing ] : $spacing_values['default'];
-	$settings['styles'][] = array( 'css' => ":root { --section-v-spacing: {$spacing_value}; }" );
+	$settings['styles'][] = array( 'css' => ":root { --v-section-v-spacing: {$spacing_value}; }" );
 
 	return $settings;
 }

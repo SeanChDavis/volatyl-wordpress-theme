@@ -1,4 +1,4 @@
-/* global wp, jQuery */
+﻿/* global wp, jQuery */
 /**
  * Customizer behavior
  */
@@ -50,7 +50,7 @@
                 'default':  'clamp(2rem, 4.5vw, 3.5rem)',
                 'spacious': 'clamp(2.5rem, 7vw, 5rem)'
             };
-            document.documentElement.style.setProperty('--section-v-spacing', spacings[to] || spacings['default']);
+            document.documentElement.style.setProperty('--v-section-v-spacing', spacings[to] || spacings['default']);
         });
     });
 
@@ -60,25 +60,25 @@
     // Primary hue
     wp.customize('volatyl_primary_hue', function (value) {
         value.bind(function (to) {
-            document.documentElement.style.setProperty('--primary-hue', to);
+            document.documentElement.style.setProperty('--v-primary-hue', to);
         });
     });
     // Palette vibrancy
     wp.customize('volatyl_palette_vibrancy', function (value) {
         value.bind(function (to) {
-            document.documentElement.style.setProperty('--palette-chroma', to * 0.0025);
+            document.documentElement.style.setProperty('--v-palette-chroma', to * 0.0025);
         });
     });
     // Background & text tint
     wp.customize('volatyl_background_tint', function (value) {
         value.bind(function (to) {
-            document.documentElement.style.setProperty('--tint-chroma', to * 0.001);
+            document.documentElement.style.setProperty('--v-tint-chroma', to * 0.001);
         });
     });
     // Corner radius
     wp.customize('volatyl_border_radius', function (value) {
         value.bind(function (to) {
-            document.documentElement.style.setProperty('--radius', to + 'px');
+            document.documentElement.style.setProperty('--v-radius', to + 'px');
         });
     });
     // Button radius: 0-50 → 0-20px (fine control), 51-100 → 9999px (pill)
@@ -86,7 +86,7 @@
         value.bind(function (to) {
             var v = parseInt(to, 10);
             var px = v <= 50 ? (v * 0.4) + 'px' : '9999px';
-            document.documentElement.style.setProperty('--radius-button', px);
+            document.documentElement.style.setProperty('--v-radius-button', px);
         });
     });
     // Color scheme type — update CSS custom properties directly for live preview
@@ -96,23 +96,23 @@
 
             // Hue variable each slot should reference per scheme
             var schemeHues = {
-                monochromatic:       {action: '--primary-hue', accent1: '--primary-hue',                        accent2: '--primary-hue',                         accent3: '--primary-hue'},
-                complementary:       {action: '--primary-hue', accent1: '--complementary-accent-hue',           accent2: '--complementary-accent-hue',            accent3: '--primary-hue'},
-                analogous:           {action: '--primary-hue', accent1: '--analogous-accent-hue-1',             accent2: '--analogous-accent-hue-2',              accent3: '--primary-hue'},
-                triadic:             {action: '--primary-hue', accent1: '--triadic-accent-hue-1',               accent2: '--triadic-accent-hue-2',                accent3: '--primary-hue'},
-                split_complementary: {action: '--primary-hue', accent1: '--split-complementary-accent-hue-1',   accent2: '--split-complementary-accent-hue-2',    accent3: '--primary-hue'},
-                tetradic:            {action: '--primary-hue', accent1: '--tetradic-accent-hue-2',              accent2: '--tetradic-accent-hue-3',               accent3: '--tetradic-accent-hue-1'},
+                monochromatic:       {action: '--v-primary-hue', accent1: '--v-primary-hue',                        accent2: '--v-primary-hue',                         accent3: '--v-primary-hue'},
+                complementary:       {action: '--v-primary-hue', accent1: '--v-complementary-accent-hue',           accent2: '--v-complementary-accent-hue',            accent3: '--v-primary-hue'},
+                analogous:           {action: '--v-primary-hue', accent1: '--v-analogous-accent-hue-1',             accent2: '--v-analogous-accent-hue-2',              accent3: '--v-primary-hue'},
+                triadic:             {action: '--v-primary-hue', accent1: '--v-triadic-accent-hue-1',               accent2: '--v-triadic-accent-hue-2',                accent3: '--v-primary-hue'},
+                split_complementary: {action: '--v-primary-hue', accent1: '--v-split-complementary-accent-hue-1',   accent2: '--v-split-complementary-accent-hue-2',    accent3: '--v-primary-hue'},
+                tetradic:            {action: '--v-primary-hue', accent1: '--v-tetradic-accent-hue-2',              accent2: '--v-tetradic-accent-hue-3',               accent3: '--v-tetradic-accent-hue-1'},
             };
 
             var hues = schemeHues[to] || schemeHues.monochromatic;
 
             function setColorGroup(prefix, hueVar) {
-                root.style.setProperty('--' + prefix + '-darker',  'oklch(18% var(--palette-chroma) var(' + hueVar + '))');
-                root.style.setProperty('--' + prefix + '-dark',    'oklch(30% var(--palette-chroma) var(' + hueVar + '))');
-                root.style.setProperty('--' + prefix,              'oklch(55% var(--palette-chroma) var(' + hueVar + '))');
-                root.style.setProperty('--' + prefix + '-light',   'oklch(80% var(--palette-chroma) var(' + hueVar + '))');
-                root.style.setProperty('--' + prefix + '-lighter', 'oklch(93% calc(var(--palette-chroma) * 0.3) var(' + hueVar + '))');
-                root.style.setProperty('--' + prefix + '-tint',    'oklch(97.5% calc(var(--palette-chroma) * 0.025) var(' + hueVar + '))');
+                root.style.setProperty('--' + prefix + '-darker',  'oklch(18% var(--v-palette-chroma) var(' + hueVar + '))');
+                root.style.setProperty('--' + prefix + '-dark',    'oklch(30% var(--v-palette-chroma) var(' + hueVar + '))');
+                root.style.setProperty('--' + prefix,              'oklch(55% var(--v-palette-chroma) var(' + hueVar + '))');
+                root.style.setProperty('--' + prefix + '-light',   'oklch(80% var(--v-palette-chroma) var(' + hueVar + '))');
+                root.style.setProperty('--' + prefix + '-lighter', 'oklch(93% calc(var(--v-palette-chroma) * 0.3) var(' + hueVar + '))');
+                root.style.setProperty('--' + prefix + '-tint',    'oklch(97.5% calc(var(--v-palette-chroma) * 0.025) var(' + hueVar + '))');
             }
 
             setColorGroup('action', hues.action);
@@ -297,61 +297,61 @@
                 label: 'Action',
                 rowSize: 3,
                 swatches: [
-                    { v: '--action-darker',  l: 'Darker' },
-                    { v: '--action-dark',    l: 'Dark'   },
-                    { v: '--action',         l: 'Base'   },
-                    { v: '--action-light',   l: 'Light',          tint: true },
-                    { v: '--action-lighter', l: 'Lighter',        tint: true },
-                    { v: '--action-tint',    l: 'Tint',           tint: true },
+                    { v: '--v-action-darker',  l: 'Darker' },
+                    { v: '--v-action-dark',    l: 'Dark'   },
+                    { v: '--v-action',         l: 'Base'   },
+                    { v: '--v-action-light',   l: 'Light',          tint: true },
+                    { v: '--v-action-lighter', l: 'Lighter',        tint: true },
+                    { v: '--v-action-tint',    l: 'Tint',           tint: true },
                 ],
             },
             {
                 label: 'Accent 1',
                 rowSize: 3,
                 swatches: [
-                    { v: '--accent-1-darker',  l: 'Darker' },
-                    { v: '--accent-1-dark',    l: 'Dark'   },
-                    { v: '--accent-1',         l: 'Base'   },
-                    { v: '--accent-1-light',   l: 'Light',   tint: true },
-                    { v: '--accent-1-lighter', l: 'Lighter', tint: true },
-                    { v: '--accent-1-tint',    l: 'Tint',    tint: true },
+                    { v: '--v-accent-1-darker',  l: 'Darker' },
+                    { v: '--v-accent-1-dark',    l: 'Dark'   },
+                    { v: '--v-accent-1',         l: 'Base'   },
+                    { v: '--v-accent-1-light',   l: 'Light',   tint: true },
+                    { v: '--v-accent-1-lighter', l: 'Lighter', tint: true },
+                    { v: '--v-accent-1-tint',    l: 'Tint',    tint: true },
                 ],
             },
             {
                 label: 'Accent 2',
                 rowSize: 3,
                 swatches: [
-                    { v: '--accent-2-darker',  l: 'Darker' },
-                    { v: '--accent-2-dark',    l: 'Dark'   },
-                    { v: '--accent-2',         l: 'Base'   },
-                    { v: '--accent-2-light',   l: 'Light',   tint: true },
-                    { v: '--accent-2-lighter', l: 'Lighter', tint: true },
-                    { v: '--accent-2-tint',    l: 'Tint',    tint: true },
+                    { v: '--v-accent-2-darker',  l: 'Darker' },
+                    { v: '--v-accent-2-dark',    l: 'Dark'   },
+                    { v: '--v-accent-2',         l: 'Base'   },
+                    { v: '--v-accent-2-light',   l: 'Light',   tint: true },
+                    { v: '--v-accent-2-lighter', l: 'Lighter', tint: true },
+                    { v: '--v-accent-2-tint',    l: 'Tint',    tint: true },
                 ],
             },
             {
                 label: 'Accent 3',
                 rowSize: 3,
                 swatches: [
-                    { v: '--accent-3-darker',  l: 'Darker' },
-                    { v: '--accent-3-dark',    l: 'Dark'   },
-                    { v: '--accent-3',         l: 'Base'   },
-                    { v: '--accent-3-light',   l: 'Light',   tint: true },
-                    { v: '--accent-3-lighter', l: 'Lighter', tint: true },
-                    { v: '--accent-3-tint',    l: 'Tint',    tint: true },
+                    { v: '--v-accent-3-darker',  l: 'Darker' },
+                    { v: '--v-accent-3-dark',    l: 'Dark'   },
+                    { v: '--v-accent-3',         l: 'Base'   },
+                    { v: '--v-accent-3-light',   l: 'Light',   tint: true },
+                    { v: '--v-accent-3-lighter', l: 'Lighter', tint: true },
+                    { v: '--v-accent-3-tint',    l: 'Tint',    tint: true },
                 ],
             },
             {
                 label: 'Neutrals',
                 rowSize: 4,
                 swatches: [
-                    { v: '--darker',        l: 'Darker'   },
-                    { v: '--dark',          l: 'Dark'     },
-                    { v: '--text',          l: 'Text'     },
-                    { v: '--subdued-dark',  l: 'Sub Dark' },
-                    { v: '--subdued-light', l: 'Sub Light', tint: true },
-                    { v: '--on-dark',       l: 'On Dark',  tint: true },
-                    { v: '--white',         l: 'White',    tint: true },
+                    { v: '--v-darker',        l: 'Darker'   },
+                    { v: '--v-dark',          l: 'Dark'     },
+                    { v: '--v-text',          l: 'Text'     },
+                    { v: '--v-subdued-dark',  l: 'Sub Dark' },
+                    { v: '--v-subdued-light', l: 'Sub Light', tint: true },
+                    { v: '--v-on-dark',       l: 'On Dark',  tint: true },
+                    { v: '--v-white',         l: 'White',    tint: true },
                 ],
             },
         ];

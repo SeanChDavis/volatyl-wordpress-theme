@@ -1,4 +1,4 @@
-/* Editor-generated classes */
+﻿/* Editor-generated classes */
 
 // Outputs .has-{$name}-color and .has-{$name}-background-color
 // Optional $on-color sets a foreground color override on the background class
@@ -32,12 +32,12 @@
 // NOTE: .has-text-color is also WordPress's generic flag class for any explicitly
 // set text color, so we must NOT emit a color rule for this slot — it would
 // override every other palette color class by source order.
-.has-text-background-color { background-color: var(--text); }
+.has-text-background-color { background-color: var(--v-text); }
 @include color-pair( 'subdued-dark' );
 @include color-pair( 'subdued-light' );
 @include color-pair( 'on-dark' );
 @include color-pair( 'white' );
 
 /* Translucent — background only, no color class */
-.has-translucent-light-background-color { background-color: var(--translucent-light); }
-.has-translucent-dark-background-color  { background-color: var(--translucent-dark); }
+.has-translucent-light-background-color { background-color: var(--v-translucent-light); }
+.has-translucent-dark-background-color  { background-color: var(--v-translucent-dark); }
