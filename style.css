@@ -2546,7 +2546,7 @@ dl {
 hr,
 .wp-block-separator {
   border-style: solid;
-  border-width: 2px 0 1px;
+  border-width: 2px 0 0;
   margin: clamp(2rem, 3.5vw, 3rem) 0;
 }
 
