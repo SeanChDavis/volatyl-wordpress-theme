@@ -3,10 +3,10 @@
 // Outputs .has-{$name}-color and .has-{$name}-background-color
 // Optional $on-color sets a foreground color override on the background class
 @mixin color-pair( $name, $on-color: null ) {
-	.has-#{$name}-color { color: var(--#{$name}); }
+	.has-#{$name}-color { color: var(--v-#{$name}); }
 	.has-#{$name}-background-color {
-		background-color: var(--#{$name});
-		@if $on-color { color: var(--#{$on-color}); }
+		background-color: var(--v-#{$name});
+		@if $on-color { color: var(--v-#{$on-color}); }
 	}
 }
 

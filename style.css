@@ -1994,214 +1994,214 @@ article .entry-content .wp-block-latest-comments,
 /* Editor-generated classes */
 /* Action, accent-1, accent-2, accent-3 */
 .has-action-darker-color {
-  color: var(--action-darker);
+  color: var(--v-action-darker);
 }
 
 .has-action-darker-background-color {
-  background-color: var(--action-darker);
+  background-color: var(--v-action-darker);
 }
 
 .has-action-dark-color {
-  color: var(--action-dark);
+  color: var(--v-action-dark);
 }
 
 .has-action-dark-background-color {
-  background-color: var(--action-dark);
+  background-color: var(--v-action-dark);
 }
 
 .has-action-color {
-  color: var(--action);
+  color: var(--v-action);
 }
 
 .has-action-background-color {
-  background-color: var(--action);
+  background-color: var(--v-action);
 }
 
 .has-action-light-color {
-  color: var(--action-light);
+  color: var(--v-action-light);
 }
 
 .has-action-light-background-color {
-  background-color: var(--action-light);
+  background-color: var(--v-action-light);
 }
 
 .has-action-lighter-color {
-  color: var(--action-lighter);
+  color: var(--v-action-lighter);
 }
 
 .has-action-lighter-background-color {
-  background-color: var(--action-lighter);
+  background-color: var(--v-action-lighter);
 }
 
 .has-action-tint-color {
-  color: var(--action-tint);
+  color: var(--v-action-tint);
 }
 
 .has-action-tint-background-color {
-  background-color: var(--action-tint);
+  background-color: var(--v-action-tint);
 }
 
 .has-accent-1-darker-color {
-  color: var(--accent-1-darker);
+  color: var(--v-accent-1-darker);
 }
 
 .has-accent-1-darker-background-color {
-  background-color: var(--accent-1-darker);
+  background-color: var(--v-accent-1-darker);
 }
 
 .has-accent-1-dark-color {
-  color: var(--accent-1-dark);
+  color: var(--v-accent-1-dark);
 }
 
 .has-accent-1-dark-background-color {
-  background-color: var(--accent-1-dark);
+  background-color: var(--v-accent-1-dark);
 }
 
 .has-accent-1-color {
-  color: var(--accent-1);
+  color: var(--v-accent-1);
 }
 
 .has-accent-1-background-color {
-  background-color: var(--accent-1);
+  background-color: var(--v-accent-1);
 }
 
 .has-accent-1-light-color {
-  color: var(--accent-1-light);
+  color: var(--v-accent-1-light);
 }
 
 .has-accent-1-light-background-color {
-  background-color: var(--accent-1-light);
+  background-color: var(--v-accent-1-light);
 }
 
 .has-accent-1-lighter-color {
-  color: var(--accent-1-lighter);
+  color: var(--v-accent-1-lighter);
 }
 
 .has-accent-1-lighter-background-color {
-  background-color: var(--accent-1-lighter);
+  background-color: var(--v-accent-1-lighter);
 }
 
 .has-accent-1-tint-color {
-  color: var(--accent-1-tint);
+  color: var(--v-accent-1-tint);
 }
 
 .has-accent-1-tint-background-color {
-  background-color: var(--accent-1-tint);
+  background-color: var(--v-accent-1-tint);
 }
 
 .has-accent-2-darker-color {
-  color: var(--accent-2-darker);
+  color: var(--v-accent-2-darker);
 }
 
 .has-accent-2-darker-background-color {
-  background-color: var(--accent-2-darker);
+  background-color: var(--v-accent-2-darker);
 }
 
 .has-accent-2-dark-color {
-  color: var(--accent-2-dark);
+  color: var(--v-accent-2-dark);
 }
 
 .has-accent-2-dark-background-color {
-  background-color: var(--accent-2-dark);
+  background-color: var(--v-accent-2-dark);
 }
 
 .has-accent-2-color {
-  color: var(--accent-2);
+  color: var(--v-accent-2);
 }
 
 .has-accent-2-background-color {
-  background-color: var(--accent-2);
+  background-color: var(--v-accent-2);
 }
 
 .has-accent-2-light-color {
-  color: var(--accent-2-light);
+  color: var(--v-accent-2-light);
 }
 
 .has-accent-2-light-background-color {
-  background-color: var(--accent-2-light);
+  background-color: var(--v-accent-2-light);
 }
 
 .has-accent-2-lighter-color {
-  color: var(--accent-2-lighter);
+  color: var(--v-accent-2-lighter);
 }
 
 .has-accent-2-lighter-background-color {
-  background-color: var(--accent-2-lighter);
+  background-color: var(--v-accent-2-lighter);
 }
 
 .has-accent-2-tint-color {
-  color: var(--accent-2-tint);
+  color: var(--v-accent-2-tint);
 }
 
 .has-accent-2-tint-background-color {
-  background-color: var(--accent-2-tint);
+  background-color: var(--v-accent-2-tint);
 }
 
 .has-accent-3-darker-color {
-  color: var(--accent-3-darker);
+  color: var(--v-accent-3-darker);
 }
 
 .has-accent-3-darker-background-color {
-  background-color: var(--accent-3-darker);
+  background-color: var(--v-accent-3-darker);
 }
 
 .has-accent-3-dark-color {
-  color: var(--accent-3-dark);
+  color: var(--v-accent-3-dark);
 }
 
 .has-accent-3-dark-background-color {
-  background-color: var(--accent-3-dark);
+  background-color: var(--v-accent-3-dark);
 }
 
 .has-accent-3-color {
-  color: var(--accent-3);
+  color: var(--v-accent-3);
 }
 
 .has-accent-3-background-color {
-  background-color: var(--accent-3);
+  background-color: var(--v-accent-3);
 }
 
 .has-accent-3-light-color {
-  color: var(--accent-3-light);
+  color: var(--v-accent-3-light);
 }
 
 .has-accent-3-light-background-color {
-  background-color: var(--accent-3-light);
+  background-color: var(--v-accent-3-light);
 }
 
 .has-accent-3-lighter-color {
-  color: var(--accent-3-lighter);
+  color: var(--v-accent-3-lighter);
 }
 
 .has-accent-3-lighter-background-color {
-  background-color: var(--accent-3-lighter);
+  background-color: var(--v-accent-3-lighter);
 }
 
 .has-accent-3-tint-color {
-  color: var(--accent-3-tint);
+  color: var(--v-accent-3-tint);
 }
 
 .has-accent-3-tint-background-color {
-  background-color: var(--accent-3-tint);
+  background-color: var(--v-accent-3-tint);
 }
 
 /* Neutrals */
 .has-darker-color {
-  color: var(--darker);
+  color: var(--v-darker);
 }
 
 .has-darker-background-color {
-  background-color: var(--darker);
-  color: var(--on-dark);
+  background-color: var(--v-darker);
+  color: var(--v-on-dark);
 }
 
 .has-dark-color {
-  color: var(--dark);
+  color: var(--v-dark);
 }
 
 .has-dark-background-color {
-  background-color: var(--dark);
-  color: var(--on-dark);
+  background-color: var(--v-dark);
+  color: var(--v-on-dark);
 }
 
 .has-text-background-color {
@@ -2209,35 +2209,35 @@ article .entry-content .wp-block-latest-comments,
 }
 
 .has-subdued-dark-color {
-  color: var(--subdued-dark);
+  color: var(--v-subdued-dark);
 }
 
 .has-subdued-dark-background-color {
-  background-color: var(--subdued-dark);
+  background-color: var(--v-subdued-dark);
 }
 
 .has-subdued-light-color {
-  color: var(--subdued-light);
+  color: var(--v-subdued-light);
 }
 
 .has-subdued-light-background-color {
-  background-color: var(--subdued-light);
+  background-color: var(--v-subdued-light);
 }
 
 .has-on-dark-color {
-  color: var(--on-dark);
+  color: var(--v-on-dark);
 }
 
 .has-on-dark-background-color {
-  background-color: var(--on-dark);
+  background-color: var(--v-on-dark);
 }
 
 .has-white-color {
-  color: var(--white);
+  color: var(--v-white);
 }
 
 .has-white-background-color {
-  background-color: var(--white);
+  background-color: var(--v-white);
 }
 
 /* Translucent — background only, no color class */
