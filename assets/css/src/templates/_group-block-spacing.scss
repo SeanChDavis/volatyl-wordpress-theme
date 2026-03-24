@@ -1,3 +1,45 @@
+// Canvas Page-Width — vertical spacing only. Horizontal is owned by the
+// page-width container; adding it here would double up and break the layout.
+.canvas-page-width-template {
+
+	.entry-content {
+
+		& > .wp-block-group {
+			margin: 0;
+
+			&:not(.v-no-spacing) {
+
+				& > .wp-block-group__inner-container {
+					padding-bottom: var(--section-v-spacing);
+					padding-top: var(--section-v-spacing);
+
+					& > [class*="wp-block-"] {
+
+						&:last-child {
+							margin-bottom: 0;
+						}
+					}
+				}
+
+				&.v-large {
+
+					& > .wp-block-group__inner-container {
+						@include innerSpacingLarge;
+					}
+				}
+
+				&.v-xl {
+
+					& > .wp-block-group__inner-container {
+						@include innerSpacingLarger;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Canvas Full-Width and Front Page — full innerSpacing (horizontal + vertical).
 .canvas-full-width-template,
 .front-page-post-content > article {
 
