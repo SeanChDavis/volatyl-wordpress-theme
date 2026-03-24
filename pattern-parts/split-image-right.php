@@ -34,8 +34,8 @@
 
 		<!-- wp:column {"verticalAlignment":"center","className":"split-section-media"} -->
 		<div class="wp-block-column is-vertically-aligned-center split-section-media">
-			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
-			<figure class="wp-block-image size-large"><img src="" alt="" /></figure>
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"v-rounded"} -->
+			<figure class="wp-block-image size-large v-rounded"><img src="" alt="" /></figure>
 			<!-- /wp:image -->
 		</div>
 		<!-- /wp:column -->
