@@ -45,7 +45,7 @@ This is the "how colorful is my brand" control. At 0 the entire palette is essen
 
 **Customizer control:** Background Tint (0–100)
 **Formula:** `background_tint × 0.001` → range: `0–0.10`
-**Drives:** dark backgrounds (`--v-dark`, `--v-darker`), body text (`--v-text`), subdued colors, and `--v-on-dark`
+**Drives:** dark backgrounds (`--v-dark`), body text (`--v-text`), subdued colors, and `--v-on-dark`
 
 This controls how much the primary hue tints the neutral elements of the site. It is intentionally capped at a much lower range than palette chroma — dark section backgrounds need to stay dark and readable even at high values. At 0, backgrounds and text are purely neutral. At 100, they carry a noticeable but still restrained tint of the primary hue.
 
@@ -83,8 +83,7 @@ Each variant uses the same hue and chroma formula — only lightness changes. Th
 
 | Variable | Lightness | Chroma | Notes |
 |---|---|---|---|
-| `--v-dark` | 15% | `--v-tint-chroma` | Primary dark surface background |
-| `--v-darker` | 12% | `--v-tint-chroma` | Deeper dark surface |
+| `--v-dark` | user-controlled (default 22%) | `--v-tint-chroma` | Primary dark surface background; lightness set by the Dark Section Depth slider |
 | `--v-text` | 20% | `--v-tint-chroma` | Body text |
 | `--v-subdued-dark` | 44% | `--v-tint-chroma × 0.4` | Muted text, secondary headings |
 | `--v-subdued-light` | 91% | `--v-tint-chroma × 0.15` | Borders, dividers |
@@ -142,8 +141,7 @@ Additionally, `--v-accent-1-hue`, `--v-accent-2-hue`, and `--v-accent-3-hue` abs
 ### Neutral Backgrounds and Text
 
 ```css
---v-dark               /* Primary dark surface, ~15% */
---v-darker             /* Deeper dark surface, ~12% */
+--v-dark               /* Primary dark surface — lightness user-controlled (default 22%) */
 --v-text               /* Body text, ~20% */
 --v-subdued-dark       /* Muted text / secondary headings, ~44% */
 --v-subdued-light      /* Borders and dividers, ~91% */
@@ -213,7 +211,6 @@ These backgrounds are vivid mid-lightness colors. They need light text but don't
 ```
 .v-dark-background
 has-dark-background-color
-has-darker-background-color
 has-text-background-color
 has-subdued-dark-background-color
 has-action-dark-background-color
@@ -303,6 +300,8 @@ Runs inside the Customizer's preview iframe. When a Customizer control changes, 
 - `volatyl_primary_hue` → updates `--v-primary-hue`
 - `volatyl_palette_vibrancy` → updates `--v-palette-chroma`
 - `volatyl_background_tint` → updates `--v-tint-chroma`
+- `volatyl_dark_lightness` → rebuilds `--v-dark` with the new lightness value
+- `volatyl_logo_width` → updates `--v-logo-width`
 - `volatyl_border_radius` → updates `--v-radius`
 - `volatyl_button_radius` → updates `--v-radius-button` (same non-linear conversion as PHP: 0–50 → 0–20px linear, 51–100 → 9999px pill)
 - Color scheme type → updates the full set of `--v-accent-N-*` variables for the selected scheme

@@ -130,8 +130,7 @@ The full palette is available as CSS custom properties on both the front end and
 | `--v-action-tint` | Extremely light action wash — gray background surfaces |
 | `--v-accent-1` | Secondary color family base (varies by scheme) |
 | `--v-accent-2` | Tertiary color family base (varies by scheme) |
-| `--v-dark` | Dark surface background |
-| `--v-darker` | Deeper dark surface |
+| `--v-dark` | Dark surface background (lightness user-controlled) |
 | `--v-text` | Body text color |
 | `--v-subdued-dark` | Muted text, secondary headings |
 | `--v-subdued-light` | Borders, dividers, separators |
@@ -154,12 +153,15 @@ For full technical details on the color system, see [docs/color-system.md](docs/
 
 ### Site Identity
 - **Logo** — Primary site logo.
+- **Logo width** — Maximum display width of the logo in pixels (60–250px). Adjust to match your logo's proportions and the available header space. Previews live in the Customizer.
 - **Light Logo** — An alternate logo for use when the site header has a dark background. Upload a light-colored version here.
 
 ### Color Scheme
 - **Primary Hue** — Hue slider (0–360°).
+- **Set hue from a brand color** — Enter any hex color value and click **Extract Hue** to set the primary hue to the OKLCH hue of that color. Useful when you have an existing brand color and want the theme palette to match it as closely as possible.
 - **Palette Vibrancy** — Controls the chroma of brand colors (buttons, links, accents).
 - **Background Tint** — Controls how much the primary hue tints dark backgrounds and body text.
+- **Dark section depth** — Controls the lightness of the dark background color used on dark sections (10–45). Lower values are near-black; higher values reveal more of the chosen hue at a readable depth.
 - **Color Scheme Type** — Choose from six color relationship schemes.
 
 ### Design
