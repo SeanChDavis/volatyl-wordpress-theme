@@ -3296,9 +3296,10 @@ main {
   font-weight: 500;
 }
 .site-header-elements .site-branding .custom-logo-link .custom-logo {
+  height: auto;
+  max-width: var(--v-logo-width);
   transition: opacity 0.2s;
   vertical-align: middle;
-  width: 180px;
 }
 .site-header-elements .site-branding .site-title {
   font-size: 1rem;

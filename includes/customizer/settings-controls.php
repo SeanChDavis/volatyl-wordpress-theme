@@ -109,6 +109,25 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'description' => __( 'Choose which page types display with a dark header background. Individual pages and posts can be configured via the Page Layout option in the editor sidebar.', 'volatyl' ),
 ) ) );
 
+// Logo display width
+$wp_customize->add_setting( 'volatyl_logo_width', array(
+	'default'           => DEFAULT_LOGO_WIDTH,
+	'sanitize_callback' => 'absint',
+	'transport'         => 'postMessage',
+) );
+$wp_customize->add_control( 'volatyl_logo_width', array(
+	'section'     => 'title_tagline',
+	'priority'    => 8,
+	'type'        => 'range',
+	'label'       => __( 'Logo width', 'volatyl' ),
+	'description' => __( 'Maximum display width of your logo in pixels. Adjust to match your logo\'s proportions and the available header space.', 'volatyl' ),
+	'input_attrs' => array(
+		'min'  => 60,
+		'max'  => 400,
+		'step' => 5,
+	),
+) );
+
 // Light logo (used whenever any dark background is active)
 $wp_customize->add_setting( 'volatyl_light_logo', array(
 	'default'           => 0,

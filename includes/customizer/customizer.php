@@ -252,8 +252,10 @@ add_action( 'customize_controls_print_styles', 'volatyl_customize_controls_print
  * Only the active scheme's overrides are output — no wasted CSS for inactive schemes.
  */
 function volatyl_customizer_head_styles() {
-	$scheme  = get_theme_mod( 'volatyl_color_scheme_type', DEFAULT_COLOR_SCHEME_TYPE );
-	$css     = volatyl_root_color_scheme_base() . volatyl_get_scheme_overrides( $scheme );
+	$scheme     = get_theme_mod( 'volatyl_color_scheme_type', DEFAULT_COLOR_SCHEME_TYPE );
+	$logo_width = absint( get_theme_mod( 'volatyl_logo_width', DEFAULT_LOGO_WIDTH ) );
+	$css        = volatyl_root_color_scheme_base() . volatyl_get_scheme_overrides( $scheme );
+	$css       .= ":root { --v-logo-width: {$logo_width}px; }";
 	echo '<style>' . $css . '</style>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 add_action( 'wp_head', 'volatyl_customizer_head_styles' );

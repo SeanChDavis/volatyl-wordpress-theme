@@ -75,6 +75,12 @@
             document.documentElement.style.setProperty('--v-tint-chroma', to * 0.001);
         });
     });
+    // Logo width
+    wp.customize('volatyl_logo_width', function (value) {
+        value.bind(function (to) {
+            document.documentElement.style.setProperty('--v-logo-width', to + 'px');
+        });
+    });
     // Corner radius
     wp.customize('volatyl_border_radius', function (value) {
         value.bind(function (to) {

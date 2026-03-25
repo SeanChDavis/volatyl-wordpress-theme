@@ -15,9 +15,10 @@
 		.custom-logo-link {
 
 			.custom-logo {
+				height: auto;
+				max-width: var(--v-logo-width);
 				transition: opacity .2s;
 				vertical-align: middle;
-				width: 180px;
 			}
 		}
 
