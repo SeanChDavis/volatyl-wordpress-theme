@@ -13,6 +13,16 @@
 		display: block;
 		font-weight: 600;
 		line-height: 1;
+
+		a {
+			text-decoration: none;
+
+			&:active,
+			&:hover,
+			&:focus {
+				text-decoration: underline;
+			}
+		}
 	}
 
 	&:not(.v-subdued) {
@@ -32,19 +42,19 @@
 			}
 
 			.v-grid-item-header {
-				padding: clamp(1.25rem, 2.4vw, 2rem) clamp(1.25rem, 2.4vw, 2rem) clamp(1rem, 1.65vw, 1.25rem);
+				padding: clamp(1rem, 1.65vw, 1.25rem) clamp(1.25rem, 2.4vw, 2rem);
 			}
 
 			.v-grid-item-body {
 				@include fontSmall;
 				flex: 1 0 auto;
-				padding: 0 clamp(1.25rem, 2.4vw, 2rem) 1.5rem;
+				padding: 0 clamp(1.25rem, 2.4vw, 2rem) 1.25rem;
 			}
 
 			.v-grid-item-footer {
 				@include headingFont;
 				@include fontSmaller;
-				padding: 0 clamp(1.25rem, 2.4vw, 2rem) clamp(1.75rem, 2.75vw, 2.25rem);
+				padding: 0 clamp(1.25rem, 2.4vw, 2rem) clamp(1.25rem, 2.4vw, 2rem);
 
 				.v-button {
 					@include fontSmallest;
