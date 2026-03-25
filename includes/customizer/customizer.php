@@ -298,10 +298,12 @@ add_action( 'customize_controls_print_styles', 'volatyl_customize_controls_print
  * Only the active scheme's overrides are output — no wasted CSS for inactive schemes.
  */
 function volatyl_customizer_head_styles() {
-	$scheme     = get_theme_mod( 'volatyl_color_scheme_type', DEFAULT_COLOR_SCHEME_TYPE );
-	$logo_width = absint( get_theme_mod( 'volatyl_logo_width', DEFAULT_LOGO_WIDTH ) );
-	$css        = volatyl_root_color_scheme_base() . volatyl_get_scheme_overrides( $scheme );
-	$css       .= ":root { --v-logo-width: {$logo_width}px; }";
+	$scheme          = get_theme_mod( 'volatyl_color_scheme_type', DEFAULT_COLOR_SCHEME_TYPE );
+	$logo_width      = absint( get_theme_mod( 'volatyl_logo_width', DEFAULT_LOGO_WIDTH ) );
+	$dark_lightness  = absint( get_theme_mod( 'volatyl_dark_lightness', DEFAULT_DARK_LIGHTNESS ) );
+	$css             = volatyl_root_color_scheme_base() . volatyl_get_scheme_overrides( $scheme );
+	$css            .= ":root { --v-logo-width: {$logo_width}px; }";
+	$css            .= ":root { --v-dark: oklch({$dark_lightness}% var(--v-tint-chroma) var(--v-primary-hue)); }";
 	echo '<style>' . $css . '</style>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 add_action( 'wp_head', 'volatyl_customizer_head_styles' );

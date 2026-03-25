@@ -75,6 +75,12 @@
             document.documentElement.style.setProperty('--v-tint-chroma', to * 0.001);
         });
     });
+    // Dark section depth
+    wp.customize('volatyl_dark_lightness', function (value) {
+        value.bind(function (to) {
+            document.documentElement.style.setProperty('--v-dark', 'oklch(' + to + '% var(--v-tint-chroma) var(--v-primary-hue))');
+        });
+    });
     // Logo width
     wp.customize('volatyl_logo_width', function (value) {
         value.bind(function (to) {

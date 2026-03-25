@@ -286,6 +286,33 @@ $wp_customize->add_control( 'volatyl_background_tint', array(
 	),
 ) );
 
+// Dark section lightness
+$wp_customize->add_setting( 'volatyl_dark_lightness_area', array(
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
+) );
+$wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl_dark_lightness_area', array(
+	'section'     => 'volatyl_color_scheme',
+	'priority'    => 140,
+	'label'       => __( 'Dark section depth', 'volatyl' ),
+	'description' => __( 'Controls how deep the dark background color appears on dark sections. Lower values are near-black; higher values reveal more of your chosen hue at a readable depth.', 'volatyl' ),
+) ) );
+
+$wp_customize->add_setting( 'volatyl_dark_lightness', array(
+	'default'           => DEFAULT_DARK_LIGHTNESS,
+	'sanitize_callback' => 'absint',
+) );
+$wp_customize->add_control( 'volatyl_dark_lightness', array(
+	'section'     => 'volatyl_color_scheme',
+	'priority'    => 150,
+	'label'       => __( 'Dark section depth', 'volatyl' ),
+	'type'        => 'range',
+	'input_attrs' => array(
+		'min'  => 10,
+		'max'  => 45,
+		'step' => 1,
+	),
+) );
+
 // Color scheme
 $wp_customize->add_setting( 'volatyl_color_scheme_area', array(
 	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',

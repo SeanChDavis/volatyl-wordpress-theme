@@ -17,6 +17,7 @@ define( 'DEFAULT_COLOR_SCHEME_TYPE', 'analogous' );
 define( 'DEFAULT_BORDER_RADIUS', 10 );
 define( 'DEFAULT_BUTTON_RADIUS', 10 );
 define( 'DEFAULT_LOGO_WIDTH', 180 );
+define( 'DEFAULT_DARK_LIGHTNESS', 15 );
 
 // Theme functions
 require_once( THEME_INCLUDES . '/helper-functions.php' );
