@@ -3297,9 +3297,10 @@ main {
 }
 .site-header-elements .site-branding .custom-logo-link .custom-logo {
   height: auto;
-  max-width: var(--v-logo-width);
+  max-width: 100%;
   transition: opacity 0.2s;
   vertical-align: middle;
+  width: var(--v-logo-width);
 }
 .site-header-elements .site-branding .site-title {
   font-size: 1rem;
