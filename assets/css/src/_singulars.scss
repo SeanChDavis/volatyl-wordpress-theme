@@ -152,6 +152,71 @@
 	}
 }
 
+// Adjust post-thumbnail bleed depth for non-default section spacing tiers.
+// Both the content-header valley (padding-bottom) and the entry-header
+// negative margin must move together — if one changes without the other
+// the image either floats above the header or doesn't overlap enough.
+
+.spacing-compact {
+
+	&.single,
+	&.page {
+
+		&.has-post-thumbnail {
+
+			.content-header .inner {
+				padding-bottom: clamp(3rem, 5vw, 4rem);
+			}
+
+			article .entry-header {
+				margin-top: -2.75rem;
+
+				@media all and (min-width: $smMinWidth) {
+					margin-top: -3rem;
+				}
+
+				@media all and (min-width: $mdMinWidth) {
+					margin-top: -3rem;
+				}
+
+				@media all and (min-width: $lgMinWidth) {
+					margin-top: -4.5rem;
+				}
+			}
+		}
+	}
+}
+
+.spacing-spacious {
+
+	&.single,
+	&.page {
+
+		&.has-post-thumbnail {
+
+			.content-header .inner {
+				padding-bottom: clamp(5.5rem, 9vw, 7rem);
+			}
+
+			article .entry-header {
+				margin-top: -5.5rem;
+
+				@media all and (min-width: $smMinWidth) {
+					margin-top: -5.75rem;
+				}
+
+				@media all and (min-width: $mdMinWidth) {
+					margin-top: -5.75rem;
+				}
+
+				@media all and (min-width: $lgMinWidth) {
+					margin-top: -8.75rem;
+				}
+			}
+		}
+	}
+}
+
 .canvas-full-width-template,
 .canvas-page-width-template {
 

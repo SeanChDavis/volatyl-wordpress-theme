@@ -4444,6 +4444,50 @@ article:last-child .entry-footer,
   margin-top: clamp(1.5rem, 2.5vw, 2rem);
 }
 
+.spacing-compact.single.has-post-thumbnail .content-header .inner, .spacing-compact.page.has-post-thumbnail .content-header .inner {
+  padding-bottom: clamp(3rem, 5vw, 4rem);
+}
+.spacing-compact.single.has-post-thumbnail article .entry-header, .spacing-compact.page.has-post-thumbnail article .entry-header {
+  margin-top: -2.75rem;
+}
+@media all and (min-width: 768px) {
+  .spacing-compact.single.has-post-thumbnail article .entry-header, .spacing-compact.page.has-post-thumbnail article .entry-header {
+    margin-top: -3rem;
+  }
+}
+@media all and (min-width: 992px) {
+  .spacing-compact.single.has-post-thumbnail article .entry-header, .spacing-compact.page.has-post-thumbnail article .entry-header {
+    margin-top: -3rem;
+  }
+}
+@media all and (min-width: 1200px) {
+  .spacing-compact.single.has-post-thumbnail article .entry-header, .spacing-compact.page.has-post-thumbnail article .entry-header {
+    margin-top: -4.5rem;
+  }
+}
+
+.spacing-spacious.single.has-post-thumbnail .content-header .inner, .spacing-spacious.page.has-post-thumbnail .content-header .inner {
+  padding-bottom: clamp(5.5rem, 9vw, 7rem);
+}
+.spacing-spacious.single.has-post-thumbnail article .entry-header, .spacing-spacious.page.has-post-thumbnail article .entry-header {
+  margin-top: -5.5rem;
+}
+@media all and (min-width: 768px) {
+  .spacing-spacious.single.has-post-thumbnail article .entry-header, .spacing-spacious.page.has-post-thumbnail article .entry-header {
+    margin-top: -5.75rem;
+  }
+}
+@media all and (min-width: 992px) {
+  .spacing-spacious.single.has-post-thumbnail article .entry-header, .spacing-spacious.page.has-post-thumbnail article .entry-header {
+    margin-top: -5.75rem;
+  }
+}
+@media all and (min-width: 1200px) {
+  .spacing-spacious.single.has-post-thumbnail article .entry-header, .spacing-spacious.page.has-post-thumbnail article .entry-header {
+    margin-top: -8.75rem;
+  }
+}
+
 .canvas-full-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ul, .canvas-full-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ol,
 .canvas-page-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ul,
 .canvas-page-width-template .v-content-container .wp-block-group .wp-block-group__inner-container > ol {
