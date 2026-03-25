@@ -237,13 +237,13 @@ $lgMinWidth: 1200px;
 
 	@include action-buttons(
 		$hover-bg: var(--v-white),
-		$hover-color: var(--v-action),
+		$hover-color: var(--v-dark),
 		$hover-border: transparent
 	);
 	@include outline-buttons(
 		$color: var(--v-white),
 		$hover-bg: var(--v-white),
-		$hover-color: var(--v-action)
+		$hover-color: var(--v-dark)
 	);
 	@include utility-buttons( var(--v-action), var(--v-action-dark) );
 	@include form-inputs( var(--v-action), var(--v-accent-1) );

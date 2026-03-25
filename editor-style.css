@@ -2118,7 +2118,7 @@ table td {
 .has-action-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
   background-color: var(--v-white);
   border-color: transparent;
-  color: var(--v-action);
+  color: var(--v-dark);
 }
 .v-dark-background .v-button.v-outline,
 .v-dark-background .wp-block-button.is-style-outline .wp-block-button__link,
@@ -2172,7 +2172,7 @@ table td {
 .has-action-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:active {
   background-color: var(--v-white);
   border-color: var(--v-white);
-  color: var(--v-action);
+  color: var(--v-dark);
 }
 .v-dark-background [type=button],
 .v-dark-background [type=submit],
@@ -2679,7 +2679,7 @@ table td {
 .has-accent-1-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
   background-color: var(--v-white);
   border-color: transparent;
-  color: var(--v-action);
+  color: var(--v-dark);
 }
 .has-accent-1-darker-background-color .v-button.v-outline,
 .has-accent-1-darker-background-color .wp-block-button.is-style-outline .wp-block-button__link,
@@ -2701,7 +2701,7 @@ table td {
 .has-accent-1-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:active {
   background-color: var(--v-white);
   border-color: var(--v-white);
-  color: var(--v-action);
+  color: var(--v-dark);
 }
 .has-accent-1-darker-background-color [type=button],
 .has-accent-1-darker-background-color [type=submit],
@@ -2924,7 +2924,7 @@ table td {
 .has-accent-2-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
   background-color: var(--v-white);
   border-color: transparent;
-  color: var(--v-action);
+  color: var(--v-dark);
 }
 .has-accent-2-darker-background-color .v-button.v-outline,
 .has-accent-2-darker-background-color .wp-block-button.is-style-outline .wp-block-button__link,
@@ -2946,7 +2946,7 @@ table td {
 .has-accent-2-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:active {
   background-color: var(--v-white);
   border-color: var(--v-white);
-  color: var(--v-action);
+  color: var(--v-dark);
 }
 .has-accent-2-darker-background-color [type=button],
 .has-accent-2-darker-background-color [type=submit],
@@ -3169,7 +3169,7 @@ table td {
 .has-accent-3-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
   background-color: var(--v-white);
   border-color: transparent;
-  color: var(--v-action);
+  color: var(--v-dark);
 }
 .has-accent-3-darker-background-color .v-button.v-outline,
 .has-accent-3-darker-background-color .wp-block-button.is-style-outline .wp-block-button__link,
@@ -3191,7 +3191,7 @@ table td {
 .has-accent-3-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:active {
   background-color: var(--v-white);
   border-color: var(--v-white);
-  color: var(--v-action);
+  color: var(--v-dark);
 }
 .has-accent-3-darker-background-color [type=button],
 .has-accent-3-darker-background-color [type=submit],
