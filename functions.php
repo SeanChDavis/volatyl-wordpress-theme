@@ -10,7 +10,7 @@ define( 'THEME_STYLESHEET', get_stylesheet_uri() );
 define( 'THEME_STYLESHEET_DIR', get_stylesheet_directory_uri() );
 define( 'THEME_INCLUDES', THEME_TEMPLATE_DIR . '/includes' );
 
-define( 'DEFAULT_PRIMARY_HUE', 260 );
+define( 'DEFAULT_PRIMARY_HUE', 252 );
 define( 'DEFAULT_PALETTE_VIBRANCY', 80 );
 define( 'DEFAULT_BACKGROUND_TINT', 80 );
 define( 'DEFAULT_COLOR_SCHEME_TYPE', 'analogous' );
