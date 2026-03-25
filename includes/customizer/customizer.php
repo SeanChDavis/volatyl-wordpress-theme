@@ -278,7 +278,7 @@ function volatyl_customize_controls_print_styles() { ?>
 		.volatyl-hex-apply {
 			display: block;
 			width: 100%;
-			margin-top: 6px;
+			margin-top: 10px;
 			text-align: center;
 		}
 		.volatyl-hex-warning {
