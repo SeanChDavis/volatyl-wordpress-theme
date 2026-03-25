@@ -12,12 +12,12 @@ define( 'THEME_INCLUDES', THEME_TEMPLATE_DIR . '/includes' );
 
 define( 'DEFAULT_PRIMARY_HUE', 260 );
 define( 'DEFAULT_PALETTE_VIBRANCY', 80 );
-define( 'DEFAULT_BACKGROUND_TINT', 35 );
+define( 'DEFAULT_BACKGROUND_TINT', 80 );
 define( 'DEFAULT_COLOR_SCHEME_TYPE', 'analogous' );
 define( 'DEFAULT_BORDER_RADIUS', 10 );
 define( 'DEFAULT_BUTTON_RADIUS', 10 );
 define( 'DEFAULT_LOGO_WIDTH', 180 );
-define( 'DEFAULT_DARK_LIGHTNESS', 15 );
+define( 'DEFAULT_DARK_LIGHTNESS', 22 );
 
 // Theme functions
 require_once( THEME_INCLUDES . '/helper-functions.php' );
