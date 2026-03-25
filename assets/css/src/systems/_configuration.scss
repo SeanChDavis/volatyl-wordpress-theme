@@ -236,10 +236,9 @@ $lgMinWidth: 1200px;
 	color: var(--v-on-dark);
 
 	@include action-buttons(
-		$border: var(--v-white),
 		$hover-bg: var(--v-white),
 		$hover-color: var(--v-action),
-		$hover-border: var(--v-white)
+		$hover-border: transparent
 	);
 	@include outline-buttons(
 		$color: var(--v-white),

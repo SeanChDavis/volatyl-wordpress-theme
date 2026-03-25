@@ -618,7 +618,7 @@ article .entry-content .wp-block-latest-comments,
 .has-action-dark-background-color .wp-block-calendar .wp-calendar-table caption,
 .has-action-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
   background-color: var(--v-action);
-  border-color: var(--v-white);
+  border-color: transparent;
   color: var(--v-white);
 }
 .v-dark-background .button:hover, .v-dark-background .button:focus, .v-dark-background .button:active,
@@ -764,7 +764,7 @@ article .entry-content .wp-block-latest-comments,
 .has-action-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 .has-action-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
   background-color: var(--v-white);
-  border-color: var(--v-white);
+  border-color: transparent;
   color: var(--v-action);
 }
 .v-dark-background .v-button.v-outline,
@@ -1275,7 +1275,7 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-1-dark-background-color .wp-block-calendar .wp-calendar-table caption,
 .has-accent-1-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
   background-color: var(--v-action);
-  border-color: var(--v-white);
+  border-color: transparent;
   color: var(--v-white);
 }
 .has-accent-1-darker-background-color .button:hover, .has-accent-1-darker-background-color .button:focus, .has-accent-1-darker-background-color .button:active,
@@ -1325,7 +1325,7 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-1-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 .has-accent-1-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
   background-color: var(--v-white);
-  border-color: var(--v-white);
+  border-color: transparent;
   color: var(--v-action);
 }
 .has-accent-1-darker-background-color .v-button.v-outline,
@@ -1520,7 +1520,7 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-2-dark-background-color .wp-block-calendar .wp-calendar-table caption,
 .has-accent-2-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
   background-color: var(--v-action);
-  border-color: var(--v-white);
+  border-color: transparent;
   color: var(--v-white);
 }
 .has-accent-2-darker-background-color .button:hover, .has-accent-2-darker-background-color .button:focus, .has-accent-2-darker-background-color .button:active,
@@ -1570,7 +1570,7 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-2-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 .has-accent-2-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
   background-color: var(--v-white);
-  border-color: var(--v-white);
+  border-color: transparent;
   color: var(--v-action);
 }
 .has-accent-2-darker-background-color .v-button.v-outline,
@@ -1765,7 +1765,7 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-3-dark-background-color .wp-block-calendar .wp-calendar-table caption,
 .has-accent-3-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
   background-color: var(--v-action);
-  border-color: var(--v-white);
+  border-color: transparent;
   color: var(--v-white);
 }
 .has-accent-3-darker-background-color .button:hover, .has-accent-3-darker-background-color .button:focus, .has-accent-3-darker-background-color .button:active,
@@ -1815,7 +1815,7 @@ article .entry-content .wp-block-latest-comments,
 .has-accent-3-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 .has-accent-3-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
   background-color: var(--v-white);
-  border-color: var(--v-white);
+  border-color: transparent;
   color: var(--v-action);
 }
 .has-accent-3-darker-background-color .v-button.v-outline,
