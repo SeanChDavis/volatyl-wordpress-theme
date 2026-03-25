@@ -15,7 +15,7 @@
 			}
 
 			// Widget area designed as a social media icon list (WordPress icons block)
-			if ( is_active_sidebar( 'Social Media Footer Area' ) ) {
+			if ( is_active_sidebar( 'social-media-footer-area' ) ) {
 				get_template_part( 'template-parts/social', 'navigation' );
 			}
 

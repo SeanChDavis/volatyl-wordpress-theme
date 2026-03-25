@@ -12,8 +12,6 @@ get_header();
 				'jumbo_title' => (bool) get_post_meta( get_queried_object_id(), '_volatyl_jumbo_title', true ),
 			) );
 		}
-		?>
-		<?php
 		if ( have_posts() ) :
 			while ( have_posts() ) :
 				the_post();

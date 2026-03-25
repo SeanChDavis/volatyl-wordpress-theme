@@ -8,6 +8,6 @@ if ( get_theme_mod( 'volatyl_footer_general_color_scheme' ) ) {
 
 <div class="social-navigation <?php echo esc_attr( $footer_general_color_scheme ); ?>">
 	<div class="inner">
-		<?php dynamic_sidebar( 'Social Media Footer Area' ); ?>
+		<?php dynamic_sidebar( 'social-media-footer-area' ); ?>
 	</div>
 </div>

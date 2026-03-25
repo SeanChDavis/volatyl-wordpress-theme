@@ -78,12 +78,7 @@ function volatyl_setup() {
 	) );
 
 	// Add support for custom logo
-	add_theme_support( 'custom-logo', array(
-		'height'      => 250,
-		'width'       => 250,
-		'flex-width'  => true,
-		'flex-height' => true,
-	) );
+	add_theme_support( 'custom-logo' );
 }
 add_action( 'after_setup_theme', 'volatyl_setup' );
 
