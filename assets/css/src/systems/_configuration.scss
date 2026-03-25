@@ -113,9 +113,9 @@ $lgMinWidth: 1200px;
 /// @param {Color} $hover-border [var(--v-action-dark)] — hover/focus/active border color
 @mixin action-buttons(
 	$border: transparent,
-	$hover-bg: var(--v-action-dark),
+	$hover-bg: var(--v-dark),
 	$hover-color: var(--v-white),
-	$hover-border: var(--v-action-dark)
+	$hover-border: var(--v-dark)
 ) {
 	.button,
 	.v-button:not(.v-outline),
@@ -145,7 +145,7 @@ $lgMinWidth: 1200px;
 /// @param {Color} $hover-color  [var(--v-white)]       — hover/focus/active text color
 @mixin outline-buttons(
 	$color: var(--v-action),
-	$hover-bg: var(--v-action-dark),
+	$hover-bg: var(--v-dark),
 	$hover-color: var(--v-white)
 ) {
 	.v-button.v-outline,

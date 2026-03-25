@@ -275,8 +275,8 @@ button:active,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
-  background-color: var(--v-action-dark);
-  border-color: var(--v-action-dark);
+  background-color: var(--v-dark);
+  border-color: var(--v-dark);
   color: var(--v-white);
 }
 
@@ -320,8 +320,8 @@ button:active,
 .wp-block-button.is-style-outline .wp-block-button__link:hover,
 .wp-block-button.is-style-outline .wp-block-button__link:focus,
 .wp-block-button.is-style-outline .wp-block-button__link:active {
-  background-color: var(--v-action-dark);
-  border-color: var(--v-action-dark);
+  background-color: var(--v-dark);
+  border-color: var(--v-dark);
   color: var(--v-white);
 }
 
