@@ -275,6 +275,12 @@ function volatyl_customize_controls_print_styles() { ?>
 		.volatyl-hex-input.is-invalid {
 			border-color: #d63638;
 		}
+		.volatyl-hex-apply {
+			display: block;
+			width: 100%;
+			margin-top: 6px;
+			text-align: center;
+		}
 		.volatyl-hex-warning {
 			display: none;
 			color: #d63638;

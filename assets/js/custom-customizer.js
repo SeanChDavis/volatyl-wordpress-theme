@@ -80,14 +80,13 @@
 			$( '#volatyl-hex-swatch' ).css( 'background', /^#[0-9a-fA-F]{6}$/.test( val ) ? val : '#e0e0e0' );
 		} );
 
-		// Apply hue on Enter or blur
-		$( document ).on( 'blur keydown', '#volatyl-hex-input', function ( e ) {
-			if ( e.type === 'keydown' && e.key !== 'Enter' ) { return; }
-			var val = this.value.trim();
+		// Apply hue — shared logic called by button, Enter, and blur
+		function applyHexHue() {
+			var $input   = $( '#volatyl-hex-input' );
+			var val      = $input.val().trim();
 			if ( ! val ) { return; }
 			if ( val[ 0 ] !== '#' ) { val = '#' + val; }
 
-			var $input   = $( this );
 			var $warning = $( '#volatyl-hex-warning' );
 			var result   = hexToOklch( val );
 
@@ -95,7 +94,7 @@
 				$input.addClass( 'is-invalid' ).removeClass( 'is-valid' );
 				return;
 			}
-			if ( result.C < 0.05 ) {
+			if ( result.C < 0.02 ) {
 				$warning.show();
 				$input.addClass( 'is-invalid' ).removeClass( 'is-valid' );
 				return;
@@ -107,6 +106,11 @@
 			// Push the extracted hue to the setting and snap the slider
 			wp.customize( 'volatyl_primary_hue' ).set( result.H );
 			$( '#customize-control-volatyl_primary_hue input[type="range"]' ).val( result.H );
+		}
+
+		$( document ).on( 'click', '#volatyl-hex-apply', applyHexHue );
+		$( document ).on( 'keydown', '#volatyl-hex-input', function ( e ) {
+			if ( e.key === 'Enter' ) { applyHexHue(); }
 		} );
 
 		// ──────────────────────────────────────────────────────────────────────

@@ -52,13 +52,14 @@ class Volatyl_Hex_To_Hue_Control extends WP_Customize_Control {
 	public function render_content() {
 		?>
 		<span class="customize-control-title"><?php esc_html_e( 'Set hue from a brand color', 'volatyl' ); ?></span>
-		<p class="description customize-control-description"><?php esc_html_e( 'Enter any color that contains your brand hue. Press Enter or click away to apply. The theme uses only the hue — lightness and vibrancy are controlled by the sliders below.', 'volatyl' ); ?></p>
+		<p class="description customize-control-description"><?php esc_html_e( 'Enter any color that contains your brand hue. The theme uses only the hue — lightness and vibrancy are controlled by the sliders below.', 'volatyl' ); ?></p>
 		<div class="volatyl-hex-to-hue">
 			<div class="volatyl-hex-input-row">
 				<span class="volatyl-hex-swatch" id="volatyl-hex-swatch"></span>
 				<input type="text" id="volatyl-hex-input" class="volatyl-hex-input" placeholder="#0057B7" maxlength="7" autocomplete="off" spellcheck="false" />
 			</div>
-			<p class="volatyl-hex-warning" id="volatyl-hex-warning"><?php esc_html_e( 'This color is too neutral to extract a reliable hue. Try a more vibrant version of your brand color.', 'volatyl' ); ?></p>
+			<button type="button" id="volatyl-hex-apply" class="button button-secondary volatyl-hex-apply"><?php esc_html_e( 'Extract Hue', 'volatyl' ); ?></button>
+			<p class="volatyl-hex-warning" id="volatyl-hex-warning"><?php esc_html_e( 'This color is too neutral to extract a reliable hue. Try a more saturated version of your brand color.', 'volatyl' ); ?></p>
 		</div>
 		<?php
 	}
