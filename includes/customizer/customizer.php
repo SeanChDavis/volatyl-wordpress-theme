@@ -250,6 +250,7 @@ function volatyl_customize_controls_print_styles() { ?>
 			display: flex;
 			align-items: center;
 			gap: 8px;
+			margin-bottom: 10px;
 		}
 		.volatyl-hex-swatch {
 			flex-shrink: 0;
@@ -278,7 +279,6 @@ function volatyl_customize_controls_print_styles() { ?>
 		.volatyl-hex-apply {
 			display: block;
 			width: 100%;
-			margin-top: 10px;
 			text-align: center;
 		}
 		.volatyl-hex-warning {
