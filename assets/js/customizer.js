@@ -351,7 +351,6 @@
                 label: 'Neutrals',
                 rowSize: 4,
                 swatches: [
-                    { v: '--v-darker',        l: 'Darker'   },
                     { v: '--v-dark',          l: 'Dark'     },
                     { v: '--v-text',          l: 'Text'     },
                     { v: '--v-subdued-dark',  l: 'Sub Dark' },

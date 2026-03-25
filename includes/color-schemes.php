@@ -70,7 +70,6 @@ function volatyl_root_color_scheme_base() {
 
 		/* Backgrounds */
 		--v-dark: oklch(15% var(--v-tint-chroma) var(--v-primary-hue));
-		--v-darker: oklch(12% var(--v-tint-chroma) var(--v-primary-hue));
 
 		/* Subdued colors */
 		--v-subdued-light: oklch(91% calc(var(--v-tint-chroma) * 0.15) var(--v-primary-hue));

@@ -123,7 +123,6 @@ function volatyl_palette_colors(): array {
 		array( 'name' => __( 'Accent 3 Light',                     'volatyl' ), 'slug' => 'accent-3-light',       'color' => $vivid( 80, $accent_3_hue ) ),
 		array( 'name' => __( 'Accent 3 Lighter',                   'volatyl' ), 'slug' => 'accent-3-lighter',     'color' => $pastel( $accent_3_hue ) ),
 		array( 'name' => __( 'Accent 3 Tint',                      'volatyl' ), 'slug' => 'accent-3-tint',        'color' => $tint( $accent_3_hue ) ),
-		array( 'name' => __( 'Darker',                             'volatyl' ), 'slug' => 'darker',               'color' => "oklch(12% {$tint_chroma} {$hue})" ),
 		array( 'name' => __( 'Dark',                               'volatyl' ), 'slug' => 'dark',                 'color' => "oklch(15% {$tint_chroma} {$hue})" ),
 		array( 'name' => __( 'Text',                               'volatyl' ), 'slug' => 'text',                 'color' => "oklch(20% {$tint_chroma} {$hue})" ),
 		array( 'name' => __( 'Subdued Dark',                       'volatyl' ), 'slug' => 'subdued-dark',         'color' => "oklch(44% " . round( $tint_chroma * 0.4, 5 ) . " {$hue})" ),

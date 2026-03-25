@@ -134,7 +134,7 @@ figure figcaption {
 // Dropdown and mobile modal backgrounds
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > .sub-menu,
 #site-navigation.toggled > .menu-modal-active #primary-menu > .menu-item-has-children > .sub-menu {
-	background-color: var(--v-darker);
+	background-color: var(--v-dark);
 }
 
 // Dropdown and mobile modal link colors
@@ -286,7 +286,6 @@ article .entry-content .wp-block-latest-comments,
 
 // Neutral dark contexts — on-dark uses primary hue (default)
 .v-dark-background,
-.has-darker-background-color,
 .has-dark-background-color,
 .has-text-background-color,
 .has-subdued-dark-background-color,
