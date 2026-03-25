@@ -123,7 +123,7 @@ $wp_customize->add_control( 'volatyl_logo_width', array(
 	'description' => __( 'Maximum display width of your logo in pixels. Adjust to match your logo\'s proportions and the available header space.', 'volatyl' ),
 	'input_attrs' => array(
 		'min'  => 60,
-		'max'  => 400,
+		'max'  => 250,
 		'step' => 5,
 	),
 ) );
