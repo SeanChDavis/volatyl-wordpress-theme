@@ -221,6 +221,15 @@ $wp_customize->add_control( 'volatyl_primary_hue', array(
 	),
 ) );
 
+// Hex-to-hue helper — UI only, not a real persisted setting
+$wp_customize->add_setting( 'volatyl_hex_to_hue', array(
+	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',
+) );
+$wp_customize->add_control( new Volatyl_Hex_To_Hue_Control( $wp_customize, 'volatyl_hex_to_hue', array(
+	'section'  => 'volatyl_color_scheme',
+	'priority' => 11,
+) ) );
+
 // Palette vibrancy
 $wp_customize->add_setting( 'volatyl_palette_vibrancy_area', array(
 	'sanitize_callback' => 'volatyl_sanitize_arbitrary_html',

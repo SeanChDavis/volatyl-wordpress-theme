@@ -242,6 +242,46 @@ function volatyl_customize_controls_print_styles() { ?>
 			box-shadow: 0 1px 3px rgba(0,0,0,.3);
 			cursor: pointer;
 		}
+		/* Hex-to-hue helper */
+		.volatyl-hex-to-hue {
+			margin-top: 4px;
+		}
+		.volatyl-hex-input-row {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+		.volatyl-hex-swatch {
+			flex-shrink: 0;
+			width: 32px;
+			height: 32px;
+			border-radius: 4px;
+			background: #e0e0e0;
+			border: 1px solid rgba(0,0,0,.15);
+		}
+		.volatyl-hex-input {
+			flex: 1 1 auto;
+			font-family: monospace;
+			font-size: 12px;
+			height: 32px;
+			padding: 0 8px;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+		.volatyl-hex-input.is-valid {
+			border-color: #46b450;
+		}
+		.volatyl-hex-input.is-invalid {
+			border-color: #d63638;
+		}
+		.volatyl-hex-warning {
+			display: none;
+			color: #d63638;
+			font-size: 11px;
+			font-style: italic;
+			margin: 6px 0 0;
+		}
 	</style>
 	<?php
 }
