@@ -122,19 +122,7 @@ li {
 
 @include action-buttons();
 @include utility-buttons();
-
-.wp-block-button.is-style-outline .wp-block-button__link {
-	border-color: var(--v-action);
-	color: var(--v-action);
-
-	&:hover,
-	&:focus,
-	&:active {
-		background-color: var(--v-action-dark);
-		border-color: var(--v-action-dark);
-		color: var(--v-white);
-	}
-}
+@include outline-buttons();
 
 // ─────────────────────────────────────────────────────────────
 // Tables

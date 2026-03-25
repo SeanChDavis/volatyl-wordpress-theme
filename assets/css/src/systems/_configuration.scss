@@ -106,29 +106,60 @@ $lgMinWidth: 1200px;
 // Shared between front-end and editor stylesheets.
 // ─────────────────────────────────────────────────────────────
 
-/// Primary action buttons — fills with --v-action, darkens on interaction.
-/// @param {Color | null} $border [null] — pass a color to set an explicit border
-@mixin action-buttons( $border: null ) {
+/// Primary action buttons — fills with --v-action, transitions on interaction.
+/// @param {Color} $border       [transparent]          — border color (use --v-white on dark backgrounds)
+/// @param {Color} $hover-bg     [var(--v-action-dark)] — hover/focus/active background
+/// @param {Color} $hover-color  [var(--v-white)]       — hover/focus/active text color
+/// @param {Color} $hover-border [var(--v-action-dark)] — hover/focus/active border color
+@mixin action-buttons(
+	$border: transparent,
+	$hover-bg: var(--v-action-dark),
+	$hover-color: var(--v-white),
+	$hover-border: var(--v-action-dark)
+) {
 	.button,
-	.v-button,
+	.v-button:not(.v-outline),
 	button,
-	.wp-block-button .wp-block-button__link,
+	.wp-block-button:not(.is-style-outline) .wp-block-button__link,
 	.wp-block-file .wp-block-file__button,
 	.comment-reply-link,
 	.wp-block-calendar .wp-calendar-table caption,
 	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
 		background-color: var(--v-action);
+		border-color: $border;
 		color: var(--v-white);
-
-		@if $border != null {
-			border-color: $border;
-		}
 
 		&:hover,
 		&:focus,
 		&:active {
-			background-color: var(--v-action-dark);
-			border-color: var(--v-action-dark);
+			background-color: $hover-bg;
+			border-color: $hover-border;
+			color: $hover-color;
+		}
+	}
+}
+
+/// Outline buttons — transparent fill with colored border, fills on interaction.
+/// @param {Color} $color        [var(--v-action)]      — border and text color
+/// @param {Color} $hover-bg     [var(--v-action-dark)] — hover/focus/active background
+/// @param {Color} $hover-color  [var(--v-white)]       — hover/focus/active text color
+@mixin outline-buttons(
+	$color: var(--v-action),
+	$hover-bg: var(--v-action-dark),
+	$hover-color: var(--v-white)
+) {
+	.v-button.v-outline,
+	.wp-block-button.is-style-outline .wp-block-button__link {
+		background-color: transparent;
+		border-color: $color;
+		color: $color;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: $hover-bg;
+			border-color: $hover-bg;
+			color: $hover-color;
 		}
 	}
 }
@@ -204,7 +235,17 @@ $lgMinWidth: 1200px;
 @mixin dark-bg-context() {
 	color: var(--v-on-dark);
 
-	@include action-buttons( var(--v-white) );
+	@include action-buttons(
+		$border: var(--v-white),
+		$hover-bg: var(--v-white),
+		$hover-color: var(--v-action),
+		$hover-border: var(--v-white)
+	);
+	@include outline-buttons(
+		$color: var(--v-white),
+		$hover-bg: var(--v-white),
+		$hover-color: var(--v-action)
+	);
 	@include utility-buttons( var(--v-action), var(--v-action-dark) );
 	@include form-inputs( var(--v-action), var(--v-accent-1) );
 

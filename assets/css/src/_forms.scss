@@ -9,37 +9,19 @@ button,
 .wp-block-file .wp-block-file__button {
 	@include headingFont;
 	@include fontSmaller;
-	border: none;
+	border: 2px solid transparent;
 	border-radius: var(--v-radius-button);
 	cursor: pointer;
 	display: inline-block;
 	letter-spacing: .035rem;
 	line-height: 1;
-	padding: .8em 1em;
+	padding: calc(.8em - 2px) 1em;
 	text-decoration: none;
 
 	&:active,
 	&:focus,
 	&:hover {
-		border-radius: var(--v-radius-button);
 		text-decoration: none;
-	}
-
-	&.v-large {
-		font-size: clamp(.833rem, 1.3vw, 1rem);
-	}
-}
-
-.wp-block-buttons {
-
-	&.v-large {
-
-		& > .wp-block-button .wp-block-button__link {
-
-			@media all and (min-width: $xsMinWidth) {
-				font-size: clamp(.833rem, 1.3vw, 1rem);
-			}
-		}
 	}
 }
 

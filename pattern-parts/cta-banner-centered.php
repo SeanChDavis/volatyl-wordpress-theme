@@ -15,8 +15,8 @@
 	<p class="has-text-align-center cta-description">A short supporting statement that reinforces the call to action and gives visitors the confidence to take the next step.</p>
 	<!-- /wp:paragraph -->
 
-	<!-- wp:buttons {"className":"v-large","layout":{"type":"flex","justifyContent":"center"}} -->
-	<div class="wp-block-buttons v-large is-content-justification-center is-layout-flex wp-block-buttons-is-layout-flex">
+	<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+	<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-block-buttons-is-layout-flex">
 		<!-- wp:button -->
 		<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Take Action</a></div>
 		<!-- /wp:button -->

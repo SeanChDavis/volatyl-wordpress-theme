@@ -19,8 +19,8 @@
 	<p class="has-text-align-center content-header-description">Supporting text that communicates your core value proposition. Keep it clear and concise — one or two sentences works best.</p>
 	<!-- /wp:paragraph -->
 
-	<!-- wp:buttons {"className":"content-header-primary-cta v-large","layout":{"type":"flex","justifyContent":"center","flexWrap":"wrap"}} -->
-	<div class="wp-block-buttons content-header-primary-cta v-large is-content-justification-center is-layout-flex">
+	<!-- wp:buttons {"className":"content-header-primary-cta","layout":{"type":"flex","justifyContent":"center","flexWrap":"wrap"}} -->
+	<div class="wp-block-buttons content-header-primary-cta is-content-justification-center is-layout-flex">
 		<!-- wp:button -->
 		<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Get Started</a></div>
 		<!-- /wp:button -->

@@ -28,8 +28,8 @@
 		<!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
 
-			<!-- wp:buttons {"className":"v-large","layout":{"type":"flex","justifyContent":"right"}} -->
-			<div class="wp-block-buttons v-large is-content-justification-right is-layout-flex wp-block-buttons-is-layout-flex">
+			<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"right"}} -->
+			<div class="wp-block-buttons is-content-justification-right is-layout-flex wp-block-buttons-is-layout-flex">
 				<!-- wp:button -->
 				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Take Action</a></div>
 				<!-- /wp:button -->

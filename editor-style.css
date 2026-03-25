@@ -1416,15 +1416,6 @@ figure figcaption {
   font-size: 0.833rem;
 }
 
-.wp-block-buttons > .wp-block-button.is-style-outline {
-  background: none;
-}
-.wp-block-buttons > .wp-block-button.is-style-outline .wp-block-button__link {
-  border-style: solid;
-  border-width: 2px;
-  padding-bottom: calc(0.8em - 2px);
-  padding-top: calc(0.8em - 2px);
-}
 .wp-block-buttons > .wp-block-button .wp-block-button__link {
   line-height: 1;
 }
@@ -1725,26 +1716,27 @@ li ol {
 }
 
 .button,
-.v-button,
+.v-button:not(.v-outline),
 button,
-.wp-block-button .wp-block-button__link,
+.wp-block-button:not(.is-style-outline) .wp-block-button__link,
 .wp-block-file .wp-block-file__button,
 .comment-reply-link,
 .wp-block-calendar .wp-calendar-table caption,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
   background-color: var(--v-action);
+  border-color: transparent;
   color: var(--v-white);
 }
 .button:hover, .button:focus, .button:active,
-.v-button:hover,
-.v-button:focus,
-.v-button:active,
+.v-button:not(.v-outline):hover,
+.v-button:not(.v-outline):focus,
+.v-button:not(.v-outline):active,
 button:hover,
 button:focus,
 button:active,
-.wp-block-button .wp-block-button__link:hover,
-.wp-block-button .wp-block-button__link:focus,
-.wp-block-button .wp-block-button__link:active,
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:active,
 .wp-block-file .wp-block-file__button:hover,
 .wp-block-file .wp-block-file__button:focus,
 .wp-block-file .wp-block-file__button:active,
@@ -1759,6 +1751,7 @@ button:active,
 #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
   background-color: var(--v-action-dark);
   border-color: var(--v-action-dark);
+  color: var(--v-white);
 }
 
 [type=button],
@@ -1791,11 +1784,16 @@ button:active,
   border-color: var(--v-action);
 }
 
+.v-button.v-outline,
 .wp-block-button.is-style-outline .wp-block-button__link {
+  background-color: transparent;
   border-color: var(--v-action);
   color: var(--v-action);
 }
-.wp-block-button.is-style-outline .wp-block-button__link:hover, .wp-block-button.is-style-outline .wp-block-button__link:focus, .wp-block-button.is-style-outline .wp-block-button__link:active {
+.v-button.v-outline:hover, .v-button.v-outline:focus, .v-button.v-outline:active,
+.wp-block-button.is-style-outline .wp-block-button__link:hover,
+.wp-block-button.is-style-outline .wp-block-button__link:focus,
+.wp-block-button.is-style-outline .wp-block-button__link:active {
   background-color: var(--v-action-dark);
   border-color: var(--v-action-dark);
   color: var(--v-white);
@@ -1925,67 +1923,67 @@ table td {
   color: var(--v-on-dark);
 }
 .v-dark-background .button,
-.v-dark-background .v-button,
+.v-dark-background .v-button:not(.v-outline),
 .v-dark-background button,
-.v-dark-background .wp-block-button .wp-block-button__link,
+.v-dark-background .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 .v-dark-background .wp-block-file .wp-block-file__button,
 .v-dark-background .comment-reply-link,
 .v-dark-background .wp-block-calendar .wp-calendar-table caption,
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a,
 .has-dark-background-color .button,
-.has-dark-background-color .v-button,
+.has-dark-background-color .v-button:not(.v-outline),
 .has-dark-background-color button,
-.has-dark-background-color .wp-block-button .wp-block-button__link,
+.has-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 .has-dark-background-color .wp-block-file .wp-block-file__button,
 .has-dark-background-color .comment-reply-link,
 .has-dark-background-color .wp-block-calendar .wp-calendar-table caption,
 .has-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a,
 .has-text-background-color .button,
-.has-text-background-color .v-button,
+.has-text-background-color .v-button:not(.v-outline),
 .has-text-background-color button,
-.has-text-background-color .wp-block-button .wp-block-button__link,
+.has-text-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 .has-text-background-color .wp-block-file .wp-block-file__button,
 .has-text-background-color .comment-reply-link,
 .has-text-background-color .wp-block-calendar .wp-calendar-table caption,
 .has-text-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a,
 .has-subdued-dark-background-color .button,
-.has-subdued-dark-background-color .v-button,
+.has-subdued-dark-background-color .v-button:not(.v-outline),
 .has-subdued-dark-background-color button,
-.has-subdued-dark-background-color .wp-block-button .wp-block-button__link,
+.has-subdued-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 .has-subdued-dark-background-color .wp-block-file .wp-block-file__button,
 .has-subdued-dark-background-color .comment-reply-link,
 .has-subdued-dark-background-color .wp-block-calendar .wp-calendar-table caption,
 .has-subdued-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a,
 .has-action-darker-background-color .button,
-.has-action-darker-background-color .v-button,
+.has-action-darker-background-color .v-button:not(.v-outline),
 .has-action-darker-background-color button,
-.has-action-darker-background-color .wp-block-button .wp-block-button__link,
+.has-action-darker-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 .has-action-darker-background-color .wp-block-file .wp-block-file__button,
 .has-action-darker-background-color .comment-reply-link,
 .has-action-darker-background-color .wp-block-calendar .wp-calendar-table caption,
 .has-action-darker-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a,
 .has-action-dark-background-color .button,
-.has-action-dark-background-color .v-button,
+.has-action-dark-background-color .v-button:not(.v-outline),
 .has-action-dark-background-color button,
-.has-action-dark-background-color .wp-block-button .wp-block-button__link,
+.has-action-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 .has-action-dark-background-color .wp-block-file .wp-block-file__button,
 .has-action-dark-background-color .comment-reply-link,
 .has-action-dark-background-color .wp-block-calendar .wp-calendar-table caption,
 .has-action-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
   background-color: var(--v-action);
-  color: var(--v-white);
   border-color: var(--v-white);
+  color: var(--v-white);
 }
 .v-dark-background .button:hover, .v-dark-background .button:focus, .v-dark-background .button:active,
-.v-dark-background .v-button:hover,
-.v-dark-background .v-button:focus,
-.v-dark-background .v-button:active,
+.v-dark-background .v-button:not(.v-outline):hover,
+.v-dark-background .v-button:not(.v-outline):focus,
+.v-dark-background .v-button:not(.v-outline):active,
 .v-dark-background button:hover,
 .v-dark-background button:focus,
 .v-dark-background button:active,
-.v-dark-background .wp-block-button .wp-block-button__link:hover,
-.v-dark-background .wp-block-button .wp-block-button__link:focus,
-.v-dark-background .wp-block-button .wp-block-button__link:active,
+.v-dark-background .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
+.v-dark-background .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+.v-dark-background .wp-block-button:not(.is-style-outline) .wp-block-button__link:active,
 .v-dark-background .wp-block-file .wp-block-file__button:hover,
 .v-dark-background .wp-block-file .wp-block-file__button:focus,
 .v-dark-background .wp-block-file .wp-block-file__button:active,
@@ -2001,15 +1999,15 @@ table td {
 .has-dark-background-color .button:hover,
 .has-dark-background-color .button:focus,
 .has-dark-background-color .button:active,
-.has-dark-background-color .v-button:hover,
-.has-dark-background-color .v-button:focus,
-.has-dark-background-color .v-button:active,
+.has-dark-background-color .v-button:not(.v-outline):hover,
+.has-dark-background-color .v-button:not(.v-outline):focus,
+.has-dark-background-color .v-button:not(.v-outline):active,
 .has-dark-background-color button:hover,
 .has-dark-background-color button:focus,
 .has-dark-background-color button:active,
-.has-dark-background-color .wp-block-button .wp-block-button__link:hover,
-.has-dark-background-color .wp-block-button .wp-block-button__link:focus,
-.has-dark-background-color .wp-block-button .wp-block-button__link:active,
+.has-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
+.has-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+.has-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:active,
 .has-dark-background-color .wp-block-file .wp-block-file__button:hover,
 .has-dark-background-color .wp-block-file .wp-block-file__button:focus,
 .has-dark-background-color .wp-block-file .wp-block-file__button:active,
@@ -2025,15 +2023,15 @@ table td {
 .has-text-background-color .button:hover,
 .has-text-background-color .button:focus,
 .has-text-background-color .button:active,
-.has-text-background-color .v-button:hover,
-.has-text-background-color .v-button:focus,
-.has-text-background-color .v-button:active,
+.has-text-background-color .v-button:not(.v-outline):hover,
+.has-text-background-color .v-button:not(.v-outline):focus,
+.has-text-background-color .v-button:not(.v-outline):active,
 .has-text-background-color button:hover,
 .has-text-background-color button:focus,
 .has-text-background-color button:active,
-.has-text-background-color .wp-block-button .wp-block-button__link:hover,
-.has-text-background-color .wp-block-button .wp-block-button__link:focus,
-.has-text-background-color .wp-block-button .wp-block-button__link:active,
+.has-text-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
+.has-text-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+.has-text-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:active,
 .has-text-background-color .wp-block-file .wp-block-file__button:hover,
 .has-text-background-color .wp-block-file .wp-block-file__button:focus,
 .has-text-background-color .wp-block-file .wp-block-file__button:active,
@@ -2049,15 +2047,15 @@ table td {
 .has-subdued-dark-background-color .button:hover,
 .has-subdued-dark-background-color .button:focus,
 .has-subdued-dark-background-color .button:active,
-.has-subdued-dark-background-color .v-button:hover,
-.has-subdued-dark-background-color .v-button:focus,
-.has-subdued-dark-background-color .v-button:active,
+.has-subdued-dark-background-color .v-button:not(.v-outline):hover,
+.has-subdued-dark-background-color .v-button:not(.v-outline):focus,
+.has-subdued-dark-background-color .v-button:not(.v-outline):active,
 .has-subdued-dark-background-color button:hover,
 .has-subdued-dark-background-color button:focus,
 .has-subdued-dark-background-color button:active,
-.has-subdued-dark-background-color .wp-block-button .wp-block-button__link:hover,
-.has-subdued-dark-background-color .wp-block-button .wp-block-button__link:focus,
-.has-subdued-dark-background-color .wp-block-button .wp-block-button__link:active,
+.has-subdued-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
+.has-subdued-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+.has-subdued-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:active,
 .has-subdued-dark-background-color .wp-block-file .wp-block-file__button:hover,
 .has-subdued-dark-background-color .wp-block-file .wp-block-file__button:focus,
 .has-subdued-dark-background-color .wp-block-file .wp-block-file__button:active,
@@ -2073,15 +2071,15 @@ table td {
 .has-action-darker-background-color .button:hover,
 .has-action-darker-background-color .button:focus,
 .has-action-darker-background-color .button:active,
-.has-action-darker-background-color .v-button:hover,
-.has-action-darker-background-color .v-button:focus,
-.has-action-darker-background-color .v-button:active,
+.has-action-darker-background-color .v-button:not(.v-outline):hover,
+.has-action-darker-background-color .v-button:not(.v-outline):focus,
+.has-action-darker-background-color .v-button:not(.v-outline):active,
 .has-action-darker-background-color button:hover,
 .has-action-darker-background-color button:focus,
 .has-action-darker-background-color button:active,
-.has-action-darker-background-color .wp-block-button .wp-block-button__link:hover,
-.has-action-darker-background-color .wp-block-button .wp-block-button__link:focus,
-.has-action-darker-background-color .wp-block-button .wp-block-button__link:active,
+.has-action-darker-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
+.has-action-darker-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+.has-action-darker-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:active,
 .has-action-darker-background-color .wp-block-file .wp-block-file__button:hover,
 .has-action-darker-background-color .wp-block-file .wp-block-file__button:focus,
 .has-action-darker-background-color .wp-block-file .wp-block-file__button:active,
@@ -2097,15 +2095,15 @@ table td {
 .has-action-dark-background-color .button:hover,
 .has-action-dark-background-color .button:focus,
 .has-action-dark-background-color .button:active,
-.has-action-dark-background-color .v-button:hover,
-.has-action-dark-background-color .v-button:focus,
-.has-action-dark-background-color .v-button:active,
+.has-action-dark-background-color .v-button:not(.v-outline):hover,
+.has-action-dark-background-color .v-button:not(.v-outline):focus,
+.has-action-dark-background-color .v-button:not(.v-outline):active,
 .has-action-dark-background-color button:hover,
 .has-action-dark-background-color button:focus,
 .has-action-dark-background-color button:active,
-.has-action-dark-background-color .wp-block-button .wp-block-button__link:hover,
-.has-action-dark-background-color .wp-block-button .wp-block-button__link:focus,
-.has-action-dark-background-color .wp-block-button .wp-block-button__link:active,
+.has-action-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
+.has-action-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+.has-action-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:active,
 .has-action-dark-background-color .wp-block-file .wp-block-file__button:hover,
 .has-action-dark-background-color .wp-block-file .wp-block-file__button:focus,
 .has-action-dark-background-color .wp-block-file .wp-block-file__button:active,
@@ -2118,8 +2116,63 @@ table td {
 .has-action-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
 .has-action-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 .has-action-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
-  background-color: var(--v-action-dark);
-  border-color: var(--v-action-dark);
+  background-color: var(--v-white);
+  border-color: var(--v-white);
+  color: var(--v-action);
+}
+.v-dark-background .v-button.v-outline,
+.v-dark-background .wp-block-button.is-style-outline .wp-block-button__link,
+.has-dark-background-color .v-button.v-outline,
+.has-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link,
+.has-text-background-color .v-button.v-outline,
+.has-text-background-color .wp-block-button.is-style-outline .wp-block-button__link,
+.has-subdued-dark-background-color .v-button.v-outline,
+.has-subdued-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link,
+.has-action-darker-background-color .v-button.v-outline,
+.has-action-darker-background-color .wp-block-button.is-style-outline .wp-block-button__link,
+.has-action-dark-background-color .v-button.v-outline,
+.has-action-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link {
+  background-color: transparent;
+  border-color: var(--v-white);
+  color: var(--v-white);
+}
+.v-dark-background .v-button.v-outline:hover, .v-dark-background .v-button.v-outline:focus, .v-dark-background .v-button.v-outline:active,
+.v-dark-background .wp-block-button.is-style-outline .wp-block-button__link:hover,
+.v-dark-background .wp-block-button.is-style-outline .wp-block-button__link:focus,
+.v-dark-background .wp-block-button.is-style-outline .wp-block-button__link:active,
+.has-dark-background-color .v-button.v-outline:hover,
+.has-dark-background-color .v-button.v-outline:focus,
+.has-dark-background-color .v-button.v-outline:active,
+.has-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:hover,
+.has-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:focus,
+.has-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:active,
+.has-text-background-color .v-button.v-outline:hover,
+.has-text-background-color .v-button.v-outline:focus,
+.has-text-background-color .v-button.v-outline:active,
+.has-text-background-color .wp-block-button.is-style-outline .wp-block-button__link:hover,
+.has-text-background-color .wp-block-button.is-style-outline .wp-block-button__link:focus,
+.has-text-background-color .wp-block-button.is-style-outline .wp-block-button__link:active,
+.has-subdued-dark-background-color .v-button.v-outline:hover,
+.has-subdued-dark-background-color .v-button.v-outline:focus,
+.has-subdued-dark-background-color .v-button.v-outline:active,
+.has-subdued-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:hover,
+.has-subdued-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:focus,
+.has-subdued-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:active,
+.has-action-darker-background-color .v-button.v-outline:hover,
+.has-action-darker-background-color .v-button.v-outline:focus,
+.has-action-darker-background-color .v-button.v-outline:active,
+.has-action-darker-background-color .wp-block-button.is-style-outline .wp-block-button__link:hover,
+.has-action-darker-background-color .wp-block-button.is-style-outline .wp-block-button__link:focus,
+.has-action-darker-background-color .wp-block-button.is-style-outline .wp-block-button__link:active,
+.has-action-dark-background-color .v-button.v-outline:hover,
+.has-action-dark-background-color .v-button.v-outline:focus,
+.has-action-dark-background-color .v-button.v-outline:active,
+.has-action-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:hover,
+.has-action-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:focus,
+.has-action-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:active {
+  background-color: var(--v-white);
+  border-color: var(--v-white);
+  color: var(--v-action);
 }
 .v-dark-background [type=button],
 .v-dark-background [type=submit],
@@ -2559,35 +2612,35 @@ table td {
   color: var(--v-on-dark);
 }
 .has-accent-1-darker-background-color .button,
-.has-accent-1-darker-background-color .v-button,
+.has-accent-1-darker-background-color .v-button:not(.v-outline),
 .has-accent-1-darker-background-color button,
-.has-accent-1-darker-background-color .wp-block-button .wp-block-button__link,
+.has-accent-1-darker-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 .has-accent-1-darker-background-color .wp-block-file .wp-block-file__button,
 .has-accent-1-darker-background-color .comment-reply-link,
 .has-accent-1-darker-background-color .wp-block-calendar .wp-calendar-table caption,
 .has-accent-1-darker-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a,
 .has-accent-1-dark-background-color .button,
-.has-accent-1-dark-background-color .v-button,
+.has-accent-1-dark-background-color .v-button:not(.v-outline),
 .has-accent-1-dark-background-color button,
-.has-accent-1-dark-background-color .wp-block-button .wp-block-button__link,
+.has-accent-1-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 .has-accent-1-dark-background-color .wp-block-file .wp-block-file__button,
 .has-accent-1-dark-background-color .comment-reply-link,
 .has-accent-1-dark-background-color .wp-block-calendar .wp-calendar-table caption,
 .has-accent-1-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
   background-color: var(--v-action);
-  color: var(--v-white);
   border-color: var(--v-white);
+  color: var(--v-white);
 }
 .has-accent-1-darker-background-color .button:hover, .has-accent-1-darker-background-color .button:focus, .has-accent-1-darker-background-color .button:active,
-.has-accent-1-darker-background-color .v-button:hover,
-.has-accent-1-darker-background-color .v-button:focus,
-.has-accent-1-darker-background-color .v-button:active,
+.has-accent-1-darker-background-color .v-button:not(.v-outline):hover,
+.has-accent-1-darker-background-color .v-button:not(.v-outline):focus,
+.has-accent-1-darker-background-color .v-button:not(.v-outline):active,
 .has-accent-1-darker-background-color button:hover,
 .has-accent-1-darker-background-color button:focus,
 .has-accent-1-darker-background-color button:active,
-.has-accent-1-darker-background-color .wp-block-button .wp-block-button__link:hover,
-.has-accent-1-darker-background-color .wp-block-button .wp-block-button__link:focus,
-.has-accent-1-darker-background-color .wp-block-button .wp-block-button__link:active,
+.has-accent-1-darker-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
+.has-accent-1-darker-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+.has-accent-1-darker-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:active,
 .has-accent-1-darker-background-color .wp-block-file .wp-block-file__button:hover,
 .has-accent-1-darker-background-color .wp-block-file .wp-block-file__button:focus,
 .has-accent-1-darker-background-color .wp-block-file .wp-block-file__button:active,
@@ -2603,15 +2656,15 @@ table td {
 .has-accent-1-dark-background-color .button:hover,
 .has-accent-1-dark-background-color .button:focus,
 .has-accent-1-dark-background-color .button:active,
-.has-accent-1-dark-background-color .v-button:hover,
-.has-accent-1-dark-background-color .v-button:focus,
-.has-accent-1-dark-background-color .v-button:active,
+.has-accent-1-dark-background-color .v-button:not(.v-outline):hover,
+.has-accent-1-dark-background-color .v-button:not(.v-outline):focus,
+.has-accent-1-dark-background-color .v-button:not(.v-outline):active,
 .has-accent-1-dark-background-color button:hover,
 .has-accent-1-dark-background-color button:focus,
 .has-accent-1-dark-background-color button:active,
-.has-accent-1-dark-background-color .wp-block-button .wp-block-button__link:hover,
-.has-accent-1-dark-background-color .wp-block-button .wp-block-button__link:focus,
-.has-accent-1-dark-background-color .wp-block-button .wp-block-button__link:active,
+.has-accent-1-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
+.has-accent-1-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+.has-accent-1-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:active,
 .has-accent-1-dark-background-color .wp-block-file .wp-block-file__button:hover,
 .has-accent-1-dark-background-color .wp-block-file .wp-block-file__button:focus,
 .has-accent-1-dark-background-color .wp-block-file .wp-block-file__button:active,
@@ -2624,8 +2677,31 @@ table td {
 .has-accent-1-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
 .has-accent-1-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 .has-accent-1-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
-  background-color: var(--v-action-dark);
-  border-color: var(--v-action-dark);
+  background-color: var(--v-white);
+  border-color: var(--v-white);
+  color: var(--v-action);
+}
+.has-accent-1-darker-background-color .v-button.v-outline,
+.has-accent-1-darker-background-color .wp-block-button.is-style-outline .wp-block-button__link,
+.has-accent-1-dark-background-color .v-button.v-outline,
+.has-accent-1-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link {
+  background-color: transparent;
+  border-color: var(--v-white);
+  color: var(--v-white);
+}
+.has-accent-1-darker-background-color .v-button.v-outline:hover, .has-accent-1-darker-background-color .v-button.v-outline:focus, .has-accent-1-darker-background-color .v-button.v-outline:active,
+.has-accent-1-darker-background-color .wp-block-button.is-style-outline .wp-block-button__link:hover,
+.has-accent-1-darker-background-color .wp-block-button.is-style-outline .wp-block-button__link:focus,
+.has-accent-1-darker-background-color .wp-block-button.is-style-outline .wp-block-button__link:active,
+.has-accent-1-dark-background-color .v-button.v-outline:hover,
+.has-accent-1-dark-background-color .v-button.v-outline:focus,
+.has-accent-1-dark-background-color .v-button.v-outline:active,
+.has-accent-1-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:hover,
+.has-accent-1-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:focus,
+.has-accent-1-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:active {
+  background-color: var(--v-white);
+  border-color: var(--v-white);
+  color: var(--v-action);
 }
 .has-accent-1-darker-background-color [type=button],
 .has-accent-1-darker-background-color [type=submit],
@@ -2781,35 +2857,35 @@ table td {
   color: var(--v-on-dark);
 }
 .has-accent-2-darker-background-color .button,
-.has-accent-2-darker-background-color .v-button,
+.has-accent-2-darker-background-color .v-button:not(.v-outline),
 .has-accent-2-darker-background-color button,
-.has-accent-2-darker-background-color .wp-block-button .wp-block-button__link,
+.has-accent-2-darker-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 .has-accent-2-darker-background-color .wp-block-file .wp-block-file__button,
 .has-accent-2-darker-background-color .comment-reply-link,
 .has-accent-2-darker-background-color .wp-block-calendar .wp-calendar-table caption,
 .has-accent-2-darker-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a,
 .has-accent-2-dark-background-color .button,
-.has-accent-2-dark-background-color .v-button,
+.has-accent-2-dark-background-color .v-button:not(.v-outline),
 .has-accent-2-dark-background-color button,
-.has-accent-2-dark-background-color .wp-block-button .wp-block-button__link,
+.has-accent-2-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 .has-accent-2-dark-background-color .wp-block-file .wp-block-file__button,
 .has-accent-2-dark-background-color .comment-reply-link,
 .has-accent-2-dark-background-color .wp-block-calendar .wp-calendar-table caption,
 .has-accent-2-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
   background-color: var(--v-action);
-  color: var(--v-white);
   border-color: var(--v-white);
+  color: var(--v-white);
 }
 .has-accent-2-darker-background-color .button:hover, .has-accent-2-darker-background-color .button:focus, .has-accent-2-darker-background-color .button:active,
-.has-accent-2-darker-background-color .v-button:hover,
-.has-accent-2-darker-background-color .v-button:focus,
-.has-accent-2-darker-background-color .v-button:active,
+.has-accent-2-darker-background-color .v-button:not(.v-outline):hover,
+.has-accent-2-darker-background-color .v-button:not(.v-outline):focus,
+.has-accent-2-darker-background-color .v-button:not(.v-outline):active,
 .has-accent-2-darker-background-color button:hover,
 .has-accent-2-darker-background-color button:focus,
 .has-accent-2-darker-background-color button:active,
-.has-accent-2-darker-background-color .wp-block-button .wp-block-button__link:hover,
-.has-accent-2-darker-background-color .wp-block-button .wp-block-button__link:focus,
-.has-accent-2-darker-background-color .wp-block-button .wp-block-button__link:active,
+.has-accent-2-darker-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
+.has-accent-2-darker-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+.has-accent-2-darker-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:active,
 .has-accent-2-darker-background-color .wp-block-file .wp-block-file__button:hover,
 .has-accent-2-darker-background-color .wp-block-file .wp-block-file__button:focus,
 .has-accent-2-darker-background-color .wp-block-file .wp-block-file__button:active,
@@ -2825,15 +2901,15 @@ table td {
 .has-accent-2-dark-background-color .button:hover,
 .has-accent-2-dark-background-color .button:focus,
 .has-accent-2-dark-background-color .button:active,
-.has-accent-2-dark-background-color .v-button:hover,
-.has-accent-2-dark-background-color .v-button:focus,
-.has-accent-2-dark-background-color .v-button:active,
+.has-accent-2-dark-background-color .v-button:not(.v-outline):hover,
+.has-accent-2-dark-background-color .v-button:not(.v-outline):focus,
+.has-accent-2-dark-background-color .v-button:not(.v-outline):active,
 .has-accent-2-dark-background-color button:hover,
 .has-accent-2-dark-background-color button:focus,
 .has-accent-2-dark-background-color button:active,
-.has-accent-2-dark-background-color .wp-block-button .wp-block-button__link:hover,
-.has-accent-2-dark-background-color .wp-block-button .wp-block-button__link:focus,
-.has-accent-2-dark-background-color .wp-block-button .wp-block-button__link:active,
+.has-accent-2-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
+.has-accent-2-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+.has-accent-2-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:active,
 .has-accent-2-dark-background-color .wp-block-file .wp-block-file__button:hover,
 .has-accent-2-dark-background-color .wp-block-file .wp-block-file__button:focus,
 .has-accent-2-dark-background-color .wp-block-file .wp-block-file__button:active,
@@ -2846,8 +2922,31 @@ table td {
 .has-accent-2-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
 .has-accent-2-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 .has-accent-2-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
-  background-color: var(--v-action-dark);
-  border-color: var(--v-action-dark);
+  background-color: var(--v-white);
+  border-color: var(--v-white);
+  color: var(--v-action);
+}
+.has-accent-2-darker-background-color .v-button.v-outline,
+.has-accent-2-darker-background-color .wp-block-button.is-style-outline .wp-block-button__link,
+.has-accent-2-dark-background-color .v-button.v-outline,
+.has-accent-2-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link {
+  background-color: transparent;
+  border-color: var(--v-white);
+  color: var(--v-white);
+}
+.has-accent-2-darker-background-color .v-button.v-outline:hover, .has-accent-2-darker-background-color .v-button.v-outline:focus, .has-accent-2-darker-background-color .v-button.v-outline:active,
+.has-accent-2-darker-background-color .wp-block-button.is-style-outline .wp-block-button__link:hover,
+.has-accent-2-darker-background-color .wp-block-button.is-style-outline .wp-block-button__link:focus,
+.has-accent-2-darker-background-color .wp-block-button.is-style-outline .wp-block-button__link:active,
+.has-accent-2-dark-background-color .v-button.v-outline:hover,
+.has-accent-2-dark-background-color .v-button.v-outline:focus,
+.has-accent-2-dark-background-color .v-button.v-outline:active,
+.has-accent-2-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:hover,
+.has-accent-2-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:focus,
+.has-accent-2-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:active {
+  background-color: var(--v-white);
+  border-color: var(--v-white);
+  color: var(--v-action);
 }
 .has-accent-2-darker-background-color [type=button],
 .has-accent-2-darker-background-color [type=submit],
@@ -3003,35 +3102,35 @@ table td {
   color: var(--v-on-dark);
 }
 .has-accent-3-darker-background-color .button,
-.has-accent-3-darker-background-color .v-button,
+.has-accent-3-darker-background-color .v-button:not(.v-outline),
 .has-accent-3-darker-background-color button,
-.has-accent-3-darker-background-color .wp-block-button .wp-block-button__link,
+.has-accent-3-darker-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 .has-accent-3-darker-background-color .wp-block-file .wp-block-file__button,
 .has-accent-3-darker-background-color .comment-reply-link,
 .has-accent-3-darker-background-color .wp-block-calendar .wp-calendar-table caption,
 .has-accent-3-darker-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a,
 .has-accent-3-dark-background-color .button,
-.has-accent-3-dark-background-color .v-button,
+.has-accent-3-dark-background-color .v-button:not(.v-outline),
 .has-accent-3-dark-background-color button,
-.has-accent-3-dark-background-color .wp-block-button .wp-block-button__link,
+.has-accent-3-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 .has-accent-3-dark-background-color .wp-block-file .wp-block-file__button,
 .has-accent-3-dark-background-color .comment-reply-link,
 .has-accent-3-dark-background-color .wp-block-calendar .wp-calendar-table caption,
 .has-accent-3-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
   background-color: var(--v-action);
-  color: var(--v-white);
   border-color: var(--v-white);
+  color: var(--v-white);
 }
 .has-accent-3-darker-background-color .button:hover, .has-accent-3-darker-background-color .button:focus, .has-accent-3-darker-background-color .button:active,
-.has-accent-3-darker-background-color .v-button:hover,
-.has-accent-3-darker-background-color .v-button:focus,
-.has-accent-3-darker-background-color .v-button:active,
+.has-accent-3-darker-background-color .v-button:not(.v-outline):hover,
+.has-accent-3-darker-background-color .v-button:not(.v-outline):focus,
+.has-accent-3-darker-background-color .v-button:not(.v-outline):active,
 .has-accent-3-darker-background-color button:hover,
 .has-accent-3-darker-background-color button:focus,
 .has-accent-3-darker-background-color button:active,
-.has-accent-3-darker-background-color .wp-block-button .wp-block-button__link:hover,
-.has-accent-3-darker-background-color .wp-block-button .wp-block-button__link:focus,
-.has-accent-3-darker-background-color .wp-block-button .wp-block-button__link:active,
+.has-accent-3-darker-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
+.has-accent-3-darker-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+.has-accent-3-darker-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:active,
 .has-accent-3-darker-background-color .wp-block-file .wp-block-file__button:hover,
 .has-accent-3-darker-background-color .wp-block-file .wp-block-file__button:focus,
 .has-accent-3-darker-background-color .wp-block-file .wp-block-file__button:active,
@@ -3047,15 +3146,15 @@ table td {
 .has-accent-3-dark-background-color .button:hover,
 .has-accent-3-dark-background-color .button:focus,
 .has-accent-3-dark-background-color .button:active,
-.has-accent-3-dark-background-color .v-button:hover,
-.has-accent-3-dark-background-color .v-button:focus,
-.has-accent-3-dark-background-color .v-button:active,
+.has-accent-3-dark-background-color .v-button:not(.v-outline):hover,
+.has-accent-3-dark-background-color .v-button:not(.v-outline):focus,
+.has-accent-3-dark-background-color .v-button:not(.v-outline):active,
 .has-accent-3-dark-background-color button:hover,
 .has-accent-3-dark-background-color button:focus,
 .has-accent-3-dark-background-color button:active,
-.has-accent-3-dark-background-color .wp-block-button .wp-block-button__link:hover,
-.has-accent-3-dark-background-color .wp-block-button .wp-block-button__link:focus,
-.has-accent-3-dark-background-color .wp-block-button .wp-block-button__link:active,
+.has-accent-3-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
+.has-accent-3-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+.has-accent-3-dark-background-color .wp-block-button:not(.is-style-outline) .wp-block-button__link:active,
 .has-accent-3-dark-background-color .wp-block-file .wp-block-file__button:hover,
 .has-accent-3-dark-background-color .wp-block-file .wp-block-file__button:focus,
 .has-accent-3-dark-background-color .wp-block-file .wp-block-file__button:active,
@@ -3068,8 +3167,31 @@ table td {
 .has-accent-3-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
 .has-accent-3-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 .has-accent-3-dark-background-color #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
-  background-color: var(--v-action-dark);
-  border-color: var(--v-action-dark);
+  background-color: var(--v-white);
+  border-color: var(--v-white);
+  color: var(--v-action);
+}
+.has-accent-3-darker-background-color .v-button.v-outline,
+.has-accent-3-darker-background-color .wp-block-button.is-style-outline .wp-block-button__link,
+.has-accent-3-dark-background-color .v-button.v-outline,
+.has-accent-3-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link {
+  background-color: transparent;
+  border-color: var(--v-white);
+  color: var(--v-white);
+}
+.has-accent-3-darker-background-color .v-button.v-outline:hover, .has-accent-3-darker-background-color .v-button.v-outline:focus, .has-accent-3-darker-background-color .v-button.v-outline:active,
+.has-accent-3-darker-background-color .wp-block-button.is-style-outline .wp-block-button__link:hover,
+.has-accent-3-darker-background-color .wp-block-button.is-style-outline .wp-block-button__link:focus,
+.has-accent-3-darker-background-color .wp-block-button.is-style-outline .wp-block-button__link:active,
+.has-accent-3-dark-background-color .v-button.v-outline:hover,
+.has-accent-3-dark-background-color .v-button.v-outline:focus,
+.has-accent-3-dark-background-color .v-button.v-outline:active,
+.has-accent-3-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:hover,
+.has-accent-3-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:focus,
+.has-accent-3-dark-background-color .wp-block-button.is-style-outline .wp-block-button__link:active {
+  background-color: var(--v-white);
+  border-color: var(--v-white);
+  color: var(--v-action);
 }
 .has-accent-3-darker-background-color [type=button],
 .has-accent-3-darker-background-color [type=submit],
