@@ -117,6 +117,21 @@ $lgMinWidth: 1200px;
 	$hover-color: var(--v-white),
 	$hover-border: var(--v-dark)
 ) {
+	// Default state — guard block button against editor color overrides
+	.button,
+	.v-button:not(.v-outline),
+	button,
+	.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background),
+	.wp-block-file .wp-block-file__button,
+	.comment-reply-link,
+	.wp-block-calendar .wp-calendar-table caption,
+	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
+		background-color: var(--v-action);
+		border-color: $border;
+		color: var(--v-white);
+	}
+
+	// Hover/focus/active — always apply regardless of user color overrides
 	.button,
 	.v-button:not(.v-outline),
 	button,
@@ -125,10 +140,6 @@ $lgMinWidth: 1200px;
 	.comment-reply-link,
 	.wp-block-calendar .wp-calendar-table caption,
 	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a {
-		background-color: var(--v-action);
-		border-color: $border;
-		color: var(--v-white);
-
 		&:hover,
 		&:focus,
 		&:active {
