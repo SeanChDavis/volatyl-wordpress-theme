@@ -25,6 +25,7 @@ if ( get_theme_mod( 'volatyl_front_page_hero_use_custom_title' ) && ! empty( $cu
 		 * Build the hero (content header) section arguments
 		 */
 		get_template_part( 'template-parts/content', 'header', array(
+				'eyebrow'       => get_theme_mod( 'volatyl_front_page_hero_eyebrow', '' ),
 				'title'         => $front_page_hero_title,
 				'description'   => get_theme_mod( 'volatyl_front_page_hero_description', '' ),
 				'alignment'     => get_theme_mod( 'volatyl_front_page_hero_centered', 0 ),

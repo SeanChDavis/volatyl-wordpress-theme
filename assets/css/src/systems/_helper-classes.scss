@@ -112,7 +112,11 @@
 .v-padding-5 { padding: 2.5rem; }
 .v-padding-6 { padding: 3rem;}
 
-.v-no-spacing { margin: 0; padding: 0; }
+.v-no-spacing        { margin: 0; padding: 0; }
+.v-no-spacing-top    { padding-top: 0; }
+.v-no-spacing-bottom { padding-bottom: 0; }
+.v-no-spacing-x      { padding-left: 0; padding-right: 0; }
+.v-no-spacing-y      { padding-top: 0; padding-bottom: 0; }
 
 /* Accessibility */
 .screen-reader-text {

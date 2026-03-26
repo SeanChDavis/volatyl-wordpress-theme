@@ -34,7 +34,7 @@ if ( is_search() ) {
 		<?php } ?>
 		<?php if ( ! is_search() ) { ?>
 			<footer class="v-grid-item-footer">
-				<p class="read-more"><a href="<?php echo esc_url( get_permalink( $the_post_id ) ); ?>" aria-label="<?php echo esc_attr( sprintf( __( 'Continue reading %s', 'volatyl' ), get_the_title( $the_post_id ) ) ); ?>"><?php esc_html_e( 'Continue Reading', 'volatyl' ); ?></a></p>
+				<p class="read-more"><a href="<?php echo esc_url( get_permalink( $the_post_id ) ); ?>" aria-label="<?php echo esc_attr( sprintf( __( 'Read more %s', 'volatyl' ), get_the_title( $the_post_id ) ) ); ?>"><?php esc_html_e( 'Read more', 'volatyl' ); ?></a></p>
 			</footer>
 		<?php } ?>
 	</div>

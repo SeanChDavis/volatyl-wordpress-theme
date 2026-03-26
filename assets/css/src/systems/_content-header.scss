@@ -95,10 +95,10 @@
 			span {
 				@include headingFont;
 				display: block;
-				font-size: clamp(1.65rem, 4vw, 3rem);
+				font-size: clamp(1.5rem, 2.5vw, 2rem);
 				line-height: 1.3;
 				margin: 0;
-				max-width: clamp(770px, 50vw, 940px);
+				max-width: clamp(600px, 65vw, 840px);
 				text-transform: none;
 			}
 		}

@@ -151,6 +151,12 @@
             $('.front-page .content-header, .home.blog .content-header').toggleClass('v-text-align-center', !!to);
         });
     });
+    // Front page hero eyebrow
+    wp.customize('volatyl_front_page_hero_eyebrow', function (value) {
+        value.bind(function (to) {
+            $('.front-page .content-header-eyebrow').text(to);
+        });
+    });
     // Front page hero title
     wp.customize('volatyl_front_page_hero_title', function (value) {
         value.bind(function (to) {
@@ -199,6 +205,12 @@
     /**
      * Blog Template
      */
+    // Blog eyebrow
+    wp.customize('volatyl_blog_eyebrow', function (value) {
+        value.bind(function (to) {
+            $('.blog .content-header-eyebrow').text(to);
+        });
+    });
     // Blog hero title
     wp.customize('volatyl_blog_title', function (value) {
         value.bind(function (to) {

@@ -110,7 +110,7 @@
 	const menuModalInner = menuModalOuter.querySelector("#primary-menu");
 	const closeButton = document.createElement("button");
 	closeButton.classList.add('close-menu-modal');
-	closeButton.textContent = "Close Menu";
+	closeButton.textContent = "Close menu";
 	menuModalOuter.prepend(closeButton);
 
 	// Returns all keyboard-focusable elements within a container.

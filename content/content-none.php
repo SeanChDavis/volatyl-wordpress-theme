@@ -21,11 +21,11 @@ if ( is_home() && current_user_can( 'publish_posts' ) ) :
 elseif ( is_search() ) :
 	?>
 	<p><?php esc_html_e( 'Sorry. Nothing matched your search terms. Try different keywords. Or...', 'volatyl' ); ?></p>
-	<p><a class="button" href="<?php echo home_url(); ?>"><?php esc_html_e( 'Return to Home', 'volatyl' ); ?></a></p>
+	<p><a class="button" href="<?php echo home_url(); ?>"><?php esc_html_e( 'Return to home', 'volatyl' ); ?></a></p>
 <?php
 elseif ( is_404() ) :
 	?>
-	<p><a class="button" href="<?php echo home_url(); ?>"><?php esc_html_e( 'Return to Home', 'volatyl' ); ?></a></p>
+	<p><a class="button" href="<?php echo home_url(); ?>"><?php esc_html_e( 'Return to home', 'volatyl' ); ?></a></p>
 	<?php
 else :
 	?>

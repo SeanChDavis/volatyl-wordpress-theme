@@ -424,6 +424,18 @@ $wp_customize->add_control( 'volatyl_front_page_hero_centered', array(
 	'type'     => 'checkbox',
 ) );
 
+// Hero eyebrow
+$wp_customize->add_setting( 'volatyl_front_page_hero_eyebrow', array(
+	'default'           => NULL,
+	'sanitize_callback' => 'sanitize_text_field',
+) );
+$wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize, 'volatyl_front_page_hero_eyebrow', array(
+	'section'     => 'volatyl_front_page_template',
+	'priority'    => 30,
+	'label'       => __( 'Eyebrow', 'volatyl' ),
+	'description' => __( 'Small label displayed above the hero title.', 'volatyl' ),
+) ) );
+
 // Hero custom title
 $wp_customize->add_setting( 'volatyl_front_page_hero_use_custom_title', array(
 	'default'           => 0,
@@ -667,6 +679,18 @@ $wp_customize->add_control( new Volatyl_Customizer_HTML( $wp_customize, 'volatyl
 	'priority'    => 1,
 	'label'       => __( 'Header Area', 'volatyl' ),
 	'description' => '',
+) ) );
+
+// Blog eyebrow
+$wp_customize->add_setting( 'volatyl_blog_eyebrow', array(
+	'default'           => NULL,
+	'sanitize_callback' => 'sanitize_text_field',
+) );
+$wp_customize->add_control( new Volatyl_WP_Customize_Text_Control( $wp_customize, 'volatyl_blog_eyebrow', array(
+	'section'     => 'volatyl_blog_template',
+	'priority'    => 5,
+	'label'       => __( 'Eyebrow', 'volatyl' ),
+	'description' => __( 'Small label displayed above the blog title.', 'volatyl' ),
 ) ) );
 
 // Blog title

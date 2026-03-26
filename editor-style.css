@@ -589,6 +589,24 @@ template {
   padding: 0;
 }
 
+.v-no-spacing-top {
+  padding-top: 0;
+}
+
+.v-no-spacing-bottom {
+  padding-bottom: 0;
+}
+
+.v-no-spacing-x {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.v-no-spacing-y {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 /* Accessibility */
 .screen-reader-text {
   border: 0;

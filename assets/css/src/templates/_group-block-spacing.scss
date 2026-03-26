@@ -1,4 +1,4 @@
-﻿// Canvas Page-Width — vertical spacing only. Horizontal is owned by the
+// Canvas Page-Width — vertical spacing only. Horizontal is owned by the
 // page-width container; adding it here would double up and break the layout.
 .canvas-page-width-template {
 
@@ -35,6 +35,11 @@
 					}
 				}
 			}
+
+			// Granular spacing overrides — applied after base rules so source order wins.
+			&.v-no-spacing-top    > .wp-block-group__inner-container { padding-top: 0; }
+			&.v-no-spacing-bottom > .wp-block-group__inner-container { padding-bottom: 0; }
+			&.v-no-spacing-y      > .wp-block-group__inner-container { padding-top: 0; padding-bottom: 0; }
 		}
 	}
 }
@@ -75,6 +80,12 @@
 					}
 				}
 			}
+
+			// Granular spacing overrides — applied after base rules so source order wins.
+			&.v-no-spacing-top    > .wp-block-group__inner-container { padding-top: 0; }
+			&.v-no-spacing-bottom > .wp-block-group__inner-container { padding-bottom: 0; }
+			&.v-no-spacing-x      > .wp-block-group__inner-container { padding-left: 0; padding-right: 0; }
+			&.v-no-spacing-y      > .wp-block-group__inner-container { padding-top: 0; padding-bottom: 0; }
 		}
 	}
 }

@@ -66,10 +66,13 @@ cite {
 
 .post-navigation .nav-subtitle,
 .featured-page .section-description,
-.archive-title.content-header-title,
 [class*="wp-block-"] > label,
 figure figcaption {
 	color: var(--v-subdued-dark);
+}
+
+.archive-title.content-header-title {
+	color: var(--v-accent-1);
 }
 
 .pagination .page-numbers.current {
@@ -378,7 +381,7 @@ article .entry-content .wp-block-latest-comments,
 // Global keyboard focus indicator — action color outline
 :focus-visible {
 	outline: 2px solid var(--v-action);
-	outline-offset: 3px;
+	outline-offset: 2px;
 }
 
 // Buttons: offset outline keeps the ring visible outside the action-colored fill
@@ -392,5 +395,5 @@ button:focus-visible,
 .wp-block-file .wp-block-file__button:focus-visible,
 .comment-reply-link:focus-visible {
 	outline: 2px solid var(--v-action);
-	outline-offset: 4px;
+	outline-offset: 3px;
 }

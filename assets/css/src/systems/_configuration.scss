@@ -201,7 +201,7 @@ $lgMinWidth: 1200px;
 /// Form inputs — sets default and focus/active border colors.
 /// @param {Color} $border      [var(--v-dark)]
 /// @param {Color} $focus-border [var(--v-action)]
-@mixin form-inputs( $border: var(--v-dark), $focus-border: var(--v-action) ) {
+@mixin form-inputs( $border: var(--v-dark), $focus-border: var(--v-accent-1) ) {
 	input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
 	textarea,
 	select {
