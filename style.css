@@ -3102,6 +3102,15 @@ article .entry-content .wp-block-social-links li,
   --v-section-v-spacing: clamp(2rem, 4.5vw, 3.5rem); /* Fixed — not affected by global spacing control */
 }
 
+.content-header-eyebrow,
+.archive-title.content-header-title {
+  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
+  font-size: 0.778rem;
+  display: block;
+  text-transform: uppercase;
+}
+
 .content-header .content-header-title {
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   line-height: 1.3;
@@ -3160,13 +3169,6 @@ article .entry-content .wp-block-social-links li,
   margin-right: auto;
 }
 
-.archive .content-header .content-header-title {
-  font-size: 0.833rem;
-  font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-weight: 500;
-  display: block;
-  text-transform: uppercase;
-}
 .archive .content-header .content-header-title span {
   font-family: "Cal Sans", system-ui, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 500;
