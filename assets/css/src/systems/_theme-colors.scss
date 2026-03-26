@@ -320,3 +320,27 @@ article .entry-content .wp-block-latest-comments,
 		border-bottom-color: var(--v-white);
 	}
 }
+
+// ─────────────────────────────────────────────────────────────
+// Focus styles
+// ─────────────────────────────────────────────────────────────
+
+// Global keyboard focus indicator — action color outline
+:focus-visible {
+	outline: 2px solid var(--v-action);
+	outline-offset: 3px;
+}
+
+// Buttons: double ring so the indicator is visible against the action-colored fill
+button:focus-visible,
+[type="button"]:focus-visible,
+[type="submit"]:focus-visible,
+[type="reset"]:focus-visible,
+.button:focus-visible,
+.v-button:focus-visible,
+.wp-block-button__link:focus-visible,
+.wp-block-file .wp-block-file__button:focus-visible,
+.comment-reply-link:focus-visible {
+	outline: 2px solid transparent;
+	box-shadow: 0 0 0 2px var(--v-white), 0 0 0 4px var(--v-action);
+}

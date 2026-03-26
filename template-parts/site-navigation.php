@@ -1,6 +1,6 @@
 <?php // The main site navigation used in the header ?>
 
-<nav id="site-navigation" class="main-navigation">
+<nav id="site-navigation" class="main-navigation" aria-label="Primary">
 	<button class="menu-toggle v-padding-0" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'volatyl' ); ?></button>
 	<?php
 	wp_nav_menu(

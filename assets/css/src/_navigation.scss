@@ -204,9 +204,14 @@
 		}
 
 		&:active,
-		&:focus,
 		&:hover {
 			text-decoration: underline;
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--v-action);
+			outline-offset: 3px;
+			text-decoration: none;
 		}
 
 		@media all and (min-width: $mdMinWidth) {
@@ -229,8 +234,11 @@
 			position: fixed;
 			right: 0;
 			top: 0;
-			transition: opacity 0.2s;
 			z-index: 9999;
+
+			@media (prefers-reduced-motion: no-preference) {
+				transition: opacity 0.2s;
+			}
 
 			&.menu-modal-active {
 				opacity: 1;

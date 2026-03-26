@@ -2009,6 +2009,24 @@ article .entry-content .wp-block-latest-comments,
   border-bottom-color: var(--v-white);
 }
 
+:focus-visible {
+  outline: 2px solid var(--v-action);
+  outline-offset: 3px;
+}
+
+button:focus-visible,
+[type=button]:focus-visible,
+[type=submit]:focus-visible,
+[type=reset]:focus-visible,
+.button:focus-visible,
+.v-button:focus-visible,
+.wp-block-button__link:focus-visible,
+.wp-block-file .wp-block-file__button:focus-visible,
+.comment-reply-link:focus-visible {
+  outline: 2px solid transparent;
+  box-shadow: 0 0 0 2px var(--v-white), 0 0 0 4px var(--v-action);
+}
+
 /* Editor-generated classes */
 /* Action, accent-1, accent-2, accent-3 */
 .has-action-darker-color {
@@ -3312,9 +3330,13 @@ main {
 .site-header-elements .site-branding .custom-logo-link .custom-logo {
   height: auto;
   max-width: 100%;
-  transition: opacity 0.2s;
   vertical-align: middle;
   width: var(--v-logo-width);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .site-header-elements .site-branding .custom-logo-link .custom-logo {
+    transition: opacity 0.2s;
+  }
 }
 .site-header-elements .site-branding .site-title {
   font-size: 1rem;
@@ -3458,8 +3480,13 @@ main {
 #site-navigation .menu-toggle:hover {
   cursor: pointer;
 }
-#site-navigation .menu-toggle:active, #site-navigation .menu-toggle:focus, #site-navigation .menu-toggle:hover {
+#site-navigation .menu-toggle:active, #site-navigation .menu-toggle:hover {
   text-decoration: underline;
+}
+#site-navigation .menu-toggle:focus-visible {
+  outline: 2px solid var(--v-action);
+  outline-offset: 3px;
+  text-decoration: none;
 }
 @media all and (min-width: 992px) {
   #site-navigation .menu-toggle {
@@ -3478,8 +3505,12 @@ main {
   position: fixed;
   right: 0;
   top: 0;
-  transition: opacity 0.2s;
   z-index: 9999;
+}
+@media (prefers-reduced-motion: no-preference) {
+  #site-navigation.toggled > [class*=-container] {
+    transition: opacity 0.2s;
+  }
 }
 #site-navigation.toggled > [class*=-container].menu-modal-active {
   opacity: 1;

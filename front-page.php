@@ -84,9 +84,9 @@ if ( get_theme_mod( 'volatyl_front_page_hero_use_custom_title' ) && ! empty( $cu
 			if ( ! empty( $recent_posts ) ) {
 				global $post;
 				?>
-				<section class="blog-posts-featured">
+				<section class="blog-posts-featured" aria-labelledby="blog-posts-featured-title">
 					<div class="inner">
-						<span class="v-subdued-title v-margin-bottom-2"><?php echo esc_html__( 'From the blog', 'volatyl' ); ?></span>
+						<span id="blog-posts-featured-title" class="v-subdued-title v-margin-bottom-2"><?php echo esc_html__( 'From the blog', 'volatyl' ); ?></span>
 						<div class="v-grid v-grid-columns_<?php echo absint( $blog_grid_columns ); ?>">
 							<?php
 							foreach ( $recent_posts as $post ) {
