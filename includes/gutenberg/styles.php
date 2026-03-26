@@ -208,14 +208,29 @@ function volatyl_gradient_presets(): array {
 			'slug'     => 'accent-1-tint-to-white',
 		),
 		array(
+			'name'     => __( 'White to accent 1 tint', 'volatyl' ),
+			'gradient' => "linear-gradient(180deg, {$white} 0%, {$tint( $accent_1_hue )} 100%)",
+			'slug'     => 'white-to-accent-1-tint',
+		),
+		array(
 			'name'     => __( 'Accent 2 tint to white', 'volatyl' ),
 			'gradient' => "linear-gradient(180deg, {$tint( $accent_2_hue )} 0%, {$white} 100%)",
 			'slug'     => 'accent-2-tint-to-white',
 		),
 		array(
+			'name'     => __( 'White to accent 2 tint', 'volatyl' ),
+			'gradient' => "linear-gradient(180deg, {$white} 0%, {$tint( $accent_2_hue )} 100%)",
+			'slug'     => 'white-to-accent-2-tint',
+		),
+		array(
 			'name'     => __( 'Accent 3 tint to white', 'volatyl' ),
 			'gradient' => "linear-gradient(180deg, {$tint( $accent_3_hue )} 0%, {$white} 100%)",
 			'slug'     => 'accent-3-tint-to-white',
+		),
+		array(
+			'name'     => __( 'White to accent 3 tint', 'volatyl' ),
+			'gradient' => "linear-gradient(180deg, {$white} 0%, {$tint( $accent_3_hue )} 100%)",
+			'slug'     => 'white-to-accent-3-tint',
 		),
 	);
 }
