@@ -143,6 +143,92 @@ function volatyl_editor_color_palette() {
 add_action( 'after_setup_theme', 'volatyl_editor_color_palette' );
 
 /**
+ * Build gradient presets using resolved OKLCH tint values.
+ *
+ * Gradients fade between a hue-tinted near-white (97.5% lightness) and pure
+ * white. Each accent slot uses its scheme-resolved hue so gradients stay
+ * consistent with the active color scheme.
+ *
+ * @return array[]
+ */
+function volatyl_gradient_presets(): array {
+	$hue              = get_theme_mod( 'volatyl_primary_hue', DEFAULT_PRIMARY_HUE );
+	$palette_vibrancy = get_theme_mod( 'volatyl_palette_vibrancy', DEFAULT_PALETTE_VIBRANCY );
+	$palette_chroma   = round( $palette_vibrancy * 0.0025, 4 );
+	$scheme           = get_theme_mod( 'volatyl_color_scheme_type', DEFAULT_COLOR_SCHEME_TYPE );
+
+	$accent_3_hue = $hue;
+
+	switch ( $scheme ) {
+		case 'complementary':
+			$accent_1_hue = $hue - 180;
+			$accent_2_hue = $hue - 180;
+			break;
+		case 'analogous':
+			$accent_1_hue = $hue - 30;
+			$accent_2_hue = $hue + 30;
+			break;
+		case 'triadic':
+			$accent_1_hue = $hue - 120;
+			$accent_2_hue = $hue + 120;
+			break;
+		case 'split_complementary':
+			$accent_1_hue = $hue - 150;
+			$accent_2_hue = $hue + 150;
+			break;
+		case 'tetradic':
+			$accent_1_hue = $hue + 90;
+			$accent_2_hue = $hue + 180;
+			$accent_3_hue = $hue - 90;
+			break;
+		default:
+			$accent_1_hue = $hue;
+			$accent_2_hue = $hue;
+			break;
+	}
+
+	$tint_wash = round( $palette_chroma * 0.025, 5 );
+	$tint      = fn( $h ) => "oklch(97.5% {$tint_wash} {$h})";
+	$white     = '#ffffff';
+
+	return array(
+		array(
+			'name'     => __( 'Action tint to white', 'volatyl' ),
+			'gradient' => "linear-gradient(180deg, {$tint( $hue )} 0%, {$white} 100%)",
+			'slug'     => 'action-tint-to-white',
+		),
+		array(
+			'name'     => __( 'White to action tint', 'volatyl' ),
+			'gradient' => "linear-gradient(180deg, {$white} 0%, {$tint( $hue )} 100%)",
+			'slug'     => 'white-to-action-tint',
+		),
+		array(
+			'name'     => __( 'Accent 1 tint to white', 'volatyl' ),
+			'gradient' => "linear-gradient(180deg, {$tint( $accent_1_hue )} 0%, {$white} 100%)",
+			'slug'     => 'accent-1-tint-to-white',
+		),
+		array(
+			'name'     => __( 'Accent 2 tint to white', 'volatyl' ),
+			'gradient' => "linear-gradient(180deg, {$tint( $accent_2_hue )} 0%, {$white} 100%)",
+			'slug'     => 'accent-2-tint-to-white',
+		),
+		array(
+			'name'     => __( 'Accent 3 tint to white', 'volatyl' ),
+			'gradient' => "linear-gradient(180deg, {$tint( $accent_3_hue )} 0%, {$white} 100%)",
+			'slug'     => 'accent-3-tint-to-white',
+		),
+	);
+}
+
+/**
+ * Register the editor gradient presets.
+ */
+function volatyl_editor_gradient_palette() {
+	add_theme_support( 'editor-gradient-presets', volatyl_gradient_presets() );
+}
+add_action( 'after_setup_theme', 'volatyl_editor_gradient_palette' );
+
+/**
  * Remove WordPress core block patterns and disable the remote Pattern Directory
  * API call. The inserter will show only patterns registered by this theme.
  */
