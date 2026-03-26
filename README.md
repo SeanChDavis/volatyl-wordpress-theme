@@ -124,11 +124,11 @@ The full palette is available as CSS custom properties on both the front end and
 
 | Variable | Usage |
 |---|---|
-| `--v-action` | Primary brand color — buttons, links, interactive elements |
+| `--v-action` | Primary brand color — buttons, CTAs, UI controls |
 | `--v-action-dark` | Darkened action — hover and active states |
 | `--v-action-light` | Lightened action |
 | `--v-action-tint` | Extremely light action wash — gray background surfaces |
-| `--v-accent-1` | Secondary color family base (varies by scheme) |
+| `--v-accent-1` | Links, current nav state, informational highlights |
 | `--v-accent-2` | Tertiary color family base (varies by scheme) |
 | `--v-dark` | Dark surface background (lightness user-controlled) |
 | `--v-text` | Body text color |
@@ -279,6 +279,10 @@ Apply `v-*` utility classes to Group blocks (via the **Additional CSS class** fi
 v-dark-background     → Dark themed section
 v-gray-background     → Light gray section
 v-no-spacing          → Remove all padding and margin
+v-no-spacing-top      → Remove top padding only
+v-no-spacing-bottom   → Remove bottom padding only
+v-no-spacing-y        → Remove top and bottom padding
+v-no-spacing-x        → Remove horizontal padding (full-width canvas only)
 v-large               → ~1.4× the global section spacing for this section
 v-xl                  → ~2.3× the global section spacing for this section
 v-padding-y-4         → Add vertical padding (scale: 0–6)
@@ -406,6 +410,19 @@ v-padding-y-3          → 1.5rem top and bottom padding
 v-margin-0             → Remove all margins
 v-no-spacing           → Remove all margin and padding
 ```
+
+#### Granular section spacing
+
+These classes remove section padding selectively. They work on `.inner` elements in PHP templates and on group block `__inner-container` elements in the block editor.
+
+```
+v-no-spacing-top       → Remove top padding
+v-no-spacing-bottom    → Remove bottom padding
+v-no-spacing-y         → Remove top and bottom padding
+v-no-spacing-x         → Remove horizontal padding (full-width canvas only)
+```
+
+Apply via the **Additional CSS class** field in the block editor sidebar.
 
 ### Text & Typography
 ```

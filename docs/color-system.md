@@ -74,10 +74,19 @@ Each variant uses the same hue and chroma formula — only lightness changes. Th
 
 | Family | Slug | Role |
 |---|---|---|
-| Action | `action` | Primary brand color — buttons, links, interactive elements. Always the primary hue. |
-| Accent 1 | `accent-1` | Secondary color. Matches action in monochromatic; derives from scheme in multi-hue. |
+| Action | `action` | Primary brand color — buttons, CTAs, UI controls. Always the primary hue. |
+| Accent 1 | `accent-1` | Links, current nav state, informational highlights. Matches action in monochromatic; derives from scheme in multi-hue. |
 | Accent 2 | `accent-2` | Tertiary color. Same scheme derivation as accent-1. |
 | Accent 3 | `accent-3` | Quaternary color. Only meaningfully distinct in the tetradic scheme. |
+
+### Semantic Split: Action vs. Accent 1
+
+Action and Accent 1 serve distinct semantic roles even when their hues are identical (monochromatic scheme):
+
+- **Action** (`--v-action`) — buttons, CTAs, UI controls, focus rings. The "do something" color.
+- **Accent 1** (`--v-accent-1`) — all links (`<a>`), current nav item (text + underline), nav hover underline, pagination current item, post meta links, taxonomy/tag links, blockquote left border, pullquote borders, archive title eyebrow, focused input borders, `::selection` highlight. The "navigate / current state" color.
+
+This split means you can give buttons and links visually distinct personalities in multi-hue schemes without any additional configuration.
 
 ### Neutral Variables
 
@@ -141,7 +150,7 @@ Additionally, `--v-accent-1-hue`, `--v-accent-2-hue`, and `--v-accent-3-hue` abs
 ### Neutral Backgrounds and Text
 
 ```css
---v-dark               /* Primary dark surface — lightness user-controlled (default 22%) */
+--v-dark               /* Primary dark surface — lightness user-controlled (default 22%, DEFAULT_DARK_LIGHTNESS) */
 --v-text               /* Body text, ~20% */
 --v-subdued-dark       /* Muted text / secondary headings, ~44% */
 --v-subdued-light      /* Borders and dividers, ~91% */
@@ -276,6 +285,8 @@ The color system spans three different layers that each serve a distinct role.
 ### PHP — `includes/color-schemes.php`
 
 Outputs two `<style>` blocks into `<head>` at runtime:
+
+Default Customizer values: `DEFAULT_PRIMARY_HUE` = 252, `DEFAULT_PALETTE_VIBRANCY` = 80, `DEFAULT_BACKGROUND_TINT` = 80, `DEFAULT_DARK_LIGHTNESS` = 22.
 
 1. **Base variables** (`volatyl_root_color_scheme_base()`) — `--v-palette-chroma`, `--v-tint-chroma`, `--v-radius`, `--v-radius-button`, `--v-on-dark`, `--v-on-dark-luminance`, `--v-accent-N-hue`, neutral slots, and all scheme hue reference variables. Always output.
 

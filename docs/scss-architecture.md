@@ -56,7 +56,8 @@ assets/css/src/
 │   │                             action-buttons, utility-buttons, form-inputs)
 │   ├── _theme-colors.scss      Applies CSS variables to all front-end elements
 │   ├── _editor-classes.scss    Generates has-*-color / has-*-background-color classes
-│   ├── _helper-classes.scss    v-margin-*, v-padding-*, v-text-align-*, v-subdued-title
+│   ├── _helper-classes.scss    v-margin-*, v-padding-*, v-text-align-*, v-subdued-title,
+│   │                             v-no-spacing-{top,bottom,x,y}
 │   ├── _cards.scss             Post/page card component
 │   ├── _content-header.scss    Page/archive/post header component
 │   ├── _grid.scss              Blog and content grid system
@@ -147,12 +148,22 @@ Styles the primary action button set. Called inside `dark-bg-context()` and at t
 
 **Targets:** `.button`, `.v-button`, `button`, `.wp-block-button__link`, `.wp-block-file__button`, `.comment-reply-link`, `.wp-calendar-table caption`, `#primary-menu .menu-item-button > a`
 
+**Button variants:**
+- **Filled** (default) — solid `--v-action` background, `border: 2px solid transparent`. The transparent border keeps button height in sync with bordered inputs.
+- **Outline** (`.v-button.v-outline` in PHP / `.is-style-outline` in block editor) — transparent background, `border: 2px solid currentColor`.
+
+**Hover behavior by context:**
+- Light background: filled → `--v-dark` fill; outline → `--v-action` fill.
+- Dark background: filled → white fill + action-colored text; outline → `--v-action` fill.
+
+**Block editor note:** `.wp-block-button__link:not(.has-background)` guards the fill override so a user-set background color in the editor is respected on the front end.
+
 **Parameters:**
 - `$border` *(optional)* — pass a color value to set an explicit border color. Used in dark context to set `var(--v-white)`.
 
 ```scss
 @include action-buttons();                    // Default — no explicit border
-@include action-buttons( var(--v-white) );      // Dark background variant
+@include action-buttons( var(--v-white) );    // Dark background variant
 ```
 
 ---
@@ -186,6 +197,21 @@ Sets border colors on all text inputs, textareas, and selects.
 @include form-inputs();                                          // Default
 @include form-inputs( var(--v-action), var(--v-accent-1) );         // Dark bg variant
 ```
+
+---
+
+### Focus Visible
+
+Not a mixin — defined globally in `_theme-colors.scss`:
+
+```scss
+:focus-visible {
+    outline: 2px solid var(--v-action);
+    outline-offset: 2px;
+}
+```
+
+Buttons override `outline-offset` to `3px` to account for the `2px solid transparent` base border. Focus rings always use `--v-action` (not `--v-accent-1`) — Action is the universal interaction signal regardless of context.
 
 ---
 
