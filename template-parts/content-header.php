@@ -115,7 +115,7 @@ if ( is_front_page() && volatyl_show_on_front_is_page() ) {
 		} elseif ( is_search() ) {
 			?>
 			<h1 class="content-header-title">
-				<span class="v-subdued-title">
+				<span class="v-subdued-title content-header-eyebrow">
 					<?php printf( esc_html__( 'Search results for:', 'volatyl' ) ); ?>
 				</span>
 				<?php echo esc_html( get_search_query() ); ?>
