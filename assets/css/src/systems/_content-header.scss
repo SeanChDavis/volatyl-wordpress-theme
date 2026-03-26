@@ -4,15 +4,13 @@
 	--v-section-v-spacing: clamp(2rem, 4.5vw, 3.5rem); /* Fixed — not affected by global spacing control */
 }
 
-// Eyebrow — shared styles for all content header eyebrow situations:
-// 1. Manual eyebrow arg: <span class="v-subdued-title content-header-eyebrow">
-// 2. Archive title hack: <h1 class="archive-title content-header-title"> (eyebrow role)
-// 3. Search results span: <span class="v-subdued-title content-header-eyebrow">
-// Color is handled separately in _theme-colors.scss.
-.content-header-eyebrow,
-.archive-title.content-header-title {
+// Eyebrow — .content-header-eyebrow covers manual and search eyebrow spans.
+// Archive uses .archive .content-header .content-header-title (higher specificity needed
+// to override the .content-header .content-header-title font-size rule below).
+// Both use identical values. Color is handled in _theme-colors.scss.
+.content-header-eyebrow {
 	@include headingFont;
-	@include fontSmallest;
+	@include fontSmaller;
 	display: block;
 	text-transform: uppercase;
 }
@@ -100,6 +98,10 @@
 	.content-header {
 
 		.content-header-title {
+			@include headingFont;
+			@include fontSmaller;
+			display: block;
+			text-transform: uppercase;
 
 			span {
 				@include headingFont;

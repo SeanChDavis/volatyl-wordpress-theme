@@ -55,7 +55,7 @@ if ( is_front_page() && volatyl_show_on_front_is_page() ) {
 		if ( is_front_page() ) {
 			?>
 			<?php if ( ! empty( $args['eyebrow'] ) ) { ?>
-				<span class="v-subdued-title content-header-eyebrow"><?php echo esc_html( $args['eyebrow'] ); ?></span>
+				<span class="content-header-eyebrow"><?php echo esc_html( $args['eyebrow'] ); ?></span>
 			<?php } ?>
 			<h1 class="content-header-title"><?php echo wp_kses_post( $args['title'] ); ?></h1>
 			<?php if ( ! empty( $args['description'] ) ) { ?>
@@ -81,7 +81,7 @@ if ( is_front_page() && volatyl_show_on_front_is_page() ) {
 			}
 			?>
 			<?php if ( get_theme_mod( 'volatyl_blog_eyebrow' ) ) { ?>
-				<span class="v-subdued-title content-header-eyebrow"><?php echo esc_html( get_theme_mod( 'volatyl_blog_eyebrow' ) ); ?></span>
+				<span class="content-header-eyebrow"><?php echo esc_html( get_theme_mod( 'volatyl_blog_eyebrow' ) ); ?></span>
 			<?php } ?>
 			<h1 class="content-header-title"><?php echo wp_kses_post( $blog_title ); ?></h1>
 			<?php if ( get_theme_mod( 'volatyl_blog_description' ) ) { ?>
@@ -96,7 +96,7 @@ if ( is_front_page() && volatyl_show_on_front_is_page() ) {
 		} elseif ( is_page() ) {
 			?>
 			<?php if ( ! empty( $args['eyebrow'] ) ) { ?>
-				<span class="v-subdued-title content-header-eyebrow"><?php echo esc_html( $args['eyebrow'] ); ?></span>
+				<span class="content-header-eyebrow"><?php echo esc_html( $args['eyebrow'] ); ?></span>
 			<?php } ?>
 			<h1 class="content-header-title"><?php echo wp_kses_post( $args['title'] ); ?></h1>
 			<?php if ( has_excerpt() ) : ?>
@@ -107,7 +107,7 @@ if ( is_front_page() && volatyl_show_on_front_is_page() ) {
 			if ( ! empty( get_the_title() ) ) {
 				?>
 				<?php if ( ! empty( $args['eyebrow'] ) ) { ?>
-					<span class="v-subdued-title content-header-eyebrow"><?php echo esc_html( $args['eyebrow'] ); ?></span>
+					<span class="content-header-eyebrow"><?php echo esc_html( $args['eyebrow'] ); ?></span>
 				<?php } ?>
 				<h1 class="content-header-title"><?php echo wp_kses_post( $args['title'] ); ?></h1>
 				<?php
@@ -115,7 +115,7 @@ if ( is_front_page() && volatyl_show_on_front_is_page() ) {
 		} elseif ( is_search() ) {
 			?>
 			<h1 class="content-header-title">
-				<span class="v-subdued-title content-header-eyebrow">
+				<span class="content-header-eyebrow">
 					<?php printf( esc_html__( 'Search results for:', 'volatyl' ) ); ?>
 				</span>
 				<?php echo esc_html( get_search_query() ); ?>
@@ -137,7 +137,7 @@ if ( is_front_page() && volatyl_show_on_front_is_page() ) {
 		} else {
 			?>
 			<?php if ( ! empty( $args['eyebrow'] ) ) { ?>
-				<span class="v-subdued-title content-header-eyebrow"><?php echo esc_html( $args['eyebrow'] ); ?></span>
+				<span class="content-header-eyebrow"><?php echo esc_html( $args['eyebrow'] ); ?></span>
 			<?php } ?>
 			<h1 class="content-header-title"><?php echo wp_kses_post( $args['title'] ); ?></h1>
 			<?php if ( ! empty( $args['description'] ) ) { ?>
