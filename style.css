@@ -4477,13 +4477,13 @@ article .entry-content ol li ol,
 .v-content-container .entry-content ul li ol,
 .v-content-container .entry-content ol li ul,
 .v-content-container .entry-content ol li ol {
-  margin-top: 0.75rem;
+  margin-top: 0.25rem;
 }
 article .entry-content ul li + li,
 article .entry-content ol li + li,
 .v-content-container .entry-content ul li + li,
 .v-content-container .entry-content ol li + li {
-  margin-top: 0.75rem;
+  margin-top: 0.25rem;
 }
 article .entry-content > ul, article .entry-content > ol,
 .v-content-container .entry-content > ul,
