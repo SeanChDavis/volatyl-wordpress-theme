@@ -187,7 +187,12 @@ body,
 }
 
 a {
-  color: var(--v-action);
+  color: var(--v-accent-1);
+}
+
+::selection {
+  background-color: var(--v-accent-1);
+  color: var(--v-white);
 }
 
 h4,
@@ -200,7 +205,6 @@ h6,
 .site-title a,
 .content-header-secondary-cta a,
 .archive-title.content-header-title span,
-.entry-meta a,
 .entry-footer a,
 .comment-meta a,
 .logged-in-as a,
@@ -221,7 +225,10 @@ cite {
   color: var(--v-action);
 }
 
-.v-subdued-title,
+.v-subdued-title {
+  color: var(--v-accent-1);
+}
+
 .post-navigation .nav-subtitle,
 .featured-page .section-description,
 .archive-title.content-header-title,
@@ -231,7 +238,7 @@ figure figcaption {
 }
 
 .pagination .page-numbers.current {
-  color: var(--v-action);
+  color: var(--v-accent-1);
 }
 
 .blog-name a,
@@ -365,6 +372,31 @@ select:focus-visible {
   color: var(--v-on-dark);
 }
 
+#site-navigation:not(.toggled) #primary-menu > .menu-item > a:hover,
+#site-navigation:not(.toggled) #primary-menu > .menu-item > a:focus,
+#site-navigation:not(.toggled) #primary-menu > .menu-item > a:active {
+  text-decoration-color: var(--v-accent-1);
+}
+
+#site-navigation:not(.toggled) #primary-menu > .current-menu-item > a,
+#site-navigation:not(.toggled) #primary-menu > .current-menu-ancestor > a {
+  color: var(--v-accent-1);
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+}
+
+#site-navigation:not(.toggled) #primary-menu .sub-menu .menu-item > a:hover,
+#site-navigation:not(.toggled) #primary-menu .sub-menu .menu-item > a:focus,
+#site-navigation:not(.toggled) #primary-menu .sub-menu .menu-item > a:active {
+  text-decoration-color: var(--v-accent-1);
+}
+
+#site-navigation:not(.toggled) #primary-menu .sub-menu .current-menu-item > a {
+  color: var(--v-accent-1);
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+}
+
 #site-navigation:not(.toggled) #primary-menu > .menu-item-has-children > a:after {
   border-bottom-color: var(--v-dark);
 }
@@ -409,10 +441,13 @@ pre code {
 
 hr,
 .wp-block-separator,
-.twitter-tweet,
+.twitter-tweet {
+  border-color: var(--v-subdued-light);
+}
+
 .wp-block-quote,
 .wp-block-pullquote {
-  border-color: var(--v-subdued-light);
+  border-color: var(--v-accent-1);
 }
 
 .wp-block-separator.is-style-dots:before {
@@ -434,13 +469,18 @@ hr,
 .v-grid-item-title a:hover,
 .v-grid-item-title a:focus,
 .v-grid-item-title a:active {
-  color: var(--v-action);
+  color: var(--v-accent-1);
 }
 
 .v-grid-item-meta,
 .v-grid-item-meta a,
 .v-grid-item-footer a {
   color: var(--v-text);
+}
+
+.entry-categories a,
+.entry-tags a {
+  color: var(--v-accent-1);
 }
 
 #comments .comments-title,
@@ -1999,6 +2039,12 @@ article .entry-content .wp-block-latest-comments,
 .v-dark-background .archive-title.content-header-title {
   color: var(--v-on-dark);
 }
+.v-dark-background #site-navigation:not(.toggled) #primary-menu > .current-menu-item > a,
+.v-dark-background #site-navigation:not(.toggled) #primary-menu > .current-menu-ancestor > a {
+  color: var(--v-accent-1);
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+}
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
 .v-dark-background #site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:active {
@@ -2023,8 +2069,8 @@ button:focus-visible,
 .wp-block-button__link:focus-visible,
 .wp-block-file .wp-block-file__button:focus-visible,
 .comment-reply-link:focus-visible {
-  outline: 2px solid transparent;
-  box-shadow: 0 0 0 2px var(--v-white), 0 0 0 4px var(--v-action);
+  outline: 2px solid var(--v-action);
+  outline-offset: 4px;
 }
 
 /* Editor-generated classes */
@@ -3367,7 +3413,8 @@ main {
   text-decoration: none;
 }
 #site-navigation #primary-menu .menu-item a:active, #site-navigation #primary-menu .menu-item a:focus, #site-navigation #primary-menu .menu-item a:hover {
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
 }
 #site-navigation #primary-menu > .menu-item.menu-item-has-children {
   position: relative;
@@ -3390,7 +3437,8 @@ main {
   padding: 7px 0;
 }
 #site-navigation #primary-menu > .menu-item.menu-item-has-children .sub-menu a:active, #site-navigation #primary-menu > .menu-item.menu-item-has-children .sub-menu a:focus, #site-navigation #primary-menu > .menu-item.menu-item-has-children .sub-menu a:hover {
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
 }
 #site-navigation #primary-menu > .menu-item.menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu a {
   font-size: 0.889rem;
@@ -3672,7 +3720,7 @@ main {
 
 .search-toggle {
   align-items: center;
-  color: var(--v-action);
+  color: var(--v-accent-1);
   cursor: pointer;
   display: flex;
   padding: 0 0 0 0.75rem;

@@ -7,6 +7,7 @@
 // This can create both a hero section like the front page and a standard content header for other pages.
 $args = wp_parse_args( $args ?? array(), array(
 	'title'           => get_the_title(),
+	'eyebrow'         => '',
 	'description'     => '',
 	'is_centered'     => 0,
 	'primary_cta'     => array( 'text' => '', 'url' => '', 'new_tab' => 0 ),
@@ -53,6 +54,9 @@ if ( is_front_page() && volatyl_show_on_front_is_page() ) {
 		<?php
 		if ( is_front_page() ) {
 			?>
+			<?php if ( ! empty( $args['eyebrow'] ) ) { ?>
+				<span class="v-subdued-title"><?php echo esc_html( $args['eyebrow'] ); ?></span>
+			<?php } ?>
 			<h1 class="content-header-title"><?php echo wp_kses_post( $args['title'] ); ?></h1>
 			<?php if ( ! empty( $args['description'] ) ) { ?>
 				<p class="content-header-description"><?php echo wp_kses_post( $args['description'] ); ?></p>
@@ -88,6 +92,9 @@ if ( is_front_page() && volatyl_show_on_front_is_page() ) {
 			<?php
 		} elseif ( is_page() ) {
 			?>
+			<?php if ( ! empty( $args['eyebrow'] ) ) { ?>
+				<span class="v-subdued-title"><?php echo esc_html( $args['eyebrow'] ); ?></span>
+			<?php } ?>
 			<h1 class="content-header-title"><?php echo wp_kses_post( $args['title'] ); ?></h1>
 			<?php if ( has_excerpt() ) : ?>
 				<p class="content-header-description"><?php echo wp_kses_post( get_the_excerpt() ); ?></p>
@@ -96,6 +103,9 @@ if ( is_front_page() && volatyl_show_on_front_is_page() ) {
 		} elseif ( is_single() ) {
 			if ( ! empty( get_the_title() ) ) {
 				?>
+				<?php if ( ! empty( $args['eyebrow'] ) ) { ?>
+					<span class="v-subdued-title"><?php echo esc_html( $args['eyebrow'] ); ?></span>
+				<?php } ?>
 				<h1 class="content-header-title"><?php echo wp_kses_post( $args['title'] ); ?></h1>
 				<?php
 			}
@@ -123,6 +133,9 @@ if ( is_front_page() && volatyl_show_on_front_is_page() ) {
 			}
 		} else {
 			?>
+			<?php if ( ! empty( $args['eyebrow'] ) ) { ?>
+				<span class="v-subdued-title"><?php echo esc_html( $args['eyebrow'] ); ?></span>
+			<?php } ?>
 			<h1 class="content-header-title"><?php echo wp_kses_post( $args['title'] ); ?></h1>
 			<?php if ( ! empty( $args['description'] ) ) { ?>
 				<p class="content-header-description"><?php echo wp_kses_post( $args['description'] ); ?></p>

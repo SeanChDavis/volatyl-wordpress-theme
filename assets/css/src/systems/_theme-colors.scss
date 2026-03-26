@@ -22,7 +22,12 @@ body,
 // ─────────────────────────────────────────────────────────────
 
 a {
-	color: var(--v-action);
+	color: var(--v-accent-1);
+}
+
+::selection {
+	background-color: var(--v-accent-1);
+	color: var(--v-white);
 }
 
 h4,
@@ -35,7 +40,6 @@ h6,
 .site-title a,
 .content-header-secondary-cta a,
 .archive-title.content-header-title span,
-.entry-meta a,
 .entry-footer a,
 .comment-meta a,
 .logged-in-as a,
@@ -56,7 +60,10 @@ cite {
 	color: var(--v-action);
 }
 
-.v-subdued-title,
+.v-subdued-title {
+	color: var(--v-accent-1);
+}
+
 .post-navigation .nav-subtitle,
 .featured-page .section-description,
 .archive-title.content-header-title,
@@ -66,7 +73,7 @@ figure figcaption {
 }
 
 .pagination .page-numbers.current {
-	color: var(--v-action);
+	color: var(--v-accent-1);
 }
 
 .blog-name a,
@@ -120,6 +127,33 @@ figure figcaption {
 // Third-level sub-menu links
 #site-navigation #primary-menu > .menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu a {
 	color: var(--v-on-dark);
+}
+
+// Desktop top-level — Accent 1 underline on hover, Accent 1 text on current item
+#site-navigation:not(.toggled) #primary-menu > .menu-item > a:hover,
+#site-navigation:not(.toggled) #primary-menu > .menu-item > a:focus,
+#site-navigation:not(.toggled) #primary-menu > .menu-item > a:active {
+	text-decoration-color: var(--v-accent-1);
+}
+
+#site-navigation:not(.toggled) #primary-menu > .current-menu-item > a,
+#site-navigation:not(.toggled) #primary-menu > .current-menu-ancestor > a {
+	color: var(--v-accent-1);
+	text-decoration-line: underline;
+	text-decoration-thickness: 2px;
+}
+
+// Desktop submenu — Accent 1 underline on hover, Accent 1 text on current item
+#site-navigation:not(.toggled) #primary-menu .sub-menu .menu-item > a:hover,
+#site-navigation:not(.toggled) #primary-menu .sub-menu .menu-item > a:focus,
+#site-navigation:not(.toggled) #primary-menu .sub-menu .menu-item > a:active {
+	text-decoration-color: var(--v-accent-1);
+}
+
+#site-navigation:not(.toggled) #primary-menu .sub-menu .current-menu-item > a {
+	color: var(--v-accent-1);
+	text-decoration-line: underline;
+	text-decoration-thickness: 2px;
 }
 
 // Chevron indicators
@@ -176,10 +210,13 @@ pre code {
 
 hr,
 .wp-block-separator,
-.twitter-tweet,
+.twitter-tweet {
+	border-color: var(--v-subdued-light);
+}
+
 .wp-block-quote,
 .wp-block-pullquote {
-	border-color: var(--v-subdued-light);
+	border-color: var(--v-accent-1);
 }
 
 .wp-block-separator.is-style-dots:before {
@@ -205,13 +242,18 @@ hr,
 .v-grid-item-title a:hover,
 .v-grid-item-title a:focus,
 .v-grid-item-title a:active {
-	color: var(--v-action);
+	color: var(--v-accent-1);
 }
 
 .v-grid-item-meta,
 .v-grid-item-meta a,
 .v-grid-item-footer a {
 	color: var(--v-text);
+}
+
+.entry-categories a,
+.entry-tags a {
+	color: var(--v-accent-1);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -307,6 +349,14 @@ article .entry-content .wp-block-latest-comments,
 		color: var(--v-on-dark);
 	}
 
+	// Nav current item — Accent 1 still applies on dark header
+	#site-navigation:not(.toggled) #primary-menu > .current-menu-item > a,
+	#site-navigation:not(.toggled) #primary-menu > .current-menu-ancestor > a {
+		color: var(--v-accent-1);
+		text-decoration-line: underline;
+		text-decoration-thickness: 2px;
+	}
+
 	// Nav button hover border uses accent instead of action-dark
 	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:hover,
 	#site-navigation:not(.toggled) #primary-menu > .menu-item-button > a:focus,
@@ -331,7 +381,7 @@ article .entry-content .wp-block-latest-comments,
 	outline-offset: 3px;
 }
 
-// Buttons: double ring so the indicator is visible against the action-colored fill
+// Buttons: offset outline keeps the ring visible outside the action-colored fill
 button:focus-visible,
 [type="button"]:focus-visible,
 [type="submit"]:focus-visible,
@@ -341,6 +391,6 @@ button:focus-visible,
 .wp-block-button__link:focus-visible,
 .wp-block-file .wp-block-file__button:focus-visible,
 .comment-reply-link:focus-visible {
-	outline: 2px solid transparent;
-	box-shadow: 0 0 0 2px var(--v-white), 0 0 0 4px var(--v-action);
+	outline: 2px solid var(--v-action);
+	outline-offset: 4px;
 }

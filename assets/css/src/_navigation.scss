@@ -15,7 +15,8 @@
 				&:active,
 				&:focus,
 				&:hover {
-					text-decoration: underline;
+					text-decoration-line: underline;
+					text-decoration-thickness: 2px;
 				}
 			}
 		}
@@ -51,7 +52,8 @@
 						&:active,
 						&:focus,
 						&:hover {
-							text-decoration: underline;
+							text-decoration-line: underline;
+							text-decoration-thickness: 2px;
 						}
 					}
 				}
