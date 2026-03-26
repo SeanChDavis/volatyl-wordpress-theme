@@ -1,3 +1,9 @@
+// Non-hero content headers: lock spacing to default regardless of site-wide spacing setting.
+// Jumbo (hero) content headers inherit the setting freely.
+.content-header:not(.has-jumbo-title) {
+	--v-section-v-spacing: clamp(2rem, 4.5vw, 3.5rem); /* Fixed — not affected by global spacing control */
+}
+
 .content-header {
 
 	.content-header-title {

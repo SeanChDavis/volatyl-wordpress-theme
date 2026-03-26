@@ -3027,6 +3027,10 @@ article .entry-content .wp-block-social-links li,
     grid-row: 2;
   }
 }
+.content-header:not(.has-jumbo-title) {
+  --v-section-v-spacing: clamp(2rem, 4.5vw, 3.5rem); /* Fixed — not affected by global spacing control */
+}
+
 .content-header .content-header-title {
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   line-height: 1.3;
