@@ -226,7 +226,7 @@ cite {
 }
 
 .v-subdued-title {
-  color: var(--v-accent-1);
+  color: var(--v-subdued-dark);
 }
 
 .post-navigation .nav-subtitle,
