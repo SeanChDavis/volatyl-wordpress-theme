@@ -220,12 +220,12 @@ $lgMinWidth: 1200px;
 @mixin colored-bg-context() {
 	color: var(--v-white);
 
-	h1:not(.has-text-color), .h1,
-	h2:not(.has-text-color), .h2,
-	h3:not(.has-text-color), .h3,
-	h4:not(.has-text-color), .h4,
-	h5:not(.has-text-color), .h5,
-	h6:not(.has-text-color), .h6,
+	h1:not(.has-text-color), .h1:not(.has-text-color),
+	h2:not(.has-text-color), .h2:not(.has-text-color),
+	h3:not(.has-text-color), .h3:not(.has-text-color),
+	h4:not(.has-text-color), .h4:not(.has-text-color),
+	h5:not(.has-text-color), .h5:not(.has-text-color),
+	h6:not(.has-text-color), .h6:not(.has-text-color),
 	a:not(.has-text-color),
 	blockquote:not(.has-text-color),
 	address:not(.has-text-color),
@@ -261,19 +261,19 @@ $lgMinWidth: 1200px;
 	@include form-inputs( var(--v-action), var(--v-accent-1) );
 
 	// Headings and links — white (skip elements the user explicitly colored)
-	h1:not(.has-text-color), .h1,
-	h2:not(.has-text-color), .h2,
-	h3:not(.has-text-color), .h3,
-	h4:not(.has-text-color), .h4,
-	h5:not(.has-text-color), .h5,
-	h6:not(.has-text-color), .h6,
+	h1:not(.has-text-color), .h1:not(.has-text-color),
+	h2:not(.has-text-color), .h2:not(.has-text-color),
+	h3:not(.has-text-color), .h3:not(.has-text-color),
+	h4:not(.has-text-color), .h4:not(.has-text-color),
+	h5:not(.has-text-color), .h5:not(.has-text-color),
+	h6:not(.has-text-color), .h6:not(.has-text-color),
 	a:not(.has-text-color) {
 		color: var(--v-white);
 	}
 
 	// Secondary / subdued elements — on-dark (skip elements the user explicitly colored)
-	h4:not(.has-text-color), .h4,
-	h6:not(.has-text-color), .h6,
+	h4:not(.has-text-color), .h4:not(.has-text-color),
+	h6:not(.has-text-color), .h6:not(.has-text-color),
 	blockquote:not(.has-text-color),
 	address:not(.has-text-color),
 	cite:not(.has-text-color),
