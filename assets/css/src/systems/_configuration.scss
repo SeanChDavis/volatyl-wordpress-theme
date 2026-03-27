@@ -120,7 +120,7 @@ $lgMinWidth: 1200px;
 	// Default state — guard block button against editor color overrides
 	.button,
 	.v-button:not(.v-outline),
-	button:not(.wp-block-accordion-heading__toggle),
+	button:not(.wp-block-accordion-heading__toggle):not(.customize-partial-edit-shortcut-button),
 	.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background),
 	.wp-block-file .wp-block-file__button,
 	.comment-reply-link,
@@ -134,7 +134,7 @@ $lgMinWidth: 1200px;
 	// Hover/focus/active — always apply regardless of user color overrides
 	.button,
 	.v-button:not(.v-outline),
-	button:not(.wp-block-accordion-heading__toggle),
+	button:not(.wp-block-accordion-heading__toggle):not(.customize-partial-edit-shortcut-button),
 	.wp-block-button:not(.is-style-outline) .wp-block-button__link,
 	.wp-block-file .wp-block-file__button,
 	.comment-reply-link,
