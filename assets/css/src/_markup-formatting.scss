@@ -232,7 +232,7 @@ hr,
 		cursor: pointer;
 		display: flex;
 		align-items: center;
-		gap: 0.6em;
+		gap: 0.6rem;
 		list-style: none;
 		padding-block: 0.75rem;
 
@@ -262,7 +262,7 @@ hr,
 	}
 
 	> *:not(summary) {
-		padding-left: calc(8px + 0.6em);
+		padding-left: calc(8px + 0.6rem);
 	}
 
 	&[open] {
