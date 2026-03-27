@@ -2682,7 +2682,7 @@ hr,
 .wp-block-separator {
   border-style: solid;
   border-width: 2px 0 0;
-  margin: clamp(2rem, 3.5vw, 3rem) 0;
+  margin-block: clamp(2rem, 3.5vw, 3rem);
 }
 
 .wp-block-separator {
