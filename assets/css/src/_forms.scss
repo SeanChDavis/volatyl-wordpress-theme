@@ -1,6 +1,6 @@
 ﻿.button,
 .v-button,
-button,
+button:not(.wp-block-accordion-heading__toggle),
 [type="button"],
 [type="submit"],
 [type="reset"],
@@ -72,7 +72,7 @@ form {
 
 	.button,
 	.v-button,
-	button,
+	button:not(.wp-block-accordion-heading__toggle),
 	[type="button"],
 	[type="submit"],
 	[type="reset"],
