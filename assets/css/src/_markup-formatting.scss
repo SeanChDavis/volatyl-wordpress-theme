@@ -571,6 +571,10 @@ figure {
 	> .wp-block-details + .wp-block-details {
 		margin-top: 0;
 	}
+
+	> .wp-block-details:has(+ .wp-block-details) {
+		margin-bottom: 0;
+	}
 }
 
 .wp-block-buttons {
