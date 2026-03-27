@@ -223,7 +223,6 @@ hr,
 .wp-block-details {
 	border-style: solid;
 	border-width: 1px 0;
-	margin-block: clamp(2rem, 3.5vw, 3rem);
 
 	& + .wp-block-details {
 		border-top: none;
@@ -547,7 +546,8 @@ figure {
 	> .wp-block-tag-cloud,
 	> .wp-block-embed,
 	> .wp-block-navigation,
-	> .wp-block-group {
+	> .wp-block-group,
+	> .wp-block-details {
 		margin-bottom: 2rem;
 
 		&:last-child {

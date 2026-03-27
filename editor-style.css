@@ -1166,7 +1166,6 @@ hr,
 .wp-block-details {
   border-style: solid;
   border-width: 1px 0;
-  margin-block: clamp(2rem, 3.5vw, 3rem);
 }
 .wp-block-details + .wp-block-details {
   border-top: none;
@@ -1431,7 +1430,8 @@ figure figcaption {
 .entry-content > .wp-block-tag-cloud,
 .entry-content > .wp-block-embed,
 .entry-content > .wp-block-navigation,
-.entry-content > .wp-block-group {
+.entry-content > .wp-block-group,
+.entry-content > .wp-block-details {
   margin-bottom: 2rem;
 }
 .entry-content > .wp-block-image:last-child,
@@ -1448,7 +1448,8 @@ figure figcaption {
 .entry-content > .wp-block-tag-cloud:last-child,
 .entry-content > .wp-block-embed:last-child,
 .entry-content > .wp-block-navigation:last-child,
-.entry-content > .wp-block-group:last-child {
+.entry-content > .wp-block-group:last-child,
+.entry-content > .wp-block-details:last-child {
   margin-bottom: 0;
 }
 .entry-content > .wp-block-image:not(:first-child),
@@ -1465,7 +1466,8 @@ figure figcaption {
 .entry-content > .wp-block-tag-cloud:not(:first-child),
 .entry-content > .wp-block-embed:not(:first-child),
 .entry-content > .wp-block-navigation:not(:first-child),
-.entry-content > .wp-block-group:not(:first-child) {
+.entry-content > .wp-block-group:not(:first-child),
+.entry-content > .wp-block-details:not(:first-child) {
   margin-top: 2rem;
 }
 .entry-content > .wp-block-image.alignleft, .entry-content > .wp-block-image.alignright,
@@ -1496,7 +1498,9 @@ figure figcaption {
 .entry-content > .wp-block-navigation.alignleft,
 .entry-content > .wp-block-navigation.alignright,
 .entry-content > .wp-block-group.alignleft,
-.entry-content > .wp-block-group.alignright {
+.entry-content > .wp-block-group.alignright,
+.entry-content > .wp-block-details.alignleft,
+.entry-content > .wp-block-details.alignright {
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -1514,7 +1518,8 @@ figure figcaption {
 .entry-content > .wp-block-tag-cloud > label,
 .entry-content > .wp-block-embed > label,
 .entry-content > .wp-block-navigation > label,
-.entry-content > .wp-block-group > label {
+.entry-content > .wp-block-group > label,
+.entry-content > .wp-block-details > label {
   font-size: 0.833rem;
 }
 
