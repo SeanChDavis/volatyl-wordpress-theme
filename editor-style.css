@@ -1211,7 +1211,6 @@ hr,
 }
 
 .wp-block-accordion .wp-block-accordion-item {
-  border-color: currentColor;
   border-style: solid;
   border-width: 0 0 1px;
 }
@@ -1626,6 +1625,10 @@ body.page:not(.canvas-full-width-template):not(.canvas-page-width-template):not(
 body.page:not(.canvas-full-width-template):not(.canvas-page-width-template):not(.front-page) .entry-content .h5,
 body.page:not(.canvas-full-width-template):not(.canvas-page-width-template):not(.front-page) .entry-content h6,
 body.page:not(.canvas-full-width-template):not(.canvas-page-width-template):not(.front-page) .entry-content .h6 {
+  font-size: 1rem;
+}
+body.single .entry-content .wp-block-accordion .wp-block-accordion-heading,
+body.page:not(.canvas-full-width-template):not(.canvas-page-width-template):not(.front-page) .entry-content .wp-block-accordion .wp-block-accordion-heading {
   font-size: 1rem;
 }
 

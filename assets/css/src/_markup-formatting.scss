@@ -277,7 +277,6 @@ hr,
 .wp-block-accordion {
 
 	.wp-block-accordion-item {
-		border-color: currentColor;
 		border-style: solid;
 		border-width: 0 0 1px;
 
@@ -684,6 +683,10 @@ body.page:not(.canvas-full-width-template):not(.canvas-page-width-template):not(
 
 	.entry-content {
 		@include headingFontReduced;
+
+		.wp-block-accordion .wp-block-accordion-heading {
+			font-size: 1rem;
+		}
 	}
 }
 
