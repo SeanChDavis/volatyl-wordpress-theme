@@ -274,6 +274,38 @@ hr,
 	}
 }
 
+.wp-block-accordion {
+
+	.wp-block-accordion-item {
+		border-style: solid;
+		border-width: 0 0 1px;
+
+		&:first-child {
+			border-top-width: 1px;
+		}
+	}
+
+	.wp-block-accordion-heading {
+		margin: 0;
+
+		.wp-block-accordion-heading__toggle {
+			gap: 0.6rem;
+			padding-block: 0.75rem;
+		}
+
+		.wp-block-accordion-heading__toggle-icon {
+			color: var(--v-action);
+			flex-shrink: 0;
+			height: 1.2rem;
+			width: 1.2rem;
+		}
+	}
+
+	.wp-block-accordion-panel {
+		padding-bottom: 0.75rem;
+	}
+}
+
 table {
 	border-style: solid;
 	border-width: 2px;
@@ -546,7 +578,8 @@ figure {
 	> .wp-block-embed,
 	> .wp-block-navigation,
 	> .wp-block-group,
-	> .wp-block-details {
+	> .wp-block-details,
+	> .wp-block-accordion {
 		margin-bottom: 2rem;
 
 		&:last-child {
