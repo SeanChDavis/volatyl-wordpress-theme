@@ -1169,7 +1169,6 @@ hr,
 }
 .wp-block-details + .wp-block-details {
   border-top: none;
-  margin-top: 0;
 }
 .wp-block-details summary {
   cursor: pointer;
@@ -1521,6 +1520,9 @@ figure figcaption {
 .entry-content > .wp-block-group > label,
 .entry-content > .wp-block-details > label {
   font-size: 0.833rem;
+}
+.entry-content > .wp-block-details + .wp-block-details {
+  margin-top: 0;
 }
 
 .wp-block-buttons > .wp-block-button .wp-block-button__link {

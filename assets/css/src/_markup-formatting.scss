@@ -226,7 +226,6 @@ hr,
 
 	& + .wp-block-details {
 		border-top: none;
-		margin-top: 0;
 	}
 
 	summary {
@@ -567,6 +566,10 @@ figure {
 		& > label {
 			@include fontSmaller;
 		}
+	}
+
+	> .wp-block-details + .wp-block-details {
+		margin-top: 0;
 	}
 }
 
