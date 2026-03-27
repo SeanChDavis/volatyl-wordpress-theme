@@ -2704,7 +2704,7 @@ hr,
 
 .wp-block-details {
   border-style: solid;
-  border-width: 1px 0;
+  border-width: 2px 0;
 }
 .wp-block-details + .wp-block-details {
   border-top: none;
@@ -2751,10 +2751,10 @@ hr,
 
 .wp-block-accordion .wp-block-accordion-item {
   border-style: solid;
-  border-width: 0 0 1px;
+  border-width: 0 0 2px;
 }
 .wp-block-accordion .wp-block-accordion-item:first-child {
-  border-top-width: 1px;
+  border-top-width: 2px;
 }
 .wp-block-accordion .wp-block-accordion-heading {
   font-size: 1rem;
