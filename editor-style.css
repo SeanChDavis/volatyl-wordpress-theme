@@ -1151,14 +1151,16 @@ hr,
 .wp-block-separator {
   width: 25%;
 }
-.wp-block-separator.is-style-default {
-  width: 25%;
+.wp-block-separator.is-style-wide {
+  width: 100%;
 }
-.wp-block-separator.is-style-wide, .wp-block-separator.is-style-dots {
+.wp-block-separator.is-style-dots {
+  border: none;
   width: 100%;
 }
 .wp-block-separator.is-style-dots:before {
-  letter-spacing: 1em;
+  letter-spacing: 0.75em;
+  padding-left: 0.75em;
 }
 
 table {
@@ -1721,10 +1723,17 @@ figure figcaption,
 }
 
 hr,
-.wp-block-separator,
+.wp-block-separator {
+  border-color: var(--v-subdued-light);
+}
+
+.wp-block-separator.is-style-dots:before {
+  color: var(--v-subdued-dark);
+}
+
 .wp-block-quote,
 .wp-block-pullquote {
-  border-color: var(--v-subdued-light);
+  border-color: var(--v-accent-1);
 }
 
 .wp-block-pullquote {

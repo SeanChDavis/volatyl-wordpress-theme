@@ -458,7 +458,7 @@ hr,
 }
 
 .wp-block-separator.is-style-dots:before {
-  color: var(--v-text);
+  color: var(--v-subdued-dark);
 }
 
 .wp-block-calendar .wp-calendar-nav {
@@ -2688,14 +2688,16 @@ hr,
 .wp-block-separator {
   width: 25%;
 }
-.wp-block-separator.is-style-default {
-  width: 25%;
+.wp-block-separator.is-style-wide {
+  width: 100%;
 }
-.wp-block-separator.is-style-wide, .wp-block-separator.is-style-dots {
+.wp-block-separator.is-style-dots {
+  border: none;
   width: 100%;
 }
 .wp-block-separator.is-style-dots:before {
-  letter-spacing: 1em;
+  letter-spacing: 0.75em;
+  padding-left: 0.75em;
 }
 
 table {

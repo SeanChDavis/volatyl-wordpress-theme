@@ -205,19 +205,17 @@ hr,
 .wp-block-separator {
 	width: 25%;
 
-	&.is-style-default {
-		width: 25%;
-	}
-
-	&.is-style-wide,
-	&.is-style-dots {
+	&.is-style-wide {
 		width: 100%;
 	}
 
 	&.is-style-dots {
+		border: none;
+		width: 100%;
 
 		&:before {
-			letter-spacing: 1em;
+			letter-spacing: 0.75em;
+			padding-left: 0.75em;
 		}
 	}
 }

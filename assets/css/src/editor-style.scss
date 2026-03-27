@@ -64,10 +64,17 @@ figure figcaption,
 }
 
 hr,
-.wp-block-separator,
+.wp-block-separator {
+	border-color: var(--v-subdued-light);
+}
+
+.wp-block-separator.is-style-dots:before {
+	color: var(--v-subdued-dark);
+}
+
 .wp-block-quote,
 .wp-block-pullquote {
-	border-color: var(--v-subdued-light);
+	border-color: var(--v-accent-1);
 }
 
 .wp-block-pullquote {
