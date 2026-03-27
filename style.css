@@ -2995,7 +2995,8 @@ figure figcaption {
 .entry-content > .wp-block-navigation,
 .entry-content > .wp-block-group,
 .entry-content > .wp-block-details,
-.entry-content > .wp-block-accordion {
+.entry-content > .wp-block-accordion,
+.entry-content > .wp-block-buttons {
   margin-bottom: 2rem;
 }
 .entry-content > .wp-block-image:last-child,
@@ -3014,7 +3015,8 @@ figure figcaption {
 .entry-content > .wp-block-navigation:last-child,
 .entry-content > .wp-block-group:last-child,
 .entry-content > .wp-block-details:last-child,
-.entry-content > .wp-block-accordion:last-child {
+.entry-content > .wp-block-accordion:last-child,
+.entry-content > .wp-block-buttons:last-child {
   margin-bottom: 0;
 }
 .entry-content > .wp-block-image:not(:first-child),
@@ -3033,7 +3035,8 @@ figure figcaption {
 .entry-content > .wp-block-navigation:not(:first-child),
 .entry-content > .wp-block-group:not(:first-child),
 .entry-content > .wp-block-details:not(:first-child),
-.entry-content > .wp-block-accordion:not(:first-child) {
+.entry-content > .wp-block-accordion:not(:first-child),
+.entry-content > .wp-block-buttons:not(:first-child) {
   margin-top: 2rem;
 }
 .entry-content > .wp-block-image.alignleft, .entry-content > .wp-block-image.alignright,
@@ -3068,7 +3071,9 @@ figure figcaption {
 .entry-content > .wp-block-details.alignleft,
 .entry-content > .wp-block-details.alignright,
 .entry-content > .wp-block-accordion.alignleft,
-.entry-content > .wp-block-accordion.alignright {
+.entry-content > .wp-block-accordion.alignright,
+.entry-content > .wp-block-buttons.alignleft,
+.entry-content > .wp-block-buttons.alignright {
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -3088,7 +3093,8 @@ figure figcaption {
 .entry-content > .wp-block-navigation > label,
 .entry-content > .wp-block-group > label,
 .entry-content > .wp-block-details > label,
-.entry-content > .wp-block-accordion > label {
+.entry-content > .wp-block-accordion > label,
+.entry-content > .wp-block-buttons > label {
   font-size: 0.833rem;
 }
 .entry-content > .wp-block-details + .wp-block-details {
