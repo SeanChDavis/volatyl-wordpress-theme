@@ -179,9 +179,9 @@ $lgMinWidth: 1200px;
 /// @param {Color} $bg    [var(--v-dark)]
 /// @param {Color} $hover [var(--v-action)]
 @mixin utility-buttons( $bg: var(--v-dark), $hover: var(--v-action) ) {
-	[type="button"],
-	[type="submit"],
-	[type="reset"],
+	input[type="button"],
+	input[type="submit"],
+	input[type="reset"],
 	.wp-block-search button,
 	#searchform #searchsubmit,
 	.wp-block-search[class*="button-inside"] [class*="search__inside"] button {
