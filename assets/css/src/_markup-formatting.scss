@@ -220,6 +220,62 @@ hr,
 	}
 }
 
+.wp-block-details {
+	border-style: solid;
+	border-width: 1px 0;
+	margin-block: clamp(2rem, 3.5vw, 3rem);
+
+	& + .wp-block-details {
+		border-top: none;
+		margin-top: 0;
+	}
+
+	summary {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		gap: 0.6em;
+		list-style: none;
+		padding-block: 0.75rem;
+
+		&::-webkit-details-marker {
+			display: none;
+		}
+
+		&::before {
+			content: '';
+			display: block;
+			flex-shrink: 0;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 5px 0 5px 8px;
+			border-color: transparent transparent transparent var(--v-action);
+
+			@media (prefers-reduced-motion: no-preference) {
+				transition: transform 0.2s ease;
+			}
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--v-action);
+			outline-offset: 2px;
+		}
+	}
+
+	> *:not(summary) {
+		padding-left: calc(8px + 0.6em);
+	}
+
+	&[open] {
+		padding-bottom: 0.75rem;
+
+		> summary::before {
+			transform: rotate(90deg);
+		}
+	}
+}
+
 table {
 	border-style: solid;
 	border-width: 2px;

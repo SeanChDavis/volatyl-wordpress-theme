@@ -448,6 +448,7 @@ pre code {
 
 hr,
 .wp-block-separator,
+.wp-block-details,
 .twitter-tweet {
   border-color: var(--v-subdued-light);
 }
@@ -2698,6 +2699,55 @@ hr,
 .wp-block-separator.is-style-dots:before {
   letter-spacing: 0.75em;
   padding-left: 0.75em;
+}
+
+.wp-block-details {
+  border-style: solid;
+  border-width: 1px 0;
+  margin-block: clamp(2rem, 3.5vw, 3rem);
+}
+.wp-block-details + .wp-block-details {
+  border-top: none;
+  margin-top: 0;
+}
+.wp-block-details summary {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  list-style: none;
+  padding-block: 0.75rem;
+}
+.wp-block-details summary::-webkit-details-marker {
+  display: none;
+}
+.wp-block-details summary::before {
+  content: "";
+  display: block;
+  flex-shrink: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 8px;
+  border-color: transparent transparent transparent var(--v-action);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .wp-block-details summary::before {
+    transition: transform 0.2s ease;
+  }
+}
+.wp-block-details summary:focus-visible {
+  outline: 2px solid var(--v-action);
+  outline-offset: 2px;
+}
+.wp-block-details > *:not(summary) {
+  padding-left: calc(8px + 0.6em);
+}
+.wp-block-details[open] {
+  padding-bottom: 0.75rem;
+}
+.wp-block-details[open] > summary::before {
+  transform: rotate(90deg);
 }
 
 table {
