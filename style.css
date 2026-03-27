@@ -2749,6 +2749,7 @@ hr,
 }
 
 .wp-block-accordion .wp-block-accordion-item {
+  border-color: currentColor;
   border-style: solid;
   border-width: 0 0 1px;
 }
@@ -2756,6 +2757,7 @@ hr,
   border-top-width: 1px;
 }
 .wp-block-accordion .wp-block-accordion-heading {
+  font-size: 1rem;
   margin: 0;
 }
 .wp-block-accordion .wp-block-accordion-heading .wp-block-accordion-heading__toggle {
